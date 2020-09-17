@@ -26,28 +26,33 @@
 1. warning-color
 
 ## 1.3. component
-### 1.3.1. button
+### 1.3.1. card
 
-### 1.3.2. input
+### 1.3.2. menu
 
-### 1.3.3. checkbox
+### 1.3.3. button
 
-### 1.3.4. Radio
+### 1.3.4. input
 
-### 1.3.5. Select
+### 1.3.5. checkbox
 
-### 1.3.6. switch
+### 1.3.6. Radio
 
-### 1.3.7. tag
+### 1.3.7. Select
 
-### 1.3.8. alert
+### 1.3.8. switch
 
-### 1.3.9. modal
+### 1.3.9. tag
 
-### 1.3.10. table
+### 1.3.10. alert
 
-### 1.3.11. datepicker
+### 1.3.11. modal
 
-### 1.3.12. Pagination
+### 1.3.12. table
 
-### 1.3.13. Dropdown
+### 1.3.13. datepicker
+
+### 1.3.14. Pagination
+
+### 1.3.15. Dropdown
+
