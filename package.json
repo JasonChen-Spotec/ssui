@@ -1,0 +1,15 @@
+{
+  "name": "ssui",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:SPOTEC-LTD/ssui.git",
+  "author": "jason <usochen@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "babel src --out-dir lib"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.11.6",
+    "@babel/core": "^7.11.6"
+  }
+}
