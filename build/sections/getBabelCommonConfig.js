@@ -1,5 +1,5 @@
 
-const getconfig = () => {
+module.exports = () => {
   const plugins = [
     // '@babel/plugin-proposal-class-properties',
     // '@babel/plugin-proposal-export-default-from',
@@ -12,10 +12,10 @@ const getconfig = () => {
         help: false,
       },
     ],
-    // ["import", {
-    //   "libraryName": "antd",
-    //   "style": process.env.NODE_ENV !== 'test'
-    // }]
+    ["import", {
+      "libraryName": "antd",
+      "style": process.env.NODE_ENV !== 'test'
+    }]
   ];
 
   return {
@@ -35,5 +35,3 @@ const getconfig = () => {
   };
 };
 
-
-module.exports = getconfig();

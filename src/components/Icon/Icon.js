@@ -1,9 +1,10 @@
 import React from 'react';
 import { string, oneOf, bool } from 'prop-types';
 import classNames from 'classnames';
+import '../../logo.svg'
+
 
 const IconPropTypes = {
-
   symbolPrefix: string,
   name: string.isRequired,
   size: oneOf(['sm', 'md', 'lg']),
