@@ -7,7 +7,8 @@
   "license": "MIT",
   "scripts": {
     "dev": "dumi dev",
-    "build": "node ./build/build-lib.js"
+    "buildSvg": "svgr -d src/components/svgs src/svgs",
+    "build": "node ./build/build-lib.js svgr -d lib/svgs src/svgs"
   },
   "devDependencies": {
     "@babel/cli": "^7.11.6",
@@ -15,11 +16,12 @@
     "@babel/plugin-transform-runtime": "^7.11.5",
     "@babel/preset-env": "^7.11.5",
     "@babel/preset-react": "^7.10.4",
+    "@svgr/cli": "^5.4.0",
     "@svgr/webpack": "^5.4.0",
     "dumi": "^1.0.34",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-copy-to-clipboard": "^5.0.2"
+    "react-copy-to-clipboard": "^5.0.2",
+    "react-dom": "^16.13.1"
   },
   "dependencies": {
     "antd": "^4.6.6",

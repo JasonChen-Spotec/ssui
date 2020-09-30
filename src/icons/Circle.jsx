@@ -1,7 +1,7 @@
 
 import React from 'react';
 import Icon from '../components/Icon';
-import IconCircle from '../svgs/base/icon-circle.svg';
+import IconCircle from '../components/svgs/base/IconCircle';
 
 const Circle = (props) => (
   <Icon {...props} component={IconCircle}  />
