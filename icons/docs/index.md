@@ -4,7 +4,7 @@ hero:
   title: a react library
   actions:
     - text: 快速上手
-      link: /components/button
+      link: /zh-CN/docs/getting-started
 ---
 
 ## 轻松上手

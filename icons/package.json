@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "dumi dev",
-    "build": "node ./build/build-lib.js"
+    "build": "babel src --out-dir lib"
   },
   "devDependencies": {
     "@babel/cli": "^7.11.6",
@@ -15,11 +15,10 @@
     "@babel/plugin-transform-runtime": "^7.11.5",
     "@babel/preset-env": "^7.11.5",
     "@babel/preset-react": "^7.10.4",
-    "@svgr/webpack": "^5.4.0",
     "dumi": "^1.0.34",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-copy-to-clipboard": "^5.0.2"
+    "svg-sprite-loader": "^5.0.0"
   },
   "dependencies": {
     "antd": "^4.6.6",

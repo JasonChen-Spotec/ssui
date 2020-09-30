@@ -1,6 +1,6 @@
 # dependencies
 **/node_modules
-src/.umi
+
 # production
 /dist
 /.vscode
