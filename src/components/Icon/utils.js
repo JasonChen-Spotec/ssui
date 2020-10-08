@@ -66,7 +66,6 @@ export const iconStyles = `
 let cssInjectedFlag = false;
 
 export const useInsertStyles = (styleStr = iconStyles) => {
-  console.log('insertCss', insertCss);
   useEffect(() => {
     if (!cssInjectedFlag) {
       insertCss(styleStr, {

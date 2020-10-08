@@ -11,7 +11,7 @@ var _react = _interopRequireDefault(require("react"));
 
 var _Icon = _interopRequireDefault(require("../components/Icon"));
 
-var _IconCircle = _interopRequireDefault(require("../components/svgs/base/IconCircle"));
+var _IconCircle = _interopRequireDefault(require("./components/base/IconCircle"));
 
 var Circle = function Circle(props) {
   return /*#__PURE__*/_react["default"].createElement(_Icon["default"], (0, _extends2["default"])({}, props, {

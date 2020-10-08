@@ -22,7 +22,5 @@ export default {
         .test(/\.svg$/)
         .use('svg')
           .loader('@svgr/webpack')
-
-    console.log('.toConfig()',  memo.toConfig())
   }
 };

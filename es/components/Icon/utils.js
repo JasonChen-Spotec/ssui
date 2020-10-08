@@ -21,7 +21,6 @@ var useInsertStyles = function useInsertStyles(styleStr) {
     styleStr = iconStyles;
   }
 
-  console.log('insertCss', _insertCss.insertCss);
   (0, _react.useEffect)(function () {
     if (!cssInjectedFlag) {
       (0, _insertCss.insertCss)(styleStr, {
