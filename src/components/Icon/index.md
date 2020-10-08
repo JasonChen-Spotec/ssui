@@ -32,10 +32,14 @@ group:
 ## 2. 基本应用
 
 ```jsx
+/**
+ * title: 代码块
+ * hideActions: ["CSB", "EXTERNAL"]
+ */
 import React from 'react';
 import { Row, Col, Divider } from 'antd';
-import Icon from 'ssui/lib/components/Icon';
-import IconCircle from 'ssui/lib/svgs/base/icon-circle.svg';
+import Icon from 'assui/lib/components/Icon';
+import IconCircle from 'assui/lib/svgs/base/check-circle-o.svg';
 
 export default ()=>(
   <Row gutter={16}>
@@ -58,10 +62,14 @@ export default ()=>(
 
 
 ```jsx
+/**
+ * title: 代码块
+ * hideActions: ["CSB", "EXTERNAL"]
+ */
 import React from 'react';
 import { Row, Col, Divider } from 'antd';
-import Icon from 'ssui/lib/components/Icon';
-import CheckCircle from 'ssui/lib/svgs/base/check-circle-o.svg';
+import Icon from 'assui/lib/components/Icon';
+import CheckCircle from 'assui/lib/svgs/base/check-circle-o.svg';
 
 
 export default ()=>(

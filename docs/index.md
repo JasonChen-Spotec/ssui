@@ -11,5 +11,5 @@ hero:
 
 ```bash
 // 安装依赖
-npm i ssui --save
+npm i assui --save
 ```

@@ -4,8 +4,8 @@ import '@@/core/devScripts';
 import { plugin } from './core/plugin';
 import './core/pluginRegister';
 import { createHistory } from './core/history';
-import { ApplyPluginsType } from '/Users/jianchen/work/ssui/node_modules/@umijs/runtime';
-import { renderClient } from '/Users/jianchen/work/ssui/node_modules/@umijs/renderer-react/dist/index.js';
+import { ApplyPluginsType } from '/Users/jianchen/work/assui/node_modules/@umijs/runtime';
+import { renderClient } from '/Users/jianchen/work/assui/node_modules/@umijs/renderer-react/dist/index.js';
 import { getRoutes } from './core/routes';
 
 

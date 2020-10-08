@@ -1,9 +1,28 @@
-import { Components } from 'antd/lib/date-picker/generatePicker';
-import Circle from 'ssui/src/icons/Circle';
+import CheckCircleOutlined from '../CheckCircleOutlined';
+import CardOutlined from '../CardOutlined';
+import CloseCircleOutlined from '../CloseCircleOutlined';
+import CloseOutlined from '../CloseOutlined';
+import EyeInvisibleOutlined from '../EyeInvisibleOutlined';
+import EyeOutlined from '../EyeOutlined';
+import FormOutlined from '../FormOutlined';
+import MinusCircleOutlined from '../MinusCircleOutlined';
+import PieOutlined from '../PieOutlined';
+import SquaresOutlined from '../SquaresOutlined';
+import UserAddOutlined from '../UserAddOutlined';
+import UserOutlined from '../UserOutlined';
+
 
 export default [
-  Circle,
-  Circle,
-  Circle,
-  Circle
-]
+  CheckCircleOutlined,
+  CardOutlined,
+  CloseCircleOutlined,
+  CloseOutlined,
+  EyeInvisibleOutlined,
+  EyeOutlined,
+  FormOutlined,
+  MinusCircleOutlined,
+  PieOutlined,
+  SquaresOutlined,
+  UserAddOutlined,
+  UserOutlined
+];
