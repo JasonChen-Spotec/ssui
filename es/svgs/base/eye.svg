@@ -1,5 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
-  <path
-    d="M8,3.21C3.89,3.21,0,8,0,8S3.64,12.8,8,12.8s8-4.75,8-4.75C11.76,2.77,8,3.21,8,3.21Zm0,7.92A3.13,3.13,0,1,1,11.13,8,3.13,3.13,0,0,1,8,11.13Z" />
-  <circle cx="8" cy="8" r="1.91" />
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+  y="0px" viewBox="0 0 16 16" style="enable-background:new 0 0 16 16;" xml:space="preserve">
+  <g>
+    <path fill="currentColor" d="M8,3.2C3.9,3.2,0,8,0,8s3.6,4.8,8,4.8S16,8,16,8C11.8,2.8,8,3.2,8,3.2z M8,11.1c-1.7,0-3.1-1.4-3.1-3.1S6.3,4.9,8,4.9
+  s3.1,1.4,3.1,3.1l0,0C11.1,9.7,9.7,11.1,8,11.1z" />
+    <circle cx="8" cy="8" r="1.9" />
+  </g>
 </svg>
