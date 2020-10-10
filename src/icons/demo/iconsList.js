@@ -10,6 +10,8 @@ import PieOutlined from '../PieOutlined';
 import SquaresOutlined from '../SquaresOutlined';
 import UserAddOutlined from '../UserAddOutlined';
 import UserOutlined from '../UserOutlined';
+import PlusOutlined from '../PlusOutlined';
+import FileDoneOutlined from '../FileDoneOutlined';
 
 
 export default [
@@ -24,5 +26,7 @@ export default [
   PieOutlined,
   SquaresOutlined,
   UserAddOutlined,
-  UserOutlined
+  UserOutlined,
+  PlusOutlined,
+  FileDoneOutlined
 ];
