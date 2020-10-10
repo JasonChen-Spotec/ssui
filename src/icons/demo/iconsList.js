@@ -7,6 +7,7 @@ import EyeOutlined from '../EyeOutlined';
 import FormOutlined from '../FormOutlined';
 import MinusCircleOutlined from '../MinusCircleOutlined';
 import PieOutlined from '../PieOutlined';
+import ProfileOutlined from '../ProfileOutlined';
 import SquaresOutlined from '../SquaresOutlined';
 import UserAddOutlined from '../UserAddOutlined';
 import UserOutlined from '../UserOutlined';
@@ -24,6 +25,7 @@ export default [
   FormOutlined,
   MinusCircleOutlined,
   PieOutlined,
+  ProfileOutlined,
   SquaresOutlined,
   UserAddOutlined,
   UserOutlined,
