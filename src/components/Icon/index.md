@@ -39,7 +39,7 @@ group:
 import React from 'react';
 import { Row, Col, Divider } from 'antd';
 import Icon from 'assui/lib/components/Icon';
-import IconCircle from 'assui/lib/svgs/base/check-circle-o.svg';
+import IconCircle from 'assui/lib/svgs/check-circle-o-filled.svg';
 
 export default ()=>(
   <Row gutter={16}>
@@ -69,7 +69,7 @@ export default ()=>(
 import React from 'react';
 import { Row, Col, Divider } from 'antd';
 import Icon from 'assui/lib/components/Icon';
-import CheckCircle from 'assui/lib/svgs/base/check-circle-o.svg';
+import CheckCircle from 'assui/lib/svgs/check-circle-o-filled.svg';
 
 
 export default ()=>(

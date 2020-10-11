@@ -40,12 +40,12 @@ function compile(dir) {
 }
 
 // clear dir
-fs.emptyDirSync(esDir);
+// fs.emptyDirSync(esDir);
 fs.emptyDirSync(libDir);
 
 // compile es dir
-fs.copySync(srcDir, esDir);
-compile(esDir);
+// fs.copySync(srcDir, esDir);
+// compile(esDir);
 
 // compile lib dir
 process.env.BABEL_MODULE
