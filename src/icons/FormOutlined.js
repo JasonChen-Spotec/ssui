@@ -1,9 +1,9 @@
 import * as React from "react";
 import Icon from "../components/Icon";
 
-function FormOutlined(props) {
-  const IconNode = () => (
-    <svg viewBox="0 0 16 16">
+function FormOutlined(componentProps) {
+  const IconNode = (props) => (
+    <svg viewBox="0 0 16 16" {...props}>
       <path
         fill="currentColor"
         d="M12.62 14.06H1.94a.52.52 0 01-.52-.52V4a.52.52 0 01.52-.52h4.89a.52.52 0 01.52.52.52.52 0 01-.52.52H2.46V13h9.64V9.49a.52.52 0 01.52-.49.52.52 0 01.52.52v4a.52.52 0 01-.52.52z"
@@ -15,7 +15,7 @@ function FormOutlined(props) {
     </svg>
   );
 
-  return <Icon {...props} component={IconNode} />;
+  return <Icon {...componentProps} component={IconNode} />;
 }
 
 export default FormOutlined;

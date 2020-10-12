@@ -1,9 +1,9 @@
 import * as React from "react";
 import Icon from "../components/Icon";
 
-function CloseOutlined(props) {
-  const IconNode = () => (
-    <svg viewBox="0 0 16 16">
+function CloseOutlined(componentProps) {
+  const IconNode = (props) => (
+    <svg viewBox="0 0 16 16" {...props}>
       <path
         fill="currentColor"
         className="close-outlined_svg__st0"
@@ -17,7 +17,7 @@ function CloseOutlined(props) {
     </svg>
   );
 
-  return <Icon {...props} component={IconNode} />;
+  return <Icon {...componentProps} component={IconNode} />;
 }
 
 export default CloseOutlined;

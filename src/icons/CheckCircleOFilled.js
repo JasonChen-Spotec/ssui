@@ -1,9 +1,9 @@
 import * as React from "react";
 import Icon from "../components/Icon";
 
-function CheckCircleOFilled(props) {
-  const IconNode = () => (
-    <svg viewBox="0 0 80 80">
+function CheckCircleOFilled(componentProps) {
+  const IconNode = (props) => (
+    <svg viewBox="0 0 80 80" {...props}>
       <g transform="translate(7 6)" fillRule="evenodd">
         <circle
           fill="inherit"
@@ -22,7 +22,7 @@ function CheckCircleOFilled(props) {
     </svg>
   );
 
-  return <Icon {...props} component={IconNode} />;
+  return <Icon {...componentProps} component={IconNode} />;
 }
 
 export default CheckCircleOFilled;

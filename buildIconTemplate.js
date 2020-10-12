@@ -15,9 +15,9 @@ function defaultTemplate(
     ${interfaces}
     import Icon from '../components/Icon';
 
-    function ${componentName}(props) {
-      const IconNode = () => ${jsx};
-      return <Icon {...props} component={IconNode} />;
+    function ${componentName}(componentProps) {
+      const IconNode = (props) => ${jsx};
+      return <Icon {...componentProps} component={IconNode} />;
     }
     ${exports}
   `
