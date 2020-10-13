@@ -16,8 +16,8 @@ group:
  * hideActions: ["CSB", "EXTERNAL"]
  */
 import React from 'react';
-import CheckCircleOFilled from 'assui/lib/icons/CheckCircleOFilled';
-export default () => <CheckCircleOFilled style={{width: 24}} />
+import CheckCircleFilled from 'assui/lib/icons/CheckCircleFilled';
+export default () => <CheckCircleFilled style={{width: 24}} />
 ```
 
 
