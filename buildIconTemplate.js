@@ -13,7 +13,7 @@ function defaultTemplate(
   const typeScriptTpl = template.smart({ plugins })
   return typeScriptTpl.ast`${imports}
     ${interfaces}
-    import Icon from '../components/Icon';
+    import Icon from 'assui/lib/components/Icon';
 
     function ${componentName}(componentProps) {
       const IconNode = (props) => ${jsx};
