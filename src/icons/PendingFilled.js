@@ -1,5 +1,5 @@
 import * as React from "react";
-import Icon from "../components/Icon";
+import Icon from "assui/lib/components/Icon";
 
 function PendingFilled(componentProps) {
   const IconNode = (props) => (
