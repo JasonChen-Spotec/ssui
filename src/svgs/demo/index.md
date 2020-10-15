@@ -25,3 +25,6 @@ export default () => <CheckCircleFilled style={{width: 24}} />
 
 <code inline=true hideActions='["CSB"]' src="./base.jsx" />
 
+## 3. 业务图标列表
+
+<code inline=true hideActions='["CSB"]' src="./BusinessIconSection.jsx" />
