@@ -1,6 +1,6 @@
 {
   "name": "assui",
-  "version": "1.0.14",
+  "version": "1.0.15",
   "main": "index.js",
   "repository": "git@github.com:SPOTEC-LTD/assui.git",
   "author": "jason <usochen@gmail.com>",
