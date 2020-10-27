@@ -1,4 +1,5 @@
 export { default as CoinFilled } from './CoinFilled'
+export { default as ArrowFilled } from './ArrowFilled'
 export { default as BarOutlined } from './BarOutlined'
 export { default as CardFilled } from './CardFilled'
 export { default as CheckCircleFilled } from './CheckCircleFilled'
