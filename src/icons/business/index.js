@@ -1,3 +1,4 @@
+export { default as AgreementMoney } from './AgreementMoney'
 export { default as BrowserUpgrade } from './BrowserUpgrade'
 export { default as CirleCalendar } from './CirleCalendar'
 export { default as CirleComplete } from './CirleComplete'
