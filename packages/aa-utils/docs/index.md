@@ -4,7 +4,7 @@ hero:
   title: a utils
   actions:
     - text: 快速上手
-      link: /utils/number-precision
+      link: /func/number-precision
 ---
 
 ## 轻松上手

@@ -7,8 +7,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "dumi dev",
-    "buildSvg": "svgr --template buildIconTemplate.js -d src/icons/ src/svgs",
-    "build": "npm run buildSvg && node ./build/build-lib.js ",
+    "build": "node ./build/build-lib.js ",
     "release": "npm run build && release-it"
   },
   "devDependencies": {
