@@ -2,7 +2,10 @@
 export default {
   favicon: '/favicon.ico',
   mode: 'site',
+  base: '/assui',
+  publicPath: '/assui/',
   logo: '/reacticon.svg',
+  hash: true,
   extraBabelPlugins: [
     [
       'babel-plugin-import',

@@ -9,7 +9,9 @@
     "dev": "dumi dev",
     "buildSvg": "svgr --template buildIconTemplate.js -d src/icons/ src/svgs",
     "build": "npm run buildSvg && node ./build/build-lib.js ",
-    "release": "npm run build && release-it"
+    "release": "npm run build && release-it",
+    "build:doc": "dumi build",
+    "pub:doc-gitee": "npm run build:doc && cd ./dist && rm -rf .git && touch .spa && touch .nojekyll && git init && git remote add origin git@gitee.com:uso/assui.git && git add -A && git commit -m \"publish docs\" && git push origin master -f"
   },
   "devDependencies": {
     "@babel/cli": "^7.11.6",
