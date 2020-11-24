@@ -7,8 +7,10 @@
   "license": "MIT",
   "scripts": {
     "dev": "dumi dev",
+    "build:doc": "dumi build",
     "build": "node ./build/build-lib.js ",
-    "release": "npm run build && release-it"
+    "release": "npm run build && release-it",
+    "pub:doc-gitee": "npm run build:doc && cd ./dist && rm -rf .git && touch .spa && touch .nojekyll && git init && git remote add origin git@gitee.com:uso/aa-utils.git && git add -A && git commit -m \"publish docs\" && git push origin master -f"
   },
   "devDependencies": {
     "@babel/cli": "^7.11.6",

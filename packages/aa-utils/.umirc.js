@@ -1,8 +1,11 @@
 // 配置文件内容
 export default {
+  base: '/aa-utils',
+  publicPath: '/aa-utils/',
   favicon: '/favicon.ico',
   mode: 'site',
   logo: '/reacticon.svg',
+  hash: true,
   extraBabelPlugins: [
     [
       'babel-plugin-import',
