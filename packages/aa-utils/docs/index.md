@@ -11,5 +11,5 @@ hero:
 
 ```bash
 // 安装依赖
-npm i a-utils --save
+npm i aa-utils --save
 ```

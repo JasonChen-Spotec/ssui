@@ -16,7 +16,7 @@ group:
  * hideActions: ["CSB", "EXTERNAL"]
  */
 import React from 'react';
-import numberPrecision from 'a-utils/lib/numberPrecision';
+import numberPrecision from 'aa-utils/lib/numberPrecision';
 
 export default ()=>(
   <div>

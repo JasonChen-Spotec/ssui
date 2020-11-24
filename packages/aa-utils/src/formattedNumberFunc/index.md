@@ -16,7 +16,7 @@ group:
  * hideActions: ["CSB", "EXTERNAL"]
  */
 import React from 'react';
-import formattedNumberFunc from 'a-utils/lib/formattedNumberFunc';
+import formattedNumberFunc from 'aa-utils/lib/formattedNumberFunc';
 
 export default ()=>(
   <div>
