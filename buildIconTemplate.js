@@ -19,6 +19,7 @@ function defaultTemplate(
       const IconNode = (props) => ${jsx};
       return <Icon {...componentProps} component={IconNode} />;
     }
+
     ${exports}
   `
 }

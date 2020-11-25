@@ -2,7 +2,7 @@
 import { createBrowserHistory } from '/Users/jianchen/work/assui/node_modules/@umijs/runtime';
 
 let options = {
-  "basename": "/"
+  "basename": "/assui"
 };
 if ((<any>window).routerBase) {
   options.basename = (<any>window).routerBase;

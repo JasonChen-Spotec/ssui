@@ -4,6 +4,7 @@ export default {
   mode: 'site',
   base: '/assui',
   publicPath: '/assui/',
+  exportStatic: {},
   logo: '/reacticon.svg',
   hash: true,
   extraBabelPlugins: [
