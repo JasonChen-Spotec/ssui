@@ -15,7 +15,7 @@ group:
 
 ```js
 import React from 'react';
-import ReactEchart from 'assui/src/components/react-echart'
+import ReactEchart from 'assui/lib/components/react-echart'
 
 <ReactEchart
   option={this.getOption()}
@@ -30,7 +30,7 @@ import ReactEchart from 'assui/src/components/react-echart'
 
 ```js
 import React from 'react';
-import ReactEchartsCore from 'echarts-for-react/lib/core';
+import ReactEchartsCore from 'assui/lib/components/react-echart/lib/core';
 
 import echarts from 'echarts/lib/echarts';
 // import 'echarts/lib/chart/line';
