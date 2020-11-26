@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import echarts from 'echarts';
 import { Button } from 'antd';
-import ReactEchart from 'assui/src/components/react-echart/core';
+import ReactEchart from 'assui/lib/components/react-echart/core';
 
 const option = {
   tooltip: {
