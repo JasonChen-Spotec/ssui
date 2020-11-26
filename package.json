@@ -33,7 +33,9 @@
   "dependencies": {
     "ahooks": "^2.9.1",
     "antd": "^4.6.6",
+    "canvas-to-image": "^2.2.0",
     "classnames": "^2.2.6",
+    "qrcode": "^1.4.4",
     "resize-observer-polyfill": "^1.5.1"
   },
   "release-it": {
