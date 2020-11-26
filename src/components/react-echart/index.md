@@ -11,23 +11,79 @@ group:
 
 <code hideActions='["CSB", "EXTERNAL"]' src="./demo/index.jsx" />
 
+## 1. 默认全量导入echarts
 
-## 4. API
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
-| --- | --- | --- | --- | --- |
-| component | 控制如何渲染图标，通常是一个渲染根标签为 `<svg>` 的 React 组件 | ComponentType<CustomIconComponentProps\> | - |  |
-| className | 设置图标的样式名 | string | - |  |
-| rotate | 图标旋转角度（IE9 无效） | number | - |  |
-| spin | 是否有旋转动画 | boolean | false |  |
-| style | 设置图标的样式，例如 `fontSize` 和 `color` | CSSProperties | - |  |
+```js
+import React from 'react';
+import ReactEchart from 'assui/src/components/react-echart'
 
-`Icon` 中的 `component` 组件的接受的属性如下：
+<ReactEchart
+  option={this.getOption()}
+  notMerge={true}
+  lazyUpdate={true}
+  theme={"theme_name"}
+  onChartReady={this.onChartReadyCallback}
+  onEvents={EventsDict}
+  opts={} />
+```
+## 2. 导入需要的echarts modules，减小打包大小
 
-| 字段      | 说明                    | 类型             | 只读值         | 版本 |
-| --------- | ----------------------- | ---------------- | -------------- | ---- |
-| className | 计算后的 `svg` 类名     | string           | -              |      |
-| fill      | `svg` 元素填充的颜色    | string           | `currentColor` |      |
-| height    | `svg` 元素高度          | string \| number | `1em`          |      |
-| style     | 计算后的 `svg` 元素样式 | CSSProperties    | -              |      |
-| width     | `svg` 元素宽度          | string \| number | `1em`          |      |
+```js
+import React from 'react';
+import ReactEchartsCore from 'echarts-for-react/lib/core';
 
+import echarts from 'echarts/lib/echarts';
+// import 'echarts/lib/chart/line';
+import 'echarts/lib/chart/bar';
+// import 'echarts/lib/chart/pie';
+// import 'echarts/lib/chart/scatter';
+// import 'echarts/lib/chart/radar';
+
+// import 'echarts/lib/chart/map';
+// import 'echarts/lib/chart/treemap';
+// import 'echarts/lib/chart/graph';
+// import 'echarts/lib/chart/gauge';
+// import 'echarts/lib/chart/funnel';
+// import 'echarts/lib/chart/parallel';
+// import 'echarts/lib/chart/sankey';
+// import 'echarts/lib/chart/boxplot';
+// import 'echarts/lib/chart/candlestick';
+// import 'echarts/lib/chart/effectScatter';
+// import 'echarts/lib/chart/lines';
+// import 'echarts/lib/chart/heatmap';
+
+// import 'echarts/lib/component/graphic';
+// import 'echarts/lib/component/grid';
+// import 'echarts/lib/component/legend';
+import 'echarts/lib/component/tooltip';
+// import 'echarts/lib/component/polar';
+// import 'echarts/lib/component/geo';
+// import 'echarts/lib/component/parallel';
+// import 'echarts/lib/component/singleAxis';
+// import 'echarts/lib/component/brush';
+
+import 'echarts/lib/component/title';
+
+// import 'echarts/lib/component/dataZoom';
+// import 'echarts/lib/component/visualMap';
+
+// import 'echarts/lib/component/markPoint';
+// import 'echarts/lib/component/markLine';
+// import 'echarts/lib/component/markArea';
+
+// import 'echarts/lib/component/timeline';
+// import 'echarts/lib/component/toolbox';
+
+// import 'zrender/lib/vml/vml';
+
+// The usage of ReactEchartsCore are same with above.
+<ReactEchartsCore
+  echarts={echarts}
+  option={this.getOption()}
+  notMerge={true}
+  lazyUpdate={true}
+  theme={"theme_name"}
+  onChartReady={this.onChartReadyCallback}
+  onEvents={EventsDict}
+  opts={} />
+```
