@@ -23,6 +23,7 @@
     "@svgr/webpack": "^5.4.0",
     "code-rule": "^1.0.2",
     "dumi": "^1.0.34",
+    "echarts": "^4.9.0",
     "react": "^16.13.1",
     "react-color": "^2.18.1",
     "react-copy-to-clipboard": "^5.0.2",
@@ -30,8 +31,10 @@
     "release-it": "^14.0.4"
   },
   "dependencies": {
+    "ahooks": "^2.9.1",
     "antd": "^4.6.6",
-    "classnames": "^2.2.6"
+    "classnames": "^2.2.6",
+    "resize-observer-polyfill": "^1.5.1"
   },
   "release-it": {
     "git": {

@@ -29,6 +29,7 @@ module.exports = {
     'space-before-function-paren': 1,
     'no-plusplus': 0,
     'indent': ['error', 2, { SwitchCase: 1 }],
-    'o-restricted-syntax': 0
+    'o-restricted-syntax': 0,
+    'no-restricted-syntax': 0
   }
 };
