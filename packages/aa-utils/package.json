@@ -29,7 +29,9 @@
   },
   "dependencies": {
     "antd": "^4.6.6",
-    "classnames": "^2.2.6"
+    "classnames": "^2.2.6",
+    "events": "^3.2.0",
+    "scroll-into-view-if-needed": "^2.2.26"
   },
   "release-it": {
     "git": {
