@@ -36,6 +36,7 @@
     "canvas-to-image": "^2.2.0",
     "classnames": "^2.2.6",
     "qrcode": "^1.4.4",
+    "react-text-loop": "^2.3.0",
     "react-transition-group": "^4.4.1",
     "resize-observer-polyfill": "^1.5.1"
   },
