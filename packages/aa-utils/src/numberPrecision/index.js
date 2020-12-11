@@ -100,7 +100,7 @@ function divide(num1, num2, ...others) {
 /**
  * 四舍五入
  */
-function round(num, ratio) {
+function round(num, ratio=2) {
   const base = Math.pow(10, ratio);
   return divide(Math.round(times(num, base)), base);
 }
