@@ -26,25 +26,46 @@ class NumberUtils {
     return formattedNumber
   }
 
-  formatNumber(value, options){
-    return this.intlNumberFormat(value, options);
+  formatNumber(value, options = {}){
+    const {usePlus = false, ...restOptions} = options;
+
+    const formatValue = this.intlNumberFormat(value, restOptions);
+    if (usePlus) {
+      return `+${formatValue}`;
+    }
+
+    return formatValue;
   }
 
   formatCurrency(value, options = {}){
+    const {usePlus = false, ...restOptions} = options;
     const finalyOptions = {
       style: 'currency',
       currency: 'USD',
-      ...options
+      ...restOptions
     }
-    return this.intlNumberFormat(value, finalyOptions);
+
+    const formatValue = this.intlNumberFormat(value, finalyOptions);
+    if (usePlus) {
+      return `+${formatValue}`;
+    }
+
+    return formatValue;
   }
 
-  formatPercent(value, options){
+  formatPercent(value, options = {}){
+    const {usePlus = false, ...restOptions} = options;
+
     const finalyOptions = {
       style: 'percent',
-      ...options
+      ...restOptions
     }
-    return this.intlNumberFormat(value, finalyOptions);
+    const formatValue = this.intlNumberFormat(value, finalyOptions);
+    if (usePlus) {
+      return `+${formatValue}`;
+    }
+
+    return formatValue;
   }
 
   cutFloatNumber(value, precision = 3){

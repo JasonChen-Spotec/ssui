@@ -50,6 +50,8 @@ export default ()=>(
 | useGrouping | 分组分隔符，如千位分隔符或千/万/亿分隔符 | Boolean | true |
 | minimumFractionDigits | 保留小数位数的最小数目 | Number | 0 |
 | maximumFractionDigits | 保留的小数位数的最大数目 | Number | 2 |
+| usePlus | 正数加入prefix '+' | Boolean | false |
+
 
 
 本方法基于 `Intl.NumberFormat`, 更多参数参照[MDN Intl.NumberFormat](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat)

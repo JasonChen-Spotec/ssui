@@ -1,7 +1,11 @@
 "use strict";
 
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
 exports.__esModule = true;
 exports["default"] = void 0;
+
+var _objectWithoutPropertiesLoose2 = _interopRequireDefault(require("@babel/runtime/helpers/objectWithoutPropertiesLoose"));
 
 var _numberPrecision = require("../numberPrecision");
 
@@ -30,7 +34,21 @@ var NumberUtils = /*#__PURE__*/function () {
   };
 
   _proto.formatNumber = function formatNumber(value, options) {
-    return this.intlNumberFormat(value, options);
+    if (options === void 0) {
+      options = {};
+    }
+
+    var _options = options,
+        _options$usePlus = _options.usePlus,
+        usePlus = _options$usePlus === void 0 ? false : _options$usePlus,
+        restOptions = (0, _objectWithoutPropertiesLoose2["default"])(_options, ["usePlus"]);
+    var formatValue = this.intlNumberFormat(value, restOptions);
+
+    if (usePlus) {
+      return "+" + formatValue;
+    }
+
+    return formatValue;
   };
 
   _proto.formatCurrency = function formatCurrency(value, options) {
@@ -38,18 +56,42 @@ var NumberUtils = /*#__PURE__*/function () {
       options = {};
     }
 
+    var _options2 = options,
+        _options2$usePlus = _options2.usePlus,
+        usePlus = _options2$usePlus === void 0 ? false : _options2$usePlus,
+        restOptions = (0, _objectWithoutPropertiesLoose2["default"])(_options2, ["usePlus"]);
     var finalyOptions = Object.assign({
       style: 'currency',
       currency: 'USD'
-    }, options);
-    return this.intlNumberFormat(value, finalyOptions);
+    }, restOptions);
+    var formatValue = this.intlNumberFormat(value, finalyOptions);
+
+    if (usePlus) {
+      return "+" + formatValue;
+    }
+
+    return formatValue;
   };
 
   _proto.formatPercent = function formatPercent(value, options) {
+    if (options === void 0) {
+      options = {};
+    }
+
+    var _options3 = options,
+        _options3$usePlus = _options3.usePlus,
+        usePlus = _options3$usePlus === void 0 ? false : _options3$usePlus,
+        restOptions = (0, _objectWithoutPropertiesLoose2["default"])(_options3, ["usePlus"]);
     var finalyOptions = Object.assign({
       style: 'percent'
-    }, options);
-    return this.intlNumberFormat(value, finalyOptions);
+    }, restOptions);
+    var formatValue = this.intlNumberFormat(value, finalyOptions);
+
+    if (usePlus) {
+      return "+" + formatValue;
+    }
+
+    return formatValue;
   };
 
   _proto.cutFloatNumber = function cutFloatNumber(value, precision) {
