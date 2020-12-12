@@ -10,3 +10,6 @@ group:
 ---
 
 <code hideActions='["CSB", "EXTERNAL"]' src="./demo/index.jsx" />
+
+
+<code hideActions='["CSB", "EXTERNAL"]' src="./demo/drag-handle.jsx" />
