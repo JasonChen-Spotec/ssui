@@ -9,7 +9,20 @@ group:
   order: 1
 ---
 
+## 1. 使用默认全量导入的echarts
 <code hideActions='["CSB", "EXTERNAL"]' src="./demo/index.jsx" />
+
+
+## 公共API
+属性如下
+
+| 参数 | 说明 | 类型 | 默认值 |
+| --- | --- | --- | --- |
+| option | `echartsInstance.setOption` 第一个参数(option) | Object | - |
+| notMerge | `echartsInstance.setOption` 第二个参数(notMerge) | Boolean | `false` |
+| lazyUpdate | `echartsInstance.setOption` 第三个参数(lazyUpdate) | Boolean | `false` |
+| onEvents | `echartsInstance.on` 需要监听的事件函数 | Object | {} |
+
 
 ## 1. 默认全量导入echarts
 

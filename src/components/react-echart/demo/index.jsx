@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import echarts from 'echarts';
 import { Button } from 'antd';
-import ReactEchart from 'assui/lib/components/react-echart/core';
+import ReactEchart from 'assui/lib/components/react-echart';
 
 const option = {
   tooltip: {
@@ -42,24 +41,12 @@ const option = {
         borderColor: '#aaa',
         borderWidth: 1,
         borderRadius: 4,
-        // shadowBlur:3,
-        // shadowOffsetX: 2,
-        // shadowOffsetY: 2,
-        // shadowColor: '#999',
-        // padding: [0, 7],
         rich: {
           a: {
             color: '#999',
             lineHeight: 22,
             align: 'center'
           },
-          // abg: {
-          //     backgroundColor: '#333',
-          //     width: '100%',
-          //     align: 'right',
-          //     height: 22,
-          //     borderRadius: [4, 4, 0, 0]
-          // },
           hr: {
             borderColor: '#aaa',
             width: '100%',
@@ -101,7 +88,7 @@ export default () => {
       <div />
       <Button onClick={() => setHeight(height + 10)}>增高</Button>
       <div style={{ width: '100%', height }}>
-        <ReactEchart echarts={echarts} option={option} />
+        <ReactEchart option={option} />
       </div>
     </div>
   );};
