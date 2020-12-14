@@ -1,6 +1,8 @@
 import React from 'react';
 import { Form, Button } from 'antd';
-import NumberInput from 'assui/lib/components/number-input';
+// import NumberInput from 'assui/lib/components/number-input';
+import NumberInput from '../';
+
 
 const Demo = () => {
   const onFinish = values => {
@@ -9,7 +11,6 @@ const Demo = () => {
 
   return (
     <Form
-      layout="inline"
       onFinish={onFinish}
     >
       <Form.Item
@@ -23,6 +24,18 @@ const Demo = () => {
         label="float"
       >
         <NumberInput numberType="float" />
+      </Form.Item>
+      <Form.Item
+        name="intEnableMinus"
+        label="int(enableMinus)"
+      >
+        <NumberInput enableMinus />
+      </Form.Item>
+      <Form.Item
+        name="floatEnableMinus"
+        label="float(enableMinus)"
+      >
+        <NumberInput numberType="float" enableMinus />
       </Form.Item>
       <Form.Item>
         <Button type="primary" htmlType="submit">

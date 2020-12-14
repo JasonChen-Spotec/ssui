@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import Input from 'antd/lib/input';
+import 'antd/lib/input/style';
 import { INT } from './const/numberType';
 import { filterInt, filterFloat } from './utils';
 
 const NumberInput = props => {
-  const { value, onChange, numberType, precision, formatter, ...restProps } = props;
+  const { value, onChange, numberType, precision, formatter, enableMinus, onBlur, ...restProps } = props;
   const [number, setNumber] = useState('');
   const resultValue = value || number;
 
@@ -13,9 +14,9 @@ const NumberInput = props => {
     const newValue = e.target.value;
 
     if (numberType === INT) {
-      newNumber = filterInt(newValue);
+      newNumber = filterInt({ value: newValue, preValue: resultValue, enableMinus });
     } else {
-      newNumber = filterFloat({ value: newValue, preValue: resultValue, precision });
+      newNumber = filterFloat({ value: newValue, preValue: resultValue, precision, enableMinus });
     }
 
     if (formatter) {
@@ -29,10 +30,23 @@ const NumberInput = props => {
     }
   };
 
+  const onNumberBlur = () => {
+    if (resultValue === '-') {
+      if (onChange) {
+        onChange('');
+      } else {
+        setNumber('');
+      }
+    }
+
+    onBlur && onBlur();
+  };
+
   return (
     <Input
       type="text"
       value={resultValue}
+      onBlur={onNumberBlur}
       onChange={onNumberChange}
       {...restProps}
     />
@@ -41,6 +55,7 @@ const NumberInput = props => {
 
 NumberInput.defaultProps = {
   numberType: INT,
+  enableMinus: false,
   precision: 2
 };
 
