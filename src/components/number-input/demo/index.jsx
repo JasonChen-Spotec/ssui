@@ -1,9 +1,9 @@
 import React from 'react';
 import { Form, Button } from 'antd';
-import NumberInput from '../index';
+import NumberInput from 'assui/lib/components/number-input';
 
 const Demo = () => {
-  const onFinish = (values) => {
+  const onFinish = values => {
     console.log('Received values: ', values);
   };
 

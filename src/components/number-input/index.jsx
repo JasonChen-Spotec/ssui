@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Input } from 'antd';
+import Input from 'antd/lib/input';
 import { INT } from './const/numberType';
 import { filterInt, filterFloat } from './utils';
 
