@@ -1,8 +1,6 @@
 import React from 'react';
 import { Form, Button } from 'antd';
-// import NumberInput from 'assui/lib/components/number-input';
-import NumberInput from '../';
-
+import NumberInput from 'assui/lib/components/number-input';
 
 const Demo = () => {
   const onFinish = values => {

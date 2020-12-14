@@ -31,7 +31,7 @@ const NumberInput = props => {
   };
 
   const onNumberBlur = () => {
-    if (resultValue === '-') {
+    if (resultValue === '-' || resultValue === '.') {
       if (onChange) {
         onChange('');
       } else {
