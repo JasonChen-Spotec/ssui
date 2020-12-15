@@ -23,10 +23,12 @@ const NumberInput = props => {
       newNumber = formatter(newNumber);
     }
 
-    if (onChange) {
-      onChange(newNumber);
-    } else {
-      setNumber(newNumber);
+    if (resultValue !== newNumber) {
+      if (onChange) {
+        onChange(newNumber);
+      } else {
+        setNumber(newNumber);
+      }
     }
   };
 
@@ -39,7 +41,7 @@ const NumberInput = props => {
       }
     }
 
-    onBlur && onBlur();
+    onBlur && onBlur(resultValue);
   };
 
   return (
