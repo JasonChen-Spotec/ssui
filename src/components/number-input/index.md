@@ -19,3 +19,4 @@ group:
 | --- | --- | --- | --- |
 | numberType | 规定输入数据的类型，`int`, `float` | String | `int` |
 | precision | 精度，只对`float`有效 | Number | 2 |
+| enableMinus | 是否允许输入负数 | Boolean | false |
