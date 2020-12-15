@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
-import { InputNumber } from 'antd';
+import { InputNumber, message } from 'antd';
 import { SketchPicker } from 'react-color';
-import { message } from 'antd';
 import iconsList from './iconsList';
 import './index.less';
 
