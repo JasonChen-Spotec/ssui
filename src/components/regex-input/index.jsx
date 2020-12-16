@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import Input from 'antd/lib/input';
 import 'antd/lib/input/style';
 import parse2RegexOption from './regexOptionConverter';
@@ -16,7 +17,7 @@ const RegexInput = props => {
     const nextValue = regexes.reduce((cur, acc) => {
       const regexOption = parse2RegexOption(acc);
       if (regexOption.isValid) {
-        return regexOption.replace(regexOption.pattern, regexOption.replacement);
+        return cur.replace(regexOption.pattern, regexOption.replacement);
       }
       return cur;
     }, originalValue);
@@ -37,6 +38,15 @@ const RegexInput = props => {
 };
 
 RegexInput.displayName = 'RegexInput';
+
+RegexInput.propTypes = {
+  regexes: PropTypes.arrayOf(
+    PropTypes.oneOfType([
+      PropTypes.object,
+      PropTypes.string
+    ])
+  )
+};
 
 RegexInput.patterns = regexPatterns;
 

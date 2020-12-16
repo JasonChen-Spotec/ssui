@@ -17,6 +17,5 @@ group:
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| numberType | 规定输入数据的类型，`int`, `float` | String | `int` |
-| precision | 精度，只对`float`有效 | Number | 2 |
-| enableMinus | 是否允许输入负数 | Boolean | false |
+| regexes | 正则表达式过滤属性的数组，可以是`Regexp`, Regexp的`String` 和完整的正则过滤属性`Object` | `Array` | `[]` |
+

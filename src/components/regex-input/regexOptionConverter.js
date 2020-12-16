@@ -16,23 +16,21 @@ const parseRegex2RegexOption = (regex, options) => ({
 const parseString2RegexOption = (regexString, options) =>
   parseRegex2RegexOption(new RegExp(regexString), options);
 
-const parse2RegexOption = regexOptions => {
-  let regexOption = { isValid: false };
-  const { regex, ...options } = regexOptions;
+const parse2RegexOption = regex => {
   if (isRegExp(regex)) {
-    regexOption = parseRegex2RegexOption(regex, options);
+    return parseRegex2RegexOption(regex);
   }
   if (isString(regex)) {
-    regexOption = parseString2RegexOption(regex, options);
+    return parseString2RegexOption(regex);
   }
   if (isObject(regex)) {
-    regexOption = {
+    return {
       ...defaultOptionValues,
-      ...regex,
-      ...options
+      isValid: !!regex.pattern,
+      ...regex
     };
   }
-  return regexOption;
+  return { isValid: false };
 };
 
 export default parse2RegexOption;
