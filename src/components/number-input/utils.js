@@ -33,7 +33,7 @@ export const filterFloat = ({ value, preValue, precision, enableMinus }) => {
     return preValue;
   }
 
-  const twoDecialNumReg = new RegExp(`^(\\-)*(\\d+)\\.(\\d{${precision}}).*$`);
+  const twoDecimalNumReg = new RegExp(`^(\\-)*(\\d+)\\.(\\d{${precision}}).*$`);
 
-  return nextValue.replace(twoDecialNumReg, '$1$2.$3');
+  return nextValue.replace(twoDecimalNumReg, '$1$2.$3');
 };
