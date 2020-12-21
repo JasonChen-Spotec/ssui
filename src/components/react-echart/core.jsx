@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import useMount from 'ahooks/lib/useMount';
 import useUpdateEffect from 'ahooks/lib/useUpdateEffect';
 import classNames from 'classnames';
+import ResizeObserver from 'resize-observer-polyfill';
 
 const ReactEchartCore = props => {
   const { className, option, style, echarts, notMerge, lazyUpdate,
