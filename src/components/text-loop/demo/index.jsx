@@ -1,5 +1,5 @@
 import React from 'react';
-import TextLoop from 'react-text-loop';
+import TextLoop from 'assui/lib/components/text-loop';
 
 const Base = () => (
   <div>

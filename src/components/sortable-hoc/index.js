@@ -1,5 +1,8 @@
-import Sortable, { arrayMove } from 'react-sortable-hoc';
+import { sortableContainer, sortableElement, sortableHandle, arrayMove } from 'react-sortable-hoc';
 
-export default Sortable;
-
-export { arrayMove };
+export {
+  arrayMove,
+  sortableContainer,
+  sortableElement,
+  sortableHandle
+};

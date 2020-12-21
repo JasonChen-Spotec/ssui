@@ -1,9 +1,5 @@
 import React, { Component } from 'react';
-import {
-  sortableContainer,
-  sortableElement,
-  sortableHandle
-} from 'react-sortable-hoc';
+import { sortableContainer, sortableElement, sortableHandle } from 'assui/lib/components/sortable-hoc';
 import arrayMove from 'array-move';
 
 const DragHandle = sortableHandle(() => <span>::</span>);
@@ -32,7 +28,7 @@ export default class App extends Component {
 
   render() {
     const { items } = this.state;
-    console.log('items', items)
+    console.log('items', items);
     return (
       <SortableContainer onSortEnd={this.onSortEnd} useDragHandle>
         {items.map((value, index) => (

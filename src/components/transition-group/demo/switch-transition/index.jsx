@@ -1,6 +1,6 @@
 import React from 'react';
-import { SwitchTransition, CSSTransition } from 'react-transition-group';
 import { Button, Radio } from 'antd';
+import { SwitchTransition, CSSTransition } from 'assui/lib/components/transition-group';
 import './index.css';
 
 export default function App() {

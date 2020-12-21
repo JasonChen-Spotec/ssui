@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { sortableContainer, sortableElement } from 'react-sortable-hoc';
-import arrayMove from 'array-move';
+import { sortableContainer, sortableElement, arrayMove } from 'assui/lib/components/sortable-hoc';
 
 const SortableItem = sortableElement(({ value }) => <li>{value}</li>);
 
