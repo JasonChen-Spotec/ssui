@@ -1,18 +1,18 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import RichTextEditor from '../index';
-import createXMLHttpUploadAdapterPlugin from '../editor/createXMLHttpUploadAdaptor';
 
-const uploadAdapter = createXMLHttpUploadAdapterPlugin({
-  url: 'http://34.87.87.52:9000/api/image/upload',
-  handleUploadResponse: response => {
+const uploadOptions = {
+  uploadUrl: 'http://34.87.87.52:9000/api/image/upload',
+  handleUploadSuccess: response => {
     const { body: { fileId } } = response;
     return {
       default: `http://34.87.87.52:9000/api/image/${fileId}`
     };
   }
-});
+};
 
-const Index = () => {
+const RichTextEditorDemo = () => {
+
   const onReady = editor => {
     console.log('=== editor', editor);
   };
@@ -21,19 +21,23 @@ const Index = () => {
     console.error('===', errorObject);
   };
 
-  const config = {
-    // extraPlugins: [ uploadAdapter ]
+  const editorProps = {
+    language: 'zh-cn',
+    placeholder: 'This is a rich-text editor.',
+    uploadOptions
   };
 
   return (
     <RichTextEditor
-      config={config}
+      minHeight={'200px'}
+      maxHeight={'400px'}
       onReady={onReady}
       onError={onError}
+      config={editorProps}
     />
   );
 };
 
-Index.displayName = 'Index';
+RichTextEditorDemo.displayName = 'RichTextEditorDemo';
 
-export default Index;
+export default RichTextEditorDemo;
