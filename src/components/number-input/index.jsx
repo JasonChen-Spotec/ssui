@@ -25,9 +25,9 @@ const NumberInput = props => {
 
     if (resultValue !== newNumber) {
       if (onChange) {
-        onChange(newNumber);
+        onChange(+newNumber);
       } else {
-        setNumber(newNumber);
+        setNumber(+newNumber);
       }
     }
   };
@@ -41,7 +41,7 @@ const NumberInput = props => {
       }
     }
 
-    onBlur && onBlur(resultValue);
+    onBlur && onBlur(+resultValue);
   };
 
   return (
