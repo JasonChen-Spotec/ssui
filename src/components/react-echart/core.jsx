@@ -28,7 +28,7 @@ const ReactEchartCore = props => {
   };
 
   const initEcharts = () => {
-    chartRef.current = echarts.init(chartDomRef.current);
+    chartRef.current = echarts.init(chartDomRef.current, theme, opts);
   };
 
   const renderEchartDom = () => {

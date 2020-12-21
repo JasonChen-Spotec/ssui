@@ -12,16 +12,18 @@ group:
 ## 1. 使用默认全量导入的echarts
 <code hideActions='["CSB", "EXTERNAL"]' src="./demo/index.jsx" />
 
-
-## 公共API
+## 公共API(core)
 属性如下
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
+| echarts | 原生echarts对象 | echart | core是空， index是全量echarts |
 | option | `echartsInstance.setOption` 第一个参数(option) | Object | - |
 | notMerge | `echartsInstance.setOption` 第二个参数(notMerge) | Boolean | `false` |
 | lazyUpdate | `echartsInstance.setOption` 第三个参数(lazyUpdate) | Boolean | `false` |
 | onEvents | `echartsInstance.on` 需要监听的事件函数 | Object | {} |
+| className | css class name | String | - |
+| style | 内联样式 | Object | - |
 
 
 ## 1. 默认全量导入echarts
@@ -30,14 +32,7 @@ group:
 import React from 'react';
 import ReactEchart from 'assui/lib/components/react-echart'
 
-<ReactEchart
-  option={this.getOption()}
-  notMerge={true}
-  lazyUpdate={true}
-  theme={"theme_name"}
-  onChartReady={this.onChartReadyCallback}
-  onEvents={EventsDict}
-  opts={} />
+<ReactEchart option={option} />
 ```
 ## 2. 导入需要的echarts modules，减小打包大小
 
@@ -90,13 +85,5 @@ import 'echarts/lib/component/title';
 // import 'zrender/lib/vml/vml';
 
 // The usage of ReactEchartsCore are same with above.
-<ReactEchartsCore
-  echarts={echarts}
-  option={this.getOption()}
-  notMerge={true}
-  lazyUpdate={true}
-  theme={"theme_name"}
-  onChartReady={this.onChartReadyCallback}
-  onEvents={EventsDict}
-  opts={} />
+<ReactEchartsCore echarts={echarts} option={this.getOption()}
 ```
