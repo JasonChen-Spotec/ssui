@@ -60,4 +60,5 @@ function CirleComplete(componentProps) {
   return <Icon {...componentProps} component={IconNode} />;
 }
 
+CirleComplete.displayName = "CirleComplete";
 export default CirleComplete;

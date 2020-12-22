@@ -14,4 +14,5 @@ function CoinFilled(componentProps) {
   return <Icon {...componentProps} component={IconNode} />;
 }
 
+CoinFilled.displayName = "CoinFilled";
 export default CoinFilled;

@@ -133,4 +133,5 @@ function NoData(componentProps) {
   return <Icon {...componentProps} component={IconNode} />;
 }
 
+NoData.displayName = "NoData";
 export default NoData;

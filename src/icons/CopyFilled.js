@@ -18,4 +18,5 @@ function CopyFilled(componentProps) {
   return <Icon {...componentProps} component={IconNode} />;
 }
 
+CopyFilled.displayName = "CopyFilled";
 export default CopyFilled;

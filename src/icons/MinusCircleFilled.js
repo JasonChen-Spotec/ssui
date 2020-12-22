@@ -14,4 +14,5 @@ function MinusCircleFilled(componentProps) {
   return <Icon {...componentProps} component={IconNode} />;
 }
 
+MinusCircleFilled.displayName = "MinusCircleFilled";
 export default MinusCircleFilled;

@@ -14,4 +14,5 @@ function PlusOutlined(componentProps) {
   return <Icon {...componentProps} component={IconNode} />;
 }
 
+PlusOutlined.displayName = "PlusOutlined";
 export default PlusOutlined;

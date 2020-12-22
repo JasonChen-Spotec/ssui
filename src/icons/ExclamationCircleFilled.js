@@ -21,4 +21,5 @@ function ExclamationCircleFilled(componentProps) {
   return <Icon {...componentProps} component={IconNode} />;
 }
 
+ExclamationCircleFilled.displayName = "ExclamationCircleFilled";
 export default ExclamationCircleFilled;

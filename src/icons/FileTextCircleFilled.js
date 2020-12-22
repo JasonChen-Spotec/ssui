@@ -19,4 +19,5 @@ function FileTextCircleFilled(componentProps) {
   return <Icon {...componentProps} component={IconNode} />;
 }
 
+FileTextCircleFilled.displayName = "FileTextCircleFilled";
 export default FileTextCircleFilled;

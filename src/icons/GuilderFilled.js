@@ -14,4 +14,5 @@ function GuilderFilled(componentProps) {
   return <Icon {...componentProps} component={IconNode} />;
 }
 
+GuilderFilled.displayName = "GuilderFilled";
 export default GuilderFilled;

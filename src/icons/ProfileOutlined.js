@@ -18,4 +18,5 @@ function ProfileOutlined(componentProps) {
   return <Icon {...componentProps} component={IconNode} />;
 }
 
+ProfileOutlined.displayName = "ProfileOutlined";
 export default ProfileOutlined;

@@ -60,4 +60,5 @@ function UpwardArrow(componentProps) {
   return <Icon {...componentProps} component={IconNode} />;
 }
 
+UpwardArrow.displayName = "UpwardArrow";
 export default UpwardArrow;

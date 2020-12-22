@@ -60,4 +60,5 @@ function CirleCalendar(componentProps) {
   return <Icon {...componentProps} component={IconNode} />;
 }
 
+CirleCalendar.displayName = "CirleCalendar";
 export default CirleCalendar;

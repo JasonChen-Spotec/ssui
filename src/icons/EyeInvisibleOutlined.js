@@ -14,4 +14,5 @@ function EyeInvisibleOutlined(componentProps) {
   return <Icon {...componentProps} component={IconNode} />;
 }
 
+EyeInvisibleOutlined.displayName = "EyeInvisibleOutlined";
 export default EyeInvisibleOutlined;

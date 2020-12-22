@@ -60,4 +60,5 @@ function CirleMoney(componentProps) {
   return <Icon {...componentProps} component={IconNode} />;
 }
 
+CirleMoney.displayName = "CirleMoney";
 export default CirleMoney;

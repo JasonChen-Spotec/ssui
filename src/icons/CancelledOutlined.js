@@ -14,4 +14,5 @@ function CancelledOutlined(componentProps) {
   return <Icon {...componentProps} component={IconNode} />;
 }
 
+CancelledOutlined.displayName = "CancelledOutlined";
 export default CancelledOutlined;

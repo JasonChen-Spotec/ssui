@@ -14,4 +14,5 @@ function FileSearchOutlined(componentProps) {
   return <Icon {...componentProps} component={IconNode} />;
 }
 
+FileSearchOutlined.displayName = "FileSearchOutlined";
 export default FileSearchOutlined;

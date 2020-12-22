@@ -1,16 +1,17 @@
 function defaultTemplate(
   { template },
   opts,
-  { imports, interfaces, componentName, props, jsx, exports },
+  { imports, interfaces, componentName, props, jsx, exports }
 ) {
-  const plugins = ['jsx']
+  const plugins = ['jsx'];
   if (opts.typescript) {
-    plugins.push('typescript')
+    plugins.push('typescript');
   }
 
-  exports.declaration.name = exports.declaration.name.replace('Svg', '')
-  componentName.name = componentName.name.replace('Svg', '')
-  const typeScriptTpl = template.smart({ plugins })
+  exports.declaration.name = exports.declaration.name.replace('Svg', '');
+  componentName.name = componentName.name.replace('Svg', '');
+  const typeScriptTpl = template.smart({ plugins });
+
   return typeScriptTpl.ast`${imports}
     ${interfaces}
     import Icon from 'assui/lib/components/Icon';
@@ -20,7 +21,9 @@ function defaultTemplate(
       return <Icon {...componentProps} component={IconNode} />;
     }
 
+    ${componentName}.displayName = '${componentName.name}'
+
     ${exports}
-  `
+  `;
 }
-module.exports = defaultTemplate
+module.exports = defaultTemplate;

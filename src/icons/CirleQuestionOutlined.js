@@ -22,4 +22,5 @@ function CirleQuestionOutlined(componentProps) {
   return <Icon {...componentProps} component={IconNode} />;
 }
 
+CirleQuestionOutlined.displayName = "CirleQuestionOutlined";
 export default CirleQuestionOutlined;

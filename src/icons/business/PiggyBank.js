@@ -18,4 +18,5 @@ function PiggyBank(componentProps) {
   return <Icon {...componentProps} component={IconNode} />;
 }
 
+PiggyBank.displayName = "PiggyBank";
 export default PiggyBank;

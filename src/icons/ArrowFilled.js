@@ -11,4 +11,5 @@ function ArrowFilled(componentProps) {
   return <Icon {...componentProps} component={IconNode} />;
 }
 
+ArrowFilled.displayName = "ArrowFilled";
 export default ArrowFilled;

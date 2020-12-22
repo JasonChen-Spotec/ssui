@@ -14,4 +14,5 @@ function EmailCircleFilled(componentProps) {
   return <Icon {...componentProps} component={IconNode} />;
 }
 
+EmailCircleFilled.displayName = "EmailCircleFilled";
 export default EmailCircleFilled;

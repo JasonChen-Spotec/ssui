@@ -52,4 +52,5 @@ function CirleDoc(componentProps) {
   return <Icon {...componentProps} component={IconNode} />;
 }
 
+CirleDoc.displayName = "CirleDoc";
 export default CirleDoc;

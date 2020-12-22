@@ -22,4 +22,5 @@ function FileDoneOutlined(componentProps) {
   return <Icon {...componentProps} component={IconNode} />;
 }
 
+FileDoneOutlined.displayName = "FileDoneOutlined";
 export default FileDoneOutlined;

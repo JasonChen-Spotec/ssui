@@ -13,4 +13,5 @@ function EllipsisOutlined(componentProps) {
   return <Icon {...componentProps} component={IconNode} />;
 }
 
+EllipsisOutlined.displayName = "EllipsisOutlined";
 export default EllipsisOutlined;

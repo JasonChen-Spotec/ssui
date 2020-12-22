@@ -18,4 +18,5 @@ function ArrowOutsideCircleOutlined(componentProps) {
   return <Icon {...componentProps} component={IconNode} />;
 }
 
+ArrowOutsideCircleOutlined.displayName = "ArrowOutsideCircleOutlined";
 export default ArrowOutsideCircleOutlined;

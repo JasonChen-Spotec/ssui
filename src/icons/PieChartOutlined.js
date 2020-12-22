@@ -14,4 +14,5 @@ function PieChartOutlined(componentProps) {
   return <Icon {...componentProps} component={IconNode} />;
 }
 
+PieChartOutlined.displayName = "PieChartOutlined";
 export default PieChartOutlined;

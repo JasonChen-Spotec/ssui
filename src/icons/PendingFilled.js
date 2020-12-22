@@ -14,4 +14,5 @@ function PendingFilled(componentProps) {
   return <Icon {...componentProps} component={IconNode} />;
 }
 
+PendingFilled.displayName = "PendingFilled";
 export default PendingFilled;

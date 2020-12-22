@@ -14,4 +14,5 @@ function UserAddFilled(componentProps) {
   return <Icon {...componentProps} component={IconNode} />;
 }
 
+UserAddFilled.displayName = "UserAddFilled";
 export default UserAddFilled;

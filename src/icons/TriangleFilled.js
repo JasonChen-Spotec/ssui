@@ -14,4 +14,5 @@ function TriangleFilled(componentProps) {
   return <Icon {...componentProps} component={IconNode} />;
 }
 
+TriangleFilled.displayName = "TriangleFilled";
 export default TriangleFilled;

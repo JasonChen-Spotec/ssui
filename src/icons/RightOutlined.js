@@ -14,4 +14,5 @@ function RightOutlined(componentProps) {
   return <Icon {...componentProps} component={IconNode} />;
 }
 
+RightOutlined.displayName = "RightOutlined";
 export default RightOutlined;

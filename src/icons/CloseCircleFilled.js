@@ -14,4 +14,5 @@ function CloseCircleFilled(componentProps) {
   return <Icon {...componentProps} component={IconNode} />;
 }
 
+CloseCircleFilled.displayName = "CloseCircleFilled";
 export default CloseCircleFilled;

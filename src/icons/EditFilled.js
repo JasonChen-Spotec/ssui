@@ -14,4 +14,5 @@ function EditFilled(componentProps) {
   return <Icon {...componentProps} component={IconNode} />;
 }
 
+EditFilled.displayName = "EditFilled";
 export default EditFilled;

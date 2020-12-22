@@ -14,4 +14,5 @@ function EmailFilled(componentProps) {
   return <Icon {...componentProps} component={IconNode} />;
 }
 
+EmailFilled.displayName = "EmailFilled";
 export default EmailFilled;

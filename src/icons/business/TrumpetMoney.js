@@ -30,4 +30,5 @@ function TrumpetMoney(componentProps) {
   return <Icon {...componentProps} component={IconNode} />;
 }
 
+TrumpetMoney.displayName = "TrumpetMoney";
 export default TrumpetMoney;

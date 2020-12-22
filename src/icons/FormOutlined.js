@@ -18,4 +18,5 @@ function FormOutlined(componentProps) {
   return <Icon {...componentProps} component={IconNode} />;
 }
 
+FormOutlined.displayName = "FormOutlined";
 export default FormOutlined;

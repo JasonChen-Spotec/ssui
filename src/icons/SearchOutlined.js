@@ -14,4 +14,5 @@ function SearchOutlined(componentProps) {
   return <Icon {...componentProps} component={IconNode} />;
 }
 
+SearchOutlined.displayName = "SearchOutlined";
 export default SearchOutlined;

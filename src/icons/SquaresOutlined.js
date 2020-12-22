@@ -14,4 +14,5 @@ function SquaresOutlined(componentProps) {
   return <Icon {...componentProps} component={IconNode} />;
 }
 
+SquaresOutlined.displayName = "SquaresOutlined";
 export default SquaresOutlined;

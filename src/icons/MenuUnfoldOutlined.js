@@ -14,4 +14,5 @@ function MenuUnfoldOutlined(componentProps) {
   return <Icon {...componentProps} component={IconNode} />;
 }
 
+MenuUnfoldOutlined.displayName = "MenuUnfoldOutlined";
 export default MenuUnfoldOutlined;

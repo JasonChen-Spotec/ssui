@@ -14,4 +14,5 @@ function PhoneCircleFilled(componentProps) {
   return <Icon {...componentProps} component={IconNode} />;
 }
 
+PhoneCircleFilled.displayName = "PhoneCircleFilled";
 export default PhoneCircleFilled;

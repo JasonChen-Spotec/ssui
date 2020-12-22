@@ -14,4 +14,5 @@ function OrganizationFilled(componentProps) {
   return <Icon {...componentProps} component={IconNode} />;
 }
 
+OrganizationFilled.displayName = "OrganizationFilled";
 export default OrganizationFilled;

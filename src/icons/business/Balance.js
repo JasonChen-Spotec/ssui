@@ -50,4 +50,5 @@ function Balance(componentProps) {
   return <Icon {...componentProps} component={IconNode} />;
 }
 
+Balance.displayName = "Balance";
 export default Balance;

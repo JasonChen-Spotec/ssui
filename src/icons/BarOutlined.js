@@ -14,4 +14,5 @@ function BarOutlined(componentProps) {
   return <Icon {...componentProps} component={IconNode} />;
 }
 
+BarOutlined.displayName = "BarOutlined";
 export default BarOutlined;

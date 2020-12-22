@@ -15,4 +15,5 @@ function PhoneFilled(componentProps) {
   return <Icon {...componentProps} component={IconNode} />;
 }
 
+PhoneFilled.displayName = "PhoneFilled";
 export default PhoneFilled;

@@ -30,4 +30,5 @@ function PersonMoney(componentProps) {
   return <Icon {...componentProps} component={IconNode} />;
 }
 
+PersonMoney.displayName = "PersonMoney";
 export default PersonMoney;

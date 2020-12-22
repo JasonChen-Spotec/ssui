@@ -14,4 +14,5 @@ function DownloadFilled(componentProps) {
   return <Icon {...componentProps} component={IconNode} />;
 }
 
+DownloadFilled.displayName = "DownloadFilled";
 export default DownloadFilled;

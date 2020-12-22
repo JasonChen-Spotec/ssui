@@ -20,4 +20,5 @@ function CloseOutlined(componentProps) {
   return <Icon {...componentProps} component={IconNode} />;
 }
 
+CloseOutlined.displayName = "CloseOutlined";
 export default CloseOutlined;

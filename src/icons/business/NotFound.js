@@ -544,4 +544,5 @@ function NotFound(componentProps) {
   return <Icon {...componentProps} component={IconNode} />;
 }
 
+NotFound.displayName = "NotFound";
 export default NotFound;

@@ -65,4 +65,5 @@ function PolygonMoney(componentProps) {
   return <Icon {...componentProps} component={IconNode} />;
 }
 
+PolygonMoney.displayName = "PolygonMoney";
 export default PolygonMoney;

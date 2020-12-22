@@ -13,4 +13,5 @@ function CycleArrowFilled(componentProps) {
   return <Icon {...componentProps} component={IconNode} />;
 }
 
+CycleArrowFilled.displayName = "CycleArrowFilled";
 export default CycleArrowFilled;

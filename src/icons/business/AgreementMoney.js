@@ -18,4 +18,5 @@ function AgreementMoney(componentProps) {
   return <Icon {...componentProps} component={IconNode} />;
 }
 
+AgreementMoney.displayName = "AgreementMoney";
 export default AgreementMoney;

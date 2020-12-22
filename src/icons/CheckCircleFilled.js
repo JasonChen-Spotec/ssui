@@ -14,4 +14,5 @@ function CheckCircleFilled(componentProps) {
   return <Icon {...componentProps} component={IconNode} />;
 }
 
+CheckCircleFilled.displayName = "CheckCircleFilled";
 export default CheckCircleFilled;

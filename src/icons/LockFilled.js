@@ -14,4 +14,5 @@ function LockFilled(componentProps) {
   return <Icon {...componentProps} component={IconNode} />;
 }
 
+LockFilled.displayName = "LockFilled";
 export default LockFilled;

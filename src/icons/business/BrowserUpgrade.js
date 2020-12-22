@@ -204,4 +204,5 @@ function BrowserUpgrade(componentProps) {
   return <Icon {...componentProps} component={IconNode} />;
 }
 
+BrowserUpgrade.displayName = "BrowserUpgrade";
 export default BrowserUpgrade;

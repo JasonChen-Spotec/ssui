@@ -14,4 +14,5 @@ function CardFilled(componentProps) {
   return <Icon {...componentProps} component={IconNode} />;
 }
 
+CardFilled.displayName = "CardFilled";
 export default CardFilled;

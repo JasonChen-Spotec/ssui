@@ -14,4 +14,5 @@ function PieOutlined(componentProps) {
   return <Icon {...componentProps} component={IconNode} />;
 }
 
+PieOutlined.displayName = "PieOutlined";
 export default PieOutlined;

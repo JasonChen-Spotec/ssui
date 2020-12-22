@@ -18,4 +18,5 @@ function CoinCirle(componentProps) {
   return <Icon {...componentProps} component={IconNode} />;
 }
 
+CoinCirle.displayName = "CoinCirle";
 export default CoinCirle;

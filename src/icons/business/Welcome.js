@@ -2096,4 +2096,5 @@ function Welcome(componentProps) {
   return <Icon {...componentProps} component={IconNode} />;
 }
 
+Welcome.displayName = "Welcome";
 export default Welcome;

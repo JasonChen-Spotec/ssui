@@ -18,4 +18,5 @@ function CirleLockFilled(componentProps) {
   return <Icon {...componentProps} component={IconNode} />;
 }
 
+CirleLockFilled.displayName = "CirleLockFilled";
 export default CirleLockFilled;

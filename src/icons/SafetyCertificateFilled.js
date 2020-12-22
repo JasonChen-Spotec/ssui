@@ -14,4 +14,5 @@ function SafetyCertificateFilled(componentProps) {
   return <Icon {...componentProps} component={IconNode} />;
 }
 
+SafetyCertificateFilled.displayName = "SafetyCertificateFilled";
 export default SafetyCertificateFilled;

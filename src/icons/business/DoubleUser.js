@@ -19,4 +19,5 @@ function DoubleUser(componentProps) {
   return <Icon {...componentProps} component={IconNode} />;
 }
 
+DoubleUser.displayName = "DoubleUser";
 export default DoubleUser;

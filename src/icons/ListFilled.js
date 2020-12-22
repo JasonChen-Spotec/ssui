@@ -14,4 +14,5 @@ function ListFilled(componentProps) {
   return <Icon {...componentProps} component={IconNode} />;
 }
 
+ListFilled.displayName = "ListFilled";
 export default ListFilled;

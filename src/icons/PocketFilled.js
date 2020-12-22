@@ -18,4 +18,5 @@ function PocketFilled(componentProps) {
   return <Icon {...componentProps} component={IconNode} />;
 }
 
+PocketFilled.displayName = "PocketFilled";
 export default PocketFilled;

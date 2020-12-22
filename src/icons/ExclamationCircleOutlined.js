@@ -18,4 +18,5 @@ function ExclamationCircleOutlined(componentProps) {
   return <Icon {...componentProps} component={IconNode} />;
 }
 
+ExclamationCircleOutlined.displayName = "ExclamationCircleOutlined";
 export default ExclamationCircleOutlined;
