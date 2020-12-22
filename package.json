@@ -40,6 +40,7 @@
     "classnames": "^2.2.6",
     "lodash": "^4.17.20",
     "qrcode": "^1.4.4",
+    "react-image-crop": "^8.6.6",
     "react-sortable-hoc": "^1.11.0",
     "react-text-loop": "^2.3.0",
     "react-transition-group": "^4.4.1",
