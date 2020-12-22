@@ -31,10 +31,12 @@
     "release-it": "^14.0.4"
   },
   "dependencies": {
+    "@ckeditor/ckeditor5-react": "^3.0.0",
     "ahooks": "^2.9.1",
     "antd": "^4.6.6",
     "array-move": "^3.0.1",
     "canvas-to-image": "^2.2.0",
+    "ckeditor-cm": "^1.0.2",
     "classnames": "^2.2.6",
     "lodash": "^4.17.20",
     "qrcode": "^1.4.4",
