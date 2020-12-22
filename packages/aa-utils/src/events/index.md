@@ -18,7 +18,7 @@ group:
  */
 import React, { useEffect } from 'react';
 import { Button, message } from 'antd';
-import EventEmitter from 'aa-utils/src/events';
+import EventEmitter from 'aa-utils/lib/events';
 
 const ee = new EventEmitter()
 

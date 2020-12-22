@@ -14,7 +14,7 @@ const Demo = () => {
 
         <Descriptions.Item label="2332.2(最小保留2位小数)">
           {
-            numberUtils.formatNumber(2332.2, {
+            numberUtils.formatNumber(2332, {
               minimumFractionDigits: 2,
               useGrouping: false
             })
