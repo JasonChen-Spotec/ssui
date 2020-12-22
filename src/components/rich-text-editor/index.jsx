@@ -59,7 +59,7 @@ const RichTextEditor = props => {
 
   let finalConfig = Editor.defaultConfig;
   if (generateConfig) {
-    finalConfig = generateConfig(finalConfig);
+    finalConfig = generateConfig(finalConfig, config);
   } else {
     const configProps = pickBy(config, isValidValue);
     finalConfig = Object.assign({}, finalConfig, configProps);

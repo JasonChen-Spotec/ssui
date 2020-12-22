@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useState } from 'react';
 import RichTextEditor from '../index';
 
 const uploadOptions = {
@@ -12,26 +12,32 @@ const uploadOptions = {
 };
 
 const RichTextEditorDemo = () => {
-
+  const [data, setData] = useState('This is default data value.');
   const onReady = editor => {
     console.log('=== editor', editor);
   };
+
+  const onChange = (e, editor) => {
+    const editorData = editor.getData();
+    console.log('=== demo2 data', editorData);
+    setData(editorData)
+  }
 
   const onError = errorObject => {
     console.error('===', errorObject);
   };
 
   const editorProps = {
-    language: 'zh-cn',
-    placeholder: 'This is a rich-text editor.',
     uploadOptions
   };
 
   return (
     <RichTextEditor
+      data={data}
       minHeight={'200px'}
       maxHeight={'400px'}
       onReady={onReady}
+      onChange={onChange}
       onError={onError}
       config={editorProps}
     />
