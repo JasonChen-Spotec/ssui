@@ -1,6 +1,6 @@
 import React from 'react';
 import { Input, Select, Form, Button, Row, Col } from 'antd';
-import scrollIntoView from '../';
+import scrollIntoView from 'aa-utils/lib/scrollIntoView';
 import './index.less';
 
 const layout = {
@@ -10,6 +10,8 @@ const layout = {
 const tailLayout = {
   wrapperCol: { offset: 8, span: 16 },
 };
+
+const { Option } = Select;
 
 const Demo = () => {
   const onFinish = (values) => {

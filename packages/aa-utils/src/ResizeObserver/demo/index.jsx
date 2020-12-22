@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import ResizeObserver from 'aa-utils/src/ResizeObserver';
+import ResizeObserver from 'aa-utils/lib/ResizeObserver';
 
 export default () => {
   const [ elementContentRect, setElementContentRect ] = useState({});
