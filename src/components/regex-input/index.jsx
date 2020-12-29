@@ -7,7 +7,7 @@ import * as regexPatterns from './regexPattern';
 
 const RegexInput = props => {
   const { regexes, value, defaultValue, onChange, ...rest } = props;
-  const isControlled = value === undefined;
+  const isControlled = value !== undefined;
   const [stateValue, setStateValue] = useState(isControlled ? value : defaultValue);
   const resultValue = isControlled ? value : stateValue;
 
