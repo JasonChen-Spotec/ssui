@@ -1,5 +1,5 @@
 import React from 'react';
-import { formatCountdown } from 'aa-utils/src/formatCountdown';
+import { formatCountdown } from 'aa-utils/lib/formatCountdown';
 
 const Demo = () => {
   const deadline = 1000 * 60 * 60 * 24 * 2 + 1000 * 30;; // Moment is also OK
