@@ -2,6 +2,7 @@
 export default {
   base: '/aa-utils',
   publicPath: '/aa-utils/',
+  exportStatic: {},
   favicon: '/favicon.ico',
   mode: 'site',
   logo: '/reacticon.svg',
