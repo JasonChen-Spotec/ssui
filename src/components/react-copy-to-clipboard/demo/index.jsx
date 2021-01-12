@@ -1,5 +1,5 @@
-import { CopyToClipboard } from 'react-copy-to-clipboard';
-
+import React from 'react';
+import CopyToClipboard from 'assui/lib/components/react-copy-to-clipboard';
 
 export default class App extends React.PureComponent {
   state = { value: 'some\ntext', copied: false };
@@ -28,7 +28,7 @@ export default class App extends React.PureComponent {
 
         <section className="section">
           <h2>1. Button</h2>
-          <CopyToClipboard onCopy={this.onCopy} text={value}>
+          <CopyToClipboard onCopy={this.onCopy} text={value} tooltipTitle="copy success">
             <button type="button">
               Copy to clipboard with button
             </button>
@@ -37,7 +37,7 @@ export default class App extends React.PureComponent {
 
         <section className="section">
           <h2>2. Span</h2>
-          <CopyToClipboard onCopy={this.onCopy} text={value}>
+          <CopyToClipboard onCopy={this.onCopy} text={value} tooltipTitle="copy success">
             <span>Copy to clipboard with span</span>
           </CopyToClipboard>
         </section>
@@ -47,7 +47,9 @@ export default class App extends React.PureComponent {
           <CopyToClipboard
             onCopy={this.onCopy}
             options={{ message: 'Whoa!' }}
-            text={value}>
+            text={value}
+            tooltipTitle="copy success"
+          >
             <button type="button" onClick={this.onClick}>
               Copy to clipboard with onClick prop
             </button>
