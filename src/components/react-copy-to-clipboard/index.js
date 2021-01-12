@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
-import { Tooltip } from 'antd';
+import Tooltip from 'antd/lib/tooltip';
+import 'antd/lib/tooltip/style';
 
 const CopyToClipboardWrap = ({ children, text, tooltipTitle, onCopySuccess, tooltipProps, ...restProps }) => {
   const [ tooltipVisible, setTooltipVisible ] = useState(false);
