@@ -7,49 +7,24 @@ function Calendar(componentProps) {
       id="calendar_svg__\u56FE\u5C42_1"
       x={0}
       y={0}
-      viewBox="0 0 71.9 72.2"
+      viewBox="0 0 16 16"
       xmlSpace="preserve"
       {...props}
     >
-      <style>
-        {".calendar_svg__st4{fill:#285a83}.calendar_svg__st5{fill:#ef6f53}"}
-      </style>
-      <defs>
-        <path id="calendar_svg__SVGID_1_" d="M-931.6-750.8h1920v1578h-1920z" />
-      </defs>
-      <clipPath id="calendar_svg__SVGID_2_">
-        <use xlinkHref="#calendar_svg__SVGID_1_" overflow="visible" />
-      </clipPath>
-      <defs>
-        <path id="calendar_svg__SVGID_3_" d="M-933.5-739.7h1920v1578h-1920z" />
-      </defs>
-      <clipPath id="calendar_svg__SVGID_4_">
-        <use xlinkHref="#calendar_svg__SVGID_3_" overflow="visible" />
-      </clipPath>
-      <g>
-        <path
-          className="calendar_svg__st4"
-          d="M35.9 72C16 72-.1 55.9-.1 36S16 0 35.9 0s36 16.1 36 36-16.1 36-36 36zm0-70c-18.7 0-34 15.3-34 34s15.3 34 34 34 34-15.3 34-34-15.2-34-34-34z"
-        />
-      </g>
-      <g>
-        <path
-          className="calendar_svg__st4"
-          d="M50 52.9H22c-1.9 0-3.5-1.6-3.5-3.5V26.1c0-1.9 1.6-3.5 3.5-3.5h28c1.9 0 3.5 1.6 3.5 3.5v23.3c-.1 1.9-1.6 3.5-3.5 3.5zM21.9 24.6c-.8 0-1.5.7-1.5 1.5v23.3c0 .8.7 1.5 1.5 1.5h28c.8 0 1.5-.7 1.5-1.5V26.1c0-.8-.7-1.5-1.5-1.5h-28z"
-        />
-        <path
-          className="calendar_svg__st4"
-          d="M30 28.2c-.6 0-1-.4-1-1v-7c0-.6.4-1 1-1s1 .4 1 1v7c0 .5-.5 1-1 1zM42.9 28.2c-.6 0-1-.4-1-1v-7c0-.6.4-1 1-1s1 .4 1 1v7c0 .5-.4 1-1 1zM52.4 33.6H19.5c-.6 0-1-.4-1-1s.4-1 1-1h32.9c.6 0 1 .4 1 1s-.4 1-1 1z"
-        />
-        <path
-          className="calendar_svg__st5"
-          d="M28.8 40.1h-4.4c-.6 0-1-.4-1-1s.4-1 1-1h4.4c.6 0 1 .4 1 1s-.5 1-1 1zM38.1 40.1h-4.4c-.6 0-1-.4-1-1s.4-1 1-1h4.4c.6 0 1 .4 1 1s-.4 1-1 1zM47.5 40.1h-4.4c-.6 0-1-.4-1-1s.4-1 1-1h4.4c.6 0 1 .4 1 1s-.5 1-1 1zM28.8 45.6h-4.4c-.6 0-1-.4-1-1s.4-1 1-1h4.4c.6 0 1 .4 1 1s-.5 1-1 1zM38.1 45.6h-4.4c-.6 0-1-.4-1-1s.4-1 1-1h4.4c.6 0 1 .4 1 1s-.4 1-1 1zM47.5 45.6h-4.4c-.6 0-1-.4-1-1s.4-1 1-1h4.4c.6 0 1 .4 1 1s-.5 1-1 1z"
-        />
-      </g>
+      <style>{".calendar_svg__st1{fill:#ef6f53}"}</style>
+      <path
+        d="M14.4 1.9h-3V.7c0-.3-.2-.5-.5-.5s-.5.2-.5.5v1.1h-5V.7c0-.3-.2-.5-.5-.5s-.5.2-.5.5v1.1h-3C.7 1.9 0 2.6 0 3.5v10.7c0 .9.7 1.6 1.6 1.6h12.8c.9 0 1.6-.7 1.6-1.6V3.5c0-.9-.7-1.6-1.6-1.6zm-12.8.9h3v1.1c0 .3.2.5.5.5s.5-.2.5-.5V2.8h5v1.1c0 .3.2.5.5.5s.5-.2.5-.5V2.8h3c.4 0 .7.3.7.7V6H.9V3.5c0-.4.3-.7.7-.7zm12.8 12H1.6c-.4 0-.7-.3-.7-.7V6.9h14.2v7.2c0 .4-.3.7-.7.7z"
+        fill="#285a83"
+      />
+      <path
+        className="calendar_svg__st1"
+        d="M4.7 9.9h-2c-.3 0-.5-.2-.5-.5.1-.2.3-.4.5-.4h2c.3 0 .5.2.5.4 0 .3-.2.5-.5.5zM9 9.9H7c-.3 0-.5-.2-.5-.5 0-.2.2-.4.5-.4h2c.3 0 .5.2.5.5 0 .2-.2.4-.5.4zM13.3 9.9h-2c-.3 0-.5-.2-.5-.5 0-.2.2-.4.5-.4h2c.3 0 .5.2.5.5-.1.2-.3.4-.5.4zM4.7 12.4h-2c-.3 0-.5-.2-.5-.5s.2-.5.5-.5h2c.3 0 .5.2.5.5s-.2.5-.5.5zM9 12.4H7c-.3 0-.5-.2-.5-.5s.2-.5.5-.5h2c.3 0 .5.2.5.5s-.2.5-.5.5zM13.3 12.4h-2c-.3 0-.5-.2-.5-.5s.2-.5.5-.5h2c.3 0 .5.2.5.5s-.3.5-.5.5z"
+      />
     </svg>
   );
 
   return <Icon {...componentProps} component={IconNode} />;
 }
 
+Calendar.displayName = "Calendar";
 export default Calendar;
