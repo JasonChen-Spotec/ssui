@@ -1,3 +1,5 @@
+import padEnd from 'lodash/padEnd';
+import isString from 'lodash/isString';
 import { strip, plus, minus, times, divide, round, digitLength, float2Fixed } from '../numberPrecision';
 
 class NumberUtils {
@@ -68,11 +70,45 @@ class NumberUtils {
     return formatValue;
   }
 
-  cutFloatNumber(value, precision = 3){
-    const getFloatNumReg =  (number) => new RegExp(`^(\\-)*(\\d+)\.(\\d\{${number}\}).*$`)
-    const floatNumReg = getFloatNumReg(precision);
+  formatBigFloatNumber(value, options={}){
+    const defaultOptions = {
+      useGrouping: false,
+      minimumFractionDigits: 0,
+      maximumFractionDigits: 2,
+      usePlus: false
+    };
 
-    return `${value}`.replace(floatNumReg, '$1$2.$3')
+    if (!isString(value)) {
+      throw new Error('formatBigFloatNumber error, value type must string');
+    }
+
+    const { useGrouping, minimumFractionDigits, maximumFractionDigits, usePlus, ...rest } = {...defaultOptions, ...options};
+
+    const floatNumReg = new RegExp(`^(\\-)*(\\d+)\.(\\d\*).*$`)
+
+    const prefix = `${value}`.replace(floatNumReg, '$1');
+    let decimalPart = `${value}`.replace(floatNumReg, '$3');
+    let initPart = `${value}`.replace(floatNumReg, '$2');
+
+    if (decimalPart.length > maximumFractionDigits) {
+      decimalPart = decimalPart.substring(0, maximumFractionDigits)
+    }
+
+    if (decimalPart.length < minimumFractionDigits) {
+      decimalPart = padEnd(decimalPart, minimumFractionDigits, '0')
+    }
+
+    if (useGrouping) {
+      initPart = this.formatNumber(initPart, rest)
+    }
+
+    let resultValue = `${initPart}.${decimalPart}`
+
+    if (prefix) {
+      return `${prefix}${resultValue}`;
+    }
+
+    return usePlus ? `+${resultValue}` : resultValue;
   }
 }
 

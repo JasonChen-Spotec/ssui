@@ -20,16 +20,20 @@ group:
  */
 import React from 'react';
 import { Descriptions } from 'antd'
-import numberUtils from 'aa-utils/lib/numberUtils';
+import numberUtils from 'aa-utils/src/numberUtils';
 
 export default ()=>(
   <div>
     <Descriptions column={1}>
       <Descriptions.Item label="0.252523(默认保留两位小数)">
-        {numberUtils.cutFloatNumber(-0.252523)}
-      </Descriptions.Item>
+        {
+          numberUtils.formatBigFloatNumber('-17777772377.77777', { useGrouping: true,
+          minimumFractionDigits: 8,
+          maximumFractionDigits: 8
+          })
+        } </Descriptions.Item>
       <Descriptions.Item label="0.252523(保留3位小数)">
-        {numberUtils.cutFloatNumber(-0.252523, 3)}
+        {numberUtils.formatBigFloatNumber('0.252523')}
       </Descriptions.Item>
     </Descriptions>
   </div>
