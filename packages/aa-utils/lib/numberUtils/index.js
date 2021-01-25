@@ -7,6 +7,10 @@ exports["default"] = void 0;
 
 var _objectWithoutPropertiesLoose2 = _interopRequireDefault(require("@babel/runtime/helpers/objectWithoutPropertiesLoose"));
 
+var _padEnd = _interopRequireDefault(require("lodash/padEnd"));
+
+var _isString = _interopRequireDefault(require("lodash/isString"));
+
 var _numberPrecision = require("../numberPrecision");
 
 var NumberUtils = /*#__PURE__*/function () {
@@ -94,17 +98,53 @@ var NumberUtils = /*#__PURE__*/function () {
     return formatValue;
   };
 
-  _proto.cutFloatNumber = function cutFloatNumber(value, precision) {
-    if (precision === void 0) {
-      precision = 3;
+  _proto.formatBigFloatNumber = function formatBigFloatNumber(value, options) {
+    if (options === void 0) {
+      options = {};
     }
 
-    var getFloatNumReg = function getFloatNumReg(number) {
-      return new RegExp("^(\\-)*(\\d+).(\\d{" + number + "}).*$");
+    var defaultOptions = {
+      useGrouping: false,
+      minimumFractionDigits: 0,
+      maximumFractionDigits: 2,
+      usePlus: false
     };
 
-    var floatNumReg = getFloatNumReg(precision);
-    return ("" + value).replace(floatNumReg, '$1$2.$3');
+    if (!(0, _isString["default"])(value)) {
+      throw new Error('formatBigFloatNumber error, value type must string');
+    }
+
+    var _defaultOptions$optio = Object.assign({}, defaultOptions, options),
+        useGrouping = _defaultOptions$optio.useGrouping,
+        minimumFractionDigits = _defaultOptions$optio.minimumFractionDigits,
+        maximumFractionDigits = _defaultOptions$optio.maximumFractionDigits,
+        usePlus = _defaultOptions$optio.usePlus,
+        rest = (0, _objectWithoutPropertiesLoose2["default"])(_defaultOptions$optio, ["useGrouping", "minimumFractionDigits", "maximumFractionDigits", "usePlus"]);
+
+    var floatNumReg = new RegExp("^(\\-)*(\\d+).(\\d*).*$");
+    var prefix = ("" + value).replace(floatNumReg, '$1');
+    var decimalPart = ("" + value).replace(floatNumReg, '$3');
+    var initPart = ("" + value).replace(floatNumReg, '$2');
+
+    if (decimalPart.length > maximumFractionDigits) {
+      decimalPart = decimalPart.substring(0, maximumFractionDigits);
+    }
+
+    if (decimalPart.length < minimumFractionDigits) {
+      decimalPart = (0, _padEnd["default"])(decimalPart, minimumFractionDigits, '0');
+    }
+
+    if (useGrouping) {
+      initPart = this.formatNumber(initPart, rest);
+    }
+
+    var resultValue = initPart + "." + decimalPart;
+
+    if (prefix) {
+      return "" + prefix + resultValue;
+    }
+
+    return usePlus ? "+" + resultValue : resultValue;
   };
 
   return NumberUtils;

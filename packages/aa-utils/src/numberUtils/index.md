@@ -27,7 +27,7 @@ export default ()=>(
     <Descriptions column={1}>
       <Descriptions.Item label="0.252523(默认保留两位小数)">
         {
-          numberUtils.formatBigFloatNumber('-17777772377.77777', { useGrouping: true,
+          numberUtils.formatBigFloatNumber('77777777.77777777', { useGrouping: true,
           minimumFractionDigits: 8,
           maximumFractionDigits: 8
           })
