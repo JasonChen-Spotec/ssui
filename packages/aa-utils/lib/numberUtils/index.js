@@ -111,7 +111,7 @@ var NumberUtils = /*#__PURE__*/function () {
     };
 
     if (!(0, _isString["default"])(value)) {
-      throw new Error('formatBigFloatNumber error, value type must string');
+      console.error("error: formatBigFloatNumber error, value type must string");
     }
 
     var _defaultOptions$optio = Object.assign({}, defaultOptions, options),
@@ -121,10 +121,10 @@ var NumberUtils = /*#__PURE__*/function () {
         usePlus = _defaultOptions$optio.usePlus,
         rest = (0, _objectWithoutPropertiesLoose2["default"])(_defaultOptions$optio, ["useGrouping", "minimumFractionDigits", "maximumFractionDigits", "usePlus"]);
 
-    var floatNumReg = new RegExp("^(\\-)*(\\d+).(\\d*).*$");
-    var prefix = ("" + value).replace(floatNumReg, '$1');
-    var decimalPart = ("" + value).replace(floatNumReg, '$3');
-    var initPart = ("" + value).replace(floatNumReg, '$2');
+    var list = value.split('.');
+    var prefix = list[0].charAt(0) === '-' ? '-' : '';
+    var initPart = prefix ? list[0].slice(1) : list[0];
+    var decimalPart = list[1] || '';
 
     if (decimalPart.length > maximumFractionDigits) {
       decimalPart = decimalPart.substring(0, maximumFractionDigits);
