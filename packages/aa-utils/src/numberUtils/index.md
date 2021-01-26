@@ -22,18 +22,28 @@ import React from 'react';
 import { Descriptions } from 'antd'
 import numberUtils from 'aa-utils/src/numberUtils';
 
-export default ()=>(
+export default ()=> (
   <div>
     <Descriptions column={1}>
-      <Descriptions.Item label="0.252523(默认保留两位小数)">
+      <Descriptions.Item label="1(默认保留8位小数)">
+        {
+          numberUtils.formatBigFloatNumber('1', { useGrouping: true,
+          minimumFractionDigits: 8,
+          maximumFractionDigits: 8
+          })
+        } </Descriptions.Item>
+      <Descriptions.Item label="77777777.77777777(默认保留8位小数)">
         {
           numberUtils.formatBigFloatNumber('77777777.77777777', { useGrouping: true,
           minimumFractionDigits: 8,
           maximumFractionDigits: 8
           })
         } </Descriptions.Item>
-      <Descriptions.Item label="0.252523(保留3位小数)">
+      <Descriptions.Item label="0.252523(保留2位小数)">
         {numberUtils.formatBigFloatNumber('0.252523')}
+      </Descriptions.Item>
+      <Descriptions.Item label="-0.252523(保留3位小数)">
+        {numberUtils.formatBigFloatNumber('-12.252523')}
       </Descriptions.Item>
     </Descriptions>
   </div>

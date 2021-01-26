@@ -70,6 +70,7 @@ class NumberUtils {
     return formatValue;
   }
 
+
   formatBigFloatNumber(value, options={}){
     const defaultOptions = {
       useGrouping: false,
@@ -79,16 +80,15 @@ class NumberUtils {
     };
 
     if (!isString(value)) {
-      throw new Error('formatBigFloatNumber error, value type must string');
+      console.error(`error: formatBigFloatNumber error, value type must string`);
     }
 
     const { useGrouping, minimumFractionDigits, maximumFractionDigits, usePlus, ...rest } = {...defaultOptions, ...options};
 
-    const floatNumReg = new RegExp(`^(\\-)*(\\d+)\.(\\d\*).*$`)
-
-    const prefix = `${value}`.replace(floatNumReg, '$1');
-    let decimalPart = `${value}`.replace(floatNumReg, '$3');
-    let initPart = `${value}`.replace(floatNumReg, '$2');
+    const list = value.split('.');
+    const prefix = list[0].charAt(0) === '-' ? '-' : '';
+    let initPart = prefix ? list[0].slice(1) : list[0];
+    let decimalPart = list[1] || '';
 
     if (decimalPart.length > maximumFractionDigits) {
       decimalPart = decimalPart.substring(0, maximumFractionDigits)
