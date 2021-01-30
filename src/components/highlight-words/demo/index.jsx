@@ -1,5 +1,5 @@
 import React from 'react';
-import HighlightWords from 'assui/src/components/highlight-words';
+import HighlightWords from 'assui/lib/components/highlight-words';
 
 const index = () => {
   return (

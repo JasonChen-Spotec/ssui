@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { Tag } from 'antd';
-import HighlightTextarea from 'assui/src/components/highlight-textarea';
+import HighlightTextarea from 'assui/lib/components/highlight-textarea';
 import './index.css';
 
 const Demo = () => {

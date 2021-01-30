@@ -1,6 +1,6 @@
 import React from 'react';
 import { Form, Button } from 'antd';
-import RegexInput from 'assui/src/components/regex-input';
+import RegexInput from 'assui/lib/components/regex-input';
 
 const Demo = () => {
   const onFinish = values => {

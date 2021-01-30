@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import HighlightTextarea from 'assui/src/components/highlight-textarea';
+import HighlightTextarea from 'assui/lib/components/highlight-textarea';
 import './index.css';
 
 const Demo = () => {
