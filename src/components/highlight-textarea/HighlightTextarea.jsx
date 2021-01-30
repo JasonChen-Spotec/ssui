@@ -2,10 +2,10 @@ import React, { useState, useRef } from 'react';
 import classNames from 'classnames';
 import trimStart from 'lodash/trimStart';
 import HighlighedContents from './HighlighedContents';
-import './styles/index.css';
+import './styles/index.less';
 
-const HighlightWithinTextarea = (props, ref) => {
-  const { value, onChange, highlight, className, containerClassName,
+const HighlightWithinTextarea = React.forwardRef((props, ref) => {
+  const { prefixCls, value, onChange, highlight, className, containerClassName,
     onScroll, ...textareaProps
   } = props;
 
@@ -32,29 +32,38 @@ const HighlightWithinTextarea = (props, ref) => {
 
   const getTextAreaNode = el => {
     textareaRef.current = el;
-    ref.current = el;
+    if (ref) {
+      ref.current = el;
+    }
   };
 
+  const textareaCls = classNames(
+    `${prefixCls}-input`,
+    'highlight-textarea-input',
+    'highlight-content',
+    className
+  );
 
   return (
-    <div className={classNames('container', containerClassName) }>
-      <div className="backdrop" ref={backdropRef}>
+    <div className={classNames('highlight-textarea', containerClassName) }>
+      <div className="highlight-textarea-backdrop" ref={backdropRef}>
         <HighlighedContents value={resultValue} highlight={highlight} />
       </div>
       <textarea
         value={resultValue}
         onChange={onTextareaChange}
-        className={classNames('ant-input','input', 'content', className)}
+        className={textareaCls}
         {...textareaProps}
         onScroll={handleScroll}
         ref={getTextAreaNode}
       />
     </div>
   );
-};
+});
 
 HighlightWithinTextarea.defaultProps = {
-  highlight: {}
+  highlight: {},
+  prefixCls: 'ant'
 };
 
-export default React.forwardRef(HighlightWithinTextarea);
+export default HighlightWithinTextarea;

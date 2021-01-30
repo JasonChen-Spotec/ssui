@@ -2,7 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 import getRanges from './getRanges';
 import extractSpansOfClasses from './extractSpansOfClasses';
-import './styles/index.css';
+import './styles/index.less';
 
 const HighlighedContents = ({ value, highlight }) => {
 
@@ -11,7 +11,7 @@ const HighlighedContents = ({ value, highlight }) => {
 
   return (
     <div>
-      <div className={classNames('highlights', 'content')}>
+      <div className={classNames('highlight-textarea-highlights', 'highlight-content')}>
         {parts.map(part => part.render())}
       </div>
     </div>
