@@ -24,6 +24,7 @@
     "code-rule": "^1.0.2",
     "dumi": "^1.0.34",
     "echarts": "^4.9.0",
+    "antd": "^4.11.2",
     "react": "^16.13.1",
     "react-color": "^2.18.1",
     "react-dom": "^16.13.1",
@@ -32,7 +33,6 @@
   "dependencies": {
     "@ckeditor/ckeditor5-react": "^3.0.0",
     "ahooks": "^2.9.1",
-    "antd": "^4.6.6",
     "array-move": "^3.0.1",
     "canvas-to-image": "^2.2.0",
     "ckeditor-cm": "^1.0.3",
