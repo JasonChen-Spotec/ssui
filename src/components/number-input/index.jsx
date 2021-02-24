@@ -7,7 +7,7 @@ import { filterInt, filterFloat } from './utils';
 const NumberInput = props => {
   const { value, onChange, numberType, precision, formatter, enableMinus, onBlur, ...restProps } = props;
   const [number, setNumber] = useState('');
-  const resultValue = value || number;
+  const resultValue = `${value}` || number;
 
   const onNumberChange = e => {
     let newNumber;

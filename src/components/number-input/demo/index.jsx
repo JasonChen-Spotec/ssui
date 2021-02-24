@@ -12,7 +12,7 @@ const Demo = () => {
       onFinish={onFinish}
       initialValues={
         {
-          int: '2323'
+          int: 0
         }
       }
     >
