@@ -12,7 +12,9 @@ const Demo = () => {
       onFinish={onFinish}
       initialValues={
         {
-          int: 0
+          int: 0,
+          float: 'null',
+          intEnableMinus: undefined
         }
       }
     >
