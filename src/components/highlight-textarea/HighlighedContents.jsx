@@ -10,10 +10,8 @@ const HighlighedContents = ({ value, highlight }) => {
   const parts = extractSpansOfClasses(value, ranges);
 
   return (
-    <div>
-      <div className={classNames('highlight-textarea-highlights', 'highlight-content')}>
-        {parts.map(part => part.render())}
-      </div>
+    <div className={classNames('highlight-textarea-highlights', 'highlight-content')}>
+      {parts.map(part => part.render())}
     </div>
   );
 };

@@ -26,8 +26,8 @@ const HighlightWithinTextarea = React.forwardRef((props, ref) => {
   };
 
   const handleScroll = () => {
-    backdropRef.current.scrollTop = textareaRef.current.scrollTop;
     backdropRef.current.scrollLeft = textareaRef.current.scrollLeft;
+    backdropRef.current.style.top = `${0 - textareaRef.current.scrollTop}px`;
   };
 
   const getTextAreaNode = el => {
