@@ -27,6 +27,7 @@ const HighlightWithinTextarea = React.forwardRef((props, ref) => {
 
   const handleScroll = () => {
     backdropRef.current.scrollLeft = textareaRef.current.scrollLeft;
+    backdropRef.current.style.height = `${textareaRef.current.clientHeight + textareaRef.current.scrollTop}px`;
     backdropRef.current.style.top = `${0 - textareaRef.current.scrollTop}px`;
   };
 
@@ -46,8 +47,8 @@ const HighlightWithinTextarea = React.forwardRef((props, ref) => {
 
   return (
     <div className={classNames('highlight-textarea', containerClassName) }>
-      <div className="highlight-textarea-backdrop" ref={backdropRef}>
-        <HighlighedContents value={resultValue} highlight={highlight} />
+      <div className="highlight-textarea-backdrop">
+        <HighlighedContents value={resultValue} highlight={highlight} ref={backdropRef} />
       </div>
       <textarea
         value={resultValue}
