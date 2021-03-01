@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react';
 import classNames from 'classnames';
 import trimStart from 'lodash/trimStart';
+import useMount from 'ahooks/lib/useMount';
 import HighlighedContents from './HighlighedContents';
 import './styles/index.less';
 
@@ -14,6 +15,10 @@ const HighlightWithinTextarea = React.forwardRef((props, ref) => {
 
   const textareaRef = useRef(ref);
   const backdropRef = useRef(null);
+
+  useMount(() => {
+    backdropRef.current.style.width = `${textareaRef.current.clientWidth}px`;
+  });
 
   const onTextareaChange = e => {
     const newValue = trimStart(e.target.value);
