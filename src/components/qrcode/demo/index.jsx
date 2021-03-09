@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { Button } from 'antd';
-import QRcode from 'assui/lib/components/qrcode';
+import QRcode from 'assui/src/components/qrcode';
 import canvasToImage from 'assui/lib/components/qrcode/canvas-to-image';
 
 export default () => {

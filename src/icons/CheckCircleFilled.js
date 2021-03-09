@@ -4,9 +4,11 @@ import Icon from "assui/lib/components/Icon";
 function CheckCircleFilled(componentProps) {
   const IconNode = (props) => (
     <svg viewBox="0 0 16 16" {...props}>
+      <circle fill="currentColor" cx={8} cy={8} r={8} />
       <path
-        fill="currentColor"
-        d="M8 0a8 8 0 108 8 8 8 0 00-8-8zm4.59 5.92L7.41 11.1a.73.73 0 01-.88.11l-.14-.11-3-3a.72.72 0 011-1L6.9 9.56l4.66-4.66a.74.74 0 011 0 .72.72 0 01.03 1.02z"
+        fill="inherit"
+        className="check-circle-filled_svg__st0"
+        d="M12.5 4.4c-.2-.2-.5-.2-.7 0l-5 5c-.2.2-.5.2-.7 0l-2-2c-.1-.2-.4-.2-.6 0l-.7.8c-.2.2-.2.5 0 .7l3.3 3.3c.2.2.6.2.8 0l6.3-6.3c.2-.2.2-.5 0-.7l-.7-.8z"
       />
     </svg>
   );
