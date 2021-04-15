@@ -4,6 +4,7 @@ import useMount from 'ahooks/lib/useMount';
 import useUpdateEffect from 'ahooks/lib/useUpdateEffect';
 import classNames from 'classnames';
 import ResizeObserver from 'resize-observer-polyfill';
+import isFunction from 'lodash/isFunction';
 
 const ReactEchartCore = props => {
   const { className, option, style, echarts, notMerge, lazyUpdate,
@@ -62,7 +63,7 @@ const ReactEchartCore = props => {
 
   // need resize
   const resizeChart = () => {
-    chartRef.current.resize();
+    isFunction(chartRef.current.resize) && chartRef.current.resize();
   };
 
   useLayoutEffect(() => {
