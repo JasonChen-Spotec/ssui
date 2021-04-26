@@ -22,9 +22,29 @@ export default () => {
           <InputNumber value={width} onChange={value => setWidth(value)} />
         </div>
       </div>
+      <h3>Outline</h3>
       <div className="icons-container">
         {
-          iconsList.map((Icon, index) => (
+          iconsList.filter(({displayName})=> displayName.indexOf('Outline') !== -1).map((Icon, index) => (
+            <CopyToClipboard
+              key={index}
+              text={`<${Icon.displayName} />`}
+              onCopy={() => message.info(`copy <${Icon.displayName} /> success`)}
+            >
+              <div className="icons-item">
+                <Icon style={{ width, color, fill: 'red' }} />
+                <span>
+                  {Icon.displayName}
+                </span>
+              </div>
+            </CopyToClipboard>
+          ))
+        }
+      </div>
+      <h3>filled</h3>
+      <div className="icons-container">
+        {
+          iconsList.filter(({displayName})=> displayName.indexOf('Outline') === -1).map((Icon, index) => (
             <CopyToClipboard
               key={index}
               text={`<${Icon.displayName} />`}
@@ -43,3 +63,4 @@ export default () => {
     </div>
   );
 };
+{/* <CircleListOutlined /> */}
