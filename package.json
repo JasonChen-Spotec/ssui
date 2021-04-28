@@ -51,7 +51,7 @@
   "release-it": {
     "git": {
       "tag": true,
-      "commitMessage": "chore: release @vant/icons ${version}",
+      "commitMessage": "chore: release assui ${version}",
       "addUntrackedFiles": true,
       "requireCleanWorkingDir": false
     }
