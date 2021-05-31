@@ -17,7 +17,7 @@ const HighlightWithinTextarea = React.forwardRef((props, ref) => {
   const backdropRef = useRef(null);
 
   useMount(() => {
-    backdropRef.current.style.width = `${textareaRef.current.clientWidth + 2}px`;
+    backdropRef.current.style.width = `${textareaRef.current.clientWidth + 3}px`;
   });
 
   const onTextareaChange = e => {
