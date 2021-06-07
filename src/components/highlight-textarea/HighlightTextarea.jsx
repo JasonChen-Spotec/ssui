@@ -17,7 +17,7 @@ const HighlightWithinTextarea = React.forwardRef((props, ref) => {
   const backdropRef = useRef(null);
 
   useMount(() => {
-    backdropRef.current.style.width = `${textareaRef.current.clientWidth + 3}px`;
+    backdropRef.current.style.width = `${textareaRef.current.clientWidth + 2}px`;
   });
 
   const onTextareaChange = e => {
@@ -33,7 +33,7 @@ const HighlightWithinTextarea = React.forwardRef((props, ref) => {
   const handleScroll = () => {
     backdropRef.current.scrollLeft = textareaRef.current.scrollLeft;
     backdropRef.current.style.height = `${textareaRef.current.clientHeight + textareaRef.current.scrollTop}px`;
-    backdropRef.current.style.width = `${textareaRef.current.clientWidth + 3}px`;
+    backdropRef.current.style.width = `${textareaRef.current.clientWidth + 2}px`;
     backdropRef.current.style.top = `${0 - textareaRef.current.scrollTop}px`;
   };
 
