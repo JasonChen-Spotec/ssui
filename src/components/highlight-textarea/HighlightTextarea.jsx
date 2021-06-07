@@ -53,8 +53,8 @@ const HighlightWithinTextarea = React.forwardRef((props, ref) => {
 
   return (
     <div className={classNames('highlight-textarea', containerClassName) }>
-      <div className="highlight-textarea-backdrop">
-        <HighlighedContents value={resultValue} highlight={highlight} ref={backdropRef} />
+      <div className="highlight-textarea-backdrop highlight-content" ref={backdropRef}>
+        <HighlighedContents value={resultValue} highlight={highlight} />
       </div>
       <textarea
         value={resultValue}
