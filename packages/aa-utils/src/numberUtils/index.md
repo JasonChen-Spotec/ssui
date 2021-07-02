@@ -27,14 +27,23 @@ export default ()=> (
     <Descriptions column={1}>
       <Descriptions.Item label="1(默认保留8位小数)">
         {
-          numberUtils.formatBigFloatNumber('1', { useGrouping: true,
-          minimumFractionDigits: 8,
+          numberUtils.formatBigFloatNumber('1.1232', { useGrouping: true,
+          minimumFractionDigits: 2,
           maximumFractionDigits: 8
           })
         } </Descriptions.Item>
+
+      <Descriptions.Item label="0.8(小数部分为无值)">
+        {
+          numberUtils.formatBigFloatNumber('0.8', { useGrouping: true,
+          minimumFractionDigits: 0,
+          maximumFractionDigits: 0
+          })
+        } </Descriptions.Item>
+
       <Descriptions.Item label="77777777.77777777(默认保留8位小数)">
         {
-          numberUtils.formatBigFloatNumber('77777777.77777777', { useGrouping: true,
+          numberUtils.formatBigFloatNumber('0.00055694384097126003', { useGrouping: true,
           minimumFractionDigits: 8,
           maximumFractionDigits: 8
           })

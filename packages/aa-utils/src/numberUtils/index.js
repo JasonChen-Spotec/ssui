@@ -102,7 +102,7 @@ class NumberUtils {
       initPart = this.formatNumber(initPart, rest)
     }
 
-    let resultValue = `${initPart}.${decimalPart}`
+    let resultValue = decimalPart ? `${initPart}.${decimalPart}` : initPart
 
     if (prefix) {
       return `${prefix}${resultValue}`;
