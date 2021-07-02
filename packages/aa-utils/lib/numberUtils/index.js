@@ -138,7 +138,7 @@ var NumberUtils = /*#__PURE__*/function () {
       initPart = this.formatNumber(initPart, rest);
     }
 
-    var resultValue = initPart + "." + decimalPart;
+    var resultValue = decimalPart ? initPart + "." + decimalPart : initPart;
 
     if (prefix) {
       return "" + prefix + resultValue;
