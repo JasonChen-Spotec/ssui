@@ -1,5 +1,5 @@
 import * as React from "react";
-import Icon from "assui/lib/components/Icon";
+import Icon from "assui/lib/Icon";
 
 function HandCardOutlined(componentProps) {
   const IconNode = (props) => (

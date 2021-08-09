@@ -14,7 +14,7 @@ function defaultTemplate(
 
   return typeScriptTpl.ast`${imports}
     ${interfaces}
-    import Icon from 'assui/lib/components/Icon';
+    import Icon from 'assui/lib/Icon';
 
     function ${componentName}(componentProps) {
       const IconNode = (props) => ${jsx};
