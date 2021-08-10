@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-    "rootDir": "src",
     "target": "ES5",
     "moduleResolution": "node",
     "jsx": "react",
@@ -17,5 +16,14 @@
     "declaration": false,
     "strictNullChecks": true
   },
-  "exclude": ["node_modules", "lib", "es", "dist", "**/__tests__", "**/__test__", "**/demo", "buildIconTemplate.js", "gulpfile.js"]
+  "exclude": [
+    "node_modules",
+    "lib",
+    "es",
+    "dist",
+    "**/__tests__",
+    "**/__test__",
+    "**/demo",
+    "**/gulpfile.js"
+  ]
 }

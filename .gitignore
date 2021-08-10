@@ -1,31 +1,18 @@
-# dependencies
-**/node_modules
-src/.umi/**
-# production
-/dist
-/.vscode
-
-# misc
-.DS_Store
-npm-debug.log*
-yarn-error.log
-
-.idea
 yarn.lock
-package-lock.json
-*bak
-.vscode
-
-# visual studio code
+dist
+es
+lib
+.docz
+node_modules
 .history
-*.log
-functions/*
-.temp/**
-
-# screenshot
-screenshot
-.firebase
-.eslintcache
-
-# test
-test/coverage
+.idea
+.vscode
+coverage
+.doc
+.DS_Store
+.umi
+.umi-production
+page
+lerna-debug.log
+tsconfig.tsbuildinfo
+packages/hooks/README.md
