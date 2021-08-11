@@ -48,7 +48,7 @@ gulp.task('clean', async () => {
 function compileLess(modules) {
   rimraf.sync(modules !== false ? libDir : esDir);
 
-  const less = gulp
+  const lessS = gulp
     .src(['src/**/*.less'])
     .pipe(
       through2.obj(function (file, encoding, next) {
@@ -78,7 +78,7 @@ function compileLess(modules) {
     .src(['src/**/*.@(png|svg)'])
     .pipe(gulp.dest(modules === false ? esDir : libDir));
 
-  return merge2([less, assets]);
+  return merge2([lessS, assets]);
 }
 
 gulp.task('compile:less', (done) => {

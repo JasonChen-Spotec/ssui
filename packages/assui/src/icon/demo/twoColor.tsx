@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row, Col, Divider } from 'antd';
+import { Row, Col } from 'antd';
 import { Icon } from 'assui';
 import CheckCircle from './svg/check-circle-filled.svg';
 

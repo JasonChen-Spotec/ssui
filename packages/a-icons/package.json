@@ -1,14 +1,14 @@
 {
   "name": "a-icons",
-  "version": "1.0.92",
+  "version": "1.0.0",
   "main": "index.js",
   "repository": "git@github.com:SPOTEC-LTD/assui.git",
   "author": "jason <usochen@gmail.com>",
   "license": "MIT",
   "scripts": {
     "dev": "dumi dev",
-    "buildSvg": "svgr --template buildIconTemplate.js -d src/icons/ svgs",
-    "build": "npm run buildSvg",
+    "buildSvg": "svgr --template buildIconTemplate.js --typescript --out-dir src svgs",
+    "build": "gulp",
     "release": "npm run build && release-it",
     "build:doc": "dumi build",
     "pub:doc-gitee": "npm run build:doc && cd ./dist && rm -rf .git && touch .spa && touch .nojekyll && git init && git remote add origin git@gitee.com:uso/assui.git && git add -A && git commit -m \"publish docs\" && git push origin master -f"
@@ -20,11 +20,14 @@
     "@babel/preset-env": "^7.11.5",
     "@babel/preset-react": "^7.10.4",
     "@svgr/cli": "^5.4.0",
+    "antd": "^4.16.11",
+    "assui": "^2.0.2",
     "code-rule": "^1.0.2",
     "dumi": "^1.0.34",
     "insert-css": "^2.0.0",
     "react": "^16.13.1",
     "react-color": "^2.18.1",
+    "react-copy-to-clipboard": "^5.0.3",
     "react-dom": "^16.13.1",
     "release-it": "^14.0.4"
   },
@@ -43,5 +46,8 @@
       "addUntrackedFiles": true,
       "requireCleanWorkingDir": false
     }
+  },
+  "peerDependencies": {
+    "assui": "^2.0.2"
   }
 }

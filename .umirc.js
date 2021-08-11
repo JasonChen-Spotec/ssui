@@ -44,7 +44,7 @@ export default {
   links: [{ rel: 'manifest', href: '/asset-manifest.json' }],
   hash: true,
   resolve: {
-    includes: ['docs', 'packages/assui/src'],
+    includes: ['docs', 'packages/assui/src', 'packages/a-icons/demo'],
   },
   links: [{ rel: 'stylesheet', href: '/style.css' }],
   navs: {
