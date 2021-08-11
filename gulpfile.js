@@ -6,15 +6,40 @@ const babel = require('gulp-babel');
 const ts = require('gulp-typescript');
 const del = require('del');
 const merge2 = require('merge2');
-const transformLess = require('./buildConfig/transformLess');
+const less = require('less');
+const { readFileSync } = require('fs');
+const postcss = require('postcss');
+const autoprefixer = require('autoprefixer');
+const NpmImportPlugin = require('less-plugin-npm-import');
+
 function getProjectPath(...filePath) {
   return path.join(process.cwd(), ...filePath);
+}
+
+function transformLess(lessFile, config = {}) {
+  const { cwd = process.cwd() } = config;
+  const resolvedLessFile = path.resolve(cwd, lessFile);
+
+  let data = readFileSync(resolvedLessFile, 'utf-8');
+  data = data.replace(/^\uFEFF/, '');
+
+  // Do less compile
+  const lessOpts = {
+    paths: [path.dirname(resolvedLessFile)],
+    filename: resolvedLessFile,
+    plugins: [new NpmImportPlugin({ prefix: '~' })],
+    javascriptEnabled: true,
+  };
+  return less
+    .render(data, lessOpts)
+    .then((result) => postcss([autoprefixer]).process(result.css, { from: undefined }))
+    .then((r) => r.css);
 }
 
 const libDir = getProjectPath('lib');
 const esDir = getProjectPath('es');
 
-gulp.task('clean', async function () {
+gulp.task('clean', async () => {
   await del('lib/**');
   await del('es/**');
   await del('dist/**');
@@ -62,7 +87,7 @@ gulp.task('compile:less', (done) => {
   compileLess(true).on('finish', done);
 });
 
-gulp.task('cjs', function () {
+gulp.task('cjs', () => {
   const tsProject = ts.createProject('tsconfig.json', {
     module: 'CommonJS',
   });
@@ -77,7 +102,7 @@ gulp.task('cjs', function () {
     .pipe(gulp.dest('lib/'));
 });
 
-gulp.task('es', function () {
+gulp.task('es', () => {
   const tsProject = ts.createProject('tsconfig.json', {
     module: 'ESNext',
   });
@@ -92,7 +117,7 @@ gulp.task('es', function () {
     .pipe(gulp.dest('es/'));
 });
 
-gulp.task('declaration', function () {
+gulp.task('declaration', () => {
   const tsProject = ts.createProject('tsconfig.json', {
     declaration: true,
     emitDeclarationOnly: true,

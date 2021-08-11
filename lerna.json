@@ -1,5 +1,7 @@
 {
   "packages": ["packages/*"],
+  "npmClient": "yarn",
+  "userWorkspaces": true,
   "command": {
     "version": {
       "allowBranch": "master",

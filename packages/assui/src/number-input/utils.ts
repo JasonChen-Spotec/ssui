@@ -1,12 +1,12 @@
 /* eslint-disable no-useless-escape */
 export const filterInt = ({ value, enableMinus, preValue }) => {
-  let nextValue = value.replace(/[^\-\d]/g, '');
+  let nextValue = value.replace(/[^\d\-]/g, '');
 
   if (!enableMinus) {
-    nextValue = value.replace(/[^\d]/g, '');
+    nextValue = value.replace(/\D/g, '');
   }
 
-  const intNumberReg = /^\-?\d+$/;
+  const intNumberReg = /^-?\d+$/;
 
   if (nextValue && nextValue.length > 1 && !intNumberReg.test(nextValue)) {
     return preValue;
@@ -16,17 +16,17 @@ export const filterInt = ({ value, enableMinus, preValue }) => {
 };
 
 export const filterFloat = ({ value, preValue, precision, enableMinus }) => {
-  let nextValue = value.replace(/[^\-\d.]/g, '');
-  const matchDecimalPoint = nextValue.match(/[.]/g) || [];
+  let nextValue = value.replace(/[^\d.\-]/g, '');
+  const matchDecimalPoint = nextValue.match(/\./g) || [];
   if (matchDecimalPoint.length > 1) {
     return preValue;
   }
 
   if (!enableMinus) {
-    nextValue = value.replace(/[^0-9.]/g, '');
+    nextValue = value.replace(/[^\d.]/g, '');
   }
 
-  const floatNumberReg = /^\-?\d+\.?\d*$/;
+  const floatNumberReg = /^-?\d+\.?\d*$/;
 
   if (nextValue && nextValue.length > 1 && !floatNumberReg.test(nextValue)) {
     return preValue;

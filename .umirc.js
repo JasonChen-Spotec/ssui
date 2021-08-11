@@ -18,7 +18,7 @@ export default {
     ],
 
     [
-      'import',
+      'babel-plugin-import',
       {
         libraryName: 'assui',
         style: true,
@@ -26,6 +26,15 @@ export default {
       'assui',
     ],
   ],
+  chainWebpack(memo, { env, webpack, createCSSRule }) {
+    memo.module.rules.delete('svg');
+    memo.module
+      .rule('svg')
+      .test(/\.svg$/)
+      .use('svg')
+      .loader('@svgr/webpack');
+  },
+
   mode: 'site',
   title: 'ahooks',
   favicon: '/simple-logo.svg',
