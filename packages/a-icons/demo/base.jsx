@@ -28,7 +28,7 @@ export default () => {
           .map((Icon, index) => (
             <CopyToClipboard
               key={index}
-              text={`<${Icon.displayName} />`}
+              text={Icon.displayName}
               onCopy={() => message.info(`copy <${Icon.displayName} /> success`)}
             >
               <div className="icons-item">

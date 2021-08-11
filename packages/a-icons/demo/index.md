@@ -16,10 +16,9 @@ group:
  * hideActions: ["CSB", "EXTERNAL"]
  */
 import React from 'react';
-import { CheckCircleFilled } from 'a-icons';
-export default () => <CheckCircleFilled style={{width: 24}} />
+import { ProfileOutlined } from 'a-icons';
+export default () => <ProfileOutlined style={{width: 24}} />
 ```
-
 
 ## 2. 图标列表
 

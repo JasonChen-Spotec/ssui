@@ -25,6 +25,15 @@ export default {
       },
       'assui',
     ],
+    [
+      'babel-plugin-import',
+      {
+        libraryName: 'a-icons',
+        style: false,
+        camel2DashComponentName: false,
+      },
+      'a-icons',
+    ],
   ],
   chainWebpack(memo, { env, webpack, createCSSRule }) {
     memo.module.rules.delete('svg');
@@ -36,9 +45,10 @@ export default {
   },
 
   mode: 'site',
-  title: 'ahooks',
-  favicon: '/simple-logo.svg',
+  title: 'assui',
+  favicon: '/favicon.ico',
   logo: '/logo.svg',
+  locales: [['zh-CN', '中文']],
   dynamicImport: {},
   manifest: {},
   links: [{ rel: 'manifest', href: '/asset-manifest.json' }],
@@ -48,8 +58,7 @@ export default {
   },
   links: [{ rel: 'stylesheet', href: '/style.css' }],
   navs: {
-    'zh-CN': [null, { title: 'GitHub', path: 'github.com:SPOTEC-LTD/assui.git' }],
-    'en-US': [null, { title: 'GitHub', path: 'github.com:SPOTEC-LTD/assui.git' }],
+    'zh-CN': [null, { title: 'GitHub', path: 'https://github.com:SPOTEC-LTD/assui.git' }],
   },
   headScripts: ['https://s4.cnzz.com/z_stat.php?id=1278992092&web_id=1278992092'],
 };
