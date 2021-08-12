@@ -1,5 +1,8 @@
-import React from 'react';
+/**
+ * title: 在form中使用
+ */
 
+import React from 'react';
 import { Form, Button } from 'antd';
 import { NumberInput } from 'assui';
 
@@ -13,8 +16,8 @@ const Demo = () => {
       onFinish={onFinish}
       initialValues={{
         int: 0,
-        float: 'null',
-        intEnableMinus: undefined,
+        float: 0.1,
+        intEnableMinus: '',
       }}
     >
       <Form.Item name="int" label="int">

@@ -7,14 +7,28 @@ group:
   title: 数据录入
   path: /components
 ---
+# NumberInput 数字输入框
 
-<code hideActions='["CSB", "EXTERNAL"]' src="./demo/index.jsx" />
+输入范围内的数字(基于antd组件库的Input实现)
+## 代码演示
 
-## API
-属性如下
+### 基础用法
 
-| 参数 | 说明 | 类型 | 默认值 |
-| --- | --- | --- | --- |
-| numberType | 规定输入数据的类型，`int`, `float` | String | `int` |
-| precision | 精度，只对`float`有效 | Number | 2 |
-| enableMinus | 是否允许输入负数 | Boolean | false |
+<code hideActions='["CSB", "EXTERNAL"]' src="./demo/base.jsx" />
+
+### 输入float数字
+
+<code hideActions='["CSB", "EXTERNAL"]' src="./demo/float.jsx" />
+
+### 格式化展示
+
+<code hideActions='["CSB", "EXTERNAL"]' src="./demo/formatter.jsx" />
+
+
+### 在form中使用
+
+<code hideActions='["CSB", "EXTERNAL"]' src="./demo/form.jsx" />
+
+
+<API></API>
+更多属性请参考 [antd Input](https://ant.design/components/input-cn/)
