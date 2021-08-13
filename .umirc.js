@@ -34,6 +34,15 @@ export default {
       },
       'a-icons',
     ],
+    [
+      'babel-plugin-import',
+      {
+        libraryName: 'aa-utils',
+        style: false,
+        camel2DashComponentName: false,
+      },
+      'aa-utils',
+    ],
   ],
   chainWebpack(memo, { env, webpack, createCSSRule }) {
     memo.module.rules.delete('svg');
@@ -54,7 +63,7 @@ export default {
   links: [{ rel: 'manifest', href: '/asset-manifest.json' }],
   hash: true,
   resolve: {
-    includes: ['docs', 'packages/assui/src', 'packages/a-icons/demo'],
+    includes: ['docs', 'packages/assui/src', 'packages/a-icons/demo', 'packages/aa-utils/src'],
   },
   links: [{ rel: 'stylesheet', href: '/style.css' }],
   navs: {

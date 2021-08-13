@@ -1,7 +1,7 @@
 import padStart from 'lodash/padStart';
 
 // Countdown
-const timeUnits = [
+const timeUnits: [string, number][] = [
   ['Y', 1000 * 60 * 60 * 24 * 365], // years
   ['M', 1000 * 60 * 60 * 24 * 30], // months
   ['D', 1000 * 60 * 60 * 24], // days
@@ -11,18 +11,18 @@ const timeUnits = [
   ['S', 1], // million seconds
 ];
 
-export function formatTimeStr(duration, format) {
-  let leftDuration = duration;
+export function formatTimeStr(duration: number, format: string) {
+  let leftDuration: number = duration;
 
   const escapeRegex = /\[[^\]]*]/g;
-  const keepList = (format.match(escapeRegex) || []).map(str => str.slice(1, -1));
+  const keepList = (format.match(escapeRegex) || []).map((str) => str.slice(1, -1));
   const templateText = format.replace(escapeRegex, '[]');
 
   const replacedText = timeUnits.reduce((current, [name, unit]) => {
     if (current.indexOf(name) !== -1) {
       const value = Math.floor(leftDuration / unit);
       leftDuration -= value * unit;
-      return current.replace(new RegExp(`${name}+`, 'g'), (match) => {
+      return current.replace(new RegExp(`${name}+`, 'g'), (match: string) => {
         const len = match.length;
         return padStart(value.toString(), len, '0');
       });
@@ -38,7 +38,7 @@ export function formatTimeStr(duration, format) {
   });
 }
 
-export function formatCountdown(target, format) {
+export default function formatCountdown(target, format) {
   const diff = Math.max(target, 0);
 
   return formatTimeStr(diff, format);

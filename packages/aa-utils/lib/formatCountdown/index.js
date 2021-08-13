@@ -1,21 +1,59 @@
-"use strict";
+'use strict';
 
-var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+var __read =
+  (this && this.__read) ||
+  function (o, n) {
+    var m = typeof Symbol === 'function' && o[Symbol.iterator];
+    if (!m) return o;
+    var i = m.call(o),
+      r,
+      ar = [],
+      e;
 
-exports.__esModule = true;
-exports.formatTimeStr = formatTimeStr;
-exports.formatCountdown = formatCountdown;
+    try {
+      while ((n === void 0 || n-- > 0) && !(r = i.next()).done) {
+        ar.push(r.value);
+      }
+    } catch (error) {
+      e = {
+        error: error,
+      };
+    } finally {
+      try {
+        if (r && !r.done && (m = i['return'])) m.call(i);
+      } finally {
+        if (e) throw e.error;
+      }
+    }
 
-var _padStart = _interopRequireDefault(require("lodash/padStart"));
+    return ar;
+  };
 
-// Countdown
-var timeUnits = [['Y', 1000 * 60 * 60 * 24 * 365], // years
-['M', 1000 * 60 * 60 * 24 * 30], // months
-['D', 1000 * 60 * 60 * 24], // days
-['H', 1000 * 60 * 60], // hours
-['m', 1000 * 60], // minutes
-['s', 1000], // seconds
-['S', 1] // million seconds
+var __importDefault =
+  (this && this.__importDefault) ||
+  function (mod) {
+    return mod && mod.__esModule
+      ? mod
+      : {
+          default: mod,
+        };
+  };
+
+Object.defineProperty(exports, '__esModule', {
+  value: true,
+});
+exports.formatCountdown = exports.formatTimeStr = void 0;
+
+var padStart_1 = __importDefault(require('lodash/padStart')); // Countdown
+
+var timeUnits = [
+  ['Y', 1000 * 60 * 60 * 24 * 365],
+  ['M', 1000 * 60 * 60 * 24 * 30],
+  ['D', 1000 * 60 * 60 * 24],
+  ['H', 1000 * 60 * 60],
+  ['m', 1000 * 60],
+  ['s', 1000],
+  ['S', 1],
 ];
 
 function formatTimeStr(duration, format) {
@@ -25,16 +63,18 @@ function formatTimeStr(duration, format) {
     return str.slice(1, -1);
   });
   var templateText = format.replace(escapeRegex, '[]');
-  var replacedText = timeUnits.reduce(function (current, _ref) {
-    var name = _ref[0],
-        unit = _ref[1];
+  console.log('templateText', templateText);
+  var replacedText = timeUnits.reduce(function (current, _a) {
+    var _b = __read(_a, 2),
+      name = _b[0],
+      unit = _b[1];
 
     if (current.indexOf(name) !== -1) {
-      var value = Math.floor(leftDuration / unit);
-      leftDuration -= value * unit;
-      return current.replace(new RegExp(name + "+", 'g'), function (match) {
+      var value_1 = Math.floor(leftDuration / unit);
+      leftDuration -= value_1 * unit;
+      return current.replace(new RegExp(name + '+', 'g'), function (match) {
         var len = match.length;
-        return (0, _padStart["default"])(value.toString(), len, '0');
+        return padStart_1['default'](value_1.toString(), len, '0');
       });
     }
 
@@ -48,7 +88,11 @@ function formatTimeStr(duration, format) {
   });
 }
 
+exports.formatTimeStr = formatTimeStr;
+
 function formatCountdown(target, format) {
   var diff = Math.max(target, 0);
   return formatTimeStr(diff, format);
 }
+
+exports.formatCountdown = formatCountdown;

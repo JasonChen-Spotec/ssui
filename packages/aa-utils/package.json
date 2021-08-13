@@ -1,44 +1,25 @@
 {
   "name": "aa-utils",
-  "version": "1.0.6",
-  "main": "index.js",
-  "repository": "git@github.com:SPOTEC-LTD/aa-utils.git",
+  "version": "2.0.0",
   "author": "jason <usochen@gmail.com>",
   "license": "MIT",
+  "main": "./lib/index.js",
+  "module": "./es/index.js",
+  "types": "./lib/index.d.ts",
+  "repository": "https://github.com/SPOTEC-LTD/ssui",
+  "homepage": "https://github.com/SPOTEC-LTD/ssui",
+  "authors": {
+    "name": "chenjianbin",
+    "email": "usochen@gmail.com"
+  },
   "scripts": {
-    "dev": "dumi dev",
-    "build:doc": "dumi build",
-    "build": "node ./build/build-lib.js ",
-    "release": "npm run build && release-it",
-    "pub:doc-gitee": "npm run build:doc && cd ./dist && rm -rf .git && touch .spa && touch .nojekyll && git init && git remote add origin git@gitee.com:uso/aa-utils.git && git add -A && git commit -m \"publish docs\" && git push origin master -f"
+    "build": "gulp"
   },
   "devDependencies": {
-    "@babel/cli": "^7.11.6",
-    "@babel/core": "^7.11.6",
-    "@babel/plugin-transform-runtime": "^7.11.5",
-    "@babel/preset-env": "^7.11.5",
-    "@babel/preset-react": "^7.10.4",
-    "@svgr/cli": "^5.4.0",
-    "@svgr/webpack": "^5.4.0",
-    "dumi": "^1.0.34",
-    "react": "^16.13.1",
-    "react-color": "^2.18.1",
-    "react-copy-to-clipboard": "^5.0.2",
-    "react-dom": "^16.13.1",
-    "release-it": "^14.0.4"
+    "antd": "^4.16.11"
   },
   "dependencies": {
-    "antd": "^4.6.6",
-    "classnames": "^2.2.6",
     "dom-scroll-into-view": "^2.0.1",
     "events": "^3.2.0"
-  },
-  "release-it": {
-    "git": {
-      "tag": true,
-      "commitMessage": "chore: release @vant/icons ${version}",
-      "addUntrackedFiles": true,
-      "requireCleanWorkingDir": false
-    }
   }
 }

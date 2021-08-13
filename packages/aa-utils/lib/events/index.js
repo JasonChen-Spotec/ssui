@@ -1,11 +1,19 @@
-"use strict";
+'use strict';
 
-var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+var __importDefault =
+  (this && this.__importDefault) ||
+  function (mod) {
+    return mod && mod.__esModule
+      ? mod
+      : {
+          default: mod,
+        };
+  };
 
-exports.__esModule = true;
-exports["default"] = void 0;
+Object.defineProperty(exports, '__esModule', {
+  value: true,
+});
 
-var _events = _interopRequireDefault(require("events"));
+var events_1 = __importDefault(require('events'));
 
-var _default = _events["default"];
-exports["default"] = _default;
+exports['default'] = events_1['default'];

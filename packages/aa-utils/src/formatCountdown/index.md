@@ -1,13 +1,18 @@
 ---
 title: formatCountdown
 nav:
-  title: func
-  path: /func
+  title: utils
+  path: /utils
 group:
-  title: func
-  path: /func
+  title: utils
+  path: /utils
   order: 1
 ---
+
+# formatCountdown
+将数字格式化成倒计时间
+
+## 基本用法
 
 <code hideActions='["CSB", "EXTERNAL"]' src="./demo/index.jsx" />
 
@@ -17,4 +22,3 @@ group:
 | --- | --- | --- | --- | --- |
 | format | 格式化倒计时展示，参考 [moment](http://momentjs.com/) | string | `HH:mm:ss` |  |
 | value | time duration | number | - |  |
-
