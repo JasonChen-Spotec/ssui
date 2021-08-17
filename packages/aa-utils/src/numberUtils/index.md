@@ -1,11 +1,11 @@
 ---
 title: numberUtils
 nav:
-  title: func
-  path: /func
+  title: utils
+  path: /utils
 group:
-  title: func
-  path: /func
+  title: utils
+  path: /utils
   order: 1
 ---
 
