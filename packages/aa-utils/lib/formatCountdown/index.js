@@ -42,7 +42,7 @@ var __importDefault =
 Object.defineProperty(exports, '__esModule', {
   value: true,
 });
-exports.formatCountdown = exports.formatTimeStr = void 0;
+exports.formatTimeStr = void 0;
 
 var padStart_1 = __importDefault(require('lodash/padStart')); // Countdown
 
@@ -63,7 +63,6 @@ function formatTimeStr(duration, format) {
     return str.slice(1, -1);
   });
   var templateText = format.replace(escapeRegex, '[]');
-  console.log('templateText', templateText);
   var replacedText = timeUnits.reduce(function (current, _a) {
     var _b = __read(_a, 2),
       name = _b[0],
@@ -95,4 +94,4 @@ function formatCountdown(target, format) {
   return formatTimeStr(diff, format);
 }
 
-exports.formatCountdown = formatCountdown;
+exports['default'] = formatCountdown;

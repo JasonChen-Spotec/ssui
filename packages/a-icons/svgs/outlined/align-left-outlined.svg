@@ -1,0 +1,14 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 16 16" style="enable-background:new 0 0 16 16;" xml:space="preserve">
+<g>
+	<g  transform="translate(-1088.000000, -457.000000)">
+		<g id="align-left" transform="translate(1088.000000, 457.000000)">
+			<path fill="currentColor" d="M14.9,9.2H1.1C0.5,9.2,0,8.7,0,8s0.5-1.2,1.1-1.2h13.8C15.5,6.8,16,7.3,16,8S15.5,9.2,14.9,9.2z"/>
+			<path fill="currentColor" d="M14.9,3H1.1C0.5,3,0,2.5,0,1.8s0.5-1.2,1.1-1.2h13.8c0.6,0,1.1,0.6,1.1,1.2S15.5,3,14.9,3z"/>
+			<path fill="currentColor" d="M9.9,15.4H1.1c-0.6,0-1.1-0.6-1.1-1.2C0,13.5,0.5,13,1.1,13h8.9c0.6,0,1.1,0.6,1.1,1.2
+				C11,14.9,10.5,15.4,9.9,15.4z"/>
+		</g>
+	</g>
+</g>
+</svg>
+
