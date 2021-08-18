@@ -2,24 +2,31 @@ import BigNumber from 'bignumber.js';
 import { roundingModeMap, HALF_UP } from './const/roundingModeMap';
 import { strip, plus, minus, times, divide, float2Fixed, digitLength } from './numberPrecision';
 
+type roundingModeConfig =
+  | 'up'
+  | 'down'
+  | 'ceil'
+  | 'floor'
+  | 'halfUp'
+  | 'halfDown'
+  | 'halfEven'
+  | 'halfCeil'
+  | 'halfFloor';
 export interface optionsConfig {
   useGrouping?: boolean;
   usePlus?: boolean;
-  roundingMode:
-    | 'up'
-    | 'down'
-    | 'ceil'
-    | 'floor'
-    | 'halfUp'
-    | 'halfDown'
-    | 'halfEven'
-    | 'halfCeil'
-    | 'halfFloor';
+  roundingMode?: roundingModeConfig;
   minFractionDigits?: number;
   maxFractionDigits?: number;
 }
 
-const defaultOptions = {
+interface defaultOptionsConfig extends optionsConfig {
+  roundingMode: roundingModeConfig;
+  minFractionDigits: number;
+  maxFractionDigits: number;
+}
+
+const defaultOptions: defaultOptionsConfig = {
   useGrouping: false,
   usePlus: false,
   roundingMode: HALF_UP,
