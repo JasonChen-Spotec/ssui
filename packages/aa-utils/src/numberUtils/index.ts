@@ -34,7 +34,7 @@ const defaultOptions: defaultOptionsConfig = {
   maxFractionDigits: 2,
 };
 
-const formatNumber = (value: number | string, options: optionsConfig): string => {
+const formatNumber = (value: number | string, options?: optionsConfig): string => {
   const { useGrouping, minFractionDigits, maxFractionDigits, usePlus, roundingMode } = {
     ...defaultOptions,
     ...options,
@@ -76,7 +76,7 @@ const defaultPercentOptions = {
   useUnit: true,
 };
 
-const formatPercent = (value: number, options: formatPercentOptions) => {
+const formatPercent = (value: number, options?: formatPercentOptions) => {
   const { useUnit, ...restFormatNumberOptions } = { ...defaultPercentOptions, ...options };
 
   const resultValue = times(value, 100);
