@@ -38,7 +38,7 @@ export function formatTimeStr(duration: number, format: string) {
   });
 }
 
-export default function formatCountdown(target, format) {
+export default function formatCountdown(target: number, format: string) {
   const diff = Math.max(target, 0);
 
   return formatTimeStr(diff, format);

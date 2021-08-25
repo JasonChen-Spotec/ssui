@@ -5,21 +5,21 @@ import { filterInt, filterFloat } from './utils';
 
 export interface NumberInputProps {
   /** 输入框的内容 */
-  value?: string | number;
+  value?: string;
   /** 输入数据的类型 */
   numberType?: 'int' | 'float';
   /** 精度，只对float有效 */
-  precision?: number;
+  precision: number;
   /** 指定输入框展示值的格式 */
-  formatter?: (value: string | number) => string;
+  formatter?: (value: string) => string;
   /** 指定从 formatter 里转换回数字的方式，和 formatter 搭配使用 */
-  parser?: (value: string | number) => string;
+  parser?: (value: string) => string;
   /** 是否允许输入负数 */
   enableMinus?: boolean;
   /** 变化回调 */
-  onChange?: (value: string | number) => void;
+  onChange?: (value: string) => void;
   /** 失去焦点回调 */
-  onBlur?: (value: string | number) => void;
+  onBlur?: (value: string) => void;
 }
 
 const NumberInput = (props: NumberInputProps) => {
@@ -38,7 +38,7 @@ const NumberInput = (props: NumberInputProps) => {
   const [number, setNumber] = React.useState('');
   const resultValue = value === undefined ? number : value;
 
-  const onNumberChange = (e) => {
+  const onNumberChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     let newNumber;
     const newValue = e.target.value;
 
@@ -94,6 +94,7 @@ const NumberInput = (props: NumberInputProps) => {
 
 NumberInput.defaultProps = {
   numberType: INT,
+  precision: 2,
   enableMinus: false,
 };
 

@@ -8,13 +8,19 @@
     "downlevelIteration": true,
     "sourceMap": true,
     "baseUrl": ".",
+
     "paths": {
       "@/*": ["src/*"]
     },
     "allowSyntheticDefaultImports": true,
     "skipLibCheck": true,
     "declaration": false,
-    "strictNullChecks": true
+    "strictNullChecks": true,
+    "module": "esnext",
+    "experimentalDecorators": true,
+    "noUnusedParameters": true,
+    "noUnusedLocals": true,
+    "noImplicitAny": true
   },
   "exclude": [
     "node_modules",
