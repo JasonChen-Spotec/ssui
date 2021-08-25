@@ -1,7 +1,7 @@
 import * as React from 'react';
-import Icon from 'assui/lib/icon';
+import Icon, { IconProps } from 'assui/lib/icon';
 
-function Complete(componentProps) {
+function Complete(componentProps: IconProps) {
   const IconNode = (props: React.SVGProps<SVGSVGElement>) => (
     <svg
       id="complete_svg__\u56FE\u5C42_1"

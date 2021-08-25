@@ -14,9 +14,9 @@ function defaultTemplate(
 
   return typeScriptTpl.ast`${imports}
     ${interfaces}
-    import Icon from 'assui/lib/icon';
+    import Icon, { IconProps } from 'assui/lib/icon';
 
-    function ${componentName}(componentProps) {
+    function ${componentName}(componentProps: IconProps) {
       const IconNode = (props: React.SVGProps<SVGSVGElement>) => ${jsx};
       return <Icon {...componentProps} component={IconNode} />;
     }

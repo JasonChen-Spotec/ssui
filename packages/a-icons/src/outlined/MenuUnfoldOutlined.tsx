@@ -1,7 +1,7 @@
 import * as React from 'react';
-import Icon from 'assui/lib/icon';
+import Icon, { IconProps } from 'assui/lib/icon';
 
-function MenuUnfoldOutlined(componentProps) {
+function MenuUnfoldOutlined(componentProps: IconProps) {
   const IconNode = (props: React.SVGProps<SVGSVGElement>) => (
     <svg viewBox="64 64 896 896" aria-hidden="true" {...props}>
       <path

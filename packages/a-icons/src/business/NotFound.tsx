@@ -1,7 +1,7 @@
 import * as React from 'react';
-import Icon from 'assui/lib/icon';
+import Icon, { IconProps } from 'assui/lib/icon';
 
-function NotFound(componentProps) {
+function NotFound(componentProps: IconProps) {
   const IconNode = (props: React.SVGProps<SVGSVGElement>) => (
     <svg
       id="not-found_svg__Layer_1"

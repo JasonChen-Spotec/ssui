@@ -1,7 +1,7 @@
 import * as React from 'react';
-import Icon from 'assui/lib/icon';
+import Icon, { IconProps } from 'assui/lib/icon';
 
-function ShrinkOutlined(componentProps) {
+function ShrinkOutlined(componentProps: IconProps) {
   const IconNode = (props: React.SVGProps<SVGSVGElement>) => (
     <svg
       className="shrink-outlined_svg__icon"

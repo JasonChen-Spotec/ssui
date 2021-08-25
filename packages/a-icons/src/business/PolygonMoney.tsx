@@ -1,7 +1,7 @@
 import * as React from 'react';
-import Icon from 'assui/lib/icon';
+import Icon, { IconProps } from 'assui/lib/icon';
 
-function PolygonMoney(componentProps) {
+function PolygonMoney(componentProps: IconProps) {
   const IconNode = (props: React.SVGProps<SVGSVGElement>) => (
     <svg
       id="polygon-money_svg__\u56FE\u5C42_1"
