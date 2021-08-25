@@ -26,7 +26,7 @@ export interface IconProps extends IconBaseProps {
   children?: React.ReactNode;
 }
 
-const Icon = React.forwardRef<HTMLDivElement, IconProps>((props, ref) => {
+const Icon = (props: IconProps) => {
   const {
     className,
     component: Component,
@@ -89,7 +89,6 @@ const Icon = React.forwardRef<HTMLDivElement, IconProps>((props, ref) => {
     <span
       role="img"
       {...restProps}
-      ref={ref}
       tabIndex={iconTabIndex}
       onClick={onClick}
       className={classString}
@@ -97,8 +96,8 @@ const Icon = React.forwardRef<HTMLDivElement, IconProps>((props, ref) => {
       {renderInnerNode()}
     </span>
   );
-});
+};
 
-Icon.displayName = 'AntdIcon';
+Icon.displayName = 'SpotecIcon';
 
 export default Icon;
