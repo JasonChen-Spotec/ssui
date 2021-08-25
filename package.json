@@ -12,6 +12,7 @@
     "bootstrap": "lerna bootstrap",
     "clean": "lerna clean --yes",
     "build": "lerna run build",
+    "lerna": "lerna",
     "test": "jest --watchAll",
     "lint": "eslint --ignore-pattern **/__tests__/* --ignore-pattern **/demo/* \"packages/*/src/**/*.{ts,tsx}\"",
     "build:doc": "dumi build",

@@ -38,6 +38,7 @@
   },
   "devDependencies": {
     "@types/enzyme": "^3.10.5",
+    "@types/insert-css": "^2.0.1",
     "enzyme-adapter-react-16": "^1.15.4",
     "jest-websocket-mock": "^2.1.0",
     "mock-socket": "^9.0.3"

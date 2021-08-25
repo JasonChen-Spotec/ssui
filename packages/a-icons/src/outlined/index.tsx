@@ -1,3 +1,4 @@
+export { default as AlignLeftOutlined } from './AlignLeftOutlined';
 export { default as AllocationOutlined } from './AllocationOutlined';
 export { default as ArrowInsideCircleOutlined } from './ArrowInsideCircleOutlined';
 export { default as ArrowOutsideCircleOutlined } from './ArrowOutsideCircleOutlined';

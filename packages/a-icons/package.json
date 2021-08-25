@@ -9,7 +9,7 @@
   "license": "MIT",
   "scripts": {
     "buildSvg": "svgr --template buildIconTemplate.js --typescript --out-dir src svgs",
-    "build": "gulp"
+    "build": "yarn run buildSvg && gulp"
   },
   "devDependencies": {
     "@svgr/cli": "^5.4.0",

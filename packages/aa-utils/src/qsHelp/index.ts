@@ -1,5 +1,6 @@
 import queryString from 'qs';
 import { compile } from 'path-to-regexp';
+// import QueryStringType from '@types/qs';
 
 export const getQueryString = (qs: string = window.location.search): string => {
   if (qs && qs.charAt(0) === '?') {
@@ -9,11 +10,12 @@ export const getQueryString = (qs: string = window.location.search): string => {
   return '';
 };
 
-export const getQueryObject = (qs: string = getQueryString()): string => queryString.parse(qs);
+export const getQueryObject = (qs: string = getQueryString()): queryString.ParsedQs =>
+  queryString.parse(qs);
 
 export interface searchQueryObject {
   path?: string;
-  query?: string;
+  query?: queryString.ParsedQs;
 }
 
 export const getPathAndQueryObject = (search: string): object => {

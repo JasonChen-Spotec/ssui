@@ -1,5 +1,11 @@
 /* eslint-disable no-useless-escape */
-export const filterInt = ({ value, enableMinus, preValue }) => {
+
+export interface FilterIntType {
+  value: string;
+  enableMinus?: boolean;
+  preValue: string;
+}
+export const filterInt = ({ value, enableMinus, preValue }: FilterIntType): string => {
   let nextValue = value.replace(/[^\d\-]/g, '');
 
   if (!enableMinus) {
@@ -15,7 +21,11 @@ export const filterInt = ({ value, enableMinus, preValue }) => {
   return nextValue;
 };
 
-export const filterFloat = ({ value, preValue, precision, enableMinus }) => {
+export interface FilterFloatType extends FilterIntType {
+  precision: number;
+}
+
+export const filterFloat = ({ value, preValue, precision, enableMinus }: FilterFloatType) => {
   let nextValue = value.replace(/[^\d.\-]/g, '');
   const matchDecimalPoint = nextValue.match(/\./g) || [];
   if (matchDecimalPoint.length > 1) {
