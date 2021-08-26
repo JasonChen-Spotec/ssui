@@ -1,6 +1,5 @@
 import queryString from 'qs';
 import { compile } from 'path-to-regexp';
-// import QueryStringType from '@types/qs';
 
 export const getQueryString = (qs: string = window.location.search): string => {
   if (qs && qs.charAt(0) === '?') {

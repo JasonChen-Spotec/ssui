@@ -44,6 +44,9 @@ describe('qsHelp', () => {
     expect(toPath('/userCenter/:name/age/:age', { name: 'bin<>的', age: 23 })).toEqual(
       '/userCenter/bin%3C%3E%E7%9A%84/age/23',
     );
+    expect(toPath('/userCenter/:name/age/:age', { name: 'bin<>的', age: -1 })).toEqual(
+      '/userCenter/bin%3C%3E%E7%9A%84/age/-1',
+    );
   });
 
   it('getPathAndQueryObject', () => {
