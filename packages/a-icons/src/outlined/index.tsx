@@ -17,7 +17,7 @@ export { default as CircleShutdownOutlined } from './CircleShutdownOutlined';
 export { default as CloseCircleOutlined } from './CloseCircleOutlined';
 export { default as CloseOutlined } from './CloseOutlined';
 export { default as CloudOutlined } from './CloudOutlined';
-export { default as CoinCirleOutline } from './CoinCirleOutline';
+export { default as CoinCircleOutline } from './CoinCircleOutline';
 export { default as CopyOutlined } from './CopyOutlined';
 export { default as CorrectOutlined } from './CorrectOutlined';
 export { default as DashboardOutlined } from './DashboardOutlined';
