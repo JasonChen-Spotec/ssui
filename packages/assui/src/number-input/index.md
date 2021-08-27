@@ -5,7 +5,7 @@ nav:
   path: /assui
 group:
   title: 数据录入
-  path: /components
+  path: /components/input
 ---
 # NumberInput 数字输入框
 

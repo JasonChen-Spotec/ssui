@@ -5,7 +5,7 @@ nav:
   path: /assui
 group:
   title: 数据录入
-  path: /components
+  path: /components/input
 ---
 
 # HighlightTextarea 可高亮的文本输入框
@@ -39,10 +39,10 @@ group:
 
 ## API
 
-| 字段      | 说明                    | 类型             | 默认值         |
-| --------- | ----------------------- | ---------------- | -------------- |
-| prefixCls | `textrea` class的前缀     | string      | `ant`           |
-| className      | 组件样式类   | string    | - |
-| textAreaClassName    | textArea样式类     | string | -          |
-| onChange     | 输入框内容变化时的回调	 | `(value: string, e: React.ChangeEvent<HTMLTextAreaElement>) => void`    | -              |
+| 属性名            | 描述                  | 类型   | 默认值 |
+| ----------------- | --------------------- | ------ | ------ |
+| prefixCls         | `textrea` class的前缀 | string | `ant`  |
+| className         | 组件样式类            | string | -      |
+| textAreaClassName | textArea样式类        | string | -      |
+| onChange     | 输入框内容变化时的回调	 | `(value: string, e: React.ChangeEvent<HTMLTextAreaElement>) => void`    | -   |
 | highlight     | 高亮的条件 | `string \| number[] \| RegExp \| (input: (string)) => string \| {highlight: HighlightInstanceType, className?: string}[]` | - |
