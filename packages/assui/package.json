@@ -30,6 +30,7 @@
     "README.md"
   ],
   "dependencies": {
+    "ahooks": "^2.10.9",
     "antd": "^4.16.11"
   },
   "peerDependencies": {
