@@ -1,5 +1,5 @@
 ---
-title: highlight-textarea
+title: HighlightTextarea
 nav:
   title: assui
   path: /assui

@@ -1,5 +1,5 @@
 ---
-title: highlight-words
+title: HighlightWords
 nav:
   title: assui
   path: /assui
@@ -8,7 +8,7 @@ group:
   path: /components/show
 ---
 
-# highlight-words
+# HighlightWords
 高亮一段字符串中的关键字
 
 ## 1. 代码演示

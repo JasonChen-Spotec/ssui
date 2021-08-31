@@ -1,5 +1,5 @@
 ---
-title: react-echart
+title: RcEchart
 nav:
   title: assui
   path: /assui

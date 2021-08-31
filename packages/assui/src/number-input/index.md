@@ -1,5 +1,5 @@
 ---
-title: number-input
+title: NumberInput
 nav:
   title: assui
   path: /assui
