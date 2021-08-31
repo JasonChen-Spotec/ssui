@@ -33,7 +33,6 @@
     "ahooks": "^2.10.9",
     "copy-to-clipboard": "^3.3.1",
     "echarts": "^5.1.2",
-    "react-copy-to-clipboard": "^5.0.4",
     "react-highlight-words": "^0.17.0",
     "react-split-pane": "^0.1.92",
     "resize-observer-polyfill": "^1.5.1"
