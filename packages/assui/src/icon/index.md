@@ -7,7 +7,11 @@ group:
   title: 展示
   path: /components/show
 ---
-## 1. 使用
+
+Icon 图标
+
+## 1. 代码演示
+### 1.1. 使用
 使用 `webpack`，可以通过配置 [@svgr/webpack](https://www.npmjs.com/package/@svgr/webpack) 来将 `svg` 图标作为 `React` 组件导入。`@svgr/webpack` 的 `options` 选项请参阅 [svgr 文档](https://github.com/smooth-code/svgr#options)。
 
 ```js
@@ -29,11 +33,11 @@ group:
 }
 ```
 
-## 2. 基本应用
+### 1.2. 基本应用
 
 <code hideActions='["CSB", "EXTERNAL"]' src="./demo/base.tsx" />
 
-## 3. 双色图标
+### 1.3. 双色图标
 
 1. 使用CSS[`inherit`关键字](http://tympanus.net/codrops/css_reference/inherit)给内容添加样式: 给svg 图形元素设置`fill= inherit` 图形元素得颜色会自动集成父级fill得颜色
 
@@ -42,7 +46,7 @@ group:
 
 <code hideActions='["CSB", "EXTERNAL"]' src="./demo/twoColor.tsx" />
 
-## 4. API
+### API
 
 | 属性名    | 描述                                                           | 类型                                     | 默认值 |
 | --------- | -------------------------------------------------------------- | ---------------------------------------- | ------ |

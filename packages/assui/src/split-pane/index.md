@@ -11,11 +11,12 @@ group:
 # SplitPane(分割面板)
 水平或者垂直分割面板
 
-### 基础使用
+## 1. 代码演示
+### 1.1. 基础使用
 
 <code hideActions='["CSB", "EXTERNAL"]' src="./demo/Demo1.jsx" />
 
-### 多窗口水平分割
+### 1.2. 多窗口水平分割
 
 <code hideActions='["CSB", "EXTERNAL"]' src="./demo/Demo2.jsx" />
 

@@ -6,21 +6,22 @@ nav:
 group:
   title: 展示
   path: /components/show
+  order: 2
 ---
 
 # RcEchart(基于echart)
 
-## 1. 使用默认全量导入的echarts
+## 1. 代码演示
+### 1.1. 使用默认全量导入的echarts
 <code hideActions='["CSB", "EXTERNAL"]' src="./demo/index.jsx" />
 
-## 2. 按需引入(js)
+### 1.2. 按需引入(js)
 <code hideActions='["CSB", "EXTERNAL"]' src="./demo/MinimalOption.jsx" />
 
-## 2. 按需引入(ts)
+### 1.3. 按需引入(ts)
 <code hideActions='["CSB", "EXTERNAL"]' src="./demo/MinimalOptionTs.tsx" />
 
-## 公共API(core)
-属性如下
+### API
 
 | 属性名     | 描述                                               | 类型    | 默认值                        |
 | ---------- | -------------------------------------------------- | ------- | ----------------------------- |
