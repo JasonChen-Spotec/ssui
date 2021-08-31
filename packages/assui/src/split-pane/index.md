@@ -1,5 +1,5 @@
 ---
-title: split-pane
+title: SplitPane
 nav:
   title: assui
   path: /assui
@@ -21,4 +21,5 @@ group:
 
 <API></API>
 
-https://github.com/tomkp/react-split-pane
+> 更多详情[react-split-pane](https://github.com/tomkp/react-split-pane)
+
