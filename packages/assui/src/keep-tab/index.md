@@ -27,12 +27,12 @@ group:
 
 
 ## Tabs.TabPane
-| 参数 | 说明 | 类型 | 默认值 |
-| --- | --- | --- | --- |
-| closeIcon | 自定义关闭图标，`在 type="editable-card"`时有效 | ReactNode | - |
-| forceRender | 被隐藏时是否渲染 DOM 结构 | boolean | false |
-| key | 对应 activeKey | string | - |
-| tab | 选项卡头显示文字 | ReactNode | - |
-| count | 展示的数字(Badge组件的count 属性) | ReactNode | - |
+| 属性名      | 描述                                            | 类型      | 默认值 |
+| ----------- | ----------------------------------------------- | --------- | ------ |
+| closeIcon   | 自定义关闭图标，`在 type="editable-card"`时有效 | ReactNode | -      |
+| forceRender | 被隐藏时是否渲染 DOM 结构                       | boolean   | false  |
+| key         | 对应 activeKey                                  | string    | -      |
+| tab         | 选项卡头显示文字                                | ReactNode | -      |
+| count       | 展示的数字(Badge组件的count 属性)               | ReactNode | -      |
 
 关于`Tabs`与`Tabs.TabPane`更多属性请参考 [antd Tabs](https://ant.design/components/tabs-cn/)与[rc-tabs](https://www.npmjs.com/package/rc-tabs)
