@@ -1,0 +1,23 @@
+.modes {
+  margin-bottom: 20px;
+}
+.fade-enter .ant-btn {
+  transform: translateX(-100%);
+  opacity: 0;
+}
+.fade-enter-active .ant-btn {
+  transform: translateX(0%);
+  opacity: 1;
+}
+.fade-exit .ant-btn {
+  transform: translateX(0%);
+  opacity: 1;
+}
+.fade-exit-active .ant-btn {
+  transform: translateX(100%);
+  opacity: 0;
+}
+.fade-enter-active .ant-btn,
+.fade-exit-active .ant-btn {
+  transition: opacity 500ms, transform 500ms;
+}
