@@ -142,6 +142,7 @@ module.exports = {
     '@typescript-eslint/no-shadow': [2, { ignoreTypeValueShadow: true }],
     // https://github.com/typescript-eslint/typescript-eslint/issues/2528#issuecomment-689369395
     'no-undef': 0,
+    'no-console': 0,
     semi: 2,
   },
   globals: {
