@@ -17,7 +17,6 @@ group:
 
 <code hideActions='["CSB", "EXTERNAL"]' src="./demo/index.jsx" />
 
-
 ### 1.2. 解析
 <code hideActions='["CSB", "EXTERNAL"]' src="./demo/parseDate.jsx" />
 
@@ -47,3 +46,5 @@ DateUtils.dateFormat; // 获取或设置默认日期格式
 DateUtils.timeFormat; // 获取或设置默认时间格式
 DateUtils.dateTimeFormat; // 获取或设置默认日期时间格式
 ```
+
+> 更多时间对象的操作 [dayjs](https://dayjs.gitee.io/zh-CN/)

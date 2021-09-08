@@ -1,3 +1,8 @@
+/**
+ * title: 提示
+ * desc: 如果想并设置到一个时间的开始。请使用dayjs的`startOf`
+ */
+
 import React from 'react';
 import { Descriptions } from 'antd';
 import { dateUtils } from 'aa-utils';

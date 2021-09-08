@@ -44,6 +44,7 @@ export default () => (
   </div>
 )
 ```
+> 参数如果为空择直接获取当前url的`query`参数
 
 ## 3. toQueryString
 ```jsx
