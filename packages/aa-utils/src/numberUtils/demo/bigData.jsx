@@ -5,7 +5,7 @@
 
 import React from 'react';
 import { Descriptions, Typography } from 'antd';
-import numberUtils from 'aa-utils/lib/numberUtils';
+import { numberUtils } from 'aa-utils';
 
 const { Title } = Typography;
 const { formatNumber } = numberUtils;
