@@ -1,0 +1,85 @@
+@import '~antd/es/style/themes/index';
+
+@progress-prefix-cls: ~'@{ant-prefix}';
+
+.as-img-upload {
+  width: 335px;
+  height: 140px;
+  border: 1px solid #cacaca;
+  border-radius: 4px;
+
+  &:hover {
+    border: 1px solid #1890ff;
+  }
+
+  .rc-upload,
+  &:focus {
+    outline: none;
+  }
+
+  &-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    cursor: pointer;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &-content {
+    position: relative;
+    z-index: 1010;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: #fff;
+  }
+
+  &-close-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 10;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    background-color: #000;
+    cursor: pointer;
+    opacity: 0.6;
+
+    .spotecicon {
+      width: 15px;
+      height: 15px;
+      color: #fff;
+    }
+  }
+
+  &-preview {
+    height: 100%;
+  }
+
+  &-upload-progress {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    z-index: 2;
+    transform: translateY(-34%);
+
+    .@{ant-prefix}-progress-outer {
+      padding: 0 20px;
+    }
+
+    .@{ant-prefix}-progress-text {
+      display: block;
+      width: 100%;
+      color: #fff;
+      text-align: center;
+    }
+  }
+}
