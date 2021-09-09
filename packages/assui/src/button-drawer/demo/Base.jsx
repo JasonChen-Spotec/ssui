@@ -5,12 +5,12 @@
 
 import React from 'react';
 import { Button } from 'antd';
-import { ButtonModal } from 'assui';
+import { ButtonDrawer } from 'assui';
 
-const Content = ({ modalAction }) => (
+const Content = ({ drawerAction }) => (
   <div>
     这是弹框内容
-    <Button type="primary" onClick={() => modalAction.close()}>
+    <Button type="primary" onClick={() => drawerAction.close()}>
       点击这里关闭弹框
     </Button>
   </div>
@@ -18,13 +18,13 @@ const Content = ({ modalAction }) => (
 
 export default () => (
   <div>
-    <ButtonModal
+    <ButtonDrawer
       title="demo"
       footer={null}
       onCancel={() => console.log('onCancel')}
       content={<Content />}
     >
       <span>open modal</span>
-    </ButtonModal>
+    </ButtonDrawer>
   </div>
 );
