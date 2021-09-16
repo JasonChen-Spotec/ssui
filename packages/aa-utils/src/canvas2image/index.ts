@@ -1,6 +1,6 @@
 type fileType = 'png' | 'jpeg' | 'gif' | 'bmp';
 
-interface saveAsImageOptionsType {
+export interface saveAsImageOptionsType {
   width?: number;
   height?: number;
   type?: fileType;
@@ -323,4 +323,6 @@ const Canvas2Image = () => {
 };
 
 // Export function, used in npm
-export default Canvas2Image();
+const canvas2image = Canvas2Image();
+
+export default canvas2image;

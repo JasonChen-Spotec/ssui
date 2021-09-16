@@ -25,7 +25,6 @@
     }
   },
   "devDependencies": {
-    "antd": "^4.16.11",
     "@babel/cli": "^7.10.1",
     "@babel/core": "^7.10.2",
     "@svgr/webpack": "^5.5.0",
@@ -39,6 +38,7 @@
     "@typescript-eslint/parser": "^4.29.1",
     "@umijs/fabric": "^2.1.0",
     "@umijs/plugin-sass": "^1.1.1",
+    "antd": "^4.16.11",
     "babel-loader": "^8.1.0",
     "babel-plugin-import": "^1.12.0",
     "babel-plugin-transform-async-to-promises": "^0.8.15",
@@ -85,6 +85,7 @@
     "webpack-merge": "^4.2.2"
   },
   "dependencies": {
-    "insert-css": "^2.0.0"
+    "insert-css": "^2.0.0",
+    "rc-motion": "^2.4.4"
   }
 }

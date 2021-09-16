@@ -1,6 +1,6 @@
 import React from 'react';
 import * as echarts from 'echarts';
-import ReactEchartCore from './core';
+import RcEchartCore from './core';
 
 export type Opts = {
   devicePixelRatio?: number;
@@ -21,6 +21,6 @@ export interface RcEchartPropsType {
   opts?: Opts;
 }
 
-const ReactEcharts = (props: RcEchartPropsType) => <ReactEchartCore echarts={echarts} {...props} />;
+const RcEcharts = (props: RcEchartPropsType) => <RcEchartCore echarts={echarts} {...props} />;
 
-export default ReactEcharts;
+export default RcEcharts;
