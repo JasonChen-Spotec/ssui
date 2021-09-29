@@ -1,5 +1,6 @@
 export { default as CoinFilled } from './CoinFilled'
 export { default as AdFilled } from './AdFilled'
+export { default as AlignLeftOutlined } from './AlignLeftOutlined'
 export { default as AllocationOutlined } from './AllocationOutlined'
 export { default as ArrowFilled } from './ArrowFilled'
 export { default as ArrowInsideCircleOutlined } from './ArrowInsideCircleOutlined'
