@@ -1,0 +1,14 @@
+build
+.eslintrc.js
+
+node_modules
+./buildI18n
+packages/**/demo/**
+packages/**/lib
+packages/**/es
+packages/**/node_modules
+packages/a-icons/src
+packages/**/__tests__
+packages/**/webpack.config.js
+packages/**/gulpfile.js
+packages/**/buildIconTemplate.js

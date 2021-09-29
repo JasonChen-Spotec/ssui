@@ -1,5 +1,6 @@
 import * as React from 'react';
-import QRCode, { QRCodeRenderersOptions, QRCodeSegment } from 'qrcode';
+import type { QRCodeRenderersOptions, QRCodeSegment } from 'qrcode';
+import QRCode from 'qrcode';
 import useMount from 'ahooks/lib/useMount';
 import useQrcode from './useQrcode';
 

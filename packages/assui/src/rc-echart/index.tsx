@@ -14,7 +14,6 @@ export interface RcEchartPropsType {
   option: echarts.EChartsOption;
   notMerge?: boolean;
   lazyUpdate?: boolean;
-  style?: React.CSSProperties;
   className?: string;
   theme?: string;
   onEvents?: Record<string, Function>;

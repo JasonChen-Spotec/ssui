@@ -3,7 +3,7 @@ import { insertCss } from 'insert-css';
 
 export const svgBaseProps = {
   'aria-hidden': 'true',
-  focusable: 'false',
+  'focusable': 'false',
 };
 
 export const iconStyles = `

@@ -5,7 +5,7 @@ import useMount from 'ahooks/lib/useMount';
 import useUpdateEffect from 'ahooks/lib/useUpdateEffect';
 import classNames from 'classnames';
 import ResizeObserver from 'resize-observer-polyfill';
-import { ECharts as EChartsInterfaceType, EChartsOption } from 'echarts';
+import type { ECharts as EChartsInterfaceType, EChartsOption } from 'echarts';
 
 export type Opts = {
   devicePixelRatio?: number;
@@ -20,7 +20,6 @@ export interface RcEchartPropsType {
   notMerge?: boolean;
   lazyUpdate?: boolean;
   echarts: any;
-  style?: React.CSSProperties;
   className?: string;
   theme?: string;
   onEvents?: Record<string, Function>;
@@ -28,7 +27,7 @@ export interface RcEchartPropsType {
 }
 
 const ReactEchartCore = (props: RcEchartPropsType) => {
-  const { className, option, style, echarts, notMerge, lazyUpdate, onEvents, opts, theme } = props;
+  const { className, option, echarts, notMerge, lazyUpdate, onEvents, opts, theme } = props;
   const chartDomRef = useRef<HTMLDivElement>();
   const chartRef = useRef<EChartsInterfaceType>();
 
@@ -106,12 +105,11 @@ const ReactEchartCore = (props: RcEchartPropsType) => {
 
   useUpdateEffect(() => {
     resizeChart();
-  }, [style, className]);
+  }, [className]);
 
-  const finallyStyle = {
+  const defaultStyle = {
     width: '100%',
     height: '100%',
-    ...style,
   };
 
   return (
@@ -119,7 +117,7 @@ const ReactEchartCore = (props: RcEchartPropsType) => {
       ref={(node: HTMLDivElement) => {
         chartDomRef.current = node;
       }}
-      style={finallyStyle}
+      style={defaultStyle}
       className={classNames('react-echart', className)}
     />
   );
@@ -128,7 +126,7 @@ const ReactEchartCore = (props: RcEchartPropsType) => {
 ReactEchartCore.defaultProps = {
   notMerge: false,
   lazyUpdate: false,
-  style: {},
+  // style: {},
   className: '',
   onEvents: {},
   opts: {},

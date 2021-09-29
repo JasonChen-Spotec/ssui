@@ -1,5 +1,6 @@
 import * as React from 'react';
-import Modal, { ModalProps } from 'antd/lib/modal';
+import type { ModalProps } from 'antd/lib/modal';
+import Modal from 'antd/lib/modal';
 
 export interface refProps {
   open: () => void;
@@ -41,6 +42,8 @@ const ButtonModal: React.ForwardRefRenderFunction<unknown, ButtonModalProps> = (
     }
 
     close();
+
+    return null;
   };
 
   const handleModalCancel = (e: React.MouseEvent<HTMLElement>) => {

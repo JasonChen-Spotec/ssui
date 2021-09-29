@@ -16,9 +16,6 @@ export { default as HighlightWithinTextarea } from './highlight-textarea';
 export type { FindChunks, Chunk, HighlighterProps } from './highlight-words';
 export { default as HighlightWords } from './highlight-words';
 
-export type { IconProps } from './icon';
-export { default as Icon } from './icon';
-
 export type { ImgCropProps } from './img-crop';
 export { default as ImgCrop } from './img-crop';
 

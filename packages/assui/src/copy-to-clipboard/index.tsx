@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import copy from 'copy-to-clipboard';
-import Tooltip, { TooltipProps } from 'antd/lib/tooltip';
+import type { TooltipProps } from 'antd/lib/tooltip';
+import Tooltip from 'antd/lib/tooltip';
 
 export interface CopyToClipboardProps {
   /** 需要复制的字符串 */
@@ -8,7 +9,7 @@ export interface CopyToClipboardProps {
   /** 触发复制事件的元素 */
   children: React.ReactElement;
   /** 文本被复制时候的回调 */
-  onCopy?(text: string, result: boolean): void;
+  onCopy?: (text: string, result: boolean) => void;
   /** ant design Tooltip props */
   tooltipProps: TooltipProps;
   /** 复制成功的Tooltip提示文案 */

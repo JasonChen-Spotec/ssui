@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Icon, { IconProps } from 'assui/lib/icon';
+import Icon, { IconProps } from 'a-base-icon/lib/Icon';
 
 function HomeFilled(componentProps: IconProps) {
   const IconNode = (props: React.SVGProps<SVGSVGElement>) => (

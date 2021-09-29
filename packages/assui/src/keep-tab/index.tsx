@@ -1,6 +1,8 @@
 import * as React from 'react';
-import Badge, { BadgeProps } from 'antd/lib/badge';
-import Tabs, { TabPaneProps } from 'antd/lib/tabs';
+import type { BadgeProps } from 'antd/lib/badge';
+import Badge from 'antd/lib/badge';
+import type { TabPaneProps } from 'antd/lib/tabs';
+import Tabs from 'antd/lib/tabs';
 import { useParams } from 'react-router-dom';
 import useUrlState from '@ahooksjs/use-url-state';
 import toArray from 'rc-util/lib/Children/toArray';
