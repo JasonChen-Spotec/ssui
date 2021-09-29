@@ -11,7 +11,6 @@
   background-color: #f5f6fa;
 }
 
-// Base styles
 .list {
   width: 400px;
   height: 600px;
@@ -23,7 +22,6 @@
 .item {
   position: relative;
   border-bottom: 1px solid #999;
-
   cursor: grab;
   touch-action: manipulation;
 
@@ -36,7 +34,6 @@
   cursor: default;
 }
 
-// Stylized
 .stylizedList {
   position: relative;
   z-index: 0;
@@ -52,7 +49,6 @@
   box-sizing: border-box;
   width: 100%;
   padding: 0 20px;
-
   color: #333;
   font-weight: 400;
   background-color: #fff;
@@ -72,6 +68,7 @@
 }
 
 // Drag handle
+
 .handleWrapper {
   width: 18px;
   height: 18px;
@@ -84,7 +81,6 @@
   height: 18px;
   margin-right: 20px;
   overflow: hidden;
-
   cursor: grab;
 
   > svg {
@@ -93,6 +89,7 @@
 }
 
 // Horizontal list
+
 .horizontalList {
   display: flex;
   width: 600px;
@@ -111,6 +108,7 @@
 }
 
 // Grid
+
 .grid {
   display: grid;
   grid-gap: 10px;
@@ -171,6 +169,7 @@
 }
 
 // Nested
+
 .category {
   height: auto;
 
@@ -190,6 +189,7 @@
 }
 
 // Divider
+
 .divider {
   padding: 10px 20px;
   color: #333;
@@ -200,9 +200,9 @@
 }
 
 // Helper styles
+
 .helper {
   box-shadow: 0 5px 5px -5px rgba(0, 0, 0, 0.2), 0 -5px 5px -5px rgba(0, 0, 0, 0.2);
-
   cursor: grabbing;
 }
 
@@ -219,7 +219,7 @@
     }
 
     &:focus {
-      box-shadow: 0 0px 5px 1px @focusedOutlineColor;
+      box-shadow: 0 0 5px 1px @focusedOutlineColor;
     }
   }
 
@@ -234,11 +234,12 @@
 
 :global {
   body {
-    font-family: 'Montserrat', 'Helvetica Neue', 'Helvetica', arial, sans-serif;
+    font-family: 'Montserrat', 'Helvetica Neue', 'Helvetica', sans-serif;
     background-color: rgba(#f4f5f9, 0.7);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
+
   html,
   body,
   #root {

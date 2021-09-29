@@ -1,3 +1,4 @@
+/* eslint-disable no-restricted-properties */
 type numType = number | string;
 /**
  * @desc 解决浮动运算问题，避免小数点后产生多位数和计算精度损失。
@@ -33,20 +34,6 @@ function float2Fixed(num: numType): number {
   }
   const dLen = digitLength(num);
   return dLen > 0 ? strip(Number(num) * Math.pow(10, dLen)) : Number(num);
-}
-
-/**
- * 检测数字是否越界，如果越界给出提示
- * @param {*number} num 输入数
- */
-function checkBoundary(num: number) {
-  if (_boundaryCheckingState) {
-    if (num > Number.MAX_SAFE_INTEGER || num < Number.MIN_SAFE_INTEGER) {
-      console.warn(
-        `${num} is beyond boundary when transfer to integer, the results may not be accurate`,
-      );
-    }
-  }
 }
 
 /**
@@ -126,6 +113,7 @@ function divide(...nums: numType[]): number {
   // fix: 类似 10 ** -4 为 0.00009999999999999999，strip 修正
   return times(
     num1Changed / num2Changed,
+    // eslint-disable-next-line no-restricted-properties
     strip(Math.pow(10, digitLength(num2) - digitLength(num1))),
   );
 }
@@ -138,4 +126,19 @@ let _boundaryCheckingState = true;
 function enableBoundaryChecking(flag = true) {
   _boundaryCheckingState = flag;
 }
+
+/**
+ * 检测数字是否越界，如果越界给出提示
+ * @param {*number} num 输入数
+ */
+function checkBoundary(num: number) {
+  if (_boundaryCheckingState) {
+    if (num > Number.MAX_SAFE_INTEGER || num < Number.MIN_SAFE_INTEGER) {
+      console.warn(
+        `${num} is beyond boundary when transfer to integer, the results may not be accurate`,
+      );
+    }
+  }
+}
+
 export { strip, plus, minus, times, divide, digitLength, float2Fixed, enableBoundaryChecking };

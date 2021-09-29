@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions */
 import * as React from 'react';
-import Upload, { UploadProps } from 'rc-upload';
+import type { UploadProps } from 'rc-upload';
+import Upload from 'rc-upload';
 import Progress from 'antd/lib/progress';
 import Image from 'antd/lib/image';
 import classNames from 'classnames';

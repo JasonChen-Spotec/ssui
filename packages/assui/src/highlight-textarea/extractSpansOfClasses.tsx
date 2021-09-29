@@ -1,5 +1,6 @@
+/* eslint-disable no-plusplus */
 import React from 'react';
-import { RangesType } from './types';
+import type { RangesType } from './types';
 
 class Span {
   beginIndex: number;

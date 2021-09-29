@@ -13,11 +13,11 @@
   },
   "devDependencies": {
     "@svgr/cli": "^5.4.0",
-    "antd": "^4.16.11",
-    "assui": "^2.0.6"
+    "antd": "^4.16.11"
   },
   "dependencies": {
-    "@svgr/webpack": "^5.5.0"
+    "@svgr/webpack": "^5.5.0",
+    "a-base-icon": "^1.0.0"
   },
   "peerDependencies": {
     "assui": "^2.0.2"

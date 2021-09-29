@@ -9,12 +9,14 @@ gulp.task('clean', async () => {
   await del('dist/**');
 });
 
+const codeSource = ['src/business/*.tsx', 'src/filled/*.tsx', 'src/outlined/*.tsx', 'src/base/**'];
+
 gulp.task('cjs', () => {
   const tsProject = ts.createProject('tsconfig.json', {
     module: 'CommonJS',
   });
   return gulp
-    .src(['src/business/*.tsx', 'src/filled/*.tsx', 'src/outlined/*.tsx'])
+    .src(codeSource)
     .pipe(tsProject())
     .pipe(
       babel({
@@ -29,7 +31,7 @@ gulp.task('es', () => {
     module: 'ESNext',
   });
   return gulp
-    .src(['src/business/*.tsx', 'src/filled/*.tsx', 'src/outlined/*.tsx'])
+    .src(codeSource)
     .pipe(tsProject())
     .pipe(
       babel({
@@ -44,11 +46,7 @@ gulp.task('declaration', () => {
     declaration: true,
     emitDeclarationOnly: true,
   });
-  return gulp
-    .src(['src/business/*.tsx', 'src/filled/*.tsx', 'src/outlined/*.tsx'])
-    .pipe(tsProject())
-    .pipe(gulp.dest('es/'))
-    .pipe(gulp.dest('lib/'));
+  return gulp.src(codeSource).pipe(tsProject()).pipe(gulp.dest('es/')).pipe(gulp.dest('lib/'));
 });
 
 exports.default = gulp.series('clean', 'cjs', 'es', 'declaration');

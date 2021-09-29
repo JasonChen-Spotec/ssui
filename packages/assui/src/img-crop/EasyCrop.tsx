@@ -1,5 +1,6 @@
 import * as React from 'react';
-import Cropper, { CropperProps } from 'react-easy-crop';
+import type { CropperProps } from 'react-easy-crop';
+import Cropper from 'react-easy-crop';
 
 export interface EasyCropProps
   extends Omit<

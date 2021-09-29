@@ -1,3 +1,6 @@
+/* eslint-disable no-plusplus */
+/* eslint-disable @typescript-eslint/no-throw-literal */
+/* eslint-disable no-param-reassign */
 type fileType = 'png' | 'jpeg' | 'gif' | 'bmp';
 
 export interface saveAsImageOptionsType {
@@ -137,7 +140,8 @@ const Canvas2Image = () => {
       // WORD bfReserved2 -- Reserved; must be zero
       0,
       0,
-      // DWORD bfOffBits -- The offset, in bytes, from the beginning of the BITMAPFILEHEADER structure to the bitmap bits.
+      // DWORD bfOffBits -- The offset, in bytes, from the beginning of
+      // the BITMAPFILEHEADER structure to the bitmap bits.
       54,
       0,
       0,
@@ -289,6 +293,7 @@ const Canvas2Image = () => {
       const strData = getDataURL(canvas, finallyType, width, height);
       return genImage(strData);
     }
+    return null;
   };
 
   return {

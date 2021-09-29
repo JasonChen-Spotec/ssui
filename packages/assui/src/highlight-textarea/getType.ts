@@ -1,4 +1,4 @@
-import { HighlightType, TypeList, ObjectType } from './types';
+import type { HighlightType, TypeList, ObjectType } from './types';
 
 export default function getType(instance: HighlightType): TypeList {
   const type = typeof instance;

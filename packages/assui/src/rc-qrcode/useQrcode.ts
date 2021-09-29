@@ -1,4 +1,5 @@
-import QRCode, { QRCodeToDataURLOptions, QRCodeSegment } from 'qrcode';
+import type { QRCodeToDataURLOptions, QRCodeSegment } from 'qrcode';
+import QRCode from 'qrcode';
 import { useEffect, useState } from 'react';
 
 type ValueTypes = string | QRCodeSegment[];
@@ -7,7 +8,8 @@ export const useQRCode = (value: ValueTypes, options: QRCodeToDataURLOptions): s
   const [dataURL, setDataURL] = useState<string>('');
   useEffect(() => {
     if (!value) {
-      return setDataURL('');
+      setDataURL('');
+      return;
     }
 
     QRCode.toDataURL(value, options, (err, url: string) => {

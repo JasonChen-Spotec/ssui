@@ -2,8 +2,9 @@ import * as React from 'react';
 import classNames from 'classnames';
 import trimStart from 'lodash/trimStart';
 import useMount from 'ahooks/lib/useMount';
-import HighlighedContents, { HighlighedContentsProps } from './HighlighedContents';
-import { HighlightType } from './types';
+import type { HighlighedContentsProps } from './HighlighedContents';
+import HighlighedContents from './HighlighedContents';
+import type { HighlightType } from './types';
 
 export interface HighlightWithinTextareaProps extends HighlighedContentsProps {
   prefixCls?: string;

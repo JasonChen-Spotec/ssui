@@ -25,6 +25,7 @@ export { default as DocFilledOutlined } from './DocFilledOutlined';
 export { default as DoubleDownOutlined } from './DoubleDownOutlined';
 export { default as DoubleUpOutlined } from './DoubleUpOutlined';
 export { default as DragOutlined } from './DragOutlined';
+export { default as ElectricOutlined } from './ElectricOutlined';
 export { default as EllipsisOutlined } from './EllipsisOutlined';
 export { default as EmailCircleOutlined } from './EmailCircleOutlined';
 export { default as ExclamationCircleOutlined } from './ExclamationCircleOutlined';

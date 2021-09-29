@@ -1,7 +1,8 @@
+/* eslint-disable no-param-reassign */
 /* eslint-disable @typescript-eslint/no-use-before-define */
 /* eslint-disable no-cond-assign */
 import getType from './getType';
-import {
+import type {
   HighlightType,
   StringType,
   AdmixArrayType,
