@@ -3,7 +3,7 @@ import Icon from "assui/lib/components/Icon";
 
 function PocketFilled(componentProps) {
   const IconNode = (props) => (
-    <svg viewBox="0 0 16 16" {...props}>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" {...props}>
       <path
         fill="currentColor"
         d="M8.3 11c-1.5 0-2.8-1.3-2.8-2.8v-.4C5.5 6.2 6.8 5 8.3 5h6.8V2.8c0-1.5-1.3-2.8-2.8-2.8H3.6C2.1 0 .9 1.3.9 2.8v10.4c0 1.5 1.3 2.8 2.8 2.8h8.7c1.5 0 2.8-1.3 2.8-2.8V11H8.3z"

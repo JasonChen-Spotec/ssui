@@ -3,7 +3,7 @@ import Icon from "assui/lib/components/Icon";
 
 function CircleListOutlined(componentProps) {
   const IconNode = (props) => (
-    <svg viewBox="0 0 16 16" {...props}>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" {...props}>
       <path
         fill="currentColor"
         d="M12.3 10.1H4.2c-.3 0-.6.2-.6.6 0 .3.2.6.6.6h8.1c.3 0 .6-.2.6-.6-.1-.4-.3-.6-.6-.6zm0-6.5H4.2c-.3 0-.6.2-.6.6s.2.6.6.6h8.1c.3 0 .6-.2.6-.6-.1-.4-.3-.6-.6-.6zm0 3.3H4.2c-.3 0-.6.2-.6.6s.2.5.6.5h8.1c.3 0 .6-.2.6-.6-.1-.3-.3-.5-.6-.5z"

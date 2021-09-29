@@ -3,7 +3,7 @@ import Icon from "assui/lib/components/Icon";
 
 function DoubleUser(componentProps) {
   const IconNode = (props) => (
-    <svg viewBox="0 0 16 16" {...props}>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" {...props}>
       <style>{".double-user_svg__st1{fill:#606060}"}</style>
       <path
         d="M9.6 3.6c0-1.3-2.1-1.2-2.1-1.8 0-.3.2-.4.6-.4.4 0 .7.1 1 .4l.4-.5C9.3.9 8.9.7 8.4.7V0h-.5v.7c-.7.1-1.2.5-1.2 1.1 0 1.3 2.1 1.1 2.1 1.8 0 .3-.2.5-.7.5s-.9-.2-1.3-.5l-.2.6c.3.3.9.5 1.3.5v.8h.6v-.8c.7-.1 1.1-.5 1.1-1.1z"

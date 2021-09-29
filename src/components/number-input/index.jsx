@@ -23,7 +23,6 @@ const NumberInput = props => {
       newNumber = formatter(newNumber);
     }
 
-
     if (resultValue !== newNumber) {
       if (onChange) {
         onChange(newNumber);
@@ -45,10 +44,11 @@ const NumberInput = props => {
     onBlur && onBlur(resultValue);
   };
 
+
   return (
     <Input
       type="text"
-      value={resultValue}
+      value={formatter ? formatter(resultValue) : resultValue}
       onBlur={onNumberBlur}
       onChange={onNumberChange}
       {...restProps}

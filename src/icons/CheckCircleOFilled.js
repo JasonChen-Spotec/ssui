@@ -3,7 +3,7 @@ import Icon from "assui/lib/components/Icon";
 
 function CheckCircleOFilled(componentProps) {
   const IconNode = (props) => (
-    <svg viewBox="0 0 80 80" {...props}>
+    <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" {...props}>
       <g transform="translate(7 6)" fillRule="evenodd">
         <circle
           fill="currentColor"

@@ -3,7 +3,7 @@ import Icon from "assui/lib/components/Icon";
 
 function TipCirccleOutlined(componentProps) {
   const IconNode = (props) => (
-    <svg viewBox="0 0 16 16" {...props}>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" {...props}>
       <path
         fill="currentColor"
         d="M11.78 4.83h-1L9 3.2a1.44 1.44 0 00-2 0L5.18 4.83h-1a1.5 1.5 0 00-1.5 1.5v4.56a1.5 1.5 0 001.5 1.5h7.56a1.5 1.5 0 001.5-1.5V6.33a1.5 1.5 0 00-1.46-1.5zM7.49 3.72a.75.75 0 011 0l1.27 1.11H6.22zm5.1 7.17a.81.81 0 01-.81.81H4.22a.81.81 0 01-.81-.81V6.33a.8.8 0 01.81-.8h7.56a.8.8 0 01.81.8v4.56z"

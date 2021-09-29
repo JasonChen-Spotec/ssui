@@ -3,7 +3,12 @@ import Icon from "assui/lib/components/Icon";
 
 function DashboardOutlined(componentProps) {
   const IconNode = (props) => (
-    <svg data-name="\u56FE\u5C42 1" viewBox="0 0 16 16" {...props}>
+    <svg
+      data-name="\u56FE\u5C42 1"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 16 16"
+      {...props}
+    >
       <path
         fill="currentColor"
         d="M12.08 14.77a.6.6 0 01-.5-.27.61.61 0 01.17-.83A6.77 6.77 0 0014.8 8a6.88 6.88 0 00-.21-1.7A6.81 6.81 0 008 1.2a6.56 6.56 0 00-2 .31 6.8 6.8 0 00-1.75 12.16.6.6 0 11-.67 1A8 8 0 1115.75 6 7.89 7.89 0 0116 8a8 8 0 01-3.58 6.67.61.61 0 01-.34.1z"

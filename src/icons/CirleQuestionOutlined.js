@@ -3,7 +3,7 @@ import Icon from "assui/lib/components/Icon";
 
 function CirleQuestionOutlined(componentProps) {
   const IconNode = (props) => (
-    <svg viewBox="0 0 16 16" {...props}>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" {...props}>
       <path
         fill="currentColor"
         d="M7.1 12.9c0 .5.4.9.9.9s.9-.4.9-.9-.4-.9-.9-.9-.9.4-.9.9z"

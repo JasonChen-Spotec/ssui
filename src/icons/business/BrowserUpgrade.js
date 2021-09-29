@@ -5,6 +5,7 @@ function BrowserUpgrade(componentProps) {
   const IconNode = (props) => (
     <svg
       id="browser-upgrade_svg__Layer_1"
+      xmlns="http://www.w3.org/2000/svg"
       x={0}
       y={0}
       viewBox="0 0 634.1 552.9"

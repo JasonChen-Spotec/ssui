@@ -3,7 +3,7 @@ import Icon from "assui/lib/components/Icon";
 
 function TagOutlined(componentProps) {
   const IconNode = (props) => (
-    <svg viewBox="0 0 16 16" {...props}>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" {...props}>
       <circle fill="currentColor" cx={13} cy={3} r={1} />
       <path
         fill="currentColor"

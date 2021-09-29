@@ -3,7 +3,7 @@ import Icon from "assui/lib/components/Icon";
 
 function PhoneFilled(componentProps) {
   const IconNode = (props) => (
-    <svg viewBox="0 0 16 16" {...props}>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" {...props}>
       <path
         fill="currentColor"
         className="phone-filled_svg__st0"

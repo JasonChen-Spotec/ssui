@@ -3,7 +3,7 @@ import Icon from "assui/lib/components/Icon";
 
 function ArrowFilled(componentProps) {
   const IconNode = (props) => (
-    <svg viewBox="0 0 16 16" {...props}>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" {...props}>
       <path fill="currentColor" d="M8 0L.9 7.9h3.5V16h7V7.9h3.7L8 0z" />
     </svg>
   );

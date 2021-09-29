@@ -12,7 +12,7 @@ const Demo = () => {
       onFinish={onFinish}
       initialValues={
         {
-          int: 0,
+          int: '0009',
           float: 'null',
           intEnableMinus: undefined
         }
@@ -22,7 +22,7 @@ const Demo = () => {
         name="int"
         label="int"
       >
-        <NumberInput />
+        <NumberInput formatter={(value)=>+value}/>
       </Form.Item>
       <Form.Item
         name="float"

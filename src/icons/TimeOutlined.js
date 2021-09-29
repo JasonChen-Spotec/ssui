@@ -3,7 +3,12 @@ import Icon from "assui/lib/components/Icon";
 
 function TimeOutlined(componentProps) {
   const IconNode = (props) => (
-    <svg data-name="\u56FE\u5C42 1" viewBox="0 0 16 16" {...props}>
+    <svg
+      data-name="\u56FE\u5C42 1"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 16 16"
+      {...props}
+    >
       <path
         fill="currentColor"
         d="M8 1.2a6.81 6.81 0 016.59 5.1A6.88 6.88 0 0114.8 8 6.8 6.8 0 116 1.51a6.56 6.56 0 012-.31M8 0a8.11 8.11 0 00-2.38.36A8 8 0 1016 8a8.24 8.24 0 00-.25-2A8 8 0 008 0z"

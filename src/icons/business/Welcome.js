@@ -3,7 +3,11 @@ import Icon from "assui/lib/components/Icon";
 
 function Welcome(componentProps) {
   const IconNode = (props) => (
-    <svg viewBox="0 0 1920 1379.7" {...props}>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 1920 1379.7"
+      {...props}
+    >
       <style>
         {
           ".welcome_svg__st0{fill:#d0d4f6}.welcome_svg__st1{fill:#bdc1e4}.welcome_svg__st2{fill:#6889a0}.welcome_svg__st3{fill:#f7f7fc}.welcome_svg__st7{fill:#dfe3f7}.welcome_svg__st8{fill:#ef6f53}.welcome_svg__st96{fill:#285a83}.welcome_svg__st97{fill:#eb8489}.welcome_svg__st103{fill:#fff}.welcome_svg__st107{fill:#eacbc3}.welcome_svg__st112{fill:#f2d5cc}.welcome_svg__st117{fill:#dd6f79}.welcome_svg__st118{fill:#6a6ae2}"

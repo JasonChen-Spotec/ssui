@@ -3,7 +3,7 @@ import Icon from "assui/lib/components/Icon";
 
 function CopyFilled(componentProps) {
   const IconNode = (props) => (
-    <svg viewBox="0 0 16 16" {...props}>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" {...props}>
       <path
         fill="currentColor"
         d="M10.6 11.4c.4 0 .8-.4.8-.8V.8c0-.4-.4-.8-.8-.8H.8C.4 0 0 .4 0 .8v9.8c0 .4.4.8.8.8h9.8z"

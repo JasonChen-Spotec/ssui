@@ -3,7 +3,7 @@ import Icon from "assui/lib/components/Icon";
 
 function UsdtFilled(componentProps) {
   const IconNode = (props) => (
-    <svg viewBox="0 0 16 16" {...props}>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" {...props}>
       <path fill="currentColor" d="M0 8a8 8 0 108-8 8 8 0 00-8 8z" />
       <path
         fill="inherit"

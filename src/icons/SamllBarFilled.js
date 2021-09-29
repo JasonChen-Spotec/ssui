@@ -3,7 +3,7 @@ import Icon from "assui/lib/components/Icon";
 
 function SamllBarFilled(componentProps) {
   const IconNode = (props) => (
-    <svg viewBox="0 0 16 16" {...props}>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" {...props}>
       <rect fill="currentColor" y={5.03} width={4} height={10.97} rx={1.11} />
       <rect fill="currentColor" x={6} width={4} height={16} rx={1.11} />
       <rect

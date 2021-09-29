@@ -3,7 +3,7 @@ import Icon from "assui/lib/components/Icon";
 
 function ArrowOutsideCircleOutlined(componentProps) {
   const IconNode = (props) => (
-    <svg viewBox="0 0 16 16" {...props}>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" {...props}>
       <path
         fill="currentColor"
         d="M11.87 7.13V5.56L16 8.06l-4.13 2.42V9.1H7.44s-.53-.1-.53-.76v-.55a.66.66 0 01.69-.66z"

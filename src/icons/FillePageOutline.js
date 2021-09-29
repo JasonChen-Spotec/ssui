@@ -3,7 +3,7 @@ import Icon from "assui/lib/components/Icon";
 
 function FillePageOutline(componentProps) {
   const IconNode = (props) => (
-    <svg viewBox="0 0 16 16" {...props}>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" {...props}>
       <path
         fill="currentColor"
         d="M5 9.14h2.12a.38.38 0 100-.76H5a.38.38 0 100 .76zM8.25 8.76a.38.38 0 00.38.38h1.92a.38.38 0 000-.76H8.63a.38.38 0 00-.38.38zM5 11.05h3.77a.38.38 0 100-.76H5a.38.38 0 000 .76zM5.77 7.24h2.28A1.14 1.14 0 009.19 6.1V5a1.14 1.14 0 00-1.14-1.19H5.77A1.14 1.14 0 004.62 5v1.1a1.14 1.14 0 001.15 1.14zM5.38 5a.39.39 0 01.39-.38h2.28a.38.38 0 01.38.38v1.1a.38.38 0 01-.38.38H5.77a.39.39 0 01-.39-.38z"

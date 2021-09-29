@@ -6,6 +6,7 @@ function TrumpetMoney(componentProps) {
     <svg
       id="trumpet-money_svg__\u56FE\u5C42_1"
       data-name="\u56FE\u5C42 1"
+      xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 16 16"
       {...props}
     >

@@ -3,7 +3,7 @@ import Icon from "assui/lib/components/Icon";
 
 function LockOutline(componentProps) {
   const IconNode = (props) => (
-    <svg viewBox="0 0 16 16" {...props}>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" {...props}>
       <path
         fill="currentColor"
         d="M8.56 9.67A1.23 1.23 0 007.44 11a1.22 1.22 0 001.12 1.3A1.22 1.22 0 009.67 11a1.23 1.23 0 00-1.11-1.33zm0 1.86c-.2 0-.37-.26-.37-.55s.17-.56.37-.56.37.26.37.56-.17.55-.37.55z"

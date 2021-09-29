@@ -3,7 +3,7 @@ import Icon from "assui/lib/components/Icon";
 
 function ShutdownOutlined(componentProps) {
   const IconNode = (props) => (
-    <svg viewBox="0 0 16 16" {...props}>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" {...props}>
       <path
         fill="currentColor"
         d="M8 7.15a.59.59 0 01-.6-.59V.6a.6.6 0 011.2 0v6a.59.59 0 01-.6.55z"

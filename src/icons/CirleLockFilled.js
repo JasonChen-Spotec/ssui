@@ -3,7 +3,7 @@ import Icon from "assui/lib/components/Icon";
 
 function CirleLockFilled(componentProps) {
   const IconNode = (props) => (
-    <svg viewBox="0 0 16 16" {...props}>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" {...props}>
       <path
         fill="currentColor"
         d="M8 8.44a.69.69 0 00-.48 1.19v.78a.49.49 0 00.48.49.48.48 0 00.48-.49v-.79a.73.73 0 00.21-.49.7.7 0 00-.69-.69z"

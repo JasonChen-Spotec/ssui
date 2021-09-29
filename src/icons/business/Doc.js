@@ -5,6 +5,7 @@ function Doc(componentProps) {
   const IconNode = (props) => (
     <svg
       id="doc_svg__\u56FE\u5C42_1"
+      xmlns="http://www.w3.org/2000/svg"
       x={0}
       y={0}
       viewBox="0 0 16 16"

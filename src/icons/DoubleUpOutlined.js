@@ -3,7 +3,7 @@ import Icon from "assui/lib/components/Icon";
 
 function DoubleUpOutlined(componentProps) {
   const IconNode = (props) => (
-    <svg viewBox="0 0 16 16" {...props}>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" {...props}>
       <path
         fill="currentColor"
         d="M8 7.1c.2 0 .4.1.6.3l7.1 7c.4.4.4.9 0 1.1-.4.4-.9.4-1.2 0L8 9.1l-6.6 6.4c-.4.4-.9.4-1.2 0s-.4-.9 0-1.1l7.1-7c.3-.2.5-.3.7-.3z"
