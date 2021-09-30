@@ -22,6 +22,15 @@ export { default as ImgCrop } from './img-crop';
 export type { KeepTabProps } from './keep-tab';
 export { default as KeepTab } from './keep-tab';
 
+export type {
+  CSSMotionProps,
+  CSSMotionList,
+  CSSMotionListProps,
+  MotionEventHandler,
+  MotionEndEventHandler,
+} from './rc-motion';
+export { default as RcMotion } from './rc-motion';
+
 export type { NumberInputProps } from './number-input';
 export { default as NumberInput } from './number-input';
 
