@@ -31,8 +31,6 @@
   ],
   "dependencies": {
     "@ahooksjs/use-url-state": "^2.5.8",
-    "@ckeditor/ckeditor5-build-classic": "^30.0.0",
-    "@ckeditor/ckeditor5-react": "^3.0.3",
     "@tinymce/tinymce-react": "^3.13.0",
     "a-icons": "^1.0.5",
     "ahooks": "^2.10.9",
