@@ -11,7 +11,15 @@ const Demo = () => {
     console.log('Received values: ', values);
   };
 
-  return <NumberInput placeholder="Basic usage" onChange={onChange} />;
+  return (
+    <NumberInput
+      numberType="float"
+      maxLength={4}
+      placeholder="Basic usage"
+      enableMinus
+      onChange={onChange}
+    />
+  );
 };
 
 export default Demo;

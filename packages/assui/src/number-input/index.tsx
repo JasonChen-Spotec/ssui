@@ -10,6 +10,8 @@ export interface NumberInputProps {
   numberType?: 'int' | 'float';
   /** 精度，只对float有效 */
   precision: number;
+  /** 同html input属性功能 */
+  maxLength: number;
   /** 指定输入框展示值的格式 */
   formatter?: (value: string) => string;
   /** 指定从 formatter 里转换回数字的方式，和 formatter 搭配使用 */
@@ -32,6 +34,7 @@ const NumberInput = (props: NumberInputProps) => {
     parser,
     enableMinus,
     onBlur,
+    maxLength,
     ...restProps
   } = props;
 
@@ -51,6 +54,12 @@ const NumberInput = (props: NumberInputProps) => {
     if (parser) {
       newNumber = parser(newNumber);
     }
+
+    // if (numberType === INT) {
+    //   if (enableMinus && +newNumber > 0 && newNumber.length > maxLength - 1) {
+    //     return;
+    //   }
+    // }
 
     if (resultValue !== newNumber) {
       if (value === undefined) {
@@ -87,6 +96,7 @@ const NumberInput = (props: NumberInputProps) => {
       value={inputValue}
       onBlur={onNumberBlur}
       onChange={onNumberChange}
+      maxLength={maxLength}
       {...restProps}
     />
   );

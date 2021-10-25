@@ -47,6 +47,8 @@ export { default as PercentOutlined } from './PercentOutlined';
 export { default as PlusOutlined } from './PlusOutlined';
 export { default as ProfileOutlined } from './ProfileOutlined';
 export { default as QrCodeOutlined } from './QrCodeOutlined';
+export { default as RefreshCOutlined } from './RefreshCOutlined';
+export { default as RefreshOutlined } from './RefreshOutlined';
 export { default as ReticuleOutlined } from './ReticuleOutlined';
 export { default as RightOutlined } from './RightOutlined';
 export { default as SafetyOutlined } from './SafetyOutlined';
