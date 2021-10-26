@@ -1,5 +1,7 @@
 export default {
   // ssr: {},
+  base: '/sui',
+  publicPath: '/sui/',
   exportStatic: {},
   nodeModulesTransform: {
     type: 'none',
@@ -65,9 +67,7 @@ export default {
   resolve: {
     includes: ['docs', 'packages/assui/src', 'packages/a-icons/demo', 'packages/aa-utils/src'],
   },
-  links: [{ rel: 'stylesheet', href: '/style.css' }],
   navs: {
     'zh-CN': [null, { title: 'GitHub', path: 'https://github.com:SPOTEC-LTD/assui.git' }],
   },
-  headScripts: ['https://s4.cnzz.com/z_stat.php?id=1278992092&web_id=1278992092'],
 };
