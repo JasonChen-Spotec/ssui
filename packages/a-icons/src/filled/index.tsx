@@ -38,6 +38,7 @@ export { default as HornFilled } from './HornFilled';
 export { default as InfoCircleFilled } from './InfoCircleFilled';
 export { default as KeyFilled } from './KeyFilled';
 export { default as LagFilled } from './LagFilled';
+export { default as LightningFilledTwo } from './LightningFilledTwo';
 export { default as LightningFilled } from './LightningFilled';
 export { default as ListFilled } from './ListFilled';
 export { default as LockFilled } from './LockFilled';
