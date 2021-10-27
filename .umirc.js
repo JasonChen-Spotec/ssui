@@ -57,13 +57,15 @@ export default {
 
   mode: 'site',
   title: 'assui',
-  favicon: '/favicon.ico',
-  logo: '/logo.svg',
+  favicon: '/sui/favicon.ico',
+  logo: '/sui/logo.svg',
   locales: [['zh-CN', '中文']],
   dynamicImport: {},
   manifest: {},
-  links: [{ rel: 'manifest', href: '/asset-manifest.json' }],
   hash: true,
+  links: [
+    { rel: 'stylesheet', href: '/sui/antd.min.css' }, // fix product demo no antd styles
+  ],
   resolve: {
     includes: ['docs', 'packages/assui/src', 'packages/a-icons/demo', 'packages/aa-utils/src'],
   },
