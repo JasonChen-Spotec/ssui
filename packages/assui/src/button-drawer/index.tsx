@@ -66,5 +66,3 @@ const ButtonDrawer: React.ForwardRefRenderFunction<unknown, ButtonDrawerProps> =
 const ForwardRefButtonDrawer = React.forwardRef<unknown, ButtonDrawerProps>(ButtonDrawer);
 
 export default ForwardRefButtonDrawer;
-
-// export default React.memo(ButtonDrawer);

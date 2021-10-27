@@ -32,16 +32,16 @@ const ButtonModal: React.ForwardRefRenderFunction<unknown, ButtonModalProps> = (
     setModalVisible(false);
   };
 
-  const modalActionRef = React.useRef({ open, close });
+  const modalActionRef = React.useRef({ open: openModal, close: closeModal });
 
-  React.useImperativeHandle(ref, () => ({ open, close }), [modalActionRef]);
+  React.useImperativeHandle(ref, () => modalActionRef.current);
 
   const handleModalOk = (e: React.MouseEvent<HTMLElement>) => {
     if (onOk) {
       return onOk(e);
     }
 
-    close();
+    closeModal();
 
     return null;
   };

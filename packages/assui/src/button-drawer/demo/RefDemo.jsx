@@ -21,7 +21,6 @@ const Demo = () => {
         title="demo"
         ref={drawerRef}
         onCancel={() => console.log('onCancel')}
-        onOk={() => drawerRef.current.close()}
         content={<Content />}
       >
         <Button disabled> disabled </Button>
