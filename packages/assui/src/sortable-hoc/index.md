@@ -4,8 +4,8 @@ nav:
   title: assui
   path: /assui
 group:
-  title: 展示
-  path: /components/show
+  title: 反馈
+  path: /components/feedback
 ---
 
 # SortableHoc 拖拽
