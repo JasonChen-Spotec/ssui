@@ -43,7 +43,7 @@
     "babel-plugin-transform-async-to-promises": "^0.8.15",
     "code-rule": "^1.1.5",
     "del": "^5.1.0",
-    "dumi": "^1.1.26",
+    "dumi": "^1.1.30",
     "enzyme": "^3.10.0",
     "gulp": "^4.0.2",
     "gulp-babel": "^8.0.0",

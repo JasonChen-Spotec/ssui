@@ -55,3 +55,6 @@ export { default as TextArea } from './text-area';
 
 export type { TextInputProps } from './text-input';
 export { default as TextInput } from './text-input';
+
+export type { RichTextEditorProps } from './rich-text-editor';
+export { default as RichTextEditor } from './rich-text-editor';
