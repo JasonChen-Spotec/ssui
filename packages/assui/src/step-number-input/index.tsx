@@ -38,8 +38,6 @@ export interface StepNumberInputProps {
   suffix?: React.ReactNode;
   /** 可以点击清除图标删除内容 */
   allowClear?: boolean;
-  /** 是否有边框 */
-  bordered?: boolean;
 }
 
 const StepNumberInput = (props: StepNumberInputProps) => {
@@ -48,8 +46,8 @@ const StepNumberInput = (props: StepNumberInputProps) => {
   const resultValue = isUndefined(value) ? inputValue : value;
   const isEmpty = isUndefined(resultValue) || resultValue === '';
 
-  const plusNumber = new BigNumber(new BigNumber(resultValue).plus(step)).toString();
-  const minusNumber = new BigNumber(new BigNumber(resultValue).minus(step)).toString();
+  const plusNumber = new BigNumber(resultValue).plus(step).toString();
+  const minusNumber = new BigNumber(resultValue).minus(step).toString();
 
   const maxCondition = isUndefined(max)
     ? false

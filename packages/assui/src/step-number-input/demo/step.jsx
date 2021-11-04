@@ -15,7 +15,7 @@ const Demo = () => {
   return (
     <Descriptions layout="vertical" column={8}>
       <Descriptions.Item label="float usage" span={8}>
-        <StepNumberInput placeholder="step 2" onChange={onChange} />
+        <StepNumberInput placeholder="step 2" onChange={onChange} step={2} />
       </Descriptions.Item>
       <Descriptions.Item label="int usage" span={8}>
         <StepNumberInput placeholder="step 0.1" onChange={onChange} numberType="float" step="0.1" />

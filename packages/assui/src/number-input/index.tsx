@@ -35,8 +35,6 @@ export interface NumberInputProps {
   suffix?: React.ReactNode;
   /** 可以点击清除图标删除内容 */
   allowClear?: boolean;
-  /** 是否有边框 */
-  bordered?: boolean;
 }
 
 const NumberInput = (props: NumberInputProps) => {
