@@ -32,8 +32,10 @@
   "dependencies": {
     "@ahooksjs/use-url-state": "^2.5.8",
     "@tinymce/tinymce-react": "^3.13.0",
+    "@types/react-beautiful-dnd": "^13.1.2",
     "a-icons": "^1.0.5",
     "ahooks": "^2.10.9",
+    "bignumber.js": "^9.0.1",
     "copy-to-clipboard": "^3.3.1",
     "echarts": "^5.1.2",
     "qrcode": "^1.4.4",
@@ -46,8 +48,7 @@
     "react-split-pane": "^0.1.92",
     "react-transition-group": "^4.4.2",
     "resize-observer-polyfill": "^1.5.1",
-    "tinymce": "^5",
-    "@types/react-beautiful-dnd": "^13.1.2"
+    "tinymce": "^5"
   },
   "peerDependencies": {
     "antd": "^4.16.11",

@@ -1,11 +1,12 @@
 import * as React from 'react';
 import Input from 'antd/es/input';
+import isUndefined from 'lodash/isUndefined';
 import { INT } from './const/numberType';
 import { filterInt, filterFloat } from './utils';
 
 export interface NumberInputProps {
   /** 输入框的内容 */
-  value?: string;
+  value?: string | number;
   /** 输入数据的类型 */
   numberType?: 'int' | 'float';
   /** 精度，只对float有效 */
@@ -22,6 +23,20 @@ export interface NumberInputProps {
   onChange?: (value: string) => void;
   /** 失去焦点回调 */
   onBlur?: (value: string) => void;
+  /** 按下回车的回调 */
+  onPressEnter?: React.KeyboardEventHandler<HTMLInputElement>;
+  /** 带标签的 input，设置前置标签 */
+  addonBefore?: React.ReactNode;
+  /** 带标签的 input，设置后置标签 */
+  addonAfter?: React.ReactNode;
+  /** 前缀 */
+  prefix?: React.ReactNode;
+  /** 后缀 */
+  suffix?: React.ReactNode;
+  /** 可以点击清除图标删除内容 */
+  allowClear?: boolean;
+  /** 是否有边框 */
+  bordered?: boolean;
 }
 
 const NumberInput = (props: NumberInputProps) => {
@@ -38,32 +53,31 @@ const NumberInput = (props: NumberInputProps) => {
     ...restProps
   } = props;
 
-  const [number, setNumber] = React.useState('');
-  const resultValue = value === undefined ? number : value;
+  const [inputValue, setInputValue] = React.useState('');
+  const resultValue = isUndefined(value) ? inputValue : value;
 
   const onNumberChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     let newNumber;
     const newValue = e.target.value;
 
     if (numberType === INT) {
-      newNumber = filterInt({ value: newValue, preValue: resultValue, enableMinus });
+      newNumber = filterInt({ value: newValue, preValue: `${resultValue}`, enableMinus });
     } else {
-      newNumber = filterFloat({ value: newValue, preValue: resultValue, precision, enableMinus });
+      newNumber = filterFloat({
+        value: newValue,
+        preValue: `${resultValue}`,
+        precision,
+        enableMinus,
+      });
     }
 
     if (parser) {
       newNumber = parser(newNumber);
     }
 
-    // if (numberType === INT) {
-    //   if (enableMinus && +newNumber > 0 && newNumber.length > maxLength - 1) {
-    //     return;
-    //   }
-    // }
-
     if (resultValue !== newNumber) {
       if (value === undefined) {
-        setNumber(newNumber);
+        setInputValue(newNumber);
       }
 
       if (onChange) {
@@ -75,7 +89,7 @@ const NumberInput = (props: NumberInputProps) => {
   const onNumberBlur = () => {
     if (resultValue === '-' || resultValue === '.') {
       if (value === undefined) {
-        setNumber('');
+        setInputValue('');
       }
 
       if (onChange) {
@@ -84,16 +98,16 @@ const NumberInput = (props: NumberInputProps) => {
     }
 
     if (onBlur) {
-      onBlur(resultValue || '');
+      onBlur(`${resultValue}` || '');
     }
   };
 
-  const inputValue = formatter ? formatter(resultValue) : resultValue;
+  const finallyValue = formatter ? formatter(`${resultValue}`) : resultValue;
 
   return (
     <Input
       type="text"
-      value={inputValue}
+      value={finallyValue}
       onBlur={onNumberBlur}
       onChange={onNumberChange}
       maxLength={maxLength}
