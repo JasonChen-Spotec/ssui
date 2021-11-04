@@ -1,0 +1,56 @@
+@import '~antd/es/style/themes/index';
+
+@progress-prefix-cls: ~'@{ant-prefix}';
+
+.number-range-input {
+  display: flex;
+  align-items: center;
+  width: 100%;
+
+  .@{ant-prefix}-input-group-addon {
+    padding: 0;
+  }
+}
+
+.count-minus-btn {
+  display: inline-block;
+  padding: 4px 11px;
+  cursor: pointer;
+
+  &:hover,
+  &:focus,
+  &:active,
+  &:focus-within {
+    color: white;
+    background-color: #02a6e3;
+    cursor: pointer;
+  }
+}
+
+.count-add-btn {
+  display: inline-block;
+  padding: 4px 11px;
+  cursor: pointer;
+
+  &:hover,
+  &:focus,
+  &:active,
+  &:focus-within {
+    color: white;
+    background-color: #02a6e3;
+    cursor: pointer;
+  }
+}
+
+.disabled-btn {
+  cursor: not-allowed;
+
+  &:hover,
+  &:focus,
+  &:active,
+  &:focus-within {
+    color: rgba(0, 0, 0, 0.25);
+    background-color: #f5f5f5;
+    cursor: not-allowed;
+  }
+}

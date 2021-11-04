@@ -34,6 +34,9 @@ export { default as RcMotion } from './rc-motion';
 export type { NumberInputProps } from './number-input';
 export { default as NumberInput } from './number-input';
 
+export type { StepNumberInputProps } from './step-number-input';
+export { default as StepNumberInput } from './step-number-input';
+
 export type { RcEchartPropsType } from './rc-echart';
 export { default as RcEcharts } from './rc-echart';
 
