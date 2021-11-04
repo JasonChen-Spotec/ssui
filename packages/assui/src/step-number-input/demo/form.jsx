@@ -25,13 +25,13 @@ const Demo = () => {
         <StepNumberInput />
       </Form.Item>
       <Form.Item name="float" label="float">
-        <StepNumberInput numberType="float" />
+        <StepNumberInput numberType="float" step="0.1" />
       </Form.Item>
       <Form.Item name="intEnableMinus" label="int(enableMinus)">
         <StepNumberInput enableMinus />
       </Form.Item>
       <Form.Item name="floatEnableMinus" label="float(enableMinus)">
-        <StepNumberInput numberType="float" enableMinus />
+        <StepNumberInput numberType="float" enableMinus step="0.1" />
       </Form.Item>
       <Form.Item name="step" label="step(withMinMax)">
         <StepNumberInput step={2} min={0} max={10} placeholder="2 step each time" />

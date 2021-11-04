@@ -16,7 +16,12 @@ const Demo = () => {
     <>
       <Descriptions layout="vertical" column={8}>
         <Descriptions.Item label="base" span={8}>
-          <StepNumberInput placeholder="float base usage" onChange={onChange} numberType="float" />
+          <StepNumberInput
+            placeholder="float base usage"
+            onChange={onChange}
+            numberType="float"
+            step="0.1"
+          />
         </Descriptions.Item>
         <Descriptions.Item label="precision(设置4位精度)" span={8}>
           <StepNumberInput
@@ -24,6 +29,7 @@ const Demo = () => {
             precision={4}
             onChange={onChange}
             numberType="float"
+            step="0.1"
           />
         </Descriptions.Item>
       </Descriptions>
