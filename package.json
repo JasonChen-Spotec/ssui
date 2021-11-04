@@ -41,7 +41,7 @@
     "babel-loader": "^8.1.0",
     "babel-plugin-import": "^1.12.0",
     "babel-plugin-transform-async-to-promises": "^0.8.15",
-    "code-rule": "^1.1.5",
+    "code-rule": "^1.1.6",
     "del": "^5.1.0",
     "dumi": "^1.1.30",
     "enzyme": "^3.10.0",
