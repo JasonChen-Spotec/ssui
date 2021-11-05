@@ -12,7 +12,7 @@ export interface NumberInputProps {
   /** 精度，只对float有效 */
   precision: number;
   /** 同html input属性功能 */
-  maxLength: number;
+  maxLength?: number;
   /** 指定输入框展示值的格式 */
   formatter?: (value: string) => string;
   /** 指定从 formatter 里转换回数字的方式，和 formatter 搭配使用 */
