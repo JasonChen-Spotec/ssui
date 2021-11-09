@@ -4,6 +4,7 @@ export { default as ArrowInsideCircleOutlined } from './ArrowInsideCircleOutline
 export { default as ArrowOutsideCircleOutlined } from './ArrowOutsideCircleOutlined';
 export { default as BOutlined } from './BOutlined';
 export { default as BarLineOutlined } from './BarLineOutlined';
+export { default as BigEllipsisOutlined } from './BigEllipsisOutlined';
 export { default as BlockTowerOutlined } from './BlockTowerOutlined';
 export { default as BoxOutlined } from './BoxOutlined';
 export { default as CancelledOutlined } from './CancelledOutlined';
