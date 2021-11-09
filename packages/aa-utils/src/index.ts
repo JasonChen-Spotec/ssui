@@ -1,4 +1,4 @@
-export type { saveAsImageOptionsType } from './canvas2image';
+// export type { saveAsImageOptionsType } from './canvas2image';
 export { default as canvas2image } from './canvas2image';
 export { default as dateUtils } from './dateUtils';
 export { default as events } from './events';
