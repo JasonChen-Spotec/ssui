@@ -22,7 +22,7 @@
     "prettier": "prettier --write 'packages/**/*.{js,jsx,tsx,ts,less,md,json}'",
     "build:doc": "dumi build",
     "pub:doc-gitee": "npm run build:doc && cd ./dist && rm -rf .git && touch .spa && touch .nojekyll && git init && git remote add origin git@gitee.com:uso/sui.git && git add -A && git commit -m \"publish docs\" && git push origin master -f",
-    "pub": "lerna publish"
+    "pub": "npm run build && lerna publish"
   },
   "devDependencies": {
     "@babel/cli": "^7.10.1",
