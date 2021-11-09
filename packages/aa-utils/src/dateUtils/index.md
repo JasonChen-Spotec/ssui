@@ -29,14 +29,14 @@ group:
 
 | 参数              | 说明           | 类型                                                                 | 默认值 |
 | ----------------- | -------------- | -------------------------------------------------------------------- | ------ |
-| parseDate         | 解析日期       | `(date: dayjs.ConfigType, format?: string) => dayjs.Dayjs`           | -      |
-| parseTime         | 解析时间       | `(date: dayjs.ConfigType, format?: string) => dayjs.Dayjs`           | -      |
-| parseDateTime     | 解析日期时间   | `(date: dayjs.ConfigType \| number, format?: string) => dayjs.Dayjs` | -      |
-| formatDate        | 格式化日期     | `(date: dayjs.Dayjs, format?: string) => string`                     | -      |
-| formatTime        | 格式化时间     | `(date: dayjs.Dayjs, format?: string) => string`                     | -      |
-| formatDateTime    | 格式化日期时间 | `(key: string, value: any[] \| {[key: string]: any}) => void`        | -      |
-| formatToTimestamp | 获取时间戳     | `(date?: dayjs.Dayjs \| Date) => number`                             | -      |
-| getToday          | 获取当前时间   | `() => dayjs.Dayjs`                                                  | -      |
+| parseDate         | 解析日期       | `(date: moment.MomentInput, format?: string) => moment.Moment`           | -      |
+| parseTime         | 解析时间       | `(date: moment.MomentInput, format?: string) => moment.Moment`           | -      |
+| parseDateTime     | 解析日期时间   | `(date: moment.MomentInput \| number, format?: string) => moment.Moment` | -      |
+| formatDate        | 格式化日期     | `(date: moment.Moment, format?: string) => string`                     | -      |
+| formatTime        | 格式化时间     | `(date: moment.Moment, format?: string) => string`                     | -      |
+| formatDateTime    | 格式化日期时间 | `(date: moment.Moment, format?: string) => string`| -      |
+| formatToTimestamp | 获取时间戳     | `(date?: moment.Moment \| Date) => number`                             | -      |
+| getToday          | 获取当前时间   | `() => moment.Moment`                                                  | -      |
 | getTimeZone       | 获取时区       | `() => string`                                                       | -      |
 
 ### 2.2. setter、getter方法
@@ -47,4 +47,4 @@ DateUtils.timeFormat; // 获取或设置默认时间格式
 DateUtils.dateTimeFormat; // 获取或设置默认日期时间格式
 ```
 
-> 更多时间对象的操作 [dayjs](https://dayjs.gitee.io/zh-CN/)
+> 更多时间对象的操作 [moment](http://momentjs.cn/)

@@ -1,25 +1,11 @@
-import dayjs from 'dayjs';
-import utc from 'dayjs/plugin/utc';
+import moment from 'moment';
+import momentTimezone from 'moment-timezone'; // fix ie tz.guess bug;
 import isNumber from 'lodash/isNumber';
 import isDate from 'lodash/isDate';
-import duration from 'dayjs/plugin/duration';
-import localeData from 'dayjs/plugin/localeData';
-import relativeTime from 'dayjs/plugin/relativeTime';
-import quarterOfYear from 'dayjs/plugin/quarterOfYear';
-import customParseFormat from 'dayjs/plugin/customParseFormat';
-import timezone from 'dayjs/plugin/timezone';
 
-dayjs.extend(localeData);
-dayjs.extend(customParseFormat);
-dayjs.extend(duration);
-dayjs.extend(relativeTime);
-dayjs.extend(quarterOfYear);
-dayjs.extend(utc);
-dayjs.extend(timezone);
-
-const createMoment = (value: dayjs.Dayjs) => {
+const createMoment = (value: moment.Moment) => {
   if (value) {
-    const val = dayjs(value).utc().local();
+    const val = moment(value).utc().local();
 
     if (val.isValid()) {
       return val;
@@ -44,7 +30,7 @@ class DateUtils {
 
   constructor() {
     this.currentDateFormat = 'YYYY-MM-DD';
-    this.currentTimeFormat = 'HH:mm:ss';
+    this.currentTimeFormat = 'HH:mm';
 
     Object.defineProperties(this, {
       locale: {
@@ -89,39 +75,39 @@ class DateUtils {
     });
   }
 
-  parseDate(date: dayjs.ConfigType, format?: string): dayjs.Dayjs {
-    return dayjs(date, format || this.dateFormat);
+  parseDate(date: moment.MomentInput, format?: string) {
+    return moment(date, format || this.dateFormat);
   }
 
-  parseTime(time: dayjs.ConfigType, format?: string): dayjs.Dayjs {
-    return dayjs(time, format || this.timeFormat);
+  parseTime(time: moment.MomentInput, format?: string) {
+    return moment(time, format || this.timeFormat);
   }
 
-  parseDateTime(dateTime: dayjs.ConfigType | number, format?: string): dayjs.Dayjs {
+  parseDateTime(dateTime: moment.MomentInput, format?: string) {
     if (isNumber(dateTime) || isDate(dateTime)) {
-      return dayjs(dateTime);
+      return moment(dateTime);
     }
 
-    return dayjs(dateTime, format || this.dateTimeFormat);
+    return moment(dateTime, format || this.dateTimeFormat);
   }
 
-  formatDate(date: dayjs.Dayjs, format?: string): string {
+  formatDate(date: moment.Moment, format?: string): string {
     const m = createMoment(date);
 
     return m ? m.format(format || this.dateFormat) : '';
   }
 
-  formatTime(date: dayjs.Dayjs, format?: string): string {
+  formatTime(date: moment.Moment, format?: string): string {
     const m = createMoment(date);
     return m ? m.format(format || this.timeFormat) : '';
   }
 
-  formatDateTime(dateTime: dayjs.Dayjs, format?: string): string {
+  formatDateTime(dateTime: moment.Moment, format?: string): string {
     const m = createMoment(dateTime);
     return m ? m.format(format || this.dateTimeFormat) : '';
   }
 
-  formatToTimestamp = (date?: dayjs.Dayjs | Date): number => {
+  formatToTimestamp = (date: moment.Moment): number => {
     if (date) {
       return date.valueOf();
     }
@@ -129,9 +115,9 @@ class DateUtils {
     return this.getToday().valueOf();
   };
 
-  getToday = (): dayjs.Dayjs => dayjs();
+  getToday = () => moment();
 
-  getTimeZone = () => dayjs.tz.guess();
+  getTimeZone = () => momentTimezone.tz.guess();
 }
 
 export default new DateUtils();

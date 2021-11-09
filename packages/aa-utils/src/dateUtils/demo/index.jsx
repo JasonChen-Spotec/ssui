@@ -1,14 +1,14 @@
 /**
  * title: 格式化
- * desc: 默认： `dateFormat = 'YYYY-MM-DD'`, `timeFormat = 'HH:mm:ss'`
+ * desc: 默认： `dateFormat = 'YYYY-MM-DD'`, `timeFormat = 'HH:mm'`
  */
 
 import React from 'react';
 import { Descriptions } from 'antd';
 import { dateUtils } from 'aa-utils';
-import dayjs from 'dayjs';
+import moment from 'moment';
 
-const dateMoment = dayjs(1598343036538).utc();
+const dateMoment = moment(1598343036538).utc();
 
 const Demo = () => (
   <div>

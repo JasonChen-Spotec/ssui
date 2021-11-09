@@ -1,12 +1,12 @@
 /**
  * title: 解析
- * desc: 默认： `dateFormat = 'YYYY-MM-DD'`, `timeFormat = 'HH:mm:ss'`
+ * desc: 默认： `dateFormat = 'YYYY-MM-DD'`, `timeFormat = 'HH:mm'`
  */
 
 import React from 'react';
 import { Descriptions } from 'antd';
 import { dateUtils } from 'aa-utils';
-import dayjs from 'dayjs';
+import moment from 'moment';
 
 const Demo = () => (
   <div>
@@ -29,8 +29,8 @@ const Demo = () => (
       <Descriptions.Item label="解析日期时间(原生时间对象)">
         {dateUtils.parseDateTime(new Date(2018, 8, 18)).format(dateUtils.dateTimeFormat)}
       </Descriptions.Item>
-      <Descriptions.Item label="解析日期时间(dayjs对象)">
-        {dateUtils.parseDateTime(dayjs()).format(dateUtils.dateTimeFormat)}
+      <Descriptions.Item label="解析日期时间(moment对象)">
+        {dateUtils.parseDateTime(moment()).format(dateUtils.dateTimeFormat)}
       </Descriptions.Item>
     </Descriptions>
   </div>
