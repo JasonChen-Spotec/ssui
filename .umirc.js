@@ -13,7 +13,7 @@ export default {
       'babel-plugin-import',
       {
         libraryName: 'antd',
-        libraryDirectory: 'lib',
+        libraryDirectory: 'es',
         style: true,
       },
       'antd',
@@ -23,7 +23,7 @@ export default {
       'babel-plugin-import',
       {
         libraryName: 'assui',
-        libraryDirectory: 'lib',
+        libraryDirectory: 'es',
         style: true,
       },
       'assui',
@@ -68,6 +68,7 @@ export default {
     { rel: 'stylesheet', href: '/sui/antd.min.css' }, // fix product demo no antd styles
     { rel: 'stylesheet', href: '/sui/single-img-upload.css' },
     { rel: 'stylesheet', href: '/sui/split-pane.css' },
+    { rel: 'stylesheet', href: '/sui/highlight-textarea.css' },
   ],
   resolve: {
     includes: ['docs', 'packages/assui/src', 'packages/a-icons/demo', 'packages/aa-utils/src'],

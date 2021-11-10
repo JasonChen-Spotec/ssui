@@ -11,7 +11,7 @@ export interface saveAsImageOptionsType {
 }
 
 /* eslint-disable no-bitwise */
-const Canvas2Image = () => {
+function Canvas2Img() {
   // check if support sth.
   const $support = (() => {
     const canvas = document.createElement('canvas');
@@ -325,9 +325,9 @@ const Canvas2Image = () => {
       return convertToImage(canvas, { ...options, type: 'bmp' });
     },
   };
-};
+}
 
 // Export function, used in npm
-const canvas2image = Canvas2Image();
+const canvas2img = Canvas2Img();
 
-export default canvas2image;
+export default canvas2img;

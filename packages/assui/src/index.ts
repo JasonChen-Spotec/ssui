@@ -10,8 +10,8 @@ export { default as ConditionInput } from './condition-input';
 export type { CopyToClipboardProps } from './copy-to-clipboard';
 export { default as CopyToClipboard } from './copy-to-clipboard';
 
-export type { HighlightWithinTextareaProps } from './highlight-textarea';
-export { default as HighlightWithinTextarea } from './highlight-textarea';
+export type { HighlightTextareaProps } from './highlight-textarea';
+export { default as HighlightTextarea } from './highlight-textarea';
 
 export type { FindChunks, Chunk, HighlighterProps } from './highlight-words';
 export { default as HighlightWords } from './highlight-words';

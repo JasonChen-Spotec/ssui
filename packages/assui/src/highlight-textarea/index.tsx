@@ -6,7 +6,7 @@ import type { HighlighedContentsProps } from './HighlighedContents';
 import HighlighedContents from './HighlighedContents';
 import type { HighlightType } from './types';
 
-export interface HighlightWithinTextareaProps extends HighlighedContentsProps {
+export interface HighlightTextareaProps extends HighlighedContentsProps {
   prefixCls?: string;
   className?: string;
   textAreaClassName?: string;
@@ -14,7 +14,7 @@ export interface HighlightWithinTextareaProps extends HighlighedContentsProps {
   highlight: HighlightType;
 }
 
-const HighlightWithinTextarea = React.forwardRef<HTMLTextAreaElement, HighlightWithinTextareaProps>(
+const HighlightWithinTextarea = React.forwardRef<HTMLTextAreaElement, HighlightTextareaProps>(
   (props, ref) => {
     const {
       prefixCls,
