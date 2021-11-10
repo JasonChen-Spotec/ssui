@@ -1,12 +1,12 @@
 import React, { useRef } from 'react';
 import { Button } from 'antd';
 import { RcQrcode } from 'assui';
+import { canvasToImg } from 'aa-utils';
 
 export default () => {
   const QRRef = useRef();
   const onDownloadFilled = () => {
-    // import { canvas2img } from 'aa-utils';
-    // canvas2img.saveAsImage(QRRef.current, { name: '2323' });
+    canvasToImg.saveAsImage(QRRef.current, { name: '2323' });
   };
 
   return (

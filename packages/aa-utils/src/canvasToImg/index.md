@@ -1,5 +1,5 @@
 ---
-title: canvas2img
+title: canvasToImg
 nav:
   title: utils
   path: /utils
@@ -9,7 +9,7 @@ group:
   order: 1
 ---
 
-# canvas2img
+# canvasToImg
 将canvas转换为image
 
 ## 代码演示

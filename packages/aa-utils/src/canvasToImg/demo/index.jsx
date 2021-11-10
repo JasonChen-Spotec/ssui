@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 import { Button } from 'antd';
-import { canvas2Img } from 'aa-utils';
+import { canvasToImg } from 'aa-utils';
 
 export default () => {
   const QRRef = useRef();
@@ -18,7 +18,7 @@ export default () => {
   }, []);
 
   const onDownloadFilled = () => {
-    canvas2Img.saveAsImage(QRRef.current, { name: '2323' });
+    canvasToImg.saveAsImage(QRRef.current, { name: '2323' });
   };
 
   return (
