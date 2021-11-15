@@ -1,7 +1,7 @@
 import * as React from 'react';
 import type { BadgeProps } from 'antd/es/badge';
 import Badge from 'antd/es/badge';
-import type { TabPaneProps } from 'antd/es/tabs';
+import type { TabPaneProps, TabsProps } from 'antd/es/tabs';
 import Tabs from 'antd/es/tabs';
 import { useParams } from 'react-router-dom';
 import useUrlState from '@ahooksjs/use-url-state';
@@ -9,7 +9,7 @@ import toArray from 'rc-util/lib/Children/toArray';
 
 const { TabPane } = Tabs;
 
-export interface KeepTabProps {
+export interface KeepTabProps extends TabsProps {
   /** 由TabPane组成的children */
   children: React.ReactNode;
   /** 初始化选中面板的 key，如果没有设置 activeKey */
@@ -24,9 +24,7 @@ export interface KeepTabProps {
   badgeProps?: Omit<BadgeProps, 'count'>;
 }
 
-interface DefaultUrlParamsType {
-  [key: string]: string | undefined;
-}
+type DefaultUrlParamsType = Record<string, string | undefined>;
 
 export interface SelfTabPaneProps extends TabPaneProps {
   count: Pick<BadgeProps, 'count'>;
