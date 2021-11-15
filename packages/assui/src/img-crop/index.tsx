@@ -1,6 +1,6 @@
 import * as React from 'react';
-import Modal from 'antd/lib/modal';
-import Slider from 'antd/lib/slider';
+import Modal from 'antd/es/modal';
+import Slider from 'antd/es/slider';
 
 import type { CropperProps } from 'react-easy-crop';
 import getCroppedImg from './getCroppedImg';

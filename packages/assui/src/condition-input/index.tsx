@@ -1,6 +1,6 @@
 import * as React from 'react';
 import isArray from 'lodash/isArray';
-import Input from 'antd/lib/input';
+import Input from 'antd/es/input';
 import isFunction from 'lodash/isFunction';
 import parse2RegexOption from './parse2RegexOption';
 

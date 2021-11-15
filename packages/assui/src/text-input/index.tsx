@@ -1,5 +1,5 @@
 import React from 'react';
-import type { InputProps } from 'antd/lib/input';
+import type { InputProps } from 'antd/es/input';
 import isArray from 'lodash/isArray';
 import type { ConditionInputProps } from '../condition-input';
 import ConditionInput from '../condition-input';
