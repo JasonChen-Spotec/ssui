@@ -41,7 +41,7 @@ export default () => {
       <h3>filled</h3>
       <div className="icons-container">
         {iconsList
-          .filter(({ displayName }) => displayName.indexOf('Outline') === -1)
+          .filter(({ displayName }) => displayName.indexOf('Filled') !== -1)
           .map((Icon, index) => (
             <CopyToClipboard
               key={index}
