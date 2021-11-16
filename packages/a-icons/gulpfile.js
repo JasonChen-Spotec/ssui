@@ -9,7 +9,7 @@ gulp.task('clean', async () => {
   await del('dist/**');
 });
 
-const codeSource = ['src/business/*.tsx', 'src/filled/*.tsx', 'src/outlined/*.tsx', 'src/base/**'];
+const codeSource = ['src/*.tsx'];
 
 gulp.task('cjs', () => {
   const tsProject = ts.createProject('tsconfig.json', {
