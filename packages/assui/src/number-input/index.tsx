@@ -10,7 +10,7 @@ export interface NumberInputProps {
   /** 输入数据的类型 */
   numberType?: 'int' | 'float';
   /** 精度，只对float有效 */
-  precision: number;
+  precision?: number;
   /** 同html input属性功能 */
   maxLength?: number;
   /** 指定输入框展示值的格式 */
@@ -64,7 +64,7 @@ const NumberInput = (props: NumberInputProps) => {
       newNumber = filterFloat({
         value: newValue,
         preValue: `${resultValue}`,
-        precision,
+        precision: precision ?? 2,
         enableMinus,
       });
     }
@@ -116,7 +116,6 @@ const NumberInput = (props: NumberInputProps) => {
 
 NumberInput.defaultProps = {
   numberType: INT,
-  precision: 2,
   enableMinus: false,
 };
 
