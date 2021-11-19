@@ -9,7 +9,7 @@ export const svgBaseProps = {
 export const iconStyles = `
 .spotecicon {
   display: inline-block;
-  width: 16px;
+  width: 24px;
   color: inherit;
   font-style: normal;
   line-height: 0;
