@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Input from 'antd/es/input';
 import isUndefined from 'lodash/isUndefined';
-import { INT } from './const/numberType';
+import * as numberTypeEnum from './const/numberType';
 import { filterInt, filterFloat } from './utils';
 
 export interface NumberInputProps {
@@ -58,7 +58,7 @@ const NumberInput = (props: NumberInputProps) => {
     let newNumber;
     const newValue = e.target.value;
 
-    if (numberType === INT) {
+    if (numberType === numberTypeEnum.INT) {
       newNumber = filterInt({ value: newValue, preValue: `${resultValue}`, enableMinus });
     } else {
       newNumber = filterFloat({
@@ -115,8 +115,10 @@ const NumberInput = (props: NumberInputProps) => {
 };
 
 NumberInput.defaultProps = {
-  numberType: INT,
+  numberType: numberTypeEnum.INT,
   enableMinus: false,
 };
+
+NumberInput.numberType = numberTypeEnum;
 
 export default NumberInput;

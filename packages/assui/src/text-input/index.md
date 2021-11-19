@@ -14,7 +14,7 @@ group:
 
 ## 代码演示
 ### 基本应用
-<code hideActions='["CSB", "EXTERNAL"]' src="./demo/Index.jsx" />
+<code hideActions='["CSB", "EXTERNAL"]' src="./demo/Index.tsx" />
 
 ## API
 同`ConditionInput`组件
