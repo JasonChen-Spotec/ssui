@@ -79,6 +79,7 @@ const KeepTab = (props: KeepTabProps) => {
 
   return (
     <Tabs
+      animated={false}
       onChange={handleTabChange}
       destroyInactiveTabPane
       defaultActiveKey={urlParams[saveActiveKeyName]}

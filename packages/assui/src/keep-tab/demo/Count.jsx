@@ -14,26 +14,19 @@ const Demo = () => {
     console.log('Received key: ', key);
   };
 
-  const renderTabBar = (params) => {
-    console.log('32', params);
-
-    return <span>2</span>;
-  };
-
   return (
     <div style={{ backgroundColor: '#f5f6fa', padding: 60 }}>
       <KeepTab
         defaultActiveKey="2"
         saveActiveKeyName="countDemo"
         className="assui-tabs-card"
-        renderTabBar={renderTabBar}
         onChange={onChange}
       >
         <TabPane tab="Tab 1" key="1" count={2}>
           Content of Tab Pane 1
         </TabPane>
         <TabPane tab="Tab 2" key="2">
-          Content of Tab Pane 2
+          Content of Tab Pane 232323
         </TabPane>
         <TabPane tab="Tab 3" key="3">
           Content of Tab Pane 3
