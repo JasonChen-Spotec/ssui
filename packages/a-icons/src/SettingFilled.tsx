@@ -3,7 +3,7 @@ import Icon, { IconProps } from 'a-base-icon/lib/Icon';
 
 function SettingFilled(componentProps: IconProps) {
   const IconNode = (props: React.SVGProps<SVGSVGElement>) => (
-    <svg width={24} height={24} fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
       <circle cx={11.8} cy={11.81} r={1.96} fill="currentColor" />
       <path
         fill="currentColor"

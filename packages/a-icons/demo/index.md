@@ -16,8 +16,8 @@ group:
  * hideActions: ["CSB", "EXTERNAL"]
  */
 import React from 'react';
-import { ProfileOutlined } from 'a-icons';
-export default () => <ProfileOutlined style={{width: 24}} />
+import { PeopleTeamOutlined } from 'a-icons';
+export default () => <PeopleTeamOutlined style={{width: 24}} />
 ```
 
 ## 2. 图标列表
