@@ -36,6 +36,8 @@ export { default as PeopleTeamFilled } from './PeopleTeamFilled';
 export { default as PeopleTeamOutlined } from './PeopleTeamOutlined';
 export { default as PlusFilled } from './PlusFilled';
 export { default as PlusOutlined } from './PlusOutlined';
+export { default as RefreshFilled } from './RefreshFilled';
+export { default as RefreshOutlined } from './RefreshOutlined';
 export { default as SettingFilled } from './SettingFilled';
 export { default as SettingOutlined } from './SettingOutlined';
 export { default as SettingSquareFilled } from './SettingSquareFilled';
