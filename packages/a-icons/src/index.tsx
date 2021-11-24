@@ -42,6 +42,7 @@ export { default as SettingFilled } from './SettingFilled';
 export { default as SettingOutlined } from './SettingOutlined';
 export { default as SettingSquareFilled } from './SettingSquareFilled';
 export { default as SettingSquareOutlined } from './SettingSquareOutlined';
+export { default as TmdLogo } from './TmdLogo';
 export { default as TrashCanFilled } from './TrashCanFilled';
 export { default as UpFilled } from './UpFilled';
 export { default as UpOutlined } from './UpOutlined';
