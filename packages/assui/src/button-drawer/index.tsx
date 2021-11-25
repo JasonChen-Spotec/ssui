@@ -4,15 +4,15 @@ import Drawer from 'antd/es/drawer';
 import classNames from 'classnames';
 
 export interface ButtonDrawerProps extends DrawerProps {
-  onClose: () => void;
-  onOpen: () => void;
-  content: React.ReactElement;
+  onClose?: () => void;
+  onOpen?: () => void;
+  trigger: React.ReactElement;
   children: React.ReactElement;
 }
 
 const ButtonDrawer: React.ForwardRefRenderFunction<unknown, ButtonDrawerProps> = (props, ref) => {
   const [drawerVisible, setDrawerVisible] = useState(false);
-  const { children, onOpen, onClose, content, title, className, ...restProps } = props;
+  const { children, onOpen, onClose, trigger, title, className, ...restProps } = props;
 
   const closeDrawer = () => {
     if (onClose) {
@@ -38,11 +38,11 @@ const ButtonDrawer: React.ForwardRefRenderFunction<unknown, ButtonDrawerProps> =
     },
   });
 
-  useImperativeHandle(ref, () => actionRef.current, [actionRef.current]);
+  useImperativeHandle(ref, () => actionRef.current);
 
   const buttonNode =
-    children &&
-    React.cloneElement(children, {
+    trigger &&
+    React.cloneElement(trigger, {
       onClick: openDrawer,
     });
 
@@ -57,7 +57,7 @@ const ButtonDrawer: React.ForwardRefRenderFunction<unknown, ButtonDrawerProps> =
         visible={drawerVisible}
         {...restProps}
       >
-        {React.cloneElement(content, { drawerAction: actionRef.current })}
+        {React.cloneElement(children, { drawerAction: actionRef.current })}
       </Drawer>
     </>
   );

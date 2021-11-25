@@ -22,9 +22,9 @@ export default () => (
       title="demo"
       footer={null}
       onCancel={() => console.log('onCancel')}
-      content={<Content />}
+      trigger={<span>open modal</span>}
     >
-      <span>open modal</span>
+      <Content />
     </ButtonDrawer>
   </div>
 );

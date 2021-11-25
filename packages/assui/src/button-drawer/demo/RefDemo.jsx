@@ -21,9 +21,9 @@ const Demo = () => {
         title="demo"
         ref={drawerRef}
         onCancel={() => console.log('onCancel')}
-        content={<Content />}
+        trigger={<Button disabled> disabled </Button>}
       >
-        <Button disabled> disabled </Button>
+        <Content />
       </ButtonDrawer>
     </div>
   );
