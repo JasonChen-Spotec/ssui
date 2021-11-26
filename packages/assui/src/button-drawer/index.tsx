@@ -10,6 +10,11 @@ export interface ButtonDrawerProps extends DrawerProps {
   children: React.ReactElement;
 }
 
+export type DrawerAction = {
+  close: () => void;
+  open: () => void;
+};
+
 const ButtonDrawer: React.ForwardRefRenderFunction<unknown, ButtonDrawerProps> = (props, ref) => {
   const [drawerVisible, setDrawerVisible] = useState(false);
   const { children, onOpen, onClose, trigger, title, className, ...restProps } = props;
@@ -29,7 +34,7 @@ const ButtonDrawer: React.ForwardRefRenderFunction<unknown, ButtonDrawerProps> =
     setDrawerVisible(true);
   };
 
-  const actionRef = useRef({
+  const actionRef = useRef<DrawerAction>({
     close() {
       closeDrawer();
     },
