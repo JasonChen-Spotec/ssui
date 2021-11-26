@@ -1,10 +1,11 @@
 import * as React from 'react';
 import isArray from 'lodash/isArray';
 import Input from 'antd/es/input';
+import type { InputProps } from 'antd/es/input';
 import isFunction from 'lodash/isFunction';
 import parse2RegexOption from './parse2RegexOption';
 
-export interface ConditionInputProps {
+export interface ConditionInputProps extends Omit<InputProps, 'onChange'> {
   /** 过滤的正则条件 */
   regexp?: RegExp | (RegExp | string | { pattern: RegExp; replacement?: string })[];
   /** 指定输入框展示值的格式 */

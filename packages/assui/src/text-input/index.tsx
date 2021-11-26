@@ -1,10 +1,9 @@
 import React from 'react';
-import type { InputProps } from 'antd/es/input';
 import isArray from 'lodash/isArray';
 import type { ConditionInputProps } from '../condition-input';
 import ConditionInput from '../condition-input';
 
-export type TextInputProps = ConditionInputProps & InputProps;
+export type TextInputProps = ConditionInputProps;
 
 const TextInput = (props: TextInputProps) => {
   const { regexp, ...restProps } = props;
