@@ -1,10 +1,8 @@
-<svg version="1.1"  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 16 16" style="enable-background:new 0 0 16 16;" xml:space="preserve">
-<g>
-	<path fill="currentColor" d="M8,0C3.6,0,0,3.6,0,8c0,4.4,3.6,8,8,8v0c4.4,0,8-3.6,8-8S12.4,0,8,0z M8,14.9c-3.8,0-6.9-3.1-6.9-6.9
-		c0-3.8,3.1-6.9,6.9-6.9c3.8,0,6.9,3.1,6.9,6.9C14.9,11.8,11.8,14.9,8,14.9z"/>
-	<path fill="currentColor" d="M10.7,5.3C10.5,5,10.2,5,9.9,5.3L8,7.2L6.1,5.3C5.8,5,5.5,5,5.3,5.3C5,5.5,5,5.8,5.3,6.1L7.2,8L5.3,9.9
-		c-0.3,0.3-0.3,0.5,0,0.8c0.3,0.3,0.5,0.3,0.8,0L8,8.8l1.9,1.9c0.3,0.3,0.5,0.3,0.8,0c0.3-0.3,0.3-0.5,0-0.8L8.8,8l1.9-1.9
-		C11,5.8,11,5.5,10.7,5.3z"/>
-</g>
+<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" clip-rule="evenodd"
+    d="M4.4 12C4.4 16.1974 7.80264 19.6 12 19.6C16.1974 19.6 19.6 16.1974 19.6 12C19.6 7.80264 16.1974 4.4 12 4.4C7.80264 4.4 4.4 7.80264 4.4 12ZM12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3Z"
+    fill="currentColor" />
+  <rect x="14.1569" y="8.79999" width="1.4" height="8" rx="0.7" transform="rotate(45 14.1569 8.79999)" fill="currentColor" />
+  <rect x="15.2883" y="14.4569" width="1.4" height="8" rx="0.7" transform="rotate(135 15.2883 14.4569)"
+    fill="currentColor" />
 </svg>

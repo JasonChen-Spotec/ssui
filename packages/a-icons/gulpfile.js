@@ -7,7 +7,6 @@ gulp.task('clean', async () => {
   await del('lib/**');
   await del('es/**');
   await del('dist/**');
-  await del('src/**');
 });
 
 const codeSource = ['src/*.tsx'];
