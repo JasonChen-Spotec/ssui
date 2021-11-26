@@ -8,7 +8,7 @@
   "types": "./lib/index.d.ts",
   "license": "MIT",
   "scripts": {
-    "buildSvg": "rm -rf tmpAllSvgs/* && cp svgs/**/* tmpAllSvgs && svgr --template buildIconTemplate.js --typescript --out-dir src tmpAllSvgs",
+    "buildSvg": "rm -rf src/* && rm -rf tmpAllSvgs/* && cp svgs/**/* tmpAllSvgs && svgr --template buildIconTemplate.js --typescript --out-dir src tmpAllSvgs",
     "build": "yarn run buildSvg && gulp"
   },
   "devDependencies": {

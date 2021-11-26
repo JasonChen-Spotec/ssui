@@ -3,11 +3,31 @@ import Icon, { IconProps } from 'a-base-icon/lib/Icon';
 
 function CloseCircleOutlined(componentProps: IconProps) {
   const IconNode = (props: React.SVGProps<SVGSVGElement>) => (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" {...props}>
-      <g fill="currentColor">
-        <path d="M8 0C3.6 0 0 3.6 0 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8zm0 14.9c-3.8 0-6.9-3.1-6.9-6.9 0-3.8 3.1-6.9 6.9-6.9 3.8 0 6.9 3.1 6.9 6.9 0 3.8-3.1 6.9-6.9 6.9z" />
-        <path d="M10.7 5.3c-.2-.3-.5-.3-.8 0L8 7.2 6.1 5.3c-.3-.3-.6-.3-.8 0-.3.2-.3.5 0 .8L7.2 8 5.3 9.9c-.3.3-.3.5 0 .8.3.3.5.3.8 0L8 8.8l1.9 1.9c.3.3.5.3.8 0 .3-.3.3-.5 0-.8L8.8 8l1.9-1.9c.3-.3.3-.6 0-.8z" />
-      </g>
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+      <path
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M4.4 12a7.6 7.6 0 1015.2 0 7.6 7.6 0 00-15.2 0zM12 3a9 9 0 100 18 9 9 0 000-18z"
+        fill="currentColor"
+      />
+      <rect
+        x={14.157}
+        y={8.8}
+        width={1.4}
+        height={8}
+        rx={0.7}
+        transform="rotate(45 14.157 8.8)"
+        fill="currentColor"
+      />
+      <rect
+        x={15.288}
+        y={14.457}
+        width={1.4}
+        height={8}
+        rx={0.7}
+        transform="rotate(135 15.288 14.457)"
+        fill="currentColor"
+      />
     </svg>
   );
 
