@@ -29,6 +29,7 @@ export { default as LoopFolderOutlined } from './LoopFolderOutlined';
 export { default as LoopOutlined } from './LoopOutlined';
 export { default as MoneySymbolFilled } from './MoneySymbolFilled';
 export { default as MoneySymbolOutlined } from './MoneySymbolOutlined';
+export { default as MoveOutlined } from './MoveOutlined';
 export { default as PeopleAddFilled } from './PeopleAddFilled';
 export { default as PeopleAddOutlined } from './PeopleAddOutlined';
 export { default as PeopleFilled } from './PeopleFilled';
