@@ -5,7 +5,7 @@ function MoveOutlined(componentProps: IconProps) {
   const IconNode = (props: React.SVGProps<SVGSVGElement>) => (
     <svg width={24} height={24} fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
       <rect
-        fill="#212121"
+        fill="currentColor"
         x={16}
         y={11.373}
         width={1.4}
@@ -13,7 +13,7 @@ function MoveOutlined(componentProps: IconProps) {
         rx={0.7}
         transform="rotate(90 16 11.373)"
       />
-      <path fill="#212121" d="M12.7 15.3a.7.7 0 11-1.4 0V8.7a.7.7 0 111.4 0v6.6z" />
+      <path fill="currentColor" d="M12.7 15.3a.7.7 0 11-1.4 0V8.7a.7.7 0 111.4 0v6.6z" />
       <path
         fill="currentColor"
         fillRule="evenodd"
