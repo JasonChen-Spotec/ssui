@@ -25,9 +25,9 @@ const Demo = () => {
         ref={modalRef}
         onCancel={() => console.log('onCancel')}
         onOk={() => modalRef.current.close()}
-        content={<Content />}
+        trigger={<Button disabled> disabled </Button>}
       >
-        <Button disabled> disabled </Button>
+        <Content />
       </ButtonModal>
     </div>
   );
