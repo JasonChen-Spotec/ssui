@@ -2,7 +2,7 @@ import * as React from 'react';
 import type { ModalProps } from 'antd/es/modal';
 import Modal from 'antd/es/modal';
 
-export interface refProps {
+export interface ModalAction {
   open: () => void;
   close: () => void;
 }
@@ -32,7 +32,7 @@ const ButtonModal: React.ForwardRefRenderFunction<unknown, ButtonModalProps> = (
     setModalVisible(false);
   };
 
-  const modalActionRef = React.useRef<refProps>({ open: openModal, close: closeModal });
+  const modalActionRef = React.useRef<ModalAction>({ open: openModal, close: closeModal });
 
   React.useImperativeHandle(ref, () => modalActionRef.current);
 
