@@ -3,7 +3,7 @@ import Icon, { IconProps } from 'a-base-icon/lib/Icon';
 
 function MoveOutlined(componentProps: IconProps) {
   const IconNode = (props: React.SVGProps<SVGSVGElement>) => (
-    <svg width={24} height={24} xmlns="http://www.w3.org/2000/svg" {...props}>
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" {...props}>
       <path fill="inherit" d="M15.3 11.373a.7.7 0 110 1.4H8.7a.7.7 0 110-1.4h6.6z" />
       <path fill="inherit" d="M12.7 15.3a.7.7 0 01-1.4 0V8.7a.7.7 0 111.4 0v6.6z" />
       <path
