@@ -1,10 +1,11 @@
 import * as React from 'react';
+import type { InputProps } from 'antd/es/input';
 import Input from 'antd/es/input';
 import isUndefined from 'lodash/isUndefined';
 import * as numberTypeEnum from './const/numberType';
 import { filterInt, filterFloat } from './utils';
 
-export interface NumberInputProps {
+export interface NumberInputProps extends Omit<InputProps, 'onChange' | 'onBlur'> {
   /** 输入框的内容 */
   value?: string | number;
   /** 输入数据的类型 */
@@ -37,11 +38,11 @@ export interface NumberInputProps {
   allowClear?: boolean;
 }
 
-const NumberInput = (props: NumberInputProps) => {
+const NumberInput = React.forwardRef<Input | null, NumberInputProps>((props, ref) => {
   const {
     value,
     onChange,
-    numberType,
+    numberType = numberTypeEnum.INT,
     precision,
     formatter,
     parser,
@@ -105,6 +106,7 @@ const NumberInput = (props: NumberInputProps) => {
   return (
     <Input
       type="text"
+      ref={ref}
       value={finallyValue}
       onBlur={onNumberBlur}
       onChange={onNumberChange}
@@ -112,13 +114,11 @@ const NumberInput = (props: NumberInputProps) => {
       {...restProps}
     />
   );
-};
+});
 
 NumberInput.defaultProps = {
-  numberType: numberTypeEnum.INT,
   enableMinus: false,
 };
 
-NumberInput.numberType = numberTypeEnum;
-
+export { numberTypeEnum };
 export default NumberInput;
