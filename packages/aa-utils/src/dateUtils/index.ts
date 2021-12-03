@@ -3,7 +3,7 @@ import momentTimezone from 'moment-timezone'; // fix ie tz.guess bug;
 import isNumber from 'lodash/isNumber';
 import isDate from 'lodash/isDate';
 
-const createMoment = (value: moment.Moment) => {
+const createMoment = (value: moment.MomentInput) => {
   if (value) {
     const val = moment(value).utc().local();
 
@@ -91,28 +91,29 @@ class DateUtils {
     return moment(dateTime, format || this.dateTimeFormat);
   }
 
-  formatDate(date: moment.Moment, format?: string): string {
+  formatDate(date: moment.MomentInput, format?: string): string {
     const m = createMoment(date);
 
     return m ? m.format(format || this.dateFormat) : '';
   }
 
-  formatTime(date: moment.Moment, format?: string): string {
+  formatTime(date: moment.MomentInput, format?: string): string {
     const m = createMoment(date);
     return m ? m.format(format || this.timeFormat) : '';
   }
 
-  formatDateTime(dateTime: moment.Moment, format?: string): string {
+  formatDateTime(dateTime: moment.MomentInput, format?: string): string {
     const m = createMoment(dateTime);
     return m ? m.format(format || this.dateTimeFormat) : '';
   }
 
-  formatToTimestamp = (date: moment.Moment): number => {
+  formatToTimestamp = (date: moment.MomentInput): number => {
     if (date) {
-      return date.valueOf();
+      const m = createMoment(date);
+      return m ? +m.format('x') : +this.getToday().format('x');
     }
 
-    return this.getToday().valueOf();
+    return +this.getToday().format('x');
   };
 
   getToday = () => moment();
