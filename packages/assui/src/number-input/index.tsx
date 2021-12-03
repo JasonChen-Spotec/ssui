@@ -38,7 +38,7 @@ export interface NumberInputProps extends Omit<InputProps, 'onChange' | 'onBlur'
   allowClear?: boolean;
 }
 
-const NumberInput = React.forwardRef<Input | null, NumberInputProps>((props, ref) => {
+const NumberInput = React.forwardRef<unknown, NumberInputProps>((props, ref) => {
   const {
     value,
     onChange,
@@ -106,7 +106,7 @@ const NumberInput = React.forwardRef<Input | null, NumberInputProps>((props, ref
   return (
     <Input
       type="text"
-      ref={ref}
+      ref={ref as any}
       value={finallyValue}
       onBlur={onNumberBlur}
       onChange={onNumberChange}
