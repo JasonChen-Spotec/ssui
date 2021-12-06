@@ -2,6 +2,8 @@ import * as React from 'react';
 import type { InputProps } from 'antd/es/input';
 import Input from 'antd/es/input';
 import isUndefined from 'lodash/isUndefined';
+import endsWith from 'lodash/endsWith';
+import dataTypeEnum from './const/dataTypeEnum';
 import * as numberTypeEnum from './const/numberType';
 import { filterInt, filterFloat } from './utils';
 
@@ -10,6 +12,8 @@ export interface NumberInputProps extends Omit<InputProps, 'onChange' | 'onBlur'
   value?: string | number;
   /** 输入数据的类型 */
   numberType?: 'int' | 'float';
+  /** value的数据类型 */
+  dataType?: dataTypeEnum.number | dataTypeEnum.string;
   /** 精度，只对float有效 */
   precision?: number;
   /** 同html input属性功能 */
@@ -21,7 +25,7 @@ export interface NumberInputProps extends Omit<InputProps, 'onChange' | 'onBlur'
   /** 是否允许输入负数 */
   enableMinus?: boolean;
   /** 变化回调 */
-  onChange?: (value: string) => void;
+  onChange?: (value: string | number) => void;
   /** 失去焦点回调 */
   onBlur?: (value: string) => void;
   /** 按下回车的回调 */
@@ -43,6 +47,7 @@ const NumberInput = React.forwardRef<unknown, NumberInputProps>((props, ref) => 
     value,
     onChange,
     numberType = numberTypeEnum.INT,
+    dataType = dataTypeEnum.number,
     precision,
     formatter,
     parser,
@@ -80,7 +85,20 @@ const NumberInput = React.forwardRef<unknown, NumberInputProps>((props, ref) => 
       }
 
       if (onChange) {
-        onChange(newNumber);
+        if (dataType === dataTypeEnum.number) {
+          if (newNumber === '') {
+            onChange(newNumber);
+            return;
+          }
+
+          if (numberType === numberTypeEnum.INT) {
+            onChange(+newNumber);
+          } else {
+            endsWith(newNumber, '.') ? onChange(newNumber) : onChange(+newNumber);
+          }
+        } else {
+          onChange(newNumber);
+        }
       }
     }
   };
@@ -96,8 +114,14 @@ const NumberInput = React.forwardRef<unknown, NumberInputProps>((props, ref) => 
       }
     }
 
+    if (dataType === dataTypeEnum.number) {
+      if (numberType === numberTypeEnum.FLOAT && onChange && endsWith(`${resultValue}`, '.')) {
+        onChange(+resultValue);
+      }
+    }
+
     if (onBlur) {
-      onBlur(`${resultValue}` || '');
+      onBlur(`${resultValue}`);
     }
   };
 
@@ -120,5 +144,5 @@ NumberInput.defaultProps = {
   enableMinus: false,
 };
 
-export { numberTypeEnum };
+export { numberTypeEnum, dataTypeEnum };
 export default NumberInput;

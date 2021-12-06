@@ -8,6 +8,7 @@ export { default as CardFilled } from './CardFilled';
 export { default as CardOutlined } from './CardOutlined';
 export { default as CategoryFilled } from './CategoryFilled';
 export { default as CategoryOutlined } from './CategoryOutlined';
+export { default as ChevronUpFilled } from './ChevronUpFilled';
 export { default as ClockCircleFilled } from './ClockCircleFilled';
 export { default as ClockCircleOutline } from './ClockCircleOutline';
 export { default as CloseCircleFilled } from './CloseCircleFilled';

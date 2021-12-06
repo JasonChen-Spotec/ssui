@@ -8,9 +8,9 @@ import { NumberInput } from 'assui';
 
 const Demo = () => {
   const TRef = React.useRef();
-  const onChange = (values) => {
+  const onChange = (value) => {
     console.log('22', TRef);
-    console.log('Received values: ', values);
+    console.log(typeof value);
   };
 
   return (
