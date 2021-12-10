@@ -34,13 +34,13 @@ const defaultInit = {
   menubar: false,
   images_upload_handler() {},
   plugins: [
-    ' autolink lists link image charmap print preview anchor',
-    'searchreplace visualblocks code fullscreen',
-    'insertdatetime media table paste code help wordcount',
+    ' autolink lists link image charmap  anchor',
+    'searchreplace code fullscreen',
+    'insertdatetime media table help wordcount',
   ],
   toolbar:
     'undo redo | formatselect | ' +
-    'bold italic color fontcolor backcolor | alignleft aligncenter ' +
+    'code bold italic color fontcolor backcolor | alignleft aligncenter ' +
     'alignright alignjustify table | image bullist numlist outdent indent | ' +
     'removeformat | help',
   content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }',
