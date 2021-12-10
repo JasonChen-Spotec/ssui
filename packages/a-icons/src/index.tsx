@@ -47,6 +47,7 @@ export { default as MailOutlined } from './MailOutlined';
 export { default as MoneySymbolFilled } from './MoneySymbolFilled';
 export { default as MoneySymbolOutlined } from './MoneySymbolOutlined';
 export { default as MoveOutlined } from './MoveOutlined';
+export { default as OngoingFilled } from './OngoingFilled';
 export { default as OpenMailFilled } from './OpenMailFilled';
 export { default as OpenMailOutlined } from './OpenMailOutlined';
 export { default as PeopleAddFilled } from './PeopleAddFilled';
