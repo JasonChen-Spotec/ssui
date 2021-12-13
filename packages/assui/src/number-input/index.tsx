@@ -117,8 +117,11 @@ const NumberInput = React.forwardRef<unknown, NumberInputProps>((props, ref) => 
     }
 
     if (dataType === dataTypeEnum.number) {
-      if (numberType === numberTypeEnum.FLOAT && onChange && endsWith(`${resultValue}`, '.')) {
-        onChange(+resultValue);
+      if (
+        numberType === numberTypeEnum.FLOAT &&
+        (endsWith(`${resultValue}`, '.') || endsWith(`${resultValue}`, '.0'))
+      ) {
+        onChange && onChange(parseInt(`${resultValue}`, 10));
       }
     }
 
