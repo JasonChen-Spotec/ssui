@@ -94,7 +94,9 @@ const NumberInput = React.forwardRef<unknown, NumberInputProps>((props, ref) => 
           if (numberType === numberTypeEnum.INT) {
             onChange(+newNumber);
           } else {
-            endsWith(newNumber, '.') ? onChange(newNumber) : onChange(+newNumber);
+            endsWith(newNumber, '.') || endsWith(newNumber, '.0')
+              ? onChange(newNumber)
+              : onChange(+newNumber);
           }
         } else {
           onChange(newNumber);
