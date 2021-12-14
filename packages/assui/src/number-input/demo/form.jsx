@@ -24,7 +24,7 @@ const Demo = () => {
         <NumberInput />
       </Form.Item>
       <Form.Item name="float" label="float">
-        <NumberInput numberType="float" />
+        <NumberInput numberType="float" precision={5} />
       </Form.Item>
       <Form.Item name="intEnableMinus" label="int(enableMinus)">
         <NumberInput enableMinus />

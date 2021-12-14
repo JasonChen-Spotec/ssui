@@ -1,2 +1,2 @@
-export const INT = 'int';
-export const FLOAT = 'float';
+export const INT = 'int' as const;
+export const FLOAT = 'float' as const;

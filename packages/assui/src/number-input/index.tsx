@@ -2,8 +2,7 @@ import * as React from 'react';
 import type { InputProps } from 'antd/es/input';
 import Input from 'antd/es/input';
 import isUndefined from 'lodash/isUndefined';
-import endsWith from 'lodash/endsWith';
-import dataTypeEnum from './const/dataTypeEnum';
+import * as dataTypeEnum from './const/dataTypeEnum';
 import * as numberTypeEnum from './const/numberType';
 import { filterInt, filterFloat } from './utils';
 
@@ -13,7 +12,7 @@ export interface NumberInputProps extends Omit<InputProps, 'onChange' | 'onBlur'
   /** 输入数据的类型 */
   numberType?: 'int' | 'float';
   /** value的数据类型 */
-  dataType?: dataTypeEnum.number | dataTypeEnum.string;
+  dataType?: 'number' | 'string';
   /** 精度，只对float有效 */
   precision?: number;
   /** 同html input属性功能 */
@@ -47,7 +46,7 @@ const NumberInput = React.forwardRef<unknown, NumberInputProps>((props, ref) => 
     value,
     onChange,
     numberType = numberTypeEnum.INT,
-    dataType = dataTypeEnum.number,
+    dataType = dataTypeEnum.NUMBER,
     precision,
     formatter,
     parser,
@@ -85,22 +84,7 @@ const NumberInput = React.forwardRef<unknown, NumberInputProps>((props, ref) => 
       }
 
       if (onChange) {
-        if (dataType === dataTypeEnum.number) {
-          if (newNumber === '') {
-            onChange(newNumber);
-            return;
-          }
-
-          if (numberType === numberTypeEnum.INT) {
-            onChange(+newNumber);
-          } else {
-            endsWith(newNumber, '.') || endsWith(newNumber, '.0')
-              ? onChange(newNumber)
-              : onChange(+newNumber);
-          }
-        } else {
-          onChange(newNumber);
-        }
+        onChange(newNumber);
       }
     }
   };
@@ -116,11 +100,10 @@ const NumberInput = React.forwardRef<unknown, NumberInputProps>((props, ref) => 
       }
     }
 
-    if (dataType === dataTypeEnum.number) {
-      if (
-        numberType === numberTypeEnum.FLOAT &&
-        (endsWith(`${resultValue}`, '.') || endsWith(`${resultValue}`, '.0'))
-      ) {
+    if (dataType === dataTypeEnum.NUMBER && resultValue) {
+      if (numberType === numberTypeEnum.FLOAT) {
+        onChange && onChange(+resultValue);
+      } else {
         onChange && onChange(parseInt(`${resultValue}`, 10));
       }
     }

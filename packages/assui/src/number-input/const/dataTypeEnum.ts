@@ -1,6 +1,4 @@
-enum dataType {
-  number = 'number',
-  string = 'string',
-}
+const NUMBER = 'number' as const;
+const STRING = 'string' as const;
 
-export default dataType;
+export { NUMBER, STRING };
