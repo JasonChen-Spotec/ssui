@@ -84,7 +84,7 @@ const HighlightWithinTextarea = React.forwardRef<HTMLTextAreaElement, HighlightT
           className={textareaCls}
           {...textareaProps}
           onScroll={handleScroll}
-          ref={ref}
+          ref={ref as any}
         />
       </div>
     );
