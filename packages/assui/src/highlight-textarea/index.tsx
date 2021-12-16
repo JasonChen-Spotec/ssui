@@ -2,14 +2,16 @@ import * as React from 'react';
 import classNames from 'classnames';
 import trimStart from 'lodash/trimStart';
 import useMount from 'ahooks/lib/useMount';
-import type { TextAreaProps } from 'antd/es/input/TextArea';
 import type { HighlighedContentsProps } from './HighlighedContents';
 import HighlighedContents from './HighlighedContents';
 import type { HighlightType } from './types';
 
 export interface HighlightTextareaProps
   extends HighlighedContentsProps,
-    Omit<TextAreaProps, 'value' | 'onChange' | 'onScroll' | 'style'> {
+    Omit<
+      React.TextareaHTMLAttributes<HTMLTextAreaElement>,
+      'value' | 'onChange' | 'onScroll' | 'style'
+    > {
   prefixCls?: string;
   className?: string;
   textAreaClassName?: string;
