@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React from 'react';
 import type { IAllProps } from '@tinymce/tinymce-react';
 import { Editor } from '@tinymce/tinymce-react';
@@ -28,31 +29,41 @@ import 'tinymce/plugins/template';
 import 'tinymce/plugins/help';
 import './lang/zh_CN';
 
-const defaultInit = {
-  height: 300,
-  language: 'zh_CN',
-  menubar: false,
-  images_upload_handler() {},
-  plugins: [
-    ' autolink lists link image charmap  anchor',
-    'searchreplace code fullscreen',
-    'insertdatetime media table help wordcount',
-  ],
-  toolbar:
-    'undo redo | formatselect | ' +
-    'code bold italic color fontcolor backcolor | alignleft aligncenter ' +
-    'alignright alignjustify table | image bullist numlist outdent indent | ' +
-    'removeformat | help',
-  content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }',
-};
-
 export type RichTextEditorProps = IAllProps;
+
+const defaultPlugins = [
+  ' autolink lists link image charmap  anchor',
+  'searchreplace code fullscreen',
+  'insertdatetime media table help wordcount',
+];
+
+const defaultToolbar =
+  'undo redo | formatselect | ' +
+  'code bold italic color fontcolor backcolor | alignleft aligncenter ' +
+  'alignright alignjustify table | image bullist numlist outdent indent | ' +
+  'removeformat | help';
 
 const RichTextEditor = (props: IAllProps) => {
   const { init, ...restProps } = props;
+  const defaultInit = {
+    height: 300,
+    language: 'zh_CN',
+    menubar: false,
+    images_upload_handler() {},
+    plugins: defaultPlugins,
+    toolbar: defaultToolbar,
+    content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }',
+  };
+
   const resultInit = { ...defaultInit, ...init };
 
-  return <Editor {...restProps} init={resultInit} />;
+  return (
+    <div className="test">
+      <Editor {...restProps} init={resultInit} />
+    </div>
+  );
 };
+
+export { defaultPlugins, defaultToolbar };
 
 export default RichTextEditor;

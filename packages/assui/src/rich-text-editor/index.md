@@ -15,7 +15,15 @@ group:
 
 <code hideActions='["CSB", "EXTERNAL"]' src="./demo/index.tsx" />
 
-### 结合antd from使用
+
+### 1.2. 结合antd from使用
 <code hideActions='["CSB", "EXTERNAL"]' src="./demo/Form.jsx" />
+
+
+### 1.3. 插入tag
+<code hideActions='["CSB", "EXTERNAL"]' src="./demo/InsertTag.tsx" />
+
+### 1.4. 自定义工具栏
+<code hideActions='["CSB", "EXTERNAL"]' src="./demo/SelfSetToolbar.tsx" />
 
 <API></API>
