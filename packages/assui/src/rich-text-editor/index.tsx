@@ -34,7 +34,7 @@ tinymce.addI18n('zh_CN', zhCN);
 export type RichTextEditorProps = IAllProps;
 
 const defaultPlugins = [
-  ' autolink lists link image charmap  anchor',
+  'autolink lists link image charmap  anchor',
   'searchreplace code fullscreen',
   'insertdatetime media table help wordcount',
 ];
