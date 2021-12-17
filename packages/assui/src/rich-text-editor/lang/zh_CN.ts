@@ -1,7 +1,7 @@
 /* eslint-disable */
 import tinymce from 'tinymce/tinymce';
 
-tinymce.addI18n('zh_CN', {
+export default tinymce.addI18n('zh_CN', {
   'Redo': '\u91cd\u505a',
   'Undo': '\u64a4\u9500',
   'Cut': '\u526a\u5207',
@@ -109,7 +109,8 @@ tinymce.addI18n('zh_CN', {
   'Focus to menubar': '\u79fb\u52a8\u7126\u70b9\u5230\u83dc\u5355\u680f',
   'Focus to toolbar': '\u79fb\u52a8\u7126\u70b9\u5230\u5de5\u5177\u680f',
   'Focus to element path': '\u79fb\u52a8\u7126\u70b9\u5230\u5143\u7d20\u8def\u5f84',
-  'Focus to contextual toolbar': '\u79fb\u52a8\u7126\u70b9\u5230\u4e0a\u4e0b\u6587\u83dc\u5355',
+  'Focus to contextual toolbar':
+    '\u79fb\u52a8\u7126\u70b9\u5230\u4e0a\u4e0b\u6587\u83dc\u5355',
   'Insert link (if link plugin activated)':
     '\u63d2\u5165\u94fe\u63a5 (\u5982\u679c\u94fe\u63a5\u63d2\u4ef6\u5df2\u6fc0\u6d3b)',
   'Save (if save plugin activated)':
@@ -185,7 +186,8 @@ tinymce.addI18n('zh_CN', {
   'Alternative source': '\u955c\u50cf',
   'Alternative source URL': '\u66ff\u4ee3\u6765\u6e90\u7f51\u5740',
   'Media poster (Image URL)': '\u5c01\u9762(\u56fe\u7247\u5730\u5740)',
-  'Paste your embed code below:': '\u5c06\u5185\u5d4c\u4ee3\u7801\u7c98\u8d34\u5728\u4e0b\u9762:',
+  'Paste your embed code below:':
+    '\u5c06\u5185\u5d4c\u4ee3\u7801\u7c98\u8d34\u5728\u4e0b\u9762:',
   'Embed': '\u5185\u5d4c',
   'Media...': '\u591a\u5a92\u4f53...',
   'Nonbreaking space': '\u4e0d\u95f4\u65ad\u7a7a\u683c',
@@ -295,14 +297,16 @@ tinymce.addI18n('zh_CN', {
   'Error': '\u9519\u8bef',
   'Warn': '\u8b66\u544a',
   'Valid': '\u6709\u6548',
-  'To open the popup, press Shift+Enter': '\u6309Shitf+Enter\u952e\u6253\u5f00\u5bf9\u8bdd\u6846',
+  'To open the popup, press Shift+Enter':
+    '\u6309Shitf+Enter\u952e\u6253\u5f00\u5bf9\u8bdd\u6846',
   'Rich Text Area. Press ALT-0 for help.':
     '\u7f16\u8f91\u533a\u3002\u6309Alt+0\u952e\u6253\u5f00\u5e2e\u52a9\u3002',
   'System Font': '\u7cfb\u7edf\u5b57\u4f53',
   'Failed to upload image: {0}': '\u56fe\u7247\u4e0a\u4f20\u5931\u8d25: {0}',
   'Failed to load plugin: {0} from url {1}':
     '\u63d2\u4ef6\u52a0\u8f7d\u5931\u8d25: {0} \u6765\u81ea\u94fe\u63a5 {1}',
-  'Failed to load plugin url: {0}': '\u63d2\u4ef6\u52a0\u8f7d\u5931\u8d25 \u94fe\u63a5: {0}',
+  'Failed to load plugin url: {0}':
+    '\u63d2\u4ef6\u52a0\u8f7d\u5931\u8d25 \u94fe\u63a5: {0}',
   'Failed to initialize plugin: {0}': '\u63d2\u4ef6\u521d\u59cb\u5316\u5931\u8d25: {0}',
   'example': '\u793a\u4f8b',
   'Search': '\u641c\u7d22',
@@ -365,7 +369,8 @@ tinymce.addI18n('zh_CN', {
   '{0} characters': '{0} \u4e2a\u5b57\u7b26',
   'Error: Form submit field collision.':
     '\u9519\u8bef: \u8868\u5355\u63d0\u4ea4\u5b57\u6bb5\u51b2\u7a81\u3002',
-  'Error: No form element found.': '\u9519\u8bef: \u6ca1\u6709\u8868\u5355\u63a7\u4ef6\u3002',
+  'Error: No form element found.':
+    '\u9519\u8bef: \u6ca1\u6709\u8868\u5355\u63a7\u4ef6\u3002',
   'Update': '\u66f4\u65b0',
   'Color swatch': '\u989c\u8272\u6837\u672c',
   'Turquoise': '\u9752\u7eff\u8272',
