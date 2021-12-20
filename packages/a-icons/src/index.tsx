@@ -24,6 +24,7 @@ export { default as CreditCardOutlined } from './CreditCardOutlined';
 export { default as DoubleTextFilled } from './DoubleTextFilled';
 export { default as DoubleTextOutlined } from './DoubleTextOutlined';
 export { default as EditFilled } from './EditFilled';
+export { default as EditHoverOutlined } from './EditHoverOutlined';
 export { default as FileFilled } from './FileFilled';
 export { default as FileOutlined } from './FileOutlined';
 export { default as FormFilled } from './FormFilled';
