@@ -34,7 +34,7 @@
     "@tinymce/tinymce-react": "^3.13.0",
     "@types/react-beautiful-dnd": "^13.1.2",
     "a-icons": "^1.0.26",
-    "ahooks": "^2.10.9",
+    "ahooks": "^3.0.8",
     "bignumber.js": "^9.0.1",
     "copy-to-clipboard": "^3.3.1",
     "echarts": "^5.1.2",
