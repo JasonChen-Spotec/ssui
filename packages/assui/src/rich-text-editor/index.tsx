@@ -19,7 +19,7 @@ import 'tinymce/plugins/hr';
 import 'tinymce/plugins/anchor';
 import 'tinymce/plugins/searchreplace';
 import 'tinymce/plugins/wordcount';
-import 'tinymce/plugins/code';
+// import 'tinymce/plugins/code';
 import 'tinymce/plugins/fullscreen';
 import 'tinymce/plugins/insertdatetime';
 import 'tinymce/plugins/media';
@@ -27,6 +27,7 @@ import 'tinymce/plugins/nonbreaking';
 import 'tinymce/plugins/table';
 import 'tinymce/plugins/template';
 import 'tinymce/plugins/help';
+import './plugins/code';
 import zhCN from './lang/zh_CN';
 
 tinymce.addI18n('zh_CN', zhCN);
