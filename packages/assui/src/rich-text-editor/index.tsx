@@ -27,10 +27,13 @@ import 'tinymce/plugins/nonbreaking';
 import 'tinymce/plugins/table';
 import 'tinymce/plugins/template';
 import 'tinymce/plugins/help';
-import './plugins/code';
+
+import initCodePlugin from './plugins/code';
+
 import zhCN from './lang/zh_CN';
 
 tinymce.addI18n('zh_CN', zhCN);
+initCodePlugin();
 
 export type RichTextEditorProps = IAllProps;
 
