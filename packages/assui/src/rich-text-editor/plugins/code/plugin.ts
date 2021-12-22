@@ -1,4 +1,5 @@
 /* eslint-disable */
+//@ts-nocheck
 
 /**
  * Copyright (c) Tiny Technologies, Inc. All rights reserved.
