@@ -1,5 +1,6 @@
 export { default as AlertTriangleFilled } from './AlertTriangleFilled';
 export { default as AlertTriangleOutlined } from './AlertTriangleOutlined';
+export { default as ArticleBoardFilled } from './ArticleBoardFilled';
 export { default as BrokenLineFilled } from './BrokenLineFilled';
 export { default as BrokenLineOutlined } from './BrokenLineOutlined';
 export { default as CameraFilled } from './CameraFilled';
@@ -71,6 +72,7 @@ export { default as SettingFilled } from './SettingFilled';
 export { default as SettingOutlined } from './SettingOutlined';
 export { default as SettingSquareFilled } from './SettingSquareFilled';
 export { default as SettingSquareOutlined } from './SettingSquareOutlined';
+export { default as StampFilled } from './StampFilled';
 export { default as StarFilled } from './StarFilled';
 export { default as StarOutlined } from './StarOutlined';
 export { default as StopFilled } from './StopFilled';
