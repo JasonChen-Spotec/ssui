@@ -4,6 +4,7 @@ export { default as ArticleBoardFilled } from './ArticleBoardFilled';
 export { default as BrokenLineFilled } from './BrokenLineFilled';
 export { default as BrokenLineOutlined } from './BrokenLineOutlined';
 export { default as BusinessCardFilled } from './BusinessCardFilled';
+export { default as BusinessCardOutline } from './BusinessCardOutline';
 export { default as CameraFilled } from './CameraFilled';
 export { default as CameraOutlined } from './CameraOutlined';
 export { default as CardFilled } from './CardFilled';
