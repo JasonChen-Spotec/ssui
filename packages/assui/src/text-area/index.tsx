@@ -5,7 +5,7 @@ import trimStart from 'lodash/trimStart';
 
 export interface TAreaProps extends Omit<TextAreaProps, 'onChange'> {
   /** 输入框内容 */
-  value: any;
+  value?: any;
   /** 指定输入框展示值的格式 */
   formatter?: (value: string) => string;
   /** 变化回调 */
