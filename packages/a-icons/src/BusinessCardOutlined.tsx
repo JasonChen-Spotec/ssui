@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Icon, { IconProps } from 'a-base-icon/lib/Icon';
 
-function BusinessCardOutline(componentProps: IconProps) {
+function BusinessCardOutlined(componentProps: IconProps) {
   const IconNode = (props: React.SVGProps<SVGSVGElement>) => (
     <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
       <rect
@@ -31,5 +31,5 @@ function BusinessCardOutline(componentProps: IconProps) {
   return <Icon {...componentProps} component={IconNode} />;
 }
 
-BusinessCardOutline.displayName = 'BusinessCardOutline';
-export default BusinessCardOutline;
+BusinessCardOutlined.displayName = 'BusinessCardOutlined';
+export default BusinessCardOutlined;
