@@ -1,3 +1,4 @@
+export { default as ImpassabilityFilled } from './ImpassabilityFilled';
 export { default as AlertTriangleFilled } from './AlertTriangleFilled';
 export { default as AlertTriangleOutlined } from './AlertTriangleOutlined';
 export { default as ArticleBoardFilled } from './ArticleBoardFilled';
@@ -93,5 +94,6 @@ export { default as TrashCanFilled } from './TrashCanFilled';
 export { default as TrashOutlined } from './TrashOutlined';
 export { default as UpFilled } from './UpFilled';
 export { default as UpOutlined } from './UpOutlined';
+export { default as UpgradeFilled } from './UpgradeFilled';
 export { default as WalletFilled } from './WalletFilled';
 export { default as WalletOutlined } from './WalletOutlined';
