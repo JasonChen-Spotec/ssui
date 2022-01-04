@@ -37,7 +37,7 @@ export { default as FormFilled } from './FormFilled';
 export { default as FormOutlined } from './FormOutlined';
 export { default as HomeFilled } from './HomeFilled';
 export { default as HomeOutlined } from './HomeOutlined';
-export { default as ImacFiled } from './ImacFiled';
+export { default as ImacFilled } from './ImacFilled';
 export { default as ImacOutlined } from './ImacOutlined';
 export { default as LayerFilled } from './LayerFilled';
 export { default as LayerOutlined } from './LayerOutlined';
