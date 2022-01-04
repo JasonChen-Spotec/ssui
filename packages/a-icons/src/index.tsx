@@ -5,6 +5,7 @@ export { default as BrokenLineFilled } from './BrokenLineFilled';
 export { default as BrokenLineOutlined } from './BrokenLineOutlined';
 export { default as BusinessCardFilled } from './BusinessCardFilled';
 export { default as BusinessCardOutlined } from './BusinessCardOutlined';
+export { default as CalendarFilled } from './CalendarFilled';
 export { default as CameraFilled } from './CameraFilled';
 export { default as CameraOutlined } from './CameraOutlined';
 export { default as CardFilled } from './CardFilled';
