@@ -18,6 +18,10 @@ group:
 
 <code hideActions='["CSB", "EXTERNAL"]' src="./demo/value.jsx" />
 
+### 1.3. disabled
+
+<code hideActions='["CSB", "EXTERNAL"]' src="./demo/disabled.jsx" />
+
 ### 1.3. API
 | 属性名           | 描述            | 类型           | 默认值 |
 | ---------------- | --------------- | -------------- | ------ |

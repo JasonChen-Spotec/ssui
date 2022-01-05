@@ -38,6 +38,7 @@ const SingleImgUpload = (props: SingleImgUploadProps) => {
     onDeleteUpload,
     onSuccess,
     onError,
+    disabled,
     ...restProps
   } = props;
   const uploadInstanceRef = React.useRef<Upload | null>();
@@ -117,9 +118,11 @@ const SingleImgUpload = (props: SingleImgUploadProps) => {
       {uploadStatus === 'done' && (
         <div className="as-img-upload-content">
           <Image wrapperClassName="as-img-upload-preview" src={fileUrl} preview />
-          <div className="as-img-upload-close-button" onClick={handleDeleteUpload}>
-            <CloseOutlined />
-          </div>
+          {!disabled && (
+            <div className="as-img-upload-close-button" onClick={handleDeleteUpload}>
+              <CloseOutlined />
+            </div>
+          )}
         </div>
       )}
       <Upload
@@ -132,9 +135,14 @@ const SingleImgUpload = (props: SingleImgUploadProps) => {
         onProgress={handleProgress}
         onError={handleError}
         onSuccess={handleSuccess}
+        disabled={disabled}
         {...restProps}
       >
-        {uploadStatus === 'init' && <div className="as-img-upload-button">{children}</div>}
+        {uploadStatus === 'init' && (
+          <div className={classNames('as-img-upload-button', { 'init-disable': disabled })}>
+            {children}
+          </div>
+        )}
       </Upload>
     </div>
   );
