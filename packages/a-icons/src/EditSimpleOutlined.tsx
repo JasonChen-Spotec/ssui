@@ -6,7 +6,9 @@ function EditSimpleOutlined(componentProps: IconProps) {
     <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
       <path
         d="M13.706 5H7a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-5.52M12 12l7-7"
-        fill="currentColor"
+        stroke="currentColor"
+        strokeWidth={1.4}
+        strokeLinecap="round"
       />
     </svg>
   );
