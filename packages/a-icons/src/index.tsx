@@ -1,6 +1,7 @@
 export { default as ImpassabilityFilled } from './ImpassabilityFilled';
 export { default as AlertTriangleFilled } from './AlertTriangleFilled';
 export { default as AlertTriangleOutlined } from './AlertTriangleOutlined';
+export { default as ArrowDropDownFilled } from './ArrowDropDownFilled';
 export { default as ArticleBoardFilled } from './ArticleBoardFilled';
 export { default as BoxFilled } from './BoxFilled';
 export { default as BoxOutlined } from './BoxOutlined';
@@ -35,6 +36,7 @@ export { default as DoubleTextFilled } from './DoubleTextFilled';
 export { default as DoubleTextOutlined } from './DoubleTextOutlined';
 export { default as EditFilled } from './EditFilled';
 export { default as EditSimpleOutlined } from './EditSimpleOutlined';
+export { default as ErrorWarningLine } from './ErrorWarningLine';
 export { default as FileFilled } from './FileFilled';
 export { default as FileOutlined } from './FileOutlined';
 export { default as FormFilled } from './FormFilled';
