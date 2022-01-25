@@ -1,6 +1,7 @@
 import BigNumber from 'bignumber.js';
 import { roundingModeMap, HALF_UP } from './const/roundingModeMap';
-import { strip, plus, minus, times, divide, float2Fixed, digitLength } from './numberPrecision';
+import { strip, float2Fixed, digitLength } from './numberPrecision';
+import { plus, minus, times, divide } from './numberPrecision/calculateFunc';
 
 type roundingModeConfig =
   | 'up'

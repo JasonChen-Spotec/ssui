@@ -71,12 +71,36 @@ const = {
 | useUnit | 是否需要百分号 | `boolean` | true |
 更多属性请参考 `formatNumber`
 
-# 数据精度问题
+## 3. 数据精度问题
 1. `0.1 + 0.2 = 0.30000000000000004`
 2. `1.0 - 0.9 = 0.09999999999999998`
 3. `toFixed` 的问题 `0.105.toFixed(2) = 0.10 // not 0.11`
 
-## 3. strip
+### 3.1. 计算方法 times、plus、minus、divide（基于bigNumber）
+<code hideActions='["CSB", "EXTERNAL"]' src="./demo/claculateFunc.jsx" />
+
+精确乘法
+```js
+times([Numbers])
+```
+精确加法
+```js
+plus([Numbers])
+```
+精确减法
+```js
+minus([Numbers])
+```
+精确除法
+```js
+divide([Numbers])
+```
+
+| 参数 | 说明 | 类型 | 默认值 |
+| --- | --- | --- | --- |
+| `number \| stirng \| BigNumber.Instance` | 需要乘的数字 | - | - |
+
+### 3.2. strip
 把错误的数据转正
 
 ```jsx
@@ -100,7 +124,7 @@ export default () => (
   </div>
 )
 ```
-### 3.1. API
+#### 3.2.1. API
 
 ```js
 strip(number, [precision=12])
@@ -110,28 +134,7 @@ strip(number, [precision=12])
 | number | 需要处理的数字 | Number | - |
 | precision | 需要精确的位数 | Number | 12 |
 
-## 4. times、plus、minus、divide
-精确乘法
-```js
-times([Numbers])
-```
-精确加法
-```js
-plus([Numbers])
-```
-精确乘法
-```js
-minus([Numbers])
-```
-精确除法
-```js
-divide([Numbers])
-```
-| 参数 | 说明 | 类型 | 默认值 |
-| --- | --- | --- | --- |
-| Numbers | 需要乘的数字 | Number | - |
-
-## 5. float2Fixed
+### 3.3. float2Fixed
 把小数转成整数，支持科学计数法。如果是小数则放大成整数
 ```jsx
 /**
