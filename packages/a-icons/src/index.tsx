@@ -2,6 +2,8 @@ export { default as ImpassabilityFilled } from './ImpassabilityFilled';
 export { default as AlertTriangleFilled } from './AlertTriangleFilled';
 export { default as AlertTriangleOutlined } from './AlertTriangleOutlined';
 export { default as ArrowDropDownFilled } from './ArrowDropDownFilled';
+export { default as ArrowsChevronFilled } from './ArrowsChevronFilled';
+export { default as ArrowsChevronOutlined } from './ArrowsChevronOutlined';
 export { default as ArticleBoardFilled } from './ArticleBoardFilled';
 export { default as BoxFilled } from './BoxFilled';
 export { default as BoxOutlined } from './BoxOutlined';
