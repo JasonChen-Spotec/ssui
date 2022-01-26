@@ -3,7 +3,7 @@ import Icon, { IconProps } from 'a-base-icon/lib/Icon';
 
 function ArrowsChevronFilled(componentProps: IconProps) {
   const IconNode = (props: React.SVGProps<SVGSVGElement>) => (
-    <svg fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
       <path
         d="M21 13.31a1.49 1.49 0 00-2.12 0l-1.4 1.39V9.23a1.5 1.5 0 00-3 0v5.47l-1.39-1.39a1.5 1.5 0 00-2.12 2.12l4 3.95c.072.069.149.132.23.19l.08.05.17.09h.12l.16.05c.198.04.402.04.6 0l.18-.05h.1l.18-.1h.08l.22-.19 4-3.95a1.51 1.51 0 00-.09-2.16z"
         fill="currentColor"
