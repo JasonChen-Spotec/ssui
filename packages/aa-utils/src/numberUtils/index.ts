@@ -60,7 +60,10 @@ const formatNumber = (value: number | string, options?: optionsConfig): string =
 
   const numberObj = new BigNumber(value);
 
-  const formatValue = numberObj[formatMethod](resultFractionDigits, roundingModeMap[roundingMode]);
+  const formatValue = numberObj[formatMethod](
+    resultFractionDigits,
+    roundingModeMap[roundingMode],
+  );
 
   if (+value > 0 && usePlus) {
     return `+${formatValue}`;
@@ -78,7 +81,10 @@ const defaultPercentOptions = {
 };
 
 const formatPercent = (value: number, options?: formatPercentOptions) => {
-  const { useUnit, ...restFormatNumberOptions } = { ...defaultPercentOptions, ...options };
+  const { useUnit, ...restFormatNumberOptions } = {
+    ...defaultPercentOptions,
+    ...options,
+  };
 
   const resultValue = times(value, 100);
   const formatValue = formatNumber(resultValue, restFormatNumberOptions);
@@ -87,6 +93,26 @@ const formatPercent = (value: number, options?: formatPercentOptions) => {
   }
 
   return formatValue;
+};
+
+const isGreaterThan = (value: BigNumber.Value, base: BigNumber.Value) => {
+  const numberObj = new BigNumber(value);
+  return numberObj.isGreaterThan(base);
+};
+
+const isGreaterThanOrEqualTo = (value: BigNumber.Value, base: BigNumber.Value) => {
+  const numberObj = new BigNumber(value);
+  return numberObj.isGreaterThanOrEqualTo(base);
+};
+
+const isLessThan = (value: BigNumber.Value, base: BigNumber.Value) => {
+  const numberObj = new BigNumber(value);
+  return numberObj.isLessThan(base);
+};
+
+const isLessThanOrEqualTo = (value: BigNumber.Value, base: BigNumber.Value) => {
+  const numberObj = new BigNumber(value);
+  return numberObj.isLessThanOrEqualTo(base);
 };
 
 export default {
@@ -100,4 +126,8 @@ export default {
   divide,
   float2Fixed,
   digitLength,
+  isLessThan,
+  isLessThanOrEqualTo,
+  isGreaterThan,
+  isGreaterThanOrEqualTo,
 };

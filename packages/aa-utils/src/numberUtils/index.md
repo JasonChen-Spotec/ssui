@@ -165,3 +165,35 @@ float2Fixed(Number)
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
 | number | 需要处理的数字 | Number | - |
+
+
+## 4. 数字比较
+1. `12345123451234512345 < 12345123451234512399`
+2. `77777777.77777778 <= 77777777.77777777`
+3. `12345123451234512399 > 12345123451234512345`
+4. `77777777.77777777 >= 77777777.77777778`
+
+<code hideActions='["CSB", "EXTERNAL"]' src="./demo/compare.jsx" />
+
+小于
+```js
+isLessThan(numbers, base)
+```
+小于等于
+```js
+isLessThanOrEqualTo(numbers, base)
+```
+大于
+```js
+isGreaterThan(numbers, base)
+```
+大于等于
+```js
+isGreaterThanOrEqualTo(numbers, base)
+```
+
+| 参数 | 说明 | 类型 | 默认值 |
+| --- | --- | --- | --- |
+| `number \| stirng \| BigNumber.Instance` | 数字 | - | - |
+| `base \| stirng \| BigNumber.Instance` | 被比较的数字 | - | - |
+
