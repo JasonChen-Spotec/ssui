@@ -17,6 +17,8 @@ export { default as CardFilled } from './CardFilled';
 export { default as CardOutlined } from './CardOutlined';
 export { default as CategoryFilled } from './CategoryFilled';
 export { default as CategoryOutlined } from './CategoryOutlined';
+export { default as ChainFilled } from './ChainFilled';
+export { default as ChainOutlined } from './ChainOutlined';
 export { default as ChevronRightOutlined } from './ChevronRightOutlined';
 export { default as ChevronUpFilled } from './ChevronUpFilled';
 export { default as CirclePlusFilled } from './CirclePlusFilled';
