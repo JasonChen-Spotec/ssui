@@ -47,6 +47,12 @@ const KeepTab = (props: KeepTabProps) => {
     [saveActiveKeyName]: defaultUrlParams[saveActiveKeyName] || defaultActiveKey,
   });
 
+  React.useEffect(() => {
+    if (tabActiveKey) {
+      setUrlParams({ [saveActiveKeyName]: tabActiveKey });
+    }
+  }, [tabActiveKey]);
+
   const handleTabChange = (nextActiveKey: string) => {
     setUrlParams({ [saveActiveKeyName]: nextActiveKey });
     if (onChange) {
