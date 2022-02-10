@@ -1,4 +1,5 @@
 export { default as ImpassabilityFilled } from './ImpassabilityFilled';
+export { default as AddFilled } from './AddFilled';
 export { default as AlertTriangleFilled } from './AlertTriangleFilled';
 export { default as AlertTriangleOutlined } from './AlertTriangleOutlined';
 export { default as ArrowDropDownFilled } from './ArrowDropDownFilled';
@@ -76,6 +77,7 @@ export { default as PeopleFilled } from './PeopleFilled';
 export { default as PeopleGroupFilled } from './PeopleGroupFilled';
 export { default as PeopleGroupOutlined } from './PeopleGroupOutlined';
 export { default as PeopleOutlined } from './PeopleOutlined';
+export { default as PeopleSettingFilled } from './PeopleSettingFilled';
 export { default as PeopleTeamFilled } from './PeopleTeamFilled';
 export { default as PeopleTeamOutlined } from './PeopleTeamOutlined';
 export { default as PlusFilled } from './PlusFilled';
