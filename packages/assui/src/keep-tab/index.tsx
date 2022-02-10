@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { find } from 'lodash';
 import type { BadgeProps } from 'antd/es/badge';
 import Badge from 'antd/es/badge';
 import type { TabPaneProps, TabsProps } from 'antd/es/tabs';
@@ -47,9 +48,17 @@ const KeepTab = (props: KeepTabProps) => {
     [saveActiveKeyName]: defaultUrlParams[saveActiveKeyName] || defaultActiveKey,
   });
 
+  const arrayChildren = toArray(children);
+
   React.useEffect(() => {
     if (tabActiveKey) {
-      setUrlParams({ [saveActiveKeyName]: tabActiveKey });
+      const resultActiveTab = find(arrayChildren, { key: tabActiveKey });
+      if (!resultActiveTab || resultActiveTab.props.disabled) {
+        setUrlParams({ [saveActiveKeyName]: arrayChildren[0].key });
+        onChange?.(arrayChildren[0].key as string);
+      } else {
+        setUrlParams({ [saveActiveKeyName]: tabActiveKey });
+      }
     }
   }, [tabActiveKey]);
 
@@ -60,21 +69,19 @@ const KeepTab = (props: KeepTabProps) => {
     }
   };
 
-  const resultChildren = toArray(children).map(
-    (childItem: React.ReactElement<SelfTabPaneProps>) => {
-      const count = childItem?.props?.count;
-      if (count) {
-        return React.cloneElement(childItem, {
-          tab: (
-            <Badge className="tab-badge" count={count} offset={[16, -9]} {...badgeProps}>
-              <span>{childItem.props.tab}</span>
-            </Badge>
-          ),
-        });
-      }
-      return childItem;
-    },
-  );
+  const resultChildren = arrayChildren.map((childItem: React.ReactElement<SelfTabPaneProps>) => {
+    const count = childItem?.props?.count;
+    if (count) {
+      return React.cloneElement(childItem, {
+        tab: (
+          <Badge className="tab-badge" count={count} offset={[16, -9]} {...badgeProps}>
+            <span>{childItem.props.tab}</span>
+          </Badge>
+        ),
+      });
+    }
+    return childItem;
+  });
 
   let resultTabActiveKey = {};
   if (tabActiveKey) {

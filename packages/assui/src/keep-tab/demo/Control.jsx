@@ -26,7 +26,7 @@ const Demo = () => {
         <TabPane tab="Tab 2" key="2">
           Content of Tab Pane 2
         </TabPane>
-        <TabPane tab="Tab 3" key="3">
+        <TabPane tab="Tab 3" key="3" disabled>
           Content of Tab Pane 3
         </TabPane>
       </KeepTab>
