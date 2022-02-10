@@ -14,9 +14,14 @@ group:
 
 ## 1. 代码演示
 
-### 1.1. 基础用法
+### 1.1. 非受控
 
 <code hideActions='["CSB", "EXTERNAL"]' src="./demo/Base.jsx" />
+
+### 1.1. 受控
+
+<code hideActions='["CSB", "EXTERNAL"]' src="./demo/Control.jsx" />
+
 
 ### 1.2. TabPane显示count
 

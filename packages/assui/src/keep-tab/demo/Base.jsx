@@ -1,8 +1,3 @@
-/**
- * title: 基础
- * desc: 非受控tabs
- */
-
 import React from 'react';
 import { KeepTab } from 'assui';
 
