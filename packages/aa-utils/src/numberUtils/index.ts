@@ -3,7 +3,7 @@ import { roundingModeMap, HALF_UP } from './const/roundingModeMap';
 import { strip, float2Fixed, digitLength } from './numberPrecision';
 import { plus, minus, times, divide } from './numberPrecision/calculateFunc';
 
-type roundingModeConfig =
+type RoundingModeConfig =
   | 'up'
   | 'down'
   | 'ceil'
@@ -13,21 +13,21 @@ type roundingModeConfig =
   | 'halfEven'
   | 'halfCeil'
   | 'halfFloor';
-export interface optionsConfig {
+export interface OptionsConfig {
   useGrouping?: boolean;
   usePlus?: boolean;
-  roundingMode?: roundingModeConfig;
+  roundingMode?: RoundingModeConfig;
   minFractionDigits?: number;
   maxFractionDigits?: number;
 }
 
-interface defaultOptionsConfig extends optionsConfig {
-  roundingMode: roundingModeConfig;
+interface DefaultOptionsConfig extends OptionsConfig {
+  roundingMode: RoundingModeConfig;
   minFractionDigits: number;
   maxFractionDigits: number;
 }
 
-const defaultOptions: defaultOptionsConfig = {
+const defaultOptions: DefaultOptionsConfig = {
   useGrouping: false,
   usePlus: false,
   roundingMode: HALF_UP,
@@ -35,7 +35,7 @@ const defaultOptions: defaultOptionsConfig = {
   maxFractionDigits: 2,
 };
 
-const formatNumber = (value: number | string, options?: optionsConfig): string => {
+const formatNumber = (value: BigNumber.Value, options?: OptionsConfig): string => {
   const { useGrouping, minFractionDigits, maxFractionDigits, usePlus, roundingMode } = {
     ...defaultOptions,
     ...options,
@@ -60,10 +60,7 @@ const formatNumber = (value: number | string, options?: optionsConfig): string =
 
   const numberObj = new BigNumber(value);
 
-  const formatValue = numberObj[formatMethod](
-    resultFractionDigits,
-    roundingModeMap[roundingMode],
-  );
+  const formatValue = numberObj[formatMethod](resultFractionDigits, roundingModeMap[roundingMode]);
 
   if (+value > 0 && usePlus) {
     return `+${formatValue}`;
@@ -72,7 +69,22 @@ const formatNumber = (value: number | string, options?: optionsConfig): string =
   return formatValue;
 };
 
-export interface formatPercentOptions extends optionsConfig {
+export interface FormatFixedFractionOptions
+  extends Omit<OptionsConfig, 'minFractionDigits' | 'maxFractionDigits'> {
+  fractionDigits?: number;
+}
+
+const formatFixedFraction = (value: BigNumber.Value, options?: FormatFixedFractionOptions) => {
+  const { fractionDigits = 8, ...restOptions } = options || {};
+  const resultOptions = {
+    minFractionDigits: fractionDigits,
+    maxFractionDigits: fractionDigits,
+    ...restOptions,
+  };
+  return formatNumber(value, resultOptions);
+};
+
+export interface formatPercentOptions extends OptionsConfig {
   useUnit?: boolean;
 }
 
@@ -118,6 +130,7 @@ const isLessThanOrEqualTo = (value: BigNumber.Value, base: BigNumber.Value) => {
 export default {
   formatNumber,
   formatPercent,
+  formatFixedFraction,
   BigNumber,
   strip,
   plus,

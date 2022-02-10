@@ -44,7 +44,6 @@ export { default as EditSimpleOutlined } from './EditSimpleOutlined';
 export { default as ErrorWarningLine } from './ErrorWarningLine';
 export { default as FileFilled } from './FileFilled';
 export { default as FileOutlined } from './FileOutlined';
-export { default as FormFilled } from './FormFilled';
 export { default as FormOutlined } from './FormOutlined';
 export { default as HomeFilled } from './HomeFilled';
 export { default as HomeOutlined } from './HomeOutlined';

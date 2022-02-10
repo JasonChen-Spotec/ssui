@@ -29,16 +29,16 @@ const = {
 ### 1.4. 大数据
 <code hideActions='["CSB", "EXTERNAL"]' src="./demo/bigData.jsx" />
 
-### 1.5. formatNumber API（基于bignumber.js）
+### 1.5. API（基于bignumber.js）
 
 `formatNumber(value, options)`
 
-### 1.6. value
+#### 1.5.1. value
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
 | value | 需要处理的数字 | `number` \| `string` | - |
 
-### 1.7. options
+#### 1.5.2. options
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
@@ -50,48 +50,71 @@ const = {
 
 > roundingMode说明： 默认值 `halfUp`是四舍五入，其他值：`down`总是向下舍去， `up`总是向上入，其他值可以看bignumber.js api
 
+## 2. formatFixedFraction(固定小数位)
 
-## 2. 百分比(formatPercent)
+
+<code hideActions='["CSB", "EXTERNAL"]' src="./demo/formatFixedFraction.jsx" />
+
+### 2.1. API
+`formatFixedFraction(value, options)`
+#### 2.1.1. options
+| 参数 | 说明 | 类型 | 默认值 |
+| --- | --- | --- | --- |
+| number | 需要处理的数字 | `number \| stirng \| BigNumber.Instance` | - |
+
+#### 2.1.2. options
+
+| 参数 | 说明 | 类型 | 默认值 |
+| --- | --- | --- | --- |
+| useGrouping | 分组分隔符，如千位分隔符或千/万/亿分隔符 | `boolean` | true |
+| usePlus | 正数加入prefix '+' | `boolean` | false |
+| fractionDigits | 保留小数位数的数目 | `number` | 8 |
+| roundingMode | 舍入的方式 |`up \| down \| ceil \| floor \| halfUp \| halfDown \| halfEven \| halfCeil \| halfFloor` | halfUp ||
+
+
+
+## 3. 百分比(formatPercent)
 <code hideActions='["CSB", "EXTERNAL"]' src="./demo/formatPercent.jsx" />
 
 
-### 2.1. formatPercent API（formatNumber）
+### 3.1. API
 
-`formatNumber(value, options)`
+`formatPercent(value, options)`
 
-### 2.2. value
+#### 3.1.1. value
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
 | value | 需要处理的数字 | `number` \| `string` | - |
 
-### 2.3. options
+#### 3.1.2. options
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
 | useUnit | 是否需要百分号 | `boolean` | true |
 更多属性请参考 `formatNumber`
 
-## 3. 数据精度问题
+## 4. 数据精度问题
 1. `0.1 + 0.2 = 0.30000000000000004`
 2. `1.0 - 0.9 = 0.09999999999999998`
 3. `toFixed` 的问题 `0.105.toFixed(2) = 0.10 // not 0.11`
 
-### 3.1. 计算方法 times、plus、minus、divide（基于bigNumber）
+### 4.1. 计算方法 times、plus、minus、divide（基于bigNumber）
 <code hideActions='["CSB", "EXTERNAL"]' src="./demo/claculateFunc.jsx" />
 
-精确乘法
+### 4.2. API
+#### 4.2.1. 精确乘法
 ```js
 times([Numbers])
 ```
-精确加法
+#### 4.2.2. 精确加法
 ```js
 plus([Numbers])
 ```
-精确减法
+#### 4.2.3. 精确减法
 ```js
 minus([Numbers])
 ```
-精确除法
+#### 4.2.4. 精确除法
 ```js
 divide([Numbers])
 ```
@@ -100,7 +123,7 @@ divide([Numbers])
 | --- | --- | --- | --- |
 | `number \| stirng \| BigNumber.Instance` | 需要乘的数字 | - | - |
 
-### 3.2. strip
+## 5. strip
 把错误的数据转正
 
 ```jsx
@@ -124,7 +147,7 @@ export default () => (
   </div>
 )
 ```
-#### 3.2.1. API
+### 5.1. API
 
 ```js
 strip(number, [precision=12])
@@ -134,7 +157,7 @@ strip(number, [precision=12])
 | number | 需要处理的数字 | Number | - |
 | precision | 需要精确的位数 | Number | 12 |
 
-### 3.3. float2Fixed
+## 6. float2Fixed
 把小数转成整数，支持科学计数法。如果是小数则放大成整数
 ```jsx
 /**
@@ -158,6 +181,7 @@ export default () => (
 )
 ```
 
+### 6.1. API
 ```js
 float2Fixed(Number)
 ```
@@ -167,7 +191,7 @@ float2Fixed(Number)
 | number | 需要处理的数字 | Number | - |
 
 
-## 4. 数字比较
+## 7. 数字比较
 1. `12345123451234512345 < 12345123451234512399`
 2. `77777777.77777778 <= 77777777.77777777`
 3. `12345123451234512399 > 12345123451234512345`
@@ -175,22 +199,24 @@ float2Fixed(Number)
 
 <code hideActions='["CSB", "EXTERNAL"]' src="./demo/compare.jsx" />
 
-小于
+### 7.1. 小于
 ```js
 isLessThan(numbers, base)
 ```
-小于等于
+### 7.2. 小于等于
 ```js
 isLessThanOrEqualTo(numbers, base)
 ```
-大于
+### 7.3. 大于
 ```js
 isGreaterThan(numbers, base)
 ```
-大于等于
+### 7.4. 大于等于
 ```js
 isGreaterThanOrEqualTo(numbers, base)
 ```
+
+### 7.5. API
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
