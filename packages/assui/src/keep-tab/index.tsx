@@ -6,6 +6,7 @@ import type { TabPaneProps, TabsProps } from 'antd/es/tabs';
 import Tabs from 'antd/es/tabs';
 import { useParams } from 'react-router-dom';
 import useUrlState from '@ahooksjs/use-url-state';
+import useControllableValue from 'ahooks/es/useControllableValue';
 import toArray from 'rc-util/lib/Children/toArray';
 
 const { TabPane } = Tabs;
@@ -38,7 +39,6 @@ const KeepTab = (props: KeepTabProps) => {
     children,
     defaultActiveKey,
     saveActiveKeyName,
-    activeKey: tabActiveKey,
     onChange,
     badgeProps = defaultBadgeProps,
     ...restProps
@@ -48,6 +48,11 @@ const KeepTab = (props: KeepTabProps) => {
     [saveActiveKeyName]: defaultUrlParams[saveActiveKeyName] || defaultActiveKey,
   });
 
+  const [tabActiveKey, setTabActiveKey] = useControllableValue(props, {
+    valuePropName: 'activeKey',
+    defaultValue: defaultUrlParams[saveActiveKeyName] || defaultActiveKey,
+  });
+
   const arrayChildren = toArray(children);
 
   React.useEffect(() => {
@@ -55,7 +60,7 @@ const KeepTab = (props: KeepTabProps) => {
       const resultActiveTab = find(arrayChildren, { key: urlParams[saveActiveKeyName] });
       if (!resultActiveTab || resultActiveTab.props.disabled) {
         setUrlParams({ [saveActiveKeyName]: arrayChildren[0].key });
-        onChange?.(arrayChildren[0].key as string);
+        setTabActiveKey(arrayChildren[0].key as string);
       }
     } else {
       setUrlParams({ [saveActiveKeyName]: tabActiveKey });
@@ -64,9 +69,7 @@ const KeepTab = (props: KeepTabProps) => {
 
   const handleTabChange = (nextActiveKey: string) => {
     setUrlParams({ [saveActiveKeyName]: nextActiveKey });
-    if (onChange) {
-      onChange(nextActiveKey);
-    }
+    setTabActiveKey(nextActiveKey);
   };
 
   const resultChildren = arrayChildren.map((childItem: React.ReactElement<SelfTabPaneProps>) => {
@@ -83,20 +86,12 @@ const KeepTab = (props: KeepTabProps) => {
     return childItem;
   });
 
-  let resultTabActiveKey = {};
-  if (tabActiveKey) {
-    resultTabActiveKey = {
-      activeKey: tabActiveKey,
-    };
-  }
-
   return (
     <Tabs
       animated={false}
       onChange={handleTabChange}
       destroyInactiveTabPane
-      defaultActiveKey={urlParams[saveActiveKeyName]}
-      {...resultTabActiveKey}
+      activeKey={tabActiveKey}
       {...restProps}
     >
       {resultChildren}
