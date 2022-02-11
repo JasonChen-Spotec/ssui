@@ -63,7 +63,9 @@ const KeepTab = (props: KeepTabProps) => {
         setTabActiveKey(arrayChildren[0].key as string);
       }
     } else {
-      setUrlParams({ [saveActiveKeyName]: tabActiveKey });
+      setTimeout(() => {
+        setUrlParams({ [saveActiveKeyName]: tabActiveKey });
+      }, 50);
     }
   }, [tabActiveKey]);
 
