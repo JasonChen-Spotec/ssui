@@ -51,14 +51,14 @@ const KeepTab = (props: KeepTabProps) => {
   const arrayChildren = toArray(children);
 
   React.useEffect(() => {
-    if (tabActiveKey) {
-      const resultActiveTab = find(arrayChildren, { key: tabActiveKey });
+    if (!('activeKey' in props)) {
+      const resultActiveTab = find(arrayChildren, { key: urlParams[saveActiveKeyName] });
       if (!resultActiveTab || resultActiveTab.props.disabled) {
         setUrlParams({ [saveActiveKeyName]: arrayChildren[0].key });
         onChange?.(arrayChildren[0].key as string);
-      } else {
-        setUrlParams({ [saveActiveKeyName]: tabActiveKey });
       }
+    } else {
+      setUrlParams({ [saveActiveKeyName]: tabActiveKey });
     }
   }, [tabActiveKey]);
 
