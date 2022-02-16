@@ -12,11 +12,11 @@ group:
 
 ## 1. Canvas生成图片
 
-<code hideActions='["CSB", "EXTERNAL"]' src="./demo/index.jsx" />
+<code hideActions='["CSB", "EXTERNAL"]' src="./demo/index.tsx" />
 
 ## 2. hooks获取img url
 
-<code hideActions='["CSB", "EXTERNAL"]' src="./demo/UseQrcode.jsx" />
+<code hideActions='["CSB", "EXTERNAL"]' src="./demo/UseQrcode.tsx" />
 
 
 <API></API>
