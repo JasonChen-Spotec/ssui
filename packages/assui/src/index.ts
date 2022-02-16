@@ -59,6 +59,9 @@ export { default as TextArea } from './text-area';
 export type { TextInputProps } from './text-input';
 export { default as TextInput } from './text-input';
 
+export type { LabelInputProps } from './label-input';
+export { default as LabelInput } from './label-input';
+
 export type { RichTextEditorProps } from './rich-text-editor';
 export { default as RichTextEditor } from './rich-text-editor';
 export { default as beautifulDnd } from './beautiful-dnd';
