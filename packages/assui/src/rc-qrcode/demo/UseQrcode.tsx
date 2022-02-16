@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { Button } from 'antd';
-import { RcQrcode } from 'assui';
+import RcQRcode from 'assui/lib/rc-qrcode';
 
 export default () => {
   const [count, setCount] = useState(1);
-  const url = RcQrcode.useQrcode(`${count}`);
+  const url = RcQRcode.useQrcode(`${count}`);
 
   return (
     <div>
