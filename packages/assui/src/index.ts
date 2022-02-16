@@ -40,7 +40,7 @@ export { default as StepNumberInput } from './step-number-input';
 export type { RcEchartPropsType } from './rc-echart';
 export { default as RcEcharts } from './rc-echart';
 
-export type { RcQRcodeProps } from './rc-qrcode';
+export type { RcQrcodeProps } from './rc-qrcode';
 export { default as RcQRcode } from './rc-qrcode';
 
 export { default as RcTransitionGroup } from './rc-transition-group';

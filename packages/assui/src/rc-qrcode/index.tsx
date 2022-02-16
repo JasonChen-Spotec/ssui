@@ -4,7 +4,7 @@ import QRCode from 'qrcode';
 import useMount from 'ahooks/lib/useMount';
 import useQrcode from './useQrcode';
 
-export interface RcQRcodeProps {
+export interface RcQrcodeProps {
   /** 生成二维码的值 */
   value: QRCodeSegment[];
   /** qrcode的QRCodeRenderersOptions */
@@ -13,7 +13,7 @@ export interface RcQRcodeProps {
   getCanvasInstance: (result: HTMLCanvasElement) => void;
 }
 
-const RcQRcode = (props: RcQRcodeProps) => {
+const RcQrcode = (props: RcQrcodeProps) => {
   const { value, options } = props;
   const domElRef = React.useRef<HTMLDivElement>(null);
 
@@ -34,13 +34,13 @@ const RcQRcode = (props: RcQRcodeProps) => {
   return <div ref={domElRef} />;
 };
 
-RcQRcode.defaultProps = {
+RcQrcode.defaultProps = {
   value: '',
   options: {},
 };
 
-RcQRcode.useQrcode = useQrcode;
+RcQrcode.useQrcode = useQrcode;
 
-export default RcQRcode;
+export default RcQrcode;
 
 export { useQrcode };
