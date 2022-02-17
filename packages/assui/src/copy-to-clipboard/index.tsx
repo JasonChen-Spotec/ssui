@@ -11,7 +11,7 @@ export interface CopyToClipboardProps {
   /** 文本被复制时候的回调 */
   onCopy?: (text: string, result: boolean) => void;
   /** ant design Tooltip props */
-  tooltipProps: TooltipProps;
+  tooltipProps?: Omit<TooltipProps, 'title'>;
   /** 复制成功的Tooltip提示文案 */
   tooltipTitle?: React.ReactNode;
   /** 依赖底层组件 https://github.com/sudodoki/copy-to-clipboard 的 options */

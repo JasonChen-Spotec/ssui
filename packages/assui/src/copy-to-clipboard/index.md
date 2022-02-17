@@ -14,9 +14,9 @@ group:
 ## 1. 代码演示
 
 ### 1.1. 基础使用
-<code hideActions='["CSB", "EXTERNAL"]' src="./demo/base.jsx" />
+<code hideActions='["CSB", "EXTERNAL"]' src="./demo/base.tsx" />
 
 ### 1.2. 显示tooltip成功信息
-<code hideActions='["CSB", "EXTERNAL"]' src="./demo/HasTooltip.jsx" />
+<code hideActions='["CSB", "EXTERNAL"]' src="./demo/HasTooltip.tsx" />
 
 <API></API>
