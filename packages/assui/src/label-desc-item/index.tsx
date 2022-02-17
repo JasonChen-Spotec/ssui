@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 
-export type DescItemProps = {
+export type LabelDescItemProps = {
   /** 自定义class */
   className?: string;
   /** label 标签的文本	 */
@@ -12,7 +12,7 @@ export type DescItemProps = {
   suffix?: React.ReactNode;
 };
 
-const DescItem: React.FC<DescItemProps> = (props) => {
+const LabelDescItem: React.FC<LabelDescItemProps> = (props) => {
   const { className, label, value, suffix } = props;
   return (
     <div className={classNames('desc-item', className)}>
@@ -25,4 +25,4 @@ const DescItem: React.FC<DescItemProps> = (props) => {
   );
 };
 
-export default DescItem;
+export default LabelDescItem;

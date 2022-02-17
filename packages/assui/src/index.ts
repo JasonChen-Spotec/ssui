@@ -62,6 +62,18 @@ export { default as TextInput } from './text-input';
 export type { LabelInputProps } from './label-input';
 export { default as LabelInput } from './label-input';
 
+export type { LabelSelectProps } from './label-select';
+export { default as LabelSelect } from './label-select';
+
+export type { LabelRangePickerProps } from './label-range-picker';
+export { default as LabelRangePicker } from './label-range-picker';
+
+export type { LabelDatePickerProps } from './label-date-picker';
+export { default as LabelDatePicker } from './label-date-picker';
+
+export type { LabelDescItemProps } from './label-desc-item';
+export { default as LabelDescItem } from './label-desc-item';
+
 export type { RichTextEditorProps } from './rich-text-editor';
 export { default as RichTextEditor } from './rich-text-editor';
 export { default as beautifulDnd } from './beautiful-dnd';
