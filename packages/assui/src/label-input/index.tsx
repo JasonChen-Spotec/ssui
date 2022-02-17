@@ -31,7 +31,9 @@ export interface LabelInputProps
 const LabelInput: React.FC<LabelInputProps> = (props) => {
   const { className, prefix, suffix, label, id, onFocus, onBlur } = props;
   const [focused, setFocused] = React.useState<boolean>(false);
-  const [value, setValue] = useControllableValue<string>(props);
+  const [value, setValue] = useControllableValue<string>(props, {
+    defaultValue: '',
+  });
   const InputDomRef = React.useRef<HTMLInputElement | null>(null);
 
   const handleFocus = () => {
