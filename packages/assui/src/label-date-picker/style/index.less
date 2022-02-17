@@ -1,0 +1,53 @@
+@import '~antd/es/style/themes/index';
+
+@color_9aa5b5: #9aa5b5;
+@font-size-base: 14px;
+
+.label-date-picker {
+  position: relative;
+  height: 100%;
+
+  .@{ant-prefix}-picker {
+    height: 52px;
+    border: 1px solid #e5e5e5;
+    border-radius: 12px;
+    outline: none;
+
+    &-input input {
+      padding-top: 16px;
+      padding-left: 4px;
+    }
+
+    &-focused {
+      border-color: #ff6b00;
+      box-shadow: none;
+    }
+
+    &-suffix .spotecicon {
+      width: 14px;
+      color: #323232;
+    }
+  }
+
+  &-text {
+    position: absolute;
+    top: 18px;
+    left: 16px;
+    z-index: 2;
+    height: 20px;
+    color: @color_9aa5b5;
+    font-size: @font-size-base;
+    line-height: 20px;
+    transform-origin: top left;
+    cursor: pointer;
+    transition: all 0.2s ease-out;
+  }
+
+  &-label-scale {
+    .label-date-picker-text {
+      transform: translateY(-10px) scale(0.86);
+      cursor: text;
+      pointer-events: none;
+    }
+  }
+}

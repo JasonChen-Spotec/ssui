@@ -1,5 +1,5 @@
 import React from 'react';
-import { useControllableValue } from 'ahooks';
+import useControllableValue from 'ahooks/lib/useControllableValue';
 import type { RefSelectProps, SelectProps } from 'antd/es/select';
 import Select from 'antd/es/select';
 import classNames from 'classnames';
