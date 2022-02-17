@@ -1,6 +1,6 @@
 import React from 'react';
 import { Form, Button } from 'antd';
-import { LabelDatePicker } from 'assui';
+import { LabelRangePicker } from 'assui';
 
 const Demo = () => {
   const onFinish = (value: any) => {
@@ -10,7 +10,7 @@ const Demo = () => {
   return (
     <Form onFinish={onFinish} style={{ width: 500 }}>
       <Form.Item name="account" rules={[{ required: true }]}>
-        <LabelDatePicker label="开始时间" />
+        <LabelRangePicker label="结算时间" />
       </Form.Item>
       <Button htmlType="submit">提交</Button>
     </Form>

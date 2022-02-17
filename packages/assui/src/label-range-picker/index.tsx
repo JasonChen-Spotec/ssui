@@ -1,15 +1,17 @@
 import React from 'react';
 import useControllableValue from 'ahooks/lib/useControllableValue';
-import type { DatePickerProps } from 'antd/es/date-picker';
+import type { RangePickerProps } from 'antd/es/date-picker';
 import DatePicker from 'antd/es/date-picker';
-import CalendarOutlined from 'a-icons/lib/CalendarOutlined';
 import classNames from 'classnames';
+import CalendarOutlined from 'a-icons/lib/CalendarOutlined';
 
-export interface LabelDatePickerProps extends Omit<DatePickerProps, 'label'> {
+const { RangePicker } = DatePicker;
+
+export interface LabelRangePickerProps extends Omit<RangePickerProps, 'label'> {
   label: React.ReactNode;
 }
 
-const LabelDatePicker: React.FC<LabelDatePickerProps> = (props) => {
+const LabelDatePicker: React.FC<LabelRangePickerProps> = (props) => {
   const { className, label } = props;
   const datePickerRef = React.useRef<any>(null);
   const [open, setOpen] = useControllableValue(props, {
@@ -42,23 +44,25 @@ const LabelDatePicker: React.FC<LabelDatePickerProps> = (props) => {
     <div
       className={classNames(
         {
-          'label-date-picker': true,
-          'label-date-picker-label-scale': open || value,
+          'label-range-picker': true,
+          'label-range-picker-label-scale': open || value,
         },
         className,
       )}
     >
-      <DatePicker
+      <RangePicker
+        format="YYYY.MM.DD"
+        allowEmpty={[true, true]}
         {...props}
+        separator="–"
         open={open}
         onChange={handleChange}
         ref={datePickerRef}
         onOpenChange={onOpenChange}
         onBlur={onBlur}
-        placeholder=""
         suffixIcon={<CalendarOutlined />}
       />
-      <label className="label-date-picker-text" onClick={handleLabelClick}>
+      <label className="label-range-picker-text" onClick={handleLabelClick}>
         {label}
       </label>
     </div>
