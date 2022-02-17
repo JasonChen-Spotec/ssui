@@ -70,7 +70,7 @@ const LabelInput: React.FC<LabelInputProps> = (props) => {
             data-value={value ? value.length : 0}
             className="label-input"
             type="text"
-            value={value}
+            value={value || ''}
             onFocus={handleFocus}
             onBlur={handleBlur}
             onChange={handleChange}
