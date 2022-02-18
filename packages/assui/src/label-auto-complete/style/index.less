@@ -1,0 +1,58 @@
+/* stylelint-disable indentation */
+@import '~antd/es/style/themes/index';
+
+@color_9aa5b5: #9aa5b5;
+@font-size-base: 14px;
+
+.label-auto-complete {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  .@{ant-prefix}-select-single.@{ant-prefix}-select-lg:not(.@{ant-prefix}-select-customize-input)
+    .@{ant-prefix}-select-selector {
+    height: 52px;
+    border: 1px solid #e5e5e5;
+    border-radius: 12px;
+    outline: none;
+  }
+
+  .@{ant-prefix}-select-focused:not(.@{ant-prefix}-select-disabled).@{ant-prefix}-select:not(.@{ant-prefix}-select-customize-input)
+    .@{ant-prefix}-select-selector {
+    border-color: #ff6b00;
+    box-shadow: none;
+  }
+
+  .@{ant-prefix}-select-single.@{ant-prefix}-select-show-arrow
+    .@{ant-prefix}-select-selection-item {
+    padding-top: 14px;
+    padding-left: 4px;
+  }
+
+  .@{ant-prefix}-select-selection-search {
+    padding-top: 14px;
+    padding-left: 2px;
+  }
+
+  &-text {
+    position: absolute;
+    top: 18px;
+    left: 16px;
+    z-index: 2;
+    height: 20px;
+    color: @color_9aa5b5;
+    font-size: @font-size-base;
+    line-height: 20px;
+    transform-origin: top left;
+    cursor: text;
+    transition: all 0.2s ease-out;
+  }
+
+  &-label-scale {
+    .label-auto-complete-text {
+      transform: translateY(-10px) scale(0.86);
+      cursor: text;
+      pointer-events: none;
+    }
+  }
+}
