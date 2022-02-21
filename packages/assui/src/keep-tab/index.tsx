@@ -1,10 +1,10 @@
 import * as React from 'react';
 import { find } from 'lodash';
+import qsHelp from 'aa-utils/lib/qsHelp';
 import type { BadgeProps } from 'antd/es/badge';
 import Badge from 'antd/es/badge';
 import type { TabPaneProps, TabsProps } from 'antd/es/tabs';
 import Tabs from 'antd/es/tabs';
-import { useParams } from 'react-router-dom';
 import useUrlState from '@ahooksjs/use-url-state';
 import useControllableValue from 'ahooks/es/useControllableValue';
 import toArray from 'rc-util/lib/Children/toArray';
@@ -43,7 +43,7 @@ const KeepTab = (props: KeepTabProps) => {
     badgeProps = defaultBadgeProps,
     ...restProps
   } = props;
-  const defaultUrlParams: DefaultUrlParamsType = useParams();
+  const defaultUrlParams = qsHelp.getQueryObject() as DefaultUrlParamsType;
   const [urlParams, setUrlParams] = useUrlState({
     [saveActiveKeyName]: defaultUrlParams[saveActiveKeyName] || defaultActiveKey,
   });
