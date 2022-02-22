@@ -57,6 +57,7 @@ export { default as ImacOutlined } from './ImacOutlined';
 export { default as KeyFilled } from './KeyFilled';
 export { default as LayerFilled } from './LayerFilled';
 export { default as LayerOutlined } from './LayerOutlined';
+export { default as LeftOutlined } from './LeftOutlined';
 export { default as LineUpFilled } from './LineUpFilled';
 export { default as LineUpOutlined } from './LineUpOutlined';
 export { default as ListCaptionFilled } from './ListCaptionFilled';
