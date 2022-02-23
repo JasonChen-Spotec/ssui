@@ -1,0 +1,38 @@
+.wrapper {
+  overflow-x: auto;
+
+  .check-wrapper {
+    padding: 8px 11px 6px;
+    border-bottom: 1px solid #f5f6fa;
+  }
+
+  .pick-box {
+    display: flex;
+    justify-content: space-between;
+    width: 265px;
+    padding: 8px 11px 11px;
+
+    .radio {
+      display: inline-block;
+      width: 50%;
+      margin-right: 0;
+    }
+
+    .ant-radio-group {
+      width: 100%;
+    }
+  }
+
+  .customize-select {
+    vertical-align: middle;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .wrapper {
+    .panel {
+      max-width: 280px;
+      overflow-x: scroll;
+    }
+  }
+}
