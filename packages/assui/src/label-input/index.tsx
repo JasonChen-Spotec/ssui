@@ -34,6 +34,31 @@ export interface LabelInputProps
   id?: string;
 }
 
+type PasswordSuffixProps = {
+  inputType: 'text' | 'password';
+  onChangeInputType: (value: 'text' | 'password') => void;
+};
+
+const PasswordSuffix: React.FC<PasswordSuffixProps> = React.memo(
+  ({ inputType, onChangeInputType }) => {
+    const resultNode =
+      inputType === 'password' ? (
+        <EyeOutlined
+          onClick={() => {
+            onChangeInputType('text');
+          }}
+        />
+      ) : (
+        <EyeFilled
+          onClick={() => {
+            onChangeInputType('password');
+          }}
+        />
+      );
+    return resultNode;
+  },
+);
+
 const LabelInput: React.FC<LabelInputProps> = (props) => {
   const { className, prefix, suffix, label, id, onFocus, onBlur, type = 'text', maxLength } = props;
   const [focused, setFocused] = React.useState<boolean>(false);
@@ -64,16 +89,9 @@ const LabelInput: React.FC<LabelInputProps> = (props) => {
     InputDomRef.current?.focus();
   };
 
-  const passwordSuffix =
-    inputType === 'password' ? (
-      <EyeOutlined
-        onClick={() => {
-          setInputType('text');
-        }}
-      />
-    ) : (
-      <EyeFilled onClick={() => setInputType('password')} />
-    );
+  const onChangeInputType = React.useCallback((nextInputType) => {
+    setInputType(nextInputType);
+  }, []);
 
   return (
     <div className={classNames('label-input-control', className)} id={id}>
@@ -102,7 +120,11 @@ const LabelInput: React.FC<LabelInputProps> = (props) => {
         </div>
 
         {(suffix || isPasswordInput) && (
-          <div className="label-input-suffix">{suffix || passwordSuffix}</div>
+          <div className="label-input-suffix">
+            {suffix || (
+              <PasswordSuffix inputType={inputType} onChangeInputType={onChangeInputType} />
+            )}
+          </div>
         )}
       </div>
     </div>
