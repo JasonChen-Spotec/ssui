@@ -2,6 +2,8 @@ import React from 'react';
 import classNames from 'classnames';
 import { useControllableValue } from 'ahooks';
 import { trimStart } from 'lodash';
+import EyeFilled from 'a-icons/lib/EyeFilled';
+import EyeOutlined from 'a-icons/lib/EyeOutlined';
 
 export interface LabelInputProps
   extends Omit<
@@ -22,6 +24,10 @@ export interface LabelInputProps
   onChange?: (value: string) => void;
   /** 输入框失去焦点的回调 */
   onBlur?: (value: string) => void;
+  /** 规定 input 元素的类型 */
+  type?: 'text' | 'password';
+  /** 规定输入字段中的字符的最大长度 */
+  maxLength?: number;
   /** 输入框获取焦点的回调 */
   onFocus?: (value: string) => void;
   /** 组件dom id */
@@ -29,12 +35,15 @@ export interface LabelInputProps
 }
 
 const LabelInput: React.FC<LabelInputProps> = (props) => {
-  const { className, prefix, suffix, label, id, onFocus, onBlur } = props;
+  const { className, prefix, suffix, label, id, onFocus, onBlur, type = 'text', maxLength } = props;
   const [focused, setFocused] = React.useState<boolean>(false);
   const [value, setValue] = useControllableValue<string>(props, {
     defaultValue: '',
   });
+  const [inputType, setInputType] = React.useState<'text' | 'password'>(type);
   const InputDomRef = React.useRef<HTMLInputElement | null>(null);
+
+  const isPasswordInput = type === 'password';
 
   const handleFocus = () => {
     setFocused(true);
@@ -55,11 +64,22 @@ const LabelInput: React.FC<LabelInputProps> = (props) => {
     InputDomRef.current?.focus();
   };
 
+  const passwordSuffix =
+    inputType === 'password' ? (
+      <EyeOutlined
+        onClick={() => {
+          setInputType('text');
+        }}
+      />
+    ) : (
+      <EyeFilled onClick={() => setInputType('password')} />
+    );
+
   return (
     <div className={classNames('label-input-control', className)} id={id}>
       <div
         className={classNames('label-input-field', {
-          'label-input-affix': prefix || suffix,
+          'label-input-affix': prefix || suffix || isPasswordInput,
           'label-input-focused': focused,
         })}
       >
@@ -69,18 +89,21 @@ const LabelInput: React.FC<LabelInputProps> = (props) => {
             ref={(el) => (InputDomRef.current = el)}
             data-value={value ? value.length : 0}
             className="label-input"
-            type="text"
+            type={inputType}
             value={value || ''}
             onFocus={handleFocus}
             onBlur={handleBlur}
             onChange={handleChange}
+            maxLength={maxLength}
           />
           <label className="label-input-text" onClick={handleLabelClick}>
             {label}
           </label>
         </div>
 
-        {suffix && <div className="label-input-suffix">{suffix}</div>}
+        {(suffix || isPasswordInput) && (
+          <div className="label-input-suffix">{suffix || passwordSuffix}</div>
+        )}
       </div>
     </div>
   );

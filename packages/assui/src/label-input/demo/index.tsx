@@ -21,6 +21,10 @@ const Demo = () => {
         <LabelInput label="地址2" prefix="CNY" />
       </Form.Item>
 
+      <Form.Item name="password" rules={[{ required: true }]}>
+        <LabelInput type="password" maxLength={5} label="密码" />
+      </Form.Item>
+
       <Button htmlType="submit">提交</Button>
     </Form>
   );
