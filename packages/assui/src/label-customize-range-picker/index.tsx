@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Radio, Checkbox } from 'antd';
-import type { RadioChangeEvent } from 'antd';
+import Radio from 'antd/es/radio';
+import Checkbox from 'antd/es/checkbox';
+import type { RadioChangeEvent } from 'antd/es/radio';
 import type { RangeValue } from 'rc-picker/es/interface';
 import type { CheckboxChangeEvent } from 'antd/lib/checkbox';
 import useControllableValue from 'ahooks/lib/useControllableValue';
@@ -59,7 +60,7 @@ const LabelCustomizeRangePicker = (props: LabelCustomizeRangePickerProps) => {
     <div className="wrapper">
       <div className="check-wrapper">
         <span className="customize-select">
-          <Checkbox prefixCls="ant-checkbox" onChange={onDiyTimeChange} />
+          <Checkbox onChange={onDiyTimeChange} />
           <span>自定义时间</span>
         </span>
       </div>
