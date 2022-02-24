@@ -1,3 +1,4 @@
+export { default as ExternalLinkFilled } from './ExternalLinkFilled';
 export { default as ImpassabilityFilled } from './ImpassabilityFilled';
 export { default as AddFilled } from './AddFilled';
 export { default as AlertTriangleFilled } from './AlertTriangleFilled';
