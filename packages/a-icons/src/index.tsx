@@ -47,7 +47,6 @@ export { default as DoubleTextOutlined } from './DoubleTextOutlined';
 export { default as EditFilled } from './EditFilled';
 export { default as EditSimpleOutlined } from './EditSimpleOutlined';
 export { default as ErrorWarningOutlined } from './ErrorWarningOutlined';
-export { default as ExternalLinkFilled } from './ExternalLinkFilled';
 export { default as EyeFilled } from './EyeFilled';
 export { default as EyeOutlined } from './EyeOutlined';
 export { default as FileFilled } from './FileFilled';
