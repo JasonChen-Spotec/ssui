@@ -65,6 +65,9 @@ export { default as LabelInput } from './label-input';
 export type { LabelSelectProps } from './label-select';
 export { default as LabelSelect } from './label-select';
 
+export type { LabelTextAreaProps } from './label-text-area';
+export { default as LabelTextArea } from './label-text-area';
+
 export type { LabelRangePickerProps } from './label-range-picker';
 export { default as LabelRangePicker } from './label-range-picker';
 
