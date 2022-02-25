@@ -50,6 +50,7 @@ const PasswordSuffix: React.FC<PasswordSuffixProps> = React.memo(
         />
       ) : (
         <EyeFilled
+          className="label-input-open-eye"
           onClick={() => {
             onChangeInputType('password');
           }}
@@ -60,7 +61,17 @@ const PasswordSuffix: React.FC<PasswordSuffixProps> = React.memo(
 );
 
 const LabelInput: React.FC<LabelInputProps> = (props) => {
-  const { className, prefix, suffix, label, id, onFocus, onBlur, type = 'text', maxLength } = props;
+  const {
+    className,
+    prefix,
+    suffix,
+    label,
+    id,
+    onFocus,
+    onBlur,
+    type = 'text',
+    maxLength,
+  } = props;
   const [focused, setFocused] = React.useState<boolean>(false);
   const [value, setValue] = useControllableValue<string>(props, {
     defaultValue: '',
@@ -122,7 +133,10 @@ const LabelInput: React.FC<LabelInputProps> = (props) => {
         {(suffix || isPasswordInput) && (
           <div className="label-input-suffix">
             {suffix || (
-              <PasswordSuffix inputType={inputType} onChangeInputType={onChangeInputType} />
+              <PasswordSuffix
+                inputType={inputType}
+                onChangeInputType={onChangeInputType}
+              />
             )}
           </div>
         )}
