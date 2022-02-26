@@ -74,6 +74,9 @@ export { default as LabelRangePicker } from './label-range-picker';
 export type { LabelDatePickerProps } from './label-date-picker';
 export { default as LabelDatePicker } from './label-date-picker';
 
+export type { LabelCustomizeRangePickerProps } from './label-customize-range-picker';
+export { default as LabelCustomizeRangePicker } from './label-customize-range-picker';
+
 export type { LabelDescItemProps } from './label-desc-item';
 export { default as LabelDescItem } from './label-desc-item';
 
