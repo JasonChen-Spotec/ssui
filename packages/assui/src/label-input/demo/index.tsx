@@ -10,9 +10,9 @@ const Demo = () => {
   };
 
   return (
-    <Form className={styles.form} onFinish={onFinish} initialValues={{ account: '2323' }}>
+    <Form className={styles.form} onFinish={onFinish} initialValues={{ account: '' }}>
       <Form.Item name="account" rules={[{ required: true }]}>
-        <LabelInput label="账户" />
+        <LabelInput label="账户安抚是的账户安抚是的账户安抚是的" />
       </Form.Item>
 
       <Form.Item name="adddd1" rules={[{ required: true }]}>

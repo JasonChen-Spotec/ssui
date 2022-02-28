@@ -1,9 +1,10 @@
 import React from 'react';
 import classNames from 'classnames';
-import { useControllableValue } from 'ahooks';
 import { trimStart } from 'lodash';
 import EyeFilled from 'a-icons/lib/EyeFilled';
 import EyeOutlined from 'a-icons/lib/EyeOutlined';
+import useControllableValue from 'ahooks/lib/useControllableValue';
+import useSize from 'ahooks/lib/useSize';
 
 export interface LabelInputProps
   extends Omit<
@@ -61,17 +62,9 @@ const PasswordSuffix: React.FC<PasswordSuffixProps> = React.memo(
 );
 
 const LabelInput: React.FC<LabelInputProps> = (props) => {
-  const {
-    className,
-    prefix,
-    suffix,
-    label,
-    id,
-    onFocus,
-    onBlur,
-    type = 'text',
-    maxLength,
-  } = props;
+  const { className, prefix, suffix, label, id, onFocus, onBlur, type = 'text', maxLength } = props;
+  const labelDomRef = React.useRef<HTMLLabelElement>(null);
+  const labelSize = useSize(labelDomRef);
   const [focused, setFocused] = React.useState<boolean>(false);
   const [value, setValue] = useControllableValue<string>(props, {
     defaultValue: '',
@@ -104,8 +97,14 @@ const LabelInput: React.FC<LabelInputProps> = (props) => {
     setInputType(nextInputType);
   }, []);
 
+  const controlMinWidth = labelSize?.width ? labelSize.width + 28 : undefined;
+
   return (
-    <div className={classNames('label-input-control', className)} id={id}>
+    <div
+      className={classNames('label-input-control', className)}
+      id={id}
+      style={{ minWidth: controlMinWidth }}
+    >
       <div
         className={classNames('label-input-field', {
           'label-input-affix': prefix || suffix || isPasswordInput,
@@ -125,7 +124,7 @@ const LabelInput: React.FC<LabelInputProps> = (props) => {
             onChange={handleChange}
             maxLength={maxLength}
           />
-          <label className="label-input-text" onClick={handleLabelClick}>
+          <label className="label-input-text" onClick={handleLabelClick} ref={labelDomRef}>
             {label}
           </label>
         </div>
@@ -133,10 +132,7 @@ const LabelInput: React.FC<LabelInputProps> = (props) => {
         {(suffix || isPasswordInput) && (
           <div className="label-input-suffix">
             {suffix || (
-              <PasswordSuffix
-                inputType={inputType}
-                onChangeInputType={onChangeInputType}
-              />
+              <PasswordSuffix inputType={inputType} onChangeInputType={onChangeInputType} />
             )}
           </div>
         )}
