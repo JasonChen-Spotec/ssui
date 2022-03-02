@@ -31,6 +31,8 @@ export interface LabelInputProps
   maxLength?: number;
   /** 输入框获取焦点的回调 */
   onFocus?: (value: string) => void;
+  /** 输入框除去label之后的最小末尾宽度 */
+  baseMinWidth?: number;
   /** 组件dom id */
   id?: string;
 }
@@ -62,7 +64,18 @@ const PasswordSuffix: React.FC<PasswordSuffixProps> = React.memo(
 );
 
 const LabelInput: React.FC<LabelInputProps> = (props) => {
-  const { className, prefix, suffix, label, id, onFocus, onBlur, type = 'text', maxLength } = props;
+  const {
+    className,
+    prefix,
+    suffix,
+    label,
+    id,
+    onFocus,
+    onBlur,
+    type = 'text',
+    maxLength,
+    baseMinWidth = 50,
+  } = props;
   const labelDomRef = React.useRef<HTMLLabelElement>(null);
   const labelSize = useSize(labelDomRef);
   const [focused, setFocused] = React.useState<boolean>(false);
@@ -97,7 +110,7 @@ const LabelInput: React.FC<LabelInputProps> = (props) => {
     setInputType(nextInputType);
   }, []);
 
-  const controlMinWidth = labelSize?.width ? labelSize.width + 28 : undefined;
+  const controlMinWidth = labelSize?.width ? labelSize.width + baseMinWidth : undefined;
 
   return (
     <div
