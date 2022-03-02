@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions */
+// @ts-nocheck
 import * as React from 'react';
 import type { UploadProps } from 'rc-upload';
 import Upload from 'rc-upload';
@@ -139,7 +140,9 @@ const SingleImgUpload = (props: SingleImgUploadProps) => {
         {...restProps}
       >
         {uploadStatus === 'init' && (
-          <div className={classNames('as-img-upload-button', { 'init-disable': disabled })}>
+          <div
+            className={classNames('as-img-upload-button', { 'init-disable': disabled })}
+          >
             {children}
           </div>
         )}
