@@ -1,6 +1,6 @@
 {
   "name": "assui",
-  "version": "2.0.103",
+  "version": "2.0.104",
   "description": "react ui library",
   "author": "jason <usochen@gmail.com>",
   "main": "./lib/index.js",
@@ -33,7 +33,7 @@
     "@ahooksjs/use-url-state": "^2.5.8",
     "@tinymce/tinymce-react": "^3.13.0",
     "@types/react-beautiful-dnd": "^13.1.2",
-    "a-icons": "^1.0.53",
+    "a-icons": "^1.0.54",
     "ahooks": "^3.0.8",
     "bignumber.js": "^9.0.1",
     "copy-to-clipboard": "^3.3.1",
