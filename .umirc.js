@@ -7,7 +7,7 @@ export default {
     type: 'none',
     exclude: [],
   },
-  forkTSChecker: {},
+  // forkTSChecker: {},
   extraBabelPlugins: [
     [
       'babel-plugin-import',

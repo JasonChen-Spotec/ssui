@@ -4,7 +4,7 @@ import type { RefSelectProps, SelectProps } from 'antd/es/select';
 import Select from 'antd/es/select';
 import classNames from 'classnames';
 import ArrowDropDownFilled from 'a-icons/lib/ArrowDropDownFilled';
-import { omit } from 'lodash';
+import omit from 'lodash/omit';
 
 const { Option } = Select;
 

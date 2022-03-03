@@ -4,7 +4,8 @@ import type { RefSelectProps } from 'antd/es/select';
 import type { AutoCompleteProps } from 'antd/es/auto-complete';
 import AutoComplete from 'antd/es/auto-complete';
 import classNames from 'classnames';
-import { omit, trimStart } from 'lodash';
+import omit from 'lodash/omit';
+import trimStart from 'lodash/trimStart';
 
 export interface LabelAutoCompleteProps extends AutoCompleteProps {
   label: React.ReactNode;

@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 import { useControllableValue } from 'ahooks';
-import { trimStart } from 'lodash';
+import trimStart from 'lodash/trimStart';
 
 export interface LabelTextAreaProps
   extends Omit<

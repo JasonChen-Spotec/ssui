@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { find } from 'lodash';
+import find from 'lodash/find';
 import qsHelp from 'aa-utils/lib/qsHelp';
 import type { BadgeProps } from 'antd/es/badge';
 import Badge from 'antd/es/badge';
