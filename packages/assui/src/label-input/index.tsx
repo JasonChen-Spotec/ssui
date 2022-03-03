@@ -1,6 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
-import { trimStart } from 'lodash';
+import trimStart from 'lodash/trimStart';
 import EyeFilled from 'a-icons/lib/EyeFilled';
 import EyeOutlined from 'a-icons/lib/EyeOutlined';
 import useControllableValue from 'ahooks/lib/useControllableValue';
