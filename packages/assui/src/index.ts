@@ -74,6 +74,9 @@ export { default as LabelRangePicker } from './label-range-picker';
 export type { LabelDatePickerProps } from './label-date-picker';
 export { default as LabelDatePicker } from './label-date-picker';
 
+export type { LabelAutoCompleteProps } from './label-auto-complete';
+export { default as LabelAutoComplete } from './label-auto-complete';
+
 export type { LabelTreeSelectProps } from './label-tree-select';
 export { default as LabelTreeSelect } from './label-tree-select';
 
