@@ -5,15 +5,17 @@ import TreeSelect from 'antd/es/tree-select';
 import classNames from 'classnames';
 import omit from 'lodash/omit';
 
-export interface LabelTreeSelectProps extends TreeSelectProps<string[]> {
+export interface LabelTreeSelectProps
+  extends Omit<TreeSelectProps<string[]>, 'onDropdownVisibleChange'> {
   /** 输入框的label */
   label: React.ReactNode;
   /** 输入框value的单位 */
   unit?: React.ReactNode;
+  onDropdownVisibleChange?: (value: boolean) => void;
 }
 
 const LabelTreeSelect = (props: LabelTreeSelectProps) => {
-  const { className, label, unit, showSearch = false } = props;
+  const { className, label, unit, showSearch = false, onDropdownVisibleChange } = props;
   const selectRef = React.useRef<RefTreeSelectProps>(null);
   const [open, setOpen] = useControllableValue(props, {
     valuePropName: 'open',
@@ -34,8 +36,9 @@ const LabelTreeSelect = (props: LabelTreeSelectProps) => {
     selectRef.current?.focus();
   };
 
-  const onDropdownVisibleChange = (nextOpen: boolean) => {
+  const handleDropdownVisibleChange = (nextOpen: boolean) => {
     setOpen(nextOpen);
+    onDropdownVisibleChange?.(nextOpen);
   };
 
   const isValueNotEmpty = !!value?.length;
@@ -58,7 +61,7 @@ const LabelTreeSelect = (props: LabelTreeSelectProps) => {
         size="large"
         className="label-select-selector"
         onChange={handleChange}
-        onDropdownVisibleChange={onDropdownVisibleChange}
+        onDropdownVisibleChange={handleDropdownVisibleChange}
       />
       {isValueNotEmpty && (
         <div className="label-tree-select-value-length">
