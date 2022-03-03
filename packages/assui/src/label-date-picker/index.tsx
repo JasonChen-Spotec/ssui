@@ -6,7 +6,7 @@ import CalendarOutlined from 'a-icons/lib/CalendarOutlined';
 import classNames from 'classnames';
 
 export interface LabelDatePickerProps extends Omit<DatePickerProps, 'label'> {
-  label: React.ReactNode;
+  label?: React.ReactNode;
 }
 
 const LabelDatePicker: React.FC<LabelDatePickerProps> = (props) => {

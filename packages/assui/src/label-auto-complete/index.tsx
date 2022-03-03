@@ -8,8 +8,8 @@ import omit from 'lodash/omit';
 import trimStart from 'lodash/trimStart';
 
 export interface LabelAutoCompleteProps extends AutoCompleteProps {
-  label: React.ReactNode;
-  className: string;
+  label?: React.ReactNode;
+  className?: string;
 }
 
 const LabelAutoComplete = (props: LabelAutoCompleteProps) => {
