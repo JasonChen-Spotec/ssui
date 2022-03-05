@@ -41,7 +41,8 @@ export interface StepNumberInputProps {
 }
 
 const StepNumberInput = (props: StepNumberInputProps) => {
-  const { value, onChange, onBlur, numberType, precision, step, max, min, ...restProps } = props;
+  const { value, onChange, onBlur, numberType, precision, step, max, min, ...restProps } =
+    props;
   const [inputValue, setInputValue] = React.useState('');
   const resultValue = isUndefined(value) ? inputValue : value;
   const isEmpty = isUndefined(resultValue) || resultValue === '';
@@ -51,11 +52,11 @@ const StepNumberInput = (props: StepNumberInputProps) => {
 
   const maxCondition = isUndefined(max)
     ? false
-    : max === Number(resultValue) || Number(max) <= Number(plusNumber);
+    : max === Number(resultValue) || Number(max) < Number(plusNumber);
 
   const minCondition = isUndefined(min)
     ? false
-    : min === Number(resultValue) || Number(min) >= Number(minusNumber);
+    : min === Number(resultValue) || Number(min) > Number(minusNumber);
 
   const onNumberChange = (lastValue: string) => {
     if (resultValue !== lastValue) {
@@ -132,7 +133,9 @@ const StepNumberInput = (props: StepNumberInputProps) => {
             onClick={() => {
               onClickCount(MINUS);
             }}
-            className={classNames('count-minus-btn', { 'disabled-btn': isEmpty || minCondition })}
+            className={classNames('count-minus-btn', {
+              'disabled-btn': isEmpty || minCondition,
+            })}
           >
             -
           </span>
@@ -142,7 +145,9 @@ const StepNumberInput = (props: StepNumberInputProps) => {
             onClick={() => {
               onClickCount(PLUS);
             }}
-            className={classNames('count-add-btn', { 'disabled-btn': isEmpty || maxCondition })}
+            className={classNames('count-add-btn', {
+              'disabled-btn': isEmpty || maxCondition,
+            })}
           >
             +
           </span>
