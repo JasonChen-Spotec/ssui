@@ -2,6 +2,7 @@ import React from 'react';
 import useControllableValue from 'ahooks/lib/useControllableValue';
 import type { RefSelectProps, SelectProps } from 'antd/es/select';
 import Select from 'antd/es/select';
+import { isUndefined } from 'lodash';
 import classNames from 'classnames';
 import ArrowDropDownFilled from 'a-icons/lib/ArrowDropDownFilled';
 import omit from 'lodash/omit';
@@ -44,7 +45,7 @@ const LabelSelect = (props: LabelSelectProps) => {
       className={classNames(
         {
           'label-select': true,
-          'label-select-label-scale': open || value,
+          'label-select-label-scale': open || !isUndefined(value),
         },
         className,
       )}
