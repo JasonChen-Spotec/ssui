@@ -1,6 +1,6 @@
 import React from 'react';
 import { Form, Button, TreeSelect } from 'antd';
-import LabelSelectTree from '../index';
+import LabelTreeSelect from '../index';
 import '../style/index';
 
 const treeData = [
@@ -67,7 +67,7 @@ const Demo = () => {
   return (
     <Form onFinish={onFinish} style={{ width: 500 }}>
       <Form.Item name="account" rules={[{ required: true }]}>
-        <LabelSelectTree {...tProps} label="代理人" unit="人" />
+        <LabelTreeSelect {...tProps} label="代理人" unit="人" />
       </Form.Item>
       <Button htmlType="submit">提交</Button>
     </Form>

@@ -15,11 +15,7 @@ const Demo = () => {
   return (
     <Form onFinish={onFinish} style={{ width: 500 }}>
       <Form.Item name="account" rules={[{ required: true }]}>
-        <LabelAutoComplete
-          label="账户"
-          allowClear={true}
-          options={options}
-        ></LabelAutoComplete>
+        <LabelAutoComplete label="账户" allowClear={true} options={options} />
       </Form.Item>
       <Button htmlType="submit">提交</Button>
     </Form>
