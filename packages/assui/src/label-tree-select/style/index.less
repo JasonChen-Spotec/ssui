@@ -1,5 +1,6 @@
 /* stylelint-disable indentation */
 @import '~antd/es/style/themes/index';
+@import '../../style/themes/default.less';
 
 @color_9aa5b5: #9aa5b5;
 @font-size-base: 14px;
@@ -42,7 +43,7 @@
 
   &-label-scale {
     .label-tree-select-text {
-      transform: translateY(-8px) scale(0.715);
+      transform: translateY(@labelTextLabeltranslateY) scale(@labelTextLabelScale);
       cursor: text;
       pointer-events: none;
     }

@@ -1,4 +1,5 @@
 @import '~antd/es/style/themes/index';
+@import '../../style/themes/default.less';
 
 @color_9aa5b5: #9aa5b5;
 @font-size-base: 14px;
@@ -17,7 +18,7 @@
 
     &-input input {
       position: relative;
-      top: 10px;
+      top: @pickerInputTop;
       width: 85px;
       padding-left: 3px;
     }
@@ -69,7 +70,7 @@
     }
 
     .label-range-picker-text {
-      transform: translateY(-8px) scale(0.715);
+      transform: translateY(@labelTextLabeltranslateY) scale(@labelTextLabelScale);
       cursor: text;
       pointer-events: none;
     }

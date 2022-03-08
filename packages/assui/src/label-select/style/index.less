@@ -1,5 +1,6 @@
 /* stylelint-disable indentation */
 @import '~antd/es/style/themes/index';
+@import '../../style/themes/default.less';
 
 @color_9aa5b5: #9aa5b5;
 @font-size-base: 14px;
@@ -25,13 +26,13 @@
 
   .@{ant-prefix}-select-single.@{ant-prefix}-select-show-arrow
     .@{ant-prefix}-select-selection-item {
-    padding-top: 12px;
+    padding-top: 11px;
     padding-left: 4px;
     font-size: @font-size-base;
   }
 
   .@{ant-prefix}-select-selection-search {
-    padding-top: 12px;
+    padding-top: 11px;
     padding-left: 2px;
   }
 
@@ -63,7 +64,7 @@
 
   &-label-scale {
     .label-select-text {
-      transform: translateY(-8px) scale(0.715);
+      transform: translateY(@labelTextLabeltranslateY) scale(@labelTextLabelScale);
       cursor: text;
       pointer-events: none;
     }
