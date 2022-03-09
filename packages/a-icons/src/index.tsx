@@ -120,6 +120,7 @@ export { default as PriceTagFilled } from './PriceTagFilled';
 export { default as PriceTagOutlined } from './PriceTagOutlined';
 export { default as RefreshFilled } from './RefreshFilled';
 export { default as RefreshOutlined } from './RefreshOutlined';
+export { default as RetryRefreshFilled } from './RetryRefreshFilled';
 export { default as SearchDocumentFilled } from './SearchDocumentFilled';
 export { default as SearchDocumentOutlined } from './SearchDocumentOutlined';
 export { default as SearchFilled } from './SearchFilled';
