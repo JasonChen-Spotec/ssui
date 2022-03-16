@@ -27,7 +27,7 @@ export interface LabelTextAreaProps
 }
 
 const LabelTextArea: React.FC<LabelTextAreaProps> = (props) => {
-  const { className, label, id, formatter, onFocus, onBlur } = props;
+  const { className, label, id, formatter, onFocus, onBlur, ...restProps } = props;
   const [focused, setFocused] = React.useState<boolean>(false);
   const [value, setValue] = useControllableValue<string>(props);
   const TextAreaDomRef = React.useRef<HTMLTextAreaElement | null>(null);
@@ -63,6 +63,7 @@ const LabelTextArea: React.FC<LabelTextAreaProps> = (props) => {
         onClick={handleLabelClick}
       >
         <textarea
+          {...restProps}
           ref={(el) => (TextAreaDomRef.current = el)}
           data-value={value ? value.length : 0}
           className="label-textarea"
