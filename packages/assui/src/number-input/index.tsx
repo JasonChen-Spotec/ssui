@@ -1,14 +1,17 @@
 import * as React from 'react';
 import type { InputProps } from 'antd/es/input';
 import Input from 'antd/es/input';
-import isUndefined from 'lodash/isUndefined';
+import useControllableValue from 'ahooks/lib/useControllableValue';
+import { omit } from 'lodash';
 import * as dataTypeEnum from './const/dataTypeEnum';
 import * as numberTypeEnum from './const/numberType';
 import { filterInt, filterFloat } from './utils';
 
+export type NumberInputValueType = string | number;
+
 export interface NumberInputProps extends Omit<InputProps, 'onChange' | 'onBlur'> {
   /** 输入框的内容 */
-  value?: string | number;
+  value?: NumberInputValueType;
   /** 输入数据的类型 */
   numberType?: 'int' | 'float';
   /** value的数据类型 */
@@ -24,9 +27,9 @@ export interface NumberInputProps extends Omit<InputProps, 'onChange' | 'onBlur'
   /** 是否允许输入负数 */
   enableMinus?: boolean;
   /** 变化回调 */
-  onChange?: (value: string | number) => void;
+  onChange?: (value: NumberInputValueType) => void;
   /** 失去焦点回调 */
-  onBlur?: (value: string) => void;
+  onBlur?: (value: NumberInputValueType) => void;
   /** 按下回车的回调 */
   onPressEnter?: React.KeyboardEventHandler<HTMLInputElement>;
   /** 带标签的 input，设置前置标签 */
@@ -42,8 +45,11 @@ export interface NumberInputProps extends Omit<InputProps, 'onChange' | 'onBlur'
 }
 
 const NumberInput = React.forwardRef<unknown, NumberInputProps>((props, ref) => {
+  const [value, setValue] = useControllableValue<NumberInputValueType>(props, {
+    defaultValue: '',
+  });
+
   const {
-    value,
     onChange,
     numberType = numberTypeEnum.INT,
     dataType = dataTypeEnum.NUMBER,
@@ -56,19 +62,16 @@ const NumberInput = React.forwardRef<unknown, NumberInputProps>((props, ref) => 
     ...restProps
   } = props;
 
-  const [inputValue, setInputValue] = React.useState('');
-  const resultValue = isUndefined(value) ? inputValue : value;
-
   const onNumberChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     let newNumber;
     const newValue = e.target.value;
 
     if (numberType === numberTypeEnum.INT) {
-      newNumber = filterInt({ value: newValue, preValue: `${resultValue}`, enableMinus });
+      newNumber = filterInt({ value: newValue, preValue: `${value}`, enableMinus });
     } else {
       newNumber = filterFloat({
         value: newValue,
-        preValue: `${resultValue}`,
+        preValue: `${value}`,
         precision: precision ?? 2,
         enableMinus,
       });
@@ -78,42 +81,29 @@ const NumberInput = React.forwardRef<unknown, NumberInputProps>((props, ref) => 
       newNumber = parser(newNumber);
     }
 
-    if (resultValue !== newNumber) {
-      if (value === undefined) {
-        setInputValue(newNumber);
-      }
-
-      if (onChange) {
-        onChange(newNumber);
-      }
+    if (value !== newNumber) {
+      setValue(newNumber);
     }
   };
 
   const onNumberBlur = () => {
-    if (resultValue === '-' || resultValue === '.') {
-      if (value === undefined) {
-        setInputValue('');
-      }
+    let resultValue: NumberInputValueType = value;
 
-      if (onChange) {
-        onChange('');
-      }
-    }
-
-    if (dataType === dataTypeEnum.NUMBER && resultValue) {
+    if (value === '-' || value === '.') {
+      resultValue = '';
+    } else if (value && dataType === dataTypeEnum.NUMBER) {
       if (numberType === numberTypeEnum.FLOAT) {
-        onChange && onChange(+resultValue);
+        resultValue = +value;
       } else {
-        onChange && onChange(parseInt(`${resultValue}`, 10));
+        resultValue = parseInt(`${value}`, 10);
       }
     }
 
-    if (onBlur) {
-      onBlur(`${resultValue}`);
-    }
+    setValue(resultValue);
+    onBlur?.(resultValue);
   };
 
-  const finallyValue = formatter ? formatter(`${resultValue}`) : resultValue;
+  const finallyValue = formatter ? formatter(`${value}`) : value;
 
   return (
     <Input
@@ -123,7 +113,7 @@ const NumberInput = React.forwardRef<unknown, NumberInputProps>((props, ref) => 
       onBlur={onNumberBlur}
       onChange={onNumberChange}
       maxLength={maxLength}
-      {...restProps}
+      {...omit(restProps, ['value'])}
     />
   );
 });
