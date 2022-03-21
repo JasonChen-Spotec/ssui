@@ -1,0 +1,59 @@
+@import '../../style/themes/default.less';
+
+@color_263241: #263241;
+@color_9aa5b5: #9aa5b5;
+@color_e5e5e5: #e5e5e5;
+
+@font-size-base: 14px;
+@font-size-lg: @font-size-base + 2px;
+
+@font-weight-500: 500;
+
+.label-condition-input {
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  padding: 19px 15px 2px 15px;
+  color: @color_263241;
+  font-size: @font-size-base;
+  line-height: 16px;
+  border: 0;
+  outline: 0;
+
+  &:focus + label,
+  &:not([data-value='0']) + label {
+    transform: translateY(@labelTextLabeltranslateY) scale(@labelTextLabelScale);
+  }
+
+  &-field {
+    height: 45px;
+    overflow: hidden;
+    border: 1px solid @color_e5e5e5;
+    border-radius: 8px;
+    transition: border 0.3s;
+  }
+
+  &-focused {
+    border-color: @labelFocusBorderColor;
+  }
+
+  &-warper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  &-text {
+    position: absolute;
+    top: 12px;
+    left: 15px;
+    z-index: 2;
+    height: 20px;
+    color: @color_9aa5b5;
+    font-size: @font-size-base;
+    line-height: 20px;
+    transform-origin: top left;
+    cursor: text;
+    transition: all 0.2s ease-out;
+  }
+}

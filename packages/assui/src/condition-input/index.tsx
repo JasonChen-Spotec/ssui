@@ -3,6 +3,7 @@ import isArray from 'lodash/isArray';
 import Input from 'antd/es/input';
 import type { InputProps } from 'antd/es/input';
 import isFunction from 'lodash/isFunction';
+import useControllableValue from 'ahooks/lib/useControllableValue';
 import parse2RegexOption from './parse2RegexOption';
 
 export interface ConditionInputProps extends Omit<InputProps, 'onChange'> {
@@ -16,10 +17,9 @@ export interface ConditionInputProps extends Omit<InputProps, 'onChange'> {
   value?: string;
 }
 
-const ConditionInput = (props: ConditionInputProps) => {
-  const { regexp, formatter, value, onChange, ...rest } = props;
-  const [stateValue, setStateValue] = React.useState<string>('');
-  const resultValue = value === undefined ? stateValue : value;
+const ConditionInput = React.forwardRef<unknown, ConditionInputProps>((props, ref) => {
+  const [value, setValue] = useControllableValue(props);
+  const { regexp, formatter, onChange, ...rest } = props;
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { value: originalValue } = e.target;
@@ -39,15 +39,12 @@ const ConditionInput = (props: ConditionInputProps) => {
       nextValue = formatter(nextValue);
     }
 
-    if (resultValue !== nextValue) {
-      setStateValue(nextValue);
-      if (onChange) {
-        onChange(nextValue);
-      }
+    if (value !== nextValue) {
+      setValue(nextValue);
     }
   };
 
-  return <Input value={resultValue} onChange={handleChange} {...rest} />;
-};
+  return <Input ref={ref as any} value={value} onChange={handleChange} {...rest} />;
+});
 
 export default ConditionInput;
