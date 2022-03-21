@@ -6,7 +6,7 @@ import Badge from 'antd/es/badge';
 import type { TabPaneProps, TabsProps } from 'antd/es/tabs';
 import Tabs from 'antd/es/tabs';
 import useUrlState from '@ahooksjs/use-url-state';
-import useControllableValue from 'ahooks/es/useControllableValue';
+import useControllableValue from 'ahooks/lib/useControllableValue';
 import toArray from 'rc-util/lib/Children/toArray';
 
 const { TabPane } = Tabs;

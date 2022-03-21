@@ -1,10 +1,11 @@
 import React from 'react';
-import { useSize, useControllableValue } from 'ahooks';
-import { NumberInput } from 'assui';
-import type { NumberInputProps } from 'assui';
-import { isUndefined } from 'lodash';
+import useControllableValue from 'ahooks/lib/useControllableValue';
+import useSize from 'ahooks/lib/useSize';
+import isUndefined from 'lodash/isUndefined';
 import classNames from 'classnames';
 import omit from 'lodash/omit';
+import type { NumberInputProps } from '../number-input';
+import NumberInput from '../number-input';
 
 export interface LabelNumberInputProps extends NumberInputProps {
   /** label 标签的文本 */
@@ -52,14 +53,7 @@ const LabelNumberInput = (props: LabelNumberInputProps) => {
         })}
       >
         <NumberInput
-          {...omit(props, [
-            'onChange',
-            'onBlur',
-            'onFocus',
-            'className',
-            'label',
-            'placeholder',
-          ])}
+          {...omit(props, ['onChange', 'onBlur', 'onFocus', 'className', 'label', 'placeholder'])}
           ref={numberInputRef}
           data-value={!isUndefined(value) ? `${value}`.length : 0}
           value={value}

@@ -1,6 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
-import { useControllableValue } from 'ahooks';
+import useControllableValue from 'ahooks/lib/useControllableValue';
 import trimStart from 'lodash/trimStart';
 
 export interface LabelTextAreaProps

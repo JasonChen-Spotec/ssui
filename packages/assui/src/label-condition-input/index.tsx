@@ -3,7 +3,8 @@ import { ConditionInput } from 'assui';
 import type { ConditionInputProps } from 'assui';
 import classNames from 'classnames';
 import omit from 'lodash/omit';
-import { useSize, useControllableValue } from 'ahooks';
+import useControllableValue from 'ahooks/lib/useControllableValue';
+import useSize from 'ahooks/lib/useSize';
 
 export interface LabelConditionInputProps extends ConditionInputProps {
   /** label 标签的文本 */
@@ -53,14 +54,7 @@ const LabelConditionInput = (props: LabelConditionInputProps) => {
         })}
       >
         <ConditionInput
-          {...omit(props, [
-            'onChange',
-            'onBlur',
-            'onFocus',
-            'className',
-            'label',
-            'placeholder',
-          ])}
+          {...omit(props, ['onChange', 'onBlur', 'onFocus', 'className', 'label', 'placeholder'])}
           ref={InputDomRef}
           data-value={value ? value.length : 0}
           value={value}
@@ -69,11 +63,7 @@ const LabelConditionInput = (props: LabelConditionInputProps) => {
           className="label-condition-input"
           onChange={(inputValue: string) => setValue(inputValue)}
         />
-        <label
-          ref={labelDomRef}
-          className="label-condition-input-text"
-          onClick={handleLabelClick}
-        >
+        <label ref={labelDomRef} className="label-condition-input-text" onClick={handleLabelClick}>
           {label}
         </label>
       </div>

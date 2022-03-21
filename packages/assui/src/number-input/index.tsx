@@ -2,7 +2,7 @@ import * as React from 'react';
 import type { InputProps } from 'antd/es/input';
 import Input from 'antd/es/input';
 import useControllableValue from 'ahooks/lib/useControllableValue';
-import { omit } from 'lodash';
+import omit from 'lodash/omit';
 import * as dataTypeEnum from './const/dataTypeEnum';
 import * as numberTypeEnum from './const/numberType';
 import { filterInt, filterFloat } from './utils';
