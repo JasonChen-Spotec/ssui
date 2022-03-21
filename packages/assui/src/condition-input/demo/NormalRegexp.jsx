@@ -20,8 +20,14 @@ const Demo = () => {
       <Descriptions.Item label="多个正则(前后不允许空格且不能能输入数字)" span={8}>
         <ConditionInput regexp={['\\s', /\d/g]} onChange={onChange} />
       </Descriptions.Item>
-      <Descriptions.Item label="自定义不符合规则的字的替换值(如果输入数字和替换成p)" span={8}>
-        <ConditionInput regexp={[{ pattern: /\d/g, replacement: 'p' }]} onChange={onChange} />
+      <Descriptions.Item
+        label="自定义不符合规则的字的替换值(如果输入数字和替换成p)"
+        span={8}
+      >
+        <ConditionInput
+          regexp={[{ pattern: /\d/g, replacement: 'p' }]}
+          onChange={onChange}
+        />
       </Descriptions.Item>
     </Descriptions>
   );

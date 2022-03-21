@@ -1,31 +1,32 @@
 import React from 'react';
-import { useSize, useControllableValue } from 'ahooks';
-import { NumberInput } from 'assui';
-import type { NumberInputProps } from 'assui';
-import { isUndefined } from 'lodash';
+import { ConditionInput } from 'assui';
+import type { ConditionInputProps } from 'assui';
 import classNames from 'classnames';
 import omit from 'lodash/omit';
+import { useSize, useControllableValue } from 'ahooks';
 
-export interface LabelNumberInputProps extends NumberInputProps {
+export interface LabelConditionInputProps extends ConditionInputProps {
   /** label 标签的文本 */
   label?: React.ReactNode;
+  /** 输入框内容变化时的回调 */
+  onChange?: (value: string) => void;
   /** 输入框除去label之后的最小末尾宽度 */
   baseMinWidth?: number;
   /** 组件dom id */
   id?: string;
 }
 
-const LabelNumberInput = (props: LabelNumberInputProps) => {
-  const { className, label, onBlur, onFocus, id, baseMinWidth = 50 } = props;
-  const numberInputRef = React.useRef<HTMLInputElement>(null);
+const LabelConditionInput = (props: LabelConditionInputProps) => {
+  const { className, label, onBlur, id, onFocus, baseMinWidth = 50 } = props;
+  const [value, setValue] = useControllableValue(props);
   const labelDomRef = React.useRef<HTMLLabelElement>(null);
   const labelSize = useSize(labelDomRef);
-  const [value, setValue] = useControllableValue(props);
+  const InputDomRef = React.useRef<HTMLInputElement>(null);
   const [focused, setFocused] = React.useState<boolean>(false);
 
   const handleLabelClick = () => {
     setFocused(true);
-    numberInputRef.current?.focus();
+    InputDomRef.current?.focus();
   };
 
   const handleFocus = () => {
@@ -42,16 +43,16 @@ const LabelNumberInput = (props: LabelNumberInputProps) => {
 
   return (
     <div
-      className={classNames('label-number-input-warper', className)}
+      className={classNames('label-condition-input-warper', className)}
       id={id}
       style={{ minWidth: controlMinWidth }}
     >
       <div
-        className={classNames('label-number-input-field', {
-          'label-number-input-focused': focused || !isUndefined(value),
+        className={classNames('label-condition-input-field', {
+          'label-condition-input-focused': focused || value,
         })}
       >
-        <NumberInput
+        <ConditionInput
           {...omit(props, [
             'onChange',
             'onBlur',
@@ -60,15 +61,19 @@ const LabelNumberInput = (props: LabelNumberInputProps) => {
             'label',
             'placeholder',
           ])}
-          ref={numberInputRef}
-          data-value={!isUndefined(value) ? `${value}`.length : 0}
+          ref={InputDomRef}
+          data-value={value ? value.length : 0}
           value={value}
           onBlur={handleBlur}
           onFocus={handleFocus}
-          className="label-number-input"
-          onChange={(inputValue: string | number) => setValue(inputValue)}
+          className="label-condition-input"
+          onChange={(inputValue: string) => setValue(inputValue)}
         />
-        <label className="label-number-input-text" onClick={handleLabelClick}>
+        <label
+          ref={labelDomRef}
+          className="label-condition-input-text"
+          onClick={handleLabelClick}
+        >
           {label}
         </label>
       </div>
@@ -76,6 +81,6 @@ const LabelNumberInput = (props: LabelNumberInputProps) => {
   );
 };
 
-export default LabelNumberInput;
+export default LabelConditionInput;
 
-LabelNumberInput.Option = Option;
+LabelConditionInput.Option = Option;
