@@ -1,10 +1,10 @@
 import React from 'react';
-import { ConditionInput } from 'assui';
-import type { ConditionInputProps } from 'assui';
 import classNames from 'classnames';
 import omit from 'lodash/omit';
 import useControllableValue from 'ahooks/lib/useControllableValue';
 import useSize from 'ahooks/lib/useSize';
+import type { ConditionInputProps } from '../condition-input';
+import ConditionInput from '../condition-input';
 
 export interface LabelConditionInputProps extends ConditionInputProps {
   /** label 标签的文本 */
@@ -35,7 +35,7 @@ const LabelConditionInput = (props: LabelConditionInputProps) => {
     onFocus?.(value);
   };
 
-  const handleBlur = (e: string | number) => {
+  const handleBlur: ConditionInputProps['onBlur'] = (e) => {
     setFocused(false);
     onBlur?.(e);
   };
