@@ -77,6 +77,12 @@ export { default as LabelDatePicker } from './label-date-picker';
 export type { LabelAutoCompleteProps } from './label-auto-complete';
 export { default as LabelAutoComplete } from './label-auto-complete';
 
+export type { LabelNumberInputProps } from './label-number-input';
+export { default as LabelNumberInput } from './label-number-input';
+
+export type { LabelConditionInputProps } from './label-condition-input';
+export { default as LabelConditionInput } from './label-condition-input';
+
 export type { LabelTreeSelectProps } from './label-tree-select';
 export { default as LabelTreeSelect } from './label-tree-select';
 
