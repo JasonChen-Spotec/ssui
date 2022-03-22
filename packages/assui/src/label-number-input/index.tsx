@@ -49,7 +49,7 @@ const LabelNumberInput = (props: LabelNumberInputProps) => {
     >
       <div
         className={classNames('label-number-input-field', {
-          'label-number-input-focused': focused || !isUndefined(value),
+          'label-number-input-focused': focused,
         })}
       >
         <NumberInput
