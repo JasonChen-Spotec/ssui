@@ -40,7 +40,7 @@ const LabelAutoComplete = (props: LabelAutoCompleteProps) => {
   };
 
   const handleBlur = (event: React.FocusEvent<HTMLElement, Element>) => {
-    if (value === '') {
+    if (value === '' || !value) {
       setOpen(false);
     }
     onBlur && onBlur(event);
