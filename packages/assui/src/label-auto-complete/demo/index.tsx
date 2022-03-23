@@ -11,11 +11,18 @@ const Demo = () => {
     { value: 'Downing Street' },
     { value: 'Wall Street' },
   ]);
-
+  const onBlur = (e) => {
+    console.log(e);
+  };
   return (
     <Form onFinish={onFinish} style={{ width: 500 }}>
-      <Form.Item name="account" rules={[{ required: true }]}>
-        <LabelAutoComplete label="账户" allowClear={true} options={options} />
+      <Form.Item name="account">
+        <LabelAutoComplete
+          label="账户"
+          allowClear={true}
+          options={options}
+          onBlur={onBlur}
+        />
       </Form.Item>
       <Button htmlType="submit">提交</Button>
     </Form>

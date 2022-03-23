@@ -13,7 +13,7 @@ export interface LabelAutoCompleteProps extends AutoCompleteProps {
 }
 
 const LabelAutoComplete = (props: LabelAutoCompleteProps) => {
-  const { className, label, onChange, options } = props;
+  const { className, label, onChange, options, onBlur } = props;
   const autoComplete = React.useRef<RefSelectProps>(null);
   const [open, setOpen] = useControllableValue(props, {
     valuePropName: 'open',
@@ -39,6 +39,13 @@ const LabelAutoComplete = (props: LabelAutoCompleteProps) => {
     setOpen(nextOpen);
   };
 
+  const handleBlur = (event: React.FocusEvent<HTMLElement, Element>) => {
+    if (value === '') {
+      setOpen(false);
+    }
+    onBlur && onBlur(event);
+  };
+
   return (
     <div
       className={classNames(
@@ -54,6 +61,7 @@ const LabelAutoComplete = (props: LabelAutoCompleteProps) => {
         open={open}
         ref={autoComplete}
         value={value}
+        onBlur={handleBlur}
         size="large"
         className="label-auto-complete-selector"
         onChange={handleChange}
