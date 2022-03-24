@@ -71,5 +71,3 @@ const LabelNumberInput = (props: LabelNumberInputProps) => {
 };
 
 export default LabelNumberInput;
-
-LabelNumberInput.Option = Option;
