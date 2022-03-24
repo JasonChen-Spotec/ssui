@@ -1,7 +1,7 @@
 import React from 'react';
 import useControllableValue from 'ahooks/lib/useControllableValue';
-import type { TreeSelectProps, RefTreeSelectProps } from 'antd/es/tree-select';
-import TreeSelect from 'antd/es/tree-select';
+import type { TreeSelectProps, RefTreeSelectProps } from 'antd/lib/tree-select';
+import TreeSelect from 'antd/lib/tree-select';
 import classNames from 'classnames';
 import omit from 'lodash/omit';
 

@@ -1,6 +1,6 @@
 import * as React from 'react';
-import type { TextAreaProps } from 'antd/es/input';
-import Input from 'antd/es/input';
+import type { TextAreaProps } from 'antd/lib/input';
+import Input from 'antd/lib/input';
 import trimStart from 'lodash/trimStart';
 
 export interface TAreaProps extends Omit<TextAreaProps, 'onChange'> {

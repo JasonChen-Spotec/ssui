@@ -1,2 +1,2 @@
-import 'antd/es/tabs/style';
-import 'antd/es/badge/style';
+import 'antd/lib/tabs/style';
+import 'antd/lib/badge/style';

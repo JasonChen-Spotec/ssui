@@ -1,6 +1,6 @@
 import React, { useState, useRef, useImperativeHandle } from 'react';
-import type { DrawerProps } from 'antd/es/drawer';
-import Drawer from 'antd/es/drawer';
+import type { DrawerProps } from 'antd/lib/drawer';
+import Drawer from 'antd/lib/drawer';
 import classNames from 'classnames';
 
 export interface ButtonDrawerProps extends DrawerProps {

@@ -1,7 +1,7 @@
 import React from 'react';
 import useControllableValue from 'ahooks/lib/useControllableValue';
-import type { RefSelectProps, SelectProps } from 'antd/es/select';
-import Select from 'antd/es/select';
+import type { RefSelectProps, SelectProps } from 'antd/lib/select';
+import Select from 'antd/lib/select';
 import isUndefined from 'lodash/isUndefined';
 import classNames from 'classnames';
 import ArrowDropDownFilled from 'a-icons/lib/ArrowDropDownFilled';

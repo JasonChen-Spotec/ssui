@@ -1,6 +1,6 @@
 import * as React from 'react';
-import type { InputProps } from 'antd/es/input';
-import Input from 'antd/es/input';
+import type { InputProps } from 'antd/lib/input';
+import Input from 'antd/lib/input';
 import useControllableValue from 'ahooks/lib/useControllableValue';
 import omit from 'lodash/omit';
 import * as dataTypeEnum from './const/dataTypeEnum';

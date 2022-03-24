@@ -2,7 +2,7 @@ import React from 'react';
 import { SingleImgUpload, ImgCrop } from 'assui';
 import { PlusOutlined } from 'a-icons';
 
-import 'assui/es/img-crop/style/index';
+import 'assui/lib/img-crop/style/index';
 
 const Demo = () => {
   const onSuccess = (resValues) => {

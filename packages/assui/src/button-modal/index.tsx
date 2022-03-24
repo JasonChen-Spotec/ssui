@@ -1,6 +1,6 @@
 import * as React from 'react';
-import type { ModalProps } from 'antd/es/modal';
-import Modal from 'antd/es/modal';
+import type { ModalProps } from 'antd/lib/modal';
+import Modal from 'antd/lib/modal';
 
 export interface ModalAction {
   open: () => void;

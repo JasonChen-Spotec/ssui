@@ -1,6 +1,6 @@
 import React from 'react';
 import { RichTextEditor } from 'assui';
-import { defaultToolbar } from 'assui/es/rich-text-editor';
+import { defaultToolbar } from 'assui/lib/rich-text-editor';
 import type * as Type from 'tinymce/tinymce';
 
 export default function App() {

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import Radio from 'antd/es/radio';
-import Checkbox from 'antd/es/checkbox';
-import type { RadioChangeEvent } from 'antd/es/radio';
-import type { RangeValue } from 'rc-picker/es/interface';
+import Radio from 'antd/lib/radio';
+import Checkbox from 'antd/lib/checkbox';
+import type { RadioChangeEvent } from 'antd/lib/radio';
+import type { RangeValue } from 'rc-picker/lib/interface';
 import type { CheckboxChangeEvent } from 'antd/lib/checkbox';
 import useControllableValue from 'ahooks/lib/useControllableValue';
 import getRadioList from './getRadioList';

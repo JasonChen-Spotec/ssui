@@ -3,8 +3,8 @@
 import * as React from 'react';
 import type { UploadProps } from 'rc-upload';
 import Upload from 'rc-upload';
-import Progress from 'antd/es/progress';
-import Image from 'antd/es/image';
+import Progress from 'antd/lib/progress';
+import Image from 'antd/lib/image';
 import classNames from 'classnames';
 import useUpdateEffect from 'ahooks/lib/useUpdateEffect';
 import CloseOutlined from 'a-icons/lib/CloseOutlined';

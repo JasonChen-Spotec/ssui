@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import type { RangeValue } from 'rc-picker/es/interface';
+import type { RangeValue } from 'rc-picker/lib/interface';
 import { LabelCustomizeRangePicker } from 'assui';
 import moment from 'moment';
 

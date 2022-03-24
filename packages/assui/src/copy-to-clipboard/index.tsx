@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import copy from 'copy-to-clipboard';
-import type { TooltipProps } from 'antd/es/tooltip';
-import Tooltip from 'antd/es/tooltip';
+import type { TooltipProps } from 'antd/lib/tooltip';
+import Tooltip from 'antd/lib/tooltip';
 
 export interface CopyToClipboardProps {
   /** 需要复制的字符串 */

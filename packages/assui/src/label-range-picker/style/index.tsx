@@ -1,2 +1,2 @@
-import 'antd/es/date-picker/style';
+import 'antd/lib/date-picker/style';
 import './index.less';

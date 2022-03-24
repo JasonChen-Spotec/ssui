@@ -1,8 +1,8 @@
 import React from 'react';
 import useControllableValue from 'ahooks/lib/useControllableValue';
-import type { RefSelectProps } from 'antd/es/select';
-import type { AutoCompleteProps } from 'antd/es/auto-complete';
-import AutoComplete from 'antd/es/auto-complete';
+import type { RefSelectProps } from 'antd/lib/select';
+import type { AutoCompleteProps } from 'antd/lib/auto-complete';
+import AutoComplete from 'antd/lib/auto-complete';
 import classNames from 'classnames';
 import omit from 'lodash/omit';
 import trimStart from 'lodash/trimStart';

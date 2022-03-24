@@ -1,1 +1,1 @@
-import 'antd/es/drawer/style';
+import 'antd/lib/drawer/style';
