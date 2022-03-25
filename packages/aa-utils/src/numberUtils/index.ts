@@ -92,7 +92,7 @@ const defaultPercentOptions = {
   useUnit: true,
 };
 
-const formatPercent = (value: number, options?: formatPercentOptions) => {
+const formatPercent = (value: BigNumber.Value, options?: formatPercentOptions) => {
   const { useUnit, ...restFormatNumberOptions } = {
     ...defaultPercentOptions,
     ...options,
