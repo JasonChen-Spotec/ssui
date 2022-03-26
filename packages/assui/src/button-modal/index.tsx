@@ -10,7 +10,7 @@ export interface ModalAction {
 export interface ButtonModalProps extends ModalProps {
   onClose?: () => void;
   onOpen?: () => void;
-  trigger: React.ReactElement;
+  trigger?: React.ReactElement;
   children: React.ReactElement;
 }
 
