@@ -8,13 +8,13 @@ export interface RcQrcodeProps {
   /** 生成二维码的值 */
   value: QRCodeSegment[] | string;
   /** qrcode的QRCodeRenderersOptions */
-  options: QRCodeRenderersOptions;
+  options?: QRCodeRenderersOptions;
   /** 获取HTMLCanvasElement */
-  getCanvasInstance: (result: HTMLCanvasElement) => void;
+  getCanvasInstance?: (result: HTMLCanvasElement) => void;
 }
 
 const RcQrcode = (props: RcQrcodeProps) => {
-  const { value, options } = props;
+  const { value, options, getCanvasInstance } = props;
   const domElRef = React.useRef<HTMLDivElement>(null);
 
   const defaultOptions = { errorCorrectionLevel: 'H', margin: 0, width: 134 };
@@ -26,7 +26,7 @@ const RcQrcode = (props: RcQrcodeProps) => {
         throw err;
       }
 
-      props?.getCanvasInstance(result);
+      getCanvasInstance && getCanvasInstance(result);
       domElRef.current?.appendChild(result);
     });
   });
