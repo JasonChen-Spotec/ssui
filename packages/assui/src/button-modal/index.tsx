@@ -1,4 +1,5 @@
 import * as React from 'react';
+import isFunction from 'lodash/isFunction';
 import type { ModalProps } from 'antd/lib/modal';
 import Modal from 'antd/lib/modal';
 
@@ -11,7 +12,7 @@ export interface ButtonModalProps extends ModalProps {
   onClose?: () => void;
   onOpen?: () => void;
   trigger?: React.ReactElement;
-  children: React.ReactElement;
+  children: (v: ModalAction) => React.ReactElement | React.ReactElement;
 }
 
 const ButtonModal: React.ForwardRefRenderFunction<unknown, ButtonModalProps> = (props, ref) => {
@@ -71,7 +72,9 @@ const ButtonModal: React.ForwardRefRenderFunction<unknown, ButtonModalProps> = (
         maskClosable={false}
         {...restModalProps}
       >
-        {React.cloneElement(children, { modalAction: modalActionRef.current })}
+        {isFunction(children)
+          ? children(modalActionRef.current)
+          : React.cloneElement(children, { modalAction: modalActionRef.current })}
       </Modal>
     </>
   );
