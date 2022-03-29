@@ -12,7 +12,7 @@ export interface ButtonModalProps extends ModalProps {
   onClose?: () => void;
   onOpen?: () => void;
   trigger?: React.ReactElement;
-  children: (v: ModalAction) => React.ReactElement | React.ReactElement;
+  children: ((v: ModalAction) => React.ReactElement) | React.ReactElement;
 }
 
 const ButtonModal: React.ForwardRefRenderFunction<unknown, ButtonModalProps> = (props, ref) => {
