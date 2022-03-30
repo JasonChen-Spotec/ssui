@@ -12,13 +12,13 @@ export const getQueryString = (qs: string = window.location.search): string => {
 export const getQueryObject = (qs: string = getQueryString()): queryString.ParsedQs =>
   queryString.parse(qs);
 
-export interface searchQueryObject {
+export interface SearchQueryObject {
   path?: string;
   query?: queryString.ParsedQs;
 }
 
-export const getPathAndQueryObject = (search: string): object => {
-  const searchQueryObject: searchQueryObject = {};
+export const getPathAndQueryObject = (search: string) => {
+  const searchQueryObject: SearchQueryObject = {};
 
   if (search) {
     const [path, query] = search.split('?');
@@ -29,7 +29,7 @@ export const getPathAndQueryObject = (search: string): object => {
   return searchQueryObject;
 };
 
-export const toQueryString = (object: object): string =>
+export const toQueryString = (object: Record<string, any>): string =>
   `?${queryString.stringify(object, { encode: true })}`;
 
 export const urlToList = (url: string): string[] => {
@@ -37,9 +37,7 @@ export const urlToList = (url: string): string[] => {
   return urlList.map((_, index) => `/${urlList.slice(0, index + 1).join('/')}`);
 };
 
-interface paramsMap {
-  [key: string]: string | number;
-}
+type paramsMap = Record<string, string | number>;
 
 export const toPath = (url: string, params: paramsMap): string => compile(url)(params);
 
