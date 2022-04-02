@@ -90,6 +90,7 @@ export { default as ListFilled } from './ListFilled';
 export { default as ListOutlined } from './ListOutlined';
 export { default as LockEllipsisFilled } from './LockEllipsisFilled';
 export { default as LockFilled } from './LockFilled';
+export { default as LockOutlined } from './LockOutlined';
 export { default as LoopFilled } from './LoopFilled';
 export { default as LoopFolderFilled } from './LoopFolderFilled';
 export { default as LoopFolderOutlined } from './LoopFolderOutlined';
