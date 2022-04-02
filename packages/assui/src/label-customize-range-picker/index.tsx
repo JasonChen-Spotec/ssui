@@ -10,12 +10,18 @@ import LabelRangePicker from '../label-range-picker';
 import { useDateScope, dateTypeEnum } from './getDateScope';
 import type { LabelRangePickerProps } from '../label-range-picker';
 
+export type RadioListType = {
+  key: dateTypeEnum;
+  text: string;
+};
+
 export interface LabelCustomizeRangePickerProps extends LabelRangePickerProps {
   customizeTimeList?: dateTypeEnum[];
+  radioList?: RadioListType[];
 }
 
 const LabelCustomizeRangePicker = (props: LabelCustomizeRangePickerProps) => {
-  const { customizeTimeList, ...options } = props;
+  const { customizeTimeList, radioList, ...options } = props;
   const [date, setDate] = useControllableValue(props);
   const [isVisiblePanel, setIsVisiblePanel] = useState(false);
   const [radioKey, setRadioKey] = useState<dateTypeEnum | null>();
@@ -53,7 +59,8 @@ const LabelCustomizeRangePicker = (props: LabelCustomizeRangePickerProps) => {
     setDate(dateScopeMap[value as dateTypeEnum]);
   };
 
-  const list = getRadioList().filter((item) => customizeTimeList?.includes(item.key));
+  const list =
+    radioList ?? getRadioList().filter((item) => customizeTimeList?.includes(item.key));
   const finallyRadioList = list.length ? list : getRadioList();
 
   const panelRender = (panel: React.ReactNode) => (
