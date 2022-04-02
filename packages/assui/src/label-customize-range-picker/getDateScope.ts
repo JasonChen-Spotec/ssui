@@ -17,6 +17,9 @@ export enum dateTypeEnum {
   BEFORE_90_DAY = 12,
   BEFORE_180_DAY = 13,
   BEFORE_365_DAY = 14,
+  PAST_7_DAY = 15,
+  FUTURE_7_DAY = 16,
+  TOMORROW = 17,
 }
 
 export const useDateScope = () => {
@@ -86,6 +89,27 @@ export const useDateScope = () => {
       key: dateTypeEnum.BEFORE_365_DAY,
       value: [now.clone().subtract(364, 'day').startOf('day'), now.endOf('day')],
     },
+    {
+      key: dateTypeEnum.PAST_7_DAY,
+      value: [
+        now.clone().subtract(7, 'day').startOf('day'),
+        now.clone().subtract(1, 'day').endOf('day'),
+      ],
+    },
+    {
+      key: dateTypeEnum.TOMORROW,
+      value: [
+        now.clone().add(1, 'day').startOf('day'),
+        now.clone().add(1, 'day').endOf('day'),
+      ],
+    },
+    {
+      key: dateTypeEnum.FUTURE_7_DAY,
+      value: [
+        now.clone().add(7, 'day').startOf('day'),
+        now.clone().add(1, 'day').endOf('day'),
+      ],
+    },
   ];
 
   const dateScopeMap = {
@@ -135,6 +159,18 @@ export const useDateScope = () => {
     [dateTypeEnum.BEFORE_365_DAY]: [
       now.clone().subtract(364, 'day').startOf('day'),
       now.endOf('day'),
+    ],
+    [dateTypeEnum.PAST_7_DAY]: [
+      now.clone().subtract(7, 'day').startOf('day'),
+      now.clone().subtract(1, 'day').endOf('day'),
+    ],
+    [dateTypeEnum.TOMORROW]: [
+      now.clone().add(1, 'day').startOf('day'),
+      now.clone().add(1, 'day').endOf('day'),
+    ],
+    [dateTypeEnum.FUTURE_7_DAY]: [
+      now.clone().add(7, 'day').startOf('day'),
+      now.clone().add(1, 'day').endOf('day'),
     ],
   };
 
