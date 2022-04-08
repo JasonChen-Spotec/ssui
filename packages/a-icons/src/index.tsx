@@ -152,5 +152,6 @@ export { default as UnlockFilled } from './UnlockFilled';
 export { default as UpFilled } from './UpFilled';
 export { default as UpOutlined } from './UpOutlined';
 export { default as UpgradeFilled } from './UpgradeFilled';
+export { default as VectorOutlined } from './VectorOutlined';
 export { default as WalletFilled } from './WalletFilled';
 export { default as WalletOutlined } from './WalletOutlined';
