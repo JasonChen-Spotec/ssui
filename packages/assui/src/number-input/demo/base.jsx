@@ -17,6 +17,8 @@ const Demo = () => {
     <NumberInput
       ref={TRef}
       maxLength={4}
+      numberType="float"
+      dataType="string"
       placeholder="Basic usage"
       enableMinus
       onChange={onChange}
