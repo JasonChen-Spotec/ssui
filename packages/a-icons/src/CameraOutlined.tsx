@@ -16,14 +16,7 @@ function CameraOutlined(componentProps: IconProps) {
         d="M7.716 12.19a4.21 4.21 0 118.42 0 4.21 4.21 0 01-8.42 0zm1.579 0a2.632 2.632 0 105.263 0 2.632 2.632 0 00-5.263 0z"
         fill="currentColor"
       />
-      <rect
-        x={16.137}
-        y={6.916}
-        width={2.105}
-        height={2.116}
-        rx={0.5}
-        fill="currentColor"
-      />
+      <rect x={16.137} y={6.916} width={2.105} height={2.116} rx={0.5} fill="currentColor" />
     </svg>
   );
 
