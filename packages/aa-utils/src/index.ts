@@ -7,4 +7,4 @@ export { default as numberUtils } from './numberUtils';
 export { default as qsHelp } from './qsHelp';
 export { default as scrollIntoView } from './scrollIntoView';
 export { default as addPrefixToEumValue } from './addPrefixToEumValue';
-export { default as cookieUtil } from './cookieUtils';
+export { default as cookieUtils } from './cookieUtils';
