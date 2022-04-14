@@ -1,6 +1,8 @@
 import Cookies from 'universal-cookie';
 
-/** https://github.com/reactivestack/cookies/edit/master/packages/universal-cookie/README.md */
+/** https://github.com/reactivestack/cookies/tree/master/packages/universal-cookie */
+
+export { Cookies };
 
 const cookieUtils = new Cookies();
 
