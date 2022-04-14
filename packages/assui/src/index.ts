@@ -89,9 +89,6 @@ export { default as LabelTreeSelect } from './label-tree-select';
 export type { LabelCustomizeRangePickerProps } from './label-customize-range-picker';
 export { default as LabelCustomizeRangePicker } from './label-customize-range-picker';
 
-export type { LabelDescItemProps } from './label-desc-item';
-export { default as LabelDescItem } from './label-desc-item';
-
 export type { RichTextEditorProps } from './rich-text-editor';
 export { default as RichTextEditor } from './rich-text-editor';
 export { default as beautifulDnd } from './beautiful-dnd';
