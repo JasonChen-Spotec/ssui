@@ -14,7 +14,7 @@ function defaultTemplate(
 
   return typeScriptTpl.ast`${imports}
     ${interfaces}
-    import Icon, { IconProps } from 'a-base-icon/lib/Icon';
+    import Icon, { IconProps } from 'a-base-icon/lib/icon';
 
     function ${componentName}(componentProps: IconProps) {
       const IconNode = (props: React.SVGProps<SVGSVGElement>) => ${jsx};
