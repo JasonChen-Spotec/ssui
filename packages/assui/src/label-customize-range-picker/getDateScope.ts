@@ -106,8 +106,8 @@ export const useDateScope = () => {
     {
       key: dateTypeEnum.FUTURE_7_DAY,
       value: [
-        now.clone().add(7, 'day').startOf('day'),
-        now.clone().add(1, 'day').endOf('day'),
+        now.clone().add(1, 'day').startOf('day'),
+        now.clone().add(7, 'day').endOf('day'),
       ],
     },
   ];
@@ -169,8 +169,8 @@ export const useDateScope = () => {
       now.clone().add(1, 'day').endOf('day'),
     ],
     [dateTypeEnum.FUTURE_7_DAY]: [
-      now.clone().add(7, 'day').startOf('day'),
-      now.clone().add(1, 'day').endOf('day'),
+      now.clone().add(1, 'day').startOf('day'),
+      now.clone().add(7, 'day').endOf('day'),
     ],
   };
 
