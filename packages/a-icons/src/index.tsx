@@ -74,6 +74,8 @@ export { default as FilterOutlined } from './FilterOutlined';
 export { default as FireFilled } from './FireFilled';
 export { default as FolderAddOutlined } from './FolderAddOutlined';
 export { default as FormOutlined } from './FormOutlined';
+export { default as FunnelFilled } from './FunnelFilled';
+export { default as FunnelOutlined } from './FunnelOutlined';
 export { default as GarbageCanOutlined } from './GarbageCanOutlined';
 export { default as HandCoinsFilled } from './HandCoinsFilled';
 export { default as HomeFilled } from './HomeFilled';
