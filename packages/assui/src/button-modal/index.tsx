@@ -15,7 +15,10 @@ export interface ButtonModalProps extends ModalProps {
   children: ((v: ModalAction) => React.ReactElement) | React.ReactElement;
 }
 
-const ButtonModal: React.ForwardRefRenderFunction<unknown, ButtonModalProps> = (props, ref) => {
+const ButtonModal: React.ForwardRefRenderFunction<unknown, ButtonModalProps> = (
+  props,
+  ref,
+) => {
   const [visible, setModalVisible] = React.useState(false);
   const { children, trigger, onOpen, onClose, onOk, onCancel, ...restModalProps } = props;
 
@@ -33,7 +36,10 @@ const ButtonModal: React.ForwardRefRenderFunction<unknown, ButtonModalProps> = (
     setModalVisible(false);
   };
 
-  const modalActionRef = React.useRef<ModalAction>({ open: openModal, close: closeModal });
+  const modalActionRef = React.useRef<ModalAction>({
+    open: openModal,
+    close: closeModal,
+  });
 
   React.useImperativeHandle(ref, () => modalActionRef.current);
 
@@ -60,7 +66,6 @@ const ButtonModal: React.ForwardRefRenderFunction<unknown, ButtonModalProps> = (
     React.cloneElement(trigger, {
       onClick: openModal,
     });
-
   return (
     <>
       {buttonNode}
