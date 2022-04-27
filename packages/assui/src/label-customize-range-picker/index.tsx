@@ -5,30 +5,31 @@ import type { RadioChangeEvent } from 'antd/lib/radio';
 import type { RangeValue } from 'rc-picker/lib/interface';
 import type { CheckboxChangeEvent } from 'antd/lib/checkbox';
 import useControllableValue from 'ahooks/lib/useControllableValue';
-import getRadioList from './getRadioList';
+import type { Moment } from 'moment';
+import defaultRadioList from './defaultRadioList';
 import LabelRangePicker from '../label-range-picker';
-import { useDateScope, dateTypeEnum } from './getDateScope';
 import type { LabelRangePickerProps } from '../label-range-picker';
 
 export type RadioListType = {
-  key: dateTypeEnum;
+  key: string | number;
   text: string;
+  value: [Moment, Moment];
 };
 
 export interface LabelCustomizeRangePickerProps extends LabelRangePickerProps {
-  customizeTimeList?: dateTypeEnum[];
   radioList?: RadioListType[];
 }
 
 const LabelCustomizeRangePicker = (props: LabelCustomizeRangePickerProps) => {
-  const { customizeTimeList, radioList, ...options } = props;
+  const { radioList, ...options } = props;
   const [date, setDate] = useControllableValue(props);
   const [isVisiblePanel, setIsVisiblePanel] = useState(false);
-  const [radioKey, setRadioKey] = useState<dateTypeEnum | null>();
-  const { dateScopeMap, dateScopeList } = useDateScope();
+  const [radioKey, setRadioKey] = useState<string | number | null>();
+
+  const dataSource = radioList ?? defaultRadioList;
 
   useEffect(() => {
-    const foundItem = dateScopeList.find((item) => {
+    const foundItem = dataSource.find((item) => {
       if (!date) return false;
       const [startTime, endTime] = item.value;
       const [defaultStartTime, defaultEndTime] = date || [];
@@ -56,12 +57,11 @@ const LabelCustomizeRangePicker = (props: LabelCustomizeRangePickerProps) => {
   const onRadioChange = (event: RadioChangeEvent) => {
     const { value } = event.target;
     setRadioKey(value);
-    setDate(dateScopeMap[value as dateTypeEnum]);
+    const selectRadioInfo = dataSource.find((item) => item.key === value);
+    setDate(selectRadioInfo?.value);
   };
 
-  const list =
-    radioList ?? getRadioList().filter((item) => customizeTimeList?.includes(item.key));
-  const finallyRadioList = list.length ? list : getRadioList();
+  const list = radioList ?? defaultRadioList;
 
   const panelRender = (panel: React.ReactNode) => (
     <div className="wrapper">
@@ -76,7 +76,7 @@ const LabelCustomizeRangePicker = (props: LabelCustomizeRangePickerProps) => {
       ) : (
         <div className="pick-box">
           <Radio.Group onChange={onRadioChange} value={radioKey}>
-            {finallyRadioList.map(({ key, text }) => (
+            {list.map(({ key, text }) => (
               <Radio className="radio" key={key} value={key}>
                 {text}
               </Radio>
@@ -96,6 +96,5 @@ const LabelCustomizeRangePicker = (props: LabelCustomizeRangePickerProps) => {
     />
   );
 };
-LabelCustomizeRangePicker.dateTypeEnum = dateTypeEnum;
 
 export default LabelCustomizeRangePicker;
