@@ -1,47 +1,54 @@
 import React from 'react';
 import { Form, Button } from 'antd';
+import moment from 'moment';
 import { LabelCustomizeRangePicker } from 'assui';
+import type { RadioListType } from 'assui/lib/label-customize-range-picker';
 
-const { dateTypeEnum } = LabelCustomizeRangePicker;
+const now = moment();
 
 const Demo = () => {
   const onFinish = (value: any) => {
     console.log('value', value);
   };
 
-  const customizeTimeList = [dateTypeEnum.TODAY, dateTypeEnum.WEEK, dateTypeEnum.MONTH];
-
-  const radioList = [
+  const radioList: RadioListType[] = [
     {
-      key: dateTypeEnum.PAST_7_DAY,
-      text: '过去七天',
+      key: '本周',
+      text: '本周',
+      value: [now.clone().startOf('week'), now.clone().endOf('day')],
     },
     {
-      key: dateTypeEnum.YESTERDAY,
-      text: '昨天',
+      key: 'MONTH',
+      text: '本月',
+      value: [now.clone().startOf('month'), now.clone().endOf('day')],
     },
     {
-      key: dateTypeEnum.TODAY,
+      key: '今天',
       text: '今天',
+      value: [now.clone().startOf('week'), now.clone().endOf('week')],
     },
     {
-      key: dateTypeEnum.TOMORROW,
+      key: '明天',
       text: '明天',
+      value: [
+        now.clone().add(1, 'day').startOf('day'),
+        now.clone().add(1, 'day').endOf('day'),
+      ],
     },
     {
-      key: dateTypeEnum.FUTURE_7_DAY,
+      key: '未来七天',
       text: '未来七天',
+      value: [
+        now.clone().add(1, 'day').startOf('day'),
+        now.clone().add(7, 'day').endOf('day'),
+      ],
     },
   ];
 
   return (
     <Form onFinish={onFinish} style={{ width: 500 }}>
       <Form.Item name="time" rules={[{ required: true }]}>
-        <LabelCustomizeRangePicker
-          label="结算时间"
-          customizeTimeList={customizeTimeList}
-          radioList={radioList}
-        />
+        <LabelCustomizeRangePicker label="结算时间" radioList={radioList} />
       </Form.Item>
       <Button htmlType="submit">提交</Button>
     </Form>
