@@ -1,21 +1,24 @@
 import React, { useState, useRef, useImperativeHandle } from 'react';
 import type { DrawerProps } from 'antd/lib/drawer';
 import Drawer from 'antd/lib/drawer';
+import isFunction from 'lodash/isFunction';
 import classNames from 'classnames';
-
-export interface ButtonDrawerProps extends DrawerProps {
-  onClose?: () => void;
-  onOpen?: () => void;
-  trigger: React.ReactElement;
-  children: React.ReactElement;
-}
 
 export type DrawerAction = {
   close: () => void;
   open: () => void;
 };
+export interface ButtonDrawerProps extends DrawerProps {
+  onClose?: () => void;
+  onOpen?: () => void;
+  trigger: React.ReactElement;
+  children: ((v: DrawerAction) => React.ReactElement) | React.ReactElement;
+}
 
-const ButtonDrawer: React.ForwardRefRenderFunction<unknown, ButtonDrawerProps> = (props, ref) => {
+const ButtonDrawer: React.ForwardRefRenderFunction<unknown, ButtonDrawerProps> = (
+  props,
+  ref,
+) => {
   const [drawerVisible, setDrawerVisible] = useState(false);
   const { children, onOpen, onClose, trigger, title, className, ...restProps } = props;
 
@@ -62,7 +65,9 @@ const ButtonDrawer: React.ForwardRefRenderFunction<unknown, ButtonDrawerProps> =
         visible={drawerVisible}
         {...restProps}
       >
-        {React.cloneElement(children, { drawerAction: actionRef.current })}
+        {isFunction(children)
+          ? children(actionRef.current)
+          : React.cloneElement(children, { drawerAction: actionRef.current })}
       </Drawer>
     </>
   );
