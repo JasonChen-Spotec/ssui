@@ -3,6 +3,7 @@ import { Form, Button } from 'antd';
 import moment from 'moment';
 import { LabelCustomizeRangePicker } from 'assui';
 import type { RadioListType } from 'assui/lib/label-customize-range-picker';
+import { dateTypeEnum } from 'assui/lib/label-customize-range-picker/defaultRadioList';
 
 const now = moment();
 
@@ -45,10 +46,22 @@ const Demo = () => {
     },
   ];
 
+  const customizeTimeList = [
+    dateTypeEnum.BEFORE_365_DAY,
+    dateTypeEnum.BEFORE_180_DAY,
+    dateTypeEnum.BEFORE_7_DAY,
+  ];
+
   return (
     <Form onFinish={onFinish} style={{ width: 500 }}>
       <Form.Item name="time" rules={[{ required: true }]}>
-        <LabelCustomizeRangePicker label="结算时间" radioList={radioList} />
+        <LabelCustomizeRangePicker label="完全自定义" radioList={radioList} />
+      </Form.Item>
+      <Form.Item name="date" rules={[{ required: true }]}>
+        <LabelCustomizeRangePicker
+          label="半自定义"
+          customizeTimeList={customizeTimeList}
+        />
       </Form.Item>
       <Button htmlType="submit">提交</Button>
     </Form>
