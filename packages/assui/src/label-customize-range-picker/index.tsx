@@ -6,22 +6,24 @@ import type { RangeValue } from 'rc-picker/lib/interface';
 import type { CheckboxChangeEvent } from 'antd/lib/checkbox';
 import useControllableValue from 'ahooks/lib/useControllableValue';
 import type { Moment } from 'moment';
+import type { dateTypeEnum } from './defaultRadioList';
 import defaultRadioList from './defaultRadioList';
 import LabelRangePicker from '../label-range-picker';
 import type { LabelRangePickerProps } from '../label-range-picker';
 
 export type RadioListType = {
-  key: string | number;
+  key: string | number | dateTypeEnum;
   text: string;
   value: [Moment, Moment];
 };
 
 export interface LabelCustomizeRangePickerProps extends LabelRangePickerProps {
   radioList?: RadioListType[];
+  customizeTimeList?: dateTypeEnum[];
 }
 
 const LabelCustomizeRangePicker = (props: LabelCustomizeRangePickerProps) => {
-  const { radioList, ...options } = props;
+  const { customizeTimeList, radioList, ...options } = props;
   const [date, setDate] = useControllableValue(props);
   const [isVisiblePanel, setIsVisiblePanel] = useState(false);
   const [radioKey, setRadioKey] = useState<string | number | null>();
@@ -61,7 +63,11 @@ const LabelCustomizeRangePicker = (props: LabelCustomizeRangePickerProps) => {
     setDate(selectRadioInfo?.value);
   };
 
-  const list = radioList ?? defaultRadioList;
+  const list =
+    radioList ??
+    defaultRadioList.filter((item) =>
+      customizeTimeList?.includes(item.key as dateTypeEnum),
+    );
 
   const panelRender = (panel: React.ReactNode) => (
     <div className="wrapper">
