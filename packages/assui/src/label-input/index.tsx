@@ -106,7 +106,7 @@ const LabelInput: React.FC<LabelInputProps> = (props) => {
     InputDomRef.current?.focus();
   };
 
-  const onChangeInputType = React.useCallback((nextInputType) => {
+  const onChangeInputType = React.useCallback((nextInputType: 'text' | 'password') => {
     setInputType(nextInputType);
   }, []);
 

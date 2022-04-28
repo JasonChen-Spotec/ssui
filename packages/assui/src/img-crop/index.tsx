@@ -130,7 +130,7 @@ const ImgCrop = (props: ImgCropProps) => {
   /**
    * EasyCrop
    */
-  const onComplete = React.useCallback((croppedAreaPixels) => {
+  const onComplete = React.useCallback((croppedAreaPixels: any) => {
     cropPixelsRef.current = croppedAreaPixels;
   }, []);
 

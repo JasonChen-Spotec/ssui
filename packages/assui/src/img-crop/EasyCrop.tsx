@@ -22,14 +22,14 @@ const EasyCrop = (props: EasyCropProps) => {
   const [cropSize, setCropSize] = React.useState({ width: 0, height: 0 });
 
   const onCropComplete = React.useCallback(
-    (_, croppedAreaPixels) => {
+    (_: any, croppedAreaPixels: any) => {
       onComplete(croppedAreaPixels);
     },
     [onComplete],
   );
 
   const onMediaLoaded = React.useCallback(
-    (mediaSize) => {
+    (mediaSize: any) => {
       const { width, height } = mediaSize;
       const ratioWidth = height * aspect;
 

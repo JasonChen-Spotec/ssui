@@ -8,17 +8,14 @@ export type DrawerAction = {
   close: () => void;
   open: () => void;
 };
-export interface ButtonDrawerProps extends DrawerProps {
+export interface ButtonDrawerProps extends Omit<DrawerProps, 'children'> {
   onClose?: () => void;
   onOpen?: () => void;
   trigger: React.ReactElement;
   children: ((v: DrawerAction) => React.ReactElement) | React.ReactElement;
 }
 
-const ButtonDrawer: React.ForwardRefRenderFunction<unknown, ButtonDrawerProps> = (
-  props,
-  ref,
-) => {
+const ButtonDrawer: React.ForwardRefRenderFunction<unknown, ButtonDrawerProps> = (props, ref) => {
   const [drawerVisible, setDrawerVisible] = useState(false);
   const { children, onOpen, onClose, trigger, title, className, ...restProps } = props;
 

@@ -71,7 +71,7 @@ const KeepTab = (props: KeepTabProps) => {
   };
 
   const resultChildren = arrayChildren.map((childItem: React.ReactElement<SelfTabPaneProps>) => {
-    const count = childItem?.props?.count;
+    const count = childItem?.props?.count as React.ReactNode;
     if (count) {
       return React.cloneElement(childItem, {
         tab: (

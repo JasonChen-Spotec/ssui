@@ -8,17 +8,14 @@ export interface ModalAction {
   close: () => void;
 }
 
-export interface ButtonModalProps extends ModalProps {
+export interface ButtonModalProps extends Omit<ModalProps, 'children'> {
   onClose?: () => void;
   onOpen?: () => void;
   trigger?: React.ReactElement;
   children: ((v: ModalAction) => React.ReactElement) | React.ReactElement;
 }
 
-const ButtonModal: React.ForwardRefRenderFunction<unknown, ButtonModalProps> = (
-  props,
-  ref,
-) => {
+const ButtonModal: React.ForwardRefRenderFunction<unknown, ButtonModalProps> = (props, ref) => {
   const [visible, setModalVisible] = React.useState(false);
   const { children, trigger, onOpen, onClose, onOk, onCancel, ...restModalProps } = props;
 
