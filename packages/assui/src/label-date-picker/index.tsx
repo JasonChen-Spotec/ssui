@@ -1,7 +1,7 @@
 import React from 'react';
 import useControllableValue from 'ahooks/lib/useControllableValue';
 import type { DatePickerProps } from 'antd/lib/date-picker';
-import DatePicker from 'antd/lib/date-picker';
+import { DatePicker } from 'antd';
 import CalendarOutlined from 'a-icons/lib/CalendarOutlined';
 import classNames from 'classnames';
 
