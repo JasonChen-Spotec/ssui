@@ -1,13 +1,23 @@
 @import '~antd/lib/style/index.less';
 
-.label-customize-range-picker-panel {
+@progress-prefix-cls: ~'@{ant-prefix}';
+
+.customize-range-picker-panel {
+  .check-wrapper {
+    padding: 8px 11px 6px;
+    border-bottom: 1px solid #f5f6fa;
+  }
+
+  .customize-select {
+    vertical-align: middle;
+  }
+
   .customize-select-text {
     margin-left: 8px;
   }
 
-  .check-wrapper {
-    padding: 8px 11px 6px;
-    border-bottom: 1px solid #f5f6fa;
+  .@{ant-prefix}-radio-wrapper {
+    margin-right: 0;
   }
 
   .pick-box {
@@ -17,26 +27,20 @@
     padding: 8px 11px 11px;
 
     .radio {
-      display: inline-block;
       width: 50%;
-      margin-right: 0;
     }
 
     .@{ant-prefix}-radio-group {
+      display: flex;
+      flex-wrap: wrap;
       width: 100%;
     }
-  }
-
-  .customize-select {
-    vertical-align: middle;
   }
 }
 
 @media screen and (max-width: 576px) {
-  .label-customize-range-picker-panel {
-    .panel {
-      max-width: 280px;
-      overflow-x: scroll;
-    }
+  .customize-range-picker-panel {
+    max-width: 280px;
+    overflow-x: scroll;
   }
 }

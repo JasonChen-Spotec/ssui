@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import Radio from 'antd/lib/radio';
-import Checkbox from 'antd/lib/checkbox';
-import type { RadioChangeEvent } from 'antd/lib/radio';
-import type { RangeValue } from 'rc-picker/lib/interface';
-import type { CheckboxChangeEvent } from 'antd/lib/checkbox';
-import useControllableValue from 'ahooks/lib/useControllableValue';
+import { Radio, DatePicker, Checkbox } from 'antd';
 import type { Moment } from 'moment';
+import type { RangeValue } from 'rc-picker/lib/interface';
+import type { RangePickerProps } from 'antd/lib/date-picker';
+import { useControllableValue } from 'ahooks';
+import type { RadioChangeEvent } from 'antd/lib/radio';
+import type { CheckboxChangeEvent } from 'antd/lib/checkbox';
 import type { dateTypeEnum } from './defaultRadioList';
 import defaultRadioList from './defaultRadioList';
-import LabelRangePicker from '../label-range-picker';
-import type { LabelRangePickerProps } from '../label-range-picker';
+
+const { RangePicker } = DatePicker;
 
 export type RadioListType = {
   key: string | number | dateTypeEnum;
@@ -17,14 +17,15 @@ export type RadioListType = {
   value: [Moment, Moment];
 };
 
-export interface LabelCustomizeRangePickerProps extends LabelRangePickerProps {
-  radioList?: RadioListType[];
+export interface CustomizeRangePickerProps extends Omit<RangePickerProps, ''> {
   customizeTimeList?: dateTypeEnum[];
+  radioList?: RadioListType[];
 }
 
-const LabelCustomizeRangePicker = (props: LabelCustomizeRangePickerProps) => {
+const CustomizeRangePicker: React.FC<CustomizeRangePickerProps> = (props) => {
   const { customizeTimeList, radioList, ...options } = props;
-  const [date, setDate] = useControllableValue(props);
+  const [date, setDate] = useControllableValue<RangeValue<Moment>>(props);
+  const [open, setOpen] = useState(false);
   const [isVisiblePanel, setIsVisiblePanel] = useState(false);
   const [radioKey, setRadioKey] = useState<string | number | null>();
 
@@ -40,7 +41,9 @@ const LabelCustomizeRangePicker = (props: LabelCustomizeRangePickerProps) => {
       }
       return false;
     });
+
     const data = foundItem ? foundItem.key : null;
+
     setRadioKey(data);
   }, [date]);
 
@@ -49,15 +52,18 @@ const LabelCustomizeRangePicker = (props: LabelCustomizeRangePickerProps) => {
     setIsVisiblePanel(checked);
   };
 
-  const onDateChange = (nextValue: RangeValue<moment.Moment>) => {
-    setDate(nextValue);
-  };
-
   const onRadioChange = (event: RadioChangeEvent) => {
     const { value } = event.target;
     setRadioKey(value);
     const selectRadioInfo = dataSource.find((item) => item.key === value);
-    setDate(selectRadioInfo?.value);
+    if (selectRadioInfo) {
+      setDate(selectRadioInfo?.value);
+    }
+    setOpen(false);
+  };
+
+  const onOpenChange = (nextOpen: boolean) => {
+    setOpen(nextOpen);
   };
 
   const list =
@@ -67,7 +73,7 @@ const LabelCustomizeRangePicker = (props: LabelCustomizeRangePickerProps) => {
     );
 
   const panelRender = (panel: React.ReactNode) => (
-    <div className="label-customize-range-picker-panel">
+    <div className="customize-range-picker-panel">
       <div className="check-wrapper">
         <span className="customize-select">
           <Checkbox onChange={onDiyTimeChange} />
@@ -91,8 +97,15 @@ const LabelCustomizeRangePicker = (props: LabelCustomizeRangePickerProps) => {
   );
 
   return (
-    <LabelRangePicker value={date} onChange={onDateChange} panelRender={panelRender} {...options} />
+    <RangePicker
+      value={date}
+      onOpenChange={onOpenChange}
+      open={open}
+      allowClear={false}
+      panelRender={panelRender}
+      {...options}
+    />
   );
 };
 
-export default LabelCustomizeRangePicker;
+export default CustomizeRangePicker;
