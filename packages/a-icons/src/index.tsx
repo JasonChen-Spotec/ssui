@@ -117,6 +117,7 @@ export { default as PeopleCloseFilled } from './PeopleCloseFilled';
 export { default as PeopleConfirmFilled } from './PeopleConfirmFilled';
 export { default as PeopleEllipsisFilled } from './PeopleEllipsisFilled';
 export { default as PeopleFilled } from './PeopleFilled';
+export { default as PeopleGetOutlined } from './PeopleGetOutlined';
 export { default as PeopleGroupFilled } from './PeopleGroupFilled';
 export { default as PeopleGroupOutlined } from './PeopleGroupOutlined';
 export { default as PeopleLockFilled } from './PeopleLockFilled';
