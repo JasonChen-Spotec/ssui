@@ -92,3 +92,6 @@ export { default as LabelCustomizeRangePicker } from './label-customize-range-pi
 export type { RichTextEditorProps } from './rich-text-editor';
 export { default as RichTextEditor } from './rich-text-editor';
 export { default as beautifulDnd } from './beautiful-dnd';
+
+export type { CustomizeRangePickerProps } from './customize-range-picker';
+export { default as CustomizeRangePicker } from './customize-range-picker';
