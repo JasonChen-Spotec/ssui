@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Radio from 'antd/lib/radio';
 import Checkbox from 'antd/lib/checkbox';
+import DatePicker from 'antd/lib/date-picker';
 import type { RadioChangeEvent } from 'antd/lib/radio';
 import type { RangeValue } from 'rc-picker/lib/interface';
 import type { CheckboxChangeEvent } from 'antd/lib/checkbox';
@@ -17,16 +18,21 @@ export type RadioListType = {
   value: [Moment, Moment];
 };
 
-export interface LabelCustomizeRangePickerProps extends LabelRangePickerProps {
+export interface LabelCustomizeRangePickerProps extends Omit<LabelRangePickerProps, 'label'> {
   radioList?: RadioListType[];
   customizeTimeList?: dateTypeEnum[];
+  rangePickerType?: 'label' | 'origin';
+  label?: React.ReactNode;
 }
 
+const { RangePicker } = DatePicker;
+
 const LabelCustomizeRangePicker = (props: LabelCustomizeRangePickerProps) => {
-  const { customizeTimeList, radioList, ...options } = props;
+  const { customizeTimeList, radioList, rangePickerType = 'label', label, ...options } = props;
   const [date, setDate] = useControllableValue(props);
   const [isVisiblePanel, setIsVisiblePanel] = useState(false);
   const [radioKey, setRadioKey] = useState<string | number | null>();
+  const [open, setOpen] = useState(false);
 
   const dataSource = radioList ?? defaultRadioList;
 
@@ -58,6 +64,7 @@ const LabelCustomizeRangePicker = (props: LabelCustomizeRangePickerProps) => {
     setRadioKey(value);
     const selectRadioInfo = dataSource.find((item) => item.key === value);
     setDate(selectRadioInfo?.value);
+    setOpen(false);
   };
 
   const list =
@@ -90,8 +97,23 @@ const LabelCustomizeRangePicker = (props: LabelCustomizeRangePickerProps) => {
     </div>
   );
 
-  return (
-    <LabelRangePicker value={date} onChange={onDateChange} panelRender={panelRender} {...options} />
+  const onOpenChange = (nextOpen: boolean) => {
+    setOpen(nextOpen);
+  };
+
+  const baseOptions = {
+    value: date,
+    onChange: onDateChange,
+    open,
+    onOpenChange,
+    panelRender,
+    allowClear: false,
+  };
+
+  return rangePickerType === 'label' ? (
+    <LabelRangePicker label={label} {...baseOptions} {...options} />
+  ) : (
+    <RangePicker {...baseOptions} {...options} />
   );
 };
 

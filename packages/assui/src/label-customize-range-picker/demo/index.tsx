@@ -12,6 +12,9 @@ const Demo = () => {
       <Form.Item name="time" rules={[{ required: true }]}>
         <LabelCustomizeRangePicker label="结算时间" />
       </Form.Item>
+      <Form.Item name="date" rules={[{ required: true }]}>
+        <LabelCustomizeRangePicker rangePickerType="origin" />
+      </Form.Item>
       <Button htmlType="submit">提交</Button>
     </Form>
   );

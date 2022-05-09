@@ -3,6 +3,7 @@ import useControllableValue from 'ahooks/lib/useControllableValue';
 import type { RangePickerProps } from 'antd/lib/date-picker';
 import DatePicker from 'antd/lib/date-picker';
 import classNames from 'classnames';
+import omit from 'lodash/omit';
 import CalendarOutlined from 'a-icons/lib/CalendarOutlined';
 
 const { RangePicker } = DatePicker;
@@ -14,9 +15,9 @@ export interface LabelRangePickerProps extends Omit<RangePickerProps, 'label'> {
 const LabelDatePicker: React.FC<LabelRangePickerProps> = (props) => {
   const { className, label } = props;
   const datePickerRef = React.useRef<any>(null);
-  const [open, setOpen] = useControllableValue(props, {
+  const [open, onOpenChange] = useControllableValue(props, {
     valuePropName: 'open',
-    trigger: 'setOpen',
+    trigger: 'onOpenChange',
   });
 
   const [value, setValue] = useControllableValue(props);
@@ -27,17 +28,13 @@ const LabelDatePicker: React.FC<LabelRangePickerProps> = (props) => {
 
   const handleLabelClick = () => {
     if (!open) {
-      setOpen(!open);
+      onOpenChange(!open);
     }
     datePickerRef.current?.focus();
   };
 
-  const onBlur = () => {
-    setOpen(false);
-  };
-
-  const onOpenChange = (nextOpen: boolean) => {
-    setOpen(nextOpen);
+  const handleOpenChange = (nextOpen: boolean) => {
+    onOpenChange(nextOpen);
   };
 
   return (
@@ -53,13 +50,12 @@ const LabelDatePicker: React.FC<LabelRangePickerProps> = (props) => {
       <RangePicker
         format="YYYY.MM.DD"
         allowEmpty={[true, true]}
-        {...props}
+        {...omit(props, 'onOpenChange')}
         separator="–"
         open={open}
         onChange={handleChange}
         ref={datePickerRef}
-        onOpenChange={onOpenChange}
-        onBlur={onBlur}
+        onOpenChange={handleOpenChange}
         suffixIcon={<CalendarOutlined />}
       />
       <label className="label-range-picker-text" onClick={handleLabelClick}>
