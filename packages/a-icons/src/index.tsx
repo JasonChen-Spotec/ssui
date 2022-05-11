@@ -83,6 +83,8 @@ export { default as HomeOutlined } from './HomeOutlined';
 export { default as IbFilled } from './IbFilled';
 export { default as ImacFilled } from './ImacFilled';
 export { default as ImacOutlined } from './ImacOutlined';
+export { default as ImageFilled } from './ImageFilled';
+export { default as ImageOutlined } from './ImageOutlined';
 export { default as KeyFilled } from './KeyFilled';
 export { default as LayerFilled } from './LayerFilled';
 export { default as LayerOutlined } from './LayerOutlined';
