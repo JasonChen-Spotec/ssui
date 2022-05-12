@@ -20,29 +20,29 @@ export default function App() {
       },
     });
 
-    // const toTimeHtml = function (date) {
-    //   return `<time datetime="${date.toString()}">${date.toDateString()}</time>`;
-    // };
+    const toTimeHtml = function (date) {
+      return `<time datetime="${date.toString()}">${date.toDateString()}</time>`;
+    };
 
-    // editor.ui.registry.addButton('customDateButton', {
-    //   icon: 'insert-time',
-    //   tooltip: 'Insert Current Date',
-    //   disabled: true,
-    //   onAction(_) {
-    //     editor.insertContent(toTimeHtml(new Date()));
-    //   },
-    //   onSetup(buttonApi) {
-    //     const editorEventCallback = function (eventApi) {
-    //       buttonApi.setDisabled(eventApi.element.nodeName.toLowerCase() === 'time');
-    //     };
-    //     editor.on('NodeChange', editorEventCallback);
+    editor.ui.registry.addButton('customDateButton', {
+      icon: 'insert-time',
+      tooltip: 'Insert Current Date',
+      enabled: true,
+      onAction(_) {
+        editor.insertContent(toTimeHtml(new Date()));
+      },
+      onSetup(buttonApi) {
+        const editorEventCallback = function (eventApi) {
+          buttonApi.setEnabled(eventApi.element.nodeName.toLowerCase() === 'time');
+        };
+        editor.on('NodeChange', editorEventCallback);
 
-    //     /* onSetup should always return the unbind handlers */
-    //     return function (buttonApi) {
-    //       editor.off('NodeChange', editorEventCallback);
-    //     };
-    //   },
-    // });
+        /* onSetup should always return the unbind handlers */
+        return function (buttonApi) {
+          editor.off('NodeChange', editorEventCallback);
+        };
+      },
+    });
   };
 
   return (

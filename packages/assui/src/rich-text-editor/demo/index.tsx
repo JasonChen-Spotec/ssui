@@ -1,6 +1,6 @@
 import React from 'react';
 import { RichTextEditor } from 'assui';
-
+import type { EditorOptions } from 'tinymce/tinymce';
 const firstToolbar =
   'undo redo | blocks fontsize | ' +
   'bold italic underline strikethrough forecolor backcolor charmap emoticons | ' +
@@ -13,7 +13,7 @@ export default function App() {
     console.log('value', value);
   };
 
-  const imagesUploadHandler = (blobInfo, progress) => {
+  const imagesUploadHandler: EditorOptions['images_upload_handler'] = (blobInfo, progress) => {
     return new Promise((resolve, reject) => {
       let xhr, formData;
 
