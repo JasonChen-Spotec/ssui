@@ -27,13 +27,13 @@ export default function App() {
     editor.ui.registry.addButton('customDateButton', {
       icon: 'insert-time',
       tooltip: 'Insert Current Date',
-      disabled: true,
+      enabled: true,
       onAction(_) {
         editor.insertContent(toTimeHtml(new Date()));
       },
       onSetup(buttonApi) {
         const editorEventCallback = function (eventApi) {
-          buttonApi.setDisabled(eventApi.element.nodeName.toLowerCase() === 'time');
+          buttonApi.setEnabled(eventApi.element.nodeName.toLowerCase() === 'time');
         };
         editor.on('NodeChange', editorEventCallback);
 
