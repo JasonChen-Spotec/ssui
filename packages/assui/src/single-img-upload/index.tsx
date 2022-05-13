@@ -27,6 +27,8 @@ export interface SingleImgUploadProps extends UploadProps {
   value?: string;
   wrapperClassName?: string;
   onDeleteUpload?: () => void;
+  /** 格式化接口返回数据 */
+  onFormatResData?: () => string;
 }
 
 const SingleImgUpload = (props: SingleImgUploadProps) => {
@@ -37,6 +39,7 @@ const SingleImgUpload = (props: SingleImgUploadProps) => {
     value,
     onStart,
     onDeleteUpload,
+    onFormatResData,
     onSuccess,
     onError,
     disabled,
@@ -77,7 +80,8 @@ const SingleImgUpload = (props: SingleImgUploadProps) => {
   };
 
   const handleSuccess = (res: object, file: RcFile, xhr: object) => {
-    onSuccess && onSuccess(res, file, xhr);
+    const result = onFormatResData ? onFormatResData(res) : res;
+    onSuccess && onSuccess(result, file, xhr);
     setUploadStatus('done');
   };
 
@@ -140,9 +144,7 @@ const SingleImgUpload = (props: SingleImgUploadProps) => {
         {...restProps}
       >
         {uploadStatus === 'init' && (
-          <div
-            className={classNames('as-img-upload-button', { 'init-disable': disabled })}
-          >
+          <div className={classNames('as-img-upload-button', { 'init-disable': disabled })}>
             {children}
           </div>
         )}
