@@ -28,7 +28,7 @@ export interface SingleImgUploadProps extends UploadProps {
   wrapperClassName?: string;
   onDeleteUpload?: () => void;
   /** 格式化接口返回数据 */
-  onFormatResData?: () => string;
+  onFormatResData?: (res: any) => string;
 }
 
 const SingleImgUpload = (props: SingleImgUploadProps) => {
