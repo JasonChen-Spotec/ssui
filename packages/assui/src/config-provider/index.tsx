@@ -5,7 +5,7 @@ import enUS from '../messages/en_US';
 
 export type LocaleType = 'en-US' | 'zh-CN';
 
-interface ConfigProviderProps {
+export interface ConfigProviderProps {
   children?: React.ReactNode;
   locale: LocaleType;
 }
