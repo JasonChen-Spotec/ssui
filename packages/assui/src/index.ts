@@ -7,6 +7,9 @@ export { default as ButtonModal } from './button-modal';
 export type { ConditionInputProps } from './condition-input';
 export { default as ConditionInput } from './condition-input';
 
+export type { ConfigProviderProps } from './config-provider';
+export { default as ConfigProvider } from './config-provider';
+
 export type { CopyToClipboardProps } from './copy-to-clipboard';
 export { default as CopyToClipboard } from './copy-to-clipboard';
 
