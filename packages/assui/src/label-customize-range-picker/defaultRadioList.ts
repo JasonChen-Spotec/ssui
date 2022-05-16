@@ -27,7 +27,7 @@ export type RadioListType = {
   value: [Moment, Moment];
 };
 
-const getDefaultRadioList = (message: any) => {
+const getDefaultRadioList = (message?: { [key: string]: string }) => {
   const defaultRadioList: RadioListType[] = [
     {
       key: dateTypeEnum.TODAY,

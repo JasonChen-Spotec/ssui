@@ -12,6 +12,7 @@ import getDefaultRadioList from './defaultRadioList';
 import LabelRangePicker from '../label-range-picker';
 import type { LabelRangePickerProps } from '../label-range-picker';
 import LocaleContext from '../config-provider/context';
+import formatMessage from '../messages';
 
 export type RadioListType = {
   key: string | number | dateTypeEnum;
@@ -89,7 +90,9 @@ const LabelCustomizeRangePicker = (props: LabelCustomizeRangePickerProps) => {
       <div className="check-wrapper">
         <span className="customize-select">
           <Checkbox onChange={onDiyTimeChange} />
-          <span className="customize-select-text">自定义时间</span>
+          <span className="customize-select-text">
+            {formatMessage(messages, 'customTime')}
+          </span>
         </span>
       </div>
       {isVisiblePanel ? (

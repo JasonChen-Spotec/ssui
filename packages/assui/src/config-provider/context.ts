@@ -1,5 +1,5 @@
 import { createContext } from 'react';
 
-const LocaleContext = createContext<any>(undefined);
+const LocaleContext = createContext(undefined);
 
 export default LocaleContext;

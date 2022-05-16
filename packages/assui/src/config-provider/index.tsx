@@ -3,20 +3,24 @@ import LocaleContext from './context';
 import zhCN from '../messages/zh_CN';
 import enUS from '../messages/en_US';
 
-interface ProviderChildrenProps {
+export type LocaleType = 'en-US' | 'zh-CN';
+
+interface ConfigProviderProps {
   children?: React.ReactNode;
-  locale: 'en-US' | 'zh-CN';
+  locale: LocaleType;
 }
 
-const ConfigProvider: React.FC<ProviderChildrenProps> = (props) => {
+const ConfigProvider: React.FC<ConfigProviderProps> = (props) => {
   const { children, locale } = props;
-  const messages = {
+  const messagesMap = {
     'en-US': enUS,
     'zh-CN': zhCN,
   };
 
   return (
-    <LocaleContext.Provider value={messages[locale]}>{children}</LocaleContext.Provider>
+    <LocaleContext.Provider value={messagesMap[locale]}>
+      {children}
+    </LocaleContext.Provider>
   );
 };
 
