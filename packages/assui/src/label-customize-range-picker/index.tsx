@@ -91,7 +91,7 @@ const LabelCustomizeRangePicker = (props: LabelCustomizeRangePickerProps) => {
         <span className="customize-select">
           <Checkbox onChange={onDiyTimeChange} />
           <span className="customize-select-text">
-            {formatMessage(messages, 'customTime')}
+            {formatMessage(messages, 'labelCustomizeRangePicker', 'customTime')}
           </span>
         </span>
       </div>

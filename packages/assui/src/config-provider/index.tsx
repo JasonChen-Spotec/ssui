@@ -13,8 +13,8 @@ interface ConfigProviderProps {
 const ConfigProvider: React.FC<ConfigProviderProps> = (props) => {
   const { children, locale } = props;
   const messagesMap = {
-    'en-US': enUS,
-    'zh-CN': zhCN,
+    'en-US': enUS.lang,
+    'zh-CN': zhCN.lang,
   };
 
   return (
