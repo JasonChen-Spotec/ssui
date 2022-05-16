@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import Radio from 'antd/lib/radio';
 import Checkbox from 'antd/lib/checkbox';
 import DatePicker from 'antd/lib/date-picker';
@@ -8,9 +8,10 @@ import type { CheckboxChangeEvent } from 'antd/lib/checkbox';
 import useControllableValue from 'ahooks/lib/useControllableValue';
 import type { Moment } from 'moment';
 import type { dateTypeEnum } from './defaultRadioList';
-import defaultRadioList from './defaultRadioList';
+import getDefaultRadioList from './defaultRadioList';
 import LabelRangePicker from '../label-range-picker';
 import type { LabelRangePickerProps } from '../label-range-picker';
+import LocaleContext from '../config-provider/context';
 
 export type RadioListType = {
   key: string | number | dateTypeEnum;
@@ -18,7 +19,8 @@ export type RadioListType = {
   value: [Moment, Moment];
 };
 
-export interface LabelCustomizeRangePickerProps extends Omit<LabelRangePickerProps, 'label'> {
+export interface LabelCustomizeRangePickerProps
+  extends Omit<LabelRangePickerProps, 'label'> {
   radioList?: RadioListType[];
   customizeTimeList?: dateTypeEnum[];
   rangePickerType?: 'label' | 'origin';
@@ -28,20 +30,29 @@ export interface LabelCustomizeRangePickerProps extends Omit<LabelRangePickerPro
 const { RangePicker } = DatePicker;
 
 const LabelCustomizeRangePicker = (props: LabelCustomizeRangePickerProps) => {
-  const { customizeTimeList, radioList, rangePickerType = 'label', label, ...options } = props;
+  const {
+    customizeTimeList,
+    radioList,
+    rangePickerType = 'label',
+    label,
+    ...options
+  } = props;
   const [date, setDate] = useControllableValue(props);
   const [isVisiblePanel, setIsVisiblePanel] = useState(false);
   const [radioKey, setRadioKey] = useState<string | number | null>();
   const [open, setOpen] = useState(false);
-
-  const dataSource = radioList ?? defaultRadioList;
+  const messages = useContext(LocaleContext);
+  const dataSource = radioList ?? getDefaultRadioList(messages);
 
   useEffect(() => {
     const foundItem = dataSource.find((item) => {
       if (!date) return false;
       const [startTime, endTime] = item.value;
       const [defaultStartTime, defaultEndTime] = date || [];
-      if (startTime.isSame(defaultStartTime, 'day') && endTime.isSame(defaultEndTime, 'day')) {
+      if (
+        startTime.isSame(defaultStartTime, 'day') &&
+        endTime.isSame(defaultEndTime, 'day')
+      ) {
         return true;
       }
       return false;
@@ -69,7 +80,7 @@ const LabelCustomizeRangePicker = (props: LabelCustomizeRangePickerProps) => {
 
   const list =
     radioList ??
-    defaultRadioList.filter((item) =>
+    getDefaultRadioList(messages).filter((item) =>
       customizeTimeList ? customizeTimeList.includes(item.key as dateTypeEnum) : true,
     );
 

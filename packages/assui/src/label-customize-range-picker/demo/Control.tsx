@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import type { RangeValue } from 'rc-picker/lib/interface';
 import { LabelCustomizeRangePicker } from 'assui';
+import ConfigProvider from '../../config-provider';
 import moment from 'moment';
 
 const Demo = () => {
@@ -15,7 +16,9 @@ const Demo = () => {
   };
 
   return (
-    <LabelCustomizeRangePicker label="结算时间" value={date} onChange={onDateChange} />
+    <ConfigProvider locale={'en-US'}>
+      <LabelCustomizeRangePicker label="结算时间" value={date} onChange={onDateChange} />
+    </ConfigProvider>
   );
 };
 
