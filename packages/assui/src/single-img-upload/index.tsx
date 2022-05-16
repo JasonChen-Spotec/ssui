@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions */
-// @ts-nocheck
 import * as React from 'react';
 import type { UploadProps } from 'rc-upload';
 import Upload from 'rc-upload';
@@ -8,6 +7,7 @@ import Image from 'antd/lib/image';
 import classNames from 'classnames';
 import useUpdateEffect from 'ahooks/lib/useUpdateEffect';
 import CloseOutlined from 'a-icons/lib/CloseOutlined';
+import isObject from 'lodash/isObject';
 
 const getLocalImgURL = (file: File) => {
   const URL = window.URL || window.webkitURL;
@@ -41,6 +41,7 @@ const SingleImgUpload = (props: SingleImgUploadProps) => {
     onDeleteUpload,
     onFormatResData,
     onSuccess,
+    beforeUpload,
     onError,
     disabled,
     ...restProps
@@ -61,10 +62,27 @@ const SingleImgUpload = (props: SingleImgUploadProps) => {
     }
   }, [value]);
 
+  const onBeforeUpload: UploadProps['beforeUpload'] = async (...rest) => {
+    setFileUrl('');
+
+    if (beforeUpload) {
+      const resultBefore = await beforeUpload(...rest);
+      if (isObject(resultBefore)) {
+        setFileUrl(getLocalImgURL(resultBefore as File));
+      }
+
+      return resultBefore;
+    }
+
+    return true;
+  };
+
   const handleStart = (file: RcFile) => {
     fileRef.current = file;
     setUploadPercent(0);
-    setFileUrl(getLocalImgURL(file));
+    if (!fileUrl) {
+      setFileUrl(getLocalImgURL(file));
+    }
     setUploadStatus('uploading');
     onStart && onStart(file);
   };
@@ -79,7 +97,7 @@ const SingleImgUpload = (props: SingleImgUploadProps) => {
     onError && onError(error, ret, file);
   };
 
-  const handleSuccess = (res: object, file: RcFile, xhr: object) => {
+  const handleSuccess = (res: any, file: RcFile, xhr: object) => {
     const result = onFormatResData ? onFormatResData(res) : res;
     onSuccess && onSuccess(result, file, xhr);
     setUploadStatus('done');
@@ -141,6 +159,7 @@ const SingleImgUpload = (props: SingleImgUploadProps) => {
         onError={handleError}
         onSuccess={handleSuccess}
         disabled={disabled}
+        beforeUpload={onBeforeUpload}
         {...restProps}
       >
         {uploadStatus === 'init' && (
