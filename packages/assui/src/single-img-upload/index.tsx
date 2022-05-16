@@ -125,7 +125,7 @@ const SingleImgUpload = (props: SingleImgUploadProps) => {
     <div className={cls}>
       {uploadStatus === 'uploading' && (
         <div className="as-img-upload-content">
-          <img className="preview-img" src={fileUrl} alt="" />
+          <Image wrapperClassName="as-img-upload-preview" src={fileUrl} preview />
           <div className="dark" />
           <Progress
             className="as-img-upload-upload-progress"
