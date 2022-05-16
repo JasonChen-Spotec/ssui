@@ -10,7 +10,7 @@ const Demo = () => {
   };
 
   return (
-    <ImgCrop rotate aspect={670 / 280} zipImg={{ width: 670, height: 280 }}>
+    <ImgCrop rotate aspect={400 / 200} zipImg={{ width: 400, height: 200 }}>
       <SingleImgUpload
         action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
         onSuccess={onSuccess}

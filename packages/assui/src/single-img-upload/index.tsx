@@ -93,8 +93,8 @@ const SingleImgUpload = (props: SingleImgUploadProps) => {
   };
 
   const handleError = (error: Error, ret: object, file: RcFile) => {
-    setUploadStatus('init');
-    onError && onError(error, ret, file);
+    // setUploadStatus('init');
+    // onError && onError(error, ret, file);
   };
 
   const handleSuccess = (res: any, file: RcFile, xhr: object) => {
