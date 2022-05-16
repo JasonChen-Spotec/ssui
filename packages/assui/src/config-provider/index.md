@@ -4,8 +4,9 @@ nav:
   title: assui
   path: /assui
 group:
-  title: 数据录入
-  path: /components/input
+  title: 其他
+  path: /components/other
+  
 ---
 
 # ConfigProvider
