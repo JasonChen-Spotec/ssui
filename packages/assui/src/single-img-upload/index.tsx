@@ -27,6 +27,7 @@ export interface SingleImgUploadProps extends UploadProps {
   value?: string;
   wrapperClassName?: string;
   onDeleteUpload?: () => void;
+  onCancel?: () => void;
   /** 格式化接口返回数据 */
   onFormatResData?: (res: any) => string;
 }
@@ -41,6 +42,7 @@ const SingleImgUpload = (props: SingleImgUploadProps) => {
     onDeleteUpload,
     onFormatResData,
     onSuccess,
+    onCancel,
     beforeUpload,
     onError,
     disabled,
@@ -117,6 +119,7 @@ const SingleImgUpload = (props: SingleImgUploadProps) => {
       uploadInstanceRef.current?.abort(fileRef.current);
     }
     setUploadStatus('init');
+    onCancel?.();
   };
 
   const cls = classNames('as-img-upload', wrapperClassName);
