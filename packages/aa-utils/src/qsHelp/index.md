@@ -1,4 +1,5 @@
 ---
+mobile: false
 title: qsHelp
 nav:
   title: utils

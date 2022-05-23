@@ -1,4 +1,5 @@
 ---
+mobile: false
 title: ReactBeautifulDnd
 nav:
   title: assui

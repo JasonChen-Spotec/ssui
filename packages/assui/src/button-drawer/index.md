@@ -1,4 +1,5 @@
 ---
+mobile: false
 title: ButtonDrawer
 nav:
   title: assui

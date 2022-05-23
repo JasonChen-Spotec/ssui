@@ -1,4 +1,5 @@
 ---
+mobile: false
 title: RichTextEditor
 nav:
   title: assui

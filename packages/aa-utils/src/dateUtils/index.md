@@ -1,4 +1,5 @@
 ---
+mobile: false
 title: dateUtils
 nav:
   title: utils

@@ -1,4 +1,5 @@
 ---
+mobile: false
 title: ConfigProvider
 nav:
   title: assui
@@ -6,7 +7,7 @@ nav:
 group:
   title: 其他
   path: /components/other
-  
+
 ---
 
 # ConfigProvider

@@ -1,4 +1,5 @@
 ---
+mobile: false
 title: KeepTab
 nav:
   title: assui

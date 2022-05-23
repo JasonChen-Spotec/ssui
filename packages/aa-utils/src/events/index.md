@@ -1,4 +1,5 @@
 ---
+mobile: false
 title: events
 nav:
   title: utils

@@ -1,4 +1,5 @@
 ---
+mobile: false
 title: ButtonModal
 nav:
   title: assui

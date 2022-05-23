@@ -1,4 +1,5 @@
 ---
+mobile: false
 title: RcEchart
 nav:
   title: assui

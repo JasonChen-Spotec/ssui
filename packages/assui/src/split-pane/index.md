@@ -1,4 +1,5 @@
 ---
+mobile: false
 title: SplitPane
 nav:
   title: assui

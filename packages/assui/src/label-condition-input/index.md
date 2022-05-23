@@ -1,4 +1,5 @@
 ---
+mobile: false
 title: LabelConditionInput
 nav:
   title: assui

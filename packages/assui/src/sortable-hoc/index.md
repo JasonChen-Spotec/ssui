@@ -1,4 +1,5 @@
 ---
+mobile: false
 title: SortableHoc
 nav:
   title: assui

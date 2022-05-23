@@ -71,7 +71,13 @@ export default {
     { rel: 'stylesheet', href: '/sui/highlight-textarea.css' },
   ],
   resolve: {
-    includes: ['docs', 'packages/assui/src', 'packages/a-icons/demo', 'packages/aa-utils/src'],
+    includes: [
+      'docs',
+      'packages/assui/src',
+      'packages/a-icons/demo',
+      'packages/aa-utils/src',
+      'packages/amssui/src',
+    ],
   },
   navs: {
     'zh-CN': [null, { title: 'GitHub', path: 'https://github.com:SPOTEC-LTD/assui.git' }],

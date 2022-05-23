@@ -1,4 +1,5 @@
 ---
+mobile: false
 title: SingleImgUpload
 nav:
   title: assui

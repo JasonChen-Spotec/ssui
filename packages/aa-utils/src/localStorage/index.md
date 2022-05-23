@@ -1,4 +1,5 @@
 ---
+mobile: false
 title: localStorage
 nav:
   title: utils

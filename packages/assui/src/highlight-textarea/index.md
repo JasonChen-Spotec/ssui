@@ -1,4 +1,5 @@
 ---
+mobile: false
 title: HighlightTextarea
 nav:
   title: assui

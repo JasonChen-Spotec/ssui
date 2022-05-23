@@ -2705,10 +2705,10 @@
     npmlog "^4.1.2"
     write-file-atomic "^3.0.3"
 
-"@mapbox/hast-util-to-jsx@^1.0.0":
+"@mapbox/hast-util-to-jsx@1.0.0":
   version "1.0.0"
-  resolved "https://registry.npm.taobao.org/@mapbox/hast-util-to-jsx/download/@mapbox/hast-util-to-jsx-1.0.0.tgz"
-  integrity sha1-kM5GsNLd5C1epNSh4LJrnOIhUBM=
+  resolved "https://registry.npmmirror.com/@mapbox/hast-util-to-jsx/-/hast-util-to-jsx-1.0.0.tgz#90ce46b0d2dde42d5ea4d4a1e0b26b9ce2215013"
+  integrity sha512-HJRp3qkr0uGIBFASzA8rVATLo6y/UoOMoD8eXsG8HVofk5Dokc9PV+dh266zYLZniYgtpJbc2+AKf1fNpsVqAA==
   dependencies:
     kebab-case "^1.0.0"
     postcss "^7.0.31"
@@ -3663,17 +3663,17 @@
     react-router-dom "5.2.0"
     regenerator-runtime "0.13.5"
 
-"@umijs/preset-dumi@1.1.31":
-  version "1.1.31"
-  resolved "https://registry.npmmirror.com/@umijs/preset-dumi/download/@umijs/preset-dumi-1.1.31.tgz?cache=0&sync_timestamp=1634964607738&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2F%40umijs%2Fpreset-dumi%2Fdownload%2F%40umijs%2Fpreset-dumi-1.1.31.tgz"
-  integrity sha1-wf9+hUMD8Cl1MB+vn8n2zr7JTjQ=
+"@umijs/preset-dumi@1.1.42":
+  version "1.1.42"
+  resolved "https://registry.npmmirror.com/@umijs/preset-dumi/-/preset-dumi-1.1.42.tgz#e443a14a81118436c37df7093d58886bab462163"
+  integrity sha512-1YODNEN0HTD2fE6kkRT/sJtmLF5Frp6KClE0oOtD+Izmov95ZwjhPXPj4bVdzsMxCNhJmh83r06uaPKeIgTAAg==
   dependencies:
     "@babel/core" "^7.7.2"
     "@babel/generator" "^7.7.2"
     "@babel/plugin-transform-modules-commonjs" "^7.7.2"
     "@babel/traverse" "^7.7.2"
     "@babel/types" "^7.7.2"
-    "@mapbox/hast-util-to-jsx" "^1.0.0"
+    "@mapbox/hast-util-to-jsx" "1.0.0"
     "@umijs/babel-preset-umi" "3.x"
     "@umijs/plugin-analytics" "^0.2.2"
     "@umijs/runtime" "^3.2.14"
@@ -3682,7 +3682,7 @@
     copy-text-to-clipboard "^2.2.0"
     deepmerge "^4.2.2"
     dumi-assets-types "1.0.0"
-    dumi-theme-default "1.1.14"
+    dumi-theme-default "1.1.21"
     enhanced-resolve "^4.1.1"
     github-slugger "^1.3.0"
     hast-util-has-property "^1.0.4"
@@ -6553,21 +6553,35 @@ dumi-assets-types@1.0.0:
   resolved "https://registry.npm.taobao.org/dumi-assets-types/download/dumi-assets-types-1.0.0.tgz"
   integrity sha1-1TaMsRBFsgO/HvEIDlU7Ioei7IE=
 
-dumi-theme-default@1.1.14:
-  version "1.1.14"
-  resolved "https://registry.npmmirror.com/dumi-theme-default/download/dumi-theme-default-1.1.14.tgz?cache=0&sync_timestamp=1634964607587&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2Fdumi-theme-default%2Fdownload%2Fdumi-theme-default-1.1.14.tgz"
-  integrity sha1-W9EQzUCVC8aiRJkOjN0690Qn1PY=
+dumi-theme-default@1.1.21:
+  version "1.1.21"
+  resolved "https://registry.npmmirror.com/dumi-theme-default/-/dumi-theme-default-1.1.21.tgz#2dce486ea4f7b76b9ad1d8b3ccdbdefafd3f67f7"
+  integrity sha512-lh3lV9GnfJhh48Sb9YMlnSBd3da8O/Qs9QfbnoQI+9paDp5P5hLO9O+UJB8skojSSzdxsXiW6VALoHgBC8NGow==
   dependencies:
+    lodash.throttle "^4.1.1"
     prism-react-renderer "^1.1.1"
     prismjs "^1.21.0"
+    rc-motion "^2.4.1"
     rc-tabs "^11.7.1"
+    rc-tree "^5.2.0"
 
-dumi@^1.1.31:
-  version "1.1.31"
-  resolved "https://registry.npmmirror.com/dumi/download/dumi-1.1.31.tgz"
-  integrity sha1-aTJGNmdXJhq32zkRwLlQBq0D6jg=
+dumi-theme-mobile@^1.1.22:
+  version "1.1.22"
+  resolved "https://registry.npmmirror.com/dumi-theme-mobile/-/dumi-theme-mobile-1.1.22.tgz#e1412ea30217041d4ff59f6b66958278015516c9"
+  integrity sha512-Z9886E5Xt4bdJXEOUZPtAYFB0stqkPOzSjwiESfeAkfKR/XvALbb3HgE9grjJstpIkM5O0Q7CCmuAajg2njdCA==
   dependencies:
-    "@umijs/preset-dumi" "1.1.31"
+    dumi-theme-default "1.1.21"
+    f2-touchemulator "^0.0.1"
+    lodash.debounce "^4.0.8"
+    qrcode.react "^1.0.0"
+    umi-hd "^5.0.1"
+
+dumi@^1.1.42:
+  version "1.1.42"
+  resolved "https://registry.npmmirror.com/dumi/-/dumi-1.1.42.tgz#e5b205ac2fc9657f6d7bb2330349c02f7785a13a"
+  integrity sha512-zOcuEv696WaoTkZFUvUAD9Ig3v3lXS1GvD8dEgUNXmd0gi6sEgEwTEjk+r3MXa3GeNgi1XBHy6S/zLfTs1YSuw==
+  dependencies:
+    "@umijs/preset-dumi" "1.1.42"
     umi "^3.0.0"
 
 duplexer2@0.0.2:
@@ -7452,6 +7466,11 @@ extsprintf@^1.2.0:
   version "1.4.0"
   resolved "https://registry.npm.taobao.org/extsprintf/download/extsprintf-1.4.0.tgz"
   integrity sha1-4mifjzVvrWLMplo6kcXfX5VRaS8=
+
+f2-touchemulator@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.npmmirror.com/f2-touchemulator/-/f2-touchemulator-0.0.1.tgz#1ac82b9bda26f1a8dd0585a5366471d0a284c0ef"
+  integrity sha512-dL2EqGgRFjePteQHMqvZ6UkNO357KcLbsuPqhs/Y9aCP8UBBGrHyTCrtnF38eoWY5ukfMqCNM0qpuggVybCPNQ==
 
 fancy-log@^1.3.2:
   version "1.3.3"
@@ -13287,6 +13306,15 @@ prop-types@^15.5.10, prop-types@^15.5.8, prop-types@^15.6.2, prop-types@^15.7.2:
     object-assign "^4.1.1"
     react-is "^16.8.1"
 
+prop-types@^15.6.0:
+  version "15.8.1"
+  resolved "https://registry.npmmirror.com/prop-types/-/prop-types-15.8.1.tgz#67d87bf1a694f48435cf332c24af10214a3140b5"
+  integrity sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg==
+  dependencies:
+    loose-envify "^1.4.0"
+    object-assign "^4.1.1"
+    react-is "^16.13.1"
+
 property-information@^5.0.0, property-information@^5.3.0, property-information@^5.5.0:
   version "5.6.0"
   resolved "https://registry.nlark.com/property-information/download/property-information-5.6.0.tgz"
@@ -13370,6 +13398,20 @@ q@^1.1.2, q@^1.5.1:
   version "1.5.1"
   resolved "https://registry.nlark.com/q/download/q-1.5.1.tgz"
   integrity sha1-fjL3W0E4EpHQRhHxvxQQmsAGUdc=
+
+qr.js@0.0.0:
+  version "0.0.0"
+  resolved "https://registry.npmmirror.com/qr.js/-/qr.js-0.0.0.tgz#cace86386f59a0db8050fa90d9b6b0e88a1e364f"
+  integrity sha512-c4iYnWb+k2E+vYpRimHqSu575b1/wKl4XFeJGpFmrJQz5I88v9aY2czh7s0w36srfCM1sXgC/xpoJz5dJfq+OQ==
+
+qrcode.react@^1.0.0:
+  version "1.0.1"
+  resolved "https://registry.npmmirror.com/qrcode.react/-/qrcode.react-1.0.1.tgz#2834bb50e5e275ffe5af6906eff15391fe9e38a5"
+  integrity sha512-8d3Tackk8IRLXTo67Y+c1rpaiXjoz/Dd2HpcMdW//62/x8J1Nbho14Kh8x974t9prsLHN6XqVgcnRiBGFptQmg==
+  dependencies:
+    loose-envify "^1.4.0"
+    prop-types "^15.6.0"
+    qr.js "0.0.0"
 
 qs@^6.9.1, qs@^6.9.4:
   version "6.10.1"
@@ -13636,6 +13678,15 @@ rc-motion@^2.0.1, rc-motion@^2.2.0, rc-motion@^2.3.0, rc-motion@^2.3.4:
     classnames "^2.2.1"
     rc-util "^5.2.1"
 
+rc-motion@^2.4.1:
+  version "2.6.0"
+  resolved "https://registry.npmmirror.com/rc-motion/-/rc-motion-2.6.0.tgz#c60c3e7f15257f55a8cd7794a539f0e2cc751399"
+  integrity sha512-1MDWA9+i174CZ0SIDenSYm2Wb9YbRkrexjZWR0CUFu7D6f23E8Y0KsTgk9NGOLJsGak5ELZK/Y5lOlf5wQdzbw==
+  dependencies:
+    "@babel/runtime" "^7.11.1"
+    classnames "^2.2.1"
+    rc-util "^5.21.0"
+
 rc-motion@^2.4.4, rc-motion@^2.5.1:
   version "2.5.1"
   resolved "https://registry.npmmirror.com/rc-motion/-/rc-motion-2.5.1.tgz#3eceb7d891079c0f67a72639d30e168b91839e03"
@@ -13851,6 +13902,17 @@ rc-tree-select@~5.3.0:
     rc-tree "~5.5.0"
     rc-util "^5.16.1"
 
+rc-tree@^5.2.0:
+  version "5.6.3"
+  resolved "https://registry.npmmirror.com/rc-tree/-/rc-tree-5.6.3.tgz#47e11e196036e2ba37d8c95dbc5e7537477e0e48"
+  integrity sha512-9kknf/oZtsteg71nX+wWdN/GtC/MLccFOUJ4x4zZS0eEv9YYf6vB/3kUSe0QlqOaWUJD8E4hAeZUuzHPpK9JRg==
+  dependencies:
+    "@babel/runtime" "^7.10.1"
+    classnames "2.x"
+    rc-motion "^2.0.1"
+    rc-util "^5.16.1"
+    rc-virtual-list "^3.4.8"
+
 rc-tree@~5.5.0:
   version "5.5.0"
   resolved "https://registry.npmmirror.com/rc-tree/-/rc-tree-5.5.0.tgz#ba7c8aea2ad29f40a9c7168e490300f7a50c0f22"
@@ -13949,6 +14011,15 @@ rc-virtual-list@^3.4.2:
     rc-resize-observer "^1.0.0"
     rc-util "^5.15.0"
 
+rc-virtual-list@^3.4.8:
+  version "3.4.8"
+  resolved "https://registry.npmmirror.com/rc-virtual-list/-/rc-virtual-list-3.4.8.tgz#c24c10c6940546b7e2a5e9809402c6716adfd26c"
+  integrity sha512-qSN+Rv4i/E7RCTvTMr1uZo7f3crJJg/5DekoCagydo9zsXrxj07zsFSxqizqW+ldGA16lwa8So/bIbV9Ofjddg==
+  dependencies:
+    classnames "^2.2.6"
+    rc-resize-observer "^1.0.0"
+    rc-util "^5.15.0"
+
 react-attr-converter@^0.3.1:
   version "0.3.1"
   resolved "https://registry.npm.taobao.org/react-attr-converter/download/react-attr-converter-0.3.1.tgz"
@@ -14007,7 +14078,7 @@ react-drag-listview@^0.1.6:
     babel-runtime "^6.26.0"
     prop-types "^15.5.8"
 
-react-is@^16.12.0, react-is@^16.6.0, react-is@^16.7.0, react-is@^16.8.1, react-is@^16.8.4, react-is@^16.8.6:
+react-is@^16.12.0, react-is@^16.13.1, react-is@^16.6.0, react-is@^16.7.0, react-is@^16.8.1, react-is@^16.8.4, react-is@^16.8.6:
   version "16.13.1"
   resolved "https://registry.npmmirror.com/react-is/download/react-is-16.13.1.tgz?cache=0&sync_timestamp=1635214640716&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2Freact-is%2Fdownload%2Freact-is-16.13.1.tgz"
   integrity sha1-eJcppNw23imZ3BVt1sHZwYzqVqQ=
@@ -16542,6 +16613,11 @@ umask@^1.1.0:
   version "1.1.0"
   resolved "https://registry.npm.taobao.org/umask/download/umask-1.1.0.tgz"
   integrity sha1-8pzr8B31F5ErtY/5xOUP3o4zMg0=
+
+umi-hd@^5.0.1:
+  version "5.0.1"
+  resolved "https://registry.npmmirror.com/umi-hd/-/umi-hd-5.0.1.tgz#59061d3f4aad70491b7c853525aced91afbe1e21"
+  integrity sha512-NFTTzrJArwdqtwZRNo5rF7F+NR95unQUAMkHAgcOGuuaJBnUey5w7lgpDR6K7/mV1bDwY2O3CLXSyLR1wxZyCw==
 
 umi-request@^1.2.18:
   version "1.4.0"

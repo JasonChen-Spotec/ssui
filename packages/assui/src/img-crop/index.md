@@ -1,4 +1,5 @@
 ---
+mobile: false
 title: ImgCrop
 nav:
   title: assui

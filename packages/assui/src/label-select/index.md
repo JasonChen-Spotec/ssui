@@ -1,4 +1,5 @@
 ---
+mobile: false
 title: LabelSelect
 nav:
   title: assui

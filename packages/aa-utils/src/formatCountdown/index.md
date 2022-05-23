@@ -1,4 +1,5 @@
 ---
+mobile: false
 title: formatCountdown
 nav:
   title: utils

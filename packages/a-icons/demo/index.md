@@ -1,4 +1,5 @@
 ---
+mobile: false
 title: icons
 nav:
   title: icons

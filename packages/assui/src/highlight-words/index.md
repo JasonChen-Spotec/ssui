@@ -1,4 +1,5 @@
 ---
+mobile: false
 title: HighlightWords
 nav:
   title: assui

@@ -1,4 +1,5 @@
 ---
+mobile: false
 title: LabelAutoComplete
 nav:
   title: assui

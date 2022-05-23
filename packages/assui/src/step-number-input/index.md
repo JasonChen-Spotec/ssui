@@ -1,4 +1,5 @@
 ---
+mobile: false
 title: StepNumberInput
 nav:
   title: assui

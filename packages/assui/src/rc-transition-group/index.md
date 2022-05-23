@@ -1,4 +1,5 @@
 ---
+mobile: false
 title: RcTransitionGroup
 nav:
   title: assui

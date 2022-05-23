@@ -1,4 +1,5 @@
 ---
+mobile: false
 title: numberUtils
 nav:
   title: utils

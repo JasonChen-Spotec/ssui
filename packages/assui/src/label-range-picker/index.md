@@ -1,4 +1,5 @@
 ---
+mobile: false
 title: LabelRangePicker
 nav:
   title: assui

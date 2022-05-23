@@ -1,4 +1,5 @@
 ---
+mobile: false
 title: cookieUtils
 nav:
   title: utils

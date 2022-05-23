@@ -1,4 +1,5 @@
 ---
+mobile: false
 title: NumberInput
 nav:
   title: assui

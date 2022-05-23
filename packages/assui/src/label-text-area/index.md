@@ -1,4 +1,5 @@
 ---
+mobile: false
 title: LabelTextArea
 nav:
   title: assui

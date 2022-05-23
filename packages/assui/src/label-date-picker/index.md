@@ -1,4 +1,5 @@
 ---
+mobile: false
 title: LabelDatePicker
 nav:
   title: assui

@@ -1,4 +1,5 @@
 ---
+mobile: false
 title: TextArea
 nav:
   title: assui

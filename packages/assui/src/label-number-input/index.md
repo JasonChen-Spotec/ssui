@@ -1,4 +1,5 @@
 ---
+mobile: false
 title: LabelNumberInput
 nav:
   title: assui

@@ -1,4 +1,5 @@
 ---
+mobile: false
 title: CopyToClipboard
 nav:
   title: assui

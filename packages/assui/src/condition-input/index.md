@@ -1,4 +1,5 @@
 ---
+mobile: false
 title: ConditionInput
 nav:
   title: assui

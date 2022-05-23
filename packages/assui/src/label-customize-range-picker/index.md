@@ -1,4 +1,5 @@
 ---
+mobile: false
 title: LabelCustomizeRangePicker
 nav:
   title: assui

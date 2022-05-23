@@ -1,4 +1,5 @@
 ---
+mobile: false
 title: isPromise
 nav:
   title: utils

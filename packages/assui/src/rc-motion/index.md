@@ -1,4 +1,5 @@
 ---
+mobile: false
 title: RcMotion
 nav:
   title: assui
