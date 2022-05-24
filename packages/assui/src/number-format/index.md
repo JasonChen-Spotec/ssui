@@ -1,12 +1,12 @@
 ---
-title: numberUtils
+mobile: false
+title: NumberFormat
 nav:
-  title: utils
-  path: /utils
+  title: assui
+  path: /assui
 group:
-  title: utils
-  path: /utils
-  order: 1
+  title: 数据录入
+  path: /components/input
 ---
 
 # 格式化数字
@@ -34,8 +34,6 @@ group:
 ### 1.8 getInputRef(NumberFormat) getInputRef 
 <code hideActions='["CSB", "EXTERNAL"]' src="./demo/getInputRef.jsx" />
 
-### 1.9 customNumerals(NumberFormat) customNumerals 
-<code hideActions='["CSB", "EXTERNAL"]' src="./demo/customNumerals.jsx" />
 
 
 ## API
