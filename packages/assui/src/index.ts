@@ -10,6 +10,9 @@ export { default as ConditionInput } from './condition-input';
 export type { ConfigProviderProps } from './config-provider';
 export { default as ConfigProvider } from './config-provider';
 
+export { default as NumberFormat } from './number-format';
+export type { NumberFormatProps } from './number-format';
+
 export type { CopyToClipboardProps } from './copy-to-clipboard';
 export { default as CopyToClipboard } from './copy-to-clipboard';
 
