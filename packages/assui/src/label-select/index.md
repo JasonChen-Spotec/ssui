@@ -19,4 +19,9 @@ group:
 
 <code hideActions='["CSB", "EXTERNAL"]' src="./demo/index.tsx" />
 
+### 1.1. 多选
+特定显示需要调用tagRender
+
+<code hideActions='["CSB", "EXTERNAL"]' src="./demo/multiple.tsx" />
+
 <API></API>

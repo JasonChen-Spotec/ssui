@@ -3,12 +3,59 @@
 @import '../../style/themes/default.less';
 
 @color_9aa5b5: #9aa5b5;
+@color_e5e5e5: #e5e5e5;
+@color_7d7d7d: #7d7d7d;
+@color_333: #333;
+@color_ccc: #ccc;
+@white: #fff;
 @font-size-base: 14px;
+@font-size-sm: @font-size-base - 2px;
 
 .label-select {
   position: relative;
   width: 100%;
   height: 100%;
+
+  .@{ant-prefix}-select {
+    width: 100%;
+  }
+
+  .@{ant-prefix}-select-multiple {
+    .@{ant-prefix}-select-selector {
+      height: 45px;
+      padding: 6px 11px 7px;
+      border: 1px solid @color_e5e5e5;
+      border-radius: 8px;
+      outline: none;
+    }
+
+    .@{ant-prefix}-select-selection-overflow {
+      display: flex;
+      width: 100%;
+      transform: translateY(8px);
+    }
+
+    .@{ant-prefix}-select-selection-overflow-item {
+      max-width: 25%;
+    }
+
+    .@{ant-prefix}-select-selection-overflow-item .@{ant-prefix}-select-selection-search {
+      padding: 0;
+    }
+  }
+
+  .@{ant-prefix}-select-multiple.@{ant-prefix}-select-lg .@{ant-prefix}-select-selection-item {
+    width: auto;
+    height: auto;
+    margin: 0 4px 4px 0;
+    padding: 1px 4px;
+    color: @color_333;
+    font-size: @font-size-sm;
+    line-height: 17px;
+    background-color: @white;
+    border: 1px solid @color_ccc;
+    border-radius: 4px;
+  }
 
   .@{ant-prefix}-select-allow-clear {
     .@{ant-prefix}-select-clear {
@@ -19,7 +66,7 @@
   .@{ant-prefix}-select-single.@{ant-prefix}-select-lg:not(.@{ant-prefix}-select-customize-input)
     .@{ant-prefix}-select-selector {
     height: 45px;
-    border: 1px solid #e5e5e5;
+    border: 1px solid @color_e5e5e5;
     border-radius: 8px;
     outline: none;
   }
@@ -46,7 +93,7 @@
     top: 44%;
     width: 22px;
     height: 22px;
-    color: #7d7d7d;
+    color: @color_7d7d7d;
 
     .spotecicon {
       width: 22px;
