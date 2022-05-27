@@ -1,6 +1,6 @@
 ---
 mobile: false
-title: NumberFormat
+title: NumberFormatInput
 nav:
   title: assui
   path: /assui
@@ -9,29 +9,31 @@ group:
   path: /components/input
 ---
 
-# 格式化数字
-### 1.1. 基本使用(NumberFormat)
+# 格式化数字的input
+原组件为 [react-number-format](https://github.com/s-yadav/react-number-format)
+
+### 1.1. 基本使用(NumberFormatInput)
 <code hideActions='["CSB", "EXTERNAL"]' src="./demo/index.jsx" />
 
-### 1.2. format(NumberFormat) format格式化
+### 1.2. format(NumberFormatInput) format格式化
 <code hideActions='["CSB", "EXTERNAL"]' src="./demo/format.jsx" />
 
-### 1.3. mask(NumberFormat) mask 占位
+### 1.3. mask(NumberFormatInput) mask 占位
 <code hideActions='["CSB", "EXTERNAL"]' src="./demo/mask.jsx" />
 
-### 1.4. maskArray(NumberFormat) maskArray 占位
+### 1.4. maskArray(NumberFormatInput) maskArray 占位
 <code hideActions='["CSB", "EXTERNAL"]' src="./demo/maskArray.jsx" />
 
-### 1.5. thousandSeparator(NumberFormat) thousandSeparator千位符  prefix 前缀
+### 1.5. thousandSeparator(NumberFormatInput) thousandSeparator千位符  prefix 前缀
 <code hideActions='["CSB", "EXTERNAL"]' src="./demo/thousandSeparator.jsx" />
 
-### 1.6 chineseWan(NumberFormat) thousandsGroupStyle千位分组方式   wan 中国式（万）
+### 1.6 chineseWan(NumberFormatInput) thousandsGroupStyle千位分组方式   wan 中国式（万）
 <code hideActions='["CSB", "EXTERNAL"]' src="./demo/chineseWan.jsx" />
 
-### 1.7 isAllowed(NumberFormat) isAllowed   检查输入值是否有效的检查函数
+### 1.7 isAllowed(NumberFormatInput) isAllowed   检查输入值是否有效的检查函数
 <code hideActions='["CSB", "EXTERNAL"]' src="./demo/isAllowed.jsx" />
 
-### 1.8 getInputRef(NumberFormat) getInputRef 
+### 1.8 getInputRef(NumberFormatInput) getInputRef
 <code hideActions='["CSB", "EXTERNAL"]' src="./demo/getInputRef.jsx" />
 
 
