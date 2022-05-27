@@ -51,6 +51,8 @@ const LabelSelect = (props: LabelSelectProps) => {
       )}
     >
       <Select
+        maxTagCount={3}
+        showSearch={false}
         {...omit(props, ['open', 'onChange', 'className', 'label'])}
         open={open}
         ref={selectRef}
