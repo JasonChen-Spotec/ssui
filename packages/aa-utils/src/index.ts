@@ -8,3 +8,4 @@ export { default as qsHelp } from './qsHelp';
 export { default as scrollIntoView } from './scrollIntoView';
 export { default as addPrefixToEumValue } from './addPrefixToEumValue';
 export { default as cookieUtils } from './cookieUtils';
+export { default as resizableColumnsTable } from './resizableColumnsTable';
