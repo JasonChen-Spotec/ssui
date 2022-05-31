@@ -1,6 +1,6 @@
 {
   "name": "amssui",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "react ui library",
   "author": "jason <usochen@gmail.com>",
   "main": "./lib/index.js",
@@ -32,7 +32,7 @@
   "dependencies": {
     "@ahooksjs/use-url-state": "^2.5.8",
     "a-icons": "^1.0.71",
-    "aa-utils": "^2.0.25",
+    "aa-utils": "^2.0.26",
     "ahooks": "^3.0.8"
   },
   "peerDependencies": {
