@@ -1,7 +1,7 @@
 import React from 'react';
 import Table from './Table';
 import { resizableColumnsTable } from 'aa-utils';
-import 'aa-utils/lib/resizableColumnsTable/styles/index.css';
+import 'aa-utils/lib/resizableColumnsTable/styles/index.less';
 
 export default class ResizableTable extends React.PureComponent {
   componentDidMount() {
