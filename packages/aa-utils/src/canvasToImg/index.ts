@@ -13,18 +13,6 @@ export interface saveAsImageOptionsType {
 /* eslint-disable no-bitwise */
 function CanvasToImg() {
   // check if support sth.
-  const $support = (() => {
-    const canvas = document.createElement('canvas');
-    const ctx = canvas.getContext('2d') as CanvasRenderingContext2D;
-
-    return {
-      canvas: !!ctx,
-      imageData: !!ctx.getImageData,
-      dataURL: !!canvas.toDataURL,
-      btoa: !!window.btoa,
-    };
-  })();
-
   const downloadMime = 'image/octet-stream';
 
   function scaleCanvas(canvas: HTMLCanvasElement, width: number, height: number) {
@@ -263,18 +251,16 @@ function CanvasToImg() {
   ) => {
     // save file type
     const fileType = type;
-    if ($support.canvas && $support.dataURL) {
-      const finallyType = fixType(type);
-      if (/bmp/.test(finallyType)) {
-        const data = getImageData(scaleCanvas(canvas, width, height));
-        const strData = genBitmapImage(data);
-        // use new parameter: fileType
-        saveFile(makeURI(strData, downloadMime), fileType, fileName);
-      } else {
-        const strData = getDataURL(canvas, finallyType, width, height);
-        // use new parameter: fileType
-        saveFile(strData.replace(finallyType, downloadMime), fileType, fileName);
-      }
+    const finallyType = fixType(type);
+    if (/bmp/.test(finallyType)) {
+      const data = getImageData(scaleCanvas(canvas, width, height));
+      const strData = genBitmapImage(data);
+      // use new parameter: fileType
+      saveFile(makeURI(strData, downloadMime), fileType, fileName);
+    } else {
+      const strData = getDataURL(canvas, finallyType, width, height);
+      // use new parameter: fileType
+      saveFile(strData.replace(finallyType, downloadMime), fileType, fileName);
     }
   };
 
@@ -282,18 +268,15 @@ function CanvasToImg() {
     canvas: HTMLCanvasElement,
     { width = 100, height = 100, type = 'jpeg' }: saveAsImageOptionsType,
   ) => {
-    if ($support.canvas && $support.dataURL) {
-      const finallyType = fixType(type);
+    const finallyType = fixType(type);
 
-      if (/bmp/.test(finallyType)) {
-        const data = getImageData(scaleCanvas(canvas, width, height));
-        const strData = genBitmapImage(data);
-        return genImage(makeURI(strData, 'image/bmp'));
-      }
-      const strData = getDataURL(canvas, finallyType, width, height);
-      return genImage(strData);
+    if (/bmp/.test(finallyType)) {
+      const data = getImageData(scaleCanvas(canvas, width, height));
+      const strData = genBitmapImage(data);
+      return genImage(makeURI(strData, 'image/bmp'));
     }
-    return null;
+    const strData = getDataURL(canvas, finallyType, width, height);
+    return genImage(strData);
   };
 
   return {
