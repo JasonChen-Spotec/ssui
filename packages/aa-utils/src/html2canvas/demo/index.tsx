@@ -1,7 +1,6 @@
 import { Card } from 'antd';
-import html2canvas from 'html2canvas';
 import React from 'react';
-import { canvasToImg } from 'aa-utils';
+import { canvasToImg, html2canvas } from 'aa-utils';
 import './index.less';
 
 const InviteFriends = () => {

@@ -1,4 +1,5 @@
 export { default as canvasToImg } from './canvasToImg';
+export { default as html2canvas } from './html2canvas';
 export { default as dateUtils } from './dateUtils';
 export { default as events } from './events';
 export { default as formatCountdown } from './formatCountdown';
