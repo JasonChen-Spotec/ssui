@@ -1,4 +1,5 @@
 export { default as ImpassabilityFilled } from './ImpassabilityFilled';
+export { default as InviteFriendFilled } from './InviteFriendFilled';
 export { default as AddFilled } from './AddFilled';
 export { default as AlertTriangleFilled } from './AlertTriangleFilled';
 export { default as AlertTriangleOutlined } from './AlertTriangleOutlined';
@@ -86,7 +87,6 @@ export { default as ImacFilled } from './ImacFilled';
 export { default as ImacOutlined } from './ImacOutlined';
 export { default as ImageFilled } from './ImageFilled';
 export { default as ImageOutlined } from './ImageOutlined';
-export { default as InviteFriendFilled } from './InviteFriendFilled';
 export { default as KeyFilled } from './KeyFilled';
 export { default as LayerFilled } from './LayerFilled';
 export { default as LayerOutlined } from './LayerOutlined';
