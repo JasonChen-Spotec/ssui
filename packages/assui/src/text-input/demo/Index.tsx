@@ -5,4 +5,12 @@ const onChange = (value) => {
   console.log(value);
 };
 
-export default () => <TextInput placeholder="input text" onChange={onChange} />;
+export default () => {
+  const textInputRef = React.useRef();
+
+  React.useEffect(() => {
+    console.log(textInputRef, 'textInputRef');
+  });
+
+  return <TextInput ref={textInputRef} placeholder="input text" onChange={onChange} />;
+};
