@@ -42,10 +42,10 @@ describe('qsHelp', () => {
 
   test('toPath should work fine', () => {
     expect(toPath('/userCenter/:name/age/:age', { name: 'bin<>的', age: 23 })).toEqual(
-      '/userCenter/bin%3C%3E%E7%9A%84/age/23',
+      '/userCenter/bin<>的/age/23',
     );
     expect(toPath('/userCenter/:name/age/:age', { name: 'bin<>的', age: -1 })).toEqual(
-      '/userCenter/bin%3C%3E%E7%9A%84/age/-1',
+      '/userCenter/bin<>的/age/-1',
     );
   });
 
