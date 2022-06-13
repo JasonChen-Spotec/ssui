@@ -5,7 +5,7 @@ import ConditionInput from '../condition-input';
 
 export type TextInputProps = ConditionInputProps;
 
-const TextInput = (props: TextInputProps) => {
+const TextInput = React.forwardRef<unknown, TextInputProps>((props, ref) => {
   const { regexp, ...restProps } = props;
   const trimStartReg = /(^\s+)/g;
   let resultRegexp: ConditionInputProps['regexp'] = trimStartReg;
@@ -13,7 +13,7 @@ const TextInput = (props: TextInputProps) => {
     resultRegexp = isArray(regexp) ? [trimStartReg, ...regexp] : [trimStartReg, regexp];
   }
 
-  return <ConditionInput {...restProps} regexp={resultRegexp} />;
-};
+  return <ConditionInput {...restProps} ref={ref} regexp={resultRegexp} />;
+});
 
 export default TextInput;
