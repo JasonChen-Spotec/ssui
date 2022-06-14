@@ -44,6 +44,8 @@ export { default as CloseSquareFilled } from './CloseSquareFilled';
 export { default as CloseSquareOutlined } from './CloseSquareOutlined';
 export { default as CoinOverlapFilled } from './CoinOverlapFilled';
 export { default as CoinOverlapLockFilled } from './CoinOverlapLockFilled';
+export { default as ComputerFilled } from './ComputerFilled';
+export { default as ComputerOutlined } from './ComputerOutlined';
 export { default as ConfirmCircleFilled } from './ConfirmCircleFilled';
 export { default as ConfirmCircleOutlined } from './ConfirmCircleOutlined';
 export { default as CopyFilled } from './CopyFilled';
