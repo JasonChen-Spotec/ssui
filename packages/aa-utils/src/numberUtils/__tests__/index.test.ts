@@ -1,6 +1,14 @@
 import numberUtils from '../index';
 
-const { formatNumber, formatPercent } = numberUtils;
+const {
+  formatNumber,
+  formatPercent,
+  formatFixedFraction,
+  isLessThan,
+  isLessThanOrEqualTo,
+  isGreaterThan,
+  isGreaterThanOrEqualTo,
+} = numberUtils;
 
 describe('numberUtils', () => {
   it('formatNumber - default options should be defined', () => {
@@ -48,5 +56,17 @@ describe('numberUtils', () => {
 
   it('formatPercent useUnit is false should be defined', () => {
     expect(formatPercent(0.12343, { useUnit: false })).toEqual('12.34');
+  });
+
+  it('formatFixedFraction should be defined ', () => {
+    expect(formatFixedFraction(2332.2)).toEqual('2332.20000000');
+    expect(formatFixedFraction(-2332.225, { fractionDigits: 4 })).toEqual('-2332.2250');
+  });
+
+  it('isGreaterThan, isGreaterThanOrEqualTo, isLessThan, isLessThanOrEqualTo  should be defined ', () => {
+    expect(isLessThan('12345123451234512345', '12345123451234512399')).toBeTruthy();
+    expect(isLessThanOrEqualTo('77777777.77777778', '77777777.77777777')).toBeFalsy();
+    expect(isGreaterThan('12345123451234512399', '12345123451234512345')).toBeTruthy();
+    expect(isGreaterThanOrEqualTo('77777777.77777777', '77777777.77777778')).toBeFalsy();
   });
 });

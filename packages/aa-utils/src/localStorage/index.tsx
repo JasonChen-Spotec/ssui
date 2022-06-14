@@ -1,4 +1,4 @@
-type ObjectValueType = any[] | { [key: string]: any };
+type ObjectValueType = any[] | Record<string, any>;
 
 export default {
   set(key: string, value: string) {

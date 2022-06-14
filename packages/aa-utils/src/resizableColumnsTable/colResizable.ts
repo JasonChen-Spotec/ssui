@@ -1,4 +1,5 @@
 // @ts-nocheck
+/* eslint-disable no-param-reassign */
 /* eslint-disable prefer-destructuring */
 import isFunction from 'lodash/isFunction';
 import { tryParseInt, removeClass, addClass } from './utils';
