@@ -15,6 +15,7 @@
     "clean": "lerna clean --yes",
     "build": "lerna run build",
     "lerna": "lerna",
+    "test:watch": "jest --watch",
     "test": "jest",
     "tsc": "tsc --noEmit",
     "eslint": "eslint --quiet --cache --ext .js,.jsx,.ts,.tsx ./packages",
