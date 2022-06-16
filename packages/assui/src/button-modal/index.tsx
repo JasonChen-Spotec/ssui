@@ -20,17 +20,13 @@ const ButtonModal: React.ForwardRefRenderFunction<unknown, ButtonModalProps> = (
   const { children, trigger, onOpen, onClose, onOk, onCancel, ...restModalProps } = props;
 
   const openModal = () => {
-    if (onOpen) {
-      onOpen();
-    }
     setModalVisible(true);
+    onOpen?.();
   };
 
   const closeModal = () => {
-    if (onClose) {
-      onClose();
-    }
     setModalVisible(false);
+    onClose?.();
   };
 
   const modalActionRef = React.useRef<ModalAction>({
