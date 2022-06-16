@@ -3,8 +3,11 @@
 export interface FilterIntType {
   value: string;
   enableMinus?: boolean;
-  preValue: string;
+  preValue?: string;
 }
+
+const intNumberReg = /^-?\d+$/;
+
 export const filterInt = ({ value, enableMinus, preValue }: FilterIntType): string => {
   let nextValue = value.replace(/[^\d\-]/g, '');
 
@@ -12,20 +15,23 @@ export const filterInt = ({ value, enableMinus, preValue }: FilterIntType): stri
     nextValue = value.replace(/\D/g, '');
   }
 
-  const intNumberReg = /^-?\d+$/;
-
   if (nextValue && nextValue.length > 1 && !intNumberReg.test(nextValue)) {
-    return preValue;
+    return preValue ?? '';
   }
 
   return nextValue;
 };
 
 export interface FilterFloatType extends FilterIntType {
-  precision: number;
+  precision?: number;
 }
 
-export const filterFloat = ({ value, preValue, precision, enableMinus }: FilterFloatType) => {
+export const filterFloat = ({
+  value,
+  preValue = '',
+  precision = 2,
+  enableMinus,
+}: FilterFloatType) => {
   let nextValue = value.replace(/[^\d.\-]/g, '');
   const matchDecimalPoint = nextValue.match(/\./g) || [];
   if (matchDecimalPoint.length > 1) {
