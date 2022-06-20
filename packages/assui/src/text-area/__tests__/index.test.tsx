@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, fireEvent, screen } from '@testing-library/react';
+import { render, fireEvent } from '@testing-library/react';
 import TextArea from '../index';
 
 describe('TextArea', () => {
@@ -37,6 +37,6 @@ describe('TextArea', () => {
     const { getByRole, rerender } = render(<TextArea />);
     const textArea = getByRole('textbox') as HTMLInputElement;
     fireEvent.change(textArea, { target: { value: '    light' } });
-    rerender(<TextArea value="light" />);
+    expect(textArea.value).toBe('light');
   });
 });
