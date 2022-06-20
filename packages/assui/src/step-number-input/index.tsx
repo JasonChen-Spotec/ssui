@@ -2,6 +2,7 @@ import * as React from 'react';
 import classNames from 'classnames';
 import BigNumber from 'bignumber.js';
 import isUndefined from 'lodash/isUndefined';
+import useControllableValue from 'ahooks/lib/useControllableValue';
 
 import { INT } from './const/numberType';
 import { PLUS, MINUS } from './const/countType';
@@ -15,7 +16,7 @@ export interface StepNumberInputProps {
   /** 精度，只对float有效 */
   precision: number;
   /** 内容最大长度 */
-  maxLength: number;
+  maxLength?: number;
   /** 指定输入框展示值的格式 */
   formatter?: (value: string) => string;
   /** 指定从 formatter 里转换回数字的方式，和 formatter 搭配使用 */
@@ -41,31 +42,24 @@ export interface StepNumberInputProps {
 }
 
 const StepNumberInput = (props: StepNumberInputProps) => {
-  const { value, onChange, onBlur, numberType, precision, step, max, min, ...restProps } =
-    props;
-  const [inputValue, setInputValue] = React.useState('');
-  const resultValue = isUndefined(value) ? inputValue : value;
-  const isEmpty = isUndefined(resultValue) || resultValue === '';
+  const [value, setValue] = useControllableValue(props, { defaultValue: '' });
+  const { onChange, onBlur, numberType, precision, step, max, min, ...restProps } = props;
+  const isEmpty = isUndefined(value) || value === '';
 
-  const plusNumber = new BigNumber(resultValue).plus(step).toString();
-  const minusNumber = new BigNumber(resultValue).minus(step).toString();
+  const plusNumber = new BigNumber(value).plus(step).toString();
+  const minusNumber = new BigNumber(value).minus(step).toString();
 
   const maxCondition = isUndefined(max)
     ? false
-    : max === Number(resultValue) || Number(max) < Number(plusNumber);
+    : max === Number(value) || Number(max) < Number(plusNumber);
 
   const minCondition = isUndefined(min)
     ? false
-    : min === Number(resultValue) || Number(min) > Number(minusNumber);
+    : min === Number(value) || Number(min) > Number(minusNumber);
 
   const onNumberChange = (lastValue: string) => {
-    if (resultValue !== lastValue) {
-      if (isUndefined(value)) {
-        setInputValue(lastValue);
-      }
-      if (onChange) {
-        onChange(lastValue);
-      }
+    if (value !== lastValue) {
+      setValue(lastValue);
     }
   };
 
@@ -81,48 +75,24 @@ const StepNumberInput = (props: StepNumberInputProps) => {
       newNumber = minCondition ? `${min}` : minusNumber;
     }
 
-    if (value === undefined) {
-      setInputValue(newNumber);
-    }
-    if (onChange) {
-      onChange(newNumber);
-    }
+    setValue(newNumber);
   };
 
   const onNumberBlur = () => {
-    if (resultValue === '-' || resultValue === '.') {
-      if (value === undefined) {
-        setInputValue('');
-      }
-
-      if (onChange) {
-        onChange('');
-      }
+    let resultValue = value;
+    if (value === '-' || value === '.') {
+      resultValue = '';
     }
 
-    if (!isUndefined(max) && Number(resultValue) > max) {
-      if (isUndefined(value)) {
-        setInputValue(`${max}`);
-      }
-
-      if (onChange) {
-        onChange(`${max}`);
-      }
+    if (!isUndefined(max) && Number(value) > max) {
+      resultValue = `${max}`;
     }
 
-    if (!isUndefined(min) && Number(resultValue) < min) {
-      if (isUndefined(value)) {
-        setInputValue(`${min}`);
-      }
-
-      if (onChange) {
-        onChange(`${min}`);
-      }
+    if (!isUndefined(min) && Number(value) < min) {
+      resultValue = `${min}`;
     }
-
-    if (onBlur) {
-      onBlur(`${resultValue}` || '');
-    }
+    setValue(resultValue);
+    onBlur?.(resultValue);
   };
 
   return (
@@ -152,7 +122,7 @@ const StepNumberInput = (props: StepNumberInputProps) => {
             +
           </span>
         }
-        value={`${resultValue}`}
+        value={`${value}`}
         onChange={onNumberChange}
         onBlur={onNumberBlur}
         numberType={numberType}
