@@ -1,6 +1,5 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
-
 import StepNumberInput from '../index';
 
 const baseProps = {
@@ -153,7 +152,7 @@ describe('StepNumberInput', () => {
   });
 
   it('min value handle onBlur', () => {
-    const { getByRole, getByText } = render(<StepNumberInput min={10} onChange={jest.fn()} />);
+    const { getByRole } = render(<StepNumberInput min={10} onChange={jest.fn()} />);
     const input = getByRole('textbox') as HTMLInputElement;
     fireEvent.change(input, { target: { value: '-1000' } });
     fireEvent.blur(input);
