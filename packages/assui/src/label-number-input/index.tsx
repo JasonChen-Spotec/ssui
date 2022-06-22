@@ -26,7 +26,7 @@ const LabelNumberInput = (props: LabelNumberInputProps) => {
 
   const handleLabelClick = () => {
     setFocused(true);
-    numberInputRef.current?.focus();
+    (numberInputRef.current as HTMLInputElement).focus();
   };
 
   const handleFocus = () => {
