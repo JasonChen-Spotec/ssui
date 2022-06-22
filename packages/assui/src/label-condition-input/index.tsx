@@ -27,7 +27,7 @@ const LabelConditionInput = (props: LabelConditionInputProps) => {
 
   const handleLabelClick = () => {
     setFocused(true);
-    InputDomRef.current?.focus();
+    (InputDomRef.current as HTMLInputElement).focus();
   };
 
   const handleFocus = () => {
@@ -54,7 +54,15 @@ const LabelConditionInput = (props: LabelConditionInputProps) => {
         })}
       >
         <ConditionInput
-          {...omit(props, ['onChange', 'onBlur', 'onFocus', 'className', 'label', 'placeholder'])}
+          {...omit(props, [
+            'onChange',
+            'onBlur',
+            'onFocus',
+            'className',
+            'label',
+            'placeholder',
+            'baseMinWidth',
+          ])}
           ref={InputDomRef}
           data-value={value ? value.length : 0}
           value={value}

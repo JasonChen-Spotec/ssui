@@ -53,7 +53,15 @@ const LabelNumberInput = (props: LabelNumberInputProps) => {
         })}
       >
         <NumberInput
-          {...omit(props, ['onChange', 'onBlur', 'onFocus', 'className', 'label', 'placeholder'])}
+          {...omit(props, [
+            'onChange',
+            'onBlur',
+            'onFocus',
+            'className',
+            'label',
+            'placeholder',
+            'baseMinWidth',
+          ])}
           ref={numberInputRef}
           data-value={!isUndefined(value) ? `${value}`.length : 0}
           value={value}
