@@ -34,7 +34,7 @@ describe('TextArea', () => {
   });
 
   it('uncontrolled', () => {
-    const { getByRole, rerender } = render(<TextArea />);
+    const { getByRole } = render(<TextArea />);
     const textArea = getByRole('textbox') as HTMLInputElement;
     fireEvent.change(textArea, { target: { value: '    light' } });
     expect(textArea.value).toBe('light');

@@ -19,6 +19,7 @@ describe('ConditionInput', () => {
 
     fireEvent.change(input, { target: { value: 'hello world' } });
     expect(input.value).toBe('HELLOWORLD');
+    expect(baseProps.onChange).toBeCalledWith('HELLOWORLD');
   });
 
   it('regexp is string array', () => {
@@ -27,6 +28,7 @@ describe('ConditionInput', () => {
 
     fireEvent.change(input, { target: { value: 'hello world 2022' } });
     expect(input.value).toBe('hello world 022');
+    expect(baseProps.onChange).toBeCalledWith('hello world 022');
   });
 
   it('regexp is object array', () => {
@@ -37,6 +39,7 @@ describe('ConditionInput', () => {
 
     fireEvent.change(input, { target: { value: 'hello world 2022' } });
     expect(input.value).toBe('hello world ****');
+    expect(baseProps.onChange).toBeCalledWith('hello world ****');
   });
 
   it('when regexp is any', () => {
@@ -45,5 +48,6 @@ describe('ConditionInput', () => {
 
     fireEvent.change(input, { target: { value: 'hello world 2022' } });
     expect(input.value).toBe('hello world 2022');
+    expect(baseProps.onChange).toBeCalledWith('hello world 2022');
   });
 });

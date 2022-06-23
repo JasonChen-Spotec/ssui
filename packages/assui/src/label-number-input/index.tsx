@@ -34,9 +34,9 @@ const LabelNumberInput = (props: LabelNumberInputProps) => {
     onFocus?.(value);
   };
 
-  const handleBlur = (e: string | number) => {
+  const handleBlur = () => {
     setFocused(false);
-    onBlur?.(e);
+    onBlur?.(value);
   };
 
   const controlMinWidth = labelSize?.width ? labelSize.width + baseMinWidth : undefined;
