@@ -17,11 +17,13 @@ jest.mock('ahooks/lib/useSize', () => {
 
 describe('LabelInput', () => {
   it('label input base style', () => {
-    const { getByRole, container } = render(
+    const { getByRole, queryByText, container } = render(
       <LabelInput label="我是标题" baseMinWidth={100} {...baseProps} />,
     );
     const input = getByRole('textbox') as HTMLInputElement;
     const label = container.querySelector('.label-input-text') as HTMLLabelElement;
+
+    expect(queryByText('我是标题')).toBeTruthy();
 
     label.click();
     expect(container.querySelector('.label-input-focused')).toBeTruthy();
@@ -43,9 +45,7 @@ describe('LabelInput', () => {
   });
 
   it('type of password', () => {
-    const { getByRole, container } = render(
-      <LabelInput label="我是标题" type="password" {...baseProps} />,
-    );
+    const { getByRole, container } = render(<LabelInput type="password" {...baseProps} />);
 
     const eyeIcon = getByRole('img');
     eyeIcon.click();
@@ -57,17 +57,17 @@ describe('LabelInput', () => {
   });
 
   it('has prefix params enter', () => {
-    const { container, rerender } = render(<LabelInput label="我是标题" {...baseProps} />);
+    const { container, rerender } = render(<LabelInput {...baseProps} />);
 
     expect(container.querySelector('.label-input-prefix')).toBeFalsy();
 
-    rerender(<LabelInput label="我是标题" prefix={123} {...baseProps} />);
+    rerender(<LabelInput prefix={123} {...baseProps} />);
 
     expect(container.querySelector('.label-input-prefix')).toBeTruthy();
   });
 
   it('no focus and blur params enter', () => {
-    const { getByRole } = render(<LabelInput label="我是标题" />);
+    const { getByRole } = render(<LabelInput />);
     const input = getByRole('textbox');
 
     input.focus();

@@ -10,11 +10,13 @@ const baseProps = {
 
 describe('LabelTextArea', () => {
   it('base style', () => {
-    const { getByRole, container } = render(
+    const { getByRole, queryByText, container } = render(
       <LabelTextArea label="我是标题" formatter={(value) => `${value} chen`} {...baseProps} />,
     );
     const textarea = getByRole('textbox');
     const textareaWrap = container.querySelector('.label-textarea-warper');
+
+    expect(queryByText('我是标题')).toBeTruthy();
 
     textareaWrap.click();
     expect(container.querySelector('.textarea-warper-focused')).toBeTruthy();
@@ -33,7 +35,7 @@ describe('LabelTextArea', () => {
   });
 
   it('no focus and blur params enter', () => {
-    const { getByRole } = render(<LabelTextArea label="我是标题" />);
+    const { getByRole } = render(<LabelTextArea />);
     const textarea = getByRole('textbox');
 
     textarea.focus();

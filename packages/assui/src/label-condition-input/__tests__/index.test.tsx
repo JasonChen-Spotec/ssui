@@ -17,11 +17,13 @@ jest.mock('ahooks/lib/useSize', () => {
 
 describe('LabelConditionInput', () => {
   it('input base style', () => {
-    const { getByRole, container } = render(
+    const { getByRole, queryByText, container } = render(
       <LabelConditionInput label="我是标题" baseMinWidth={100} {...baseProps} />,
     );
     const input = getByRole('textbox') as HTMLInputElement;
     const label = container.querySelector('.label-condition-input-text') as HTMLLabelElement;
+
+    expect(queryByText('我是标题')).toBeTruthy();
 
     label.click();
     expect(container.querySelector('.label-condition-input-focused')).toBeTruthy();
@@ -43,7 +45,7 @@ describe('LabelConditionInput', () => {
   });
 
   it('no focus and blur params enter', () => {
-    const { getByRole } = render(<LabelConditionInput label="我是标题" />);
+    const { getByRole } = render(<LabelConditionInput />);
     const input = getByRole('textbox');
 
     input.focus();
