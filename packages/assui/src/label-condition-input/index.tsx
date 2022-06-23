@@ -6,11 +6,13 @@ import useSize from 'ahooks/lib/useSize';
 import type { ConditionInputProps } from '../condition-input';
 import ConditionInput from '../condition-input';
 
-export interface LabelConditionInputProps extends ConditionInputProps {
+export interface LabelConditionInputProps extends Omit<ConditionInputProps, 'onBlur' | 'onChange'> {
   /** label 标签的文本 */
   label?: React.ReactNode;
   /** 输入框内容变化时的回调 */
   onChange?: (value: string) => void;
+  /** 输入框失去焦点的回调 */
+  onBlur?: (value: string) => void;
   /** 输入框除去label之后的最小末尾宽度 */
   baseMinWidth?: number;
   /** 组件dom id */
@@ -35,9 +37,9 @@ const LabelConditionInput = (props: LabelConditionInputProps) => {
     onFocus?.(value);
   };
 
-  const handleBlur: ConditionInputProps['onBlur'] = (e) => {
+  const handleBlur = () => {
     setFocused(false);
-    onBlur?.(e);
+    onBlur?.(value);
   };
 
   const controlMinWidth = labelSize?.width ? labelSize.width + baseMinWidth : undefined;
@@ -50,7 +52,7 @@ const LabelConditionInput = (props: LabelConditionInputProps) => {
     >
       <div
         className={classNames('label-condition-input-field', {
-          'label-condition-input-focused': focused || value,
+          'label-condition-input-focused': focused,
         })}
       >
         <ConditionInput

@@ -42,7 +42,6 @@ describe('StepNumberInput', () => {
     fireEvent.blur(input);
     expect(input.value).toBe('10');
     expect(baseProps.onBlur).toBeCalledWith('10');
-    const button2 = container.querySelector('.count-add-btn.disabled-btn');
     expect(button).toBeTruthy();
   });
 

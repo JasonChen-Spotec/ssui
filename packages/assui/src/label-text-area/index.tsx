@@ -43,7 +43,7 @@ const LabelTextArea: React.FC<LabelTextAreaProps> = (props) => {
   };
 
   const handleLabelClick = () => {
-    TextAreaDomRef.current?.focus();
+    (TextAreaDomRef.current as HTMLTextAreaElement).focus();
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
