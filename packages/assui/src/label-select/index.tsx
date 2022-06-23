@@ -2,6 +2,7 @@ import React from 'react';
 import useControllableValue from 'ahooks/lib/useControllableValue';
 import type { RefSelectProps, SelectProps } from 'antd/lib/select';
 import Select from 'antd/lib/select';
+import type { BaseSelectRef } from 'rc-select/lib/BaseSelect';
 import { isUndefined, isNull } from 'lodash';
 import classNames from 'classnames';
 import ArrowDropDownFilled from 'a-icons/lib/ArrowDropDownFilled';
@@ -33,7 +34,7 @@ const LabelSelect = (props: LabelSelectProps) => {
     if (!open) {
       setOpen(!open);
     }
-    selectRef.current?.focus();
+    (selectRef.current as BaseSelectRef).focus();
   };
 
   const onDropdownVisibleChange = (nextOpen: boolean) => {
@@ -53,7 +54,7 @@ const LabelSelect = (props: LabelSelectProps) => {
       <Select
         maxTagCount={3}
         showSearch={false}
-        {...omit(props, ['open', 'onChange', 'className', 'label'])}
+        {...omit(props, ['open', 'onChange', 'className', 'label', 'setOpen'])}
         open={open}
         ref={selectRef}
         size="large"
