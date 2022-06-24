@@ -32,7 +32,7 @@ const LabelAutoComplete = (props: LabelAutoCompleteProps) => {
     if (!open) {
       setOpen(!open);
     }
-    autoComplete.current?.focus();
+    (autoComplete.current as RefSelectProps).focus();
   };
 
   const onDropdownVisibleChange = (nextOpen: boolean) => {
