@@ -27,7 +27,7 @@ const LabelDatePicker: React.FC<LabelDatePickerProps> = (props) => {
     if (!open) {
       setOpen(!open);
     }
-    datePickerRef.current?.focus();
+    (datePickerRef.current as any).focus();
   };
 
   const onBlur = () => {
