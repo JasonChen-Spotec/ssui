@@ -9,7 +9,7 @@ const locale = {
       lastWeek: '上周',
       month: '本月',
       lastMonth: '上月',
-      quarter: '季度',
+      quarter: '本季度',
       lastQuarter: '上季度',
       last7days: '最近7天',
       last14days: '最近14天',
