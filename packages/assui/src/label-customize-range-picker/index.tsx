@@ -20,8 +20,7 @@ export type RadioListType = {
   value: [Moment, Moment];
 };
 
-export interface LabelCustomizeRangePickerProps
-  extends Omit<LabelRangePickerProps, 'label'> {
+export interface LabelCustomizeRangePickerProps extends Omit<LabelRangePickerProps, 'label'> {
   radioList?: RadioListType[];
   customizeTimeList?: dateTypeEnum[];
   rangePickerType?: 'label' | 'origin';
@@ -31,13 +30,7 @@ export interface LabelCustomizeRangePickerProps
 const { RangePicker } = DatePicker;
 
 const LabelCustomizeRangePicker = (props: LabelCustomizeRangePickerProps) => {
-  const {
-    customizeTimeList,
-    radioList,
-    rangePickerType = 'label',
-    label,
-    ...options
-  } = props;
+  const { customizeTimeList, radioList, rangePickerType = 'label', label, ...options } = props;
   const [date, setDate] = useControllableValue(props);
   const [isVisiblePanel, setIsVisiblePanel] = useState(false);
   const [radioKey, setRadioKey] = useState<string | number | null>();
@@ -46,20 +39,26 @@ const LabelCustomizeRangePicker = (props: LabelCustomizeRangePickerProps) => {
   const dataSource = radioList ?? getDefaultRadioList(messages);
 
   useEffect(() => {
-    const foundItem = dataSource.find((item) => {
+    const filterItemList = dataSource.filter((item) => {
       if (!date) return false;
       const [startTime, endTime] = item.value;
       const [defaultStartTime, defaultEndTime] = date || [];
-      if (
-        startTime.isSame(defaultStartTime, 'day') &&
-        endTime.isSame(defaultEndTime, 'day')
-      ) {
+      if (startTime.isSame(defaultStartTime, 'day') && endTime.isSame(defaultEndTime, 'day')) {
         return true;
       }
       return false;
     });
-    const data = foundItem ? foundItem.key : null;
-    setRadioKey(data);
+
+    if (filterItemList.length === 0) {
+      setRadioKey(null);
+    } else if (filterItemList.length > 1) {
+      const findItem = filterItemList.find((item) => item.key === radioKey);
+      const resutRadioKey = findItem ? findItem.key : filterItemList[0].key;
+      setRadioKey(resutRadioKey);
+    } else {
+      const [item] = filterItemList;
+      setRadioKey(item.key);
+    }
   }, [date]);
 
   const onDiyTimeChange = (event: CheckboxChangeEvent) => {
