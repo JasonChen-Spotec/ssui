@@ -31,7 +31,7 @@ describe('ButtonModal', () => {
   });
 
   it('CopyToClipboard base props should work fine', async () => {
-    const { getByText } = render(
+    const { getByText, container } = render(
       <CopyToClipboard text="这是复制内容" tooltipTitle="复制成功" {...baseProps}>
         <button {...buttonProps}>复制按钮</button>
       </CopyToClipboard>,
@@ -47,6 +47,7 @@ describe('ButtonModal', () => {
     act(() => {
       jest.runAllTimers();
     });
-    expect(setTimeout).toHaveBeenCalledTimes(1);
+    const tooltipOpenNode = container.querySelector('.ant-tooltip-open');
+    expect(tooltipOpenNode).toBeFalsy();
   });
 });
