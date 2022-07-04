@@ -34,6 +34,7 @@ const LabelDatePicker: React.FC<LabelRangePickerProps> = (props) => {
   };
 
   const handleOpenChange = (nextOpen: boolean) => {
+    console.log('--');
     onOpenChange(nextOpen);
   };
 
