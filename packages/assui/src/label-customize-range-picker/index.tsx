@@ -7,6 +7,8 @@ import type { RangeValue } from 'rc-picker/lib/interface';
 import type { CheckboxChangeEvent } from 'antd/lib/checkbox';
 import useControllableValue from 'ahooks/lib/useControllableValue';
 import type { Moment } from 'moment';
+import moment from 'moment';
+import omit from 'lodash/omit';
 import type { dateTypeEnum } from './defaultRadioList';
 import getDefaultRadioList from './defaultRadioList';
 import LabelRangePicker from '../label-range-picker';
@@ -25,12 +27,21 @@ export interface LabelCustomizeRangePickerProps extends Omit<LabelRangePickerPro
   customizeTimeList?: dateTypeEnum[];
   rangePickerType?: 'label' | 'origin';
   label?: React.ReactNode;
+  /** 最大时间范围 */
+  maxScope?: number;
 }
 
 const { RangePicker } = DatePicker;
 
 const LabelCustomizeRangePicker = (props: LabelCustomizeRangePickerProps) => {
-  const { customizeTimeList, radioList, rangePickerType = 'label', label, ...options } = props;
+  const {
+    customizeTimeList,
+    radioList,
+    rangePickerType = 'label',
+    label,
+    maxScope,
+    ...options
+  } = props;
   const [date, setDate] = useControllableValue(props);
   const [isVisiblePanel, setIsVisiblePanel] = useState(false);
   const [radioKey, setRadioKey] = useState<string | number | null>();
@@ -67,7 +78,39 @@ const LabelCustomizeRangePicker = (props: LabelCustomizeRangePickerProps) => {
   };
 
   const onDateChange = (nextValue: RangeValue<moment.Moment>) => {
-    setDate(nextValue);
+    const [start, end] = nextValue || [];
+    let nextStartDate = start?.clone().startOf('day') ?? null;
+    let nextEndDate = end?.clone().endOf('day') ?? null;
+    if (!nextStartDate && !nextEndDate) {
+      return setDate(undefined);
+    }
+
+    if (!maxScope) {
+      return setDate([nextStartDate, nextEndDate]);
+    }
+
+    const [startDate] = date || [];
+    if (nextStartDate && nextEndDate) {
+      const isChangeStartData = !startDate?.clone().isSame(nextStartDate, 'day');
+
+      if (isChangeStartData) {
+        if (nextEndDate.diff(nextStartDate, 'day') > maxScope) {
+          nextEndDate = nextStartDate.clone().add(maxScope - 1, 'day');
+        }
+      } else if (nextEndDate.diff(nextStartDate, 'day') > maxScope) {
+        nextStartDate = nextEndDate.clone().subtract(maxScope - 1, 'day');
+      }
+    } else if (!nextStartDate && nextEndDate) {
+      nextStartDate = nextEndDate.clone().subtract(maxScope - 1, 'day');
+    } else if (nextStartDate && !nextEndDate) {
+      nextEndDate = nextStartDate.clone().add(maxScope - 1, 'day');
+    }
+
+    if (nextStartDate && nextEndDate) {
+      return setDate([nextStartDate, nextEndDate]);
+    }
+
+    return setDate([nextStartDate, nextEndDate]);
   };
 
   const onRadioChange = (event: RadioChangeEvent) => {
@@ -84,6 +127,15 @@ const LabelCustomizeRangePicker = (props: LabelCustomizeRangePickerProps) => {
       customizeTimeList ? customizeTimeList.includes(item.key as dateTypeEnum) : true,
     );
 
+  const resultList = maxScope
+    ? list.filter((item) => {
+        const [startTime, entTime] = item.value;
+        const space = moment.duration(entTime.diff(startTime)).asDays();
+
+        return space <= maxScope;
+      })
+    : list;
+
   const panelRender = (panel: React.ReactNode) => (
     <div className="label-customize-range-picker-panel">
       <div className="check-wrapper">
@@ -99,7 +151,7 @@ const LabelCustomizeRangePicker = (props: LabelCustomizeRangePickerProps) => {
       ) : (
         <div className="pick-box">
           <Radio.Group onChange={onRadioChange} value={radioKey}>
-            {list.map(({ key, text }) => (
+            {resultList.map(({ key, text }) => (
               <Radio className="radio" key={key} value={key}>
                 {text}
               </Radio>
@@ -124,9 +176,9 @@ const LabelCustomizeRangePicker = (props: LabelCustomizeRangePickerProps) => {
   };
 
   return rangePickerType === 'label' ? (
-    <LabelRangePicker label={label} {...baseOptions} {...options} />
+    <LabelRangePicker label={label} {...baseOptions} {...omit(options, 'onChange')} />
   ) : (
-    <RangePicker {...baseOptions} {...options} />
+    <RangePicker {...baseOptions} {...omit(options, 'onChange')} />
   );
 };
 
