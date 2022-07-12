@@ -30,7 +30,7 @@
     "README.md"
   ],
   "dependencies": {
-    "@ahooksjs/use-url-state": "^2.5.8",
+    "@ahooksjs/use-url-state": "^3.1.9",
     "@tinymce/tinymce-react": "^4.0.0",
     "@types/react-beautiful-dnd": "^13.1.2",
     "@types/react-resizable": "^3.0.0",
@@ -54,7 +54,7 @@
     "tinymce": "^6.0.2"
   },
   "peerDependencies": {
-    "antd": "^4.21.1",
+    "antd": "^4.21.6",
     "react": "^16.8.6 || ^17.0 || ^18.0"
   },
   "devDependencies": {
