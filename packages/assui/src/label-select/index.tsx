@@ -12,7 +12,7 @@ const { Option } = Select;
 
 export { Option };
 
-export interface LabelSelectProps extends SelectProps<string> {
+export interface LabelSelectProps extends SelectProps {
   label?: React.ReactNode;
 }
 
