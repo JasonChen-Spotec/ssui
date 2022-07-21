@@ -31,6 +31,8 @@ interface DefaultOptionsConfig extends OptionsConfig {
   maxFractionDigits: number;
 }
 
+type Value = BigNumber.Value | null | undefined;
+
 const defaultOptions: DefaultOptionsConfig = {
   useGrouping: false,
   usePlus: false,
@@ -47,10 +49,7 @@ const checkValue = (value: any) => {
   return value;
 };
 
-const formatNumber = (
-  value: BigNumber.Value | null | undefined,
-  options?: OptionsConfig,
-): string => {
+const formatNumber = (value: Value, options?: OptionsConfig): string => {
   const val = checkValue(value);
   const { useGrouping, minFractionDigits, maxFractionDigits, usePlus, roundingMode } = {
     ...defaultOptions,
@@ -90,7 +89,7 @@ export interface FormatFixedFractionOptions
   fractionDigits?: number;
 }
 
-const formatFixedFraction = (value: BigNumber.Value, options?: FormatFixedFractionOptions) => {
+const formatFixedFraction = (value: Value, options?: FormatFixedFractionOptions) => {
   const { fractionDigits = 8, ...restOptions } = options || {};
   const resultOptions = {
     minFractionDigits: fractionDigits,
@@ -108,10 +107,7 @@ const defaultPercentOptions = {
   useUnit: true,
 };
 
-const formatPercent = (
-  value: BigNumber.Value | null | undefined,
-  options?: formatPercentOptions,
-) => {
+const formatPercent = (value: Value, options?: formatPercentOptions) => {
   const val = checkValue(value);
 
   const { useUnit, ...restFormatNumberOptions } = {
