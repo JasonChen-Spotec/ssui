@@ -1,4 +1,8 @@
 import BigNumber from 'bignumber.js';
+import isNull from 'lodash/isNull';
+import isNaN from 'lodash/isNaN';
+import isUndefined from 'lodash/isUndefined';
+import isObject from 'lodash/isObject';
 import { roundingModeMap, HALF_UP } from './const/roundingModeMap';
 import { strip, float2Fixed, digitLength } from './numberPrecision';
 import { plus, minus, times, divide } from './numberPrecision/calculateFunc';
@@ -35,14 +39,26 @@ const defaultOptions: DefaultOptionsConfig = {
   maxFractionDigits: 2,
 };
 
-const formatNumber = (value: BigNumber.Value, options?: OptionsConfig): string => {
+const checkValue = (value: any) => {
+  if (isNull(value) || isUndefined(value) || isNaN(value) || isObject(value)) {
+    return '0';
+  }
+
+  return value;
+};
+
+const formatNumber = (
+  value: BigNumber.Value | null | undefined,
+  options?: OptionsConfig,
+): string => {
+  const val = checkValue(value);
   const { useGrouping, minFractionDigits, maxFractionDigits, usePlus, roundingMode } = {
     ...defaultOptions,
     ...options,
   };
 
   const formatMethod = useGrouping ? 'toFormat' : 'toFixed';
-  const numList = `${value}`.split('.');
+  const numList = `${val}`.split('.');
   const decimalPart = numList[1] || '';
   const decimalPartLength = decimalPart.length;
 
@@ -58,11 +74,11 @@ const formatNumber = (value: BigNumber.Value, options?: OptionsConfig): string =
     }
   }
 
-  const numberObj = new BigNumber(value);
+  const numberObj = new BigNumber(val);
 
   const formatValue = numberObj[formatMethod](resultFractionDigits, roundingModeMap[roundingMode]);
 
-  if (+value > 0 && usePlus) {
+  if (+val > 0 && usePlus) {
     return `+${formatValue}`;
   }
 
@@ -92,13 +108,18 @@ const defaultPercentOptions = {
   useUnit: true,
 };
 
-const formatPercent = (value: BigNumber.Value, options?: formatPercentOptions) => {
+const formatPercent = (
+  value: BigNumber.Value | null | undefined,
+  options?: formatPercentOptions,
+) => {
+  const val = checkValue(value);
+
   const { useUnit, ...restFormatNumberOptions } = {
     ...defaultPercentOptions,
     ...options,
   };
 
-  const resultValue = times(value, 100);
+  const resultValue = times(val, 100);
   const formatValue = formatNumber(resultValue, restFormatNumberOptions);
   if (useUnit) {
     return `${formatValue}%`;

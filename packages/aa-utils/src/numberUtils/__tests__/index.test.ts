@@ -16,6 +16,8 @@ describe('numberUtils', () => {
     expect(formatNumber(2232323.101)).toEqual('2232323.10');
     expect(formatNumber(2.10444)).toEqual('2.10');
     expect(formatNumber(2.10544)).toEqual('2.11');
+    expect(formatNumber(null)).toEqual('0.00');
+    expect(formatNumber(undefined)).toEqual('0.00');
   });
 
   it('formatNumber - useGrouping and usePlus is true should be defined', () => {
