@@ -16,6 +16,43 @@ function getProjectPath(...filePath) {
   return path.join(process.cwd(), ...filePath);
 }
 
+const { dirname } = require('path');
+const fs = require('fs');
+
+function replacePath(path) {
+  if (path.node.source && /\/lib\//.test(path.node.source.value)) {
+    const esModule = path.node.source.value.replace('/lib/', '/es/');
+
+    const esPath = dirname(getProjectPath('node_modules', esModule));
+    console.log('esPath', esPath, fs.existsSync(esPath));
+    if (fs.existsSync(esPath)) {
+      path.node.source.value = esModule;
+    }
+  }
+
+  // @ant-design/icons/xxx => @ant-design/icons/es/icons/xxx
+  // const antdIconMatcher = /@ant-design\/icons\/([^/]*)$/;
+  // if (path.node.source && antdIconMatcher.test(path.node.source.value)) {
+  //   const esModule = path.node.source.value.replace(
+  //     antdIconMatcher,
+  //     (_, iconName) => `@ant-design/icons/es/icons/${iconName}`,
+  //   );
+  //   const esPath = dirname(getProjectPath('node_modules', esModule));
+  //   if (fs.existsSync(esPath)) {
+  //     path.node.source.value = esModule;
+  //   }
+  // }
+}
+
+function replaceLib() {
+  return {
+    visitor: {
+      ImportDeclaration: replacePath,
+      ExportNamedDeclaration: replacePath,
+    },
+  };
+}
+
 function transformLess(lessFile, config = {}) {
   const { cwd = process.cwd() } = config;
   const resolvedLessFile = path.resolve(cwd, lessFile);
@@ -91,12 +128,25 @@ gulp.task('cjs', () => {
   const tsProject = ts.createProject('tsconfig.json', {
     module: 'CommonJS',
   });
+
   return tsProject
     .src()
     .pipe(tsProject())
     .pipe(
       babel({
-        configFile: '../../.babelrc',
+        presets: [
+          [
+            '@babel/env',
+            {
+              loose: true,
+              modules: false,
+            },
+          ],
+          '@babel/react',
+        ],
+        include: '**/*.js',
+        exclude: '**/*.ts',
+        plugins: ['babel-plugin-transform-async-to-promises'],
       }),
     )
     .pipe(gulp.dest('lib/'));
@@ -111,7 +161,19 @@ gulp.task('es', () => {
     .pipe(tsProject())
     .pipe(
       babel({
-        configFile: '../../.babelrc',
+        presets: [
+          [
+            '@babel/env',
+            {
+              loose: true,
+              modules: false,
+            },
+          ],
+          '@babel/react',
+        ],
+        include: '**/*.js',
+        exclude: '**/*.ts',
+        plugins: ['babel-plugin-transform-async-to-promises', replaceLib],
       }),
     )
     .pipe(gulp.dest('es/'));

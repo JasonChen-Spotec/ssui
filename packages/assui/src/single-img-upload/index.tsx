@@ -94,12 +94,12 @@ const SingleImgUpload = (props: SingleImgUploadProps) => {
     setUploadPercent(parseInt(`${percent}`, 10));
   };
 
-  const handleError = (error: Error, ret: object, file: RcFile) => {
+  const handleError = (error: Error, ret: Record<string, unknown>, file: RcFile) => {
     setUploadStatus('init');
     onError && onError(error, ret, file);
   };
 
-  const handleSuccess = (res: any, file: RcFile, xhr: object) => {
+  const handleSuccess = (res: any, file: RcFile, xhr: XMLHttpRequest) => {
     const result = onFormatResData ? onFormatResData(res) : res;
     onSuccess && onSuccess(result, file, xhr);
     setUploadStatus('done');
