@@ -29,19 +29,6 @@ function replacePath(path) {
       path.node.source.value = esModule;
     }
   }
-
-  // @ant-design/icons/xxx => @ant-design/icons/es/icons/xxx
-  // const antdIconMatcher = /@ant-design\/icons\/([^/]*)$/;
-  // if (path.node.source && antdIconMatcher.test(path.node.source.value)) {
-  //   const esModule = path.node.source.value.replace(
-  //     antdIconMatcher,
-  //     (_, iconName) => `@ant-design/icons/es/icons/${iconName}`,
-  //   );
-  //   const esPath = dirname(getProjectPath('node_modules', esModule));
-  //   if (fs.existsSync(esPath)) {
-  //     path.node.source.value = esModule;
-  //   }
-  // }
 }
 
 function replaceLib() {

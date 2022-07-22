@@ -2,7 +2,6 @@ import BigNumber from 'bignumber.js';
 import isNull from 'lodash/isNull';
 import isNaN from 'lodash/isNaN';
 import isUndefined from 'lodash/isUndefined';
-import isObject from 'lodash/isObject';
 import { roundingModeMap, HALF_UP } from './const/roundingModeMap';
 import { strip, float2Fixed, digitLength } from './numberPrecision';
 import { plus, minus, times, divide } from './numberPrecision/calculateFunc';
@@ -42,7 +41,7 @@ const defaultOptions: DefaultOptionsConfig = {
 };
 
 const checkValue = (value: any) => {
-  if (isNull(value) || isUndefined(value) || isNaN(value) || isObject(value)) {
+  if (isNull(value) || isUndefined(value) || isNaN(value)) {
     return '0';
   }
 
