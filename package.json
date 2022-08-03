@@ -24,6 +24,7 @@
     "stylelint:fix": "stylelint --fix \"packages/**/*.less\" --syntax less",
     "prettier": "prettier --write 'packages/**/*.{js,jsx,tsx,ts,less,md,json}'",
     "build:doc": "dumi build",
+    "gh-pages": "gh-pages -d dist",
     "pub:doc-gitee": "npm run build:doc && cd ./dist && rm -rf .git && touch .spa && touch .nojekyll && git init && git remote add origin git@gitee.com:uso/sui.git && git add -A && git commit -m \"publish docs\" && git push origin master -f",
     "pub": "lerna publish"
   },
@@ -53,6 +54,7 @@
     "dumi": "^1.1.42",
     "dumi-theme-mobile": "^1.1.22",
     "enzyme": "^3.10.0",
+    "gh-pages": "^4.0.0",
     "gulp": "^4.0.2",
     "gulp-babel": "^8.0.0",
     "gulp-typescript": "^6.0.0-alpha.1",

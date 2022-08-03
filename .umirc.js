@@ -1,7 +1,7 @@
 export default {
   // ssr: {},
-  base: '/sui',
-  publicPath: '/sui/',
+  base: '/ssui',
+  publicPath: '/ssui/',
   exportStatic: {},
   nodeModulesTransform: {
     type: 'none',
