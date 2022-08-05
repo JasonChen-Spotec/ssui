@@ -1,9 +1,17 @@
 import queryString from 'qs';
 import { compile } from 'path-to-regexp';
 
-export const getQueryString = (qs: string = window.location.search): string => {
-  if (qs && qs.charAt(0) === '?') {
-    return qs.substr(1);
+const isServerSide = () => typeof XMLHttpRequest === 'undefined';
+
+export const getQueryString = (qs?: string): string => {
+  let paramsQs = qs;
+
+  if (!isServerSide() && !paramsQs) {
+    paramsQs = window.location.search;
+  }
+
+  if (paramsQs && paramsQs.charAt(0) === '?') {
+    return paramsQs.substr(1);
   }
 
   return '';
