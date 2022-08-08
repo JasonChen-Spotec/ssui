@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Icon, { IconProps } from 'a-base-icon/lib/icon';
 
-function ShapArrowLeftOutlined(componentProps: IconProps) {
+function ShapArrowLeftFilled(componentProps: IconProps) {
   const IconNode = (props: React.SVGProps<SVGSVGElement>) => (
     <svg viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
       <path
@@ -16,5 +16,5 @@ function ShapArrowLeftOutlined(componentProps: IconProps) {
   return <Icon {...componentProps} component={IconNode} />;
 }
 
-ShapArrowLeftOutlined.displayName = 'ShapArrowLeftOutlined';
-export default ShapArrowLeftOutlined;
+ShapArrowLeftFilled.displayName = 'ShapArrowLeftFilled';
+export default ShapArrowLeftFilled;
