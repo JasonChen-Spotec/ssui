@@ -10,6 +10,7 @@ const { RangePicker } = DatePicker;
 
 export interface LabelRangePickerProps extends Omit<RangePickerProps, 'label'> {
   label: React.ReactNode;
+  showTime?: any;
 }
 
 const LabelDatePicker: React.FC<LabelRangePickerProps> = (props) => {
@@ -34,7 +35,6 @@ const LabelDatePicker: React.FC<LabelRangePickerProps> = (props) => {
   };
 
   const handleOpenChange = (nextOpen: boolean) => {
-    console.log('--');
     onOpenChange(nextOpen);
   };
 

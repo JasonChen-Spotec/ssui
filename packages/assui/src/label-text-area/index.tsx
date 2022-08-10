@@ -6,7 +6,7 @@ import trimStart from 'lodash/trimStart';
 export interface LabelTextAreaProps
   extends Omit<
     React.TextareaHTMLAttributes<HTMLTextAreaElement>,
-    'size' | 'type' | 'onChange' | 'onFocus' | 'onBlur'
+    'size' | 'type' | 'onChange' | 'onFocus' | 'onBlur' | 'style'
   > {
   /** 自定义class */
   className?: string;

@@ -39,6 +39,7 @@ const LabelCustomizeRangePicker = (props: LabelCustomizeRangePickerProps) => {
     radioList,
     rangePickerType = 'label',
     label,
+    showTime,
     maxScope,
     ...options
   } = props;
@@ -79,8 +80,8 @@ const LabelCustomizeRangePicker = (props: LabelCustomizeRangePickerProps) => {
 
   const onDateChange = (nextValue: RangeValue<moment.Moment>) => {
     const [start, end] = nextValue || [];
-    let nextStartDate = start?.clone().startOf('day') ?? null;
-    let nextEndDate = end?.clone().endOf('day') ?? null;
+    let nextStartDate = (showTime ? start?.clone() : start?.clone().startOf('day')) ?? null;
+    let nextEndDate = (showTime ? end?.clone() : end?.clone().endOf('day')) ?? null;
     if (!nextStartDate && !nextEndDate) {
       return setDate(undefined);
     }
