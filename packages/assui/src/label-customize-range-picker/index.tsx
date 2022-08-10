@@ -177,9 +177,14 @@ const LabelCustomizeRangePicker = (props: LabelCustomizeRangePickerProps) => {
   };
 
   return rangePickerType === 'label' ? (
-    <LabelRangePicker label={label} {...baseOptions} {...omit(options, 'onChange')} />
+    <LabelRangePicker
+      showTime={showTime}
+      label={label}
+      {...baseOptions}
+      {...omit(options, 'onChange')}
+    />
   ) : (
-    <RangePicker {...baseOptions} {...omit(options, 'onChange')} />
+    <RangePicker showTime={showTime} {...baseOptions} {...omit(options, 'onChange')} />
   );
 };
 
