@@ -7,15 +7,16 @@ const Demo = () => {
   const now = moment();
   const [date, setDate] = useState<RangeValue<moment.Moment>>([
     now.clone().subtract(6, 'day').startOf('day'),
-    now,
+    // now,
   ]);
 
   const onDateChange = (value: RangeValue<moment.Moment>) => {
+    console.log('----', value);
     setDate(value);
   };
 
   return (
-    <LabelCustomizeRangePicker label="结算时间" value={date} onChange={onDateChange} />
+    <LabelCustomizeRangePicker label="结算时间" value={date} onChange={onDateChange} maxScope={3} />
   );
 };
 
