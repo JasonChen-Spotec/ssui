@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from 'react';
 import Radio from 'antd/lib/radio';
 import Checkbox from 'antd/lib/checkbox';
 import DatePicker from 'antd/lib/date-picker';
+import dateUtils from 'aa-utils/lib/dateUtils';
 import type { RadioChangeEvent } from 'antd/lib/radio';
 import type { RangeValue } from 'rc-picker/lib/interface';
 import type { CheckboxChangeEvent } from 'antd/lib/checkbox';
@@ -15,6 +16,49 @@ import LabelRangePicker from '../label-range-picker';
 import type { LabelRangePickerProps } from '../label-range-picker';
 import LocaleContext from '../config-provider/context';
 import formatMessage from '../messages';
+
+const now = dateUtils.getToday().endOf('day');
+
+const formatMaxScope = (dateStampTuple: RangeValue<moment.Moment>, maxScope: number) => {
+  const [start, end] = dateStampTuple || [];
+  let startStamp = start?.clone().startOf('day') ?? null;
+  let endStamp = end?.clone().endOf('day') ?? null;
+
+  if (startStamp && endStamp) {
+    if (endStamp.diff(startStamp, 'day') > maxScope) {
+      startStamp = endStamp
+        .clone()
+        .subtract(maxScope - 1, 'day')
+        .startOf('day');
+    }
+  }
+
+  if (!startStamp && !endStamp) {
+    startStamp = now
+      .clone()
+      .subtract(maxScope - 1, 'day')
+      .startOf('day');
+    endStamp = now.clone().endOf('day');
+  }
+
+  if (startStamp || endStamp) {
+    startStamp =
+      startStamp ??
+      endStamp!
+        .clone()
+        .subtract(maxScope - 1, 'day')
+        .startOf('day');
+    endStamp =
+      endStamp ??
+      startStamp!
+        .clone()
+        .add(maxScope - 1, 'day')
+        .endOf('day');
+  }
+
+  console.log('0001', [startStamp, endStamp]);
+  return [startStamp, endStamp];
+};
 
 export type RadioListType = {
   key: string | number | dateTypeEnum;
@@ -168,7 +212,7 @@ const LabelCustomizeRangePicker = (props: LabelCustomizeRangePickerProps) => {
   };
 
   const baseOptions = {
-    value: date,
+    value: maxScope ? formatMaxScope(date, maxScope) : date,
     onChange: onDateChange,
     open,
     onOpenChange,
