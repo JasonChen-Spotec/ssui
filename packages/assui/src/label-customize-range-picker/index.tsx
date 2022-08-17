@@ -15,6 +15,7 @@ import LabelRangePicker from '../label-range-picker';
 import type { LabelRangePickerProps } from '../label-range-picker';
 import LocaleContext from '../config-provider/context';
 import formatMessage from '../messages';
+import { formatMaxScope } from './utils';
 
 export type RadioListType = {
   key: string | number | dateTypeEnum;
@@ -41,7 +42,8 @@ const LabelCustomizeRangePicker = (props: LabelCustomizeRangePickerProps) => {
     label,
     showTime,
     maxScope,
-    ...options
+    onOpenChange,
+    ...restProps
   } = props;
   const [date, setDate] = useControllableValue(props);
   const [isVisiblePanel, setIsVisiblePanel] = useState(false);
@@ -72,6 +74,12 @@ const LabelCustomizeRangePicker = (props: LabelCustomizeRangePickerProps) => {
       setRadioKey(item.key);
     }
   }, [date]);
+
+  useEffect(() => {
+    if (maxScope) {
+      setDate(formatMaxScope(date, maxScope));
+    }
+  }, [maxScope]);
 
   const onDiyTimeChange = (event: CheckboxChangeEvent) => {
     const { checked } = event.target;
@@ -163,15 +171,16 @@ const LabelCustomizeRangePicker = (props: LabelCustomizeRangePickerProps) => {
     </div>
   );
 
-  const onOpenChange = (nextOpen: boolean) => {
+  const handleOpenChange = (nextOpen: boolean) => {
     setOpen(nextOpen);
+    onOpenChange?.(nextOpen);
   };
 
   const baseOptions = {
     value: date,
     onChange: onDateChange,
     open,
-    onOpenChange,
+    onOpenChange: handleOpenChange,
     panelRender,
     allowClear: false,
   };
@@ -180,11 +189,11 @@ const LabelCustomizeRangePicker = (props: LabelCustomizeRangePickerProps) => {
     <LabelRangePicker
       showTime={showTime}
       label={label}
+      {...omit(restProps, 'onChange', 'value', 'open')}
       {...baseOptions}
-      {...omit(options, 'onChange')}
     />
   ) : (
-    <RangePicker showTime={showTime} {...baseOptions} {...omit(options, 'onChange')} />
+    <RangePicker showTime={showTime} {...baseOptions} {...omit(restProps, 'onChange')} />
   );
 };
 

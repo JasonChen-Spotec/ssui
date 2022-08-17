@@ -25,4 +25,7 @@ group:
 ### 1.3. 自定义展示
 <code hideActions='["CSB", "EXTERNAL"]' src="./demo/CustomizeTime.tsx" />
 
+### 1.4. 最大选择范围
+<code hideActions='["CSB", "EXTERNAL"]' src="./demo/MaxScope.tsx" />
+
 <API></API>
