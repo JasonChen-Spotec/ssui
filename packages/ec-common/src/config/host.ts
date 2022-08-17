@@ -1,3 +1,11 @@
+const mainDomainMap = {
+  dev: '192.168.0.129',
+  test1: '192.168.0.129',
+  test2: '192.168.0.126',
+  pre: '27.102.129.76',
+  pro: 'ecmarkets.sc',
+} as const;
+
 const apiMap = {
   dev: '192.168.0.129:31000',
   test1: '192.168.0.129:31000',
@@ -60,4 +68,4 @@ const allSiteMap: Record<any, any> = {
   },
 };
 
-export { apiHostMap, allSiteMap, socketHostMap };
+export { apiHostMap, allSiteMap, socketHostMap, mainDomainMap };
