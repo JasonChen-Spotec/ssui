@@ -1,16 +1,21 @@
 ---
+mobile: false
+title: test
 nav:
-  title: Components
-  path: /components
+  title: ec-common
+  path: /component
+group:
+  title: ec-common
+  path: /component
+  order: 1
 ---
-
 ## Foo
 
 Demo:
 
 ```tsx
 import React from 'react';
-import { Foo } from 'ec-common';
+import Foo from 'ec-common/lib/component/index';
 
 export default () => <Foo title="First Demo" />;
 ```

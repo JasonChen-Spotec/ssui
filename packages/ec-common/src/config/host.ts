@@ -32,21 +32,25 @@ const allSiteMap: Record<any, any> = {
     admin: 'http://192.168.0.129:8020',
     ib: 'http://192.168.0.129:9020',
     client: 'http://192.168.0.129:8030',
+    website: 'http://192.168.0.129:8070',
   },
   test1: {
     admin: 'http://192.168.0.129:8020',
     ib: 'http://192.168.0.129:9020',
     client: 'http://192.168.0.129:8030',
+    website: 'http://192.168.0.129:8070',
   },
   test2: {
     admin: 'http://192.168.0.129:8020',
     ib: 'http://192.168.0.129:9020',
     client: 'http://192.168.0.129:8030',
+    website: 'http://192.168.0.129:8070',
   },
   pre: {
     admin: 'http://27.102.129.76:8020',
     ib: 'http://27.102.129.76:8050',
     client: 'http://27.102.129.76:8030',
+    website: 'http://27.102.129.76:8070',
   },
   pro: {
     admin: 'https://Bh0wKonL8na8hFsOFOoqU1iz.ecmarkets.sc',

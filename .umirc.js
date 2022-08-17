@@ -1,4 +1,6 @@
-export default {
+import { defineConfig } from 'dumi';
+
+export default defineConfig({
   // ssr: {},
   base: '/ssui',
   publicPath: '/ssui/',
@@ -77,9 +79,10 @@ export default {
       'packages/a-icons/demo',
       'packages/aa-utils/src',
       'packages/amssui/src',
+      'packages/ec-common/src',
     ],
   },
   navs: {
     'zh-CN': [null, { title: 'GitHub', path: 'https://github.com:SPOTEC-LTD/assui.git' }],
   },
-};
+});
