@@ -1,9 +1,10 @@
+/** 单点登录使用 */
 const mainDomainMap = {
-  dev: '192.168.0.129',
+  dev: 'localhost',
   test1: '192.168.0.129',
   test2: '192.168.0.126',
   pre: '27.102.129.76',
-  pro: 'ecmarkets.sc',
+  pro: '.ecmarkets.sc',
 } as const;
 
 const apiMap = {
