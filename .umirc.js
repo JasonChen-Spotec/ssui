@@ -75,10 +75,10 @@ export default defineConfig({
   resolve: {
     includes: [
       'docs',
-      'packages/assui/src',
-      'packages/a-icons/demo',
-      'packages/aa-utils/src',
-      'packages/amssui/src',
+      // 'packages/assui/src',
+      // 'packages/a-icons/demo',
+      // 'packages/aa-utils/src',
+      // 'packages/amssui/src',
       'packages/ec-common/src',
     ],
   },

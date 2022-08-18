@@ -3,12 +3,13 @@ mobile: false
 title: test
 nav:
   title: ec-common
-  path: /component
+  path: /ec-common
 group:
-  title: ec-common
+  title: component
   path: /component
   order: 1
 ---
+
 ## Foo
 
 Demo:

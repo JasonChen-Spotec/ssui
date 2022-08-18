@@ -8,7 +8,7 @@ export default ({ title }: { title: string }) => {
   return (
     <h1>
       {title}
-      <div>{formatMessage(messages.login)}</div>
+      <div>{formatMessage(messages.female)}</div>
     </h1>
   );
 };
