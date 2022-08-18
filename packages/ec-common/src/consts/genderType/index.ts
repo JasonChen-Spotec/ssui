@@ -5,14 +5,13 @@ import messages from '../../intl/messages';
 const MALE = 1 as const;
 /** 女 */
 const FEMALE = 2 as const;
-/** 第三性别 */
-const OTHER = 3 as const;
+
 /** 空 */
 const EMPTY = -1 as const;
 
-export { MALE, FEMALE, OTHER, EMPTY };
+export { MALE, FEMALE, EMPTY };
 
-export type SexType = 1 | 2 | 3;
+export type SexType = 1 | 2;
 
 export const useGenderType = () => {
   const { formatMessage } = useIntl();
@@ -20,14 +19,12 @@ export const useGenderType = () => {
   const appellativeGenderTypeMap = {
     [MALE]: formatMessage(messages.mister),
     [FEMALE]: formatMessage(messages.lady),
-    [OTHER]: '',
     [EMPTY]: '',
   };
 
   const genderTypeMap = {
     [MALE]: formatMessage(messages.male),
     [FEMALE]: formatMessage(messages.female),
-    [OTHER]: formatMessage(messages.other),
     [EMPTY]: '-',
   };
 
@@ -39,10 +36,6 @@ export const useGenderType = () => {
     {
       value: FEMALE,
       label: formatMessage(messages.female),
-    },
-    {
-      value: OTHER,
-      label: formatMessage(messages.other),
     },
   ];
 

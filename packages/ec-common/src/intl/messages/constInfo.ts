@@ -15,10 +15,6 @@ const constInfo = {
     id: 'female',
     defaultMessage: '女',
   },
-  other: {
-    id: 'other',
-    defaultMessage: '其他',
-  },
 };
 
 export default constInfo;
