@@ -5,7 +5,6 @@ import messages from '../../intl/messages';
 const MALE = 1 as const;
 /** 女 */
 const FEMALE = 2 as const;
-
 /** 空 */
 const EMPTY = -1 as const;
 
