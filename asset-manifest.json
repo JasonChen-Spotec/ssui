@@ -295,6 +295,7 @@
   "/~demos/text-input-index/index.html": "/ssui//~demos/text-input-index/index.html",
   "404.html": "/ssui/404.html",
   "_demos/.uuid/index.html": "/ssui/_demos/.uuid/index.html",
+  "a-select.css": "/ssui/a-select.css",
   "amssui/components/feedback/button-modal/index.html": "/ssui/amssui/components/feedback/button-modal/index.html",
   "amssui/components/feedback/index.html": "/ssui/amssui/components/feedback/index.html",
   "amssui/index.html": "/ssui/amssui/index.html",
