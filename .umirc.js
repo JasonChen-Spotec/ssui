@@ -33,6 +33,15 @@ export default defineConfig({
     [
       'babel-plugin-import',
       {
+        libraryName: 'amssui',
+        libraryDirectory: 'es',
+        style: true,
+      },
+      'amssui',
+    ],
+    [
+      'babel-plugin-import',
+      {
         libraryName: 'a-icons',
         style: false,
         camel2DashComponentName: false,
@@ -67,17 +76,18 @@ export default defineConfig({
   manifest: {},
   hash: true,
   links: [
-    { rel: 'stylesheet', href: '/sui/antd.min.css' }, // fix product demo no antd styles
-    { rel: 'stylesheet', href: '/sui/single-img-upload.css' },
-    { rel: 'stylesheet', href: '/sui/split-pane.css' },
-    { rel: 'stylesheet', href: '/sui/highlight-textarea.css' },
+    { rel: 'stylesheet', href: '/ssui/antd.min.css' }, // fix product demo no antd styles
+    { rel: 'stylesheet', href: '/ssui/single-img-upload.css' },
+    { rel: 'stylesheet', href: '/ssui/split-pane.css' },
+    { rel: 'stylesheet', href: '/ssui/highlight-textarea.css' },
+    { rel: 'stylesheet', href: '/ssui/a-select.css' },
   ],
   resolve: {
     includes: [
       'docs',
-      'packages/assui/src',
-      'packages/a-icons/demo',
-      'packages/aa-utils/src',
+      // 'packages/assui/src',
+      // 'packages/a-icons/demo',
+      // 'packages/aa-utils/src',
       'packages/amssui/src',
       'packages/ec-common/src',
     ],

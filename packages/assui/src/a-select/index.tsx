@@ -3,7 +3,7 @@ import type { SelectProps } from 'antd/lib/select';
 import Select from 'antd/lib/select';
 import useControllableValue from 'ahooks/lib/useControllableValue';
 
-interface ASelectProps extends SelectProps {
+export interface ASelectProps extends SelectProps {
   valueRender?: (value: any) => React.ReactNode;
 }
 

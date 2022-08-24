@@ -24,7 +24,7 @@
     "stylelint": "stylelint 'packages/**/*.less'",
     "stylelint:fix": "stylelint --fix \"packages/**/*.less\" --syntax less",
     "prettier": "prettier --write 'packages/**/*.{js,jsx,tsx,ts,less,md,json}'",
-    "build:doc": "dumi build",
+    "build:doc": "dumi build && gh-pages -d dist",
     "gh-pages": "gh-pages -d dist",
     "pub:doc-gitee": "npm run build:doc && cd ./dist && rm -rf .git && touch .spa && touch .nojekyll && git init && git remote add origin git@gitee.com:uso/sui.git && git add -A && git commit -m \"publish docs\" && git push origin master -f",
     "pub": "lerna publish"
@@ -48,7 +48,7 @@
     "@umijs/plugin-sass": "^1.1.1",
     "antd": "^4.20.1",
     "babel-loader": "^8.1.0",
-    "babel-plugin-import": "^1.12.0",
+    "babel-plugin-import": "^1.13.5",
     "babel-plugin-transform-async-to-promises": "^0.8.15",
     "code-rule": "^1.1.6",
     "cross-env": "^7.0.3",

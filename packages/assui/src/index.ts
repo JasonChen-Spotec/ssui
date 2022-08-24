@@ -71,6 +71,9 @@ export { default as LabelInput } from './label-input';
 export type { LabelSelectProps } from './label-select';
 export { default as LabelSelect } from './label-select';
 
+export type { ASelectProps } from './a-select';
+export { default as ASelect } from './a-select';
+
 export type { LabelTextAreaProps } from './label-text-area';
 export { default as LabelTextArea } from './label-text-area';
 
