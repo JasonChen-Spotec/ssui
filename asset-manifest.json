@@ -307,6 +307,7 @@
   "amssui/components/feedback/menu-nav-icon-button/index.html": "/ssui/amssui/components/feedback/menu-nav-icon-button/index.html",
   "amssui/index.html": "/ssui/amssui/index.html",
   "antd.min.css": "/ssui/antd.min.css",
+  "area-text.css": "/ssui/area-text.css",
   "assui/animation/index.html": "/ssui/assui/animation/index.html",
   "assui/animation/rc-motion/index.html": "/ssui/assui/animation/rc-motion/index.html",
   "assui/animation/rc-transition-group/index.html": "/ssui/assui/animation/rc-transition-group/index.html",
