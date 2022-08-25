@@ -77,6 +77,9 @@ export { default as ASelect } from './a-select';
 export type { LabelTextAreaProps } from './label-text-area';
 export { default as LabelTextArea } from './label-text-area';
 
+export type { AreaTextProps } from './area-text';
+export { default as AreaText } from './area-text';
+
 export type { LabelRangePickerProps } from './label-range-picker';
 export { default as LabelRangePicker } from './label-range-picker';
 
