@@ -81,6 +81,7 @@ export default defineConfig({
     { rel: 'stylesheet', href: '/ssui/split-pane.css' },
     { rel: 'stylesheet', href: '/ssui/highlight-textarea.css' },
     { rel: 'stylesheet', href: '/ssui/a-select.css' },
+    { rel: 'stylesheet', href: '/ssui/area-text.css' },
   ],
   resolve: {
     includes: [
