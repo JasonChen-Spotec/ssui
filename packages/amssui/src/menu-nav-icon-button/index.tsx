@@ -6,15 +6,16 @@ export type MenuNavIconProps = {
   onChange?: (status: boolean) => void;
   onClick?: () => void;
   status?: boolean;
+  className?: string;
 };
 
 const MenuNavIconButton: React.FC<MenuNavIconProps> = (props) => {
-  const { onClick } = props;
+  const { onClick, className } = props;
   const [status, setStatus] = useControllableValue(props, { valuePropName: 'status' });
 
   return (
     <div
-      className={classNames('menu-nav-icon', { open: status })}
+      className={classNames('menu-nav-icon', { open: status }, className)}
       onClick={() => {
         const nextStatus = !status;
         setStatus(nextStatus);
