@@ -1,6 +1,6 @@
 ---
 mobile: false
-title: test
+title: LangSelect
 nav:
   title: ec-common
   path: /ec-common
@@ -13,6 +13,7 @@ group:
 ## LangSelect
 
 
+<code hideActions='["CSB", "EXTERNAL"]' src="./index.tsx" />
 
 ## API
 
