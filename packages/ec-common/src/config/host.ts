@@ -1,7 +1,7 @@
 const fileHostMap = {
-  dev: '192.168.0.129:9000',
-  test1: '192.168.0.129:9000',
-  test2: '192.168.0.126:9000',
+  dev: 'http://192.168.0.129:9000',
+  test1: 'http://192.168.0.129:9000',
+  test2: 'http://192.168.0.126:9000',
   pre: 'http://27.102.129.76:9000',
   pro: 'https://file.ecmarkets.sc',
 } as const;
