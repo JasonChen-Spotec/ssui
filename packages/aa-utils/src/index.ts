@@ -10,3 +10,4 @@ export { default as scrollIntoView } from './scrollIntoView';
 export { default as addPrefixToEumValue } from './addPrefixToEumValue';
 export { default as cookieUtils } from './cookieUtils';
 export { default as resizableColumnsTable } from './resizableColumnsTable';
+export { default as intervalExecution } from './intervalExecution';
