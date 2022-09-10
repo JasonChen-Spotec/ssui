@@ -40,6 +40,8 @@
     "bignumber.js": "^9.0.1",
     "copy-to-clipboard": "^3.3.1",
     "echarts": "^5.1.2",
+    "jsoneditor": "^9.9.0",
+    "jsoneditor-react": "^3.1.2",
     "qrcode": "^1.4.4",
     "rc-motion": "^2.4.4",
     "rc-util": "^5.13.2",
@@ -60,6 +62,7 @@
   "devDependencies": {
     "@types/enzyme": "^3.10.5",
     "@types/insert-css": "^2.0.1",
+    "@types/jsoneditor": "^9.5.1",
     "@types/qrcode": "^1.4.1",
     "@types/react-highlight-words": "^0.16.3",
     "@types/react-transition-group": "^4.4.2",

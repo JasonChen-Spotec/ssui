@@ -87,10 +87,10 @@ export default defineConfig({
     includes: [
       'docs',
       'packages/assui/src',
-      'packages/a-icons/demo',
-      'packages/aa-utils/src',
-      'packages/amssui/src',
-      'packages/ec-common/src',
+      // 'packages/a-icons/demo',
+      // 'packages/aa-utils/src',
+      // 'packages/amssui/src',
+      // 'packages/ec-common/src',
     ],
   },
   navs: {

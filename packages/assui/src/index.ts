@@ -80,6 +80,9 @@ export { default as LabelTextArea } from './label-text-area';
 export type { AreaTextProps } from './area-text';
 export { default as AreaText } from './area-text';
 
+export type { JSONEditorProps } from './json-editor';
+export { default as JsonEditor } from './json-editor';
+
 export type { LabelRangePickerProps } from './label-range-picker';
 export { default as LabelRangePicker } from './label-range-picker';
 
