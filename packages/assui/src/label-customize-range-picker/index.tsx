@@ -76,8 +76,11 @@ const LabelCustomizeRangePicker = (props: LabelCustomizeRangePickerProps) => {
   }, [date]);
 
   useEffect(() => {
+    const [startTime, endTime] = date || [];
     if (maxScope) {
-      setDate(formatMaxScope(date, maxScope));
+      const [newStartDate, newEndDate] = formatMaxScope(date, maxScope);
+      if (!newStartDate?.isSame(startTime) || !newEndDate?.isSame(endTime))
+        setDate(formatMaxScope(date, maxScope));
     }
   }, [maxScope]);
 
