@@ -79,8 +79,9 @@ const LabelCustomizeRangePicker = (props: LabelCustomizeRangePickerProps) => {
     const [startTime, endTime] = date || [];
     if (maxScope) {
       const [newStartDate, newEndDate] = formatMaxScope(date, maxScope);
-      if (!newStartDate?.isSame(startTime) || !newEndDate?.isSame(endTime))
+      if (!newStartDate?.isSame(startTime) || !newEndDate?.isSame(endTime)) {
         setDate(formatMaxScope(date, maxScope));
+      }
     }
   }, [maxScope]);
 
