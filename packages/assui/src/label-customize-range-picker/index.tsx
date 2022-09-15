@@ -30,6 +30,7 @@ export interface LabelCustomizeRangePickerProps extends Omit<LabelRangePickerPro
   label?: React.ReactNode;
   /** 最大时间范围 */
   maxScope?: number;
+  showShortcutPanel?: boolean;
 }
 
 const { RangePicker } = DatePicker;
@@ -43,6 +44,7 @@ const LabelCustomizeRangePicker = (props: LabelCustomizeRangePickerProps) => {
     showTime,
     maxScope,
     onOpenChange,
+    showShortcutPanel = true,
     ...restProps
   } = props;
   const [date, setDate] = useControllableValue(props);
@@ -185,7 +187,7 @@ const LabelCustomizeRangePicker = (props: LabelCustomizeRangePickerProps) => {
     onChange: onDateChange,
     open,
     onOpenChange: handleOpenChange,
-    panelRender,
+    panelRender: showShortcutPanel ? panelRender : undefined,
     allowClear: false,
   };
 
