@@ -79,5 +79,3 @@ const LabelTreeSelect = (props: LabelTreeSelectProps) => {
 };
 
 export default LabelTreeSelect;
-
-LabelTreeSelect.Option = Option;

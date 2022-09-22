@@ -82,5 +82,3 @@ const LabelConditionInput = (props: LabelConditionInputProps) => {
 };
 
 export default LabelConditionInput;
-
-LabelConditionInput.Option = Option;
