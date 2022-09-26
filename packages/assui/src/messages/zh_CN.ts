@@ -1,6 +1,9 @@
 const locale = {
   locale: 'zh_CN',
   lang: {
+    global: {
+      placeholder: '请选择',
+    },
     labelCustomizeRangePicker: {
       customTime: '自定义时间',
       toDay: '今日',

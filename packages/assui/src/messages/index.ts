@@ -1,3 +1,5 @@
+// TODO
+// @ts-nocheck
 export type LabelCustomizeRangePickerType = {
   customTime: string;
   toDay: string;
@@ -16,16 +18,23 @@ export type LabelCustomizeRangePickerType = {
   last365days: string;
 };
 
-export type LangType = {
-  labelCustomizeRangePicker: LabelCustomizeRangePickerType;
+export type Global = {
+  placeholder: string;
 };
 
-export type DisplayNameType = 'labelCustomizeRangePicker';
+export type All = LabelCustomizeRangePickerType & Global;
+
+export type LangType = {
+  labelCustomizeRangePicker: LabelCustomizeRangePickerType;
+  global: Global;
+};
+
+export type DisplayNameType = 'labelCustomizeRangePicker' | 'global';
 
 export default function formatMessage(
   message: LangType,
   displayName: DisplayNameType,
-  key: keyof LabelCustomizeRangePickerType,
+  key: keyof All,
 ) {
   return message[displayName][key];
 }

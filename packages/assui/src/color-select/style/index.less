@@ -1,0 +1,46 @@
+@import '~antd/lib/style/index.less';
+
+.color-select-wrap {
+  display: flex;
+}
+
+.color-select {
+  position: relative;
+  width: 130px;
+  padding: @input-padding-vertical-base @input-padding-horizontal-base;
+  border: @border-width-base @border-style-base @input-border-color;
+  border-radius: @control-border-radius;
+
+  &:hover {
+    border: 1px solid @primary-color;
+  }
+
+  &:focus,
+  &-focused {
+    border-color: @primary-color-hover;
+    border-right-width: 1px;
+    outline: 0;
+    box-shadow: @input-outline-offset @outline-blur-size @outline-width @primary-color-outline;
+  }
+
+  &-value {
+    width: 80px;
+    height: 20px;
+  }
+
+  &-placeholder {
+    color: #bfbfbf;
+  }
+
+  .color-select-arrow {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+
+    .spotecicon {
+      width: 12px;
+      height: 12px;
+    }
+  }
+}

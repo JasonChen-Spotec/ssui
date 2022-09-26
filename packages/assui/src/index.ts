@@ -68,6 +68,9 @@ export { default as TextInput } from './text-input';
 export type { LabelInputProps } from './label-input';
 export { default as LabelInput } from './label-input';
 
+export type { ColorSelectProps } from './color-select';
+export { default as ColorSelect } from './color-select';
+
 export type { LabelSelectProps } from './label-select';
 export { default as LabelSelect } from './label-select';
 

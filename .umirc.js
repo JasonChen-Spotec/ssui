@@ -82,15 +82,16 @@ export default defineConfig({
     { rel: 'stylesheet', href: '/ssui/highlight-textarea.css' },
     { rel: 'stylesheet', href: '/ssui/a-select.css' },
     { rel: 'stylesheet', href: '/ssui/area-text.css' },
+    { rel: 'stylesheet', href: '/ssui/color-select.css' },
   ],
   resolve: {
     includes: [
       'docs',
       'packages/assui/src',
-      // 'packages/a-icons/demo',
-      // 'packages/aa-utils/src',
-      // 'packages/amssui/src',
-      // 'packages/ec-common/src',
+      'packages/a-icons/demo',
+      'packages/aa-utils/src',
+      'packages/amssui/src',
+      'packages/ec-common/src',
     ],
   },
   navs: {

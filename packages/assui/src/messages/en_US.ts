@@ -1,6 +1,9 @@
 const locale = {
   locale: 'en-US',
   lang: {
+    global: {
+      placeholder: 'Please select',
+    },
     labelCustomizeRangePicker: {
       customTime: 'CustomTime',
       toDay: 'ToDay',
