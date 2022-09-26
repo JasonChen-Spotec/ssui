@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"
+    />
+    <link rel="shortcut icon" type="image/x-icon" href="/sui/favicon.ico" />
+    <link rel="stylesheet" href="/ssui/antd.min.css" />
+    <link rel="stylesheet" href="/ssui/single-img-upload.css" />
+    <link rel="stylesheet" href="/ssui/split-pane.css" />
+    <link rel="stylesheet" href="/ssui/highlight-textarea.css" />
+    <link rel="stylesheet" href="/ssui/a-select.css" />
+    <link rel="stylesheet" href="/ssui/area-text.css" />
+    <link rel="stylesheet" href="/ssui/color-select.css" />
+    <script>
+      window.routerBase = "/ssui";
+    </script>
+    <script>
+      //! umi version: 3.4.19
+    </script>
+    <script>
+      !(function () {
+        var e = localStorage.getItem("dumi:prefers-color"),
+          t = window.matchMedia("(prefers-color-scheme: dark)").matches,
+          r = ["light", "dark", "auto"];
+        document.documentElement.setAttribute(
+          "data-prefers-color",
+          e === r[2] ? (t ? r[1] : r[0]) : r.indexOf(e) > -1 ? e : r[0]
+        );
+      })();
+    </script>
+    <title>jsoneditor - assui</title>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script src="/ssui/umi.5b9722c7.js"></script>
+  </body>
+</html>
