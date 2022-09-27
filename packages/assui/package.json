@@ -1,6 +1,6 @@
 {
   "name": "assui",
-  "version": "2.2.0",
+  "version": "2.2.1",
   "description": "react ui library",
   "author": "jason <usochen@gmail.com>",
   "main": "./lib/index.js",
@@ -34,7 +34,7 @@
     "@tinymce/tinymce-react": "^4.0.0",
     "@types/react-beautiful-dnd": "^13.1.2",
     "@types/react-resizable": "^3.0.0",
-    "a-icons": "^1.0.83",
+    "a-icons": "^1.0.84",
     "aa-utils": "^2.0.36",
     "ahooks": "^3.0.8",
     "bignumber.js": "^9.0.1",
