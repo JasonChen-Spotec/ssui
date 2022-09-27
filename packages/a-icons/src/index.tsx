@@ -51,6 +51,7 @@ export { default as ComputerOutlined } from './ComputerOutlined';
 export { default as ConfirmCircleFilled } from './ConfirmCircleFilled';
 export { default as ConfirmCircleOutlined } from './ConfirmCircleOutlined';
 export { default as CopyFilled } from './CopyFilled';
+export { default as CornerRightArrowsOutlined } from './CornerRightArrowsOutlined';
 export { default as CreditCardFilled } from './CreditCardFilled';
 export { default as CreditCardOutlined } from './CreditCardOutlined';
 export { default as DashboardFilled } from './DashboardFilled';
