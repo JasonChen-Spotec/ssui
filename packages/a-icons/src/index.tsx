@@ -6,6 +6,7 @@ export { default as ArrowDownFilled } from './ArrowDownFilled';
 export { default as ArrowDropDownFilled } from './ArrowDropDownFilled';
 export { default as ArrowLeftOutlined } from './ArrowLeftOutlined';
 export { default as ArrowRightOutlined } from './ArrowRightOutlined';
+export { default as ArrowSwapHorizontal } from './ArrowSwapHorizontal';
 export { default as ArrowUpFilled } from './ArrowUpFilled';
 export { default as ArrowsChevronFilled } from './ArrowsChevronFilled';
 export { default as ArrowsChevronOutlined } from './ArrowsChevronOutlined';
