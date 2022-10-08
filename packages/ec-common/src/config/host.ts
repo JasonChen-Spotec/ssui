@@ -44,36 +44,42 @@ const allSiteMap: Record<any, any> = {
     admin: 'http://192.168.0.129:8020',
     ib: 'http://192.168.0.129:9020',
     client: 'http://192.168.0.80:9030',
+    webviewMobile: 'http://192.168.0.80:6060',
   },
   dev: {
     admin: 'http://192.168.0.129:8020',
     ib: 'http://192.168.0.129:9020',
     client: 'http://192.168.0.129:8030',
     website: 'http://192.168.0.129:8070',
+    webviewMobile: 'http://192.168.0.80:6060',
   },
   test1: {
     admin: 'http://192.168.0.129:8020',
     ib: 'http://192.168.0.129:9020',
     client: 'http://192.168.0.129:8030',
     website: 'http://192.168.0.129:8070',
+    webviewMobile: 'http://192.168.0.80:6060',
   },
   test2: {
     admin: 'http://192.168.0.129:8020',
     ib: 'http://192.168.0.129:9020',
     client: 'http://192.168.0.129:8030',
     website: 'http://192.168.0.129:8070',
+    webviewMobile: 'http://27.102.129.76:8040',
   },
   pre: {
     admin: 'http://27.102.129.76:8020',
     ib: 'http://27.102.129.76:8050',
     client: 'http://27.102.129.76:8030',
     website: 'http://27.102.129.76:8070',
+    webviewMobile: 'http://27.102.129.76:8040',
   },
   pro: {
     admin: 'https://Bh0wKonL8na8hFsOFOoqU1iz.ecmarkets.sc',
     client: 'https://crm.ecmarkets.sc',
     ib: 'https://ib.ecmarkets.sc',
     website: 'https://www.ecmarkets.sc',
+    webviewMobile: 'https://m.ecmarkets.sc',
   },
 };
 
