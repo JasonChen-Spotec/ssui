@@ -33,6 +33,7 @@
     "@ahooksjs/use-url-state": "^3.1.9",
     "@tinymce/tinymce-react": "^4.0.0",
     "@types/react-beautiful-dnd": "^13.1.2",
+    "@types/react-color": "^3.0.6",
     "@types/react-resizable": "^3.0.0",
     "a-icons": "^1.0.85",
     "aa-utils": "^2.1.0",

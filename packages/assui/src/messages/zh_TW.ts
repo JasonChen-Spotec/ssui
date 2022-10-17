@@ -1,5 +1,5 @@
 const locale = {
-  locale: 'zh-Hant',
+  locale: 'zh_TW',
   lang: {
     global: {
       placeholder: '請選擇',
