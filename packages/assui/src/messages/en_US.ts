@@ -1,5 +1,5 @@
 const locale = {
-  locale: 'en-US',
+  locale: 'en_US',
   lang: {
     global: {
       placeholder: 'Please select',
