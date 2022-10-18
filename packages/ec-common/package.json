@@ -20,7 +20,8 @@
   "repository": "https://github.com/SPOTEC-LTD/ssui",
   "homepage": "https://github.com/SPOTEC-LTD/ssui",
   "scripts": {
-    "build": "gulp"
+    "buildSvg": "svgr --typescript --out-dir src/icons/ src/svgs/language",
+    "build": "yarn run buildSvg && gulp"
   },
   "files": [
     "dist",
@@ -35,5 +36,8 @@
   "engines": {
     "node": ">=14.0.0"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "@svgr/cli": "^6.4.0"
+  }
 }

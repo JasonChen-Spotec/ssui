@@ -6,7 +6,6 @@ import isDate from 'lodash/isDate';
 const createMoment = (value: moment.MomentInput) => {
   if (value) {
     const val = moment(value).utc().local();
-
     if (val.isValid()) {
       return val;
     }

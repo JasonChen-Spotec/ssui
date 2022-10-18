@@ -21,34 +21,34 @@ import arEG from 'antd/lib/locale/ar_EG';
 import thTH from 'antd/lib/locale/th_TH';
 import roRO from 'antd/lib/locale/ro_RO';
 import viVN from 'antd/lib/locale/vi_VN';
-import EnFlag from '../../assets/language/ENFlag.svg';
-import CNFlag from '../../assets/language/CNFlag.svg';
-import BGFlag from '../../assets/language/BGFlag.svg';
-import CSFlag from '../../assets/language/CSFlag.svg';
-import DEFlag from '../../assets/language/DEFlag.svg';
-import ESFlag from '../../assets/language/ESFlag.svg';
-import FIFlag from '../../assets/language/FIFlag.svg';
-import FRFlag from '../../assets/language/FRFlag.svg';
-import IDFlag from '../../assets/language/IDFlag.svg';
-import ITFlag from '../../assets/language/ITFlag.svg';
-import JAFlag from '../../assets/language/JAFlag.svg';
-import KOFlag from '../../assets/language/KOFlag.svg';
-import NLFlag from '../../assets/language/NLFlag.svg';
-import NOFlag from '../../assets/language/NOFlag.svg';
-import PTFlag from '../../assets/language/PTFlag.svg';
-import RUFlag from '../../assets/language/RUFlag.svg';
-import ARFlag from '../../assets/language/ARFlag.svg';
-import SVFlag from '../../assets/language/SVFlag.svg';
-import ROFlag from '../../assets/language/ROFlag.svg';
-import THFlag from '../../assets/language/THFlag.svg';
-import VIFlag from '../../assets/language/VIFlag.svg';
+import EnFlag from '../../icons/EnFlag';
+import CNFlag from '../../icons/CnFlag';
+import BGFlag from '../../icons/BgFlag';
+import CSFlag from '../../icons/CsFlag';
+import DEFlag from '../../icons/DeFlag';
+import ESFlag from '../../icons/EsFlag';
+import FIFlag from '../../icons/FiFlag';
+import FRFlag from '../../icons/FrFlag';
+import IDFlag from '../../icons/IdFlag';
+import ITFlag from '../../icons/ItFlag';
+import JAFlag from '../../icons/JaFlag';
+import KOFlag from '../../icons/KoFlag';
+import NLFlag from '../../icons/NlFlag';
+import NOFlag from '../../icons/NoFlag';
+import PTFlag from '../../icons/PtFlag';
+import RUFlag from '../../icons/RuFlag';
+import ARFlag from '../../icons/ArFlag';
+import SVFlag from '../../icons/SvFlag';
+import ROFlag from '../../icons/RoFlag';
+import THFlag from '../../icons/ThFlag';
+import VIFlag from '../../icons/ViFlag';
 
 /** 🇬🇧 英语 */
 export const EN = 'en-US' as const;
 /** 🇨🇳 中文简体 */
 export const ZH = 'zh-CN' as const;
 /** 🇨🇳 中文繁体 */
-export const TC = 'zh-Hant' as const;
+export const TW = 'zh-TW' as const;
 /** 🇧🇬 保加利亚语 */
 export const BG = 'bg' as const;
 /** 🇨🇿 捷克语 */
@@ -91,7 +91,7 @@ export const VI = 'vi' as const;
 export const antI18nMap = {
   [ZH]: zhCN,
   [EN]: enUS,
-  [TC]: zhTW,
+  [TW]: zhTW,
   [BG]: bgBG,
   [CS]: csCZ,
   [DE]: deDE,
@@ -115,7 +115,7 @@ export const antI18nMap = {
 
 export const languages = {
   [EN]: EN,
-  [TC]: TC,
+  [TW]: TW,
   [ZH]: ZH,
   [BG]: BG,
   [CS]: CS,
@@ -142,7 +142,7 @@ export type Languages = keyof typeof languages;
 
 export const languagesFlagMap = {
   [EN]: <EnFlag />,
-  [TC]: <CNFlag />,
+  [TW]: <CNFlag />,
   [ZH]: <CNFlag />,
   [BG]: <BGFlag />,
   [CS]: <CSFlag />,
@@ -172,8 +172,8 @@ export const I18NList = [
     name: 'English',
   },
   {
-    code: TC,
-    iso: TC,
+    code: TW,
+    iso: TW,
     name: '繁體中文',
   },
   {
