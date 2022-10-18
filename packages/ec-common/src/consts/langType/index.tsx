@@ -136,7 +136,7 @@ export const languages = {
   [TH]: TH,
   [RO]: RO,
   [VI]: VI,
-} as Record<string, string>;
+};
 
 export type Languages = keyof typeof languages;
 

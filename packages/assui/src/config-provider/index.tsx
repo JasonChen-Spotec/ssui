@@ -26,7 +26,7 @@ import viVN from '../messages/vi_VN';
 export type LocaleType =
   | 'en-US'
   | 'zh-CN'
-  | 'zh-Hant'
+  | 'zh-TW'
   | 'bg'
   | 'cs'
   | 'de'
@@ -57,7 +57,7 @@ const ConfigProvider: React.FC<ConfigProviderProps> = (props) => {
   const messagesMap = {
     'en-US': enUS.lang,
     'zh-CN': zhCN.lang,
-    'zh-Hant': zhTW.lang,
+    'zh-TW': zhTW.lang,
     'bg': bgBG.lang,
     'cs': csCZ.lang,
     'de': deDE.lang,
