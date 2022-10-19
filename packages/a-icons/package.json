@@ -1,6 +1,6 @@
 {
   "name": "a-icons",
-  "version": "1.0.85",
+  "version": "1.0.86",
   "repository": "git@github.com:SPOTEC-LTD/assui.git",
   "author": "jason <usochen@gmail.com>",
   "main": "./lib/index.js",
@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "@svgr/webpack": "^5.5.0",
-    "a-base-icon": "^1.0.4"
+    "a-base-icon": "^1.0.5"
   },
   "peerDependencies": {
     "assui": "^2.0.2"
