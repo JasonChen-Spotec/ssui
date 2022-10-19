@@ -3,6 +3,8 @@ import momentTimezone from 'moment-timezone'; // fix ie tz.guess bug;
 import isNumber from 'lodash/isNumber';
 import isDate from 'lodash/isDate';
 
+import 'moment/locale/zh-cn';
+
 const createMoment = (value: moment.MomentInput) => {
   if (value) {
     const val = moment(value).utc().local();
@@ -73,6 +75,10 @@ class DateUtils {
       },
     });
   }
+
+  setLocale = (locale: string) => {
+    moment.locale(locale);
+  };
 
   parseDate(date: moment.MomentInput, format?: string) {
     return moment(date, format || this.dateFormat);
