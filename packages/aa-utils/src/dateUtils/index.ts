@@ -115,10 +115,10 @@ class DateUtils {
   formatToTimestamp = (date: moment.MomentInput): number => {
     if (date) {
       const m = createMoment(date);
-      return m ? +m.format('x') : +this.getToday().format('x');
+      return m ? +m.valueOf() : +this.getToday().valueOf();
     }
 
-    return +this.getToday().format('x');
+    return +this.getToday().valueOf();
   };
 
   getToday = () => moment();
