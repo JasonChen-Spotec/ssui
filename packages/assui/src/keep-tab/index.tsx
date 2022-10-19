@@ -4,14 +4,17 @@ import qsHelp from 'aa-utils/lib/qsHelp';
 import type { BadgeProps } from 'antd/lib/badge';
 import Badge from 'antd/lib/badge';
 import type { TabPaneProps, TabsProps } from 'antd/lib/tabs';
+import type { Tab } from 'rc-tabs/lib/interface';
 import Tabs from 'antd/lib/tabs';
 import useUrlState from '@ahooksjs/use-url-state';
 import useControllableValue from 'ahooks/lib/useControllableValue';
-import toArray from 'rc-util/lib/Children/toArray';
 
 const { TabPane } = Tabs;
 
-export interface KeepTabProps extends TabsProps {
+interface NewTab extends Tab {
+  count?: React.ReactNode;
+}
+export interface KeepTabProps extends Omit<TabsProps, 'items'> {
   /** 由TabPane组成的children */
   children: React.ReactNode;
   /** 初始化选中面板的 key，如果没有设置 activeKey */
@@ -24,6 +27,7 @@ export interface KeepTabProps extends TabsProps {
   onChange?: (activeKey: string) => void;
   /** antd Badge组件除count意外的所有props */
   badgeProps?: Omit<BadgeProps, 'count'>;
+  items: NewTab[];
 }
 
 type DefaultUrlParamsType = Record<string, string | undefined>;
@@ -36,7 +40,7 @@ const defaultBadgeProps = {};
 
 const KeepTab = (props: KeepTabProps) => {
   const {
-    children,
+    items = [],
     defaultActiveKey,
     saveActiveKeyName,
     onChange,
@@ -53,14 +57,12 @@ const KeepTab = (props: KeepTabProps) => {
     defaultValue: defaultUrlParams[saveActiveKeyName] || defaultActiveKey,
   });
 
-  const arrayChildren = toArray(children);
-
   React.useEffect(() => {
-    if (!('activeKey' in props)) {
-      const resultActiveTab = find(arrayChildren, { key: urlParams[saveActiveKeyName] });
-      if (!resultActiveTab || resultActiveTab.props.disabled) {
-        setUrlParams({ [saveActiveKeyName]: arrayChildren[0].key });
-        setTabActiveKey(arrayChildren[0].key as string);
+    if (!('activeKey' in props) && items) {
+      const resultActiveTab = find(items, { key: urlParams[saveActiveKeyName] });
+      if (!resultActiveTab || resultActiveTab.disabled) {
+        setUrlParams({ [saveActiveKeyName]: items[0].key });
+        setTabActiveKey(items[0].key as string);
       }
     }
   }, [tabActiveKey]);
@@ -70,18 +72,20 @@ const KeepTab = (props: KeepTabProps) => {
     setTabActiveKey(nextActiveKey);
   };
 
-  const resultChildren = arrayChildren.map((childItem: React.ReactElement<SelfTabPaneProps>) => {
-    const count = childItem?.props?.count as React.ReactNode;
+  const resultItems = items.map((item) => {
+    const count = item?.count as React.ReactNode;
     if (count) {
-      return React.cloneElement(childItem, {
-        tab: (
+      return {
+        ...item,
+        label: (
           <Badge className="tab-badge" count={count} offset={[16, -9]} {...badgeProps}>
-            <span>{childItem.props.tab}</span>
+            <span>{item.label}</span>
           </Badge>
         ),
-      });
+      };
     }
-    return childItem;
+
+    return item;
   });
 
   return (
@@ -91,9 +95,8 @@ const KeepTab = (props: KeepTabProps) => {
       destroyInactiveTabPane
       activeKey={tabActiveKey}
       {...restProps}
-    >
-      {resultChildren}
-    </Tabs>
+      items={resultItems}
+    />
   );
 };
 

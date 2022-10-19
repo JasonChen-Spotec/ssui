@@ -51,7 +51,7 @@ const CopyToClipboard = (props: CopyToClipboardProps) => {
   };
 
   return tooltipTitle ? (
-    <Tooltip placement="topLeft" visible={tooltipVisible} title={tooltipTitle} {...tooltipProps}>
+    <Tooltip placement="topLeft" open={tooltipVisible} title={tooltipTitle} {...tooltipProps}>
       {React.cloneElement(children, { onClick })}
     </Tooltip>
   ) : (

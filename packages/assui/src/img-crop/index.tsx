@@ -258,7 +258,7 @@ const ImgCrop = (props: ImgCropProps) => {
       {renderUpload()}
       {src && (
         <Modal
-          visible
+          open
           wrapClassName={`${pkg}-modal`}
           title={titleOfModal}
           onOk={onOk}

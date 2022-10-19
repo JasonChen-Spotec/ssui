@@ -59,7 +59,7 @@
     "tinymce": "^6.0.2"
   },
   "peerDependencies": {
-    "antd": "^4.21.6",
+    "antd": "^4.23.1",
     "react": "^16.8.6 || ^17.0 || ^18.0"
   },
   "devDependencies": {
@@ -70,7 +70,7 @@
     "@types/react-color": "^3.0.6",
     "@types/react-highlight-words": "^0.16.3",
     "@types/react-transition-group": "^4.4.2",
-    "antd": "^4.21.7",
+    "antd": "^4.23.6",
     "array-move": "^4.0.0",
     "enzyme-adapter-react-16": "^1.15.4",
     "jest-websocket-mock": "^2.1.0",

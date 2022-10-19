@@ -63,7 +63,7 @@ const ButtonModal: React.ForwardRefRenderFunction<unknown, ButtonModalProps> = (
     <>
       {buttonNode}
       <Modal
-        visible={visible}
+        open={visible}
         onOk={handleModalOk}
         onCancel={handleModalCancel}
         centered

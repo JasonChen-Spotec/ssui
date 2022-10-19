@@ -14,6 +14,26 @@ const Demo = () => {
     console.log('Received key: ', key);
   };
 
+  const items = [
+    {
+      key: '1',
+      label: 'Tab 1',
+      children: 'Content of Tab Pane 1',
+      count: 2,
+    },
+    {
+      key: '2',
+      label: 'Tab 2',
+      children: 'Content of Tab Pane 2',
+    },
+    {
+      key: '3',
+      label: 'Tab 3',
+      children: 'Content of Tab Pane 3',
+      disabled: true,
+    },
+  ];
+
   return (
     <div style={{ backgroundColor: '#f5f6fa', padding: 60 }}>
       <KeepTab
@@ -21,17 +41,8 @@ const Demo = () => {
         saveActiveKeyName="countDemo"
         className="assui-tabs-card"
         onChange={onChange}
-      >
-        <TabPane tab="Tab 1" key="1" count={2}>
-          Content of Tab Pane 1
-        </TabPane>
-        <TabPane tab="Tab 2" key="2">
-          Content of Tab Pane 232323
-        </TabPane>
-        <TabPane tab="Tab 3" key="3">
-          Content of Tab Pane 3
-        </TabPane>
-      </KeepTab>
+        items={items}
+      />
     </div>
   );
 };

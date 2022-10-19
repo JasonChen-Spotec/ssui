@@ -59,7 +59,7 @@ const ButtonDrawer: React.ForwardRefRenderFunction<unknown, ButtonDrawerProps> =
         className={classNames('button-drawer', className)}
         title={title}
         onClose={closeDrawer}
-        visible={drawerVisible}
+        open={drawerVisible}
         {...restProps}
       >
         {isFunction(children)
