@@ -2,7 +2,7 @@ const locale = {
   locale: 'nl_NL',
   lang: {
     global: {
-      placeholder: 'Please select',
+      placeholder: 'Gelieve te kiezen',
     },
     labelCustomizeRangePicker: {
       customTime: 'aangepaste tijd',

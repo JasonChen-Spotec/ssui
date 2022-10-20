@@ -2,7 +2,7 @@ const locale = {
   locale: 'ja_JP',
   lang: {
     global: {
-      placeholder: 'Please select',
+      placeholder: '選んでください',
     },
     labelCustomizeRangePicker: {
       customTime: 'カスタム時間',

@@ -2,7 +2,7 @@ const locale = {
   locale: 'ko_KR',
   lang: {
     global: {
-      placeholder: 'Please select',
+      placeholder: '선택해주세요',
     },
     labelCustomizeRangePicker: {
       customTime: '사용자 지정 시간',

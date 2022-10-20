@@ -2,7 +2,7 @@ const locale = {
   locale: 'nb_NO',
   lang: {
     global: {
-      placeholder: 'Please select',
+      placeholder: 'Vennligst velg',
     },
     labelCustomizeRangePicker: {
       customTime: 'egendefinert tid',
