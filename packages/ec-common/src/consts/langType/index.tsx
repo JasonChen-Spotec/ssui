@@ -209,7 +209,7 @@ export const I18NList = [
   {
     code: FI,
     iso: FI,
-    name: 'Suomen tasavalta',
+    name: 'Suomi',
   },
   {
     code: IT,
@@ -219,7 +219,7 @@ export const I18NList = [
   {
     code: ID,
     iso: ID,
-    name: 'Bahasa',
+    name: 'Bahasa Indonesia',
   },
   {
     code: JA,
@@ -234,7 +234,7 @@ export const I18NList = [
   {
     code: NL,
     iso: NL,
-    name: 'Sverige',
+    name: 'Nederlands',
   },
   {
     code: NO,
