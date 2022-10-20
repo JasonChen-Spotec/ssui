@@ -2,7 +2,7 @@ const locale = {
   locale: 'th_TH',
   lang: {
     global: {
-      placeholder: 'Please select',
+      placeholder: 'โปรดเลือก',
     },
     labelCustomizeRangePicker: {
       customTime: 'เวลากำหนดเอง',

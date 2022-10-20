@@ -2,7 +2,7 @@ const locale = {
   locale: 'sv_SE',
   lang: {
     global: {
-      placeholder: 'Please select',
+      placeholder: 'Vänligen välj',
     },
     labelCustomizeRangePicker: {
       customTime: 'anpassad tid',

@@ -2,7 +2,7 @@ const locale = {
   locale: 'ro_RO',
   lang: {
     global: {
-      placeholder: 'Please select',
+      placeholder: 'vă rugăm să alegeți',
     },
     labelCustomizeRangePicker: {
       customTime: 'timp personalizat',

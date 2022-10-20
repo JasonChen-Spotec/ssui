@@ -2,7 +2,7 @@ const locale = {
   locale: 'vi_VN',
   lang: {
     global: {
-      placeholder: 'Please select',
+      placeholder: 'xin vui lòng chọn',
     },
     labelCustomizeRangePicker: {
       customTime: 'thời gian tùy chỉnh',

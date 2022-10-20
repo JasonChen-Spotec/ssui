@@ -2,7 +2,7 @@ const locale = {
   locale: 'ru_RU',
   lang: {
     global: {
-      placeholder: 'Please select',
+      placeholder: 'пожалуйста, выберите',
     },
     labelCustomizeRangePicker: {
       customTime: 'пользовательское время',
