@@ -24,7 +24,6 @@ function replacePath(path) {
     const esModule = path.node.source.value.replace('/lib/', '/es/');
 
     const esPath = dirname(getProjectPath('node_modules', esModule));
-    console.log('esPath', esPath, fs.existsSync(esPath));
     if (fs.existsSync(esPath)) {
       path.node.source.value = esModule;
     }

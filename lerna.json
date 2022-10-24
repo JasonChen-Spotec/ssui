@@ -4,7 +4,7 @@
   "userWorkspaces": true,
   "command": {
     "version": {
-      "allowBranch": "dev",
+      "allowBranch": "3.x",
       "includeMergedTags": true
     },
     "publish": {
