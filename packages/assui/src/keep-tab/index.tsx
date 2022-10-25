@@ -15,8 +15,6 @@ interface NewTab extends Tab {
   count?: React.ReactNode;
 }
 export interface KeepTabProps extends Omit<TabsProps, 'items'> {
-  /** 由TabPane组成的children */
-  children: React.ReactNode;
   /** 初始化选中面板的 key，如果没有设置 activeKey */
   defaultActiveKey?: string;
   /** 保存激活 tab 面板的的key名 */
