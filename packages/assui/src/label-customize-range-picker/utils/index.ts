@@ -1,9 +1,10 @@
 import dateUtils from 'aa-utils/lib/dateUtils';
 import type { RangeValue } from 'rc-picker/lib/interface';
+import type { Moment } from 'moment';
 
 const now = dateUtils.getToday().endOf('day');
 
-export const formatMaxScope = (dateStampTuple: RangeValue<moment.Moment>, maxScope: number) => {
+export const formatMaxScope = (dateStampTuple: RangeValue<Moment>, maxScope: number) => {
   const [start, end] = dateStampTuple || [];
   let startStamp = start?.clone().startOf('day') ?? null;
   let endStamp = end?.clone().endOf('day') ?? null;
