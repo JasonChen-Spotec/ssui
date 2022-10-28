@@ -1,0 +1,1 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([[25],{"jN+4":function(e,t,a){"use strict";a.r(t);var n=a("q1tI"),c=a.n(n),s=e=>{var t=e.children,a=e.width,n=e.className;return c.a.createElement("div",{style:{width:"".concat(a,"px")},className:n},t)},i=s;t["default"]=()=>c.a.createElement(i,{width:110},"tableCol ")}}]);
