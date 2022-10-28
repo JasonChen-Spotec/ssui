@@ -1,7 +1,14 @@
 import * as React from 'react';
 import { SVGProps } from 'react';
 const SvgPtFlag = (props: SVGProps<SVGSVGElement>) => (
-  <svg width={26} height={18} fill="none" xmlns="http://www.w3.org/2000/svg" role="img" {...props}>
+  <svg
+    width={26}
+    height={18}
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    role="img"
+    {...props}
+  >
     <rect width={25.254} height={18} rx={2} fill="#fff" />
     <mask
       id="PTFlag_svg__a"

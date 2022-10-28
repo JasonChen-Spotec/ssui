@@ -1,7 +1,14 @@
 import * as React from 'react';
 import { SVGProps } from 'react';
 const SvgFrFlag = (props: SVGProps<SVGSVGElement>) => (
-  <svg width={27} height={18} fill="none" xmlns="http://www.w3.org/2000/svg" role="img" {...props}>
+  <svg
+    width={27}
+    height={18}
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    role="img"
+    {...props}
+  >
     <rect
       x={0.75}
       y={0.25}
@@ -36,7 +43,12 @@ const SvgFrFlag = (props: SVGProps<SVGSVGElement>) => (
     </mask>
     <g mask="url(#FRFlag_svg__a)">
       <path fill="#F44653" d="M17.515 0h8.507v18h-8.507z" />
-      <path fillRule="evenodd" clipRule="evenodd" d="M.5 18h8.507V0H.5v18Z" fill="#1035BB" />
+      <path
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M.5 18h8.507V0H.5v18Z"
+        fill="#1035BB"
+      />
     </g>
   </svg>
 );

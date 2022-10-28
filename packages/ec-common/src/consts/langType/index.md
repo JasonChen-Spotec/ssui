@@ -1,3 +1,21 @@
+---
+mobile: false
+title: langType
+nav:
+  title: ec-common
+  path: /ec-common
+group:
+  title: consts
+  path: /consts
+  order: 1
+---
+
+
+## langType
+
+## code
+
+```ts
 import React from 'react';
 import zhCN from 'antd/lib/locale/zh_CN';
 import enUS from 'antd/lib/locale/en_US';
@@ -22,7 +40,6 @@ import thTH from 'antd/lib/locale/th_TH';
 import roRO from 'antd/lib/locale/ro_RO';
 import viVN from 'antd/lib/locale/vi_VN';
 import EnFlag from '../../icons/EnFlag';
-import HkFlag from '../../icons/HkFlag';
 import CNFlag from '../../icons/CnFlag';
 import BGFlag from '../../icons/BgFlag';
 import CSFlag from '../../icons/CsFlag';
@@ -143,7 +160,7 @@ export type Languages = keyof typeof languages;
 
 export const languagesFlagMap = {
   [EN]: <EnFlag />,
-  [TW]: <HkFlag />,
+  [TW]: <CNFlag />,
   [ZH]: <CNFlag />,
   [BG]: <BGFlag />,
   [CS]: <CSFlag />,
@@ -278,3 +295,5 @@ export const I18NList = [
     name: 'Tiếng Việt',
   },
 ] as const;
+
+```

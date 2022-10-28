@@ -7,6 +7,7 @@ export { default as EnFlag } from './EnFlag';
 export { default as EsFlag } from './EsFlag';
 export { default as FiFlag } from './FiFlag';
 export { default as FrFlag } from './FrFlag';
+export { default as HkFlag } from './HkFlag';
 export { default as IdFlag } from './IdFlag';
 export { default as ItFlag } from './ItFlag';
 export { default as JaFlag } from './JaFlag';
