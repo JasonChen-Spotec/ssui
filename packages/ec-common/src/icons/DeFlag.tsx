@@ -1,7 +1,14 @@
 import * as React from 'react';
 import { SVGProps } from 'react';
 const SvgDeFlag = (props: SVGProps<SVGSVGElement>) => (
-  <svg width={26} height={18} fill="none" xmlns="http://www.w3.org/2000/svg" role="img" {...props}>
+  <svg
+    width={26}
+    height={18}
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    role="img"
+    {...props}
+  >
     <rect width={25.254} height={18} rx={2} fill="#fff" />
     <mask
       id="DEFlag_svg__a"
@@ -19,10 +26,20 @@ const SvgDeFlag = (props: SVGProps<SVGSVGElement>) => (
     <g mask="url(#DEFlag_svg__a)">
       <path fillRule="evenodd" clipRule="evenodd" d="M0 6h25.254V0H0v6Z" fill="#262626" />
       <g filter="url(#DEFlag_svg__b)">
-        <path fillRule="evenodd" clipRule="evenodd" d="M0 12h25.254V6H0v6Z" fill="#F01515" />
+        <path
+          fillRule="evenodd"
+          clipRule="evenodd"
+          d="M0 12h25.254V6H0v6Z"
+          fill="#F01515"
+        />
       </g>
       <g filter="url(#DEFlag_svg__c)">
-        <path fillRule="evenodd" clipRule="evenodd" d="M0 18h25.254v-6H0v6Z" fill="#FFD521" />
+        <path
+          fillRule="evenodd"
+          clipRule="evenodd"
+          d="M0 18h25.254v-6H0v6Z"
+          fill="#FFD521"
+        />
       </g>
     </g>
     <defs>

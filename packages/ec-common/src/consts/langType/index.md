@@ -1,3 +1,21 @@
+---
+mobile: false
+title: langType
+nav:
+  title: ec-common
+  path: /ec-common
+group:
+  title: consts
+  path: /consts
+  order: 1
+---
+
+
+## langType
+
+## code
+
+```ts
 import React from 'react';
 import zhCN from 'antd/lib/locale/zh_CN';
 import enUS from 'antd/lib/locale/en_US';
@@ -21,28 +39,27 @@ import arEG from 'antd/lib/locale/ar_EG';
 import thTH from 'antd/lib/locale/th_TH';
 import roRO from 'antd/lib/locale/ro_RO';
 import viVN from 'antd/lib/locale/vi_VN';
-import EnFlag from '../../icons/EnFlag';
-import HkFlag from '../../icons/HkFlag';
-import CNFlag from '../../icons/CnFlag';
-import BGFlag from '../../icons/BgFlag';
-import CSFlag from '../../icons/CsFlag';
-import DEFlag from '../../icons/DeFlag';
-import ESFlag from '../../icons/EsFlag';
-import FIFlag from '../../icons/FiFlag';
-import FRFlag from '../../icons/FrFlag';
-import IDFlag from '../../icons/IdFlag';
-import ITFlag from '../../icons/ItFlag';
-import JAFlag from '../../icons/JaFlag';
-import KOFlag from '../../icons/KoFlag';
-import NLFlag from '../../icons/NlFlag';
-import NOFlag from '../../icons/NoFlag';
-import PTFlag from '../../icons/PtFlag';
-import RUFlag from '../../icons/RuFlag';
-import ARFlag from '../../icons/ArFlag';
-import SVFlag from '../../icons/SvFlag';
-import ROFlag from '../../icons/RoFlag';
-import THFlag from '../../icons/ThFlag';
-import VIFlag from '../../icons/ViFlag';
+import EnFlag from '../../iconsComponent/EnFlag';
+import CNFlag from '../../iconsComponent/CnFlag';
+import BGFlag from '../../iconsComponent/BgFlag';
+import CSFlag from '../../iconsComponent/CsFlag';
+import DEFlag from '../../iconsComponent/DeFlag';
+import ESFlag from '../../iconsComponent/EsFlag';
+import FIFlag from '../../iconsComponent/FiFlag';
+import FRFlag from '../../iconsComponent/FrFlag';
+import IDFlag from '../../iconsComponent/IdFlag';
+import ITFlag from '../../iconsComponent/ItFlag';
+import JAFlag from '../../iconsComponent/JaFlag';
+import KOFlag from '../../iconsComponent/KoFlag';
+import NLFlag from '../../iconsComponent/NlFlag';
+import NOFlag from '../../iconsComponent/NoFlag';
+import PTFlag from '../../iconsComponent/PtFlag';
+import RUFlag from '../../iconsComponent/RuFlag';
+import ARFlag from '../../iconsComponent/ArFlag';
+import SVFlag from '../../iconsComponent/SvFlag';
+import ROFlag from '../../iconsComponent/RoFlag';
+import THFlag from '../../iconsComponent/ThFlag';
+import VIFlag from '../../iconsComponent/ViFlag';
 
 /** 🇬🇧 英语 */
 export const EN = 'en-US' as const;
@@ -143,7 +160,7 @@ export type Languages = keyof typeof languages;
 
 export const languagesFlagMap = {
   [EN]: <EnFlag />,
-  [TW]: <HkFlag />,
+  [TW]: <CNFlag />,
   [ZH]: <CNFlag />,
   [BG]: <BGFlag />,
   [CS]: <CSFlag />,
@@ -278,3 +295,5 @@ export const I18NList = [
     name: 'Tiếng Việt',
   },
 ] as const;
+
+```
