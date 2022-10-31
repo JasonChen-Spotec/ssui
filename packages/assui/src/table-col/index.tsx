@@ -1,6 +1,6 @@
 import React from 'react';
 
-interface TableColProps {
+export interface TableColProps {
   children: React.ReactNode;
   width?: number;
   className?: string;

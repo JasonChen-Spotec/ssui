@@ -104,6 +104,9 @@ export { default as LabelConditionInput } from './label-condition-input';
 export type { LabelTreeSelectProps } from './label-tree-select';
 export { default as LabelTreeSelect } from './label-tree-select';
 
+export type { TableColProps } from './table-col';
+export { default as TableCol } from './table-col';
+
 export type { LabelCustomizeRangePickerProps } from './label-customize-range-picker';
 export { default as LabelCustomizeRangePicker } from './label-customize-range-picker';
 
