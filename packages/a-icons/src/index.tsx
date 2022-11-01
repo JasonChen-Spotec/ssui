@@ -61,6 +61,7 @@ export { default as DocumentFilled } from './DocumentFilled';
 export { default as DocumentOutlined } from './DocumentOutlined';
 export { default as DoubleTextFilled } from './DoubleTextFilled';
 export { default as DoubleTextOutlined } from './DoubleTextOutlined';
+export { default as DownloadOutlinedFile } from './DownloadOutlinedFile';
 export { default as DownloadOutlined } from './DownloadOutlined';
 export { default as EarthFilled } from './EarthFilled';
 export { default as EarthOutlined } from './EarthOutlined';
