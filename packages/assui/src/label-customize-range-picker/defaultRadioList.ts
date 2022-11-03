@@ -3,8 +3,6 @@ import type { Moment } from 'moment';
 import type { LangType } from '../messages';
 import formatMessage from '../messages';
 
-const now = moment();
-
 export enum dateTypeEnum {
   TODAY = 1,
   YESTERDAY = 2,
@@ -29,6 +27,7 @@ export type RadioListType = {
 };
 
 const getDefaultRadioList = (message: LangType) => {
+  const now = moment();
   const defaultRadioList: RadioListType[] = [
     {
       key: dateTypeEnum.TODAY,
