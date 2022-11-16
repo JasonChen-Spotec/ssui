@@ -3,6 +3,7 @@ const fileHostMap = {
   test1: 'http://192.168.0.129:9000',
   test2: 'http://192.168.0.126:9000',
   pre: 'http://27.102.129.76:9000',
+  tmdPre: 'http://94.198.186.46:9000',
   pro: 'https://file.ecmarkets.sc',
 } as const;
 
@@ -12,6 +13,7 @@ const mainDomainMap = {
   test1: '192.168.0.129',
   test2: '192.168.0.126',
   pre: '27.102.129.76',
+  tmdPre: '94.198.186.46',
   pro: '.ecmarkets.sc',
 } as const;
 
@@ -20,6 +22,7 @@ const apiMap = {
   test1: '192.168.0.129:31000',
   test2: '192.168.0.126:31000',
   pre: '27.102.129.76:31000',
+  tmdPre: '94.198.186.46:31000',
   pro: 'api.ecmarkets.sc',
 };
 
@@ -28,6 +31,7 @@ const apiHostMap = {
   test1: `http://${apiMap.test1}`,
   test2: `http://${apiMap.test2}`,
   pre: `http://${apiMap.pre}`,
+  tmdPre: `http://${apiMap.tmdPre}`,
   pro: `https://${apiMap.pro}`,
 };
 
@@ -36,6 +40,7 @@ const socketHostMap = {
   test1: `ws://${apiMap.test1}`,
   test2: `ws://${apiMap.test2}`,
   pre: `ws://${apiMap.pre}`,
+  tmdPre: `ws://${apiMap.tmdPre}`,
   pro: `wss://${apiMap.pro}`,
 };
 
@@ -68,6 +73,13 @@ const allSiteMap: Record<any, any> = {
     webviewMobile: 'http://27.102.129.76:8040',
   },
   pre: {
+    admin: 'http://27.102.129.76:8020',
+    ib: 'http://27.102.129.76:8050',
+    client: 'http://27.102.129.76:8030',
+    website: 'http://27.102.129.76:8070',
+    webviewMobile: 'http://27.102.129.76:8040',
+  },
+  tmdPre: {
     admin: 'http://27.102.129.76:8020',
     ib: 'http://27.102.129.76:8050',
     client: 'http://27.102.129.76:8030',
