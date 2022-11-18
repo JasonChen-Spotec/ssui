@@ -80,11 +80,11 @@ const allSiteMap: Record<any, any> = {
     webviewMobile: 'http://27.102.129.76:8040',
   },
   tmdPre: {
-    admin: 'http://94.198.186.46:8020',
-    ib: 'http://94.198.186.46:8050',
-    client: 'http://94.198.186.46:8030',
-    website: 'http://94.198.186.46:8070',
-    webviewMobile: 'http://94.198.186.46:8040',
+    admin: 'http://admin.tmdtrader.com',
+    ib: 'http://ib.tmdtrader.com',
+    client: 'http://crm.tmdtrader.com',
+    website: 'http://www.tmdtrader.com',
+    webviewMobile: 'http://m.tmdtrader.com',
   },
   pro: {
     admin: 'https://Bh0wKonL8na8hFsOFOoqU1iz.ecmarkets.sc',
