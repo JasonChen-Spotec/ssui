@@ -3,7 +3,7 @@ const fileHostMap = {
   test1: 'http://192.168.0.129:9000',
   test2: 'http://192.168.0.126:9000',
   pre: 'http://27.102.129.76:9000',
-  tmdPre: 'http://94.198.186.46:9000',
+  tmdPre: 'file.tmdtrader.com',
   pro: 'https://file.ecmarkets.sc',
 } as const;
 
@@ -13,7 +13,7 @@ const mainDomainMap = {
   test1: '192.168.0.129',
   test2: '192.168.0.126',
   pre: '27.102.129.76',
-  tmdPre: '94.198.186.46',
+  tmdPre: '.tmdtrader.com',
   pro: '.ecmarkets.sc',
 } as const;
 
@@ -22,7 +22,7 @@ const apiMap = {
   test1: '192.168.0.129:31000',
   test2: '192.168.0.126:31000',
   pre: '27.102.129.76:31000',
-  tmdPre: '94.198.186.46:31000',
+  tmdPre: 'api.tmdtrader.com',
   pro: 'api.ecmarkets.sc',
 };
 
