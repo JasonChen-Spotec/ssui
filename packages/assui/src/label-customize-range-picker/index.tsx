@@ -23,7 +23,8 @@ export type RadioListType = {
   value: [Moment, Moment];
 };
 
-export interface LabelCustomizeRangePickerProps extends Omit<LabelRangePickerProps, 'label'> {
+export interface LabelCustomizeRangePickerProps
+  extends Omit<LabelRangePickerProps, 'label'> {
   radioList?: RadioListType[];
   customizeTimeList?: dateTypeEnum[];
   rangePickerType?: 'label' | 'origin';
@@ -59,7 +60,10 @@ const LabelCustomizeRangePicker = (props: LabelCustomizeRangePickerProps) => {
       if (!date) return false;
       const [startTime, endTime] = item.value;
       const [defaultStartTime, defaultEndTime] = date || [];
-      if (startTime.isSame(defaultStartTime, 'day') && endTime.isSame(defaultEndTime, 'day')) {
+      if (
+        startTime.isSame(defaultStartTime, 'day') &&
+        endTime.isSame(defaultEndTime, 'day')
+      ) {
         return true;
       }
       return false;
@@ -94,7 +98,8 @@ const LabelCustomizeRangePicker = (props: LabelCustomizeRangePickerProps) => {
 
   const onDateChange = (nextValue: RangeValue<moment.Moment>) => {
     const [start, end] = nextValue || [];
-    let nextStartDate = (showTime ? start?.clone() : start?.clone().startOf('day')) ?? null;
+    let nextStartDate =
+      (showTime ? start?.clone() : start?.clone().startOf('day')) ?? null;
     let nextEndDate = (showTime ? end?.clone() : end?.clone().endOf('day')) ?? null;
     if (!nextStartDate && !nextEndDate) {
       return setDate(undefined);
@@ -110,15 +115,27 @@ const LabelCustomizeRangePicker = (props: LabelCustomizeRangePickerProps) => {
 
       if (isChangeStartData) {
         if (nextEndDate.diff(nextStartDate, 'day') > maxScope) {
-          nextEndDate = nextStartDate.clone().add(maxScope - 1, 'day');
+          nextEndDate = nextStartDate
+            .clone()
+            .add(maxScope - 1, 'day')
+            .endOf('day');
         }
       } else if (nextEndDate.diff(nextStartDate, 'day') > maxScope) {
-        nextStartDate = nextEndDate.clone().subtract(maxScope - 1, 'day');
+        nextStartDate = nextEndDate
+          .clone()
+          .subtract(maxScope - 1, 'day')
+          .startOf('day');
       }
     } else if (!nextStartDate && nextEndDate) {
-      nextStartDate = nextEndDate.clone().subtract(maxScope - 1, 'day');
+      nextStartDate = nextEndDate
+        .clone()
+        .subtract(maxScope - 1, 'day')
+        .startOf('day');
     } else if (nextStartDate && !nextEndDate) {
-      nextEndDate = nextStartDate.clone().add(maxScope - 1, 'day');
+      nextEndDate = nextStartDate
+        .clone()
+        .add(maxScope - 1, 'day')
+        .endOf('day');
     }
 
     if (nextStartDate && nextEndDate) {
