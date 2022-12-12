@@ -5,7 +5,7 @@ const fileHostMap = {
   pre: 'http://27.102.129.76:9000',
   tmdPre: 'file.tmdtrader.com',
   pro: 'https://file.ecmarkets.sc',
-  mruPro: 'http://file.ecmarkets.mu',
+  mruPro: 'https://file.ecmarkets.mu',
 } as const;
 
 /** 单点登录使用 */
@@ -36,7 +36,7 @@ const apiHostMap = {
   pre: `http://${apiMap.pre}`,
   tmdPre: `http://${apiMap.tmdPre}`,
   pro: `https://${apiMap.pro}`,
-  mruPro: `http://${apiMap.mruPro}`,
+  mruPro: `https://${apiMap.mruPro}`,
 };
 
 const socketHostMap = {
@@ -46,7 +46,7 @@ const socketHostMap = {
   pre: `ws://${apiMap.pre}`,
   tmdPre: `ws://${apiMap.tmdPre}`,
   pro: `wss://${apiMap.pro}`,
-  mruPro: `ws://${apiMap.mruPro}`,
+  mruPro: `wss://${apiMap.mruPro}`,
 };
 
 const allSiteMap: Record<any, any> = {
@@ -92,11 +92,11 @@ const allSiteMap: Record<any, any> = {
     webviewMobile: 'http://m.tmdtrader.com',
   },
   mruPro: {
-    admin: 'http://u8qtafHHyMrTzpuQ9zKB.ecmarkets.mu',
-    ib: 'http://ib.ecmarkets.mu',
-    client: 'http://crm.ecmarkets.mu',
-    website: 'http://www.ecmarkets.mu',
-    webviewMobile: 'http://m.ecmarkets.mu',
+    admin: 'https://u8qtafHHyMrTzpuQ9zKB.ecmarkets.mu',
+    ib: 'https://ib.ecmarkets.mu',
+    client: 'https://crm.ecmarkets.mu',
+    website: 'https://www.ecmarkets.mu',
+    webviewMobile: 'https://m.ecmarkets.mu',
   },
   pro: {
     admin: 'https://Bh0wKonL8na8hFsOFOoqU1iz.ecmarkets.sc',
