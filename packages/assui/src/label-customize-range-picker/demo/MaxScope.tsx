@@ -8,21 +8,39 @@ const Demo = () => {
 
   const [date, setDate] = useState<RangeValue<moment.Moment>>(initData);
 
+  const [date1, setDate1] = useState<RangeValue<moment.Moment>>(initData);
+
   const onDateChange = (value: RangeValue<moment.Moment>) => {
     setDate(value);
   };
 
+  const onDateChange1 = (value: RangeValue<moment.Moment>) => {
+    setDate1(value);
+  };
+
   return (
-    <LabelCustomizeRangePicker
-      label="结算时间"
-      value={date}
-      onChange={onDateChange}
-      maxScope={3}
-      showTime={{
-        defaultValue: [moment('00:00:00', 'HH:mm:ss'), moment('23:59:59', 'HH:mm:ss')],
-        format: 'YYYY/MM/DD HH:mm',
-      }}
-    />
+    <div>
+      <LabelCustomizeRangePicker
+        label="结算时间"
+        value={date}
+        onChange={onDateChange}
+        maxScope={3}
+        showTime={{
+          format: 'YYYY/MM/DD HH:mm',
+        }}
+      />
+      <LabelCustomizeRangePicker
+        value={date1}
+        rangePickerType="origin"
+        onChange={onDateChange}
+        allowClear
+        fillDefaultDate={false}
+        maxScope={3}
+        showTime={{
+          format: 'YYYY/MM/DD HH:mm',
+        }}
+      />
+    </div>
   );
 };
 

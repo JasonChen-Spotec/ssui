@@ -31,6 +31,8 @@ export interface LabelCustomizeRangePickerProps
   label?: React.ReactNode;
   /** 最大时间范围 */
   maxScope?: number;
+  /** 如果有MaxScope，在没有默认值的情况下自动填充默认值 */
+  fillDefaultDate?: boolean;
   showShortcutPanel?: boolean;
 }
 
@@ -43,8 +45,10 @@ const LabelCustomizeRangePicker = (props: LabelCustomizeRangePickerProps) => {
     rangePickerType = 'label',
     label,
     showTime,
+    allowClear,
     maxScope,
     onOpenChange,
+    fillDefaultDate = true,
     showShortcutPanel = true,
     ...restProps
   } = props;
@@ -83,7 +87,7 @@ const LabelCustomizeRangePicker = (props: LabelCustomizeRangePickerProps) => {
 
   useEffect(() => {
     const [startTime, endTime] = date || [];
-    if (maxScope) {
+    if (maxScope && fillDefaultDate) {
       const [newStartDate, newEndDate] = formatMaxScope(date, maxScope);
       if (!newStartDate?.isSame(startTime) || !newEndDate?.isSame(endTime)) {
         setDate(formatMaxScope(date, maxScope));
@@ -97,6 +101,8 @@ const LabelCustomizeRangePicker = (props: LabelCustomizeRangePickerProps) => {
   };
 
   const onDateChange = (nextValue: RangeValue<moment.Moment>) => {
+    console.log('nextValue', nextValue);
+
     const [start, end] = nextValue || [];
     let nextStartDate =
       (showTime ? start?.clone() : start?.clone().startOf('day')) ?? null;
@@ -216,7 +222,12 @@ const LabelCustomizeRangePicker = (props: LabelCustomizeRangePickerProps) => {
       {...baseOptions}
     />
   ) : (
-    <RangePicker showTime={showTime} {...baseOptions} {...omit(restProps, 'onChange')} />
+    <RangePicker
+      showTime={showTime}
+      {...baseOptions}
+      {...omit(restProps, 'onChange')}
+      allowClear
+    />
   );
 };
 
