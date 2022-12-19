@@ -45,7 +45,7 @@ const LabelCustomizeRangePicker = (props: LabelCustomizeRangePickerProps) => {
     rangePickerType = 'label',
     label,
     showTime,
-    allowClear,
+    allowClear = false,
     maxScope,
     onOpenChange,
     fillDefaultDate = true,
@@ -211,7 +211,7 @@ const LabelCustomizeRangePicker = (props: LabelCustomizeRangePickerProps) => {
     open,
     onOpenChange: handleOpenChange,
     panelRender: showShortcutPanel ? panelRender : undefined,
-    allowClear: false,
+    allowClear,
   };
 
   return rangePickerType === 'label' ? (

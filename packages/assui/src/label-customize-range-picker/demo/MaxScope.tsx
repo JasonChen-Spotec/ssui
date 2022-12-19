@@ -32,7 +32,7 @@ const Demo = () => {
       <LabelCustomizeRangePicker
         value={date1}
         rangePickerType="origin"
-        onChange={onDateChange}
+        onChange={onDateChange1}
         allowClear
         fillDefaultDate={false}
         maxScope={3}
