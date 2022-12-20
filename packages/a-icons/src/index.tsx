@@ -147,6 +147,8 @@ export { default as PlusFilled } from './PlusFilled';
 export { default as PlusOutlined } from './PlusOutlined';
 export { default as QrCodeFilled } from './QrCodeFilled';
 export { default as QuestionMarkFilled } from './QuestionMarkFilled';
+export { default as ReceiptFilled } from './ReceiptFilled';
+export { default as ReceiptOutlined } from './ReceiptOutlined';
 export { default as RefreshFilled } from './RefreshFilled';
 export { default as RefreshOutlined } from './RefreshOutlined';
 export { default as RetryRefreshFilled } from './RetryRefreshFilled';
