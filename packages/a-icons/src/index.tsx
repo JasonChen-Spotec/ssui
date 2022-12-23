@@ -151,6 +151,7 @@ export { default as ReceiptFilled } from './ReceiptFilled';
 export { default as ReceiptOutlined } from './ReceiptOutlined';
 export { default as RefreshFilled } from './RefreshFilled';
 export { default as RefreshOutlined } from './RefreshOutlined';
+export { default as RefreshRightOutlined } from './RefreshRightOutlined';
 export { default as RetryRefreshFilled } from './RetryRefreshFilled';
 export { default as RiskControlFilled } from './RiskControlFilled';
 export { default as RiskControlOutlined } from './RiskControlOutlined';
