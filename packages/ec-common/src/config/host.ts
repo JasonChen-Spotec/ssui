@@ -6,6 +6,8 @@ const fileHostMap = {
   tmdPre: 'file.tmdtrader.com',
   pro: 'https://file.ecmarkets.sc',
   mruPro: 'https://file.ecmarkets.mu',
+  ukProTmp: 'file.ecmarkets.co.uk',
+  ukPro: 'file.ecmarkets.co.uk',
 } as const;
 
 /** 单点登录使用 */
@@ -17,6 +19,8 @@ const mainDomainMap = {
   tmdPre: '.tmdtrader.com',
   pro: '.ecmarkets.sc',
   mruPro: '.ecmarkets.mu',
+  ukProTmp: '.ecmarkets.co.uk',
+  ukPro: '.ecmarkets.co.uk',
 } as const;
 
 const apiMap = {
@@ -27,7 +31,9 @@ const apiMap = {
   tmdPre: 'api.tmdtrader.com',
   pro: 'api.ecmarkets.sc',
   mruPro: 'api.ecmarkets.mu',
-};
+  ukProTmp: 'api1.ecmarkets.co.uk',
+  ukPro: 'api.ecmarkets.co.uk',
+} as const;
 
 const apiHostMap = {
   dev: `http://${apiMap.dev}`,
@@ -37,7 +43,9 @@ const apiHostMap = {
   tmdPre: `http://${apiMap.tmdPre}`,
   pro: `https://${apiMap.pro}`,
   mruPro: `https://${apiMap.mruPro}`,
-};
+  ukProTmp: `https://${apiMap.ukProTmp}`,
+  ukPro: `https://${apiMap.ukPro}`,
+} as const;
 
 const socketHostMap = {
   dev: `ws://${apiMap.dev}`,
@@ -47,7 +55,9 @@ const socketHostMap = {
   tmdPre: `ws://${apiMap.tmdPre}`,
   pro: `wss://${apiMap.pro}`,
   mruPro: `wss://${apiMap.mruPro}`,
-};
+  ukProTmp: `wss://${apiMap.ukProTmp}`,
+  ukPro: `wss://${apiMap.ukPro}`,
+} as const;
 
 const allSiteMap: Record<any, any> = {
   static: {
@@ -96,6 +106,20 @@ const allSiteMap: Record<any, any> = {
     ib: 'https://ib.ecmarkets.mu',
     client: 'https://crm.ecmarkets.mu',
     website: 'https://www.ecmarkets.mu',
+    webviewMobile: 'https://m.ecmarkets.mu',
+  },
+  ukProTmp: {
+    admin: 'https://hjyKHXcxcwch9nuT.ecmarkets.co.uk',
+    ib: 'https://ib1.ecmarkets.co.uk',
+    client: 'https://crm1.ecmarkets.co.uk',
+    website: 'https://www1.ecmarkets.co.uk',
+    webviewMobile: 'https://m.ecmarkets.mu',
+  },
+  ukPro: {
+    admin: 'https://hjyKHXcxcwch9nuT.ecmarkets.co.uk',
+    ib: 'https://ib.ecmarkets.co.uk',
+    client: 'https://crm.ecmarkets.co.uk',
+    website: 'https://www.ecmarkets.co.uk',
     webviewMobile: 'https://m.ecmarkets.mu',
   },
   pro: {
