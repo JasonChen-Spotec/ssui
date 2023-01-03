@@ -10,14 +10,31 @@ import moment from 'moment';
 
 const dateMoment = moment(1598343036538).utc();
 
+dateUtils.timeZoneOffset = 10800;
+
 const Demo = () => (
   <div>
+    <div>{moment(1598343036538).utcOffset(3).format('YYYY/MM/DD HH:mm')}</div>
+    <div>{moment(1598343036538).format('YYYY/MM/DD HH:mm')}</div>
+    <div>{moment().utc().utcOffset(3).valueOf()}</div>
+    <div>{moment().utc().local().valueOf()}</div>
+    <div>
+      测试时间戳
+      <br />
+      {moment('12:23:23', 'HH:mm:ss').utcOffset(3).valueOf()}
+      <br />
+      {moment('12:23:23', 'HH:mm:ss').valueOf()}
+    </div>
     <Descriptions column={1}>
-      <Descriptions.Item label="格式化日期">{dateUtils.formatDate(dateMoment)}</Descriptions.Item>
+      <Descriptions.Item label="格式化日期">
+        {dateUtils.formatDate(dateMoment)}
+      </Descriptions.Item>
       <Descriptions.Item label="格式化日期(自定义格式)">
         {dateUtils.formatDate(dateMoment, 'YYYY/MM/DD')}
       </Descriptions.Item>
-      <Descriptions.Item label="格式化时间">{dateUtils.formatTime(dateMoment)}</Descriptions.Item>
+      <Descriptions.Item label="格式化时间">
+        {dateUtils.formatTime(dateMoment)}
+      </Descriptions.Item>
       <Descriptions.Item label="格式化时间(自定义格式)">
         {dateUtils.formatTime(dateMoment, 'HH:mm')}
       </Descriptions.Item>

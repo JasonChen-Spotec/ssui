@@ -5,17 +5,6 @@ import isDate from 'lodash/isDate';
 
 import 'moment/locale/zh-cn';
 
-const createMoment = (value: moment.MomentInput) => {
-  if (value) {
-    const val = moment(value).utc().local();
-    if (val.isValid()) {
-      return val;
-    }
-  }
-
-  return null;
-};
-
 class DateUtils {
   currentDateFormat: string;
 
@@ -29,6 +18,8 @@ class DateUtils {
 
   timeFormat: string;
 
+  timeZoneOffset: number;
+
   constructor() {
     this.currentDateFormat = 'YYYY-MM-DD';
     this.currentTimeFormat = 'HH:mm';
@@ -41,6 +32,17 @@ class DateUtils {
         set(v) {
           this.currentLocale = v;
           this.onIntlChange();
+        },
+      },
+    });
+
+    Object.defineProperties(this, {
+      timeZoneOffset: {
+        get() {
+          return this.currentANTimeZoneOffset;
+        },
+        set(v) {
+          this.currentANTimeZoneOffset = v;
         },
       },
     });
@@ -80,6 +82,26 @@ class DateUtils {
     moment.locale(locale);
   };
 
+  createMoment = (value: moment.MomentInput) => {
+    if (value) {
+      if (isNumber(this.timeZoneOffset)) {
+        const val = moment(value)
+          .utc()
+          .utcOffset(this.timeZoneOffset / 60 / 60);
+        if (val.isValid()) {
+          return val;
+        }
+      } else {
+        const val = moment(value).utc().local();
+        if (val.isValid()) {
+          return val;
+        }
+      }
+    }
+
+    return null;
+  };
+
   parseDate(date: moment.MomentInput, format?: string) {
     return moment(date, format || this.dateFormat);
   }
@@ -97,31 +119,38 @@ class DateUtils {
   }
 
   formatDate(date: moment.MomentInput, format?: string): string {
-    const m = createMoment(date);
+    const m = this.createMoment(date);
 
     return m ? m.format(format || this.dateFormat) : '';
   }
 
   formatTime(date: moment.MomentInput, format?: string): string {
-    const m = createMoment(date);
+    const m = this.createMoment(date);
     return m ? m.format(format || this.timeFormat) : '';
   }
 
   formatDateTime(dateTime: moment.MomentInput, format?: string): string {
-    const m = createMoment(dateTime);
+    const m = this.createMoment(dateTime);
     return m ? m.format(format || this.dateTimeFormat) : '';
   }
 
   formatToTimestamp = (date: moment.MomentInput): number => {
     if (date) {
-      const m = createMoment(date);
+      const m = this.createMoment(date);
       return m ? +m.valueOf() : +this.getToday().valueOf();
     }
 
     return +this.getToday().valueOf();
   };
 
-  getToday = () => moment();
+  getToday = (timeZoneOffset?: number) => {
+    if (timeZoneOffset || this.timeZoneOffset) {
+      const resultOffset = timeZoneOffset || this.timeZoneOffset;
+      return moment().utc().utcOffset(resultOffset);
+    }
+
+    return moment();
+  };
 
   getTimeZone = () => momentTimezone.tz.guess();
 }
