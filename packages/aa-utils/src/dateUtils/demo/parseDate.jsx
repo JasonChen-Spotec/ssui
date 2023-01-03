@@ -23,6 +23,9 @@ const Demo = () => (
       <Descriptions.Item label="解析时间(自定义格式)">
         {dateUtils.parseTime('12-23-23', 'HH-mm-ss').format(dateUtils.timeFormat)}
       </Descriptions.Item>
+      <Descriptions.Item label="解析日期时间">
+        {dateUtils.parseDateTime('1995-09-23 12:23:23').format(dateUtils.dateTimeFormat)}
+      </Descriptions.Item>
       <Descriptions.Item label="解析日期时间(时间戳)">
         {dateUtils.parseDateTime(1598343036538).format(dateUtils.dateTimeFormat)}
       </Descriptions.Item>

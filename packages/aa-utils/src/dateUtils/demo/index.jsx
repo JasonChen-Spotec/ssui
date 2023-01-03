@@ -10,7 +10,7 @@ import moment from 'moment';
 
 const dateMoment = moment(1598343036538).utc();
 
-dateUtils.timeZoneOffset = 10800;
+dateUtils.timeZoneOffset = -10800 / 60 / 60;
 
 const Demo = () => (
   <div>
@@ -24,6 +24,11 @@ const Demo = () => (
       {moment('12:23:23', 'HH:mm:ss').utcOffset(3).valueOf()}
       <br />
       {moment('12:23:23', 'HH:mm:ss').valueOf()}
+    </div>
+
+    <div>
+      今天:
+      {dateUtils.getToday().format('YYYY-MM-DD HH:mm')}
     </div>
     <Descriptions column={1}>
       <Descriptions.Item label="格式化日期">
