@@ -1,5 +1,6 @@
 import moment from 'moment';
 import type { Moment } from 'moment';
+import dateUtils from 'aa-utils/lib/dateUtils';
 import type { LangType } from '../messages';
 import formatMessage from '../messages';
 
@@ -27,7 +28,7 @@ export type RadioListType = {
 };
 
 const getDefaultRadioList = (message: LangType) => {
-  const now = moment();
+  const now = dateUtils.getToday();
   const defaultRadioList: RadioListType[] = [
     {
       key: dateTypeEnum.TODAY,
