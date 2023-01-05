@@ -46,7 +46,7 @@ const getDefaultRadioList = (message: LangType) => {
     {
       key: dateTypeEnum.WEEK,
       text: formatMessage(message, 'labelCustomizeRangePicker', 'week'),
-      value: [now.clone().startOf('week'), now.clone().endOf('week')],
+      value: [now.clone().startOf('week'), now.clone().endOf('day')],
     },
     {
       key: dateTypeEnum.LAST_WEEK,
@@ -59,7 +59,7 @@ const getDefaultRadioList = (message: LangType) => {
     {
       key: dateTypeEnum.MONTH,
       text: formatMessage(message, 'labelCustomizeRangePicker', 'month'),
-      value: [now.clone().startOf('month'), now.clone().endOf('month')],
+      value: [now.clone().startOf('month'), now.clone().endOf('day')],
     },
     {
       key: dateTypeEnum.LAST_MONTH,
@@ -72,7 +72,7 @@ const getDefaultRadioList = (message: LangType) => {
     {
       key: dateTypeEnum.QUARTER,
       text: formatMessage(message, 'labelCustomizeRangePicker', 'quarter'),
-      value: [now.clone().startOf('quarter'), now.clone().endOf('quarter')],
+      value: [now.clone().startOf('quarter'), now.clone().endOf('day')],
     },
     {
       key: dateTypeEnum.LAST_QUARTER,
