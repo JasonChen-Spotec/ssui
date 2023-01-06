@@ -113,14 +113,14 @@ const allSiteMap: Record<any, any> = {
     ib: 'https://ib1.ecmarkets.co.uk',
     client: 'https://crm1.ecmarkets.co.uk',
     website: 'https://www1.ecmarkets.co.uk',
-    webviewMobile: 'https://m.ecmarkets.mu',
+    webviewMobile: 'https://m.ecmarkets.uk',
   },
   ukPro: {
     admin: 'https://hjyKHXcxcwch9nuT.ecmarkets.co.uk',
     ib: 'https://ib.ecmarkets.co.uk',
     client: 'https://crm.ecmarkets.co.uk',
     website: 'https://www.ecmarkets.co.uk',
-    webviewMobile: 'https://m.ecmarkets.mu',
+    webviewMobile: 'https://m.ecmarkets.uk',
   },
   pro: {
     admin: 'https://Bh0wKonL8na8hFsOFOoqU1iz.ecmarkets.sc',
