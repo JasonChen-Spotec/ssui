@@ -40,6 +40,7 @@ export { default as ChevronUpFilled } from './ChevronUpFilled';
 export { default as CirclePlusFilled } from './CirclePlusFilled';
 export { default as ClockCircleFilled } from './ClockCircleFilled';
 export { default as ClockCircleOutline } from './ClockCircleOutline';
+export { default as ClockOutline } from './ClockOutline';
 export { default as CloseCircleFilled } from './CloseCircleFilled';
 export { default as CloseCircleOutlined } from './CloseCircleOutlined';
 export { default as CloseFilled } from './CloseFilled';
