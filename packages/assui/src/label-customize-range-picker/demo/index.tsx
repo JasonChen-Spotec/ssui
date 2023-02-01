@@ -1,6 +1,6 @@
 import React from 'react';
 import { Form, Button } from 'antd';
-import LabelCustomizeRangePicker from '../index';
+import { LabelCustomizeRangePicker } from 'assui';
 
 const Demo = () => {
   const onFinish = (value: any) => {
