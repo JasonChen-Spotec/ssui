@@ -34,6 +34,8 @@ export interface LabelCustomizeRangePickerProps
   /** 如果有MaxScope，在没有默认值的情况下自动填充默认值 */
   fillDefaultDate?: boolean;
   showShortcutPanel?: boolean;
+  /** 时间偏移量 秒 */
+  timeOffset?: number;
 }
 
 const { RangePicker } = DatePicker;
@@ -48,6 +50,7 @@ const LabelCustomizeRangePicker = (props: LabelCustomizeRangePickerProps) => {
     allowClear = false,
     maxScope,
     onOpenChange,
+    timeOffset,
     fillDefaultDate = true,
     showShortcutPanel = true,
     ...restProps
@@ -58,10 +61,10 @@ const LabelCustomizeRangePicker = (props: LabelCustomizeRangePickerProps) => {
   const [open, setOpen] = useState(false);
   const messages = useContext(LocaleContext);
   const defaultRadioList = customizeTimeList
-    ? getDefaultRadioList(messages).filter((item) =>
+    ? getDefaultRadioList({ messages, timeOffset }).filter((item) =>
         customizeTimeList.includes(item.key as dateTypeEnum),
       )
-    : getDefaultRadioList(messages);
+    : getDefaultRadioList({ messages, timeOffset });
 
   const dataSource = radioList ?? defaultRadioList;
 
