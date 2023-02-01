@@ -57,7 +57,13 @@ const LabelCustomizeRangePicker = (props: LabelCustomizeRangePickerProps) => {
   const [radioKey, setRadioKey] = useState<string | number | null>();
   const [open, setOpen] = useState(false);
   const messages = useContext(LocaleContext);
-  const dataSource = radioList ?? getDefaultRadioList(messages);
+  const defaultRadioList = customizeTimeList
+    ? getDefaultRadioList(messages).filter((item) =>
+        customizeTimeList.includes(item.key as dateTypeEnum),
+      )
+    : getDefaultRadioList(messages);
+
+  const dataSource = radioList ?? defaultRadioList;
 
   useEffect(() => {
     const filterItemList = dataSource.filter((item) => {
@@ -159,20 +165,14 @@ const LabelCustomizeRangePicker = (props: LabelCustomizeRangePickerProps) => {
     setOpen(false);
   };
 
-  const list =
-    radioList ??
-    getDefaultRadioList(messages).filter((item) =>
-      customizeTimeList ? customizeTimeList.includes(item.key as dateTypeEnum) : true,
-    );
-
   const resultList = maxScope
-    ? list.filter((item) => {
+    ? dataSource.filter((item) => {
         const [startTime, entTime] = item.value;
         const space = moment.duration(entTime.diff(startTime)).asDays();
 
         return space <= maxScope;
       })
-    : list;
+    : dataSource;
 
   const panelRender = (panel: React.ReactNode) => (
     <div className="label-customize-range-picker-panel">
