@@ -145,7 +145,8 @@ class DateUtils {
 
   getToday = (timeZoneOffset?: number) => {
     if (isNumber(timeZoneOffset) || isNumber(this.timeZoneOffset)) {
-      const resultOffset = (timeZoneOffset || this.timeZoneOffset) / 60 / 60;
+      const resultOffset =
+        (isNumber(timeZoneOffset) ? timeZoneOffset : this.timeZoneOffset) / 60 / 60;
       return moment().utc().utcOffset(resultOffset);
     }
 

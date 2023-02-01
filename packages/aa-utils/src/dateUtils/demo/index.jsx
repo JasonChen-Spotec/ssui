@@ -10,7 +10,7 @@ import moment from 'moment';
 
 const dateMoment = moment(1598343036538).utc();
 
-dateUtils.timeZoneOffset = -10800 / 60 / 60;
+dateUtils.timeZoneOffset = -40800;
 
 const Demo = () => (
   <div>
@@ -29,6 +29,10 @@ const Demo = () => (
     <div>
       今天:
       {dateUtils.getToday().format('YYYY-MM-DD HH:mm')}
+    </div>
+    <div>
+      UTC-0的今天:
+      {dateUtils.getToday(0).format('YYYY-MM-DD HH:mm')}
     </div>
     <Descriptions column={1}>
       <Descriptions.Item label="格式化日期">
