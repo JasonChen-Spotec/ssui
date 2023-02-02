@@ -3,7 +3,7 @@ import Icon, { IconProps } from 'a-base-icon/lib/icon';
 
 function TimeCardFilled(componentProps: IconProps) {
   const IconNode = (props: React.SVGProps<SVGSVGElement>) => (
-    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" {...props}>
       <path
         d="M12 20.25a9 9 0 100-18 9 9 0 000 18zm-3.852-6.102l3.177-3.178V7.2a.675.675 0 111.35 0v4.05c0 .179-.071.35-.198.477l-3.375 3.375a.675.675 0 11-.954-.954z"
         fill="currentColor"
