@@ -185,6 +185,8 @@ export { default as StopFilled } from './StopFilled';
 export { default as StopOutlined } from './StopOutlined';
 export { default as TagFilled } from './TagFilled';
 export { default as TagOutlined } from './TagOutlined';
+export { default as TimeCardFilled } from './TimeCardFilled';
+export { default as TimeZoneSiteFilled } from './TimeZoneSiteFilled';
 export { default as TmdLogo } from './TmdLogo';
 export { default as TrashCanFilled } from './TrashCanFilled';
 export { default as TrashOutlined } from './TrashOutlined';
