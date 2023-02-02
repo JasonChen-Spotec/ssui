@@ -190,6 +190,7 @@ export { default as TimeZoneSiteFilled } from './TimeZoneSiteFilled';
 export { default as TmdLogo } from './TmdLogo';
 export { default as TrashCanFilled } from './TrashCanFilled';
 export { default as TrashOutlined } from './TrashOutlined';
+export { default as TreeCircleFilled } from './TreeCircleFilled';
 export { default as TreeFilled } from './TreeFilled';
 export { default as TreeOutlined } from './TreeOutlined';
 export { default as UnlockFilled } from './UnlockFilled';
