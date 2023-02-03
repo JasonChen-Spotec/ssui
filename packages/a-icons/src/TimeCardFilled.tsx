@@ -14,7 +14,7 @@ function TimeCardFilled(componentProps: IconProps) {
       />
       <path
         d="M14.426 14.827l5.03-1.008.124.616-5.03 1.008-.124-.616zM14.975 17.279l4.977-.997.123.615-4.977.998-.123-.616zM15.457 19.744l2.468-.495.124.616-2.469.494-.123-.615z"
-        fill="currentColor"
+        fill="#fff"
       />
     </svg>
   );
