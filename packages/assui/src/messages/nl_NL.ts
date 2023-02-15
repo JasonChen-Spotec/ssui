@@ -20,6 +20,7 @@ const locale = {
       last90days: 'afgelopen 90 dagen',
       last180days: 'Afgelopen 180 dagen',
       last365days: 'Afgelopen 365 dagen',
+      year: 'Year',
     },
   },
 };

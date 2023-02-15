@@ -20,6 +20,7 @@ const locale = {
       last90days: '지난 90일',
       last180days: '지난 180일',
       last365days: '지난 365일',
+      year: 'Year',
     },
   },
 };
