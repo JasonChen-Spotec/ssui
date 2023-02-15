@@ -1,4 +1,3 @@
-import moment from 'moment';
 import { isNumber } from 'lodash';
 import type { Moment } from 'moment';
 import dateUtils from 'aa-utils/lib/dateUtils';
@@ -20,6 +19,7 @@ export enum dateTypeEnum {
   BEFORE_90_DAY = 12,
   BEFORE_180_DAY = 13,
   BEFORE_365_DAY = 14,
+  YEAR = 15,
 }
 
 export type RadioListType = {
@@ -89,6 +89,11 @@ const getDefaultRadioList = ({ messages, timeOffset }: GetDefaultRadioListPropsT
         now.clone().subtract(1, 'quarter').startOf('quarter'),
         now.clone().subtract(1, 'quarter').endOf('quarter'),
       ],
+    },
+    {
+      key: dateTypeEnum.YEAR,
+      text: formatMessage(messages, 'labelCustomizeRangePicker', 'year'),
+      value: [now.clone().startOf('year'), now.endOf('day')],
     },
     {
       key: dateTypeEnum.BEFORE_7_DAY,

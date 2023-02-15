@@ -20,6 +20,7 @@ const locale = {
       last90days: 'senaste 90 dagarna',
       last180days: 'Senaste 180 dagarna',
       last365days: 'Senaste 365 dagarna',
+      year: 'Year',
     },
   },
 };

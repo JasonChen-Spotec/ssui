@@ -20,6 +20,7 @@ const locale = {
       last90days: 'posledních 90 dnů',
       last180days: 'Posledních 180 dní',
       last365days: 'Posledních 365 dní',
+      year: 'Year',
     },
   },
 };
