@@ -2,12 +2,20 @@
 @import '../../style/themes/default.less';
 
 @color_9aa5b5: #9aa5b5;
+@color_a0a0a0: #a0a0a0;
 @font-size-base: 14px;
 
 .label-range-picker {
   position: relative;
   width: 220px;
   height: 100%;
+  cursor: pointer;
+
+  &:hover {
+    .@{ant-prefix}-picker {
+      border-color: @color_a0a0a0;
+    }
+  }
 
   .@{ant-prefix}-picker {
     height: 45px;
@@ -51,10 +59,14 @@
 
   &-text {
     position: absolute;
-    top: 12px;
-    left: 16px;
+    top: 0;
+    left: 0;
     z-index: 2;
-    height: 20px;
+    display: flex;
+    align-items: center;
+    width: calc(100% - 12px);
+    height: 100%;
+    margin-left: 12px;
     color: @color_9aa5b5;
     font-size: @font-size-base;
     line-height: 20px;
