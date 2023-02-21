@@ -27,7 +27,8 @@ export interface RcEchartPropsType {
 }
 
 const ReactEchartCore = (props: RcEchartPropsType) => {
-  const { className, option, echarts, notMerge, lazyUpdate, onEvents, opts, theme } = props;
+  const { className, option, echarts, notMerge, lazyUpdate, onEvents, opts, theme } =
+    props;
   const chartDomRef = useRef<HTMLDivElement>();
   const chartRef = useRef<EChartsInterfaceType>();
 
@@ -77,7 +78,7 @@ const ReactEchartCore = (props: RcEchartPropsType) => {
     dispose();
     renderEchartDom();
     bindEvents();
-  }, [theme, opts, onEvents]);
+  }, [theme, opts]);
 
   // need setOption
   useUpdateEffect(() => {
