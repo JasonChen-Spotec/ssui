@@ -43,6 +43,7 @@ const LabelDatePicker: React.FC<LabelRangePickerProps> = (props) => {
       className={classNames(
         {
           'label-range-picker': true,
+          'label-range-picker-disabled': props.disabled,
           'label-range-picker-label-scale': open || value,
         },
         className,
