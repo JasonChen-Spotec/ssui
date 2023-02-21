@@ -75,6 +75,7 @@ const LabelInput: React.FC<LabelInputProps> = (props) => {
     type = 'text',
     maxLength,
     baseMinWidth = 50,
+    disabled,
   } = props;
   const labelDomRef = React.useRef<HTMLLabelElement>(null);
   const labelSize = useSize(labelDomRef);
@@ -122,6 +123,7 @@ const LabelInput: React.FC<LabelInputProps> = (props) => {
         className={classNames('label-input-field', {
           'label-input-affix': prefix || suffix || isPasswordInput,
           'label-input-focused': focused,
+          'label-input-disabled': disabled,
         })}
       >
         {prefix && <div className="label-input-prefix">{prefix}</div>}
@@ -136,8 +138,13 @@ const LabelInput: React.FC<LabelInputProps> = (props) => {
             onBlur={handleBlur}
             onChange={handleChange}
             maxLength={maxLength}
+            disabled={disabled}
           />
-          <label className="label-input-text" onClick={handleLabelClick} ref={labelDomRef}>
+          <label
+            className="label-input-text"
+            onClick={handleLabelClick}
+            ref={labelDomRef}
+          >
             {label}
           </label>
         </div>
@@ -145,7 +152,10 @@ const LabelInput: React.FC<LabelInputProps> = (props) => {
         {(suffix || isPasswordInput) && (
           <div className="label-input-suffix">
             {suffix || (
-              <PasswordSuffix inputType={inputType} onChangeInputType={onChangeInputType} />
+              <PasswordSuffix
+                inputType={inputType}
+                onChangeInputType={onChangeInputType}
+              />
             )}
           </div>
         )}
