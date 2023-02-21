@@ -3,6 +3,7 @@
 @color_263241: #263241;
 @color_9aa5b5: #9aa5b5;
 @color_e5e5e5: #e5e5e5;
+@color_a0a0a0: #a0a0a0;
 
 @font-size-base: 14px;
 @font-size-lg: @font-size-base + 2px;
@@ -36,6 +37,10 @@
       border: 1px solid @color_e5e5e5;
       border-radius: 8px;
       transition: border 0.3s;
+
+      &:hover {
+        border-color: @color_a0a0a0;
+      }
     }
 
     &-focused {

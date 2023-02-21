@@ -3,6 +3,7 @@
 @import '../../style/themes/default.less';
 
 @color_9aa5b5: #9aa5b5;
+@color_a0a0a0: #a0a0a0;
 @font-size-base: 14px;
 
 .label-auto-complete {
@@ -16,6 +17,10 @@
     border: 1px solid #e5e5e5;
     border-radius: 8px;
     outline: none;
+
+    &:hover {
+      border-color: @color_a0a0a0;
+    }
   }
 
   .@{ant-prefix}-select-focused:not(.@{ant-prefix}-select-disabled).@{ant-prefix}-select:not(.@{ant-prefix}-select-customize-input)
