@@ -23,6 +23,13 @@ const mainDomainMap = {
   ukPro: '.ecmarkets.co.uk',
 } as const;
 
+/** 阅读模式单点登录使用 */
+const readDomainMap = {
+  test: '192.168.0.126',
+  pre: '.read.parkroadco.com',
+  pro: '.ecmarkets.website',
+} as const;
+
 const apiMap = {
   dev: '192.168.0.129:31000',
   test1: '192.168.0.129:31000',
@@ -134,7 +141,16 @@ const allSiteMap: Record<any, any> = {
     ib: 'https://ib.ecmarkets.sc',
     website: 'https://www.ecmarkets.sc',
     webviewMobile: 'https://m.ecmarkets.sc',
+    readIb: 'https://readib.ecmarkets.website',
+    readClient: 'https://readcrm.ecmarkets.website',
   },
 };
 
-export { apiHostMap, allSiteMap, socketHostMap, mainDomainMap, fileHostMap };
+export {
+  apiHostMap,
+  allSiteMap,
+  socketHostMap,
+  mainDomainMap,
+  fileHostMap,
+  readDomainMap,
+};
