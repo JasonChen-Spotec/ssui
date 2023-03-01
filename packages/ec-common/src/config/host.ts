@@ -27,7 +27,7 @@ const mainDomainMap = {
 const readDomainMap = {
   test: '192.168.0.126',
   pre: '.read.parkroadco.com',
-  pro: '.ecmarkets.website',
+  pro: '.ecmarkets.asia',
 } as const;
 
 const apiMap = {
@@ -141,8 +141,8 @@ const allSiteMap: Record<any, any> = {
     ib: 'https://ib.ecmarkets.sc',
     website: 'https://www.ecmarkets.sc',
     webviewMobile: 'https://m.ecmarkets.sc',
-    readIb: 'https://readib.ecmarkets.website',
-    readClient: 'https://readcrm.ecmarkets.website',
+    readIb: 'https://ib.ecmarkets.asia',
+    readClient: 'https://crm.ecmarkets.asia',
   },
 };
 
