@@ -68,13 +68,11 @@ const socketHostMap = {
 
 const allSiteMap: Record<any, any> = {
   static: {
-    admin: 'http://192.168.0.129:8020',
     ib: 'http://192.168.0.129:9020',
     client: 'http://192.168.0.80:9030',
     webviewMobile: 'http://192.168.0.80:6060',
   },
   dev: {
-    admin: 'http://192.168.0.129:8020',
     ib: 'http://192.168.0.129:9020',
     client: 'http://192.168.0.129:8030',
     readIb: 'http://192.168.0.126:7080',
@@ -83,7 +81,6 @@ const allSiteMap: Record<any, any> = {
     webviewMobile: 'http://192.168.0.80:6060',
   },
   test1: {
-    admin: 'http://192.168.0.129:8020',
     ib: 'http://192.168.0.129:9020',
     client: 'http://192.168.0.129:8030',
     website: 'http://192.168.0.129:8070',
@@ -92,14 +89,12 @@ const allSiteMap: Record<any, any> = {
     webviewMobile: 'http://192.168.0.80:6060',
   },
   test2: {
-    admin: 'http://192.168.0.129:8020',
     ib: 'http://192.168.0.129:9020',
     client: 'http://192.168.0.129:8030',
     website: 'http://192.168.0.129:8070',
     webviewMobile: 'http://27.102.129.76:8040',
   },
   pre: {
-    admin: 'http://admin.parkroadco.com',
     ib: 'http://ib.parkroadco.com',
     client: 'http://crm.parkroadco.com',
     website: 'http://www.parkroadco.com',
@@ -108,35 +103,30 @@ const allSiteMap: Record<any, any> = {
     webviewMobile: 'http://m.parkroadco.com',
   },
   tmdPre: {
-    admin: 'http://admin.tmdtrader.com',
     ib: 'http://ib.tmdtrader.com',
     client: 'http://crm.tmdtrader.com',
     website: 'http://www.tmdtrader.com',
     webviewMobile: 'http://m.tmdtrader.com',
   },
   mruPro: {
-    admin: 'https://u8qtafHHyMrTzpuQ9zKB.ecmarkets.mu',
     ib: 'https://ib.ecmarkets.mu',
     client: 'https://crm.ecmarkets.mu',
     website: 'https://www.ecmarkets.mu',
     webviewMobile: 'https://m.ecmarkets.mu',
   },
   ukProTmp: {
-    admin: 'https://hjyKHXcxcwch9nuT.ecmarkets.co.uk',
     ib: 'https://ib1.ecmarkets.co.uk',
     client: 'https://crm1.ecmarkets.co.uk',
     website: 'https://www1.ecmarkets.co.uk',
     webviewMobile: 'https://m.ecmarkets.uk',
   },
   ukPro: {
-    admin: 'https://hjyKHXcxcwch9nuT.ecmarkets.co.uk',
     ib: 'https://ib.ecmarkets.co.uk',
     client: 'https://crm.ecmarkets.co.uk',
     website: 'https://www.ecmarkets.co.uk',
     webviewMobile: 'https://m.ecmarkets.uk',
   },
   pro: {
-    admin: 'https://Bh0wKonL8na8hFsOFOoqU1iz.ecmarkets.sc',
     client: 'https://crm.ecmarkets.sc',
     ib: 'https://ib.ecmarkets.sc',
     website: 'https://www.ecmarkets.sc',
