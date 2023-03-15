@@ -4,6 +4,7 @@ import type { UploadProps } from 'rc-upload';
 import Upload from 'rc-upload';
 import Progress from 'antd/lib/progress';
 import Image from 'antd/lib/image';
+import Spin from 'antd/lib/spin';
 import classNames from 'classnames';
 import useUpdateEffect from 'ahooks/lib/useUpdateEffect';
 import CloseOutlined from 'a-icons/lib/CloseOutlined';
@@ -54,16 +55,23 @@ const SingleImgUpload = (props: SingleImgUploadProps) => {
   const [uploadStatus, setUploadStatus] = React.useState(value ? 'done' : 'init');
   const [fileUrl, setFileUrl] = React.useState(value);
   const [uploadPercent, setUploadPercent] = React.useState(0);
+  const [imageLoading, setImageLoading] = React.useState<boolean>(false);
 
   useUpdateEffect(() => {
-    heic2Jpeg(value).then((resultUrl) => {
-      setFileUrl(resultUrl);
-      if (value) {
-        setUploadStatus('done');
-      } else {
-        setUploadStatus('init');
-      }
-    });
+    setFileUrl(value);
+    setImageLoading(true);
+    heic2Jpeg(value)
+      .then((resultUrl) => {
+        setFileUrl(resultUrl);
+        if (value) {
+          setUploadStatus('done');
+        } else {
+          setUploadStatus('init');
+        }
+      })
+      .finally(() => {
+        setImageLoading(false);
+      });
   }, [value]);
 
   const onBeforeUpload: UploadProps['beforeUpload'] = async (...rest) => {
@@ -144,14 +152,16 @@ const SingleImgUpload = (props: SingleImgUploadProps) => {
         </div>
       )}
       {uploadStatus === 'done' && (
-        <div className="as-img-upload-content">
-          <Image wrapperClassName="as-img-upload-preview" src={fileUrl} preview />
-          {!disabled && (
-            <div className="as-img-upload-close-button" onClick={handleDeleteUpload}>
-              <CloseOutlined />
-            </div>
-          )}
-        </div>
+        <Spin spinning={imageLoading}>
+          <div className="as-img-upload-content">
+            <Image wrapperClassName="as-img-upload-preview" src={fileUrl} preview />
+            {!disabled && (
+              <div className="as-img-upload-close-button" onClick={handleDeleteUpload}>
+                <CloseOutlined />
+              </div>
+            )}
+          </div>
+        </Spin>
       )}
       <Upload
         ref={(uploader) => {
