@@ -6,7 +6,6 @@ import Progress from 'antd/lib/progress';
 import Image from 'antd/lib/image';
 import Spin from 'antd/lib/spin';
 import classNames from 'classnames';
-import useUpdateEffect from 'ahooks/lib/useUpdateEffect';
 import CloseOutlined from 'a-icons/lib/CloseOutlined';
 import heic2Jpeg from 'aa-utils/lib/heic2Jpeg';
 import isObject from 'lodash/isObject';
@@ -57,7 +56,7 @@ const SingleImgUpload = (props: SingleImgUploadProps) => {
   const [uploadPercent, setUploadPercent] = React.useState(0);
   const [imageLoading, setImageLoading] = React.useState<boolean>(false);
 
-  useUpdateEffect(() => {
+  React.useEffect(() => {
     setFileUrl(value);
     setImageLoading(true);
     heic2Jpeg(value)
