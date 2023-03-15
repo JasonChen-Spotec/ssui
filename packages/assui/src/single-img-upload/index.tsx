@@ -7,6 +7,7 @@ import Image from 'antd/lib/image';
 import classNames from 'classnames';
 import useUpdateEffect from 'ahooks/lib/useUpdateEffect';
 import CloseOutlined from 'a-icons/lib/CloseOutlined';
+import heic2Jpeg from 'aa-utils/lib/heic2Jpeg';
 import isObject from 'lodash/isObject';
 
 const getLocalImgURL = (file: File) => {
@@ -55,13 +56,14 @@ const SingleImgUpload = (props: SingleImgUploadProps) => {
   const [uploadPercent, setUploadPercent] = React.useState(0);
 
   useUpdateEffect(() => {
-    setFileUrl(value);
-
-    if (value) {
-      setUploadStatus('done');
-    } else {
-      setUploadStatus('init');
-    }
+    heic2Jpeg(value).then((resultUrl) => {
+      setFileUrl(resultUrl);
+      if (value) {
+        setUploadStatus('done');
+      } else {
+        setUploadStatus('init');
+      }
+    });
   }, [value]);
 
   const onBeforeUpload: UploadProps['beforeUpload'] = async (...rest) => {
@@ -166,7 +168,9 @@ const SingleImgUpload = (props: SingleImgUploadProps) => {
         {...restProps}
       >
         {uploadStatus === 'init' && (
-          <div className={classNames('as-img-upload-button', { 'init-disable': disabled })}>
+          <div
+            className={classNames('as-img-upload-button', { 'init-disable': disabled })}
+          >
             {children}
           </div>
         )}
