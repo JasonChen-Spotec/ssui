@@ -59,15 +59,15 @@ const SingleImgUpload = (props: SingleImgUploadProps) => {
   React.useEffect(() => {
     setFileUrl(value);
     if (value) {
+      setImageLoading(true);
       setUploadStatus('done');
+      heic2Jpeg(value).then((resultUrl: string) => {
+        setFileUrl(resultUrl);
+        setImageLoading(false);
+      });
     } else {
       setUploadStatus('init');
     }
-    setImageLoading(true);
-    heic2Jpeg(value).then((resultUrl: string) => {
-      setFileUrl(resultUrl);
-      setImageLoading(false);
-    });
   }, [value]);
 
   const onBeforeUpload: UploadProps['beforeUpload'] = async (...rest) => {
