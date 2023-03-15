@@ -1,6 +1,6 @@
 {
   "name": "assui",
-  "version": "3.0.38",
+  "version": "3.0.39",
   "description": "react ui library",
   "author": "jason <usochen@gmail.com>",
   "main": "./lib/index.js",
