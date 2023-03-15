@@ -64,13 +64,10 @@ const SingleImgUpload = (props: SingleImgUploadProps) => {
       setUploadStatus('init');
     }
     setImageLoading(true);
-    heic2Jpeg(value)
-      .then((resultUrl) => {
-        setFileUrl(resultUrl);
-      })
-      .finally(() => {
-        setImageLoading(false);
-      });
+    heic2Jpeg(value).then((resultUrl: string) => {
+      setFileUrl(resultUrl);
+      setImageLoading(false);
+    });
   }, [value]);
 
   const onBeforeUpload: UploadProps['beforeUpload'] = async (...rest) => {
