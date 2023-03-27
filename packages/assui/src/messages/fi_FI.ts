@@ -20,7 +20,7 @@ const locale = {
       last90days: 'viimeiset 90 päivää',
       last180days: 'Viimeiset 180 päivää',
       last365days: 'Viimeiset 365 päivää',
-      year: 'Year',
+      year: 'Tänä vuonna',
     },
   },
 };

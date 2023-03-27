@@ -20,7 +20,7 @@ const locale = {
       last90days: 'آخر 90 يومًا',
       last180days: 'آخر 180 يومًا',
       last365days: 'آخر 365 يومًا',
-      year: 'Year',
+      year: 'هذا العام',
     },
   },
 };

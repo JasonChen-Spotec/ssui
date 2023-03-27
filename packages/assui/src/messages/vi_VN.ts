@@ -20,7 +20,7 @@ const locale = {
       last90days: '90 ngày qua',
       last180days: '180 ngày qua',
       last365days: '365 ngày qua',
-      year: 'Year',
+      year: 'Năm nay',
     },
   },
 };

@@ -1,4 +1,3 @@
-import React from 'react';
 import zhCN from 'antd/lib/locale/zh_CN';
 import enUS from 'antd/lib/locale/en_US';
 import zhTW from 'antd/lib/locale/zh_TW';
@@ -21,28 +20,6 @@ import arEG from 'antd/lib/locale/ar_EG';
 import thTH from 'antd/lib/locale/th_TH';
 import roRO from 'antd/lib/locale/ro_RO';
 import viVN from 'antd/lib/locale/vi_VN';
-import EnFlag from '../../iconsComponent/EnFlag';
-import HkFlag from '../../iconsComponent/HkFlag';
-import CNFlag from '../../iconsComponent/CnFlag';
-import BGFlag from '../../iconsComponent/BgFlag';
-import CSFlag from '../../iconsComponent/CsFlag';
-import DEFlag from '../../iconsComponent/DeFlag';
-import ESFlag from '../../iconsComponent/EsFlag';
-import FIFlag from '../../iconsComponent/FiFlag';
-import FRFlag from '../../iconsComponent/FrFlag';
-import IDFlag from '../../iconsComponent/IdFlag';
-import ITFlag from '../../iconsComponent/ItFlag';
-import JAFlag from '../../iconsComponent/JaFlag';
-import KOFlag from '../../iconsComponent/KoFlag';
-import NLFlag from '../../iconsComponent/NlFlag';
-import NOFlag from '../../iconsComponent/NoFlag';
-import PTFlag from '../../iconsComponent/PtFlag';
-import RUFlag from '../../iconsComponent/RuFlag';
-import ARFlag from '../../iconsComponent/ArFlag';
-import SVFlag from '../../iconsComponent/SvFlag';
-import ROFlag from '../../iconsComponent/RoFlag';
-import THFlag from '../../iconsComponent/ThFlag';
-import VIFlag from '../../iconsComponent/ViFlag';
 
 /** 🇬🇧 英语 */
 export const EN = 'en-US' as const;
@@ -88,6 +65,8 @@ export const TH = 'th' as const;
 export const RO = 'ro' as const;
 /** 🇻🇳 越南语 */
 export const VI = 'vi' as const;
+/** 维吾尔语 */
+export const UG = 'ug' as const;
 
 export const antI18nMap = {
   [ZH]: zhCN,
@@ -137,34 +116,10 @@ export const languages = {
   [TH]: TH,
   [RO]: RO,
   [VI]: VI,
+  [UG]: UG,
 };
 
 export type Languages = keyof typeof languages;
-
-export const languagesFlagMap = {
-  [EN]: <EnFlag />,
-  [TW]: <HkFlag />,
-  [ZH]: <CNFlag />,
-  [BG]: <BGFlag />,
-  [CS]: <CSFlag />,
-  [DE]: <DEFlag />,
-  [ES]: <ESFlag />,
-  [FR]: <FRFlag />,
-  [FI]: <FIFlag />,
-  [IT]: <ITFlag />,
-  [ID]: <IDFlag />,
-  [JA]: <JAFlag />,
-  [KO]: <KOFlag />,
-  [NL]: <NLFlag />,
-  [NO]: <NOFlag />,
-  [RU]: <RUFlag />,
-  [SV]: <SVFlag />,
-  [PT]: <PTFlag />,
-  [AR]: <ARFlag />,
-  [TH]: <THFlag />,
-  [RO]: <ROFlag />,
-  [VI]: <VIFlag />,
-};
 
 export const I18NList = [
   {
@@ -276,5 +231,10 @@ export const I18NList = [
     code: VI,
     iso: VI,
     name: 'Tiếng Việt',
+  },
+  {
+    code: UG,
+    iso: UG,
+    name: 'ئۇيغۇرچە',
   },
 ] as const;

@@ -20,7 +20,7 @@ const locale = {
       last90days: '90 วันที่ผ่านมา',
       last180days: '180 วันที่ผ่านมา',
       last365days: '365 วันที่ผ่านมา',
-      year: 'Year',
+      year: 'ปีนี้',
     },
   },
 };
