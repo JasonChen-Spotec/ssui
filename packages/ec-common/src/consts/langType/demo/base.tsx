@@ -1,16 +1,16 @@
 import React from 'react';
 import { Space } from 'antd';
-import { languagesFlagMap } from '../index';
+import { languages } from '../index';
 
 const Base = () => {
   return (
     <div>
       <Space>
-        {Object.keys(languagesFlagMap).map((key) => {
+        {Object.keys(languages).map((key) => {
           return (
             <div>
               <div>{key}</div>
-              <div>{languagesFlagMap[key]}</div>
+              <div>{languages[key]}</div>
             </div>
           );
         })}

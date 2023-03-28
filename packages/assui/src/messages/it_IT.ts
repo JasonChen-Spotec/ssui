@@ -20,7 +20,8 @@ const locale = {
       last90days: 'ultimi 90 giorni',
       last180days: 'Ultimi 180 giorni',
       last365days: 'Ultimi 365 giorni',
-      year: 'Year',
+      // eslint-disable-next-line quotes
+      year: "Quest'anno",
     },
   },
 };

@@ -22,6 +22,7 @@ import arEG from '../messages/ar_EG';
 import thTH from '../messages/th_TH';
 import roRO from '../messages/ro_RO';
 import viVN from '../messages/vi_VN';
+import ugUG from '../messages/ug_UG';
 
 export type LocaleType =
   | 'en-US'
@@ -45,7 +46,8 @@ export type LocaleType =
   | 'ar'
   | 'th'
   | 'ro'
-  | 'vi';
+  | 'vi'
+  | 'ug';
 
 export interface ConfigProviderProps {
   children?: React.ReactNode;
@@ -77,9 +79,14 @@ const ConfigProvider: React.FC<ConfigProviderProps> = (props) => {
     'th': thTH.lang,
     'ro': roRO.lang,
     'vi': viVN.lang,
+    'ug': ugUG.lang,
   };
 
-  return <LocaleContext.Provider value={messagesMap[locale]}>{children}</LocaleContext.Provider>;
+  return (
+    <LocaleContext.Provider value={messagesMap[locale]}>
+      {children}
+    </LocaleContext.Provider>
+  );
 };
 
 export default ConfigProvider;
