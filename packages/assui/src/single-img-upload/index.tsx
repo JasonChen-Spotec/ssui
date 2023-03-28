@@ -7,7 +7,6 @@ import Image from 'antd/lib/image';
 import Spin from 'antd/lib/spin';
 import classNames from 'classnames';
 import CloseOutlined from 'a-icons/lib/CloseOutlined';
-import heic2Jpeg from 'aa-utils/lib/heic2Jpeg';
 import isObject from 'lodash/isObject';
 
 const getLocalImgURL = (file: File) => {
@@ -61,6 +60,8 @@ const SingleImgUpload = (props: SingleImgUploadProps) => {
     if (value) {
       setImageLoading(true);
       setUploadStatus('done');
+      // eslint-disable-next-line global-require
+      const heic2Jpeg = require('aa-utils/lib/heic2Jpeg');
       heic2Jpeg(value).then((resultUrl: string) => {
         setFileUrl(resultUrl);
         setImageLoading(false);
