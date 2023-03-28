@@ -91,6 +91,8 @@ export const antI18nMap = {
   [TH]: thTH,
   [RO]: roRO,
   [VI]: viVN,
+  // antd 没有维语包，展示英语
+  [UG]: enUS,
 };
 
 export const languages = {
