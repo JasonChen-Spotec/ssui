@@ -8,6 +8,7 @@ import Spin from 'antd/lib/spin';
 import classNames from 'classnames';
 import CloseOutlined from 'a-icons/lib/CloseOutlined';
 import isObject from 'lodash/isObject';
+import isFunction from 'lodash/isFunction';
 
 const getLocalImgURL = (file: File) => {
   const URL = window.URL || window.webkitURL;
@@ -61,11 +62,16 @@ const SingleImgUpload = (props: SingleImgUploadProps) => {
       setImageLoading(true);
       setUploadStatus('done');
       // eslint-disable-next-line global-require
-      const heic2Jpeg = require('aa-utils/lib/heic2Jpeg');
-      heic2Jpeg(value).then((resultUrl: string) => {
-        setFileUrl(resultUrl);
+      const heic2Jpeg = require('aa-utils/lib/heic2Jpeg').default;
+      if (isFunction(heic2Jpeg)) {
+        heic2Jpeg(value).then((resultUrl: string) => {
+          setFileUrl(resultUrl);
+          setImageLoading(false);
+        });
+      } else {
+        setFileUrl(value);
         setImageLoading(false);
-      });
+      }
     } else {
       setUploadStatus('init');
     }
