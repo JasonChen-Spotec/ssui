@@ -61,6 +61,7 @@ export { default as DashboardFilled } from './DashboardFilled';
 export { default as DashboardOutlined } from './DashboardOutlined';
 export { default as DocumentFilled } from './DocumentFilled';
 export { default as DocumentOutlined } from './DocumentOutlined';
+export { default as DoubleDownOutlined } from './DoubleDownOutlined';
 export { default as DoubleTextFilled } from './DoubleTextFilled';
 export { default as DoubleTextOutlined } from './DoubleTextOutlined';
 export { default as DownloadOutlinedFile } from './DownloadOutlinedFile';
