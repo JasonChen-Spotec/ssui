@@ -18,7 +18,9 @@ const downloadFile = (url: string, options: Options = defaultOptions) => {
     xhr.onload = () => {
       const a = document.createElement('a');
       a.href = window.URL.createObjectURL(xhr.response);
-      a.download = fileName ? decodeURIComponent(fileName as string) : '';
+      const resultFileName = fileName || url.split('/').pop();
+
+      a.download = decodeURIComponent(resultFileName as string);
       a.click();
       window.URL.revokeObjectURL(a.href);
 
