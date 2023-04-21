@@ -181,6 +181,7 @@ export { default as ShopKeeperOutlined } from './ShopKeeperOutlined';
 export { default as SpeakerFilled } from './SpeakerFilled';
 export { default as SpeakerOutlined } from './SpeakerOutlined';
 export { default as SquareFilled } from './SquareFilled';
+export { default as SquareUpRightOutlined } from './SquareUpRightOutlined';
 export { default as StampFilled } from './StampFilled';
 export { default as StarFilled } from './StarFilled';
 export { default as StarOutlined } from './StarOutlined';
