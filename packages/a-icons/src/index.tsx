@@ -82,6 +82,7 @@ export { default as FileFilled } from './FileFilled';
 export { default as FileListFilled } from './FileListFilled';
 export { default as FileOutlined } from './FileOutlined';
 export { default as FileSearchFilled } from './FileSearchFilled';
+export { default as FilterCupOutlined } from './FilterCupOutlined';
 export { default as FilterFilled } from './FilterFilled';
 export { default as FilterOutlined } from './FilterOutlined';
 export { default as FireFilled } from './FireFilled';
