@@ -134,7 +134,7 @@ class DateUtils {
     return m ? m.format(format || this.dateTimeFormat) : '';
   }
 
-  formatToTimestamp = (date: moment.MomentInput): number => {
+  formatToTimestamp = (date?: moment.MomentInput): number => {
     if (date) {
       const m = this.createMoment(date);
       return m ? +m.valueOf() : +this.getToday().valueOf();
