@@ -129,6 +129,7 @@ export { default as MoveOutlined } from './MoveOutlined';
 export { default as OngoingFilled } from './OngoingFilled';
 export { default as OpenMailFilled } from './OpenMailFilled';
 export { default as OpenMailOutlined } from './OpenMailOutlined';
+export { default as OtcMerchant } from './OtcMerchant';
 export { default as PencilOutlined } from './PencilOutlined';
 export { default as PeopleAddFilled } from './PeopleAddFilled';
 export { default as PeopleAddOutlined } from './PeopleAddOutlined';
