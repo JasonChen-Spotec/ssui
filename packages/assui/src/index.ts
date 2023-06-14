@@ -40,6 +40,9 @@ export { default as RcMotion } from './rc-motion';
 export type { NumberInputProps } from './number-input';
 export { default as NumberInput } from './number-input';
 
+export type { LabelRangeNumberProps } from './label-range-number';
+export { default as LabelRangeNumber } from './label-range-number';
+
 export type { StepNumberInputProps } from './step-number-input';
 export { default as StepNumberInput } from './step-number-input';
 

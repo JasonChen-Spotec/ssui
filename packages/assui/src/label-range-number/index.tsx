@@ -10,7 +10,7 @@ export type RangeNumberValue = {
   endInterval?: number | string;
 };
 
-export interface RangeNumberProps {
+export interface LabelRangeNumberProps {
   className?: string;
   disabled?: boolean;
   label: React.ReactNode;
@@ -32,7 +32,7 @@ const defaultValue = {
   endInterval: '',
 };
 
-const LabelDatePicker: React.FC<RangeNumberProps> = (props) => {
+const LabelDatePicker: React.FC<LabelRangeNumberProps> = (props) => {
   const {
     disabled,
     className,
