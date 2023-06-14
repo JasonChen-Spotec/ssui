@@ -79,6 +79,7 @@ export { default as EyeFilled } from './EyeFilled';
 export { default as EyeOutlined } from './EyeOutlined';
 export { default as FileDownloadLineOutlined } from './FileDownloadLineOutlined';
 export { default as FileFilled } from './FileFilled';
+export { default as FileFinishFilled } from './FileFinishFilled';
 export { default as FileListFilled } from './FileListFilled';
 export { default as FileOutlined } from './FileOutlined';
 export { default as FileSearchFilled } from './FileSearchFilled';
