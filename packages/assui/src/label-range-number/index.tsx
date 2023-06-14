@@ -87,13 +87,14 @@ const LabelDatePicker: React.FC<LabelRangeNumberProps> = (props) => {
         {
           'label-range-number': true,
           'label-range-number-disabled': disabled,
+          'label-range-number-focused': focus,
           'label-range-number-label-scale':
             focus || resultValue.endInterval || resultValue.startInterval,
         },
         className,
       )}
     >
-      <div className="a-number a-number-range a-number-focused" aria-required="true">
+      <div className="a-number a-number-range" aria-required="true">
         <div className="a-number-input">
           <NumberInput
             bordered={false}
