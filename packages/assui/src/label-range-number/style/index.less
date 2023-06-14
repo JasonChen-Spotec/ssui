@@ -1,0 +1,84 @@
+@import '~antd/lib/style/index.less';
+@import '../../style/themes/default.less';
+
+@color_9aa5b5: #9aa5b5;
+@color_a0a0a0: #a0a0a0;
+@font-size-base: 14px;
+
+.label-range-number {
+  position: relative;
+  width: 320px;
+  height: 100%;
+  cursor: pointer;
+
+  .a-number {
+    position: relative;
+    display: inline-flex;
+    height: 45px;
+    padding-left: 12px;
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    outline: none;
+
+    &-input input {
+      position: relative;
+      top: 19px;
+      display: inline-flex;
+      align-items: center;
+      width: 100%;
+    }
+
+    &-focused {
+      border-color: @labelFocusBorderColor;
+      box-shadow: none;
+    }
+
+    &-range-separator {
+      position: relative;
+      top: 18px;
+      height: 14px;
+      padding: 0;
+    }
+
+    &-range-separator,
+    &-input {
+      opacity: 0;
+    }
+
+    .@{ant-prefix}-input {
+      padding: 0 0 0 3px;
+      border-radius: 0;
+    }
+  }
+
+  &-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    width: calc(100% - 12px);
+    height: 100%;
+    margin-left: 12px;
+    color: @color_9aa5b5;
+    font-size: @font-size-base;
+    line-height: 20px;
+    transform-origin: top left;
+    cursor: pointer;
+    transition: all 0.2s ease-out;
+  }
+
+  &-label-scale {
+    .a-number-range-separator,
+    .a-number-input {
+      opacity: 1;
+    }
+
+    .label-range-number-text {
+      transform: translateY(@labelTextLabeltranslateY) scale(@labelTextLabelScale);
+      cursor: text;
+      pointer-events: none;
+    }
+  }
+}
