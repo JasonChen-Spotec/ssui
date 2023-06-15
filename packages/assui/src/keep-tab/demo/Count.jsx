@@ -31,19 +31,30 @@ const Demo = () => {
       label: 'Tab 3',
       children: 'Content of Tab Pane 3',
       disabled: true,
+      count: 1000,
     },
   ];
 
   return (
-    <div style={{ backgroundColor: '#f5f6fa', padding: 60 }}>
-      <KeepTab
-        defaultActiveKey="2"
-        saveActiveKeyName="countDemo"
-        className="assui-tabs-card"
-        onChange={onChange}
-        items={items}
-      />
-    </div>
+    <>
+      <div style={{ backgroundColor: '#f5f6fa', padding: 60 }}>
+        <KeepTab
+          defaultActiveKey="2"
+          saveActiveKeyName="countDemo"
+          className="assui-tabs-card"
+          onChange={onChange}
+          items={items}
+        />
+      </div>
+      <div style={{ backgroundColor: '#f7f7f7', padding: 60 }}>
+        <KeepTab
+          defaultActiveKey="2"
+          saveActiveKeyName="countDemo"
+          onChange={onChange}
+          items={items}
+        />
+      </div>
+    </>
   );
 };
 
