@@ -15,6 +15,7 @@ export interface LabelRangeNumberProps {
   disabled?: boolean;
   label: React.ReactNode;
   value?: RangeNumberValue;
+  onBlur?: (value: RangeNumberValue) => void;
   onChange?: (value: RangeNumberValue) => void;
   enableMinus?: boolean;
   numberType?: 'int' | 'float';
@@ -42,6 +43,7 @@ const LabelDatePicker: React.FC<LabelRangeNumberProps> = (props) => {
     dataType,
     precision,
     connector,
+    onBlur,
     startNumberInputProps,
     endNumberInputProps,
   } = props;
@@ -61,6 +63,7 @@ const LabelDatePicker: React.FC<LabelRangeNumberProps> = (props) => {
 
   useClickAway(() => {
     onFocus(false);
+    onBlur?.(value);
   }, containerRef);
 
   const onStartChange = (startInterval: any) => {
