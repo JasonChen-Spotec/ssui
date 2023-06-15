@@ -1,2 +1,21 @@
 @import '~antd/lib/tabs/style/index.less';
 @import '~antd/lib/badge/style/index.less';
+
+@color_dc4946: #dc4946;
+
+.tab-badge {
+  position: relative;
+
+  .@{ant-prefix}-badge {
+    position: absolute;
+    top: -10px;
+    left: calc(100% - 4px);
+    transform: scale(0.8);
+    transform-origin: left bottom;
+  }
+
+  .@{ant-prefix}-badge-count {
+    padding: 0 6px;
+    background-color: @color_dc4946;
+  }
+}

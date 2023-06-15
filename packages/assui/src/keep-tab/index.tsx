@@ -76,9 +76,10 @@ const KeepTab = (props: KeepTabProps) => {
       return {
         ...item,
         label: (
-          <Badge className="tab-badge" count={count} offset={[16, -9]} {...badgeProps}>
-            <span>{item.label}</span>
-          </Badge>
+          <div className="tab-badge">
+            <div>{item.label}</div>
+            <Badge count={count} {...badgeProps} />
+          </div>
         ),
       };
     }
