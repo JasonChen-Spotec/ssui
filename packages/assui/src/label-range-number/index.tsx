@@ -84,6 +84,12 @@ const LabelDatePicker: React.FC<LabelRangeNumberProps> = (props) => {
     startNumberRef.current?.focus();
   };
 
+  const onHandleFocus = () => {
+    if (!focus) {
+      onFocus(true);
+    }
+  };
+
   const resultValue = value || defaultValue;
 
   return (
@@ -110,6 +116,7 @@ const LabelDatePicker: React.FC<LabelRangeNumberProps> = (props) => {
             dataType={dataType}
             {...endNumberInputProps}
             ref={startNumberRef}
+            onFocus={onHandleFocus}
             onChange={onStartChange}
             value={resultValue.startInterval}
           />
@@ -119,6 +126,7 @@ const LabelDatePicker: React.FC<LabelRangeNumberProps> = (props) => {
           <NumberInput
             bordered={false}
             enableMinus={enableMinus}
+            onFocus={onFocus}
             numberType={numberType}
             precision={precision}
             dataType={dataType}
