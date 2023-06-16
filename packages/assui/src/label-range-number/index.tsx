@@ -62,8 +62,11 @@ const LabelDatePicker: React.FC<LabelRangeNumberProps> = (props) => {
   });
 
   useClickAway(() => {
+    if (focus) {
+      onBlur?.(value);
+    }
+
     onFocus(false);
-    onBlur?.(value);
   }, containerRef);
 
   const onStartChange = (startInterval: any) => {
