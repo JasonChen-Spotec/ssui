@@ -1,6 +1,6 @@
 {
   "name": "a-icons",
-  "version": "1.1.23",
+  "version": "1.1.24",
   "repository": "git@github.com:SPOTEC-LTD/assui.git",
   "author": "jason <usochen@gmail.com>",
   "main": "./lib/index.js",
