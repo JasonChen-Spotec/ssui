@@ -1,5 +1,6 @@
 export { default as ImpassabilityFilled } from './ImpassabilityFilled';
 export { default as AddFilled } from './AddFilled';
+export { default as AddOutlined } from './AddOutlined';
 export { default as AlertTriangleFilled } from './AlertTriangleFilled';
 export { default as AlertTriangleOutlined } from './AlertTriangleOutlined';
 export { default as ArrowDownFilled } from './ArrowDownFilled';
