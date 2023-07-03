@@ -135,6 +135,7 @@ export { default as OffOutlined } from './OffOutlined';
 export { default as OngoingFilled } from './OngoingFilled';
 export { default as OpenMailFilled } from './OpenMailFilled';
 export { default as OpenMailOutlined } from './OpenMailOutlined';
+export { default as OtcMerchantLine } from './OtcMerchantLine';
 export { default as OtcMerchant } from './OtcMerchant';
 export { default as PencilOutlined } from './PencilOutlined';
 export { default as PeopleAddFilled } from './PeopleAddFilled';

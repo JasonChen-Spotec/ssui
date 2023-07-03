@@ -21,7 +21,7 @@
   "homepage": "https://github.com/SPOTEC-LTD/ssui",
   "scripts": {
     "buildSvg": "svgr --typescript --out-dir src/iconsComponent/ src/svgs",
-    "build": "yarn run buildSvg && gulp"
+    "build": "gulp"
   },
   "files": [
     "dist",
