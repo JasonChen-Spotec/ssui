@@ -9,11 +9,8 @@ var __importDefault =
           default: mod,
         };
   };
-
 Object.defineProperty(exports, '__esModule', {
   value: true,
 });
-
 var events_1 = __importDefault(require('events'));
-
 exports['default'] = events_1['default'];
