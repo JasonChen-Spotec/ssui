@@ -149,6 +149,7 @@ export { default as PeopleCardFilled } from './PeopleCardFilled';
 export { default as PeopleCloseFilled } from './PeopleCloseFilled';
 export { default as PeopleConfirmFilled } from './PeopleConfirmFilled';
 export { default as PeopleEllipsisFilled } from './PeopleEllipsisFilled';
+export { default as PeopleErrorFilled } from './PeopleErrorFilled';
 export { default as PeopleFilled } from './PeopleFilled';
 export { default as PeopleGetOutlined } from './PeopleGetOutlined';
 export { default as PeopleGroupFilled } from './PeopleGroupFilled';
