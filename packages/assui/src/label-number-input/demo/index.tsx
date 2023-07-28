@@ -13,7 +13,13 @@ const Demo = () => {
   };
 
   return (
-    <LabelNumberInput label="我是标题" maxLength={4} enableMinus onChange={onChange} />
+    <LabelNumberInput
+      label="我是标题"
+      maxLength={4}
+      enableMinus
+      onChange={onChange}
+      suffix={123}
+    />
   );
 };
 
