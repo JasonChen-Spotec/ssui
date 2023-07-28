@@ -1,6 +1,6 @@
 const fileHostMap = {
   dev: 'http://192.168.0.129:9000',
-  test1: 'http://192.168.0.129:9000',
+  test1: 'http://192.168.0.126:9000',
   test2: 'http://192.168.0.126:9000',
   pre: 'http://file.parkroadco.com',
   tmdPre: 'http://file.tmdtrader.com',
