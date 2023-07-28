@@ -198,6 +198,7 @@ export { default as SignalDiffusionOutlined } from './SignalDiffusionOutlined';
 export { default as SpeakerFilled } from './SpeakerFilled';
 export { default as SpeakerOutlined } from './SpeakerOutlined';
 export { default as SquareFilled } from './SquareFilled';
+export { default as SquareLeftTurnFilled } from './SquareLeftTurnFilled';
 export { default as SquareUpRightOutlined } from './SquareUpRightOutlined';
 export { default as StampFilled } from './StampFilled';
 export { default as StarFilled } from './StarFilled';
