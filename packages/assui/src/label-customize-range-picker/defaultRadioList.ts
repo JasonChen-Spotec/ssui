@@ -31,9 +31,15 @@ export type RadioListType = {
 type GetDefaultRadioListPropsType = {
   messages: LangType;
   timeOffset?: number;
+  /** 自然日期 */
+  naturalDate: boolean;
 };
 
-const getDefaultRadioList = ({ messages, timeOffset }: GetDefaultRadioListPropsType) => {
+const getDefaultRadioList = ({
+  messages,
+  timeOffset,
+  naturalDate,
+}: GetDefaultRadioListPropsType) => {
   const now = isNumber(timeOffset)
     ? dateUtils.getToday(timeOffset)
     : dateUtils.getToday();
@@ -54,7 +60,10 @@ const getDefaultRadioList = ({ messages, timeOffset }: GetDefaultRadioListPropsT
     {
       key: dateTypeEnum.WEEK,
       text: formatMessage(messages, 'labelCustomizeRangePicker', 'week'),
-      value: [now.clone().startOf('week'), now.clone().endOf('day')],
+      value: [
+        now.clone().startOf('week'),
+        naturalDate ? now.clone().endOf('week') : now.clone().endOf('day'),
+      ],
     },
     {
       key: dateTypeEnum.LAST_WEEK,
@@ -67,7 +76,10 @@ const getDefaultRadioList = ({ messages, timeOffset }: GetDefaultRadioListPropsT
     {
       key: dateTypeEnum.MONTH,
       text: formatMessage(messages, 'labelCustomizeRangePicker', 'month'),
-      value: [now.clone().startOf('month'), now.clone().endOf('day')],
+      value: [
+        now.clone().startOf('month'),
+        naturalDate ? now.clone().endOf('month') : now.clone().endOf('day'),
+      ],
     },
     {
       key: dateTypeEnum.LAST_MONTH,
@@ -80,7 +92,10 @@ const getDefaultRadioList = ({ messages, timeOffset }: GetDefaultRadioListPropsT
     {
       key: dateTypeEnum.QUARTER,
       text: formatMessage(messages, 'labelCustomizeRangePicker', 'quarter'),
-      value: [now.clone().startOf('quarter'), now.clone().endOf('day')],
+      value: [
+        now.clone().startOf('quarter'),
+        naturalDate ? now.clone().endOf('quarter') : now.clone().endOf('day'),
+      ],
     },
     {
       key: dateTypeEnum.LAST_QUARTER,
@@ -93,7 +108,10 @@ const getDefaultRadioList = ({ messages, timeOffset }: GetDefaultRadioListPropsT
     {
       key: dateTypeEnum.YEAR,
       text: formatMessage(messages, 'labelCustomizeRangePicker', 'year'),
-      value: [now.clone().startOf('year'), now.endOf('day')],
+      value: [
+        now.clone().startOf('year'),
+        naturalDate ? now.clone().endOf('year') : now.endOf('day'),
+      ],
     },
     {
       key: dateTypeEnum.BEFORE_7_DAY,

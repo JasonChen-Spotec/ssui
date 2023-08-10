@@ -36,6 +36,8 @@ export interface LabelCustomizeRangePickerProps
   showShortcutPanel?: boolean;
   /** 时间偏移量 秒 */
   timeOffset?: number;
+  /** 自然日期, 作用于本周，本月等日期 */
+  naturalDate?: boolean;
 }
 
 const { RangePicker } = DatePicker;
@@ -53,6 +55,7 @@ const LabelCustomizeRangePicker = (props: LabelCustomizeRangePickerProps) => {
     timeOffset,
     fillDefaultDate = true,
     showShortcutPanel = true,
+    naturalDate = false,
     ...restProps
   } = props;
   const [date, setDate] = useControllableValue(props);
@@ -61,10 +64,10 @@ const LabelCustomizeRangePicker = (props: LabelCustomizeRangePickerProps) => {
   const [open, setOpen] = useState(false);
   const messages = useContext(LocaleContext);
   const defaultRadioList = customizeTimeList
-    ? getDefaultRadioList({ messages, timeOffset }).filter((item) =>
+    ? getDefaultRadioList({ messages, timeOffset, naturalDate }).filter((item) =>
         customizeTimeList.includes(item.key as dateTypeEnum),
       )
-    : getDefaultRadioList({ messages, timeOffset });
+    : getDefaultRadioList({ messages, timeOffset, naturalDate });
 
   const dataSource = radioList ?? defaultRadioList;
 
