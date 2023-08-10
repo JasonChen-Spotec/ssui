@@ -25,6 +25,9 @@ const Demo = () => {
       <Form.Item name="date3" rules={[{ required: true }]} label="时间偏移">
         <LabelCustomizeRangePicker rangePickerType="origin" timeOffset={-39600} />
       </Form.Item>
+      <Form.Item name="date4" rules={[{ required: true }]} label="自然日期">
+        <LabelCustomizeRangePicker rangePickerType="origin" naturalDate />
+      </Form.Item>
       <Button htmlType="submit">提交</Button>
     </Form>
   );
