@@ -1,6 +1,7 @@
 /* stylelint-disable indentation */
-@import '~antd/lib/style/index.less';
+// @import '~antd/lib/style/index.less';
 @import '../../style/themes/default.less';
+@ant-prefix: 'ant';
 
 @color_9aa5b5: #9aa5b5;
 @color_a0a0a0: #a0a0a0;
@@ -16,6 +17,8 @@
       border-color: @color_a0a0a0;
     }
   }
+
+  // .@{ant-prefix}-select-single.@{ant-prefix}-select-lg:not(.@{ant-prefix}-select-customize-input) .@{ant-prefix}-select-selector
 
   .@{ant-prefix}-select-single.@{ant-prefix}-select-lg:not(.@{ant-prefix}-select-customize-input)
     .@{ant-prefix}-select-selector {

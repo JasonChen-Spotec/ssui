@@ -1,4 +1,6 @@
-@import '~antd/lib/style/index.less';
+// @import '~antd/lib/style/index.less';
+
+@ant-prefix: 'ant';
 
 .a-select-wrap {
   position: relative;
@@ -14,7 +16,8 @@
     z-index: 2;
   }
 
-  .@{ant-prefix}-select:not(.@{ant-prefix}-select-customize-input) .@{ant-prefix}-select-selector {
+  .@{ant-prefix}-select:not(.@{ant-prefix}-select-customize-input)
+    .@{ant-prefix}-select-selector {
     z-index: 3;
     background-color: transparent;
   }

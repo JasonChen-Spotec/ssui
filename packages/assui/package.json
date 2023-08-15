@@ -38,11 +38,13 @@
     "a-icons": "^1.1.19",
     "aa-utils": "^2.1.16",
     "ahooks": "^3.0.8",
+    "antd": "^5.5.0",
     "bignumber.js": "^9.0.1",
     "copy-to-clipboard": "^3.3.1",
     "echarts": "^5.1.2",
     "jsoneditor": "^9.9.0",
     "jsoneditor-react": "^3.1.2",
+    "moment": "^2.29.4",
     "qrcode": "^1.4.4",
     "rc-motion": "^2.4.4",
     "rc-trigger": "^5.3.1",
@@ -59,7 +61,7 @@
     "tinymce": "^6.0.2"
   },
   "peerDependencies": {
-    "antd": "^4.23.1",
+    "antd": "^5.5.0",
     "react": "^16.8.6 || ^17.0 || ^18.0"
   },
   "devDependencies": {

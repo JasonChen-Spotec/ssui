@@ -1,7 +1,8 @@
 /* stylelint-disable indentation */
-@import '~antd/lib/style/index.less';
+// @import '~antd/lib/style/index.less';
 @import '../../style/themes/default.less';
 
+@ant-prefix: 'ant';
 @color_9aa5b5: #9aa5b5;
 @font-size-base: 14px;
 
@@ -10,7 +11,8 @@
   width: 100%;
   height: 100%;
 
-  .@{ant-prefix}-select:not(.@{ant-prefix}-select-customize-input) .@{ant-prefix}-select-selector {
+  .@{ant-prefix}-select:not(.@{ant-prefix}-select-customize-input)
+    .@{ant-prefix}-select-selector {
     height: 45px;
     border: 1px solid #e5e5e5;
     border-radius: 8px;
