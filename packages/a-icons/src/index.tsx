@@ -82,6 +82,8 @@ export { default as ErrorWarningOutlined } from './ErrorWarningOutlined';
 export { default as ExternalLinkFilled } from './ExternalLinkFilled';
 export { default as EyeFilled } from './EyeFilled';
 export { default as EyeOutlined } from './EyeOutlined';
+export { default as EyeSlashFilled } from './EyeSlashFilled';
+export { default as EyeSlashOutlined } from './EyeSlashOutlined';
 export { default as FileDownloadLineOutlined } from './FileDownloadLineOutlined';
 export { default as FileFilled } from './FileFilled';
 export { default as FileFinishFilled } from './FileFinishFilled';
