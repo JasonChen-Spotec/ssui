@@ -136,6 +136,8 @@ export { default as MailOutlined } from './MailOutlined';
 export { default as MoneySymbolFilled } from './MoneySymbolFilled';
 export { default as MoneySymbolOutlined } from './MoneySymbolOutlined';
 export { default as MoveOutlined } from './MoveOutlined';
+export { default as NoteFilled } from './NoteFilled';
+export { default as NoteOutlined } from './NoteOutlined';
 export { default as OctagonPromptFilled } from './OctagonPromptFilled';
 export { default as OctagonPromptOutlined } from './OctagonPromptOutlined';
 export { default as OffOutlined } from './OffOutlined';
