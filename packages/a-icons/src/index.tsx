@@ -178,6 +178,7 @@ export { default as RefreshFilled } from './RefreshFilled';
 export { default as RefreshOutlined } from './RefreshOutlined';
 export { default as RefreshRightOutlined } from './RefreshRightOutlined';
 export { default as RetryRefreshFilled } from './RetryRefreshFilled';
+export { default as RingDotsFilled } from './RingDotsFilled';
 export { default as RiskControlFilled } from './RiskControlFilled';
 export { default as RiskControlOutlined } from './RiskControlOutlined';
 export { default as RoundedRectangleClockFilled } from './RoundedRectangleClockFilled';
