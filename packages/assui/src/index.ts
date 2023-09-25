@@ -7,6 +7,9 @@ export { default as ButtonModal } from './button-modal';
 export type { ConditionInputProps } from './condition-input';
 export { default as ConditionInput } from './condition-input';
 
+export type { ConditionSelectInputProps } from './condition-select-input';
+export { default as ConditionSelectInput } from './condition-select-input';
+
 export type { ConfigProviderProps } from './config-provider';
 export { default as ConfigProvider } from './config-provider';
 
