@@ -138,6 +138,7 @@ export { default as LoopFolderOutlined } from './LoopFolderOutlined';
 export { default as LoopOutlined } from './LoopOutlined';
 export { default as MailFilled } from './MailFilled';
 export { default as MailOutlined } from './MailOutlined';
+export { default as MediumVolumeOutline } from './MediumVolumeOutline';
 export { default as MoneySymbolFilled } from './MoneySymbolFilled';
 export { default as MoneySymbolOutlined } from './MoneySymbolOutlined';
 export { default as MoveOutlined } from './MoveOutlined';
