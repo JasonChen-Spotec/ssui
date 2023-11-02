@@ -18,10 +18,12 @@ const App: React.FC = () => {
         <Radio value="vertical">vertical</Radio>
       </Radio.Group>
 
-      <Radio.Group value={justify} onChange={(e) => setJustify(e.target.value)}>
-        <Radio value="center">center</Radio>
-        <Radio value="space-between">space-between</Radio>
-      </Radio.Group>
+      {value === 'horizontal' && (
+        <Radio.Group value={justify} onChange={(e) => setJustify(e.target.value)}>
+          <Radio value="center">center</Radio>
+          <Radio value="space-between">space-between</Radio>
+        </Radio.Group>
+      )}
       <Flex vertical={value === 'vertical'} align="center" justify={justify}>
         {Array.from({ length: 4 }).map((_, i) => (
           <div
