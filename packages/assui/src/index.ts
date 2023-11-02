@@ -121,3 +121,6 @@ export { default as RichTextEditor } from './rich-text-editor';
 export { default as BeautifulDnd } from './beautiful-dnd';
 
 export { default as Resizable } from './resizable';
+
+export type { FlexProps } from './flex';
+export { default as Flex } from './flex';
