@@ -5,6 +5,8 @@ import type { SizeType } from 'antd/lib/config-provider/SizeContext';
 import { isPresetSize } from './utils/gapSize';
 import createFlexClassNames from './utils';
 
+const { getThemeVariables } = require('antd/dist/theme');
+
 export interface FlexProps<P = Record<PropertyKey, any>>
   extends React.HTMLAttributes<HTMLElement> {
   vertical?: boolean;
@@ -29,7 +31,8 @@ const Flex = React.forwardRef<HTMLElement, FlexProps>((props, ref) => {
     ...othersProps
   } = props;
 
-  const prefixCls = 'ant-flex';
+  const themeVariables = getThemeVariables();
+  const prefixCls = `${themeVariables['ant-prefix']}-flex`;
 
   const flexClassNames = createFlexClassNames(prefixCls, props);
 
