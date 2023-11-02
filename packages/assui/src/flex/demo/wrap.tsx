@@ -1,4 +1,5 @@
 import React from 'react';
+import type { SizeType } from 'antd/lib/config-provider/SizeContext';
 import { Button, Radio, Slider } from 'antd';
 import { Flex } from 'assui';
 
