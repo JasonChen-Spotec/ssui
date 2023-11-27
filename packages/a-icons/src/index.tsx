@@ -77,6 +77,7 @@ export { default as DotCalenderOutlined } from './DotCalenderOutlined';
 export { default as DoubleDownOutlined } from './DoubleDownOutlined';
 export { default as DoubleTextFilled } from './DoubleTextFilled';
 export { default as DoubleTextOutlined } from './DoubleTextOutlined';
+export { default as DownlaodAppOutlined } from './DownlaodAppOutlined';
 export { default as DownloadOutlinedFile } from './DownloadOutlinedFile';
 export { default as DownloadOutlined } from './DownloadOutlined';
 export { default as DownloadReportOutlined } from './DownloadReportOutlined';
