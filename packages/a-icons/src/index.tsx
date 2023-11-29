@@ -9,6 +9,7 @@ export { default as ArrowDropDownFilled } from './ArrowDropDownFilled';
 export { default as ArrowLeftOutlined } from './ArrowLeftOutlined';
 export { default as ArrowRightOutlined } from './ArrowRightOutlined';
 export { default as ArrowSwapHorizontal } from './ArrowSwapHorizontal';
+export { default as ArrowTopRightOutlined } from './ArrowTopRightOutlined';
 export { default as ArrowUpFilled } from './ArrowUpFilled';
 export { default as ArrowsChevronFilled } from './ArrowsChevronFilled';
 export { default as ArrowsChevronOutlined } from './ArrowsChevronOutlined';
@@ -44,6 +45,7 @@ export { default as CheckboxMultipleOutlined } from './CheckboxMultipleOutlined'
 export { default as ChevronRightOutlined } from './ChevronRightOutlined';
 export { default as ChevronUpFilled } from './ChevronUpFilled';
 export { default as CirclePlusFilled } from './CirclePlusFilled';
+export { default as CirculationFilled } from './CirculationFilled';
 export { default as ClipboardOutlined } from './ClipboardOutlined';
 export { default as ClockCircleFilled } from './ClockCircleFilled';
 export { default as ClockCircleOutline } from './ClockCircleOutline';
