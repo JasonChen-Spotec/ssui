@@ -1,3 +1,4 @@
+@import '~antd/lib/style/index.less';
 @import '../../style/themes/default.less';
 
 @color_263241: #263241;
@@ -35,7 +36,7 @@
       height: 45px;
       overflow: hidden;
       border: 1px solid @color_e5e5e5;
-      border-radius: 8px;
+      border-radius: @border-radius-base;
       transition: border 0.3s;
 
       &:not(.label-number-input-disabled):hover {
