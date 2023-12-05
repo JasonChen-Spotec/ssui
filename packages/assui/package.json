@@ -1,6 +1,6 @@
 {
   "name": "assui",
-  "version": "3.1.6",
+  "version": "3.1.7",
   "description": "react ui library",
   "author": "jason <usochen@gmail.com>",
   "main": "./lib/index.js",
@@ -35,7 +35,7 @@
     "@types/react-beautiful-dnd": "^13.1.2",
     "@types/react-color": "^3.0.6",
     "@types/react-resizable": "^3.0.0",
-    "a-icons": "^1.1.43",
+    "a-icons": "^1.1.44",
     "aa-utils": "^2.1.18",
     "ahooks": "^3.0.8",
     "bignumber.js": "^9.0.1",
