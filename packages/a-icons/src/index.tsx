@@ -82,6 +82,7 @@ export { default as DollarOutlined } from './DollarOutlined';
 export { default as DotCalenderOutlined } from './DotCalenderOutlined';
 export { default as DoubleChainFilled } from './DoubleChainFilled';
 export { default as DoubleChainOutlined } from './DoubleChainOutlined';
+export { default as DoubleChevronOutlined } from './DoubleChevronOutlined';
 export { default as DoubleDocumentFilled } from './DoubleDocumentFilled';
 export { default as DoubleDocumentOutlined } from './DoubleDocumentOutlined';
 export { default as DoubleDownOutlined } from './DoubleDownOutlined';
