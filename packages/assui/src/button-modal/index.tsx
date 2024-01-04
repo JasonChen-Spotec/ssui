@@ -2,6 +2,7 @@ import * as React from 'react';
 import isFunction from 'lodash/isFunction';
 import type { ModalProps } from 'antd/lib/modal';
 import Modal from 'antd/lib/modal';
+import { CloseOutlined } from 'a-icons';
 
 export interface ModalAction {
   open: () => void;
@@ -15,9 +16,21 @@ export interface ButtonModalProps extends Omit<ModalProps, 'children'> {
   children: ((v: ModalAction) => React.ReactElement) | React.ReactElement;
 }
 
-const ButtonModal: React.ForwardRefRenderFunction<unknown, ButtonModalProps> = (props, ref) => {
+const ButtonModal: React.ForwardRefRenderFunction<unknown, ButtonModalProps> = (
+  props,
+  ref,
+) => {
   const [visible, setModalVisible] = React.useState(false);
-  const { children, trigger, onOpen, onClose, onOk, onCancel, ...restModalProps } = props;
+  const {
+    children,
+    trigger,
+    onOpen,
+    onClose,
+    onOk,
+    onCancel,
+    className,
+    ...restModalProps
+  } = props;
 
   const openModal = () => {
     setModalVisible(true);
@@ -68,6 +81,7 @@ const ButtonModal: React.ForwardRefRenderFunction<unknown, ButtonModalProps> = (
         onCancel={handleModalCancel}
         centered
         maskClosable={false}
+        closeIcon={<CloseOutlined />}
         {...restModalProps}
       >
         {isFunction(children)
