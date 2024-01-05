@@ -1,9 +1,6 @@
 @import '~antd/lib/style/index.less';
 @import '../../style/themes/default.less';
-
-@color_9aa5b5: #9aa5b5;
-@color_a0a0a0: #a0a0a0;
-@font-size-base: 14px;
+@import '../../style/variables.less';
 
 .label-range-picker {
   position: relative;
@@ -17,10 +14,17 @@
     }
   }
 
+  &:not(.label-range-picker-label-scale) {
+    .@{ant-prefix}-picker-input > input {
+      cursor: pointer;
+    }
+  }
+
   .@{ant-prefix}-picker {
     height: 45px;
-    padding-left: 12px;
-    border: 1px solid #e5e5e5;
+    padding-right: 15px;
+    padding-left: 15px;
+    border: 1px solid @color_e5e5e5;
     border-radius: @border-radius-base;
     outline: none;
 
@@ -28,7 +32,6 @@
       position: relative;
       top: @pickerInputTop;
       width: 85px;
-      padding-left: 3px;
     }
 
     &-focused {
@@ -39,6 +42,7 @@
     &-range-separator {
       position: relative;
       top: 8px;
+      margin: 0 3px;
       padding: 0;
     }
 
@@ -53,20 +57,16 @@
 
     &-suffix .spotecicon {
       width: 14px;
-      color: #323232;
+      color: @color_323232;
     }
   }
 
   &-text {
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 12px;
+    left: 16px;
     z-index: 2;
-    display: flex;
-    align-items: center;
-    width: calc(100% - 12px);
-    height: 100%;
-    margin-left: 12px;
+    height: 20px;
     color: @color_9aa5b5;
     font-size: @font-size-base;
     line-height: 20px;

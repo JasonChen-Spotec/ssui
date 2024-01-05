@@ -1,16 +1,6 @@
-/* stylelint-disable indentation */
 @import '~antd/lib/style/index.less';
 @import '../../style/themes/default.less';
-
-@color_9aa5b5: #9aa5b5;
-@color_e5e5e5: #e5e5e5;
-@color_7d7d7d: #7d7d7d;
-@color_a0a0a0: #a0a0a0;
-@color_333: #333;
-@color_ccc: #ccc;
-@white: #fff;
-@font-size-base: 14px;
-@font-size-sm: @font-size-base - 2px;
+@import '../../style/variables.less';
 
 .label-select {
   position: relative;
@@ -52,18 +42,19 @@
     }
   }
 
-  .@{ant-prefix}-select-multiple.@{ant-prefix}-select-lg
+  .@{ant-prefix}-select-multiple.@{ant-prefix}-select-lg {
     .@{ant-prefix}-select-selection-item {
-    width: auto;
-    height: auto;
-    margin: 0 4px 4px 0;
-    padding: 1px 4px;
-    color: @color_333;
-    font-size: @font-size-sm;
-    line-height: 17px;
-    background-color: @white;
-    border: 1px solid @color_ccc;
-    border-radius: 4px;
+      width: auto;
+      height: auto;
+      margin: 0 4px 4px 0;
+      padding: 1px 4px;
+      color: @color_333;
+      font-size: @font-size-sm;
+      line-height: 17px;
+      background-color: @white;
+      border: 1px solid @color_ccc;
+      border-radius: 4px;
+    }
   }
 
   .@{ant-prefix}-select-allow-clear {
@@ -72,25 +63,28 @@
     }
   }
 
-  .@{ant-prefix}-select-single.@{ant-prefix}-select-lg:not(.@{ant-prefix}-select-customize-input)
+  .@{ant-prefix}-select-single.@{ant-prefix}-select-lg:not(.@{ant-prefix}-select-customize-input) {
     .@{ant-prefix}-select-selector {
-    height: 45px;
-    border: 1px solid @color_e5e5e5;
-    border-radius: @border-radius-base;
-    outline: none;
+      height: 45px;
+      border: 1px solid @color_e5e5e5;
+      border-radius: @border-radius-base;
+      outline: none;
+    }
   }
 
-  .@{ant-prefix}-select-focused:not(.@{ant-prefix}-select-disabled).@{ant-prefix}-select:not(.@{ant-prefix}-select-customize-input)
+  .@{ant-prefix}-select-focused:not(.@{ant-prefix}-select-disabled).@{ant-prefix}-select:not(.@{ant-prefix}-select-customize-input) {
     .@{ant-prefix}-select-selector {
-    border-color: @labelFocusBorderColor;
-    box-shadow: none;
+      border-color: @labelFocusBorderColor;
+      box-shadow: none;
+    }
   }
 
-  .@{ant-prefix}-select-single.@{ant-prefix}-select-show-arrow
+  .@{ant-prefix}-select-single.@{ant-prefix}-select-show-arrow {
     .@{ant-prefix}-select-selection-item {
-    padding-top: 11px;
-    padding-left: 4px;
-    font-size: @font-size-base;
+      padding-top: 11px;
+      padding-left: 4px;
+      font-size: @font-size-base;
+    }
   }
 
   .@{ant-prefix}-select-selection-search {

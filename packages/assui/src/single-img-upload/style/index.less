@@ -1,15 +1,16 @@
 @import '~antd/lib/style/index.less';
+@import '../../style/variables.less';
 
 @progress-prefix-cls: ~'@{ant-prefix}';
 
 .as-img-upload {
   width: 335px;
   height: 140px;
-  border: 1px solid #cacaca;
+  border: 1px solid @color_cacaca;
   border-radius: 4px;
 
   &:hover {
-    border: 1px solid #1890ff;
+    border: 1px solid @color_1890ff;
   }
 
   .rc-upload,
@@ -38,7 +39,7 @@
     width: 100%;
     height: 100%;
     overflow: hidden;
-    background-color: #fff;
+    background-color: @white;
   }
 
   &-close-button {
@@ -49,14 +50,14 @@
     width: 20px;
     height: 20px;
     text-align: center;
-    background-color: #000;
+    background-color: @black;
     cursor: pointer;
     opacity: 0.6;
 
     .spotecicon {
       width: 15px;
       height: 15px;
-      color: #fff;
+      color: @white;
     }
   }
 
@@ -84,7 +85,7 @@
     .@{ant-prefix}-progress-text {
       display: block;
       width: 100%;
-      color: #fff;
+      color: @white;
       text-align: center;
     }
   }
@@ -97,6 +98,6 @@
 
 .init-disable {
   color: rgba(0, 0, 0, 25%);
-  background-color: #f5f5f5;
+  background-color: @color_f5f5f5;
   cursor: not-allowed;
 }

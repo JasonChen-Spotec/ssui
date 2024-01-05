@@ -1,4 +1,5 @@
 @import '~antd/lib/style/index.less';
+@import '../../style/variables.less';
 
 .color-select-wrap {
   display: flex;
@@ -20,7 +21,8 @@
     border-color: @primary-color-hover;
     border-right-width: 1px;
     outline: 0;
-    box-shadow: @input-outline-offset @outline-blur-size @outline-width @primary-color-outline;
+    box-shadow: @input-outline-offset @outline-blur-size @outline-width
+      @primary-color-outline;
   }
 
   &-value {
@@ -29,7 +31,7 @@
   }
 
   &-placeholder {
-    color: #bfbfbf;
+    color: @color_bfbfbf;
   }
 
   .color-select-arrow {

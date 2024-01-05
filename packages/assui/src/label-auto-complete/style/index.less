@@ -1,10 +1,7 @@
 /* stylelint-disable indentation */
 @import '~antd/lib/style/index.less';
 @import '../../style/themes/default.less';
-
-@color_9aa5b5: #9aa5b5;
-@color_a0a0a0: #a0a0a0;
-@font-size-base: 14px;
+@import '../../style/variables.less';
 
 .label-auto-complete {
   position: relative;
@@ -20,7 +17,7 @@
   .@{ant-prefix}-select-single.@{ant-prefix}-select-lg:not(.@{ant-prefix}-select-customize-input)
     .@{ant-prefix}-select-selector {
     height: 45px;
-    border: 1px solid #e5e5e5;
+    border: 1px solid @color_e5e5e5;
     border-radius: @border-radius-base;
     outline: none;
   }

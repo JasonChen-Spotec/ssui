@@ -1,4 +1,5 @@
 @import '~antd/lib/style/index.less';
+@import '../../style/variables.less';
 
 @pkg: ~'@{ant-prefix}-img-crop';
 .@{pkg}-modal {
@@ -37,11 +38,11 @@
     }
 
     &.zoom button {
-      font-size: 18px;
+      font-size: @font-size_18;
     }
 
     &.rotate button {
-      font-size: 16px;
+      font-size: @font-size-lg;
 
       &:first-of-type {
         transform: rotate(-20deg);
