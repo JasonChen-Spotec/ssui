@@ -1,25 +1,30 @@
 @import '~antd/lib/style/index.less';
 @import '../../style/themes/default.less';
-
-@color_9aa5b5: #9aa5b5;
-@font-size-base: 14px;
+@import '../../style/variables.less';
 
 .label-date-picker {
   position: relative;
   width: 220px;
   height: 100%;
+  cursor: pointer;
+
+  &:not(.label-date-picker-label-scale) {
+    .@{ant-prefix}-picker-input > input {
+      cursor: pointer;
+    }
+  }
 
   .@{ant-prefix}-picker {
     height: 45px;
-    padding-left: 12px;
-    border: 1px solid #e5e5e5;
+    padding-right: 15px;
+    padding-left: 15px;
+    border: 1px solid @color_e5e5e5;
     border-radius: @border-radius-base;
     outline: none;
 
     &-input input {
       position: relative;
       top: @pickerInputTop;
-      padding-left: 3px;
     }
 
     &-focused {
@@ -29,7 +34,7 @@
 
     &-suffix .spotecicon {
       width: 14px;
-      color: #323232;
+      color: @color_323232;
     }
   }
 
