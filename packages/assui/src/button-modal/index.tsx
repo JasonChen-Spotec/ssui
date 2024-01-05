@@ -2,7 +2,7 @@ import * as React from 'react';
 import isFunction from 'lodash/isFunction';
 import type { ModalProps } from 'antd/lib/modal';
 import Modal from 'antd/lib/modal';
-import { CloseOutlined } from 'a-icons';
+import CloseOutlined from 'a-icons/lib/CloseOutlined';
 
 export interface ModalAction {
   open: () => void;
