@@ -3,6 +3,7 @@ import type { DrawerProps } from 'antd/lib/drawer';
 import Drawer from 'antd/lib/drawer';
 import isFunction from 'lodash/isFunction';
 import classNames from 'classnames';
+import CloseOutlined from 'a-icons/lib/CloseOutlined';
 
 export type DrawerAction = {
   close: () => void;
@@ -15,7 +16,10 @@ export interface ButtonDrawerProps extends Omit<DrawerProps, 'children'> {
   children: ((v: DrawerAction) => React.ReactElement) | React.ReactElement;
 }
 
-const ButtonDrawer: React.ForwardRefRenderFunction<unknown, ButtonDrawerProps> = (props, ref) => {
+const ButtonDrawer: React.ForwardRefRenderFunction<unknown, ButtonDrawerProps> = (
+  props,
+  ref,
+) => {
   const [drawerVisible, setDrawerVisible] = useState(false);
   const { children, onOpen, onClose, trigger, title, className, ...restProps } = props;
 
@@ -60,6 +64,7 @@ const ButtonDrawer: React.ForwardRefRenderFunction<unknown, ButtonDrawerProps> =
         title={title}
         onClose={closeDrawer}
         open={drawerVisible}
+        closeIcon={<CloseOutlined />}
         {...restProps}
       >
         {isFunction(children)
