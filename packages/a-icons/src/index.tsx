@@ -23,6 +23,8 @@ export { default as BarsOutlined } from './BarsOutlined';
 export { default as BellOutlined } from './BellOutlined';
 export { default as BiscuitFilled } from './BiscuitFilled';
 export { default as BiscuitOutlined } from './BiscuitOutlined';
+export { default as BookFilled } from './BookFilled';
+export { default as BookOutlined } from './BookOutlined';
 export { default as BoxAddFilled } from './BoxAddFilled';
 export { default as BoxFilled } from './BoxFilled';
 export { default as BoxOutlined } from './BoxOutlined';
