@@ -143,6 +143,8 @@ export { default as ImacOutlined } from './ImacOutlined';
 export { default as ImageFilled } from './ImageFilled';
 export { default as ImageOutlined } from './ImageOutlined';
 export { default as ImportOutlined } from './ImportOutlined';
+export { default as InformationFilled } from './InformationFilled';
+export { default as InformationOutLined } from './InformationOutLined';
 export { default as InsFilled } from './InsFilled';
 export { default as InviteFriendFilled } from './InviteFriendFilled';
 export { default as InvoiceOutlined } from './InvoiceOutlined';
