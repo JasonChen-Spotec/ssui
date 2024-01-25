@@ -18,7 +18,6 @@ import 'tinymce/plugins/lists';
 import 'tinymce/plugins/charmap';
 import 'tinymce/plugins/anchor';
 import 'tinymce/plugins/searchreplace';
-import 'tinymce/plugins/wordcount';
 // import 'tinymce/plugins/code';
 import 'tinymce/plugins/fullscreen';
 import 'tinymce/plugins/insertdatetime';
@@ -64,7 +63,6 @@ const defaultPlugins = [
   'table',
   'preview',
   'help',
-  'wordcount',
 ];
 
 const defaultToolbar =
