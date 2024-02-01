@@ -107,14 +107,16 @@ const StepNumberInput = (props: StepNumberInputProps) => {
   };
 
   return (
-    <div className="number-range-input">
+    <div
+      className={classNames('number-range-input', {
+        'number-range-input-disabled': isEmpty || minCondition || disabled,
+      })}
+    >
       <NumberInput
         addonBefore={
           <span
             onClick={disabled ? undefined : () => onClickCount(MINUS)}
-            className={classNames('count-minus-btn', {
-              'disabled-btn': isEmpty || minCondition || disabled,
-            })}
+            className="count-minus-btn"
           >
             -
           </span>
@@ -122,9 +124,7 @@ const StepNumberInput = (props: StepNumberInputProps) => {
         addonAfter={
           <span
             onClick={disabled ? undefined : () => onClickCount(PLUS)}
-            className={classNames('count-add-btn', {
-              'disabled-btn': isEmpty || maxCondition || disabled,
-            })}
+            className="count-add-btn"
           >
             +
           </span>
