@@ -19,10 +19,14 @@ const Demo = () => {
         float: 0.1,
         intEnableMinus: '',
         floatEnableMinus: '',
+        disabled: 10,
       }}
     >
       <Form.Item name="int" label="int">
         <StepNumberInput />
+      </Form.Item>
+      <Form.Item name="disabled" label="disabled">
+        <StepNumberInput disabled />
       </Form.Item>
       <Form.Item name="float" label="float">
         <StepNumberInput numberType="float" step="0.1" />
