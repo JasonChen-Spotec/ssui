@@ -39,11 +39,22 @@ export interface StepNumberInputProps {
   suffix?: React.ReactNode;
   /** 可以点击清除图标删除内容 */
   allowClear?: boolean;
+  disabled?: boolean;
 }
 
 const StepNumberInput = (props: StepNumberInputProps) => {
   const [value, setValue] = useControllableValue(props, { defaultValue: '' });
-  const { onChange, onBlur, numberType, precision, step, max, min, ...restProps } = props;
+  const {
+    onChange,
+    onBlur,
+    numberType,
+    precision,
+    step,
+    max,
+    min,
+    disabled,
+    ...restProps
+  } = props;
   const isEmpty = isUndefined(value) || value === '';
 
   const plusNumber = new BigNumber(value).plus(step).toString();
@@ -100,11 +111,9 @@ const StepNumberInput = (props: StepNumberInputProps) => {
       <NumberInput
         addonBefore={
           <span
-            onClick={() => {
-              onClickCount(MINUS);
-            }}
+            onClick={disabled ? undefined : () => onClickCount(MINUS)}
             className={classNames('count-minus-btn', {
-              'disabled-btn': isEmpty || minCondition,
+              'disabled-btn': isEmpty || minCondition || disabled,
             })}
           >
             -
@@ -112,11 +121,9 @@ const StepNumberInput = (props: StepNumberInputProps) => {
         }
         addonAfter={
           <span
-            onClick={() => {
-              onClickCount(PLUS);
-            }}
+            onClick={disabled ? undefined : () => onClickCount(PLUS)}
             className={classNames('count-add-btn', {
-              'disabled-btn': isEmpty || maxCondition,
+              'disabled-btn': isEmpty || maxCondition || disabled,
             })}
           >
             +
@@ -127,6 +134,7 @@ const StepNumberInput = (props: StepNumberInputProps) => {
         onBlur={onNumberBlur}
         numberType={numberType}
         precision={precision}
+        disabled={disabled}
         {...restProps}
       />
     </div>
