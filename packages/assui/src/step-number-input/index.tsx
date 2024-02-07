@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import BigNumber from 'bignumber.js';
 import isUndefined from 'lodash/isUndefined';
 import useControllableValue from 'ahooks/lib/useControllableValue';
-
+import DisabledContext from 'antd/lib/config-provider/DisabledContext';
 import { INT } from './const/numberType';
 import { PLUS, MINUS } from './const/countType';
 import NumberInput from '../number-input';
@@ -52,7 +52,7 @@ const StepNumberInput = (props: StepNumberInputProps) => {
     step,
     max,
     min,
-    disabled,
+    disabled: customDisabled,
     ...restProps
   } = props;
   const isEmpty = isUndefined(value) || value === '';
@@ -67,6 +67,10 @@ const StepNumberInput = (props: StepNumberInputProps) => {
   const minCondition = isUndefined(min)
     ? false
     : min === Number(value) || Number(min) > Number(minusNumber);
+
+  // ===================== Disabled =====================
+  const disabled = React.useContext(DisabledContext);
+  const mergedDisabled = customDisabled ?? disabled;
 
   const onNumberChange = (lastValue: string) => {
     if (value !== lastValue) {
@@ -109,13 +113,13 @@ const StepNumberInput = (props: StepNumberInputProps) => {
   return (
     <div
       className={classNames('number-range-input', {
-        'number-range-input-disabled': isEmpty || minCondition || disabled,
+        'number-range-input-disabled': isEmpty || minCondition || mergedDisabled,
       })}
     >
       <NumberInput
         addonBefore={
           <span
-            onClick={disabled ? undefined : () => onClickCount(MINUS)}
+            onClick={mergedDisabled ? undefined : () => onClickCount(MINUS)}
             className="count-minus-btn"
           >
             -
@@ -123,7 +127,7 @@ const StepNumberInput = (props: StepNumberInputProps) => {
         }
         addonAfter={
           <span
-            onClick={disabled ? undefined : () => onClickCount(PLUS)}
+            onClick={mergedDisabled ? undefined : () => onClickCount(PLUS)}
             className="count-add-btn"
           >
             +
@@ -134,7 +138,7 @@ const StepNumberInput = (props: StepNumberInputProps) => {
         onBlur={onNumberBlur}
         numberType={numberType}
         precision={precision}
-        disabled={disabled}
+        disabled={mergedDisabled}
         {...restProps}
       />
     </div>
