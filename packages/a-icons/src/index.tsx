@@ -234,6 +234,8 @@ export { default as SearchDocumentFilled } from './SearchDocumentFilled';
 export { default as SearchDocumentOutlined } from './SearchDocumentOutlined';
 export { default as SearchFilled } from './SearchFilled';
 export { default as SearchOutlined } from './SearchOutlined';
+export { default as SeoFilled } from './SeoFilled';
+export { default as SeoOutlined } from './SeoOutlined';
 export { default as SettingFilled } from './SettingFilled';
 export { default as SettingOutlined } from './SettingOutlined';
 export { default as SettingSquareFilled } from './SettingSquareFilled';
