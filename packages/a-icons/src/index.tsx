@@ -174,6 +174,7 @@ export { default as MailFilled } from './MailFilled';
 export { default as MailOutlined } from './MailOutlined';
 export { default as MediumVolumeOutlined } from './MediumVolumeOutlined';
 export { default as MenuListOutlined } from './MenuListOutlined';
+export { default as MinusSquareOutlined } from './MinusSquareOutlined';
 export { default as MoneySymbolFilled } from './MoneySymbolFilled';
 export { default as MoneySymbolOutlined } from './MoneySymbolOutlined';
 export { default as MoveOutlined } from './MoveOutlined';
