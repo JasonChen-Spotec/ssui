@@ -13,5 +13,4 @@ export { default as resizableColumnsTable } from './resizableColumnsTable';
 export { default as intervalExecution } from './intervalExecution';
 export { default as downloadFile } from './downloadFile';
 export { default as heic2Jpeg } from './heic2Jpeg';
-export { default as openapi2ts } from './openapi2ts';
 export * as keyCode from './keyCode';

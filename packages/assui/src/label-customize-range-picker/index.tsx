@@ -174,7 +174,8 @@ const LabelCustomizeRangePicker = (props: LabelCustomizeRangePickerProps) => {
   const resultList = maxScope
     ? dataSource.filter((item) => {
         const [startTime, entTime] = item.value;
-        const space = moment.duration(entTime.diff(startTime)).asDays();
+
+        const space = entTime.diff(startTime, 'days');
 
         return space <= maxScope;
       })
