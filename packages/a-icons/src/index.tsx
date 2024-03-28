@@ -181,6 +181,8 @@ export { default as MoneySymbolFilled } from './MoneySymbolFilled';
 export { default as MoneySymbolOutlined } from './MoneySymbolOutlined';
 export { default as MoveOutlined } from './MoveOutlined';
 export { default as NewspaperOutlined } from './NewspaperOutlined';
+export { default as NoteBoardFilled } from './NoteBoardFilled';
+export { default as NoteBoardOutlined } from './NoteBoardOutlined';
 export { default as NoteFilled } from './NoteFilled';
 export { default as NoteOutlined } from './NoteOutlined';
 export { default as OctagonPromptFilled } from './OctagonPromptFilled';
