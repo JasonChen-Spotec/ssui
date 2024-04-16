@@ -140,6 +140,7 @@ export { default as GrowthGraphOutlined } from './GrowthGraphOutlined';
 export { default as HandCoinsFilled } from './HandCoinsFilled';
 export { default as HomeFilled } from './HomeFilled';
 export { default as HomeOutlined } from './HomeOutlined';
+export { default as HomeWifiOutlined } from './HomeWifiOutlined';
 export { default as IbFilled } from './IbFilled';
 export { default as ImacFilled } from './ImacFilled';
 export { default as ImacOutlined } from './ImacOutlined';
