@@ -46,7 +46,11 @@ gulp.task('declaration', () => {
     declaration: true,
     emitDeclarationOnly: true,
   });
-  return gulp.src(codeSource).pipe(tsProject()).pipe(gulp.dest('es/')).pipe(gulp.dest('lib/'));
+  return gulp
+    .src(codeSource)
+    .pipe(tsProject())
+    .pipe(gulp.dest('es/'))
+    .pipe(gulp.dest('lib/'));
 });
 
 exports.default = gulp.series('clean', 'cjs', 'es', 'declaration');
