@@ -20,6 +20,7 @@ const Demo = () => {
 
   return (
     <div>
+      <div>填充默认时间：从当前时间往回推算</div>
       <LabelCustomizeRangePicker
         label="结算时间"
         value={date}
@@ -29,6 +30,8 @@ const Demo = () => {
           format: 'YYYY/MM/DD HH:mm',
         }}
       />
+      <br />
+      <div>不填充默认时间</div>
       <LabelCustomizeRangePicker
         value={date1}
         rangePickerType="origin"
