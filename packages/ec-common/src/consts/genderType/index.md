@@ -33,8 +33,8 @@ export const useGenderType = () => {
   const { formatMessage } = useIntl();
 
   const appellativeGenderTypeMap = {
-    [MALE]: formatMessage(messages.mister),
-    [FEMALE]: formatMessage(messages.lady),
+    [MALE]: formatMessage(messages.male),
+    [FEMALE]: formatMessage(messages.female),
     [OTHER]: '',
     [EMPTY]: '',
   };
