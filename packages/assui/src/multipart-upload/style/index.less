@@ -1,13 +1,13 @@
 @import '~antd/lib/style/index.less';
 @import '../../style/variables.less';
 
-.package-upload-container {
+.multipart-upload-container {
   width: 130px;
   height: 100px;
   border-radius: 4px;
 }
 
-.uploading-file-container {
+.multipart-uploading-file-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -29,11 +29,11 @@
   }
 }
 
-.uploading-file-container-disabled {
+.multipart-uploading-file-container-disabled {
   cursor: not-allowed;
 }
 
-.uploading-container {
+.multipart-uploading-container {
   position: relative;
   z-index: @zindex-modal-mask;
   width: 100%;
@@ -42,7 +42,7 @@
   background-color: @white;
 }
 
-.package-icon-files {
+.multipart-package-icon-files {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -52,14 +52,14 @@
   overflow: hidden;
 }
 
-.upload-file-name {
+.multipart-upload-file-name {
   width: 85%;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
 }
 
-.upload-progress {
+.multipart-upload-progress {
   position: absolute !important;
   top: 50%;
   left: 0;
@@ -78,7 +78,7 @@
   }
 }
 
-.package-upload-close-button {
+.multipart-package-upload-close-button {
   position: absolute;
   top: 0;
   right: 0;
@@ -97,6 +97,6 @@
   }
 }
 
-.upload-icon-files {
+.multipart-upload-icon-files {
   text-align: center;
 }

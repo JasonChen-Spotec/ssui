@@ -4,7 +4,7 @@ import { PlusOutlined } from 'a-icons';
 
 const Demo = () => {
   const getUrl = ({ fileName, partNumber, uploadId }) => {
-    return `http://api/be/oss/upload/file/split/2?fileName=${fileName}&partNumber=${partNumber}&uploadId=${uploadId}`;
+    return `http://192.168.0.129:31000/api/be/oss/upload/file/split/2?fileName=${fileName}&partNumber=${partNumber}&uploadId=${uploadId}`;
   };
 
   const getUploadIdAPI = ({ fileName, folderType }) => {

@@ -1,6 +1,5 @@
 import React, { useState, useRef } from 'react';
 import Upload from 'rc-upload';
-import type { UploadRequestOption } from 'rc-upload/lib/interface';
 import type { UploadProps } from 'rc-upload';
 import { useMount, useUpdateEffect } from 'ahooks';
 import classNames from 'classnames';
@@ -31,7 +30,7 @@ export interface MultipartUploadProps extends Omit<UploadProps, 'onSuccess'> {
   /** 分片大小 */
   chunkSize?: number;
   /** 第一步 获取ID  */
-  getUploadIdAPI?: ({
+  getInitUploadIdAPI: ({
     fileName,
     folderType,
   }: {
@@ -39,7 +38,7 @@ export interface MultipartUploadProps extends Omit<UploadProps, 'onSuccess'> {
     folderType: any;
   }) => Promise<any>;
   /** 第二步 获取url 进行分片上传  */
-  getUrl?: ({
+  getInProgressUploadUrl: ({
     fileName,
     partNumber,
     uploadId,
@@ -49,7 +48,7 @@ export interface MultipartUploadProps extends Omit<UploadProps, 'onSuccess'> {
     uploadId: string;
   }) => string;
   /** 第三步 合并上传文件 完成上传  */
-  completeUploadAPI?: (
+  completeRequest: (
     {
       fileName,
       folderType,
@@ -61,8 +60,7 @@ export interface MultipartUploadProps extends Omit<UploadProps, 'onSuccess'> {
     },
     list: string[],
   ) => Promise<any>;
-  /** 自定义上传方法  */
-  customRequest?: ((option: UploadRequestOption<any>) => void) | undefined;
+  errorCatch?: (error: any) => void;
 }
 
 const MultipartUpload = (props: MultipartUploadProps) => {
@@ -71,7 +69,6 @@ const MultipartUpload = (props: MultipartUploadProps) => {
     wrapperClassName,
     accept,
     method,
-    defaultFileUrl = '',
     defaultFileName = '',
     onSuccess,
     onError,
@@ -79,13 +76,15 @@ const MultipartUpload = (props: MultipartUploadProps) => {
     cancelUpload,
     uploadIcon,
     disabled,
-    getUrl,
     folderType,
-    getUploadIdAPI,
-    completeUploadAPI,
+    getInProgressUploadUrl,
+    getInitUploadIdAPI,
+    completeRequest,
     chunkSize,
     uploadText,
     customRequest,
+    value,
+    errorCatch,
     ...restProps
   } = props;
 
@@ -93,7 +92,7 @@ const MultipartUpload = (props: MultipartUploadProps) => {
   const uploadRef = useRef<Upload | null>();
   const fileRef = useRef<RcFile | null>();
   const uploadIdRef = useRef<string>('');
-  const [uploadStatus, setUploadStatus] = useState(defaultFileUrl ? 'done' : 'init');
+  const [uploadStatus, setUploadStatus] = useState(value ? 'done' : 'init');
   const [uploadPercent, setUploadPercent] = useState(0);
 
   const resChunkSize = chunkSize || 1024 * 1024 * 50; // 50MB
@@ -102,12 +101,12 @@ const MultipartUpload = (props: MultipartUploadProps) => {
   const uploadList: string[] = [];
 
   useUpdateEffect(() => {
-    if (defaultFileUrl) {
+    if (value) {
       setUploadStatus('done');
     } else {
       setUploadStatus('init');
     }
-  }, [defaultFileUrl]);
+  }, [value]);
 
   useMount(() => {
     fileNameRef.current = defaultFileName;
@@ -155,8 +154,8 @@ const MultipartUpload = (props: MultipartUploadProps) => {
 
   const uploadNextChunk = () => {
     /** 第二步 获取url 进行分片上传  */
-    if (fileRef.current && getUrl) {
-      const resultUrl = getUrl({
+    if (fileRef.current) {
+      const resultUrl = getInProgressUploadUrl({
         fileName: fileNameRef.current,
         partNumber: currentChunk + 1,
         uploadId: uploadIdRef.current,
@@ -167,16 +166,16 @@ const MultipartUpload = (props: MultipartUploadProps) => {
       const end = Math.min(fileRef.current.size, start + resChunkSize);
       const chunk = fileRef.current.slice(start, end);
 
-      multipartUploadHandler(chunk, progress).then((res: any) => {
-        uploadList.push(res as string);
-        currentChunk += 1;
+      multipartUploadHandler(chunk, progress)
+        .then((res: any) => {
+          uploadList.push(res as string);
+          currentChunk += 1;
 
-        if (currentChunk < totalChunks) {
-          uploadNextChunk();
-        } else {
-          /** 分片上传完成 进行文件合并 上传完成  */
-          completeUploadAPI &&
-            completeUploadAPI(
+          if (currentChunk < totalChunks) {
+            uploadNextChunk();
+          } else {
+            /** 分片上传完成 进行文件合并 上传完成  */
+            completeRequest(
               {
                 fileName: fileNameRef.current,
                 uploadId: uploadIdRef.current,
@@ -187,8 +186,11 @@ const MultipartUpload = (props: MultipartUploadProps) => {
               setUploadStatus('done');
               onSuccess && onSuccess(fileUrl, fileNameRef.current);
             });
-        }
-      });
+          }
+        })
+        .catch((error) => {
+          errorCatch && errorCatch(error);
+        });
     }
   };
 
@@ -197,44 +199,46 @@ const MultipartUpload = (props: MultipartUploadProps) => {
       totalChunks = Math.ceil(fileRef.current.size / resChunkSize);
 
       /** 第一步 获取ID  */
-      getUploadIdAPI &&
-        getUploadIdAPI({
-          fileName: fileNameRef.current,
-          folderType,
-        }).then((res: any) => {
-          uploadIdRef.current = res.body;
-          uploadNextChunk();
-        });
+      getInitUploadIdAPI({
+        fileName: fileNameRef.current,
+        folderType,
+      }).then((id: string) => {
+        uploadIdRef.current = id;
+        uploadNextChunk();
+      });
     }
   };
 
   return (
-    <div className={classNames('package-upload-container', wrapperClassName)}>
+    <div className={classNames('multipart-upload-container', wrapperClassName)}>
       {uploadStatus === 'uploading' && (
-        <div className="uploading-container">
-          <div className="package-icon-files">
+        <div className="multipart-uploading-container">
+          <div className="multipart-package-icon-files">
             {uploadIcon}
-            <div className="upload-file-name" title={fileNameRef.current}>
+            <div className="multipart-upload-file-name" title={fileNameRef.current}>
               {fileNameRef.current}
             </div>
           </div>
           <Progress
-            className="upload-progress"
+            className="multipart-upload-progress"
             percent={uploadPercent}
             size="small"
             status="active"
           />
-          <div className="package-upload-close-button" onClick={handleCancelUpload}>
+          <div
+            className="multipart-package-upload-close-button"
+            onClick={handleCancelUpload}
+          >
             <CloseOutlined />
           </div>
         </div>
       )}
 
       {uploadStatus === 'done' && (
-        <div className="upload-container">
-          <div className="upload-icon-files">
+        <div className="multipart-upload-container">
+          <div className="multipart-upload-icon-files">
             {uploadIcon}
-            <div className="upload-file-name" title={fileNameRef.current}>
+            <div className="multipart-upload-file-name" title={fileNameRef.current}>
               {fileNameRef.current}
             </div>
           </div>
@@ -252,13 +256,13 @@ const MultipartUpload = (props: MultipartUploadProps) => {
         className={uploadCls}
         onStart={handleStart}
         onError={handleError}
-        customRequest={customRequest || customMultipartRequest}
+        customRequest={customMultipartRequest}
         {...restProps}
       >
         {uploadStatus === 'init' && (
           <div
-            className={classNames('uploading-file-container', {
-              'uploading-file-container-disabled': disabled,
+            className={classNames('multipart-uploading-file-container', {
+              'multipart-uploading-file-container-disabled': disabled,
             })}
           >
             <CirclePlusFilled />
