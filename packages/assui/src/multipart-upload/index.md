@@ -1,30 +1,23 @@
 ---
 mobile: false
-title: ConditionInput
+title: MultipartUpload
 nav:
   title: assui
   path: /assui
 group:
   title: 数据录入
   path: /components/input
-  order: 1
 ---
 
-# ConditionInput
-设置固定条件的输入框
+# MultipartUpload
+
+输入 MultipartUpload 组件 文件分片上传
 
 ## 1. 代码演示
 
-### 1.1. 条件为正则
+### 1.1. 基础使用
 
-<code hideActions='["CSB", "EXTERNAL"]' src="./demo/NormalRegexp.jsx" />
+<code hideActions='["CSB", "EXTERNAL"]' src="./demo/index.tsx" />
 
-### 1.2. 自定义formatter
-<code hideActions='["CSB", "EXTERNAL"]' src="./demo/Formatter.jsx" />
-
-### 1.3. 联合antd form使用
-<code hideActions='["CSB", "EXTERNAL"]' src="./demo/Form.jsx" />
-
-
+### 1.2. API
 <API></API>
-更多属性请参考 [antd Input](https://ant.design/components/input-cn/)

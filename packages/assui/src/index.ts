@@ -128,4 +128,5 @@ export { default as Flex } from './flex';
 export type { LabelConditionSelectInputProps } from './label-condition-select-input';
 export { default as LabelConditionSelectInput } from './label-condition-select-input';
 
+export type { MultipartUploadProps } from './multipart-upload';
 export { default as MultipartUpload } from './multipart-upload';
