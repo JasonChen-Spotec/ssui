@@ -7,13 +7,15 @@ const Demo = () => {
     return `http://192.168.0.129:31000/api/be/oss/upload/file/split/2?fileName=${fileName}&partNumber=${partNumber}&uploadId=${uploadId}`;
   };
 
-  const getUploadIdAPI = ({ fileName, folderType }) => {
+  const getUploadIdAPI: ({ fileName }: { fileName: string }) => Promise<string> = ({
+    fileName,
+  }) => {
     return new Promise((resolve, reject) => {
       resolve('73bc4b3b-0898-4f9b-ade5-9258f51a8413');
     });
   };
 
-  const completeUploadAPI = () => {
+  const completeUploadAPI: () => Promise<string> = () => {
     return new Promise((resolve, reject) => {
       resolve('completeUploadAPI');
     });
@@ -25,7 +27,6 @@ const Demo = () => {
       completeRequest={completeUploadAPI}
       uploadIcon={<FileOutlined style={{ height: 60, width: 60, marginBottom: 20 }} />}
       getInProgressUploadUrl={getUrl}
-      folderType={'2'}
     />
   );
 };

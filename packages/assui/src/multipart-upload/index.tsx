@@ -19,24 +19,16 @@ export interface MultipartUploadProps extends Omit<UploadProps, 'onSuccess'> {
   value?: string;
   wrapperClassName?: string;
   className?: string;
-  defaultFileUrl?: string;
-  defaultFileName?: string;
+  fileName?: string;
   /** 上传文字 */
   uploadText?: string;
-  onSuccess?: (res: any, fileName: string) => void;
+  onSuccess?: (res: string, fileName: string) => void;
   uploadIcon: React.ReactElement;
   cancelUpload?: () => void;
-  folderType: any;
   /** 分片大小 */
   chunkSize?: number;
   /** 第一步 获取ID  */
-  getInitUploadIdAPI: ({
-    fileName,
-    folderType,
-  }: {
-    fileName: string;
-    folderType: any;
-  }) => Promise<any>;
+  getInitUploadIdAPI: ({ fileName }: { fileName: string }) => Promise<string>;
   /** 第二步 获取url 进行分片上传  */
   getInProgressUploadUrl: ({
     fileName,
@@ -48,18 +40,15 @@ export interface MultipartUploadProps extends Omit<UploadProps, 'onSuccess'> {
     uploadId: string;
   }) => string;
   /** 第三步 合并上传文件 完成上传  */
-  completeRequest: (
-    {
-      fileName,
-      folderType,
-      uploadId,
-    }: {
-      fileName: string;
-      uploadId: string;
-      folderType: any;
-    },
-    list: string[],
-  ) => Promise<any>;
+  completeRequest: ({
+    fileName,
+    uploadId,
+    list,
+  }: {
+    fileName: string;
+    uploadId: string;
+    list: string[];
+  }) => Promise<string>;
   errorCatch?: (error: any) => void;
 }
 
@@ -69,14 +58,13 @@ const MultipartUpload = (props: MultipartUploadProps) => {
     wrapperClassName,
     accept,
     method,
-    defaultFileName = '',
+    fileName = '',
     onSuccess,
     onError,
     onStart,
     cancelUpload,
     uploadIcon,
     disabled,
-    folderType,
     getInProgressUploadUrl,
     getInitUploadIdAPI,
     completeRequest,
@@ -109,12 +97,12 @@ const MultipartUpload = (props: MultipartUploadProps) => {
   }, [value]);
 
   useMount(() => {
-    fileNameRef.current = defaultFileName;
+    fileNameRef.current = fileName;
   });
 
   useUpdateEffect(() => {
-    fileNameRef.current = defaultFileName;
-  }, [defaultFileName]);
+    fileNameRef.current = fileName;
+  }, [fileName]);
 
   const handleStart = (file: RcFile) => {
     fileRef.current = file;
@@ -175,14 +163,11 @@ const MultipartUpload = (props: MultipartUploadProps) => {
             uploadNextChunk();
           } else {
             /** 分片上传完成 进行文件合并 上传完成  */
-            completeRequest(
-              {
-                fileName: fileNameRef.current,
-                uploadId: uploadIdRef.current,
-                folderType,
-              },
-              uploadList,
-            ).then((fileUrl: any) => {
+            completeRequest({
+              fileName: fileNameRef.current,
+              uploadId: uploadIdRef.current,
+              list: uploadList,
+            }).then((fileUrl: string) => {
               setUploadStatus('done');
               onSuccess && onSuccess(fileUrl, fileNameRef.current);
             });
@@ -201,7 +186,6 @@ const MultipartUpload = (props: MultipartUploadProps) => {
       /** 第一步 获取ID  */
       getInitUploadIdAPI({
         fileName: fileNameRef.current,
-        folderType,
       }).then((id: string) => {
         uploadIdRef.current = id;
         uploadNextChunk();
