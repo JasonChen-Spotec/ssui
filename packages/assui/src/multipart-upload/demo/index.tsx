@@ -1,6 +1,6 @@
 import React from 'react';
 import { MultipartUpload } from 'assui';
-import { PlusOutlined } from 'a-icons';
+import { FileOutlined } from 'a-icons';
 
 const Demo = () => {
   const getUrl = ({ fileName, partNumber, uploadId }) => {
@@ -9,7 +9,7 @@ const Demo = () => {
 
   const getUploadIdAPI = ({ fileName, folderType }) => {
     return new Promise((resolve, reject) => {
-      resolve({ body: '123123' });
+      resolve('123123');
     });
   };
 
@@ -21,13 +21,13 @@ const Demo = () => {
 
   return (
     <MultipartUpload
-      getUploadIdAPI={getUploadIdAPI}
-      completeUploadAPI={completeUploadAPI}
-      uploadIcon={<PlusOutlined />}
-      getUrl={getUrl}
+      getInitUploadIdAPI={getUploadIdAPI}
+      completeRequest={completeUploadAPI}
+      uploadIcon={<FileOutlined style={{ height: 60, width: 60, marginBottom: 20 }} />}
+      getInProgressUploadUrl={getUrl}
       folderType={'2'}
     >
-      <PlusOutlined />
+      {1}
     </MultipartUpload>
   );
 };
