@@ -92,7 +92,7 @@ const MultipartUpload = (props: MultipartUploadProps) => {
   const uploadRef = useRef<Upload | null>();
   const fileRef = useRef<RcFile | null>();
   const uploadIdRef = useRef<string>('');
-  const [uploadStatus, setUploadStatus] = useState(value ? 'done' : 'init');
+  const [uploadStatus, setUploadStatus] = useState('init');
   const [uploadPercent, setUploadPercent] = useState(0);
 
   const resChunkSize = chunkSize || 1024 * 1024 * 50; // 50MB

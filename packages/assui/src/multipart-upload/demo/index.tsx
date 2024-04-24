@@ -9,7 +9,7 @@ const Demo = () => {
 
   const getUploadIdAPI = ({ fileName, folderType }) => {
     return new Promise((resolve, reject) => {
-      resolve('123123');
+      resolve('73bc4b3b-0898-4f9b-ade5-9258f51a8413');
     });
   };
 
@@ -26,9 +26,7 @@ const Demo = () => {
       uploadIcon={<FileOutlined style={{ height: 60, width: 60, marginBottom: 20 }} />}
       getInProgressUploadUrl={getUrl}
       folderType={'2'}
-    >
-      {1}
-    </MultipartUpload>
+    />
   );
 };
 
