@@ -66,6 +66,9 @@ const demo = () => {
             allowClear: true,
           }}
           optionsList={selectOptions}
+          onBlur={(value) => {
+            console.log(value, '触发了');
+          }}
         />
       </Form.Item>
     </Form>

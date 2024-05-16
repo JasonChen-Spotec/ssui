@@ -55,6 +55,9 @@ const demo = () => {
           selectProps={{ options, allowClear: true }}
           hiddenInputKeys={[1]}
           optionsList={options}
+          onBlur={() => {
+            console.log('触发了');
+          }}
         />
       </Form.Item>
 
@@ -68,6 +71,9 @@ const demo = () => {
             allowClear: true,
           }}
           optionsList={selectOptions}
+          onBlur={(value) => {
+            console.log(value, '触发了');
+          }}
         />
       </Form.Item>
     </Form>
