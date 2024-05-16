@@ -36,7 +36,10 @@ export interface ConditionSelectInputProps {
   conditionInputProps?: ConditionInputProps;
   /** 联动selectProps */
   conditionSelectProps?: SelectProps;
+  /** onChange */
   onChange?: (value: ValueType) => void;
+  /** onBlur */
+  onBlur?: (value: ValueType) => void;
   /** 输入框类型 */
   inputType?: InputTypeEnum;
   /** select options */
@@ -52,6 +55,7 @@ const ConditionSelectInput = (props: ConditionSelectInputProps) => {
     conditionSelectProps,
     inputType = InputTypeEnum.CONDITION_INPUT,
     optionsList = [],
+    onBlur,
   } = props;
   const isInput = inputType === InputTypeEnum.CONDITION_INPUT;
   const [selectInputValue, setSelectInputValue] = useControllableValue<ValueType>(props);
@@ -89,6 +93,10 @@ const ConditionSelectInput = (props: ConditionSelectInputProps) => {
     setSelectInputValue({ selectValue: selectInputValue?.selectValue, inputValue });
   };
 
+  const onConditionSelectInputBlur = () => {
+    onBlur?.(selectInputValue);
+  };
+
   // 是否展示输入框
   const isShowInput =
     !isNil(selectInputValue?.selectValue) &&
@@ -100,6 +108,7 @@ const ConditionSelectInput = (props: ConditionSelectInputProps) => {
         {...conditionInputProps}
         onChange={onInputChange}
         value={selectInputValue?.inputValue}
+        onBlur={onConditionSelectInputBlur}
       />
     </div>
   ) : (
@@ -109,6 +118,7 @@ const ConditionSelectInput = (props: ConditionSelectInputProps) => {
         onChange={onTypeSelectChange}
         value={selectInputValue?.inputValue}
         options={subSelectOptions}
+        onBlur={onConditionSelectInputBlur}
       />
     </div>
   );
@@ -126,6 +136,7 @@ const ConditionSelectInput = (props: ConditionSelectInputProps) => {
           onChange={onSelectChange}
           value={selectInputValue?.selectValue}
           options={optionsList}
+          onBlur={onConditionSelectInputBlur}
         />
       </div>
 

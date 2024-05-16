@@ -38,6 +38,8 @@ export interface LabelConditionSelectInputProps {
   conditionSelectProps?: LabelSelectProps;
   /** onChange */
   onChange?: (value: ValueType) => void;
+  /** onBlur */
+  onBlur?: (value: ValueType) => void;
   /** 输入框类型 */
   inputType?: InputTypeEnum;
   /** select options */
@@ -59,6 +61,7 @@ const LabelConditionSelect = (props: LabelConditionSelectInputProps) => {
     optionsList = [],
     label,
     className,
+    onBlur,
   } = props;
   const isInput = inputType === InputTypeEnum.CONDITION_INPUT;
   const [selectInputValue, setSelectInputValue] = useControllableValue<ValueType>(props);
@@ -96,6 +99,10 @@ const LabelConditionSelect = (props: LabelConditionSelectInputProps) => {
     setSelectInputValue({ selectValue: selectInputValue?.selectValue, inputValue });
   };
 
+  const onLabelConditionSelectInputBlur = () => {
+    onBlur?.(selectInputValue);
+  };
+
   // 是否展示输入框
   const isShowInput =
     !isNil(selectInputValue?.selectValue) &&
@@ -107,6 +114,7 @@ const LabelConditionSelect = (props: LabelConditionSelectInputProps) => {
       onChange={onInputChange}
       className="label-condition-select-second-input"
       value={selectInputValue?.inputValue}
+      onBlur={onLabelConditionSelectInputBlur}
     />
   ) : (
     <div className="label-condition-select-second-select">
@@ -115,6 +123,7 @@ const LabelConditionSelect = (props: LabelConditionSelectInputProps) => {
         onChange={onTypeSelectChange}
         value={selectInputValue?.inputValue}
         options={subSelectOptions}
+        onBlur={onLabelConditionSelectInputBlur}
       />
     </div>
   );
@@ -133,6 +142,7 @@ const LabelConditionSelect = (props: LabelConditionSelectInputProps) => {
           onChange={onSelectChange}
           value={selectInputValue?.selectValue}
           options={optionsList}
+          onBlur={onLabelConditionSelectInputBlur}
         />
       </div>
       {isShowInput && typeInput}
