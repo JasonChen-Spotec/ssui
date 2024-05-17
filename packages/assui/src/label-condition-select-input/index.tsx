@@ -1,4 +1,5 @@
 import isNil from 'lodash/isNil';
+import isEmpty from 'lodash/isEmpty';
 import classNames from 'classnames';
 import React, { useEffect, useState } from 'react';
 import useControllableValue from 'ahooks/lib/useControllableValue';
@@ -24,6 +25,7 @@ export interface MainSelectOptionsType extends SelectOptionsType {
 export interface ValueType {
   selectValue?: number | string | null;
   inputValue?: LabelSelectProps['value'] | LabelConditionInputProps['value'];
+  finalSelectValue?: LabelSelectProps['value'] | LabelConditionInputProps['value'][];
 }
 
 export interface LabelConditionSelectInputProps {
@@ -50,6 +52,15 @@ export interface LabelConditionSelectInputProps {
   className?: string;
 }
 
+/** 找所有的子代选项 */
+const findAllSubSelectItems = (
+  dataSource: MainSelectOptionsType[],
+  key: ValueType['selectValue'],
+) =>
+  dataSource
+    .find((item) => item.value === key)
+    ?.children?.map((subItem) => subItem.value);
+
 const LabelConditionSelect = (props: LabelConditionSelectInputProps) => {
   const {
     value,
@@ -66,6 +77,8 @@ const LabelConditionSelect = (props: LabelConditionSelectInputProps) => {
   const isInput = inputType === InputTypeEnum.CONDITION_INPUT;
   const [selectInputValue, setSelectInputValue] = useControllableValue<ValueType>(props);
   const [subSelectOptions, setSubSelectOptions] = useState<SelectOptionsType[]>([]);
+  /** 子选择器是否多选 */
+  const isSubSelectMultiple = conditionSelectProps?.mode === 'multiple';
 
   useEffect(() => {
     if (value && value.selectValue && optionsList.length) {
@@ -80,7 +93,16 @@ const LabelConditionSelect = (props: LabelConditionSelectInputProps) => {
 
   const onSelectChange = (selectValue: ValueType['selectValue']) => {
     const inputValue = isInput ? '' : undefined;
-    setSelectInputValue({ selectValue, inputValue });
+    let finalSelectInputValue: ValueType = { selectValue, inputValue };
+    if (isSubSelectMultiple) {
+      finalSelectInputValue = {
+        ...finalSelectInputValue,
+        finalSelectValue: selectValue
+          ? findAllSubSelectItems(optionsList, selectValue)
+          : undefined,
+      };
+    }
+    setSelectInputValue(finalSelectInputValue);
     if (isInput || isNil(selectValue)) {
       setSubSelectOptions([]);
       return;
@@ -96,11 +118,52 @@ const LabelConditionSelect = (props: LabelConditionSelectInputProps) => {
   };
 
   const onTypeSelectChange = (inputValue: ValueType['selectValue']) => {
-    setSelectInputValue({ selectValue: selectInputValue?.selectValue, inputValue });
+    let finalSelectInputValue: ValueType = {
+      selectValue: selectInputValue?.selectValue,
+      inputValue,
+    };
+
+    if (isSubSelectMultiple) {
+      finalSelectInputValue = {
+        ...finalSelectInputValue,
+        finalSelectValue: isEmpty(inputValue)
+          ? findAllSubSelectItems(optionsList, selectInputValue?.selectValue)
+          : inputValue,
+      };
+    }
+    setSelectInputValue(finalSelectInputValue);
   };
 
+  /** 联级选择框失去焦点 */
   const onLabelConditionSelectInputBlur = () => {
     onBlur?.(selectInputValue);
+  };
+
+  /** 二级下拉框清空 */
+  const onTypeSelectClear = () => {
+    let finalSelectInputValue: ValueType = {
+      selectValue: selectInputValue.selectValue,
+      inputValue: [],
+    };
+    if (isSubSelectMultiple) {
+      finalSelectInputValue = {
+        ...finalSelectInputValue,
+        finalSelectValue: findAllSubSelectItems(
+          optionsList,
+          selectInputValue.selectValue,
+        ),
+      };
+    }
+    onBlur?.(finalSelectInputValue);
+  };
+
+  /** 一级下拉框清空 */
+  const onSelectClear = () => {
+    onBlur?.({
+      selectValue: undefined,
+      inputValue: undefined,
+      finalSelectValue: undefined,
+    });
   };
 
   // 是否展示输入框
@@ -124,6 +187,7 @@ const LabelConditionSelect = (props: LabelConditionSelectInputProps) => {
         value={selectInputValue?.inputValue}
         options={subSelectOptions}
         onBlur={onLabelConditionSelectInputBlur}
+        onClear={onTypeSelectClear}
       />
     </div>
   );
@@ -143,6 +207,7 @@ const LabelConditionSelect = (props: LabelConditionSelectInputProps) => {
           value={selectInputValue?.selectValue}
           options={optionsList}
           onBlur={onLabelConditionSelectInputBlur}
+          onClear={onSelectClear}
         />
       </div>
       {isShowInput && typeInput}

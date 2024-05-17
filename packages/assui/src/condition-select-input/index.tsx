@@ -1,4 +1,5 @@
 import isNil from 'lodash/isNil';
+import isEmpty from 'lodash/isEmpty';
 import classNames from 'classnames';
 import Select from 'antd/lib/select';
 import type { SelectProps } from 'antd/lib/select';
@@ -24,6 +25,7 @@ export interface MainSelectOptionsType extends SelectOptionsType {
 export interface ValueType {
   selectValue?: number | string | null;
   inputValue?: SelectProps['value'] | ConditionInputProps['value'];
+  finalSelectValue?: SelectProps['value'] | ConditionInputProps['value'][];
 }
 
 export interface ConditionSelectInputProps {
@@ -46,6 +48,15 @@ export interface ConditionSelectInputProps {
   optionsList: MainSelectOptionsType[];
 }
 
+/** 找所有的子代选项 */
+const findAllSubSelectItems = (
+  dataSource: MainSelectOptionsType[],
+  key: ValueType['selectValue'],
+) =>
+  dataSource
+    .find((item) => item.value === key)
+    ?.children?.map((subItem) => subItem.value);
+
 const ConditionSelectInput = (props: ConditionSelectInputProps) => {
   const {
     value,
@@ -60,6 +71,8 @@ const ConditionSelectInput = (props: ConditionSelectInputProps) => {
   const isInput = inputType === InputTypeEnum.CONDITION_INPUT;
   const [selectInputValue, setSelectInputValue] = useControllableValue<ValueType>(props);
   const [subSelectOptions, setSubSelectOptions] = useState<SelectOptionsType[]>([]);
+  /** 子选择器是否多选 */
+  const isSubSelectMultiple = conditionSelectProps?.mode === 'multiple';
 
   useEffect(() => {
     if (value && value.selectValue && optionsList.length) {
@@ -74,7 +87,16 @@ const ConditionSelectInput = (props: ConditionSelectInputProps) => {
 
   const onSelectChange = (selectValue: ValueType['selectValue']) => {
     const inputValue = isInput ? '' : undefined;
-    setSelectInputValue({ selectValue, inputValue });
+    let finalSelectInputValue: ValueType = { selectValue, inputValue };
+    if (isSubSelectMultiple) {
+      finalSelectInputValue = {
+        ...finalSelectInputValue,
+        finalSelectValue: selectValue
+          ? findAllSubSelectItems(optionsList, selectValue)
+          : undefined,
+      };
+    }
+    setSelectInputValue(finalSelectInputValue);
     if (isInput || isNil(selectValue)) {
       setSubSelectOptions([]);
       return;
@@ -90,11 +112,51 @@ const ConditionSelectInput = (props: ConditionSelectInputProps) => {
   };
 
   const onTypeSelectChange = (inputValue: ValueType['selectValue']) => {
-    setSelectInputValue({ selectValue: selectInputValue?.selectValue, inputValue });
+    let finalSelectInputValue: ValueType = {
+      selectValue: selectInputValue?.selectValue,
+      inputValue,
+    };
+
+    if (isSubSelectMultiple) {
+      finalSelectInputValue = {
+        ...finalSelectInputValue,
+        finalSelectValue: isEmpty(inputValue)
+          ? findAllSubSelectItems(optionsList, selectInputValue?.selectValue)
+          : inputValue,
+      };
+    }
+    setSelectInputValue(finalSelectInputValue);
   };
 
   const onConditionSelectInputBlur = () => {
     onBlur?.(selectInputValue);
+  };
+
+  /** 二级下拉框清空 */
+  const onTypeSelectClear = () => {
+    let finalSelectInputValue: ValueType = {
+      selectValue: selectInputValue.selectValue,
+      inputValue: [],
+    };
+    if (isSubSelectMultiple) {
+      finalSelectInputValue = {
+        ...finalSelectInputValue,
+        finalSelectValue: findAllSubSelectItems(
+          optionsList,
+          selectInputValue.selectValue,
+        ),
+      };
+    }
+    onBlur?.(finalSelectInputValue);
+  };
+
+  /** 一级下拉框清空 */
+  const onSelectClear = () => {
+    onBlur?.({
+      selectValue: undefined,
+      inputValue: undefined,
+      finalSelectValue: undefined,
+    });
   };
 
   // 是否展示输入框
@@ -119,6 +181,7 @@ const ConditionSelectInput = (props: ConditionSelectInputProps) => {
         value={selectInputValue?.inputValue}
         options={subSelectOptions}
         onBlur={onConditionSelectInputBlur}
+        onClear={onTypeSelectClear}
       />
     </div>
   );
@@ -137,6 +200,7 @@ const ConditionSelectInput = (props: ConditionSelectInputProps) => {
           value={selectInputValue?.selectValue}
           options={optionsList}
           onBlur={onConditionSelectInputBlur}
+          onClear={onSelectClear}
         />
       </div>
 
