@@ -75,7 +75,7 @@ const ConditionSelectInput = (props: ConditionSelectInputProps) => {
   const isSubSelectMultiple = conditionSelectProps?.mode === 'multiple';
 
   useEffect(() => {
-    if (value && value.selectValue && optionsList.length) {
+    if (value && !isNil(value.selectValue) && optionsList.length) {
       const [selectValueItem] = optionsList.filter(
         (item) => item.value === value.selectValue,
       );
@@ -91,7 +91,7 @@ const ConditionSelectInput = (props: ConditionSelectInputProps) => {
     if (isSubSelectMultiple) {
       finalSelectInputValue = {
         ...finalSelectInputValue,
-        finalSelectValue: selectValue
+        finalSelectValue: !isNil(selectValue)
           ? findAllSubSelectItems(optionsList, selectValue)
           : undefined,
       };
