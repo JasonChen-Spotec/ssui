@@ -16,7 +16,10 @@ export interface LabelSelectProps extends SelectProps {
   label?: React.ReactNode;
 }
 
-const LabelSelect = (props: LabelSelectProps) => {
+const LabelSelect: React.ForwardRefRenderFunction<unknown, LabelSelectProps> = (
+  props,
+  ref,
+) => {
   const { className, label } = props;
   const selectRef = React.useRef<RefSelectProps>(null);
   const [open, setOpen] = useControllableValue(props, {
@@ -25,6 +28,8 @@ const LabelSelect = (props: LabelSelectProps) => {
   });
 
   const [value, setValue] = useControllableValue(props);
+
+  React.useImperativeHandle(ref, () => selectRef.current);
 
   const handleChange: SelectProps<string | React.ReactNode>['onChange'] = (nextValue) => {
     setValue(nextValue);
@@ -54,7 +59,7 @@ const LabelSelect = (props: LabelSelectProps) => {
       <Select
         maxTagCount={3}
         showSearch={false}
-        {...omit(props, ['open', 'onChange', 'className', 'label', 'setOpen'])}
+        {...omit(props, ['open', 'onChange', 'className', 'label', 'setOpen', 'isFocus'])}
         open={open}
         ref={selectRef}
         size="large"
@@ -70,6 +75,8 @@ const LabelSelect = (props: LabelSelectProps) => {
   );
 };
 
-export default LabelSelect;
+// export default LabelSelect;
 
-LabelSelect.Option = Option;
+const ForwardRefLabelSelect = React.forwardRef<unknown, LabelSelectProps>(LabelSelect);
+
+export default ForwardRefLabelSelect;
