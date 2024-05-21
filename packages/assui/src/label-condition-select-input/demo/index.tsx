@@ -216,6 +216,9 @@ const demo = () => {
         <LabelConditionSelectInput
           label="Vegetables"
           onChange={onChange}
+          onChangeSelectType={(name) => {
+            console.log('2323', name);
+          }}
           selectProps={{ options, allowClear: true }}
           hiddenInputKeys={[1]}
           optionsList={options}
@@ -229,6 +232,9 @@ const demo = () => {
         <LabelConditionSelectInput
           label="Vegetables"
           onChange={onSelectChange}
+          onChangeSelectType={(name) => {
+            console.log('2323', name);
+          }}
           inputType={InputTypeEnum.SELECT}
           selectProps={{ allowClear: true }}
           conditionSelectProps={{

@@ -14,6 +14,8 @@ export enum InputTypeEnum {
   SELECT = 'select',
 }
 
+type ChangeSelectType = typeof InputTypeEnum[keyof typeof InputTypeEnum];
+
 type SelectOptionsType = {
   value: number;
   label: string;
@@ -39,6 +41,7 @@ export interface LabelConditionSelectInputProps {
   conditionInputProps?: LabelConditionInputProps;
   /** 联动selectProps */
   conditionSelectProps?: LabelSelectProps;
+  onChangeSelectType?: (changeSelectType: ChangeSelectType, value?: ValueType) => void;
   /** onChange */
   onChange?: (value: ValueType) => void;
   /** onBlur */
@@ -71,6 +74,7 @@ const LabelConditionSelect = (props: LabelConditionSelectInputProps) => {
     conditionSelectProps,
     inputType = InputTypeEnum.CONDITION_INPUT,
     optionsList = [],
+    onChangeSelectType,
     label,
     className,
     onBlur,
@@ -105,6 +109,8 @@ const LabelConditionSelect = (props: LabelConditionSelectInputProps) => {
       };
     }
     setSelectInputValue(finalSelectInputValue);
+    onChangeSelectType?.(InputTypeEnum.SELECT, finalSelectInputValue);
+
     if (isInput || isNil(selectValue)) {
       setSubSelectOptions([]);
       return;
@@ -116,7 +122,9 @@ const LabelConditionSelect = (props: LabelConditionSelectInputProps) => {
   };
 
   const onInputChange = (inputValue: string) => {
-    setSelectInputValue({ selectValue: selectInputValue?.selectValue, inputValue });
+    const finalValue = { selectValue: selectInputValue?.selectValue, inputValue };
+    setSelectInputValue(finalValue);
+    onChangeSelectType?.(InputTypeEnum.SELECT, finalValue);
   };
 
   const onTypeSelectChange = (inputValue: ValueType['selectValue']) => {
@@ -134,6 +142,7 @@ const LabelConditionSelect = (props: LabelConditionSelectInputProps) => {
       };
     }
     setSelectInputValue(finalSelectInputValue);
+    onChangeSelectType?.(InputTypeEnum.CONDITION_INPUT, finalSelectInputValue);
   };
 
   /** 联级选择框失去焦点 */
