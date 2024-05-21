@@ -14,7 +14,7 @@ export enum InputTypeEnum {
   SELECT = 'select',
 }
 
-type ChangeSelectType = typeof InputTypeEnum[keyof typeof InputTypeEnum];
+export type ChangeSelectType = typeof InputTypeEnum[keyof typeof InputTypeEnum];
 
 type SelectOptionsType = {
   value: number;
@@ -45,7 +45,7 @@ export interface LabelConditionSelectInputProps {
   /** onChange */
   onChange?: (value: ValueType) => void;
   /** onBlur */
-  onBlur?: (value: ValueType) => void;
+  onBlur?: (value: ValueType, blurSelectType: ChangeSelectType) => void;
   /** 输入框类型 */
   inputType?: InputTypeEnum;
   /** select options */
@@ -146,8 +146,8 @@ const LabelConditionSelect = (props: LabelConditionSelectInputProps) => {
   };
 
   /** 联级选择框失去焦点 */
-  const onLabelConditionSelectInputBlur = () => {
-    onBlur?.(selectInputValue);
+  const onLabelConditionSelectInputBlur = (blurSelectType: ChangeSelectType) => {
+    onBlur?.(selectInputValue, blurSelectType);
   };
 
   /** 二级下拉框清空 */
@@ -165,16 +165,19 @@ const LabelConditionSelect = (props: LabelConditionSelectInputProps) => {
         ),
       };
     }
-    onBlur?.(finalSelectInputValue);
+    onBlur?.(finalSelectInputValue, InputTypeEnum.CONDITION_INPUT);
   };
 
   /** 一级下拉框清空 */
   const onSelectClear = () => {
-    onBlur?.({
-      selectValue: undefined,
-      inputValue: undefined,
-      finalSelectValue: undefined,
-    });
+    onBlur?.(
+      {
+        selectValue: undefined,
+        inputValue: undefined,
+        finalSelectValue: undefined,
+      },
+      InputTypeEnum.CONDITION_INPUT,
+    );
   };
 
   // 是否展示输入框
@@ -188,7 +191,7 @@ const LabelConditionSelect = (props: LabelConditionSelectInputProps) => {
       onChange={onInputChange}
       className="label-condition-select-second-input"
       value={selectInputValue?.inputValue}
-      onBlur={onLabelConditionSelectInputBlur}
+      onBlur={() => onLabelConditionSelectInputBlur(InputTypeEnum.CONDITION_INPUT)}
     />
   ) : (
     <div className="label-condition-select-second-select">
@@ -201,7 +204,7 @@ const LabelConditionSelect = (props: LabelConditionSelectInputProps) => {
         onDeselect={() => {
           subSelectRef.current?.focus();
         }}
-        onBlur={onLabelConditionSelectInputBlur}
+        onBlur={() => onLabelConditionSelectInputBlur(InputTypeEnum.CONDITION_INPUT)}
         onClear={onTypeSelectClear}
       />
     </div>
@@ -221,7 +224,7 @@ const LabelConditionSelect = (props: LabelConditionSelectInputProps) => {
           onChange={onSelectChange}
           value={selectInputValue?.selectValue}
           options={optionsList}
-          onBlur={onLabelConditionSelectInputBlur}
+          onBlur={() => onLabelConditionSelectInputBlur(InputTypeEnum.SELECT)}
           onClear={onSelectClear}
         />
       </div>
