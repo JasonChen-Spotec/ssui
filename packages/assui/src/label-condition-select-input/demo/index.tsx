@@ -182,11 +182,11 @@ const options1 = testData.map((item: any) => {
 
 const demo = () => {
   const onChange = (value: any) => {
-    console.log('---onChange', value.selectValue, value.inputValue);
+    console.log('---onChange', value);
   };
 
   const onSelectChange = (value: any) => {
-    console.log('---onSelectChange', value.selectValue, value.inputValue);
+    console.log('---onSelectChange', value);
   };
 
   const options = [

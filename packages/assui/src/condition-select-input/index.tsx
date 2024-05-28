@@ -13,6 +13,13 @@ export enum InputTypeEnum {
   SELECT = 'select',
 }
 
+export enum EntryTypeEnum {
+  FIRST_ENTRY = 'firstEntry',
+  SECOND_ENTRY = 'secondEntry',
+}
+
+export type ChangedEntryType = typeof EntryTypeEnum[keyof typeof EntryTypeEnum];
+
 type SelectOptionsType = {
   value: number;
   label: string;
@@ -26,6 +33,7 @@ export interface ValueType {
   selectValue?: number | string | null;
   inputValue?: SelectProps['value'] | ConditionInputProps['value'];
   finalSelectValue?: SelectProps['value'] | ConditionInputProps['value'][];
+  changedEntryType: ChangedEntryType;
 }
 
 export interface ConditionSelectInputProps {
@@ -87,7 +95,11 @@ const ConditionSelectInput = (props: ConditionSelectInputProps) => {
 
   const onSelectChange = (selectValue: ValueType['selectValue']) => {
     const inputValue = isInput ? '' : undefined;
-    let finalSelectInputValue: ValueType = { selectValue, inputValue };
+    let finalSelectInputValue: ValueType = {
+      selectValue,
+      inputValue,
+      changedEntryType: EntryTypeEnum.FIRST_ENTRY,
+    };
     if (isSubSelectMultiple) {
       finalSelectInputValue = {
         ...finalSelectInputValue,
@@ -97,6 +109,7 @@ const ConditionSelectInput = (props: ConditionSelectInputProps) => {
       };
     }
     setSelectInputValue(finalSelectInputValue);
+
     if (isInput || isNil(selectValue)) {
       setSubSelectOptions([]);
       return;
@@ -107,14 +120,11 @@ const ConditionSelectInput = (props: ConditionSelectInputProps) => {
     }
   };
 
-  const onInputChange = (inputValue: string) => {
-    setSelectInputValue({ selectValue: selectInputValue?.selectValue, inputValue });
-  };
-
   const onTypeSelectChange = (inputValue: ValueType['selectValue']) => {
     let finalSelectInputValue: ValueType = {
       selectValue: selectInputValue?.selectValue,
       inputValue,
+      changedEntryType: EntryTypeEnum.SECOND_ENTRY,
     };
 
     if (isSubSelectMultiple) {
@@ -128,8 +138,18 @@ const ConditionSelectInput = (props: ConditionSelectInputProps) => {
     setSelectInputValue(finalSelectInputValue);
   };
 
-  const onConditionSelectInputBlur = () => {
-    onBlur?.(selectInputValue);
+  const onInputChange = (inputValue: string) => {
+    const finalValue = {
+      selectValue: selectInputValue?.selectValue,
+      inputValue,
+      changedEntryType: EntryTypeEnum.SECOND_ENTRY,
+    };
+    setSelectInputValue(finalValue);
+  };
+
+  /** 联级选择框失去焦点 */
+  const onConditionSelectInputBlur = (blurEntryType: ChangedEntryType) => {
+    onBlur?.({ ...selectInputValue, changedEntryType: blurEntryType });
   };
 
   /** 二级下拉框清空 */
@@ -137,6 +157,7 @@ const ConditionSelectInput = (props: ConditionSelectInputProps) => {
     let finalSelectInputValue: ValueType = {
       selectValue: selectInputValue.selectValue,
       inputValue: [],
+      changedEntryType: EntryTypeEnum.SECOND_ENTRY,
     };
     if (isSubSelectMultiple) {
       finalSelectInputValue = {
@@ -150,15 +171,6 @@ const ConditionSelectInput = (props: ConditionSelectInputProps) => {
     onBlur?.(finalSelectInputValue);
   };
 
-  /** 一级下拉框清空 */
-  const onSelectClear = () => {
-    onBlur?.({
-      selectValue: undefined,
-      inputValue: undefined,
-      finalSelectValue: undefined,
-    });
-  };
-
   // 是否展示输入框
   const isShowInput =
     !isNil(selectInputValue?.selectValue) &&
@@ -170,7 +182,7 @@ const ConditionSelectInput = (props: ConditionSelectInputProps) => {
         {...conditionInputProps}
         onChange={onInputChange}
         value={selectInputValue?.inputValue}
-        onBlur={onConditionSelectInputBlur}
+        onBlur={() => onConditionSelectInputBlur(EntryTypeEnum.SECOND_ENTRY)}
       />
     </div>
   ) : (
@@ -180,7 +192,7 @@ const ConditionSelectInput = (props: ConditionSelectInputProps) => {
         onChange={onTypeSelectChange}
         value={selectInputValue?.inputValue}
         options={subSelectOptions}
-        onBlur={onConditionSelectInputBlur}
+        onBlur={() => onConditionSelectInputBlur(EntryTypeEnum.SECOND_ENTRY)}
         onClear={onTypeSelectClear}
       />
     </div>
@@ -199,8 +211,7 @@ const ConditionSelectInput = (props: ConditionSelectInputProps) => {
           onChange={onSelectChange}
           value={selectInputValue?.selectValue}
           options={optionsList}
-          onBlur={onConditionSelectInputBlur}
-          onClear={onSelectClear}
+          onBlur={() => onConditionSelectInputBlur(EntryTypeEnum.FIRST_ENTRY)}
         />
       </div>
 

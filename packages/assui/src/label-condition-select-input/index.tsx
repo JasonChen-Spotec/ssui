@@ -14,7 +14,12 @@ export enum InputTypeEnum {
   SELECT = 'select',
 }
 
-export type ChangeSelectType = typeof InputTypeEnum[keyof typeof InputTypeEnum];
+export enum EntryTypeEnum {
+  FIRST_ENTRY = 'firstEntry',
+  SECOND_ENTRY = 'secondEntry',
+}
+
+export type ChangedEntryType = typeof EntryTypeEnum[keyof typeof EntryTypeEnum];
 
 type SelectOptionsType = {
   value: number;
@@ -29,6 +34,7 @@ export interface ValueType {
   selectValue?: number | string | null;
   inputValue?: LabelSelectProps['value'] | LabelConditionInputProps['value'];
   finalSelectValue?: LabelSelectProps['value'] | LabelConditionInputProps['value'][];
+  changedEntryType: ChangedEntryType;
 }
 
 export interface LabelConditionSelectInputProps {
@@ -41,11 +47,10 @@ export interface LabelConditionSelectInputProps {
   conditionInputProps?: LabelConditionInputProps;
   /** 联动selectProps */
   conditionSelectProps?: LabelSelectProps;
-  onChangeSelectType?: (changeSelectType: ChangeSelectType, value?: ValueType) => void;
   /** onChange */
   onChange?: (value: ValueType) => void;
   /** onBlur */
-  onBlur?: (value: ValueType, blurSelectType: ChangeSelectType) => void;
+  onBlur?: (value: ValueType) => void;
   /** 输入框类型 */
   inputType?: InputTypeEnum;
   /** select options */
@@ -65,7 +70,7 @@ const findAllSubSelectItems = (
     .find((item) => item.value === key)
     ?.children?.map((subItem) => subItem.value);
 
-const LabelConditionSelect = (props: LabelConditionSelectInputProps) => {
+const LabelConditionSelectInput = (props: LabelConditionSelectInputProps) => {
   const {
     value,
     hiddenInputKeys = [],
@@ -74,7 +79,6 @@ const LabelConditionSelect = (props: LabelConditionSelectInputProps) => {
     conditionSelectProps,
     inputType = InputTypeEnum.CONDITION_INPUT,
     optionsList = [],
-    onChangeSelectType,
     label,
     className,
     onBlur,
@@ -99,7 +103,11 @@ const LabelConditionSelect = (props: LabelConditionSelectInputProps) => {
 
   const onSelectChange = (selectValue: ValueType['selectValue']) => {
     const inputValue = isInput ? '' : undefined;
-    let finalSelectInputValue: ValueType = { selectValue, inputValue };
+    let finalSelectInputValue: ValueType = {
+      selectValue,
+      inputValue,
+      changedEntryType: EntryTypeEnum.FIRST_ENTRY,
+    };
     if (isSubSelectMultiple) {
       finalSelectInputValue = {
         ...finalSelectInputValue,
@@ -109,7 +117,6 @@ const LabelConditionSelect = (props: LabelConditionSelectInputProps) => {
       };
     }
     setSelectInputValue(finalSelectInputValue);
-    onChangeSelectType?.(InputTypeEnum.SELECT, finalSelectInputValue);
 
     if (isInput || isNil(selectValue)) {
       setSubSelectOptions([]);
@@ -122,15 +129,19 @@ const LabelConditionSelect = (props: LabelConditionSelectInputProps) => {
   };
 
   const onInputChange = (inputValue: string) => {
-    const finalValue = { selectValue: selectInputValue?.selectValue, inputValue };
+    const finalValue = {
+      selectValue: selectInputValue?.selectValue,
+      inputValue,
+      changedEntryType: EntryTypeEnum.SECOND_ENTRY,
+    };
     setSelectInputValue(finalValue);
-    onChangeSelectType?.(InputTypeEnum.SELECT, finalValue);
   };
 
   const onTypeSelectChange = (inputValue: ValueType['selectValue']) => {
     let finalSelectInputValue: ValueType = {
       selectValue: selectInputValue?.selectValue,
       inputValue,
+      changedEntryType: EntryTypeEnum.SECOND_ENTRY,
     };
 
     if (isSubSelectMultiple) {
@@ -142,12 +153,11 @@ const LabelConditionSelect = (props: LabelConditionSelectInputProps) => {
       };
     }
     setSelectInputValue(finalSelectInputValue);
-    onChangeSelectType?.(InputTypeEnum.CONDITION_INPUT, finalSelectInputValue);
   };
 
   /** 联级选择框失去焦点 */
-  const onLabelConditionSelectInputBlur = (blurSelectType: ChangeSelectType) => {
-    onBlur?.(selectInputValue, blurSelectType);
+  const onLabelConditionSelectInputBlur = (blurEntryType: ChangedEntryType) => {
+    onBlur?.({ ...selectInputValue, changedEntryType: blurEntryType });
   };
 
   /** 二级下拉框清空 */
@@ -155,6 +165,7 @@ const LabelConditionSelect = (props: LabelConditionSelectInputProps) => {
     let finalSelectInputValue: ValueType = {
       selectValue: selectInputValue.selectValue,
       inputValue: [],
+      changedEntryType: EntryTypeEnum.SECOND_ENTRY,
     };
     if (isSubSelectMultiple) {
       finalSelectInputValue = {
@@ -165,19 +176,7 @@ const LabelConditionSelect = (props: LabelConditionSelectInputProps) => {
         ),
       };
     }
-    onBlur?.(finalSelectInputValue, InputTypeEnum.CONDITION_INPUT);
-  };
-
-  /** 一级下拉框清空 */
-  const onSelectClear = () => {
-    onBlur?.(
-      {
-        selectValue: undefined,
-        inputValue: undefined,
-        finalSelectValue: undefined,
-      },
-      InputTypeEnum.CONDITION_INPUT,
-    );
+    onBlur?.(finalSelectInputValue);
   };
 
   // 是否展示输入框
@@ -191,7 +190,7 @@ const LabelConditionSelect = (props: LabelConditionSelectInputProps) => {
       onChange={onInputChange}
       className="label-condition-select-second-input"
       value={selectInputValue?.inputValue}
-      onBlur={() => onLabelConditionSelectInputBlur(InputTypeEnum.CONDITION_INPUT)}
+      onBlur={() => onLabelConditionSelectInputBlur(EntryTypeEnum.SECOND_ENTRY)}
     />
   ) : (
     <div className="label-condition-select-second-select">
@@ -204,7 +203,7 @@ const LabelConditionSelect = (props: LabelConditionSelectInputProps) => {
         onDeselect={() => {
           subSelectRef.current?.focus();
         }}
-        onBlur={() => onLabelConditionSelectInputBlur(InputTypeEnum.CONDITION_INPUT)}
+        onBlur={() => onLabelConditionSelectInputBlur(EntryTypeEnum.SECOND_ENTRY)}
         onClear={onTypeSelectClear}
       />
     </div>
@@ -224,8 +223,7 @@ const LabelConditionSelect = (props: LabelConditionSelectInputProps) => {
           onChange={onSelectChange}
           value={selectInputValue?.selectValue}
           options={optionsList}
-          onBlur={() => onLabelConditionSelectInputBlur(InputTypeEnum.SELECT)}
-          onClear={onSelectClear}
+          onBlur={() => onLabelConditionSelectInputBlur(EntryTypeEnum.FIRST_ENTRY)}
         />
       </div>
       {isShowInput && typeInput}
@@ -233,4 +231,4 @@ const LabelConditionSelect = (props: LabelConditionSelectInputProps) => {
   );
 };
 
-export default LabelConditionSelect;
+export default LabelConditionSelectInput;
