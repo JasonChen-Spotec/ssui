@@ -99,6 +99,7 @@ export { default as DownlaodAppOutlined } from './DownlaodAppOutlined';
 export { default as DownloadOutlinedFile } from './DownloadOutlinedFile';
 export { default as DownloadOutlined } from './DownloadOutlined';
 export { default as DownloadReportOutlined } from './DownloadReportOutlined';
+export { default as DragUpAndDownOutlined } from './DragUpAndDownOutlined';
 export { default as EarthFilled } from './EarthFilled';
 export { default as EarthOutlined } from './EarthOutlined';
 export { default as EcLogo } from './EcLogo';
