@@ -81,6 +81,7 @@ export { default as CyclePlusFilled } from './CyclePlusFilled';
 export { default as DashboardFilled } from './DashboardFilled';
 export { default as DashboardOutlined } from './DashboardOutlined';
 export { default as DisplayerOutlined } from './DisplayerOutlined';
+export { default as DocumentEditOutlined } from './DocumentEditOutlined';
 export { default as DocumentFilled } from './DocumentFilled';
 export { default as DocumentOutlined } from './DocumentOutlined';
 export { default as DollarInCircleOutlined } from './DollarInCircleOutlined';
