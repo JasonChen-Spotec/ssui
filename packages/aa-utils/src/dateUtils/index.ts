@@ -153,9 +153,8 @@ class DateUtils {
     return moment();
   };
 
-  /** momentTimezone.tz.guess()在切换时区后不刷新页面无法获取到最新时区，使用以下方式兼容 */
-  getTimeZone = () =>
-    Intl?.DateTimeFormat()?.resolvedOptions()?.timeZone || momentTimezone.tz.guess();
+  /** https://momentjs.cn/timezone/docs/#/using-timezones/guessing-user-timezone/ */
+  getTimeZone = (ignoreCache?: boolean) => momentTimezone.tz.guess(ignoreCache ?? true);
 }
 
 export default new DateUtils();
