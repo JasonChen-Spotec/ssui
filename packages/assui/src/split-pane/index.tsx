@@ -1,11 +1,18 @@
-import * as React from 'react';
-import SplitPane from 'react-split-pane';
+import SplitPane, {
+  SplitPaneProps,
+  Size,
+  Split,
+  SplitPaneState,
+  PaneProps,
+  Pane,
+} from 'react-split-pane';
 
-export type Size = string | number;
+export { SplitPaneProps, Size, Split, SplitPaneState, PaneProps, Pane };
 
-export type Split = 'vertical' | 'horizontal';
+export default SplitPane;
 
-export type SplitPaneProps = {
+/** 只做描述 */
+export type SplitPaneDescProps = {
   /**
    * 是否允许拖动
    * @default true
@@ -59,5 +66,3 @@ export type SplitPaneProps = {
   /** 拖动固定步进值 */
   step?: number;
 };
-
-export default (props: SplitPaneProps) => <SplitPane {...props} />;
