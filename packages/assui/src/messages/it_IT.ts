@@ -22,6 +22,7 @@ const locale = {
       last365days: 'Ultimi 365 giorni',
       // eslint-disable-next-line quotes
       year: "Quest'anno",
+      all: 'Tutto',
     },
   },
 };

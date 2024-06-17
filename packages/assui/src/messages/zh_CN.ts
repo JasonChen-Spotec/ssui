@@ -21,6 +21,7 @@ const locale = {
       last180days: '最近180天',
       last365days: '最近365天',
       year: '今年',
+      all: '全部',
     },
   },
 };

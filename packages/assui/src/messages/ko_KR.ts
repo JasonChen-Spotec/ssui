@@ -21,6 +21,7 @@ const locale = {
       last180days: '지난 180일',
       last365days: '지난 365일',
       year: '금년도에는',
+      all: '모두',
     },
   },
 };
