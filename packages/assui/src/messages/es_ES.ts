@@ -21,6 +21,7 @@ const locale = {
       last180days: 'Últimos 180 días',
       last365days: 'Últimos 365 días',
       year: 'Este año',
+      all: 'Todos',
     },
   },
 };

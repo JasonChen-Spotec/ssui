@@ -17,6 +17,7 @@ export type LabelCustomizeRangePickerType = {
   last180days: string;
   last365days: string;
   year: string;
+  all: string;
 };
 
 export type Global = {

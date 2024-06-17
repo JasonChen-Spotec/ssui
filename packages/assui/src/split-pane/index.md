@@ -15,7 +15,7 @@ group:
 ## 1. 代码演示
 ### 1.1. 基础使用
 
-<code hideActions='["CSB", "EXTERNAL"]' src="./demo/Demo1.jsx" />
+<code hideActions='["CSB", "EXTERNAL"]' src="./demo/Demo1.tsx" />
 
 ### 1.2. 多窗口水平分割
 

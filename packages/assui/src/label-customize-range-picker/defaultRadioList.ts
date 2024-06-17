@@ -20,6 +20,7 @@ export enum dateTypeEnum {
   BEFORE_180_DAY = 13,
   BEFORE_365_DAY = 14,
   YEAR = 15,
+  ALL = 16,
 }
 
 export type RadioListType = {
@@ -33,16 +34,36 @@ type GetDefaultRadioListPropsType = {
   timeOffset?: number;
   /** 自然日期 */
   naturalDate: boolean;
+  /** 展示选项全部 */
+  displayAllOption?: boolean;
+  /** 选项全部的开始值 */
+  startTimeOfAllOption?: Moment;
 };
 
 const getDefaultRadioList = ({
   messages,
   timeOffset,
   naturalDate,
+  displayAllOption = false,
+  startTimeOfAllOption,
 }: GetDefaultRadioListPropsType) => {
   const now = isNumber(timeOffset)
     ? dateUtils.getToday(timeOffset)
     : dateUtils.getToday();
+
+  const allRadio: RadioListType[] | [] = displayAllOption
+    ? [
+        {
+          key: dateTypeEnum.ALL,
+          text: formatMessage(messages, 'labelCustomizeRangePicker', 'all'),
+          value: [
+            startTimeOfAllOption || dateUtils.parseDate('2022/09/01'),
+            now.endOf('day'),
+          ],
+        },
+      ]
+    : [];
+
   const defaultRadioList: RadioListType[] = [
     {
       key: dateTypeEnum.TODAY,
@@ -143,6 +164,7 @@ const getDefaultRadioList = ({
       text: formatMessage(messages, 'labelCustomizeRangePicker', 'last365days'),
       value: [now.clone().subtract(364, 'day').startOf('day'), now.endOf('day')],
     },
+    ...allRadio,
   ];
 
   return defaultRadioList;

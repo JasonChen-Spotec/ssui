@@ -21,6 +21,7 @@ const locale = {
       last180days: '180 hari terakhir',
       last365days: '365 hari terakhir',
       year: 'Tahun ini',
+      all: 'Semua',
     },
   },
 };

@@ -21,6 +21,7 @@ const locale = {
       last180days: 'Ultimele 180 de zile',
       last365days: 'Ultimele 365 de zile',
       year: 'Anul acesta',
+      all: 'Toate',
     },
   },
 };

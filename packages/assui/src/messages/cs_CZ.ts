@@ -21,6 +21,7 @@ const locale = {
       last180days: 'Posledních 180 dní',
       last365days: 'Posledních 365 dní',
       year: 'V letošním roce',
+      all: 'Všechno',
     },
   },
 };

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Form, Button } from 'antd';
 import { LabelCustomizeRangePicker } from 'assui';
+import { dateUtils } from 'aa-utils';
 
 const Demo = () => {
   const onFinish = (value: any) => {
@@ -27,6 +28,25 @@ const Demo = () => {
       </Form.Item>
       <Form.Item name="date4" rules={[{ required: true }]} label="自然日期">
         <LabelCustomizeRangePicker rangePickerType="origin" naturalDate />
+      </Form.Item>
+      <Form.Item name="date5" rules={[{ required: true }]} label="含选项全部">
+        <LabelCustomizeRangePicker
+          rangePickerType="origin"
+          naturalDate
+          displayAllOption
+        />
+      </Form.Item>
+      <Form.Item
+        name="date6"
+        rules={[{ required: true }]}
+        label="含选项全部且开始时间自定义"
+      >
+        <LabelCustomizeRangePicker
+          rangePickerType="origin"
+          naturalDate
+          displayAllOption
+          startTimeOfAllOption={dateUtils.getToday()}
+        />
       </Form.Item>
       <Button htmlType="submit">提交</Button>
     </Form>

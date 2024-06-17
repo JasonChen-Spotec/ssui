@@ -21,6 +21,7 @@ const locale = {
       last180days: '180 ngày qua',
       last365days: '365 ngày qua',
       year: 'Năm nay',
+      all: 'Tất cả',
     },
   },
 };

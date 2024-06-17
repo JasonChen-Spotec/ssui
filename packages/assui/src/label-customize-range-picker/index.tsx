@@ -43,6 +43,10 @@ export interface LabelCustomizeRangePickerProps
   timeOffset?: number;
   /** 自然日期, 作用于本周，本月等日期 */
   naturalDate?: boolean;
+  /** 展示选项全部 */
+  displayAllOption?: boolean;
+  /** 选项全部的开始值 */
+  startTimeOfAllOption?: Moment;
 }
 
 const { RangePicker } = DatePicker;
@@ -61,6 +65,8 @@ const LabelCustomizeRangePicker = (props: LabelCustomizeRangePickerProps) => {
     fillDefaultDate = true,
     showShortcutPanel = true,
     naturalDate = false,
+    displayAllOption,
+    startTimeOfAllOption,
     ...restProps
   } = props;
   const [date, setDate] = useControllableValue(props);
@@ -68,11 +74,20 @@ const LabelCustomizeRangePicker = (props: LabelCustomizeRangePickerProps) => {
   const [radioKey, setRadioKey] = useState<string | number | null>();
   const [open, setOpen] = useState(false);
   const messages = useContext(LocaleContext);
+
+  const defaultRadioListParams = {
+    messages,
+    timeOffset,
+    naturalDate,
+    displayAllOption,
+    startTimeOfAllOption,
+  };
+
   const defaultRadioList = customizeTimeList
-    ? getDefaultRadioList({ messages, timeOffset, naturalDate }).filter((item) =>
+    ? getDefaultRadioList(defaultRadioListParams).filter((item) =>
         customizeTimeList.includes(item.key as dateTypeEnum),
       )
-    : getDefaultRadioList({ messages, timeOffset, naturalDate });
+    : getDefaultRadioList(defaultRadioListParams);
 
   const dataSource = radioList ?? defaultRadioList;
 
