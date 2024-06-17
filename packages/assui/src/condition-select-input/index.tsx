@@ -33,7 +33,7 @@ export interface ValueType {
   selectValue?: number | string | null;
   inputValue?: SelectProps['value'] | ConditionInputProps['value'];
   finalSelectValue?: SelectProps['value'] | ConditionInputProps['value'][];
-  changedEntryType: ChangedEntryType;
+  changedEntryType?: ChangedEntryType;
 }
 
 export interface ConditionSelectInputProps {
