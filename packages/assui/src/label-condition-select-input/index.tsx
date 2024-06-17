@@ -34,7 +34,7 @@ export interface ValueType {
   selectValue?: number | string | null;
   inputValue?: LabelSelectProps['value'] | LabelConditionInputProps['value'];
   finalSelectValue?: LabelSelectProps['value'] | LabelConditionInputProps['value'][];
-  changedEntryType: ChangedEntryType;
+  changedEntryType?: ChangedEntryType;
 }
 
 export interface LabelConditionSelectInputProps {
