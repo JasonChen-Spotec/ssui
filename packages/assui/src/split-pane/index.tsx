@@ -1,9 +1,8 @@
-import SplitPane from 'react-split-pane';
-
-export default SplitPane;
+import React from 'react';
+import RcSplitPane from 'react-split-pane';
 
 /** 只做描述 */
-export type SplitPaneDescProps = {
+export type SplitPaneProps = {
   /**
    * 是否允许拖动
    * @default true
@@ -56,4 +55,9 @@ export type SplitPaneDescProps = {
   resizerClassName?: string;
   /** 拖动固定步进值 */
   step?: number;
+  children: React.ReactNode;
 };
+
+const SplitPane: React.FC<SplitPaneProps> = (props) => <RcSplitPane {...props} />;
+
+export default SplitPane;
