@@ -1,4 +1,4 @@
-import { useControllableValue } from 'ahooks';
+import useControllableValue from 'ahooks/lib/useControllableValue';
 import classNames from 'classnames';
 import React from 'react';
 

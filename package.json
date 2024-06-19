@@ -78,7 +78,7 @@
     "react-intl": "^6.0.5",
     "react-number-format": "^4.9.3",
     "react-test-renderer": "^16.13.1",
-    "react-vant": "^2.0.0-alpha.41",
+    "react-vant": "^3.0.0",
     "surge": "^0.21.3",
     "ts-jest": "^26.1.0",
     "ts-node": "^10.9.1",

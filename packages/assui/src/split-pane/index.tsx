@@ -1,13 +1,4 @@
-import SplitPane, {
-  SplitPaneProps,
-  Size,
-  Split,
-  SplitPaneState,
-  PaneProps,
-  Pane,
-} from 'react-split-pane';
-
-export { SplitPaneProps, Size, Split, SplitPaneState, PaneProps, Pane };
+import SplitPane from 'react-split-pane';
 
 export default SplitPane;
 

@@ -30,10 +30,11 @@
     "README.md"
   ],
   "dependencies": {
-    "@ahooksjs/use-url-state": "^2.5.8",
+    "@ahooksjs/use-url-state": "^3.1.9",
     "a-icons": "^1.1.62",
     "aa-utils": "^2.1.22",
-    "ahooks": "^3.0.8"
+    "ahooks": "^3.0.8",
+    "react-vant": "3.0.0"
   },
   "peerDependencies": {
     "react": "^16.8.6 || ^17.0 || ^18.0",
