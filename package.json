@@ -50,7 +50,7 @@
     "babel-loader": "^8.1.0",
     "babel-plugin-import": "^1.13.5",
     "babel-plugin-transform-async-to-promises": "^0.8.15",
-    "code-rule": "^1.1.6",
+    "code-rule": "2.0.3",
     "cross-env": "^7.0.3",
     "del": "^5.1.0",
     "dumi": "^1.1.42",

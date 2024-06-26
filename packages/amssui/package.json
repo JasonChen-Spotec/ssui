@@ -36,7 +36,7 @@
   },
   "peerDependencies": {
     "react": "^16.8.6 || ^17.0 || ^18.0",
-    "react-vant": "^2.0.0-alpha.41 || ^3.0.0"
+    "react-vant": "^2.0.0-alpha.41 || 3.3.5"
   },
   "devDependencies": {
     "@types/enzyme": "^3.10.5",
