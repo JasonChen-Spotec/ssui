@@ -4,7 +4,8 @@
 
 .label-range-picker {
   position: relative;
-  width: 220px;
+  display: inline-block;
+  min-width: 234px; // 最小宽度需要234px，否则内容会溢出
   height: 100%;
   cursor: pointer;
 
@@ -21,6 +22,7 @@
   }
 
   .@{ant-prefix}-picker {
+    width: 100%;
     height: 45px;
     padding-right: 15px;
     padding-left: 15px;
@@ -72,10 +74,14 @@
     top: 12px;
     left: 16px;
     z-index: 2;
+    max-width: calc(100% - 48px);
     height: 20px;
+    overflow: hidden;
     color: @color_9aa5b5;
     font-size: @font-size-base;
     line-height: 20px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
     transform-origin: top left;
     cursor: pointer;
     transition: all 0.2s ease-out;
@@ -88,6 +94,7 @@
     }
 
     .label-range-picker-text {
+      max-width: 100%;
       transform: translateY(@labelTextLabeltranslateY) scale(@labelTextLabelScale);
       cursor: text;
       pointer-events: none;

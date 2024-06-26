@@ -12,6 +12,9 @@ const Demo = () => {
       <Form.Item name="account" rules={[{ required: true }]}>
         <LabelRangePicker label="结算时间" />
       </Form.Item>
+      <Form.Item name="time" rules={[{ required: true }]}>
+        <LabelRangePicker label="超长标题溢出省略超长标题溢出省略超长标题溢出省略" />
+      </Form.Item>
       <Button htmlType="submit">提交</Button>
     </Form>
   );
