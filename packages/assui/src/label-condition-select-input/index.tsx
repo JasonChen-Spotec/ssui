@@ -160,24 +160,24 @@ const LabelConditionSelectInput = (props: LabelConditionSelectInputProps) => {
     onBlur?.({ ...selectInputValue, changedEntryType: blurEntryType });
   };
 
-  /** 二级下拉框清空 */
-  const onTypeSelectClear = () => {
-    let finalSelectInputValue: ValueType = {
-      selectValue: selectInputValue.selectValue,
-      inputValue: [],
-      changedEntryType: EntryTypeEnum.SECOND_ENTRY,
-    };
-    if (isSubSelectMultiple) {
-      finalSelectInputValue = {
-        ...finalSelectInputValue,
-        finalSelectValue: findAllSubSelectItems(
-          optionsList,
-          selectInputValue.selectValue,
-        ),
-      };
-    }
-    onBlur?.(finalSelectInputValue);
-  };
+  // /** 二级下拉框清空 */
+  // const onTypeSelectClear = () => {
+  //   let finalSelectInputValue: ValueType = {
+  //     selectValue: selectInputValue.selectValue,
+  //     inputValue: [],
+  //     changedEntryType: EntryTypeEnum.SECOND_ENTRY,
+  //   };
+  //   if (isSubSelectMultiple) {
+  //     finalSelectInputValue = {
+  //       ...finalSelectInputValue,
+  //       finalSelectValue: findAllSubSelectItems(
+  //         optionsList,
+  //         selectInputValue.selectValue,
+  //       ),
+  //     };
+  //   }
+  //   onBlur?.(finalSelectInputValue);
+  // };
 
   // 是否展示输入框
   const isShowInput =
@@ -200,8 +200,11 @@ const LabelConditionSelectInput = (props: LabelConditionSelectInputProps) => {
         onChange={onTypeSelectChange}
         value={selectInputValue?.inputValue}
         options={subSelectOptions}
+        onDeselect={() => {
+          subSelectRef.current?.focus();
+        }}
         onBlur={() => onLabelConditionSelectInputBlur(EntryTypeEnum.SECOND_ENTRY)}
-        onClear={onTypeSelectClear}
+        // onClear={onTypeSelectClear}
       />
     </div>
   );
