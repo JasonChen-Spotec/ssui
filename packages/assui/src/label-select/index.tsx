@@ -23,7 +23,7 @@ const LabelSelect: React.ForwardRefRenderFunction<unknown, LabelSelectProps> = (
   props,
   ref,
 ) => {
-  const { className, label } = props;
+  const { className, label, onBlur } = props;
   const selectRef = React.useRef<RefSelectProps>(null);
   const [open, setOpen] = useControllableValue(props, {
     valuePropName: 'open',
@@ -49,6 +49,10 @@ const LabelSelect: React.ForwardRefRenderFunction<unknown, LabelSelectProps> = (
     setOpen(nextOpen);
   };
 
+  const handleBlur = () => {
+    onBlur?.(value);
+  };
+
   return (
     <div
       className={classNames(
@@ -71,6 +75,7 @@ const LabelSelect: React.ForwardRefRenderFunction<unknown, LabelSelectProps> = (
         size="large"
         className="label-select-selector"
         onChange={handleChange}
+        onBlur={handleBlur}
         onDeselect={() => {
           selectRef.current?.focus();
         }}
