@@ -200,9 +200,6 @@ const LabelConditionSelectInput = (props: LabelConditionSelectInputProps) => {
         onChange={onTypeSelectChange}
         value={selectInputValue?.inputValue}
         options={subSelectOptions}
-        onDeselect={() => {
-          subSelectRef.current?.focus();
-        }}
         onBlur={() => onLabelConditionSelectInputBlur(EntryTypeEnum.SECOND_ENTRY)}
         onClear={onTypeSelectClear}
       />

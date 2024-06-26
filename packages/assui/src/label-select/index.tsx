@@ -76,9 +76,6 @@ const LabelSelect: React.ForwardRefRenderFunction<unknown, LabelSelectProps> = (
         className="label-select-selector"
         onChange={handleChange}
         onBlur={handleBlur}
-        onDeselect={() => {
-          selectRef.current?.focus();
-        }}
         onDropdownVisibleChange={onDropdownVisibleChange}
         suffixIcon={<ArrowDropDownFilled />}
       />
