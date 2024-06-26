@@ -3,7 +3,9 @@ import useControllableValue from 'ahooks/lib/useControllableValue';
 import type { RefSelectProps, SelectProps } from 'antd/lib/select';
 import Select from 'antd/lib/select';
 import type { BaseSelectRef } from 'rc-select/lib/BaseSelect';
-import { isUndefined, isNull } from 'lodash';
+import isArray from 'lodash/isArray';
+import isUndefined from 'lodash/isUndefined';
+import isNull from 'lodash/isNull';
 import classNames from 'classnames';
 import ArrowDropDownFilled from 'a-icons/lib/ArrowDropDownFilled';
 import omit from 'lodash/omit';
@@ -14,6 +16,7 @@ export { Option };
 
 export interface LabelSelectProps extends SelectProps {
   label?: React.ReactNode;
+  onBlur?: (value: SelectProps['value']) => void;
 }
 
 const LabelSelect: React.ForwardRefRenderFunction<unknown, LabelSelectProps> = (
@@ -51,7 +54,10 @@ const LabelSelect: React.ForwardRefRenderFunction<unknown, LabelSelectProps> = (
       className={classNames(
         {
           'label-select': true,
-          'label-select-label-scale': open || (!isUndefined(value) && !isNull(value)),
+          'label-select-label-scale':
+            open ||
+            (!isArray(value) && !isUndefined(value) && !isNull(value)) ||
+            (isArray(value) && value.length),
         },
         className,
       )}
@@ -65,6 +71,9 @@ const LabelSelect: React.ForwardRefRenderFunction<unknown, LabelSelectProps> = (
         size="large"
         className="label-select-selector"
         onChange={handleChange}
+        onDeselect={() => {
+          selectRef.current?.focus();
+        }}
         onDropdownVisibleChange={onDropdownVisibleChange}
         suffixIcon={<ArrowDropDownFilled />}
       />
