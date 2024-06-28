@@ -147,3 +147,6 @@ export type { SignaturePadProps } from './signature-pad';
 
 export { default as MultiLineEllipsisText } from './multi-line-ellipsis-text';
 export type { MultiLineEllipsisTextProps } from './multi-line-ellipsis-text';
+
+export type { RcSplitViewProps } from './rc-split-view';
+export { default as RcSplitView } from './rc-split-view';
