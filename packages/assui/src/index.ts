@@ -130,3 +130,6 @@ export { default as LabelConditionSelectInput } from './label-condition-select-i
 
 export type { MultipartUploadProps } from './multipart-upload';
 export { default as MultipartUpload } from './multipart-upload';
+
+export type { RcSplitViewProps } from './rc-split-view';
+export { default as RcSplitView } from './rc-split-view';
