@@ -8,7 +8,7 @@ export interface TableColProps {
 }
 
 const TableCol: React.FC<TableColProps> = ({ children, width, className }) => (
-  <div style={{ width: `${width}px` }} className={classNames('table-col', className)}>
+  <div style={{ width: `${width}px` }} className={classNames('a-table-col', className)}>
     {children}
   </div>
 );
