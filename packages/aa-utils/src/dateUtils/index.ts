@@ -92,7 +92,7 @@ class DateUtils {
           return val;
         }
       } else {
-        const val = moment(value).utc().local();
+        const val = moment(value).local();
         if (val.isValid()) {
           return val;
         }
@@ -141,6 +141,19 @@ class DateUtils {
     }
 
     return +this.getToday().valueOf();
+  };
+
+  utcFormatDate = (
+    date: moment.MomentInput,
+    options: {
+      format?: string;
+      /** 已分钟来设置偏移量，如果输入小于 16 且大于 -16，它会将你的输入解释为小时数。 */
+      utcOffset?: number;
+    } = {},
+  ): string => {
+    const { format, utcOffset } = options;
+    const m = utcOffset ? moment.utc(date).utcOffset(utcOffset) : moment.utc(date);
+    return m.format(format || this.dateTimeFormat);
   };
 
   getToday = (timeZoneOffset?: number) => {
