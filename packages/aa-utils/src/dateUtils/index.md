@@ -28,17 +28,18 @@ group:
 ## 2. API
 ### 2.1. 实例方法
 
-| 参数              | 说明           | 类型                                                                 | 默认值 |
-| ----------------- | -------------- | -------------------------------------------------------------------- | ------ |
-| parseDate         | 解析日期       | `(date: moment.MomentInput, format?: string) => moment.Moment`           | -      |
-| parseTime         | 解析时间       | `(date: moment.MomentInput, format?: string) => moment.Moment`           | -      |
-| parseDateTime     | 解析日期时间   | `(date: moment.MomentInput \| number, format?: string) => moment.Moment` | -      |
-| formatDate        | 格式化日期     | `(date: moment.Moment, format?: string) => string`                     | -      |
-| formatTime        | 格式化时间     | `(date: moment.Moment, format?: string) => string`                     | -      |
-| formatDateTime    | 格式化日期时间 | `(date: moment.Moment, format?: string) => string`| -      |
-| formatToTimestamp | 获取时间戳     | `(date?: moment.Moment \| Date) => number`                             | -      |
-| getToday          | 获取当前时间   | `() => moment.Moment`                                                  | -      |
-| getTimeZone       | 获取时区       | `() => string`                                                       | -      |
+| 参数              | 说明           | 类型                                                                              | 默认值 |
+| ----------------- | -------------- | --------------------------------------------------------------------------------- | ------ |
+| parseDate         | 解析日期       | `(date: moment.MomentInput, format?: string) => moment.Moment`                    | -      |
+| parseTime         | 解析时间       | `(date: moment.MomentInput, format?: string) => moment.Moment`                    | -      |
+| parseDateTime     | 解析日期时间   | `(date: moment.MomentInput \| number, format?: string) => moment.Moment`          | -      |
+| formatDate        | 格式化日期     | `(date: moment.Moment, format?: string) => string`                                | -      |
+| formatTime        | 格式化时间     | `(date: moment.Moment, format?: string) => string`                                | -      |
+| formatDateTime    | 格式化日期时间 | `(date: moment.Moment, format?: string) => string`                                | -      |
+| formatToTimestamp | 获取时间戳     | `(date?: moment.Moment \| Date) => number`                                        | -      |
+| utcFormatDate     | utc格式化时间  | `(date: moment.Moment, options: {format?: string, utcOffset?: number}) => string` | -      |
+| getToday          | 获取当前时间   | `() => moment.Moment`                                                             | -      |
+| getTimeZone       | 获取时区       | `() => string`                                                                    | -      |
 
 ### 2.2. setter、getter方法
 ```js
