@@ -1,3 +1,5 @@
+export { default as DailyFinanceFilled } from './DailyFinanceFilled';
+export { default as DailyFinanceOutlined } from './DailyFinanceOutlined';
 export { default as ImpassabilityFilled } from './ImpassabilityFilled';
 export { default as AddFilled } from './AddFilled';
 export { default as AddOutlined } from './AddOutlined';
