@@ -78,6 +78,8 @@ export { default as CreditCardFilled } from './CreditCardFilled';
 export { default as CreditCardOutlined } from './CreditCardOutlined';
 export { default as CustomerServiceOutlined } from './CustomerServiceOutlined';
 export { default as CyclePlusFilled } from './CyclePlusFilled';
+export { default as DailyFinanceFilled } from './DailyFinanceFilled';
+export { default as DailyFinanceOutlined } from './DailyFinanceOutlined';
 export { default as DashboardFilled } from './DashboardFilled';
 export { default as DashboardOutlined } from './DashboardOutlined';
 export { default as DisplayerOutlined } from './DisplayerOutlined';
