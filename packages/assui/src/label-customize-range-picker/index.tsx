@@ -14,19 +14,18 @@ import LabelRangePicker from '../label-range-picker';
 import type { LabelRangePickerProps } from '../label-range-picker';
 import LocaleContext from '../config-provider/context';
 import formatMessage from '../messages';
-import { formatMaxScope } from './utils';
+import {
+  formatMaxScope,
+  getDateDiffScope,
+  ONE_DAY_MILLISECOND,
+  getTimeDiffOfShowTime,
+} from './utils';
 
 export type RadioListType = {
   key: string | number | dateTypeEnum;
   text: string;
   value: [Moment, Moment];
 };
-
-/** 1整天的毫秒数 */
-const ONE_DAY_MILLISECOND = 1000 * 60 * 60 * 24;
-
-/** 1分钟的毫秒数 */
-const ONE_MINUTE_MILLISECOND = 1000 * 60;
 
 export interface LabelCustomizeRangePickerProps
   extends Omit<LabelRangePickerProps, 'label'> {
@@ -133,8 +132,6 @@ const LabelCustomizeRangePicker = (props: LabelCustomizeRangePickerProps) => {
   };
 
   const onDateChange = (nextValue: RangeValue<Moment>) => {
-    console.log('nextValue', nextValue);
-
     const [start, end] = nextValue || [];
     let nextStartDate =
       (showTime ? start?.clone().startOf('minute') : start?.clone().startOf('day')) ??
@@ -149,7 +146,7 @@ const LabelCustomizeRangePicker = (props: LabelCustomizeRangePickerProps) => {
       return setDate([nextStartDate, nextEndDate]);
     }
 
-    const timeDiffOfShowTime = maxScope * ONE_DAY_MILLISECOND - ONE_MINUTE_MILLISECOND;
+    const timeDiffOfShowTime = getTimeDiffOfShowTime(maxScope);
     const [startDate] = date || [];
     // 1. start和end都存在时
     if (nextStartDate && nextEndDate) {
@@ -185,22 +182,29 @@ const LabelCustomizeRangePicker = (props: LabelCustomizeRangePickerProps) => {
       }
       // 2. 仅end存在时，自动填入start
     } else if (!nextStartDate && nextEndDate) {
+      const scope = getDateDiffScope(date, maxScope);
+
       nextStartDate = showTime
         ? nextEndDate
             .clone()
-            .subtract(timeDiffOfShowTime, 'milliseconds')
+            .subtract(getTimeDiffOfShowTime(scope), 'milliseconds')
             .startOf('minute')
         : nextEndDate
             .clone()
-            .subtract(maxScope - 1, 'day')
+            .subtract(scope - 1, 'day')
             .startOf('day');
       // 3. 仅start存在时，自动填入end
     } else if (nextStartDate && !nextEndDate) {
+      const scope = getDateDiffScope(date, maxScope);
+
       nextEndDate = showTime
-        ? nextStartDate.clone().add(timeDiffOfShowTime, 'milliseconds').endOf('minute')
+        ? nextStartDate
+            .clone()
+            .add(getTimeDiffOfShowTime(scope), 'milliseconds')
+            .endOf('minute')
         : nextStartDate
             .clone()
-            .add(maxScope - 1, 'day')
+            .add(scope - 1, 'day')
             .endOf('day');
     }
 
