@@ -10,7 +10,7 @@ function GroupOutlined(componentProps: IconProps) {
         d="M10.25 2h3.5A2.25 2.25 0 0116 4.25v3.5A2.25 2.25 0 0113.75 10h-3.5A2.25 2.25 0 018 7.75v-3.5A2.25 2.25 0 0110.25 2zm3.5 6.5a.75.75 0 00.75-.75v-3.5a.75.75 0 00-.75-.75h-3.5a.76.76 0 00-.75.75v3.5a.76.76 0 00.75.75h3.5z"
         fill="currentColor"
       />
-      <path d="M12 9v3.5l-3 2M12 12.5l3 2" stroke="currentColor" />
+      <path d="M12 9v3.5l-3 2M12 12.5l3 2" stroke="currentColor" strokeWidth={1.5} />
       <path
         fillRule="evenodd"
         clipRule="evenodd"

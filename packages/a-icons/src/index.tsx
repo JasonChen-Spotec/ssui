@@ -42,6 +42,8 @@ export { default as CalendarOutlined } from './CalendarOutlined';
 export { default as CameraFilled } from './CameraFilled';
 export { default as CameraOutlined } from './CameraOutlined';
 export { default as CardFilled } from './CardFilled';
+export { default as CardLoopFilled } from './CardLoopFilled';
+export { default as CardLoopOutlined } from './CardLoopOutlined';
 export { default as CardOutlined } from './CardOutlined';
 export { default as CategoryFilled } from './CategoryFilled';
 export { default as CategoryOutlined } from './CategoryOutlined';
