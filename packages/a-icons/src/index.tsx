@@ -142,6 +142,8 @@ export { default as GarbageCanOutlined } from './GarbageCanOutlined';
 export { default as GiftBoxOutlined } from './GiftBoxOutlined';
 export { default as GiftFilled } from './GiftFilled';
 export { default as GiftWithClipFilled } from './GiftWithClipFilled';
+export { default as GroupFilled } from './GroupFilled';
+export { default as GroupOutlined } from './GroupOutlined';
 export { default as GrowthGraphOutlined } from './GrowthGraphOutlined';
 export { default as HandCoinsFilled } from './HandCoinsFilled';
 export { default as HomeFilled } from './HomeFilled';
