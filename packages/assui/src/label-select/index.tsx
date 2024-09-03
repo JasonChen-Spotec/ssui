@@ -2,6 +2,8 @@ import React from 'react';
 import useControllableValue from 'ahooks/lib/useControllableValue';
 import type { RefSelectProps, SelectProps } from 'antd/lib/select';
 import Select from 'antd/lib/select';
+import type { AllowComplexValSelectProps } from '../allow-complex-val-select';
+import AllowComplexValSelect from '../allow-complex-val-select';
 import type { BaseSelectRef } from 'rc-select/lib/BaseSelect';
 import isArray from 'lodash/isArray';
 import isUndefined from 'lodash/isUndefined';
@@ -14,7 +16,7 @@ const { Option } = Select;
 
 export { Option };
 
-export interface LabelSelectProps extends SelectProps {
+export interface LabelSelectProps extends AllowComplexValSelectProps<any> {
   label?: React.ReactNode;
   onBlur?: (value: SelectProps['value']) => void;
 }
@@ -34,7 +36,7 @@ const LabelSelect: React.ForwardRefRenderFunction<unknown, LabelSelectProps> = (
 
   React.useImperativeHandle(ref, () => selectRef.current);
 
-  const handleChange: SelectProps<string | React.ReactNode>['onChange'] = (nextValue) => {
+  const handleChange: AllowComplexValSelectProps<string>['onChange'] = (nextValue) => {
     setValue(nextValue);
   };
 
@@ -66,7 +68,7 @@ const LabelSelect: React.ForwardRefRenderFunction<unknown, LabelSelectProps> = (
         className,
       )}
     >
-      <Select
+      <AllowComplexValSelect
         maxTagCount={3}
         showSearch={false}
         {...omit(props, ['open', 'onChange', 'className', 'label', 'setOpen', 'isFocus'])}
@@ -88,8 +90,6 @@ const LabelSelect: React.ForwardRefRenderFunction<unknown, LabelSelectProps> = (
     </div>
   );
 };
-
-// export default LabelSelect;
 
 const ForwardRefLabelSelect = React.forwardRef<unknown, LabelSelectProps>(LabelSelect);
 
