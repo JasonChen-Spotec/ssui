@@ -23,7 +23,7 @@ const Demo = () => {
             { label: '张三指头个数', value: [5, 5, 5, 5] },
             { label: '李四指头个数', value: [6, 6, 6, 6] },
           ]}
-          useJSONStrVal
+          isReferenceTypeVal
         />
       </Form.Item>
       <Form.Item name="object" label="下拉Value是对象">
@@ -32,7 +32,7 @@ const Demo = () => {
             { label: '张三信息', value: { name: '张三', sex: '男' } },
             { label: '李四信息', value: { name: '李四', sex: '女' } },
           ]}
-          useJSONStrVal
+          isReferenceTypeVal
         />
       </Form.Item>
       <Form.Item>

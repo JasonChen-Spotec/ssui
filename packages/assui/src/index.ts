@@ -131,5 +131,5 @@ export { default as LabelConditionSelectInput } from './label-condition-select-i
 export type { MultipartUploadProps } from './multipart-upload';
 export { default as MultipartUpload } from './multipart-upload';
 
-export type { AllowComplexValSelectProps } from './allow-complex-val-select';
-export { default as AllowComplexValSelect } from './allow-complex-val-select';
+export type { AllowComplexValSelectProps } from './complex-val-select';
+export { default as AllowComplexValSelect } from './complex-val-select';

@@ -1,7 +1,7 @@
 import isNil from 'lodash/isNil';
 import isEmpty from 'lodash/isEmpty';
 import classNames from 'classnames';
-import AllowComplexValSelect from '../allow-complex-val-select';
+import ComplexValSelect from '../complex-val-select';
 import type { SelectProps } from 'antd/lib/select';
 import React, { useEffect, useState } from 'react';
 import useControllableValue from 'ahooks/lib/useControllableValue';
@@ -187,7 +187,7 @@ const ConditionSelectInput = (props: ConditionSelectInputProps) => {
     </div>
   ) : (
     <div className="condition-select-select-input">
-      <AllowComplexValSelect
+      <ComplexValSelect
         {...conditionSelectProps}
         onChange={onTypeSelectChange}
         value={selectInputValue?.inputValue}
@@ -206,7 +206,7 @@ const ConditionSelectInput = (props: ConditionSelectInputProps) => {
           'condition-only-selecter': !isShowInput,
         })}
       >
-        <AllowComplexValSelect
+        <ComplexValSelect
           {...selectProps}
           onChange={onSelectChange}
           value={selectInputValue?.selectValue}
