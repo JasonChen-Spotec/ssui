@@ -1,6 +1,6 @@
 ---
 mobile: false
-title: AllowComplexValSelect
+title: ComplexValSelect
 nav:
   title: assui
   path: /assui
@@ -10,8 +10,9 @@ group:
   order: 1
 ---
 
-# AllowComplexValSelect
-option的value支持复杂类型（antd仅支持 `number` `string` `null` `undefined` ）
+# ComplexValSelect
+option的value支持复杂类型（object, array）
+> 注：antd仅支持 `number` `string` `null` `undefined`
 
 ## 1. 代码演示
 
