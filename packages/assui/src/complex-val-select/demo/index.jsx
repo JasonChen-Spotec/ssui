@@ -1,6 +1,6 @@
 import React from 'react';
 import { Form, Button } from 'antd';
-import { AllowComplexValSelect } from 'assui';
+import { ComplexValSelect } from 'assui';
 
 const Demo = () => {
   const onFinish = (values) => {
@@ -10,7 +10,7 @@ const Demo = () => {
   return (
     <Form onFinish={onFinish}>
       <Form.Item name="primary" label="普通用法">
-        <AllowComplexValSelect
+        <ComplexValSelect
           options={[
             { label: '张三', value: 'zhangsan' },
             { label: '李四', value: 'lisi' },
@@ -18,21 +18,19 @@ const Demo = () => {
         />
       </Form.Item>
       <Form.Item name="array" label="下拉Value是数组">
-        <AllowComplexValSelect
+        <ComplexValSelect
           options={[
             { label: '张三指头个数', value: [5, 5, 5, 5] },
             { label: '李四指头个数', value: [6, 6, 6, 6] },
           ]}
-          isReferenceTypeVal
         />
       </Form.Item>
       <Form.Item name="object" label="下拉Value是对象">
-        <AllowComplexValSelect
+        <ComplexValSelect
           options={[
             { label: '张三信息', value: { name: '张三', sex: '男' } },
             { label: '李四信息', value: { name: '李四', sex: '女' } },
           ]}
-          isReferenceTypeVal
         />
       </Form.Item>
       <Form.Item>

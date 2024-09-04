@@ -1,6 +1,7 @@
 import * as React from 'react';
 import omit from 'lodash/omit';
 import find from 'lodash/find';
+import some from 'lodash/some';
 import isArray from 'lodash/isArray';
 import isObject from 'lodash/isObject';
 import type { DefaultOptionType, RefSelectProps, SelectProps } from 'antd/lib/select';
@@ -27,15 +28,18 @@ const ComplexValSelect = React.forwardRef<unknown, ComplexValSelectProps<ValueTy
 
     React.useImperativeHandle(ref, () => selectRef.current);
 
-    const isReferenceTypeVal = isArray(value) || isObject(value);
+    // 判断是否需要将optionValue转为JSON字符串
+    const isReferenceTypeVal = some(
+      options,
+      (item) => isArray(item.value) || isObject(item.value),
+    );
 
-    const finalOptions: DefaultOptionType[] | undefined = options?.map((item) => ({
-      ...item,
-      value:
-        isArray(item.value) || isObject(item.value)
-          ? JSON.stringify(item.value)
-          : item.value,
-    }));
+    const finalOptions: DefaultOptionType[] | undefined = isReferenceTypeVal
+      ? options?.map((item) => ({
+          ...item,
+          value: JSON.stringify(item.value),
+        }))
+      : options;
 
     const handleChange: SelectProps['onChange'] = (val) => {
       const nextVal = isReferenceTypeVal ? JSON.parse(val as string) : val;
