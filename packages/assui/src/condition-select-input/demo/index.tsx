@@ -1,3 +1,4 @@
+import React from 'react';
 import { Form } from 'antd';
 import { ConditionSelectInput } from 'assui';
 import { InputTypeEnum } from 'assui/lib/condition-select-input';
@@ -213,6 +214,25 @@ const demo = () => {
     },
   ];
 
+  const complexValOptions = [
+    {
+      label: 'banana',
+      value: 1,
+      children: [
+        { label: '黄色', value: { weight: '一斤', rmb: 5 } },
+        { label: '黑色', value: { weight: '两斤', rmb: 8 } },
+      ],
+    },
+    {
+      label: 'apple',
+      value: 2,
+      children: [
+        { label: '大果', value: { weight: '一斤', rmb: 6 } },
+        { label: '小果', value: { weight: '两斤', rmb: 10 } },
+      ],
+    },
+  ];
+
   return (
     <Form
       initialValues={{
@@ -259,6 +279,20 @@ const demo = () => {
             mode: 'multiple',
           }}
           optionsList={options1}
+          onBlur={(value) => {
+            console.log(value, '触发了');
+          }}
+        />
+      </Form.Item>
+      <Form.Item name="select-ComplexSelect">
+        <ConditionSelectInput
+          onChange={onSelectChange}
+          inputType={InputTypeEnum.SELECT}
+          selectProps={{ allowClear: true }}
+          conditionSelectProps={{
+            allowClear: true,
+          }}
+          optionsList={complexValOptions}
           onBlur={(value) => {
             console.log(value, '触发了');
           }}
