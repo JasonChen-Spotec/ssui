@@ -1,7 +1,10 @@
 import isNil from 'lodash/isNil';
 import isEmpty from 'lodash/isEmpty';
 import classNames from 'classnames';
-import ComplexValSelect from '../complex-val-select';
+import ComplexValSelect, {
+  ComplexValSelectProps,
+  ComplexValSelectValueType,
+} from '../complex-val-select';
 import type { SelectProps } from 'antd/lib/select';
 import React, { useEffect, useState } from 'react';
 import useControllableValue from 'ahooks/lib/useControllableValue';
@@ -21,7 +24,7 @@ export enum EntryTypeEnum {
 export type ChangedEntryType = typeof EntryTypeEnum[keyof typeof EntryTypeEnum];
 
 type SelectOptionsType = {
-  value: number;
+  value: ComplexValSelectValueType;
   label: string;
 };
 
@@ -30,9 +33,9 @@ export interface MainSelectOptionsType extends SelectOptionsType {
 }
 
 export interface ValueType {
-  selectValue?: number | string | null;
+  selectValue?: ComplexValSelectValueType;
   inputValue?: SelectProps['value'] | ConditionInputProps['value'];
-  finalSelectValue?: SelectProps['value'] | ConditionInputProps['value'][];
+  finalSelectValue?: ComplexValSelectProps<any>['value'] | ConditionInputProps['value'][];
   changedEntryType?: ChangedEntryType;
 }
 
@@ -41,11 +44,11 @@ export interface ConditionSelectInputProps {
   /** 不需要展示联动输入框的字段值 */
   hiddenInputKeys?: ValueType['selectValue'][];
   /** selectProps */
-  selectProps?: SelectProps;
+  selectProps?: ComplexValSelectProps<any>;
   /** 联动inputProps */
   conditionInputProps?: ConditionInputProps;
   /** 联动selectProps */
-  conditionSelectProps?: SelectProps;
+  conditionSelectProps?: ComplexValSelectProps<any>;
   /** onChange */
   onChange?: (value: ValueType) => void;
   /** onBlur */
