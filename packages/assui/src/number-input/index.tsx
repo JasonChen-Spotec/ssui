@@ -56,7 +56,7 @@ const NumberInput = React.forwardRef<unknown, NumberInputProps>((props, ref) => 
     precision,
     formatter,
     parser,
-    enableMinus,
+    enableMinus = false,
     onBlur,
     maxLength,
     ...restProps
@@ -117,10 +117,6 @@ const NumberInput = React.forwardRef<unknown, NumberInputProps>((props, ref) => 
     />
   );
 });
-
-NumberInput.defaultProps = {
-  enableMinus: false,
-};
 
 export { numberTypeEnum, dataTypeEnum };
 export default NumberInput;

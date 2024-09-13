@@ -19,86 +19,84 @@ export interface HighlightTextareaProps
   highlight: HighlightType;
 }
 
-const HighlightWithinTextarea = React.forwardRef<HTMLTextAreaElement, HighlightTextareaProps>(
-  (props, ref) => {
-    const {
-      prefixCls,
-      value,
-      onChange,
-      highlight,
-      className,
-      textAreaClassName,
-      ...textareaProps
-    } = props;
+const HighlightWithinTextarea = React.forwardRef<
+  HTMLTextAreaElement,
+  HighlightTextareaProps
+>((props, ref) => {
+  const {
+    prefixCls = 'ant',
+    value,
+    onChange,
+    highlight = '',
+    className,
+    textAreaClassName,
+    ...textareaProps
+  } = props;
 
-    const [textAreaValue, setTextAreaValue] = React.useState('');
-    const resultValue = value || textAreaValue;
+  const [textAreaValue, setTextAreaValue] = React.useState('');
+  const resultValue = value || textAreaValue;
 
-    const containerRef = React.useRef<HTMLDivElement>();
-    const backdropRef = React.useRef<HTMLDivElement>();
+  const containerRef = React.useRef<HTMLDivElement>();
+  const backdropRef = React.useRef<HTMLDivElement>();
 
-    const handleScroll = () => {
-      const textareaDom = containerRef.current?.querySelector('textarea');
+  const handleScroll = () => {
+    const textareaDom = containerRef.current?.querySelector('textarea');
 
-      if (backdropRef.current && textareaDom) {
-        backdropRef.current.scrollLeft = textareaDom.scrollLeft;
-        backdropRef.current.style.height = `${textareaDom.clientHeight + textareaDom.scrollTop}px`;
-        backdropRef.current.style.top = `${0 - textareaDom.scrollTop}px`;
-      }
-    };
+    if (backdropRef.current && textareaDom) {
+      backdropRef.current.scrollLeft = textareaDom.scrollLeft;
+      backdropRef.current.style.height = `${
+        textareaDom.clientHeight + textareaDom.scrollTop
+      }px`;
+      backdropRef.current.style.top = `${0 - textareaDom.scrollTop}px`;
+    }
+  };
 
-    useMount(() => {
-      handleScroll();
-    });
+  useMount(() => {
+    handleScroll();
+  });
 
-    const onTextareaChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-      const newValue = trimStart(e.target.value);
+  const onTextareaChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    const newValue = trimStart(e.target.value);
 
-      if (onChange) {
-        onChange(newValue, e);
-      } else {
-        setTextAreaValue(newValue);
-      }
-    };
+    if (onChange) {
+      onChange(newValue, e);
+    } else {
+      setTextAreaValue(newValue);
+    }
+  };
 
-    const textareaCls = classNames(
-      `${prefixCls}-input`,
-      'highlight-textarea-input',
-      'highlight-content',
-      textAreaClassName,
-    );
+  const textareaCls = classNames(
+    `${prefixCls}-input`,
+    'highlight-textarea-input',
+    'highlight-content',
+    textAreaClassName,
+  );
 
-    return (
+  return (
+    <div
+      className={classNames('highlight-textarea', className)}
+      ref={(node: HTMLDivElement) => {
+        containerRef.current = node;
+      }}
+    >
       <div
-        className={classNames('highlight-textarea', className)}
+        className="highlight-textarea-backdrop highlight-content"
         ref={(node: HTMLDivElement) => {
-          containerRef.current = node;
+          backdropRef.current = node;
         }}
       >
-        <div
-          className="highlight-textarea-backdrop highlight-content"
-          ref={(node: HTMLDivElement) => {
-            backdropRef.current = node;
-          }}
-        >
-          <HighlighedContents value={resultValue} highlight={highlight} />
-        </div>
-        <textarea
-          value={resultValue}
-          onChange={onTextareaChange}
-          className={textareaCls}
-          {...textareaProps}
-          onScroll={handleScroll}
-          ref={ref as any}
-        />
+        <HighlighedContents value={resultValue} highlight={highlight} />
       </div>
-    );
-  },
-);
-
-HighlightWithinTextarea.defaultProps = {
-  highlight: '',
-  prefixCls: 'ant',
-};
+      <textarea
+        value={resultValue}
+        onChange={onTextareaChange}
+        className={textareaCls}
+        {...textareaProps}
+        onScroll={handleScroll}
+        ref={ref as any}
+      />
+    </div>
+  );
+});
 
 export default HighlightWithinTextarea;

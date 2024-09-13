@@ -27,8 +27,16 @@ export interface RcEchartPropsType {
 }
 
 const ReactEchartCore = (props: RcEchartPropsType) => {
-  const { className, option, echarts, notMerge, lazyUpdate, onEvents, opts, theme } =
-    props;
+  const {
+    className = '',
+    option,
+    echarts,
+    notMerge = false,
+    lazyUpdate = false,
+    onEvents = {},
+    opts = {},
+    theme,
+  } = props;
   const chartDomRef = useRef<HTMLDivElement>();
   const chartRef = useRef<EChartsInterfaceType>();
 
@@ -122,15 +130,6 @@ const ReactEchartCore = (props: RcEchartPropsType) => {
       className={classNames('react-echart', className)}
     />
   );
-};
-
-ReactEchartCore.defaultProps = {
-  notMerge: false,
-  lazyUpdate: false,
-  // style: {},
-  className: '',
-  onEvents: {},
-  opts: {},
 };
 
 export default ReactEchartCore;
