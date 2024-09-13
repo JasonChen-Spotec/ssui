@@ -7,7 +7,7 @@ import classNames from 'classnames';
 import useControllableValue from 'ahooks/lib/useControllableValue';
 import ChevronRightOutlined from 'a-icons/lib/ChevronRightOutlined';
 import LocaleContext from '../config-provider/context';
-import formatMessage from '../messages';
+import formatMessage, { langTypeEnum } from '../messages';
 
 export type ColorSelectProps = {
   value?: {
@@ -62,7 +62,7 @@ const ColorSelect: React.FC<ColorSelectProps> = (props) => {
         />
       ) : (
         <span className="color-select-placeholder">
-          {formatMessage(messages, 'global', 'placeholder')}
+          {formatMessage(messages, langTypeEnum.global, 'placeholder')}
         </span>
       )}
       <div className="color-select-arrow">
