@@ -44,7 +44,7 @@ const SingleImgUpload = (props: SingleImgUploadProps) => {
     onFormatResData,
     onSuccess,
     onCancel,
-    beforeUpload,
+    beforeUpload = () => true,
     onError,
     disabled,
     ...restProps
@@ -190,12 +190,6 @@ const SingleImgUpload = (props: SingleImgUploadProps) => {
       </Upload>
     </div>
   );
-};
-
-SingleImgUpload.defaultProps = {
-  beforeUpload() {
-    return true;
-  },
 };
 
 export default SingleImgUpload;

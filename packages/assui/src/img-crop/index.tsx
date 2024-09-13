@@ -56,16 +56,16 @@ type beforeUploadFunc = (file: RcFile, fileList: RcFile[]) => boolean;
 
 const ImgCrop = (props: ImgCropProps) => {
   const {
-    aspect,
-    shape,
-    grid,
-    quality,
-    zoom,
-    rotate,
-    minZoom,
-    maxZoom,
-    fillColor,
-    prefix,
+    aspect = 1,
+    shape = 'rect',
+    grid = false,
+    quality = 0.4,
+    zoom = true,
+    rotate = false,
+    minZoom = 1,
+    maxZoom = 3,
+    fillColor = 'rgba(0,0,0,0)',
+    prefix = 'ant',
     modalTitle,
     modalWidth,
     modalOk,
@@ -162,7 +162,11 @@ const ImgCrop = (props: ImgCropProps) => {
    * Modal
    */
   const modalProps = React.useMemo(() => {
-    const obj: modalPartProps = { width: modalWidth, okText: modalOk, cancelText: modalCancel };
+    const obj: modalPartProps = {
+      width: modalWidth,
+      okText: modalOk,
+      cancelText: modalCancel,
+    };
     return obj;
   }, [modalCancel, modalOk, modalWidth]);
 
@@ -225,7 +229,8 @@ const ImgCrop = (props: ImgCropProps) => {
           newFile = fileObj;
         }
         newFile.uid = uid;
-        if (typeof beforeUploadRef.current !== 'function') return resolveRef.current(newFile);
+        if (typeof beforeUploadRef.current !== 'function')
+          return resolveRef.current(newFile);
 
         const res = beforeUploadRef.current(newFile, [newFile]);
 
@@ -280,7 +285,10 @@ const ImgCrop = (props: ImgCropProps) => {
             minZoom={minZoom}
             maxZoom={maxZoom}
             onComplete={onComplete}
-            classes={{ containerClassName: `${pkg}-container`, mediaClassName: MEDIA_CLASS }}
+            classes={{
+              containerClassName: `${pkg}-container`,
+              mediaClassName: MEDIA_CLASS,
+            }}
             {...cropperProps}
           />
           {hasZoom && (
@@ -322,19 +330,6 @@ const ImgCrop = (props: ImgCropProps) => {
     </>
   );
   return renderComponent(modalTitle);
-};
-
-ImgCrop.defaultProps = {
-  prefix: 'ant',
-  aspect: 1,
-  shape: 'rect',
-  grid: false,
-  quality: 0.4,
-  zoom: true,
-  rotate: false,
-  minZoom: 1,
-  maxZoom: 3,
-  fillColor: 'rgba(0,0,0,0)',
 };
 
 ImgCrop.getCroppedImg = getCroppedImg;
