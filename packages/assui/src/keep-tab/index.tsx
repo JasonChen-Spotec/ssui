@@ -40,7 +40,7 @@ const KeepTab = (props: KeepTabProps) => {
   const {
     items = [],
     defaultActiveKey,
-    saveActiveKeyName,
+    saveActiveKeyName = 'active',
     onChange,
     badgeProps = defaultBadgeProps,
     ...restProps
@@ -97,10 +97,6 @@ const KeepTab = (props: KeepTabProps) => {
       items={resultItems}
     />
   );
-};
-
-KeepTab.defaultProps = {
-  saveActiveKeyName: 'active',
 };
 
 KeepTab.displayName = 'KeepTab';

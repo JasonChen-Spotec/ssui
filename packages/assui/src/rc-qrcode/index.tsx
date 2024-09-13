@@ -14,7 +14,7 @@ export interface RcQrcodeProps {
 }
 
 const RcQrcode = (props: RcQrcodeProps) => {
-  const { value, options, getCanvasInstance } = props;
+  const { value = '', options = {}, getCanvasInstance } = props;
   const domElRef = React.useRef<HTMLDivElement>(null);
 
   const defaultOptions = { errorCorrectionLevel: 'H', margin: 0, width: 134 };
@@ -32,11 +32,6 @@ const RcQrcode = (props: RcQrcodeProps) => {
   });
 
   return <div ref={domElRef} />;
-};
-
-RcQrcode.defaultProps = {
-  value: '',
-  options: {},
 };
 
 RcQrcode.useQrcode = useQrcode;

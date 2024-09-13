@@ -47,12 +47,13 @@ const StepNumberInput = (props: StepNumberInputProps) => {
   const {
     onChange,
     onBlur,
-    numberType,
-    precision,
-    step,
+    numberType = INT,
+    precision = 2,
+    step = 1,
     max,
     min,
     disabled: customDisabled,
+    enableMinus = false,
     ...restProps
   } = props;
   const isEmpty = isUndefined(value) || value === '';
@@ -139,17 +140,11 @@ const StepNumberInput = (props: StepNumberInputProps) => {
         numberType={numberType}
         precision={precision}
         disabled={mergedDisabled}
+        enableMinus={enableMinus}
         {...restProps}
       />
     </div>
   );
-};
-
-StepNumberInput.defaultProps = {
-  numberType: INT,
-  precision: 2,
-  enableMinus: false,
-  step: 1,
 };
 
 export default StepNumberInput;
