@@ -25,11 +25,32 @@ export type ComplexValSelectValueType =
   | null
   | undefined;
 
-export interface ComplexValSelectOptionType extends BaseOptionType {
-  label: React.ReactNode;
+export interface ComplexValSelectOptionType
+  extends Omit<BaseOptionType, 'value' | 'children' | 'options'> {
   value?: ComplexValSelectValueType;
-  children?: Omit<ComplexValSelectOptionType, 'children'>[];
+  children?: ComplexValSelectOptionType[];
+  options?: Omit<ComplexValSelectOptionType, 'children' | 'options'>[];
 }
+
+const formatOptions = (
+  dateSource?: ComplexValSelectOptionType[],
+): DefaultOptionType[] | undefined => {
+  if (dateSource) {
+    const options = dateSource.map((item) => {
+      const otherProps = item.options ? { options: formatOptions(item.options) } : {};
+      return {
+        ...item,
+        label: item.label,
+        value: item.value ? JSON.stringify(item.value) : undefined,
+        ...otherProps,
+      };
+    });
+
+    return options;
+  }
+
+  return dateSource;
+};
 
 export interface ComplexValSelectProps<T>
   extends Omit<SelectProps, 'value' | 'onChange' | 'options'> {
@@ -49,18 +70,18 @@ const ComplexValSelect = React.forwardRef<
   React.useImperativeHandle(ref, () => selectRef.current);
 
   // 判断是否需要将optionValue转为JSON字符串
-  const isReferenceTypeVal = some(
-    options,
-    (item) => isArray(item.value) || isObject(item.value),
-  );
+  const isReferenceTypeVal = some(options, (item) => {
+    if (item.value) {
+      return isArray(item.value) || isObject(item.value);
+    }
+    if (item.options) {
+      return some(item.options, (i) => isArray(i.value) || isObject(i.value));
+    }
+    return false;
+  });
 
   const finalOptions = (
-    isReferenceTypeVal
-      ? options?.map((item) => ({
-          ...item,
-          value: JSON.stringify(item.value),
-        }))
-      : options
+    isReferenceTypeVal ? formatOptions(options) : options
   ) as SelectProps['options'];
 
   const handleChange: SelectProps['onChange'] = (val) => {

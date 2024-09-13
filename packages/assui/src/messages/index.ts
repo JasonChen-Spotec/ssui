@@ -1,5 +1,3 @@
-// TODO
-// @ts-nocheck
 export type LabelCustomizeRangePickerType = {
   customTime: string;
   toDay: string;
@@ -24,19 +22,20 @@ export type Global = {
   placeholder: string;
 };
 
-export type All = LabelCustomizeRangePickerType & Global;
+export enum langTypeEnum {
+  labelCustomizeRangePicker = 'labelCustomizeRangePicker',
+  global = 'global',
+}
 
 export type LangType = {
-  labelCustomizeRangePicker: LabelCustomizeRangePickerType;
-  global: Global;
+  [langTypeEnum.labelCustomizeRangePicker]: LabelCustomizeRangePickerType;
+  [langTypeEnum.global]: Global;
 };
 
-export type DisplayNameType = 'labelCustomizeRangePicker' | 'global';
-
-export default function formatMessage(
-  message: LangType,
-  displayName: DisplayNameType,
-  key: keyof All,
+export default function formatMessage<T extends LangType, K extends keyof T>(
+  message: Record<K, T[K]>,
+  displayName: K,
+  key: keyof T[K],
 ) {
   return message[displayName][key];
 }

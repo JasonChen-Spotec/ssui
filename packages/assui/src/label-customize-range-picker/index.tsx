@@ -13,7 +13,7 @@ import getDefaultRadioList from './defaultRadioList';
 import LabelRangePicker from '../label-range-picker';
 import type { LabelRangePickerProps } from '../label-range-picker';
 import LocaleContext from '../config-provider/context';
-import formatMessage from '../messages';
+import formatMessage, { langTypeEnum } from '../messages';
 import {
   formatMaxScope,
   getDateDiffScope,
@@ -239,7 +239,11 @@ const LabelCustomizeRangePicker = (props: LabelCustomizeRangePickerProps) => {
         <span className="customize-select">
           <Checkbox onChange={onDiyTimeChange} />
           <span className="customize-select-text">
-            {formatMessage(messages, 'labelCustomizeRangePicker', 'customTime')}
+            {formatMessage(
+              messages,
+              langTypeEnum.labelCustomizeRangePicker,
+              'customTime',
+            )}
           </span>
         </span>
       </div>
