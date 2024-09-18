@@ -5,10 +5,10 @@ import type { HighlightType } from './types';
 
 export interface HighlighedContentsProps {
   value: string;
-  highlight: HighlightType;
+  highlight?: HighlightType;
 }
 
-const HighlighedContents = ({ value, highlight }: HighlighedContentsProps) => {
+const HighlighedContents = ({ value, highlight = '' }: HighlighedContentsProps) => {
   const ranges = getRanges(value, highlight);
 
   const parts = extractSpansOfClasses(value, ranges);

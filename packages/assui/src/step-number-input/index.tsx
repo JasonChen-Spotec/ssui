@@ -14,7 +14,7 @@ export interface StepNumberInputProps {
   /** 输入数据的类型 */
   numberType?: 'int' | 'float';
   /** 精度，只对float有效 */
-  precision: number;
+  precision?: number;
   /** 内容最大长度 */
   maxLength?: number;
   /** 指定输入框展示值的格式 */
@@ -24,7 +24,7 @@ export interface StepNumberInputProps {
   /** 是否允许输入负数 */
   enableMinus?: boolean;
   /** 步进, 每次点击+/- 多少 */
-  step: string | number;
+  step?: string | number;
   /** 变化回调 */
   onChange?: (value: string) => void;
   /** 失去焦点回调 */

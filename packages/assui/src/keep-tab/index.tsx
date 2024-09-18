@@ -18,7 +18,7 @@ export interface KeepTabProps extends Omit<TabsProps, 'items'> {
   /** 初始化选中面板的 key，如果没有设置 activeKey */
   defaultActiveKey?: string;
   /** 保存激活 tab 面板的的key名 */
-  saveActiveKeyName: string;
+  saveActiveKeyName?: string;
   /** 当前激活 tab 面板的 key */
   activeKey?: string;
   /** 切换面板的回调 */
