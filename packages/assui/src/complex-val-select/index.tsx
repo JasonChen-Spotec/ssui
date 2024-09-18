@@ -52,6 +52,21 @@ const formatOptions = (
   return dateSource;
 };
 
+/** 判断optionsValue是否是引用类型 */
+export const isReferenceTypeOption = (options?: ComplexValSelectOptionType[]) => {
+  const resultBoolean = some(options, (item) => {
+    if (item.value) {
+      return isArray(item.value) || isObject(item.value);
+    }
+    if (item.options) {
+      return some(item.options, (i) => isArray(i.value) || isObject(i.value));
+    }
+    return false;
+  });
+
+  return resultBoolean;
+};
+
 export interface ComplexValSelectProps<T>
   extends Omit<SelectProps, 'value' | 'onChange' | 'options'> {
   value?: T;
@@ -70,15 +85,7 @@ const ComplexValSelect = React.forwardRef<
   React.useImperativeHandle(ref, () => selectRef.current);
 
   // 判断是否需要将optionValue转为JSON字符串
-  const isReferenceTypeVal = some(options, (item) => {
-    if (item.value) {
-      return isArray(item.value) || isObject(item.value);
-    }
-    if (item.options) {
-      return some(item.options, (i) => isArray(i.value) || isObject(i.value));
-    }
-    return false;
-  });
+  const isReferenceTypeVal = isReferenceTypeOption(options);
 
   const finalOptions = (
     isReferenceTypeVal ? formatOptions(options) : options
