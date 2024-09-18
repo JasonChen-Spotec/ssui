@@ -16,7 +16,7 @@ export interface HighlightTextareaProps
   className?: string;
   textAreaClassName?: string;
   onChange?: (value: string, e: React.ChangeEvent<HTMLTextAreaElement>) => void;
-  highlight: HighlightType;
+  highlight?: HighlightType;
 }
 
 const HighlightWithinTextarea = React.forwardRef<

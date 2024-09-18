@@ -19,16 +19,16 @@ export interface RcFile extends File {
 }
 
 export interface ImgCropProps {
-  prefix: string;
-  aspect: number;
-  shape: 'rect' | 'round';
+  prefix?: string;
+  aspect?: number;
+  shape?: 'rect' | 'round';
   grid?: boolean;
   quality?: number;
   zoom?: boolean;
   rotate?: boolean;
-  minZoom: number;
-  maxZoom: number;
-  fillColor: string;
+  minZoom?: number;
+  maxZoom?: number;
+  fillColor?: string;
   modalTitle: string;
   modalWidth?: string | number;
   modalCancel?: string;

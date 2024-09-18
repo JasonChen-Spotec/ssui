@@ -6,7 +6,7 @@ import useQrcode from './useQrcode';
 
 export interface RcQrcodeProps {
   /** 生成二维码的值 */
-  value: QRCodeSegment[] | string;
+  value?: QRCodeSegment[] | string;
   /** qrcode的QRCodeRenderersOptions */
   options?: QRCodeRenderersOptions;
   /** 获取HTMLCanvasElement */
