@@ -4,12 +4,7 @@ import find from 'lodash/find';
 import some from 'lodash/some';
 import isArray from 'lodash/isArray';
 import isObject from 'lodash/isObject';
-import type {
-  BaseOptionType,
-  DefaultOptionType,
-  RefSelectProps,
-  SelectProps,
-} from 'antd/lib/select';
+import type { DefaultOptionType, RefSelectProps, SelectProps } from 'antd/lib/select';
 import Select from 'antd/lib/select';
 import useControllableValue from 'ahooks/lib/useControllableValue';
 
@@ -26,7 +21,7 @@ export type ComplexValSelectValueType =
   | undefined;
 
 export interface ComplexValSelectOptionType
-  extends Omit<BaseOptionType, 'value' | 'children' | 'options'> {
+  extends Omit<DefaultOptionType, 'value' | 'children' | 'options'> {
   value?: ComplexValSelectValueType;
   children?: ComplexValSelectOptionType[];
   options?: Omit<ComplexValSelectOptionType, 'children' | 'options'>[];
