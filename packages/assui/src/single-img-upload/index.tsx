@@ -33,6 +33,8 @@ export interface SingleImgUploadProps extends UploadProps {
   onFormatResData?: (res: any) => string;
 }
 
+const initBeforeUpload = () => true;
+
 const SingleImgUpload = (props: SingleImgUploadProps) => {
   const {
     className,
@@ -44,7 +46,7 @@ const SingleImgUpload = (props: SingleImgUploadProps) => {
     onFormatResData,
     onSuccess,
     onCancel,
-    beforeUpload = () => true,
+    beforeUpload = initBeforeUpload,
     onError,
     disabled,
     ...restProps

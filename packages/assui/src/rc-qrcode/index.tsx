@@ -13,8 +13,10 @@ export interface RcQrcodeProps {
   getCanvasInstance?: (result: HTMLCanvasElement) => void;
 }
 
+const initEmptyObject = {};
+
 const RcQrcode = (props: RcQrcodeProps) => {
-  const { value = '', options = {}, getCanvasInstance } = props;
+  const { value = '', options = initEmptyObject, getCanvasInstance } = props;
   const domElRef = React.useRef<HTMLDivElement>(null);
 
   const defaultOptions = { errorCorrectionLevel: 'H', margin: 0, width: 134 };
