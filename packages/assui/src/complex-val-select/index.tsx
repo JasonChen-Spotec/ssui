@@ -6,6 +6,7 @@ import isArray from 'lodash/isArray';
 import isObject from 'lodash/isObject';
 import type { DefaultOptionType, RefSelectProps, SelectProps } from 'antd/lib/select';
 import Select from 'antd/lib/select';
+import useControllableValue from 'ahooks/lib/useControllableValue';
 
 const { Option } = Select;
 
@@ -72,7 +73,8 @@ const ComplexValSelect = React.forwardRef<
   unknown,
   ComplexValSelectProps<ComplexValSelectValueType>
 >((props, ref) => {
-  const { value, options, onChange, onSelect } = props;
+  const [value, setValue] = useControllableValue(props);
+  const { options, onSelect } = props;
   const selectRef = React.useRef<RefSelectProps>(null);
 
   React.useImperativeHandle(ref, () => selectRef.current);
@@ -86,7 +88,7 @@ const ComplexValSelect = React.forwardRef<
 
   const handleChange: SelectProps['onChange'] = (val) => {
     const nextVal = val && isReferenceTypeVal ? JSON.parse(val as string) : val;
-    onChange?.(nextVal, options);
+    setValue(nextVal, options);
   };
 
   const handleSelect = (val: ComplexValSelectValueType) => {
