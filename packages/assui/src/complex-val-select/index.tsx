@@ -74,7 +74,7 @@ const ComplexValSelect = React.forwardRef<
   ComplexValSelectProps<ComplexValSelectValueType>
 >((props, ref) => {
   const [value, setValue] = useControllableValue(props);
-  const { options, onChange, onSelect } = props;
+  const { options, onSelect } = props;
   const selectRef = React.useRef<RefSelectProps>(null);
 
   React.useImperativeHandle(ref, () => selectRef.current);
@@ -88,8 +88,7 @@ const ComplexValSelect = React.forwardRef<
 
   const handleChange: SelectProps['onChange'] = (val) => {
     const nextVal = val && isReferenceTypeVal ? JSON.parse(val as string) : val;
-    setValue(nextVal);
-    onChange?.(nextVal, options);
+    setValue(nextVal, options);
   };
 
   const handleSelect = (val: ComplexValSelectValueType) => {

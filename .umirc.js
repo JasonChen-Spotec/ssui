@@ -69,8 +69,8 @@ export default defineConfig({
 
   mode: 'site',
   title: 'assui',
-  favicon: '/sui/favicon.ico',
-  logo: '/sui/logo.svg',
+  // favicon: '/sui/favicon.ico',
+  // logo: '/sui/logo.svg',
   locales: [['zh-CN', '中文']],
   dynamicImport: {},
   manifest: {},
