@@ -4,6 +4,7 @@ import React, { useRef, useLayoutEffect } from 'react';
 import useMount from 'ahooks/lib/useMount';
 import useUpdateEffect from 'ahooks/lib/useUpdateEffect';
 import classNames from 'classnames';
+import isEmpty from 'lodash/isEmpty';
 import ResizeObserver from 'resize-observer-polyfill';
 import type { ECharts as EChartsInterfaceType, EChartsOption } from 'echarts';
 
@@ -26,7 +27,7 @@ export interface RcEchartPropsType {
   opts?: Opts;
 }
 
-const initEmptyObject = {};
+const initEmptyObject: Record<string, Function> = {};
 
 const ReactEchartCore = (props: RcEchartPropsType) => {
   const {
