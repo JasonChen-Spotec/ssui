@@ -26,6 +26,8 @@ export interface RcEchartPropsType {
   opts?: Opts;
 }
 
+const initEmptyObject = {};
+
 const ReactEchartCore = (props: RcEchartPropsType) => {
   const {
     className = '',
@@ -33,8 +35,8 @@ const ReactEchartCore = (props: RcEchartPropsType) => {
     echarts,
     notMerge = false,
     lazyUpdate = false,
-    onEvents = {},
-    opts = {},
+    onEvents = initEmptyObject,
+    opts = initEmptyObject,
     theme,
   } = props;
   const chartDomRef = useRef<HTMLDivElement>();
@@ -84,6 +86,7 @@ const ReactEchartCore = (props: RcEchartPropsType) => {
   // need reBuild
   useUpdateEffect(() => {
     dispose();
+    initEcharts();
     renderEchartDom();
     bindEvents();
   }, [theme, opts]);
