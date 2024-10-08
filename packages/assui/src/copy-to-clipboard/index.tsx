@@ -57,7 +57,7 @@ const CopyToClipboard = (props: CopyToClipboardProps) => {
       title={tooltipTitle}
       {...tooltipProps}
     >
-      <span>{React.cloneElement(children, { onClick })}</span>
+      <span onClick={onClick}>{children}</span>
     </Tooltip>
   ) : (
     React.cloneElement(children, { onClick })
