@@ -26,5 +26,4 @@ group:
 <code hideActions='["CSB", "EXTERNAL"]' src="./demo/Form.jsx" />
 
 
-<API></API>
-更多属性请参考 [antd Input](https://ant.design/components/input-cn/)
+ 更多属性请参考 [antd Input](https://ant.design/components/input-cn/)

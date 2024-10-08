@@ -20,4 +20,4 @@ group:
 <code hideActions='["CSB", "EXTERNAL"]' src="./demo/index.tsx" />
 
 ### 1.2. API
-<API></API>
+ 
