@@ -20,8 +20,7 @@ group:
 <code hideActions='["CSB", "EXTERNAL"]' src="./demo/UseQrcode.tsx" />
 
 
-<API></API>
-
+ 
 
 ### 2.1. QRCodeOptions
 ```ts

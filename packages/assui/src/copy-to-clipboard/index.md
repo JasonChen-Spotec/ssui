@@ -20,4 +20,3 @@ group:
 ### 1.2. 显示tooltip成功信息
 <code hideActions='["CSB", "EXTERNAL"]' src="./demo/HasTooltip.tsx" />
 
-<API></API>

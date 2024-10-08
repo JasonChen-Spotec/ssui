@@ -21,5 +21,4 @@ option的value支持复杂类型（object, array）
 <code hideActions='["CSB", "EXTERNAL"]' src="./demo/index.jsx" />
 
 
-<API></API>
-更多属性请参考 [antd Select](https://4x.ant.design/components/select-cn/)
+ 更多属性请参考 [antd Select](https://4x.ant.design/components/select-cn/)

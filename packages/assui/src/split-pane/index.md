@@ -21,7 +21,6 @@ group:
 
 <code hideActions='["CSB", "EXTERNAL"]' src="./demo/Demo2.jsx" />
 
-<API></API>
-
+ 
 > 更多详情[react-split-pane](https://github.com/tomkp/react-split-pane)
 
