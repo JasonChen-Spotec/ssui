@@ -176,6 +176,7 @@ export { default as ListCaptionFilled } from './ListCaptionFilled';
 export { default as ListCaptionOutlined } from './ListCaptionOutlined';
 export { default as ListFilled } from './ListFilled';
 export { default as ListOutlined } from './ListOutlined';
+export { default as LoadingFilled } from './LoadingFilled';
 export { default as LockEllipsisFilled } from './LockEllipsisFilled';
 export { default as LockFilled } from './LockFilled';
 export { default as LockOutlined } from './LockOutlined';
