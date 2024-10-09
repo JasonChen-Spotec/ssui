@@ -28,7 +28,7 @@ group:
 
 <code hideActions='["CSB", "EXTERNAL"]' src="./demo/Count.jsx" />
 
-<API exports='["default"]'></API>
+
 关于`Badge`的更多属性请参考 [antd Badge](https://ant.design/components/badge-cn/)
 
 
