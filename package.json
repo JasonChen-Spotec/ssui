@@ -10,7 +10,7 @@
     "prepare": "husky install",
     "init": "rm -rf node_modules && yarn install && yarn run clean && yarn run bootstrap && yarn run build",
     "start": "yarn run dev",
-    "dev": "dumi dev",
+    "dev": "cross-env NODE_OPTIONS=--openssl-legacy-provider dumi dev",
     "bootstrap": "lerna bootstrap",
     "clean": "lerna clean --yes",
     "build": "lerna run build",
