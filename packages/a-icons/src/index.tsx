@@ -179,6 +179,7 @@ export { default as LayerFilled } from './LayerFilled';
 export { default as LayerOutlined } from './LayerOutlined';
 export { default as LeftOutlined } from './LeftOutlined';
 export { default as LimitlessFilled } from './LimitlessFilled';
+export { default as LineChartUpOutlined } from './LineChartUpOutlined';
 export { default as LineUpFilled } from './LineUpFilled';
 export { default as LineUpOutlined } from './LineUpOutlined';
 export { default as LinkedinFilled } from './LinkedinFilled';
