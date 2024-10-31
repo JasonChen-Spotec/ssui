@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-expressions */
 /* eslint-disable no-restricted-syntax */
-import React, { useRef, useLayoutEffect } from 'react';
+import React, { useRef, useLayoutEffect, useEffect } from 'react';
 import useMount from 'ahooks/lib/useMount';
 import useUpdateEffect from 'ahooks/lib/useUpdateEffect';
 import classNames from 'classnames';
@@ -104,9 +104,10 @@ const ReactEchartCore = (props: RcEchartPropsType) => {
     }
   };
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     const resizeObserver = new ResizeObserver(() => {
       resizeChart();
+      console.log('ddd');
     });
     if (chartDomRef.current) {
       resizeObserver.observe(chartDomRef.current);
