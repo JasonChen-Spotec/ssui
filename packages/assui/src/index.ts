@@ -133,3 +133,6 @@ export { default as MultipartUpload } from './multipart-upload';
 
 export type { ComplexValSelectProps } from './complex-val-select';
 export { default as ComplexValSelect } from './complex-val-select';
+
+export type { CountUpProps } from './count-up';
+export { default as CountUp } from './count-up';
