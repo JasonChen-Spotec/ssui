@@ -1,11 +1,9 @@
 /* eslint-disable no-unused-expressions */
 /* eslint-disable no-restricted-syntax */
-import React, { useRef, useLayoutEffect, useEffect } from 'react';
+import React, { useRef, useEffect } from 'react';
 import useMount from 'ahooks/lib/useMount';
 import useUpdateEffect from 'ahooks/lib/useUpdateEffect';
 import classNames from 'classnames';
-import isEmpty from 'lodash/isEmpty';
-import ResizeObserver from 'resize-observer-polyfill';
 import type { ECharts as EChartsInterfaceType, EChartsOption } from 'echarts';
 
 export type Opts = {
@@ -67,6 +65,8 @@ const ReactEchartCore = (props: RcEchartPropsType) => {
 
   const renderEchartDom = () => {
     if (chartRef.current) {
+      console.log('option', option);
+
       chartRef.current.setOption(option, notMerge, lazyUpdate);
     }
   };
@@ -104,16 +104,12 @@ const ReactEchartCore = (props: RcEchartPropsType) => {
     }
   };
 
+  // 页面卸载，销毁监听
   useEffect(() => {
-    const resizeObserver = new ResizeObserver(() => {
-      resizeChart();
-      console.log('ddd');
-    });
-    if (chartDomRef.current) {
-      resizeObserver.observe(chartDomRef.current);
-    }
+    // 监听echartsResize函数，实现图表自适应
+    window.addEventListener('resize', resizeChart);
     return () => {
-      resizeObserver.disconnect();
+      window.removeEventListener('resize', resizeChart);
     };
   }, []);
 
