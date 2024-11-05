@@ -52,6 +52,7 @@ export { default as ChainFilled } from './ChainFilled';
 export { default as ChainOutlined } from './ChainOutlined';
 export { default as CheckOutlined } from './CheckOutlined';
 export { default as CheckboxMultipleOutlined } from './CheckboxMultipleOutlined';
+export { default as CheckedOutlined } from './CheckedOutlined';
 export { default as ChevronRightOutlined } from './ChevronRightOutlined';
 export { default as ChevronUpFilled } from './ChevronUpFilled';
 export { default as CircleDollarFilled } from './CircleDollarFilled';
