@@ -65,8 +65,6 @@ const ReactEchartCore = (props: RcEchartPropsType) => {
 
   const renderEchartDom = () => {
     if (chartRef.current) {
-      console.log('option', option);
-
       chartRef.current.setOption(option, notMerge, lazyUpdate);
     }
   };
