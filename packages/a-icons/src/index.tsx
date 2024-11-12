@@ -240,6 +240,7 @@ export { default as PeopleQuestionFilled } from './PeopleQuestionFilled';
 export { default as PeopleSettingFilled } from './PeopleSettingFilled';
 export { default as PeopleTeamFilled } from './PeopleTeamFilled';
 export { default as PeopleTeamOutlined } from './PeopleTeamOutlined';
+export { default as PersonGroupFilled } from './PersonGroupFilled';
 export { default as PersonWarningFilled } from './PersonWarningFilled';
 export { default as PhoneOutlined } from './PhoneOutlined';
 export { default as PlayFilled } from './PlayFilled';
@@ -285,6 +286,7 @@ export { default as ShieldTickAsteriskFilled } from './ShieldTickAsteriskFilled'
 export { default as ShopKeeperFilled } from './ShopKeeperFilled';
 export { default as ShopKeeperOutlined } from './ShopKeeperOutlined';
 export { default as SignBankCardFilled } from './SignBankCardFilled';
+export { default as SignalDiffusionFilled } from './SignalDiffusionFilled';
 export { default as SignalDiffusionOutlined } from './SignalDiffusionOutlined';
 export { default as SignalFilled } from './SignalFilled';
 export { default as SignalOutlined } from './SignalOutlined';
