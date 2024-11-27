@@ -1,12 +1,19 @@
 import React from 'react';
-import ReactNumberFormat from 'react-number-format';
+import { NumberFormatBase } from 'react-number-format';
 import classNames from 'classnames';
-import type { NumberFormatProps as ReactNumberFormatProps } from 'react-number-format';
+import type { NumberFormatBaseProps as ReactNumberFormatProps } from 'react-number-format';
 
 export type NumberFormatInputProps = ReactNumberFormatProps;
 
-const NumberFormatInput: React.FC<NumberFormatInputProps> = ({ className, ...restProps }) => (
-  <ReactNumberFormat {...restProps} className={classNames('rc-number-format-input', className)} />
+// TODO  react-number-format 分别封装导出
+const NumberFormatInput: React.FC<NumberFormatInputProps> = ({
+  className,
+  ...restProps
+}) => (
+  <NumberFormatBase
+    {...restProps}
+    className={classNames('rc-number-format-input', className)}
+  />
 );
 
 export default NumberFormatInput;
