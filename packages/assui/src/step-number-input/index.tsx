@@ -73,6 +73,9 @@ const StepNumberInput = (props: StepNumberInputProps) => {
   const disabled = React.useContext(DisabledContext);
   const mergedDisabled = customDisabled ?? disabled;
 
+  const minusDisabled = isEmpty || minCondition || mergedDisabled;
+  const addDisabled = isEmpty || maxCondition || mergedDisabled;
+
   const onNumberChange = (lastValue: string) => {
     if (value !== lastValue) {
       setValue(lastValue);
@@ -112,24 +115,24 @@ const StepNumberInput = (props: StepNumberInputProps) => {
   };
 
   return (
-    <div
-      className={classNames('number-range-input', {
-        'number-range-input-disabled': isEmpty || minCondition || mergedDisabled,
-      })}
-    >
+    <div className="number-range-input">
       <NumberInput
         addonBefore={
           <span
-            onClick={mergedDisabled ? undefined : () => onClickCount(MINUS)}
-            className="count-minus-btn"
+            onClick={minusDisabled ? undefined : () => onClickCount(MINUS)}
+            className={classNames('count-minus-btn', {
+              'disabled-btn': minusDisabled,
+            })}
           >
             -
           </span>
         }
         addonAfter={
           <span
-            onClick={mergedDisabled ? undefined : () => onClickCount(PLUS)}
-            className="count-add-btn"
+            onClick={addDisabled ? undefined : () => onClickCount(PLUS)}
+            className={classNames('count-add-btn', {
+              'disabled-btn': addDisabled,
+            })}
           >
             +
           </span>
