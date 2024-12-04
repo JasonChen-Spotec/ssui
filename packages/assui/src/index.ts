@@ -136,3 +136,5 @@ export { default as ComplexValSelect } from './complex-val-select';
 
 export type { CountUpProps } from './count-up';
 export { default as CountUp } from './count-up';
+export type { CountDownProps } from './count-down';
+export { default as CountDown } from './count-down';
