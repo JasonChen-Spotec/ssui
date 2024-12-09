@@ -170,6 +170,7 @@ export { default as GroupFilled } from './GroupFilled';
 export { default as GroupOutlined } from './GroupOutlined';
 export { default as GrowthGraphOutlined } from './GrowthGraphOutlined';
 export { default as HandCoinsFilled } from './HandCoinsFilled';
+export { default as HandCoinsOutlined } from './HandCoinsOutlined';
 export { default as HomeFilled } from './HomeFilled';
 export { default as HomeOutlined } from './HomeOutlined';
 export { default as HomeWifiOutlined } from './HomeWifiOutlined';
