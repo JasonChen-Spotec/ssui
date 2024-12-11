@@ -22,6 +22,10 @@ group:
 ### 1.3. 按需引入(ts)
 <code hideActions='["CSB", "EXTERNAL"]' src="./demo/MinimalOptionTs.tsx" />
 
+### 1.4. 分段多色直线图
+<code hideActions='["CSB", "EXTERNAL"]' src="./demo/MultipleColorsLine.tsx" />
+
+
 ### API
 
 | 属性名     | 描述                                               | 类型    | 默认值                        |

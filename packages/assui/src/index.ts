@@ -50,7 +50,7 @@ export type { StepNumberInputProps } from './step-number-input';
 export { default as StepNumberInput } from './step-number-input';
 
 export type { RcEchartPropsType } from './rc-echart';
-export { default as RcEcharts } from './rc-echart';
+export { default as RcEchart } from './rc-echart';
 
 export type { RcQrcodeProps } from './rc-qrcode';
 export { default as RcQRcode } from './rc-qrcode';
