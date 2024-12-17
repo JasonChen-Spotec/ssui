@@ -233,6 +233,7 @@ export { default as OppositeArrowsFilled } from './OppositeArrowsFilled';
 export { default as OppositeArrowsOutlined } from './OppositeArrowsOutlined';
 export { default as OtcMerchantLine } from './OtcMerchantLine';
 export { default as OtcMerchant } from './OtcMerchant';
+export { default as PauseCircleFilled } from './PauseCircleFilled';
 export { default as PencilOutlined } from './PencilOutlined';
 export { default as PeopleAddFilled } from './PeopleAddFilled';
 export { default as PeopleAddOutlined } from './PeopleAddOutlined';
