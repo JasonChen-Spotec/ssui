@@ -18,7 +18,11 @@ const downloadFile = (url: string, options: Options = defaultOptions) => {
     xhr.onload = () => {
       const a = document.createElement('a');
       a.href = window.URL.createObjectURL(xhr.response);
-      const resultFileName = fileName || url.split('/').pop();
+      let resultFileName = fileName;
+      if (!resultFileName) {
+        const [path] = url.split('?');
+        resultFileName = path.split('/').pop();
+      }
 
       a.download = decodeURIComponent(resultFileName as string);
       a.click();
