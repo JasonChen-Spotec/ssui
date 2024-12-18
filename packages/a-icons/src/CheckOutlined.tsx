@@ -7,7 +7,7 @@ function CheckOutlined(componentProps: IconProps) {
       <path
         fillRule="evenodd"
         clipRule="evenodd"
-        d="M21.891 5.894L10.125 20.086l-7.859-7.25 2.325-2.52 5.202 4.799 9.459-11.41 2.64 2.19z"
+        d="M21.414 6L9.707 17.707a1 1 0 01-1.414 0L2.586 12 4 10.586l5 5 11-11L21.414 6z"
         fill="currentColor"
       />
     </svg>
