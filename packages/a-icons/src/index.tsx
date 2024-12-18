@@ -257,6 +257,8 @@ export { default as PersonGroupFilled } from './PersonGroupFilled';
 export { default as PersonWarningFilled } from './PersonWarningFilled';
 export { default as PhoneOutlined } from './PhoneOutlined';
 export { default as PlayFilled } from './PlayFilled';
+export { default as PlaySharpFilled } from './PlaySharpFilled';
+export { default as PlusBoldSquareFilled } from './PlusBoldSquareFilled';
 export { default as PlusFilled } from './PlusFilled';
 export { default as PlusOutlined } from './PlusOutlined';
 export { default as QrCodeFilled } from './QrCodeFilled';
