@@ -3,9 +3,11 @@ import Icon, { IconProps } from 'a-base-icon/lib/icon';
 
 function OfficeBagOutlined(componentProps: IconProps) {
   const IconNode = (props: React.SVGProps<SVGSVGElement>) => (
-    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" {...props}>
       <path
-        d="M21 6h-4V5a3 3 0 00-3-3h-4a3 3 0 00-3 3v1H3a1 1 0 00-1 1v4a3 3 0 001 2.22V19a3 3 0 003 3h12a3 3 0 003-3v-5.78A3 3 0 0022 11V7a1 1 0 00-1-1zM9 5a1 1 0 011-1h4a1 1 0 011 1v1H9V5zm10 14a1 1 0 01-1 1H6a1 1 0 01-1-1v-5h2v1a1 1 0 102 0v-1h6v1a1 1 0 002 0v-1h2v5zm1-8a1 1 0 01-1 1h-2v-1a1 1 0 00-2 0v1H9v-1a1 1 0 10-2 0v1H5a1 1 0 01-1-1V8h16v3z"
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M7 3v2H4a3 3 0 00-3 3v11a3 3 0 003 3h16a3 3 0 003-3V8a3 3 0 00-3-3h-3V3a2 2 0 00-2-2H9a2 2 0 00-2 2zm8 0H9v2h6V3zm5 4a1 1 0 011 1v4h-6v-1a1 1 0 00-1-1h-4a1 1 0 00-1 1v1H3V8a1 1 0 011-1h16zM9 14H3v5a1 1 0 001 1h16a1 1 0 001-1v-5h-6v2a1 1 0 01-1 1h-4a1 1 0 01-1-1v-2zm2 1v-3h2v3h-2z"
         fill="currentColor"
       />
     </svg>

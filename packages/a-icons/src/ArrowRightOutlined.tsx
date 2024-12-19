@@ -3,9 +3,11 @@ import Icon, { IconProps } from 'a-base-icon/lib/icon';
 
 function ArrowRightOutlined(componentProps: IconProps) {
   const IconNode = (props: React.SVGProps<SVGSVGElement>) => (
-    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" {...props}>
       <path
-        d="M20.05 11.47l-7-7A.753.753 0 0012 5.55l5.71 5.7H4.48a.75.75 0 000 1.5H17.7l-5.7 5.7a.74.74 0 000 1.06.71.71 0 00.53.22.74.74 0 00.53-.22l7-7a.75.75 0 000-1.06l-.01.02z"
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M14 4.586l6.707 6.707a1 1 0 010 1.414L14 19.414 12.586 18l5-5H3v-2h14.586l-5-5L14 4.586z"
         fill="currentColor"
       />
     </svg>

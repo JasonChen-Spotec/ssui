@@ -5,10 +5,10 @@ function SearchOutlined(componentProps: IconProps) {
   const IconNode = (props: React.SVGProps<SVGSVGElement>) => (
     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" {...props}>
       <path
-        fill="currentColor"
         fillRule="evenodd"
         clipRule="evenodd"
-        d="M4.062 7.67A9.21 9.21 0 0112.539 2a9.21 9.21 0 11-5.38 16.65l-2.88 2.88a.75.75 0 01-1.06-1.06l2.79-2.79A9.21 9.21 0 014.062 7.67zm1.337 6.5a7.72 7.72 0 007.14 4.76v-.04a7.72 7.72 0 007.71-7.67A7.72 7.72 0 105.4 14.17z"
+        d="M11 2a9 9 0 105.36 16.231l3.682 3.683 1.414-1.414-3.632-3.632A9 9 0 0011 2zm-7 9a7 7 0 1114 0 7 7 0 01-14 0z"
+        fill="currentColor"
       />
     </svg>
   );

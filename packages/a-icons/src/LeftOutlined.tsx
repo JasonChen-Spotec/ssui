@@ -3,9 +3,11 @@ import Icon, { IconProps } from 'a-base-icon/lib/icon';
 
 function LeftOutlined(componentProps: IconProps) {
   const IconNode = (props: React.SVGProps<SVGSVGElement>) => (
-    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" {...props}>
       <path
-        d="M16 20.75a.74.74 0 01-.53-.22l-8-8a.75.75 0 010-1.06l8-8a.75.75 0 011.06 1.06L9.06 12l7.47 7.47a.75.75 0 01-.53 1.28z"
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M16.414 6l-6 6 6 6L15 19.414l-6.707-6.707a1 1 0 010-1.414L15 4.586 16.414 6z"
         fill="currentColor"
       />
     </svg>

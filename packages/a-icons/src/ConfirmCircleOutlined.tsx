@@ -3,22 +3,11 @@ import Icon, { IconProps } from 'a-base-icon/lib/icon';
 
 function ConfirmCircleOutlined(componentProps: IconProps) {
   const IconNode = (props: React.SVGProps<SVGSVGElement>) => (
-    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
-      <rect
-        x={3.7}
-        y={3.7}
-        width={16.6}
-        height={16.6}
-        rx={8.3}
-        stroke="currentColor"
-        strokeWidth={1.4}
-      />
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" {...props}>
       <path
-        d="M7.995 12.152a.7.7 0 11.99-.99l2.687 2.687a.7.7 0 11-.99.99l-2.687-2.687z"
-        fill="currentColor"
-      />
-      <path
-        d="M15.49 9.323a.7.7 0 01.99.99l-4.667 4.667a.7.7 0 01-.99-.99l4.667-4.667z"
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M12 3a9 9 0 100 18 9 9 0 000-18zM1 12C1 5.925 5.925 1 12 1s11 4.925 11 11-4.925 11-11 11S1 18.075 1 12zm16.914-3l-6.707 6.707a1 1 0 01-1.414 0L6.086 12 7.5 10.586l3 3 6-6L17.914 9z"
         fill="currentColor"
       />
     </svg>

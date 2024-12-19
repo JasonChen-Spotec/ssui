@@ -3,17 +3,11 @@ import Icon, { IconProps } from 'a-base-icon/lib/icon';
 
 function SquareRightUpOutlined(componentProps: IconProps) {
   const IconNode = (props: React.SVGProps<SVGSVGElement>) => (
-    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" {...props}>
       <path
         fillRule="evenodd"
         clipRule="evenodd"
-        d="M6 9.3a.3.3 0 00-.3.3V18a.3.3 0 00.3.3h12v1.8H6A2.1 2.1 0 013.9 18V9.6c0-1.16.94-2.1 2.1-2.1h12v1.8H6z"
-        fill="currentColor"
-      />
-      <path
-        fillRule="evenodd"
-        clipRule="evenodd"
-        d="M17.7 8.4l-3.84-2.88 1.08-1.44L20.7 8.4l-5.76 4.32-1.08-1.44L17.7 8.4z"
+        d="M16 1.586l4.707 4.707a1 1 0 010 1.414L16 12.414 14.586 11l3-3H10a5 5 0 000 10h11v2H10a7 7 0 110-14h7.586l-3-3L16 1.586z"
         fill="currentColor"
       />
     </svg>

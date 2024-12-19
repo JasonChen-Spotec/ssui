@@ -3,26 +3,12 @@ import Icon, { IconProps } from 'a-base-icon/lib/icon';
 
 function LanguageOutlined(componentProps: IconProps) {
   const IconNode = (props: React.SVGProps<SVGSVGElement>) => (
-    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" {...props}>
       <path
-        d="M10.75 2.45c.7-.59 1.83-.59 2.51 0l1.58 1.35c.3.25.87.46 1.27.46h1.7c1.06 0 1.93.87 1.93 1.93v1.7c0 .4.21.96.46 1.26l1.35 1.58c.59.7.59 1.83 0 2.51l-1.35 1.58c-.25.3-.46.86-.46 1.26v1.7c0 1.06-.87 1.93-1.93 1.93h-1.7c-.4 0-.96.21-1.26.46l-1.58 1.35c-.7.59-1.83.59-2.51 0l-1.58-1.35c-.3-.25-.87-.46-1.26-.46H6.17c-1.06 0-1.93-.87-1.93-1.93v-1.71c0-.39-.2-.96-.45-1.25l-1.35-1.59c-.58-.69-.58-1.81 0-2.5l1.35-1.59c.25-.3.45-.86.45-1.25V6.2c0-1.06.87-1.93 1.93-1.93H7.9c.4 0 .96-.21 1.26-.46l1.59-1.36z"
-        stroke="currentColor"
-        strokeWidth={1.5}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <path
-        d="M8.5 15.94L12 8.06l3.5 7.88"
-        stroke="currentColor"
-        strokeWidth={1.5}
-        strokeLinejoin="bevel"
-      />
-      <path
-        d="M13.75 13.31h-3.5"
-        stroke="currentColor"
-        strokeWidth={1.5}
-        strokeLinecap="round"
-        strokeLinejoin="round"
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M6 1h3v2H6V1zm5.986 3H1v2h9.132l-.91 1.363L7.5 9.086 5 6.586 3.586 8l2.5 2.5-3.5 3.5L4 15.414l3.5-3.5 2.5 2.5L11.414 13l-2.5-2.5 1.793-1.793c.047-.046.088-.098.125-.152L12.535 6H15V4h-3.014zm3.862 5.308a1.5 1.5 0 011.304 0c.359.173.553.475.65.637.1.17.205.387.306.6l5.226 10.926-1.805.863L19.457 18h-5.914l-2.072 4.334-1.805-.863 5.21-10.893.016-.032c.101-.214.205-.43.306-.6.097-.163.291-.465.65-.638zM14.5 16h4l-2-4.182-2 4.182z"
+        fill="currentColor"
       />
     </svg>
   );

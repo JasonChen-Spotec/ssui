@@ -5,33 +5,14 @@ function CardOutlined(componentProps: IconProps) {
   const IconNode = (props: React.SVGProps<SVGSVGElement>) => (
     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" {...props}>
       <path
-        d="M5.4 2.275h13a2.6 2.6 0 012.6 2.6v2.167a2.6 2.6 0 01-2.6 2.6V8.125c.598 0 1.083-.485 1.083-1.083V4.875c0-.598-.485-1.083-1.083-1.083h-13c-.598 0-1.083.485-1.083 1.083v2.167c0 .598.485 1.083 1.083 1.083v1.517a2.6 2.6 0 01-2.6-2.6V4.875a2.6 2.6 0 012.6-2.6z"
+        d="M7 4.5h10v2H7v-2zM8.732 10.64L9.865 12H9v2h2v1H9v2h2v2h2v-2h2v-2h-2v-1h2v-2h-.865l1.133-1.36-1.536-1.28L12 11.438 10.268 9.36l-1.536 1.28z"
         fill="currentColor"
       />
-      <rect
-        fill="#fff"
-        x={5.783}
-        y={6.258}
-        width={12.233}
-        height={16.567}
-        rx={1.7}
-        stroke="currentColor"
-        strokeWidth={1.4}
-      />
-      <path d="M8.65 6.958v15.167" stroke="currentColor" strokeWidth={1.4} />
-      <mask id="card-outlined_svg__a" fill="#fff">
-        <rect x={11.9} y={15.625} width={4.333} height={5.417} rx={1} />
-      </mask>
-      <rect
-        fill="#fff"
-        x={11.9}
-        y={15.625}
-        width={4.333}
-        height={5.417}
-        rx={1}
-        stroke="currentColor"
-        strokeWidth={2.8}
-        mask="url(#card-outlined_svg__a)"
+      <path
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M5 1a3 3 0 00-3 3v3a3 3 0 003 3v10a3 3 0 003 3h8a3 3 0 003-3V10a3 3 0 003-3V4a3 3 0 00-3-3H5zM4 4a1 1 0 011-1h14a1 1 0 011 1v3a1 1 0 01-1 1h-1.5a.5.5 0 00-.5.5V20a1 1 0 01-1 1H8a1 1 0 01-1-1V8.5a.5.5 0 00-.5-.5H5a1 1 0 01-1-1V4z"
+        fill="currentColor"
       />
     </svg>
   );
