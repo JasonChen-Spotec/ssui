@@ -1,8 +1,5 @@
-<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <path
-    d="M20.2204 14.89C20.4804 14.02 20.6504 13.06 20.6504 12C20.6504 7.21002 16.7704 3.33002 11.9804 3.33002C7.18039 3.33002 3.30039 7.21002 3.30039 12C3.30039 16.79 7.18039 20.67 11.9704 20.67C13.7504 20.67 15.4104 20.13 16.7904 19.21"
-    stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-  <path d="M19.68 16.13L23 13.24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-  <path d="M19.6797 16.13L17.2197 12.76" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-    stroke-linejoin="round" />
+<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" clip-rule="evenodd"
+    d="M2 12C2 6.47715 6.47715 2 12 2C14.7624 2 17.2648 3.12139 19.0735 4.93138C19.7132 5.57146 20.3981 6.36248 21 7.09444V3H23V10C23 10.5523 22.5523 11 22 11H15V9H19.9692C19.277 8.13128 18.4165 7.10335 17.6588 6.34511C16.2098 4.89514 14.2104 4 12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20C15.6457 20 18.7243 17.5605 19.6874 14.2227L19.9647 13.262L21.8863 13.8165L21.609 14.7773C20.4055 18.9481 16.5605 22 12 22C6.47715 22 2 17.5228 2 12Z"
+    fill="currentColor" />
 </svg>

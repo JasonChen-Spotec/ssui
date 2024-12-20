@@ -3,9 +3,9 @@ import Icon, { IconProps } from 'a-base-icon/lib/icon';
 
 function DoubleUsersOutlined(componentProps: IconProps) {
   const IconNode = (props: React.SVGProps<SVGSVGElement>) => (
-    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" {...props}>
       <path
-        d="M12.3 12.22A4.92 4.92 0 0014 8.5a5 5 0 00-10 0 4.92 4.92 0 001.7 3.72A8 8 0 001 19.5a1 1 0 102 0 6 6 0 1112 0 1 1 0 002 0 8 8 0 00-4.7-7.28zM9 11.5a3 3 0 110-6 3 3 0 010 6zm9.74.32A5 5 0 0015 3.5a1 1 0 100 2 3 3 0 013 3 3 3 0 01-1.5 2.59 1 1 0 00-.05 1.7l.39.26.13.07a7 7 0 014 6.38 1 1 0 002 0 9 9 0 00-4.23-7.68z"
+        d="M2 22a8 8 0 1116 0h-2a6 6 0 00-12 0H2zm8-9c-3.315 0-6-2.685-6-6s2.685-6 6-6 6 2.685 6 6-2.685 6-6 6zm0-2c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm8.284 3.703A8.002 8.002 0 0123 22h-2a6.001 6.001 0 00-3.537-5.473l.82-1.824zm-.688-11.29A5.5 5.5 0 0121 8.5a5.499 5.499 0 01-5 5.478v-2.013a3.5 3.5 0 001.041-6.609l.555-1.943z"
         fill="currentColor"
       />
     </svg>

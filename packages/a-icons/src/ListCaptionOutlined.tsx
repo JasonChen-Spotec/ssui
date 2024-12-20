@@ -7,7 +7,7 @@ function ListCaptionOutlined(componentProps: IconProps) {
       <path
         fillRule="evenodd"
         clipRule="evenodd"
-        d="M15.37 10.5H5.75a.75.75 0 010-1.5h9.62a.75.75 0 010 1.5zM5.75 14h12.82a.75.75 0 010 1.5H5.75a.75.75 0 010-1.5z"
+        d="M2 7.5h12v2H2v-2zm0 7h20v2H2v-2z"
         fill="currentColor"
       />
     </svg>

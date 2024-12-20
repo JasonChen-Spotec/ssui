@@ -4,25 +4,11 @@ import Icon, { IconProps } from 'a-base-icon/lib/icon';
 function ClockCircleOutline(componentProps: IconProps) {
   const IconNode = (props: React.SVGProps<SVGSVGElement>) => (
     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" {...props}>
-      <rect
-        fill="#fff"
-        x={3.7}
-        y={3.7}
-        width={16.6}
-        height={16.6}
-        rx={8.3}
-        stroke="currentColor"
-        strokeWidth={1.4}
-      />
-      <rect fill="currentColor" x={11} y={7} width={1.4} height={6} rx={0.7} />
-      <rect
+      <path
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M12 3a9 9 0 100 18 9 9 0 000-18zM1 12C1 5.925 5.925 1 12 1s11 4.925 11 11-4.925 11-11 11S1 18.075 1 12zm12-7v6.382l4.342 2.17-.895 1.79-4.894-2.448A1 1 0 0111 12V5h2z"
         fill="currentColor"
-        x={17}
-        y={12}
-        width={1.4}
-        height={6}
-        rx={0.7}
-        transform="rotate(90 17 12)"
       />
     </svg>
   );

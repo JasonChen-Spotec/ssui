@@ -3,18 +3,11 @@ import Icon, { IconProps } from 'a-base-icon/lib/icon';
 
 function GroupOutlined(componentProps: IconProps) {
   const IconNode = (props: React.SVGProps<SVGSVGElement>) => (
-    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" {...props}>
       <path
         fillRule="evenodd"
         clipRule="evenodd"
-        d="M10.25 2h3.5A2.25 2.25 0 0116 4.25v3.5A2.25 2.25 0 0113.75 10h-3.5A2.25 2.25 0 018 7.75v-3.5A2.25 2.25 0 0110.25 2zm3.5 6.5a.75.75 0 00.75-.75v-3.5a.75.75 0 00-.75-.75h-3.5a.76.76 0 00-.75.75v3.5a.76.76 0 00.75.75h3.5z"
-        fill="currentColor"
-      />
-      <path d="M12 9v3.5l-3 2M12 12.5l3 2" stroke="currentColor" strokeWidth={1.5} />
-      <path
-        fillRule="evenodd"
-        clipRule="evenodd"
-        d="M16.25 13h3.5A2.25 2.25 0 0122 15.25v3.5A2.25 2.25 0 0119.75 21h-3.5A2.25 2.25 0 0114 18.75v-3.5A2.25 2.25 0 0116.25 13zm3.5 6.5a.75.75 0 00.75-.75v-3.5a.75.75 0 00-.75-.75h-3.5a.76.76 0 00-.75.75v3.5a.76.76 0 00.75.75h3.5zM4.25 13h3.5A2.25 2.25 0 0110 15.25v3.5A2.25 2.25 0 017.75 21h-3.5A2.25 2.25 0 012 18.75v-3.5A2.25 2.25 0 014.25 13zm3.5 6.5a.75.75 0 00.75-.75v-3.5a.75.75 0 00-.75-.75h-3.5a.76.76 0 00-.75.75v3.5a.76.76 0 00.75.75h3.5z"
+        d="M8.914 1.636a2 2 0 00-2 2v3.398a2 2 0 002 2H11V11.5H8.222a3 3 0 00-3 3v.647H3.636a2 2 0 00-2 2v3.217a2 2 0 002 2H9.56a2 2 0 002-2v-3.217a2 2 0 00-2-2H7.222V14.5a1 1 0 011-1h7.556a1 1 0 011 1v.647h-2.337a2 2 0 00-2 2v3.217a2 2 0 002 2h5.923a2 2 0 002-2v-3.217a2 2 0 00-2-2h-1.586V14.5a3 3 0 00-3-3H13V9.034h2.086a2 2 0 002-2V3.636a2 2 0 00-2-2H8.914zm6.172 2H8.914v3.398h6.172V3.636zM9.56 17.147H3.636v3.217H9.56v-3.217zm4.882 0h5.923v3.217H14.44v-3.217z"
         fill="currentColor"
       />
     </svg>

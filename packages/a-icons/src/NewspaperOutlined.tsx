@@ -3,9 +3,12 @@ import Icon, { IconProps } from 'a-base-icon/lib/icon';
 
 function NewspaperOutlined(componentProps: IconProps) {
   const IconNode = (props: React.SVGProps<SVGSVGElement>) => (
-    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" {...props}>
+      <path d="M14 7H6v2h8V7zM14 11H6v2h8v-2zM6 15h5v2H6v-2z" fill="currentColor" />
       <path
-        d="M17 11h-1a1 1 0 000 2h1a1 1 0 000-2zm0 4h-1a1 1 0 000 2h1a1 1 0 000-2zm-6-6h6a1 1 0 100-2h-6a1 1 0 100 2zm10-6H7a1 1 0 00-1 1v3H3a1 1 0 00-1 1v10a3 3 0 003 3h13a4 4 0 004-4V4a1 1 0 00-1-1zM6 18a1 1 0 11-2 0V9h2v9zm14-1a2 2 0 01-2 2H7.82A3 3 0 008 18V5h12v12zm-9-4h1a1 1 0 000-2h-1a1 1 0 000 2zm0 4h1a1 1 0 000-2h-1a1 1 0 000 2z"
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M2 6a4 4 0 014-4h8a4 4 0 014 4v2h1.91c1.154 0 2.09.936 2.09 2.09V19a3 3 0 01-3 3H6a4 4 0 01-4-4V6zm18 13a1 1 0 01-2 0v-9h1.91c.05 0 .09.04.09.09V19zM16 6v14H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2z"
         fill="currentColor"
       />
     </svg>

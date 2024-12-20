@@ -3,9 +3,13 @@ import Icon, { IconProps } from 'a-base-icon/lib/icon';
 
 function GrowthGraphOutlined(componentProps: IconProps) {
   const IconNode = (props: React.SVGProps<SVGSVGElement>) => (
-    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" {...props}>
       <path
-        d="M7 16a1.5 1.5 0 001.5-1.5.77.77 0 000-.15l2.79-2.79h.46l1.61 1.61v.08a1.5 1.5 0 103 0v-.08L20 9.5A1.5 1.5 0 1018.5 8a.767.767 0 000 .15l-3.61 3.61h-.16L13 10a1.5 1.5 0 10-3 0l-3 3a1.5 1.5 0 100 3zm13.5 4h-17V3a1 1 0 00-2 0v18a1 1 0 001 1h18a1 1 0 000-2z"
+        d="M2.032 2.154v16.692a3 3 0 003 3h16.936v-2H5.032a1 1 0 01-1-1V2.154h-2z"
+        fill="currentColor"
+      />
+      <path
+        d="M16.913 12.726l4.602-4.913-1.46-1.367-4.498 4.802-3.123-1.622a3.744 3.744 0 01-.037-.02c-.134-.07-.412-.22-.722-.247a1.5 1.5 0 00-.758.13c-.283.129-.495.361-.598.473a2.69 2.69 0 01-.028.031l-4.603 4.912 1.46 1.368 4.499-4.802 3.123 1.622.037.02c.134.07.411.22.72.247a1.5 1.5 0 00.76-.13c.282-.129.495-.361.597-.473l.029-.031z"
         fill="currentColor"
       />
     </svg>

@@ -3,10 +3,13 @@ import Icon, { IconProps } from 'a-base-icon/lib/icon';
 
 function DoubleChevronOutlined(componentProps: IconProps) {
   const IconNode = (props: React.SVGProps<SVGSVGElement>) => (
-    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
-      <g fillRule="evenodd" clipRule="evenodd" fill="currentColor">
-        <path d="M18.64 5.232a1 1 0 01.128 1.408L14.302 12l4.466 5.36a1 1 0 01-1.536 1.28l-4.467-5.36a2 2 0 010-2.56l4.467-5.36a1 1 0 011.408-.128zM10.64 5.232a1 1 0 01.128 1.408L6.302 12l4.466 5.36a1 1 0 01-1.536 1.28l-4.467-5.36a2 2 0 010-2.56l4.467-5.36a1 1 0 011.408-.128z" />
-      </g>
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" {...props}>
+      <path
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M12.414 7l-5 5 5 5L11 18.414l-5.707-5.707a1 1 0 010-1.414L11 5.586 12.414 7zm7 0l-5 5 5 5L18 18.414l-5.707-5.707a1 1 0 010-1.414L18 5.586 19.414 7z"
+        fill="currentColor"
+      />
     </svg>
   );
 
