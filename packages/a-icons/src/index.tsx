@@ -6,6 +6,7 @@ export { default as AddOutlined } from './AddOutlined';
 export { default as AlertTriangleFilled } from './AlertTriangleFilled';
 export { default as AlertTriangleOutlined } from './AlertTriangleOutlined';
 export { default as AppstoreOutlined } from './AppstoreOutlined';
+export { default as ArrowCircleOutlined } from './ArrowCircleOutlined';
 export { default as ArrowDownFilled } from './ArrowDownFilled';
 export { default as ArrowDropDownFilled } from './ArrowDropDownFilled';
 export { default as ArrowLeftOutlined } from './ArrowLeftOutlined';
