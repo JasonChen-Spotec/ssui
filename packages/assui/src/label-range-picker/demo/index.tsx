@@ -10,6 +10,9 @@ const Demo = () => {
   return (
     <Form onFinish={onFinish} style={{ width: 500 }}>
       <Form.Item name="account" rules={[{ required: true }]}>
+        <LabelRangePicker showTime label="结算时间" />
+      </Form.Item>
+      <Form.Item name="date" rules={[{ required: true }]}>
         <LabelRangePicker label="结算时间" />
       </Form.Item>
       <Button htmlType="submit">提交</Button>
