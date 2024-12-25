@@ -14,7 +14,7 @@ export interface LabelRangePickerProps extends Omit<RangePickerProps, 'label'> {
 }
 
 const LabelDatePicker: React.FC<LabelRangePickerProps> = (props) => {
-  const { className, label } = props;
+  const { className, label, showTime, ...restProps } = props;
   const datePickerRef = React.useRef<any>(null);
   const [open, onOpenChange] = useControllableValue(props, {
     valuePropName: 'open',
@@ -50,9 +50,10 @@ const LabelDatePicker: React.FC<LabelRangePickerProps> = (props) => {
       )}
     >
       <RangePicker
-        format="YYYY.MM.DD"
+        format={showTime ? 'YYYY.MM.DD HH:mm:ss' : 'YYYY.MM.DD'}
         allowEmpty={[true, true]}
-        {...omit(props, 'onOpenChange')}
+        showTime={showTime}
+        {...omit(restProps, 'onOpenChange')}
         separator="–"
         open={open}
         onChange={handleChange}
