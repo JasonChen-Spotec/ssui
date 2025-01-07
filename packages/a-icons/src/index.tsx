@@ -84,6 +84,7 @@ export { default as ComputerFilled } from './ComputerFilled';
 export { default as ComputerOutlined } from './ComputerOutlined';
 export { default as ConfirmCircleFilled } from './ConfirmCircleFilled';
 export { default as ConfirmCircleOutlined } from './ConfirmCircleOutlined';
+export { default as ConfirmCircleSolidFilled } from './ConfirmCircleSolidFilled';
 export { default as CopyFilled } from './CopyFilled';
 export { default as CopyLineOutlined } from './CopyLineOutlined';
 export { default as CornerRightArrowsOutlined } from './CornerRightArrowsOutlined';
