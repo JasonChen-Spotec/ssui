@@ -270,6 +270,7 @@ const ImgCrop = (props: ImgCropProps) => {
           onCancel={onClose}
           maskClosable={false}
           destroyOnClose
+          centered
           {...modalProps}
         >
           <EasyCrop
