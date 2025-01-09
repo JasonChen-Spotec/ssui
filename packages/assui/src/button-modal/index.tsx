@@ -70,7 +70,6 @@ const ButtonModal: React.ForwardRefRenderFunction<unknown, ButtonModalProps> = (
         open={visible}
         onOk={handleModalOk}
         onCancel={handleModalCancel}
-        centered
         maskClosable={false}
         closeIcon={<CloseOutlined />}
         {...restModalProps}
