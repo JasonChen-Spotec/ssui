@@ -3,12 +3,13 @@ import Icon, { IconProps } from 'a-base-icon/lib/icon';
 
 function TrashCanFilled(componentProps: IconProps) {
   const IconNode = (props: React.SVGProps<SVGSVGElement>) => (
-    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" {...props}>
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+      <path d="M16 2H8v2h8V2z" fill="currentColor" />
       <path
-        fill="currentColor"
         fillRule="evenodd"
         clipRule="evenodd"
-        d="M18.75 5h-2.67l-1.21-1.32A2.37 2.37 0 0013.21 3h-2.92a2.39 2.39 0 00-1.68.71L7.42 5H4.75a.75.75 0 000 1.5h14a.75.75 0 000-1.5zm-9.06-.26a.86.86 0 01.6-.25h2.92a.84.84 0 01.58.23l.25.27H9.46l.23-.25zM4.23 9.52V17a4.46 4.46 0 004.46 4.46h6.12A4.46 4.46 0 0019.27 17V9.52a2 2 0 00-2-2h-11a2 2 0 00-2.04 2zm5.27 3.53a.75.75 0 01-1.5 0v-2.37a.75.75 0 011.5 0v2.37zm2.25 4.7a.75.75 0 00.75-.75v-6.32a.75.75 0 00-1.5 0V17c0 .414.336.75.75.75zm3.75-4.7a.75.75 0 01-1.5 0v-2.37a.75.75 0 011.5 0v2.37z"
+        d="M2 5h20v2h-2.064l-.642 9.625c-.05.756-.092 1.381-.167 1.89-.078.53-.201 1.014-.458 1.465a4 4 0 01-1.731 1.62c-.467.226-.959.317-1.493.36-.512.04-1.139.04-1.896.04h-3.098c-.757 0-1.384 0-1.896-.04-.534-.043-1.025-.134-1.493-.36a4 4 0 01-1.73-1.62c-.258-.451-.381-.935-.46-1.465-.074-.509-.116-1.134-.166-1.89L4.064 7H2V5zm7 11.5h2v-7H9v7zm4 0h2v-7h-2v7z"
+        fill="currentColor"
       />
     </svg>
   );
