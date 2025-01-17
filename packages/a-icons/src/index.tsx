@@ -44,6 +44,7 @@ export { default as BrokenLineOutlined } from './BrokenLineOutlined';
 export { default as BusinessCardFilled } from './BusinessCardFilled';
 export { default as BusinessCardOutlined } from './BusinessCardOutlined';
 export { default as CalendarOutlined } from './CalendarOutlined';
+export { default as CallFilled } from './CallFilled';
 export { default as CallOutlined } from './CallOutlined';
 export { default as CameraFilled } from './CameraFilled';
 export { default as CameraOutlined } from './CameraOutlined';
