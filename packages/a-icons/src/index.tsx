@@ -244,6 +244,7 @@ export { default as PeopleSettingFilled } from './PeopleSettingFilled';
 export { default as PeopleTeamFilled } from './PeopleTeamFilled';
 export { default as PeopleTeamOutlined } from './PeopleTeamOutlined';
 export { default as PersonGroupFilled } from './PersonGroupFilled';
+export { default as PersonLeftArrowFilled } from './PersonLeftArrowFilled';
 export { default as PersonWarningFilled } from './PersonWarningFilled';
 export { default as PhoneOutlined } from './PhoneOutlined';
 export { default as PlayFilled } from './PlayFilled';
