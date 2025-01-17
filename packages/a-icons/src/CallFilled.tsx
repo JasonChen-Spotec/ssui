@@ -4,7 +4,7 @@ import Icon, { IconProps } from 'a-base-icon/lib/icon';
 function CallFilled(componentProps: IconProps) {
   const IconNode = (props: React.SVGProps<SVGSVGElement>) => (
     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" {...props}>
-      <rect width={24} height={24} rx={12} fill="currentColor" />
+      <rect width="100%" height="100%" rx={12} fill="currentColor" />
       <path
         fillRule="evenodd"
         clipRule="evenodd"
