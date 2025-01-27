@@ -59,7 +59,7 @@ const ImgCrop = (props: ImgCropProps) => {
     aspect = 1,
     shape = 'rect',
     grid = false,
-    quality = 0.4,
+    quality = 1,
     zoom = true,
     rotate = false,
     minZoom = 1,
