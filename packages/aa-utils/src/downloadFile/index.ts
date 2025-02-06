@@ -19,11 +19,19 @@ const downloadFile = (url: string, options: Options = defaultOptions) => {
       const a = document.createElement('a');
       a.href = window.URL.createObjectURL(xhr.response);
       let resultFileName = fileName;
+      const [path] = url.split('?');
       if (!resultFileName) {
-        const [path] = url.split('?');
         resultFileName = path.split('/').pop();
+      } else {
+        const originalExt = path.split('/').pop()?.split('.').pop();
+        // 如果提供的 fileName 没有扩展名，则添加原始扩展名
+        if (
+          originalExt &&
+          !fileName?.toLowerCase().endsWith(`.${originalExt.toLowerCase()}`)
+        ) {
+          resultFileName = `${fileName}.${originalExt}`;
+        }
       }
-
       a.download = decodeURIComponent(resultFileName as string);
       a.click();
       window.URL.revokeObjectURL(a.href);
