@@ -3,11 +3,14 @@ import Icon, { IconProps } from 'a-base-icon/lib/icon';
 
 function ErrorWarningFilled(componentProps: IconProps) {
   const IconNode = (props: React.SVGProps<SVGSVGElement>) => (
-    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" {...props}>
       <path
-        d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm-1-7v2h2v-2h-2zm0-8v6h2V7h-2z"
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M12 23c6.075 0 11-4.925 11-11S18.075 1 12 1 1 5.925 1 12s4.925 11 11 11z"
         fill="currentColor"
       />
+      <path d="M11 18v-2h2v2h-2zM11 14V6h2v8h-2z" fill="inherit" />
     </svg>
   );
 
