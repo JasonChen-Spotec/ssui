@@ -98,6 +98,7 @@ export { default as CyclePlusFilled } from './CyclePlusFilled';
 export { default as DailyFinanceOutlined } from './DailyFinanceOutlined';
 export { default as DashboardFilled } from './DashboardFilled';
 export { default as DashboardOutlined } from './DashboardOutlined';
+export { default as DataLogOutlined } from './DataLogOutlined';
 export { default as DataPanelOutlined } from './DataPanelOutlined';
 export { default as DescOutlined } from './DescOutlined';
 export { default as DiamondFileFilled } from './DiamondFileFilled';
