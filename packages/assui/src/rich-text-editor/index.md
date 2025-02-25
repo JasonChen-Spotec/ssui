@@ -14,17 +14,17 @@ group:
 ##  1. 代码演示
 ### 1.1. 基础用法
 
-<code hideActions='["CSB", "EXTERNAL"]' src="./demo/index.tsx" />
+<code hideActions='["CSB", "EXTERNAL"]' src="./demo/index.tsx" ></code>
 
 
 ### 1.2. 结合antd from使用
-<code hideActions='["CSB", "EXTERNAL"]' src="./demo/Form.jsx" />
+<code hideActions='["CSB", "EXTERNAL"]' src="./demo/Form.jsx" ></code>
 
 
 ### 1.3. 插入tag
-<code hideActions='["CSB", "EXTERNAL"]' src="./demo/InsertTag.tsx" />
+<code hideActions='["CSB", "EXTERNAL"]' src="./demo/InsertTag.tsx" ></code>
 
 ### 1.4. 自定义工具栏
-<code hideActions='["CSB", "EXTERNAL"]' src="./demo/SelfSetToolbar.tsx" />
+<code hideActions='["CSB", "EXTERNAL"]' src="./demo/SelfSetToolbar.tsx" ></code>
 
  

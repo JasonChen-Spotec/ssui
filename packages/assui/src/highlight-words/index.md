@@ -15,10 +15,10 @@ group:
 ## 1. 代码演示
 ### 1.1. 基本演示
 
-<code hideActions='["CSB", "EXTERNAL"]' src="./demo/index.jsx" />
+<code hideActions='["CSB", "EXTERNAL"]' src="./demo/index.jsx" ></code>
 
 ### 1.2. Active index
-<code hideActions='["CSB", "EXTERNAL"]' src="./demo/Active.jsx" />
+<code hideActions='["CSB", "EXTERNAL"]' src="./demo/Active.jsx" ></code>
 
 
 ## 2. API

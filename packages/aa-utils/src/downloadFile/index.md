@@ -16,7 +16,7 @@ group:
 ## 1. 代码演示
 ### 1.1. 格式化
 
-<code hideActions='["CSB", "EXTERNAL"]' src="./demo/index.jsx" />
+<code hideActions='["CSB", "EXTERNAL"]' src="./demo/index.jsx" ></code>
 
 
 ## 2. API

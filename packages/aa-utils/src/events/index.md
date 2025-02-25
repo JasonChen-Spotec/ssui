@@ -16,10 +16,10 @@ events 只提供了一个对象： events.EventEmitter。 EventEmitter 的核心
 
 ## 基本用法
 
-<code hideActions='["CSB", "EXTERNAL"]' src="./demo/base/index.jsx" />
+<code hideActions='["CSB", "EXTERNAL"]' src="./demo/base/index.jsx" ></code>
 
 ## 只执行一次
-<code hideActions='["CSB", "EXTERNAL"]' src="./demo/once.jsx" />
+<code hideActions='["CSB", "EXTERNAL"]' src="./demo/once.jsx" ></code>
 
 ## API
 属性如下

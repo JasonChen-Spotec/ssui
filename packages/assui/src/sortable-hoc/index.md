@@ -15,17 +15,17 @@ group:
 
 ### 1.1. 基本应用
 
-<code hideActions='["CSB", "EXTERNAL"]' src="./demo/VerticalListBase/index.jsx" />
+<code hideActions='["CSB", "EXTERNAL"]' src="./demo/VerticalListBase/index.jsx" ></code>
 
 ## 2. Grid
 ### 2.1. 基本应用
-<code hideActions='["CSB", "EXTERNAL"]' src="./demo/Grid/Base.jsx" />
+<code hideActions='["CSB", "EXTERNAL"]' src="./demo/Grid/Base.jsx" ></code>
 
 ### 2.2. 第一个总是变大
-<code hideActions='["CSB", "EXTERNAL"]' src="./demo/Grid/LargeFirstItem.jsx" />
+<code hideActions='["CSB", "EXTERNAL"]' src="./demo/Grid/LargeFirstItem.jsx" ></code>
 
 ## 3. 使用手柄拖拽
-<code hideActions='["CSB", "EXTERNAL"]' src="./demo/DragHandle/index.jsx" />
+<code hideActions='["CSB", "EXTERNAL"]' src="./demo/DragHandle/index.jsx" ></code>
 
 
 ## 4. API

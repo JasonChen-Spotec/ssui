@@ -16,13 +16,13 @@ group:
 ## 基本使用
 检查目标元素的可见性，如果小于100%,则会滚动
 
-<code hideActions='["CSB", "EXTERNAL"]' src="./demo/Base.jsx" />
+<code hideActions='["CSB", "EXTERNAL"]' src="./demo/Base.jsx" ></code>
 
 ## 滚动对齐
-<code hideActions='["CSB", "EXTERNAL"]' src="./demo/Alignment.jsx" />
+<code hideActions='["CSB", "EXTERNAL"]' src="./demo/Alignment.jsx" ></code>
 
 ## 自定义过渡效果
-<code hideActions='["CSB", "EXTERNAL"]' src="./demo/CustomTransition/index.jsx" />
+<code hideActions='["CSB", "EXTERNAL"]' src="./demo/CustomTransition/index.jsx" ></code>
 
 
 ## api

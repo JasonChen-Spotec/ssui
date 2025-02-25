@@ -14,16 +14,16 @@ group:
 
 ## 1. 代码演示
 ### 1.1. 使用默认全量导入的echarts
-<code hideActions='["CSB", "EXTERNAL"]' src="./demo/index.jsx" />
+<code hideActions='["CSB", "EXTERNAL"]' src="./demo/index.jsx" ></code>
 
 ### 1.2. 按需引入(js)
-<code hideActions='["CSB", "EXTERNAL"]' src="./demo/MinimalOption.jsx" />
+<code hideActions='["CSB", "EXTERNAL"]' src="./demo/MinimalOption.jsx" ></code>
 
 ### 1.3. 按需引入(ts)
-<code hideActions='["CSB", "EXTERNAL"]' src="./demo/MinimalOptionTs.tsx" />
+<code hideActions='["CSB", "EXTERNAL"]' src="./demo/MinimalOptionTs.tsx" ></code>
 
 ### 1.4. 分段多色直线图
-<code hideActions='["CSB", "EXTERNAL"]' src="./demo/MultipleColorsLine.tsx" />
+<code hideActions='["CSB", "EXTERNAL"]' src="./demo/MultipleColorsLine.tsx" ></code>
 
 
 ### API

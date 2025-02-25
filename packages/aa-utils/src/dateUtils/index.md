@@ -16,14 +16,14 @@ group:
 ## 1. 代码演示
 ### 1.1. 格式化
 
-<code hideActions='["CSB", "EXTERNAL"]' src="./demo/index.jsx" />
+<code hideActions='["CSB", "EXTERNAL"]' src="./demo/index.jsx" ></code>
 
 ### 1.2. 解析
-<code hideActions='["CSB", "EXTERNAL"]' src="./demo/parseDate.jsx" />
+<code hideActions='["CSB", "EXTERNAL"]' src="./demo/parseDate.jsx" ></code>
 
 ### 1.3. 其他功能
 
-<code hideActions='["CSB", "EXTERNAL"]' src="./demo/other.jsx" />
+<code hideActions='["CSB", "EXTERNAL"]' src="./demo/other.jsx" ></code>
 
 ## 2. API
 ### 2.1. 实例方法

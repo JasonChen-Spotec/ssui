@@ -17,11 +17,11 @@ group:
 
 ### 1.1. basic
 
-<code hideActions='["CSB", "EXTERNAL"]' src="./demo/basic.tsx" />
+<code hideActions='["CSB", "EXTERNAL"]' src="./demo/basic.tsx" ></code>
 
 ### 1.1. wrap
 
-<code hideActions='["CSB", "EXTERNAL"]' src="./demo/wrap.tsx" />
+<code hideActions='["CSB", "EXTERNAL"]' src="./demo/wrap.tsx" ></code>
 
 
 ## Flex

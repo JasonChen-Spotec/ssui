@@ -15,12 +15,12 @@ group:
 
 ## 1. 代码演示
 ### 1.1. Tables
-<code hideActions='["CSB", "EXTERNAL"]' src="./demo/Tables/index.tsx" />
+<code hideActions='["CSB", "EXTERNAL"]' src="./demo/Tables/index.tsx" ></code>
 
 ### 1.2 OnBeforeCapture
 
-<code hideActions='["CSB", "EXTERNAL"]' src="./demo/OnBeforeCapture/AddingThings.tsx" />
+<code hideActions='["CSB", "EXTERNAL"]' src="./demo/OnBeforeCapture/AddingThings.tsx" ></code>
 
 ### 1.2. MultiDrag
-<code hideActions='["CSB", "EXTERNAL"]' src="./demo/MultiDrag/index.tsx" />
+<code hideActions='["CSB", "EXTERNAL"]' src="./demo/MultiDrag/index.tsx" ></code>
 

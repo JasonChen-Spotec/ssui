@@ -15,28 +15,28 @@ group:
 
 ### 1.1. 高亮固定string
 
-<code hideActions='["CSB", "EXTERNAL"]' src="./demo/String.jsx" />
+<code hideActions='["CSB", "EXTERNAL"]' src="./demo/String.jsx" ></code>
 
 ### 1.2. 高亮固定RegExp配置的字符串
 
-<code hideActions='["CSB", "EXTERNAL"]' src="./demo/RegExp.jsx" />
+<code hideActions='["CSB", "EXTERNAL"]' src="./demo/RegExp.jsx" ></code>
 
 ### 1.3. 高级固定长度区间的字符串
 
-<code hideActions='["CSB", "EXTERNAL"]' src="./demo/Range.jsx" />
+<code hideActions='["CSB", "EXTERNAL"]' src="./demo/Range.jsx" ></code>
 
 ### 1.4. 同时高亮固定字符串、正则匹配、固定区间的字符串
-<code hideActions='["CSB", "EXTERNAL"]' src="./demo/Things.jsx" />
+<code hideActions='["CSB", "EXTERNAL"]' src="./demo/Things.jsx" ></code>
 
 ### 1.5. 自定义函数
-<code hideActions='["CSB", "EXTERNAL"]' src="./demo/Function.jsx" />
+<code hideActions='["CSB", "EXTERNAL"]' src="./demo/Function.jsx" ></code>
 
 ### 1.6. 自定义高亮字符串的class
-<code hideActions='["CSB", "EXTERNAL"]' src="./demo/SettingClassName.jsx" />
+<code hideActions='["CSB", "EXTERNAL"]' src="./demo/SettingClassName.jsx" ></code>
 
 ### 1.7. 自定义插入功能
 
-<code hideActions='["CSB", "EXTERNAL"]' src="./demo/Insert.jsx" />
+<code hideActions='["CSB", "EXTERNAL"]' src="./demo/Insert.jsx" ></code>
 
 ## API
 

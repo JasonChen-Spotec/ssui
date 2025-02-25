@@ -13,15 +13,15 @@ group:
 ##  1. 代码演示
 ### 1.1. 基础用法
 
-<code hideActions='["CSB", "EXTERNAL"]' src="./demo/index.jsx" />
+<code hideActions='["CSB", "EXTERNAL"]' src="./demo/index.jsx" ></code>
 
 ### 1.2. 通过value回填已上传的图片
 
-<code hideActions='["CSB", "EXTERNAL"]' src="./demo/value.jsx" />
+<code hideActions='["CSB", "EXTERNAL"]' src="./demo/value.jsx" ></code>
 
 ### 1.3. disabled
 
-<code hideActions='["CSB", "EXTERNAL"]' src="./demo/disabled.jsx" />
+<code hideActions='["CSB", "EXTERNAL"]' src="./demo/disabled.jsx" ></code>
 
 ### 1.3. API
 | 属性名           | 描述            | 类型           | 默认值 |

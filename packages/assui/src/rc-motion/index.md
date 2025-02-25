@@ -13,10 +13,10 @@ group:
 # RcMotion
 
 ## 1. Transition Class
-<code hideActions='["CSB", "EXTERNAL"]' src="./demo/index.tsx" />
+<code hideActions='["CSB", "EXTERNAL"]' src="./demo/index.tsx" ></code>
 
 ## 2. animation Class
-<code hideActions='["CSB", "EXTERNAL"]' src="./demo/animation.tsx" />
+<code hideActions='["CSB", "EXTERNAL"]' src="./demo/animation.tsx" ></code>
 
 
 ## API

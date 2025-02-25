@@ -17,15 +17,15 @@ group:
 
 ### 1.1. 基础使用
 
-<code hideActions='["CSB", "EXTERNAL"]' src="./demo/index.tsx" />
+<code hideActions='["CSB", "EXTERNAL"]' src="./demo/index.tsx" ></code>
 
 ### 1.2. 受控使用
-<code hideActions='["CSB", "EXTERNAL"]' src="./demo/Control.tsx" />
+<code hideActions='["CSB", "EXTERNAL"]' src="./demo/Control.tsx" ></code>
 
 ### 1.3. 自定义展示
-<code hideActions='["CSB", "EXTERNAL"]' src="./demo/CustomizeTime.tsx" />
+<code hideActions='["CSB", "EXTERNAL"]' src="./demo/CustomizeTime.tsx" ></code>
 
 ### 1.4. 最大选择范围
-<code hideActions='["CSB", "EXTERNAL"]' src="./demo/MaxScope.tsx" />
+<code hideActions='["CSB", "EXTERNAL"]' src="./demo/MaxScope.tsx" ></code>
 
  

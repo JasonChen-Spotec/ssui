@@ -11,7 +11,7 @@ group:
 ---
 
 
-<code inline=true hideActions='["CSB"]' src="./demo/base.tsx" />
+<code inline=true hideActions='["CSB"]' src="./demo/base.tsx" ></code>
 
 
 ## langType

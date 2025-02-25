@@ -18,7 +18,7 @@ option的value支持复杂类型（object, array）
 
 ### 1.1. 条件为正则
 
-<code hideActions='["CSB", "EXTERNAL"]' src="./demo/index.jsx" />
+<code hideActions='["CSB", "EXTERNAL"]' src="./demo/index.jsx" ></code>
 
 
  更多属性请参考 [antd Select](https://4x.ant.design/components/select-cn/)

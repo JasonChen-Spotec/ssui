@@ -18,10 +18,10 @@ group:
 
 ### 1.1. 基础使用
 
-<code hideActions='["CSB", "EXTERNAL"]' src="./demo/index.jsx" />
+<code hideActions='["CSB", "EXTERNAL"]' src="./demo/index.jsx" ></code>
 
 
 ### 2.1. antd table
 
-<code hideActions='["CSB", "EXTERNAL"]' src="./demo/antdTable.jsx" />
+<code hideActions='["CSB", "EXTERNAL"]' src="./demo/antdTable.jsx" ></code>
 
