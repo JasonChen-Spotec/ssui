@@ -11,7 +11,7 @@ group:
 ---
 
 # path和query string的常用方法
-
+<!-- 
 ## 1. getQueryString
 获取当前的query string
 ```jsx
@@ -117,4 +117,4 @@ export default () => (
     }
   </div>
 )
-```
+``` -->

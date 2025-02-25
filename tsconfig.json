@@ -17,7 +17,8 @@
     "resolveJsonModule": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": ["src/*"],
+      "@@/*": [".dumi/tmp/*"]
     },
     "allowSyntheticDefaultImports": true,
     "skipLibCheck": true,
