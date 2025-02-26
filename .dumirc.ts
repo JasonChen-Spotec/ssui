@@ -2,11 +2,19 @@ import { defineConfig } from 'dumi';
 import { resolve } from 'path';
 
 export default defineConfig({
-  base: '/ssui',
+  base: '/ssui/',
   publicPath: '/ssui/',
   locales: [{ id: 'zh-CN', name: '中文' }],
   themeConfig: {
     name: 'assui',
+    deviceWidth: 375,
+    footer: false,
+    hd: {
+      rules: [
+        { maxWidth: 375, mode: 'vw', options: [100, 750] },
+        { minWidth: 376, maxWidth: 750, mode: 'vw', options: [100, 1500] },
+      ],
+    },
   },
   resolve: {
     docDirs: ['docs'],

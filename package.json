@@ -6,7 +6,7 @@
     "url": "git+https://github.com:SPOTEC-LTD/assui.git"
   },
   "scripts": {
-    "dumi:prepare":"dumi setup",
+    "dumi:prepare": "dumi setup",
     "preinstall": "npx npm-force-resolutions",
     "prepare": "husky install",
     "init": "rm -rf node_modules && yarn install && yarn run clean && yarn run bootstrap && yarn run build",
@@ -55,7 +55,7 @@
     "cross-env": "^7.0.3",
     "del": "^5.1.0",
     "dumi": "^2.4.13",
-    "dumi-theme-mobile": "^1.1.22",
+    "dumi-theme-mobile": "^2.3.5",
     "enzyme": "^3.10.0",
     "gh-pages": "^4.0.0",
     "gulp": "^4.0.2",
