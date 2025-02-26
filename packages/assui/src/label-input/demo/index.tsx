@@ -1,15 +1,13 @@
-import React from 'react';
-import { Form, Button } from 'antd';
+import { Button, Form } from 'antd';
 import {
-  LabelInput,
+  LabelAutoComplete,
   LabelDatePicker,
+  LabelInput,
   LabelRangePicker,
   LabelSelect,
   LabelTreeSelect,
-  LabelAutoComplete,
 } from 'assui';
-
-import styles from './index.less';
+import React from 'react';
 
 const { Option } = LabelSelect;
 
@@ -79,7 +77,11 @@ const Demo = () => {
   };
 
   return (
-    <Form className={styles.form} onFinish={onFinish} initialValues={{ account: '' }}>
+    <Form
+      className="label-input-form"
+      onFinish={onFinish}
+      initialValues={{ account: '' }}
+    >
       <Form.Item name="account23232323" rules={[{ required: true }]}>
         <LabelTreeSelect {...tProps} label="代理人" unit="人" />
       </Form.Item>
