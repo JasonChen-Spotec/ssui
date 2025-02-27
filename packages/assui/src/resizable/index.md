@@ -5,7 +5,7 @@ nav:
   title: assui
   path: /assui
 group:
-  title: 数据录入
+  title: 反馈
   path: /components/feedback
 ---
 
