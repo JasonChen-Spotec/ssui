@@ -15,6 +15,9 @@ export default defineConfig({
         { minWidth: 376, maxWidth: 750, mode: 'vw', options: [100, 1500] },
       ],
     },
+    socialLinks: {
+      github: 'https://github.com/JasonChen-Spotec/ssui',
+    },
   },
   resolve: {
     docDirs: ['docs'],
