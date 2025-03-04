@@ -17,3 +17,6 @@ tsconfig.tsbuildinfo
 packages/hooks/README.md
 yarn-error.log
 test
+.dumi/tmp
+.dumi/tmp-test
+.dumi/tmp-production

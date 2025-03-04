@@ -23,8 +23,8 @@ export default () => <PeopleTeamOutlined style={{width: 24}} />
 
 ## 2. 图标列表
 
-<code inline=true hideActions='["CSB"]' src="./base.jsx" />
+<code inline=true hideActions='["CSB"]' src="./base.jsx" ></code>
 
 ## 3. 业务图标列表
 
-<code inline=true hideActions='["CSB"]' src="./BusinessIconSection.jsx" />
+<code inline=true hideActions='["CSB"]' src="./BusinessIconSection.jsx" ></code>

@@ -17,11 +17,11 @@ group:
 
 ### 1.1. 基础使用
 
-<code hideActions='["CSB", "EXTERNAL"]' src="./demo/index.tsx" />
+<code hideActions='["CSB", "EXTERNAL"]' src="./demo/index.tsx" ></code>
 
 ### 1.1. 多选
 特定显示需要调用tagRender
 
-<code hideActions='["CSB", "EXTERNAL"]' src="./demo/multiple.tsx" />
+<code hideActions='["CSB", "EXTERNAL"]' src="./demo/multiple.tsx" ></code>
 
  

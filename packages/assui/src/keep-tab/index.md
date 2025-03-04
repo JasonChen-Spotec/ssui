@@ -17,16 +17,16 @@ group:
 
 ### 1.1. 非受控
 
-<code hideActions='["CSB", "EXTERNAL"]' src="./demo/Base.jsx" />
+<code hideActions='["CSB", "EXTERNAL"]' src="./demo/Base.jsx" ></code>
 
 ### 1.1. 受控
 
-<code hideActions='["CSB", "EXTERNAL"]' src="./demo/Control.jsx" />
+<code hideActions='["CSB", "EXTERNAL"]' src="./demo/Control.jsx" ></code>
 
 
 ### 1.2. TabPane显示count
 
-<code hideActions='["CSB", "EXTERNAL"]' src="./demo/Count.jsx" />
+<code hideActions='["CSB", "EXTERNAL"]' src="./demo/Count.jsx" ></code>
 
 
 关于`Badge`的更多属性请参考 [antd Badge](https://ant.design/components/badge-cn/)

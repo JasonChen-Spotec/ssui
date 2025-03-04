@@ -16,15 +16,15 @@ group:
 
 ### 1.1. 基础使用
 
-<code hideActions='["CSB", "EXTERNAL"]' src="./demo/Base.jsx" />
+<code hideActions='["CSB", "EXTERNAL"]' src="./demo/Base.jsx" ></code>
 
 ### 1.1. Ref打开关闭
 
-<code hideActions='["CSB", "EXTERNAL"]' src="./demo/RefDemo.jsx" />
+<code hideActions='["CSB", "EXTERNAL"]' src="./demo/RefDemo.jsx" ></code>
 
 ### 1.1. FunctionChildren打开关闭
 
-<code hideActions='["CSB", "EXTERNAL"]' src="./demo/FunctionDemo.jsx" />
+<code hideActions='["CSB", "EXTERNAL"]' src="./demo/FunctionDemo.jsx" ></code>
 
 
 ## API

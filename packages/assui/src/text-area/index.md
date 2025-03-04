@@ -15,10 +15,10 @@ group:
 
 ## 代码演示
 ### 基本应用
-<code hideActions='["CSB", "EXTERNAL"]' src="./demo/Index.jsx" />
+<code hideActions='["CSB", "EXTERNAL"]' src="./demo/Index.jsx" ></code>
 
 ### Formatter
-<code hideActions='["CSB", "EXTERNAL"]' src="./demo/Formatter.jsx" />
+<code hideActions='["CSB", "EXTERNAL"]' src="./demo/Formatter.jsx" ></code>
 
 ## API
 | 属性名    | 描述       | 类型                      | 默认值 |

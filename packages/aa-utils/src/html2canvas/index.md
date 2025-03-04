@@ -15,7 +15,7 @@ group:
 
 ## 代码演示
 
-<code hideActions='["CSB", "EXTERNAL"]' src="./demo/index.tsx" />
+<code hideActions='["CSB", "EXTERNAL"]' src="./demo/index.tsx" ></code>
 
 
 ## api

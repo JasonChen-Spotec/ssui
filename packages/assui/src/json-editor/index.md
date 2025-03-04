@@ -12,9 +12,9 @@ group:
 
 ##  1. 代码演示
 
-<code hideActions='["CSB", "EXTERNAL"]' src="./demo/index.tsx" />
+<code hideActions='["CSB", "EXTERNAL"]' src="./demo/index.tsx" ></code>
 
 ##  2. 结合antForm
 
-<code hideActions='["CSB", "EXTERNAL"]' src="./demo/form.tsx" />
+<code hideActions='["CSB", "EXTERNAL"]' src="./demo/form.tsx" ></code>
 

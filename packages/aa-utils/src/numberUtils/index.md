@@ -19,16 +19,16 @@ const = {
 ```
 ## 1. formatNumber
 ### 1.1. 基本使用(formatNumber)
-<code hideActions='["CSB", "EXTERNAL"]' src="./demo/index.jsx" />
+<code hideActions='["CSB", "EXTERNAL"]' src="./demo/index.jsx" ></code>
 
 ### 1.2. usePlus(formatNumber)
-<code hideActions='["CSB", "EXTERNAL"]' src="./demo/usePlus.jsx" />
+<code hideActions='["CSB", "EXTERNAL"]' src="./demo/usePlus.jsx" ></code>
 
 ### 1.3. 截取浮点数,不会四舍五入(formatNumber)
-<code hideActions='["CSB", "EXTERNAL"]' src="./demo/roundingMode.jsx" />
+<code hideActions='["CSB", "EXTERNAL"]' src="./demo/roundingMode.jsx" ></code>
 
 ### 1.4. 大数据
-<code hideActions='["CSB", "EXTERNAL"]' src="./demo/bigData.jsx" />
+<code hideActions='["CSB", "EXTERNAL"]' src="./demo/bigData.jsx" ></code>
 
 ### 1.5. API（基于bignumber.js）
 
@@ -54,7 +54,7 @@ const = {
 ## 2. formatFixedFraction(固定小数位)
 
 
-<code hideActions='["CSB", "EXTERNAL"]' src="./demo/formatFixedFraction.jsx" />
+<code hideActions='["CSB", "EXTERNAL"]' src="./demo/formatFixedFraction.jsx" ></code>
 
 ### 2.1. API
 `formatFixedFraction(value, options)`
@@ -75,7 +75,7 @@ const = {
 
 
 ## 3. 百分比(formatPercent)
-<code hideActions='["CSB", "EXTERNAL"]' src="./demo/formatPercent.jsx" />
+<code hideActions='["CSB", "EXTERNAL"]' src="./demo/formatPercent.jsx" ></code>
 
 
 ### 3.1. API
@@ -100,7 +100,7 @@ const = {
 3. `toFixed` 的问题 `0.105.toFixed(2) = 0.10 // not 0.11`
 
 ### 4.1. 计算方法 times、plus、minus、divide（基于bigNumber）
-<code hideActions='["CSB", "EXTERNAL"]' src="./demo/claculateFunc.jsx" />
+<code hideActions='["CSB", "EXTERNAL"]' src="./demo/claculateFunc.jsx" ></code>
 
 ### 4.2. API
 #### 4.2.1. 精确乘法
@@ -198,7 +198,7 @@ float2Fixed(Number)
 3. `12345123451234512399 > 12345123451234512345`
 4. `77777777.77777777 >= 77777777.77777778`
 
-<code hideActions='["CSB", "EXTERNAL"]' src="./demo/compare.jsx" />
+<code hideActions='["CSB", "EXTERNAL"]' src="./demo/compare.jsx" ></code>
 
 ### 7.1. 小于
 ```js

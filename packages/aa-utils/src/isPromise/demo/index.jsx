@@ -1,9 +1,14 @@
+import { isPromise } from 'aa-utils';
 import React from 'react';
-import { formatCountdown } from 'aa-utils';
 
 const Demo = () => {
-  const deadline = 1000 * 60 * 60 * 24 * 2 + 1000 * 30; // Moment is also OK
-  return <div>{formatCountdown(deadline, 'D 天 HH 时 m 分 ss 秒')}</div>;
+  let p1 = new Promise((resolve, reject) => {});
+  return (
+    <div>
+      <p>{isPromise({})} object === false</p>
+      <p>{isPromise(p1)} p1=== true </p>
+    </div>
+  );
 };
 
 export default Demo;

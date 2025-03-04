@@ -1,5 +1,6 @@
 import { Table } from 'antd';
 import { Resizable } from 'assui';
+import React from 'react';
 import './table.css';
 
 const ResizeableTitle = (props) => {
@@ -104,6 +105,13 @@ export default class Demo extends React.Component {
       }),
     }));
 
-    return <Table bordered components={this.components} columns={columns} dataSource={this.data} />;
+    return (
+      <Table
+        bordered
+        components={this.components}
+        columns={columns}
+        dataSource={this.data}
+      />
+    );
   }
 }

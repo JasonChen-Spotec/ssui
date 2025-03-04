@@ -1,7 +1,7 @@
-import React from 'react';
+import { Col, Input, Row } from 'antd';
 import { HighlightWords } from 'assui';
-import { Input, Row, Col } from 'antd';
-import styles from './index.css';
+import React from 'react';
+import './index.css';
 
 export default class HighlighterExample extends React.Component {
   constructor(props) {
@@ -34,7 +34,9 @@ export default class HighlighterExample extends React.Component {
             <Input
               name="activeIndex"
               value={activeIndex}
-              onChange={(event) => this.setState({ activeIndex: parseInt(event.target.value, 10) })}
+              onChange={(event) =>
+                this.setState({ activeIndex: parseInt(event.target.value, 10) })
+              }
               type="number"
             />
           </Col>
@@ -50,9 +52,9 @@ export default class HighlighterExample extends React.Component {
         <h4 style={{ marginTop: 20 }}> 输出 </h4>
 
         <HighlightWords
-          activeClassName={styles.active}
+          activeClassName="word-active"
           activeIndex={activeIndex}
-          highlightClassName={styles.highlight}
+          highlightClassName="word-highlight"
           searchWords={searchWords}
           textToHighlight={textToHighlight}
         />

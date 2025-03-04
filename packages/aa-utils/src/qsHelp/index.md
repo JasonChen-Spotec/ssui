@@ -23,7 +23,7 @@ import { qsHelp } from 'aa-utils';
 
 export default () => (
   <div>
-    /utils/qs-help?name=lixiaoalong&age=32 => {qsHelp.getQueryString('?name=lixiaoalong&age=32')}
+    /utils/qs-help?name=lixiaoalong&age=32 =&gt; {qsHelp.getQueryString('?name=lixiaoalong&age=32')}
   </div>
 )
 ```
@@ -39,7 +39,7 @@ import { qsHelp } from 'aa-utils';
 
 export default () => (
   <div>
-    /utils/qs-help?name=lixiaoalong&age=32 => {
+    /utils/qs-help?name=lixiaoalong&age=32 =&gt; {
       JSON.stringify(qsHelp.getQueryObject('name=lixiaoalong&age=32'))
     }
   </div>
@@ -57,7 +57,7 @@ import { qsHelp } from 'aa-utils';
 
 export default () => (
   <div>
-    {JSON.stringify({ name: 'bin', age: 23, id: 2 })} => {
+    {JSON.stringify({ name: 'bin', age: 23, id: 2 })} =&gt; {
       qsHelp.toQueryString({ name: 'bin', age: 23, id: 2 }) }
   </div>
 )
@@ -73,7 +73,7 @@ import { qsHelp } from 'aa-utils';
 
 export default () => (
   <div>
-    /userCenter/:name/age/:age => {
+    /userCenter/:name/age/:age =&gt; {
       qsHelp.toPath('/userCenter/:name/age/:age', { name: 'bin', age: 23 }) }
   </div>
 )
@@ -91,7 +91,7 @@ console.log('qsHelp', qsHelp.urlToList('/user/list/detail'));
 
 export default () => (
   <div>
-    /user/list/detail =>
+    /user/list/detail =&gt;
     {
       JSON.stringify(qsHelp.urlToList('/user/list/detail') )
     }
@@ -109,7 +109,7 @@ import { qsHelp } from 'aa-utils';
 
 export default () => (
   <div>
-    /user/list/detail?name=lixiaoalong&age=32 =>
+    /user/list/detail?name=lixiaoalong&age=32 =&gt;
     {
       JSON.stringify(
         qsHelp.getPathAndQueryObject('/user/list/detail?name=lixiaoalong&age=32')

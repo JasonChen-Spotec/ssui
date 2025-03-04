@@ -15,11 +15,11 @@ group:
 
 ## 代码演示
 ### 1.1. 存取string
-<code hideActions='["CSB", "EXTERNAL"]' src="./demo/Base.jsx" />
+<code hideActions='["CSB", "EXTERNAL"]' src="./demo/Base.jsx" ></code>
 
 ### 1.5. 存取 `object、array`
 
-<code hideActions='["CSB", "EXTERNAL"]' src="./demo/Object.jsx" />
+<code hideActions='["CSB", "EXTERNAL"]' src="./demo/Object.jsx" ></code>
 
 
 ## API

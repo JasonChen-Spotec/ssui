@@ -14,14 +14,8 @@ group:
 判断某个值是否为Promise对象
 
 ## 基本用法
-```tsx
-import { isPromise } from 'aa-utils'
+<code hideActions='["CSB", "EXTERNAL"]' src="./demo/index.jsx" ></code>
 
-isPromise({})
-// => false
-isPromise(Promise.reject())
-// => true
-```
 
 ### API
 参数

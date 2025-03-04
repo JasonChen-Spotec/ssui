@@ -22,7 +22,7 @@ ConfigProvider 使用 React 的 context 特性，只需在应用外围包裹一�
 
 ### 1.1. 基础使用
 
-<code hideActions='["CSB", "EXTERNAL"]' src="./demo/index.tsx" />
+<code hideActions='["CSB", "EXTERNAL"]' src="./demo/index.tsx" ></code>
 
 
 ## ConfigProvider

@@ -14,11 +14,11 @@ group:
 定义简单组件进入和退出时候的过渡效果 [react-transition-group](http://reactcommunity.org/react-transition-group/transition)
 
 ## 1. CSSTransition
-<code hideActions='["CSB", "EXTERNAL"]' src="./demo/CSSTransition.jsx" />
+<code hideActions='["CSB", "EXTERNAL"]' src="./demo/CSSTransition.jsx" ></code>
 
 ## 2. SwitchTransition
 实现不同状态变化时的过渡效果
-<code hideActions='["CSB", "EXTERNAL"]' src="./demo/switch-transition/index.jsx" />
+<code hideActions='["CSB", "EXTERNAL"]' src="./demo/switch-transition/index.jsx" ></code>
 
 
 ## 3. CSSTransition API

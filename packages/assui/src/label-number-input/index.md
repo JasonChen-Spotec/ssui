@@ -15,7 +15,7 @@ group:
 
 ### 1.1. 基础用法
 
-<code hideActions='["CSB", "EXTERNAL"]' src="./demo/index.tsx" />
+<code hideActions='["CSB", "EXTERNAL"]' src="./demo/index.tsx" ></code>
 
 ### 1.2. 输入float数字
 
