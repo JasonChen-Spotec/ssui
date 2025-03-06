@@ -42,6 +42,8 @@ import arEG from 'antd/lib/locale/ar_EG';
 import thTH from 'antd/lib/locale/th_TH';
 import roRO from 'antd/lib/locale/ro_RO';
 import viVN from 'antd/lib/locale/vi_VN';
+import msMY from 'antd/lib/locale/ms_MY';
+
 import EnFlag from '../../icons/EnFlag';
 import CNFlag from '../../icons/CnFlag';
 import BGFlag from '../../icons/BgFlag';
@@ -108,6 +110,10 @@ export const TH = 'th' as const;
 export const RO = 'ro' as const;
 /** 🇻🇳 越南语 */
 export const VI = 'vi' as const;
+/** 维吾尔语 */
+export const UG = 'ug' as const;
+/** 马来西亚语 */
+export const MS = 'ms-my' as const;
 
 export const antI18nMap = {
   [ZH]: zhCN,
@@ -132,6 +138,8 @@ export const antI18nMap = {
   [TH]: thTH,
   [RO]: roRO,
   [VI]: viVN,
+  [UG]: enUS,
+  [MS]: msMY,
 };
 
 export const languages = {
@@ -157,6 +165,8 @@ export const languages = {
   [TH]: TH,
   [RO]: RO,
   [VI]: VI,
+  [UG]: UG,
+  [MS]: MS,
 };
 
 export type Languages = keyof typeof languages;
@@ -296,6 +306,16 @@ export const I18NList = [
     code: VI,
     iso: VI,
     name: 'Tiếng Việt',
+  },
+    {
+    code: UG,
+    iso: UG,
+    name: 'ئۇيغۇرچە',
+  },
+  {
+    code: MS,
+    iso: MS,
+    name: 'Bahasa Melayu',
   },
 ] as const;
 

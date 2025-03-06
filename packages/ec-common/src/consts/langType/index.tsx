@@ -1,25 +1,26 @@
-import zhCN from 'antd/lib/locale/zh_CN';
-import enUS from 'antd/lib/locale/en_US';
-import zhTW from 'antd/lib/locale/zh_TW';
+import arEG from 'antd/lib/locale/ar_EG';
 import bgBG from 'antd/lib/locale/bg_BG';
 import csCZ from 'antd/lib/locale/cs_CZ';
 import deDE from 'antd/lib/locale/de_DE';
+import enUS from 'antd/lib/locale/en_US';
 import esES from 'antd/lib/locale/es_ES';
-import frFR from 'antd/lib/locale/fr_FR';
 import fiFI from 'antd/lib/locale/fi_FI';
-import itIT from 'antd/lib/locale/it_IT';
+import frFR from 'antd/lib/locale/fr_FR';
 import idID from 'antd/lib/locale/id_ID';
+import itIT from 'antd/lib/locale/it_IT';
 import jaJP from 'antd/lib/locale/ja_JP';
 import koKR from 'antd/lib/locale/ko_KR';
-import nlNL from 'antd/lib/locale/nl_NL';
+import msMY from 'antd/lib/locale/ms_MY';
 import nbNO from 'antd/lib/locale/nb_NO';
+import nlNL from 'antd/lib/locale/nl_NL';
+import ptPT from 'antd/lib/locale/pt_PT';
+import roRO from 'antd/lib/locale/ro_RO';
 import ruRU from 'antd/lib/locale/ru_RU';
 import svSE from 'antd/lib/locale/sv_SE';
-import ptPT from 'antd/lib/locale/pt_PT';
-import arEG from 'antd/lib/locale/ar_EG';
 import thTH from 'antd/lib/locale/th_TH';
-import roRO from 'antd/lib/locale/ro_RO';
 import viVN from 'antd/lib/locale/vi_VN';
+import zhCN from 'antd/lib/locale/zh_CN';
+import zhTW from 'antd/lib/locale/zh_TW';
 
 /** 🇬🇧 英语 */
 export const EN = 'en-US' as const;
@@ -67,6 +68,8 @@ export const RO = 'ro' as const;
 export const VI = 'vi' as const;
 /** 维吾尔语 */
 export const UG = 'ug' as const;
+/** 马来西亚语 */
+export const MS = 'ms-my' as const;
 
 export const antI18nMap = {
   [ZH]: zhCN,
@@ -93,6 +96,7 @@ export const antI18nMap = {
   [VI]: viVN,
   // antd 没有维语包，展示英语
   [UG]: enUS,
+  [MS]: msMY,
 };
 
 export const languages = {
@@ -119,6 +123,7 @@ export const languages = {
   [RO]: RO,
   [VI]: VI,
   [UG]: UG,
+  [MS]: MS,
 };
 
 export type Languages = keyof typeof languages;
@@ -238,5 +243,10 @@ export const I18NList = [
     code: UG,
     iso: UG,
     name: 'ئۇيغۇرچە',
+  },
+  {
+    code: MS,
+    iso: MS,
+    name: 'Bahasa Melayu',
   },
 ] as const;
