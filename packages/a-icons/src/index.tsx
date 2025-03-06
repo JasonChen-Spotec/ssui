@@ -78,6 +78,7 @@ export { default as CloseFilled } from './CloseFilled';
 export { default as CloseOutlined } from './CloseOutlined';
 export { default as CloseSquareFilled } from './CloseSquareFilled';
 export { default as CloseSquareOutlined } from './CloseSquareOutlined';
+export { default as CloudUploadOutlined } from './CloudUploadOutlined';
 export { default as CoinOverlapFilled } from './CoinOverlapFilled';
 export { default as CoinOverlapLockFilled } from './CoinOverlapLockFilled';
 export { default as ComputerCheckOutlined } from './ComputerCheckOutlined';
