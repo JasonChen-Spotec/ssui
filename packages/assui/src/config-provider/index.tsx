@@ -1,28 +1,29 @@
 import React from 'react';
-import LocaleContext from './context';
-import zhCN from '../messages/zh_CN';
-import enUS from '../messages/en_US';
-import zhTW from '../messages/zh_TW';
+import arEG from '../messages/ar_EG';
 import bgBG from '../messages/bg_BG';
 import csCZ from '../messages/cs_CZ';
 import deDE from '../messages/de_DE';
+import enUS from '../messages/en_US';
 import esES from '../messages/es_ES';
-import frFR from '../messages/fr_FR';
 import fiFI from '../messages/fi_FI';
-import itIT from '../messages/it_IT';
+import frFR from '../messages/fr_FR';
 import idID from '../messages/id_ID';
+import itIT from '../messages/it_IT';
 import jaJP from '../messages/ja_JP';
 import koKR from '../messages/ko_KR';
-import nlNL from '../messages/nl_NL';
+import msMY from '../messages/ms_MY';
 import nbNO from '../messages/nb_NO';
+import nlNL from '../messages/nl_NL';
+import ptPT from '../messages/pt_PT';
+import roRO from '../messages/ro_RO';
 import ruRU from '../messages/ru_RU';
 import svSE from '../messages/sv_SE';
-import ptPT from '../messages/pt_PT';
-import arEG from '../messages/ar_EG';
 import thTH from '../messages/th_TH';
-import roRO from '../messages/ro_RO';
-import viVN from '../messages/vi_VN';
 import ugUG from '../messages/ug_UG';
+import viVN from '../messages/vi_VN';
+import zhCN from '../messages/zh_CN';
+import zhTW from '../messages/zh_TW';
+import LocaleContext from './context';
 
 export type LocaleType =
   | 'en-US'
@@ -47,7 +48,8 @@ export type LocaleType =
   | 'th'
   | 'ro'
   | 'vi'
-  | 'ug';
+  | 'ug'
+  | 'ms-my';
 
 export interface ConfigProviderProps {
   children?: React.ReactNode;
@@ -80,6 +82,7 @@ const ConfigProvider: React.FC<ConfigProviderProps> = (props) => {
     'ro': roRO.lang,
     'vi': viVN.lang,
     'ug': ugUG.lang,
+    'ms-my': msMY.lang,
   };
 
   return (
