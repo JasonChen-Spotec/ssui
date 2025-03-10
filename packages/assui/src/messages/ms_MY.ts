@@ -1,5 +1,5 @@
 const locale = {
-  locale: 'ms_my',
+  locale: 'ms_MY',
   lang: {
     global: {
       placeholder: 'Sila pilih',

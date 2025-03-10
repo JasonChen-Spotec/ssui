@@ -49,7 +49,7 @@ export type LocaleType =
   | 'ro'
   | 'vi'
   | 'ug'
-  | 'ms-my';
+  | 'ms-MY';
 
 export interface ConfigProviderProps {
   children?: React.ReactNode;
@@ -82,7 +82,7 @@ const ConfigProvider: React.FC<ConfigProviderProps> = (props) => {
     'ro': roRO.lang,
     'vi': viVN.lang,
     'ug': ugUG.lang,
-    'ms-my': msMY.lang,
+    'ms-MY': msMY.lang,
   };
 
   return (
