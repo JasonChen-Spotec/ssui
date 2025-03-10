@@ -69,7 +69,7 @@ export const VI = 'vi' as const;
 /** 维吾尔语 */
 export const UG = 'ug' as const;
 /** 马来西亚语 */
-export const MS = 'ms-my' as const;
+export const MS = 'ms-MY' as const;
 
 export const antI18nMap = {
   [ZH]: zhCN,
