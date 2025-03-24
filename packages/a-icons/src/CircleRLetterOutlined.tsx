@@ -1,7 +1,7 @@
 import Icon, { IconProps } from 'a-base-icon/lib/icon';
 import * as React from 'react';
 
-function CircleRLetterFilled(componentProps: IconProps) {
+function CircleRLetterOutlined(componentProps: IconProps) {
   const IconNode = (props: React.SVGProps<SVGSVGElement>) => (
     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" {...props}>
       <path
@@ -18,5 +18,5 @@ function CircleRLetterFilled(componentProps: IconProps) {
   return <Icon {...componentProps} component={IconNode} />;
 }
 
-CircleRLetterFilled.displayName = 'CircleRLetterFilled';
-export default CircleRLetterFilled;
+CircleRLetterOutlined.displayName = 'CircleRLetterOutlined';
+export default CircleRLetterOutlined;
