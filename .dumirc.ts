@@ -2,8 +2,6 @@ import { defineConfig } from 'dumi';
 import { resolve } from 'path';
 
 export default defineConfig({
-  base: '/ssui/',
-  publicPath: '/ssui/',
   locales: [{ id: 'zh-CN', name: '中文' }],
   themeConfig: {
     name: 'assui',
