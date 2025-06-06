@@ -1,10 +1,10 @@
-import * as React from 'react';
 import Modal from 'antd/lib/modal';
 import Slider from 'antd/lib/slider';
+import * as React from 'react';
 
 import type { CropperProps } from 'react-easy-crop';
-import getCroppedImg from './getCroppedImg';
 import EasyCrop from './EasyCrop';
+import getCroppedImg from './getCroppedImg';
 import './style/index.less';
 
 const noop = () => {};
@@ -33,6 +33,7 @@ export interface ImgCropProps {
   modalWidth?: string | number;
   modalCancel?: string;
   modalOk?: string;
+  closable?: boolean;
   zipImg?: { width: number; height: number };
   beforeCrop?: (file: RcFile, fileList: RcFile[]) => boolean;
   cropperProps?: CropperProps;
@@ -43,6 +44,7 @@ interface modalPartProps {
   width?: number | string;
   okText?: string;
   cancelText?: string;
+  closable?: boolean;
 }
 
 export declare type Area = {
@@ -70,6 +72,7 @@ const ImgCrop = (props: ImgCropProps) => {
     modalWidth,
     modalOk,
     modalCancel,
+    closable = true,
     beforeCrop,
     zipImg,
     children,
@@ -166,6 +169,7 @@ const ImgCrop = (props: ImgCropProps) => {
       width: modalWidth,
       okText: modalOk,
       cancelText: modalCancel,
+      closable,
     };
     return obj;
   }, [modalCancel, modalOk, modalWidth]);
