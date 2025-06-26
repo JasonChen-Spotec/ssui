@@ -181,6 +181,7 @@ export { default as HandCoinsOutlined } from './HandCoinsOutlined';
 export { default as HandleOutlined } from './HandleOutlined';
 export { default as HomeFilled } from './HomeFilled';
 export { default as HomeOutlined } from './HomeOutlined';
+export { default as HourGlassOutlined } from './HourGlassOutlined';
 export { default as HouseOutlined } from './HouseOutlined';
 export { default as IbFilled } from './IbFilled';
 export { default as ImacFilled } from './ImacFilled';
