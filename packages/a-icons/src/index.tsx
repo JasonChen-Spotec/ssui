@@ -263,6 +263,7 @@ export { default as PersonGroupFilled } from './PersonGroupFilled';
 export { default as PersonLeftArrowFilled } from './PersonLeftArrowFilled';
 export { default as PersonTransferFilled } from './PersonTransferFilled';
 export { default as PersonWarningFilled } from './PersonWarningFilled';
+export { default as PhoneCallFilled } from './PhoneCallFilled';
 export { default as PhoneOutlined } from './PhoneOutlined';
 export { default as PlayFilled } from './PlayFilled';
 export { default as PlaySharpFilled } from './PlaySharpFilled';
