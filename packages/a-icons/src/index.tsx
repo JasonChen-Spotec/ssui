@@ -216,6 +216,7 @@ export { default as LoopFolderFilled } from './LoopFolderFilled';
 export { default as LoopFolderOutlined } from './LoopFolderOutlined';
 export { default as LoopOutlined } from './LoopOutlined';
 export { default as MailFilled } from './MailFilled';
+export { default as MailHollowFilled } from './MailHollowFilled';
 export { default as MailOutlined } from './MailOutlined';
 export { default as MediumVolumeOutlined } from './MediumVolumeOutlined';
 export { default as MenuListOutlined } from './MenuListOutlined';
