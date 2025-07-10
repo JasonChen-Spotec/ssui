@@ -23,6 +23,7 @@ export { default as BankCardFilled } from './BankCardFilled';
 export { default as BarChartFilled } from './BarChartFilled';
 export { default as BarsOutlined } from './BarsOutlined';
 export { default as BellOutlined } from './BellOutlined';
+export { default as BigArticleBoardFilled } from './BigArticleBoardFilled';
 export { default as BindChainFilled } from './BindChainFilled';
 export { default as BindChainOutlined } from './BindChainOutlined';
 export { default as BiscuitFilled } from './BiscuitFilled';
