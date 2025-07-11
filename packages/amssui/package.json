@@ -1,6 +1,6 @@
 {
   "name": "amssui",
-  "version": "2.0.25",
+  "version": "2.0.26",
   "description": "react ui library",
   "author": "jason <usochen@gmail.com>",
   "main": "./lib/index.js",
@@ -30,7 +30,7 @@
     "README.md"
   ],
   "dependencies": {
-    "a-icons": "^1.2.25",
+    "a-icons": "^1.2.26",
     "ahooks": "^3.0.8",
     "react-vant": "3.0.0"
   },
