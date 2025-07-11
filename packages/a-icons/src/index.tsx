@@ -152,6 +152,7 @@ export { default as FileFinishFilled } from './FileFinishFilled';
 export { default as FileListFilled } from './FileListFilled';
 export { default as FileOutlined } from './FileOutlined';
 export { default as FileSearchFilled } from './FileSearchFilled';
+export { default as FileShieldOutlined } from './FileShieldOutlined';
 export { default as FilletFileListFilled } from './FilletFileListFilled';
 export { default as FilletFileListOutlined } from './FilletFileListOutlined';
 export { default as FilterCupOutlined } from './FilterCupOutlined';
