@@ -1,42 +1,42 @@
-import React from 'react';
 import type { IAllProps } from '@tinymce/tinymce-react';
 import { Editor } from '@tinymce/tinymce-react';
+import React from 'react';
 import tinymce from 'tinymce/tinymce';
 
-import 'tinymce/themes/silver';
-import 'tinymce/models/dom';
 import 'tinymce/icons/default';
+import 'tinymce/models/dom';
+import 'tinymce/themes/silver';
 
 import 'tinymce/skins/ui/oxide/skin.min.css';
 
 // importing the plugin js.
 import 'tinymce/plugins/advlist';
-import 'tinymce/plugins/autolink';
-import 'tinymce/plugins/link';
-import 'tinymce/plugins/image';
-import 'tinymce/plugins/lists';
-import 'tinymce/plugins/charmap';
 import 'tinymce/plugins/anchor';
+import 'tinymce/plugins/autolink';
+import 'tinymce/plugins/charmap';
+import 'tinymce/plugins/image';
+import 'tinymce/plugins/link';
+import 'tinymce/plugins/lists';
 import 'tinymce/plugins/searchreplace';
 // import 'tinymce/plugins/code';
 import 'tinymce/plugins/fullscreen';
+import 'tinymce/plugins/help';
 import 'tinymce/plugins/insertdatetime';
 import 'tinymce/plugins/media';
 import 'tinymce/plugins/nonbreaking';
+import 'tinymce/plugins/quickbars';
 import 'tinymce/plugins/table';
 import 'tinymce/plugins/template';
-import 'tinymce/plugins/help';
-import 'tinymce/plugins/quickbars';
 
+import 'tinymce/plugins/autoresize';
 import 'tinymce/plugins/autosave';
 import 'tinymce/plugins/directionality';
-import 'tinymce/plugins/preview';
-import 'tinymce/plugins/save';
-import 'tinymce/plugins/visualblocks';
-import 'tinymce/plugins/autoresize';
 import 'tinymce/plugins/emoticons';
 import 'tinymce/plugins/importcss';
 import 'tinymce/plugins/pagebreak';
+import 'tinymce/plugins/preview';
+import 'tinymce/plugins/save';
+import 'tinymce/plugins/visualblocks';
 import initCodePlugin from './plugins/code';
 
 import zhCN from './lang/zh_CN';
@@ -90,7 +90,7 @@ const RichTextEditor = (props: IAllProps) => {
 
   const resultInit = { ...defaultInit, ...init };
 
-  return <Editor {...restProps} init={resultInit} />;
+  return <Editor init={resultInit} {...restProps} />;
 };
 
 export { defaultPlugins, defaultToolbar };
