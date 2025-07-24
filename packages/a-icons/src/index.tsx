@@ -196,6 +196,7 @@ export { default as ImpassabilityFilled } from './ImpassabilityFilled';
 export { default as InformationFilled } from './InformationFilled';
 export { default as InformationOutlined } from './InformationOutlined';
 export { default as InsFilled } from './InsFilled';
+export { default as InternalResourceOutlined } from './InternalResourceOutlined';
 export { default as InviteFriendFilled } from './InviteFriendFilled';
 export { default as InvoiceOutlined } from './InvoiceOutlined';
 export { default as KeyFilled } from './KeyFilled';
