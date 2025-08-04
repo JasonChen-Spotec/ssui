@@ -1,4 +1,5 @@
 export { default as AddFilled } from './AddFilled';
+export { default as AddMoneyFilled } from './AddMoneyFilled';
 export { default as AddOutlined } from './AddOutlined';
 export { default as AdFilled } from './AdFilled';
 export { default as AlertTriangleFilled } from './AlertTriangleFilled';
