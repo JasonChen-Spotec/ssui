@@ -1153,6 +1153,14 @@
   resolved "https://registry.npmmirror.com/@types/q/-/q-1.5.5.tgz#75a2a8e7d8ab4b230414505d92335d1dcb53a6df"
   integrity sha512-L28j2FcJfSZOnL1WBjDYp2vUHCeIFlyYI/53EwD/rKUBQ7MtUUfbQWiyKJGpcnv4/WgrhWsFKrcPstcAt/J0tQ==
 
+a-base-icon@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/a-base-icon/-/a-base-icon-1.1.0.tgz#56fb13f6a5afdd9fb024617b27e0e607055ea021"
+  integrity sha512-Y2SbLtKKTpk1bDqCQQdkhMIdy2C+SdYb6cq10MRTAzzvlnulBI384XLtnQD3KgL7elF5G209rsv/9xqXz/CwHA==
+  dependencies:
+    classnames "^2.3.1"
+    insert-css "^2.0.0"
+
 ansi-styles@^3.2.1:
   version "3.2.1"
   resolved "https://registry.npmmirror.com/ansi-styles/-/ansi-styles-3.2.1.tgz#41fbb20243e50b12be0f04b8dedbf07520ce841d"
@@ -1721,6 +1729,11 @@ inherits@2:
   version "2.0.4"
   resolved "https://registry.npmmirror.com/inherits/-/inherits-2.0.4.tgz#0fa2c64f932917c3433a0ded55363aae37416b7c"
   integrity sha512-k/vGaX4/Yla3WzyMCvTQOXYeIHvqOKtnqBduzTHpzpQZzAskKMhZ2K+EnBiSM9zGSoIFeMpXKxa4dYeZIQqewQ==
+
+insert-css@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/insert-css/-/insert-css-2.0.0.tgz#eb5d1097b7542f4c79ea3060d3aee07d053880f4"
+  integrity sha512-xGq5ISgcUP5cvGkS2MMFLtPDBtrtQPSFfC6gA6U8wHKqfjTIMZLZNxOItQnoSjdOzlXOLU/yD32RKC4SvjNbtA==
 
 internal-slot@^1.0.3:
   version "1.0.3"

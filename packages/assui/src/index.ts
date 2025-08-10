@@ -138,3 +138,6 @@ export type { CountUpProps } from './count-up';
 export { default as CountUp } from './count-up';
 export type { CountDownProps } from './count-down';
 export { default as CountDown } from './count-down';
+
+export type { EnhancedUploadProps } from './enhanced-upload';
+export { default as EnhancedUpload } from './enhanced-upload';
