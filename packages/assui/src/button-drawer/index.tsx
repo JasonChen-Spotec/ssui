@@ -1,9 +1,14 @@
-import React, { useState, useRef, useImperativeHandle } from 'react';
+import CloseOutlined from 'a-icons/lib/CloseOutlined';
 import type { DrawerProps } from 'antd/lib/drawer';
 import Drawer from 'antd/lib/drawer';
-import isFunction from 'lodash/isFunction';
+import {
+  clearAllBodyScrollLocks,
+  disableBodyScroll,
+  enableBodyScroll,
+} from 'body-scroll-lock';
 import classNames from 'classnames';
-import CloseOutlined from 'a-icons/lib/CloseOutlined';
+import isFunction from 'lodash/isFunction';
+import React, { useEffect, useImperativeHandle, useRef, useState } from 'react';
 
 export type DrawerAction = {
   close: () => void;
@@ -22,6 +27,8 @@ const ButtonDrawer: React.ForwardRefRenderFunction<unknown, ButtonDrawerProps> =
 ) => {
   const [drawerVisible, setDrawerVisible] = useState(false);
   const { children, onOpen, onClose, trigger, title, className, ...restProps } = props;
+  const modalRef = useRef<HTMLDivElement>(null);
+  const [scrollPosition, setScrollPosition] = useState(0);
 
   const closeDrawer = () => {
     if (onClose) {
@@ -55,6 +62,26 @@ const ButtonDrawer: React.ForwardRefRenderFunction<unknown, ButtonDrawerProps> =
       onClick: openDrawer,
     });
 
+  useEffect(() => {
+    const drawerElement = modalRef.current;
+    if (!drawerElement) return;
+
+    if (drawerVisible) {
+      // 保存滚动位置
+      setScrollPosition(window?.pageYOffset || 0);
+      disableBodyScroll(drawerElement);
+    } else {
+      enableBodyScroll(drawerElement);
+      // 恢复滚动位置
+      window?.scrollTo(0, scrollPosition);
+    }
+
+    return () => {
+      enableBodyScroll(drawerElement);
+      clearAllBodyScrollLocks();
+    };
+  }, [drawerVisible]);
+
   return (
     <>
       {buttonNode}
@@ -65,11 +92,20 @@ const ButtonDrawer: React.ForwardRefRenderFunction<unknown, ButtonDrawerProps> =
         onClose={closeDrawer}
         open={drawerVisible}
         closeIcon={<CloseOutlined />}
+        destroyOnClose
         {...restProps}
       >
-        {isFunction(children)
-          ? children(actionRef.current)
-          : React.cloneElement(children, { drawerAction: actionRef.current })}
+        <div
+          ref={modalRef}
+          style={{
+            height: '100%',
+            overflowY: 'scroll',
+          }}
+        >
+          {isFunction(children)
+            ? children(actionRef.current)
+            : React.cloneElement(children, { drawerAction: actionRef.current })}
+        </div>
       </Drawer>
     </>
   );
