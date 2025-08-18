@@ -362,6 +362,7 @@ export { default as UnbindChainOutlined } from './UnbindChainOutlined';
 export { default as UnlockFilled } from './UnlockFilled';
 export { default as UpFilled } from './UpFilled';
 export { default as UpgradeFilled } from './UpgradeFilled';
+export { default as UploadSendOutlined } from './UploadSendOutlined';
 export { default as UserCheckOutlined } from './UserCheckOutlined';
 export { default as UserOutlined } from './UserOutlined';
 export { default as WalletFilled } from './WalletFilled';
