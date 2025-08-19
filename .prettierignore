@@ -7,3 +7,5 @@ package.json
 .umi-production
 .umi-test
 packages/a-icons/src
+packages/a-icons/es
+packages/a-icons/lib

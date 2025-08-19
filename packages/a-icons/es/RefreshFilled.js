@@ -1,46 +1,32 @@
-var __assign =
-  (this && this.__assign) ||
-  function () {
-    __assign =
-      Object.assign ||
-      function (t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-          s = arguments[i];
-          for (var p in s) {
-            if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
-          }
-        }
-        return t;
-      };
-    return __assign.apply(this, arguments);
+var __assign = this && this.__assign || function () {
+  __assign = Object.assign || function (t) {
+    for (var s, i = 1, n = arguments.length; i < n; i++) {
+      s = arguments[i];
+      for (var p in s) {
+        if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+      }
+    }
+    return t;
   };
-import Icon from 'a-base-icon/lib/icon';
+  return __assign.apply(this, arguments);
+};
 import * as React from 'react';
+import Icon from 'a-base-icon/lib/icon';
 function RefreshFilled(componentProps) {
   var IconNode = function IconNode(props) {
-    return /*#__PURE__*/ React.createElement(
-      'svg',
-      __assign(
-        {
-          viewBox: '0 0 24 24',
-          xmlns: 'http://www.w3.org/2000/svg',
-        },
-        props,
-      ),
-      /*#__PURE__*/ React.createElement('path', {
-        fillRule: 'evenodd',
-        clipRule: 'evenodd',
-        d: 'M7.56 2h8.88A5.56 5.56 0 0122 7.56v8.88A5.56 5.56 0 0116.44 22H7.56A5.56 5.56 0 012 16.44V7.56A5.56 5.56 0 017.56 2zM5.709 15.205A6.76 6.76 0 0012 19.5a6.76 6.76 0 001.17-13.41l.16-.17a.83.83 0 00-1.17-1.18l-1.49 1.48a.82.82 0 000 1.18l1.49 1.49a.84.84 0 00.58.24.87.87 0 00.59-.24.82.82 0 00.11-1A5.12 5.12 0 118.54 9a.831.831 0 00-1.13-1.22 6.76 6.76 0 00-1.701 7.425z',
-        fill: 'currentColor',
-      }),
-    );
+    return /*#__PURE__*/React.createElement("svg", __assign({
+      viewBox: "0 0 24 24",
+      xmlns: "http://www.w3.org/2000/svg"
+    }, props), /*#__PURE__*/React.createElement("path", {
+      fillRule: "evenodd",
+      clipRule: "evenodd",
+      d: "M7.56 2h8.88A5.56 5.56 0 0122 7.56v8.88A5.56 5.56 0 0116.44 22H7.56A5.56 5.56 0 012 16.44V7.56A5.56 5.56 0 017.56 2zM5.709 15.205A6.76 6.76 0 0012 19.5a6.76 6.76 0 001.17-13.41l.16-.17a.83.83 0 00-1.17-1.18l-1.49 1.48a.82.82 0 000 1.18l1.49 1.49a.84.84 0 00.58.24.87.87 0 00.59-.24.82.82 0 00.11-1A5.12 5.12 0 118.54 9a.831.831 0 00-1.13-1.22 6.76 6.76 0 00-1.701 7.425z",
+      fill: "currentColor"
+    }));
   };
-  return /*#__PURE__*/ React.createElement(
-    Icon,
-    __assign({}, componentProps, {
-      component: IconNode,
-    }),
-  );
+  return /*#__PURE__*/React.createElement(Icon, __assign({}, componentProps, {
+    component: IconNode
+  }));
 }
 RefreshFilled.displayName = 'RefreshFilled';
 export default RefreshFilled;

@@ -1,108 +1,75 @@
-'use strict';
+"use strict";
 
-var __assign =
-  (this && this.__assign) ||
-  function () {
-    __assign =
-      Object.assign ||
-      function (t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-          s = arguments[i];
-          for (var p in s) {
-            if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
-          }
-        }
-        return t;
-      };
-    return __assign.apply(this, arguments);
-  };
-var __createBinding =
-  (this && this.__createBinding) ||
-  (Object.create
-    ? function (o, m, k, k2) {
-        if (k2 === undefined) k2 = k;
-        var desc = Object.getOwnPropertyDescriptor(m, k);
-        if (
-          !desc ||
-          ('get' in desc ? !m.__esModule : desc.writable || desc.configurable)
-        ) {
-          desc = {
-            enumerable: true,
-            get: function get() {
-              return m[k];
-            },
-          };
-        }
-        Object.defineProperty(o, k2, desc);
+var __assign = this && this.__assign || function () {
+  __assign = Object.assign || function (t) {
+    for (var s, i = 1, n = arguments.length; i < n; i++) {
+      s = arguments[i];
+      for (var p in s) {
+        if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
       }
-    : function (o, m, k, k2) {
-        if (k2 === undefined) k2 = k;
-        o[k2] = m[k];
-      });
-var __setModuleDefault =
-  (this && this.__setModuleDefault) ||
-  (Object.create
-    ? function (o, v) {
-        Object.defineProperty(o, 'default', {
-          enumerable: true,
-          value: v,
-        });
-      }
-    : function (o, v) {
-        o['default'] = v;
-      });
-var __importStar =
-  (this && this.__importStar) ||
-  function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null)
-      for (var k in mod) {
-        if (k !== 'default' && Object.prototype.hasOwnProperty.call(mod, k))
-          __createBinding(result, mod, k);
-      }
-    __setModuleDefault(result, mod);
-    return result;
+    }
+    return t;
   };
-var __importDefault =
-  (this && this.__importDefault) ||
-  function (mod) {
-    return mod && mod.__esModule
-      ? mod
-      : {
-          default: mod,
-        };
-  };
-Object.defineProperty(exports, '__esModule', {
-  value: true,
+  return __assign.apply(this, arguments);
+};
+var __createBinding = this && this.__createBinding || (Object.create ? function (o, m, k, k2) {
+  if (k2 === undefined) k2 = k;
+  var desc = Object.getOwnPropertyDescriptor(m, k);
+  if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+    desc = {
+      enumerable: true,
+      get: function get() {
+        return m[k];
+      }
+    };
+  }
+  Object.defineProperty(o, k2, desc);
+} : function (o, m, k, k2) {
+  if (k2 === undefined) k2 = k;
+  o[k2] = m[k];
 });
-var React = __importStar(require('react'));
-var icon_1 = __importDefault(require('a-base-icon/lib/icon'));
+var __setModuleDefault = this && this.__setModuleDefault || (Object.create ? function (o, v) {
+  Object.defineProperty(o, "default", {
+    enumerable: true,
+    value: v
+  });
+} : function (o, v) {
+  o["default"] = v;
+});
+var __importStar = this && this.__importStar || function (mod) {
+  if (mod && mod.__esModule) return mod;
+  var result = {};
+  if (mod != null) for (var k in mod) {
+    if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+  }
+  __setModuleDefault(result, mod);
+  return result;
+};
+var __importDefault = this && this.__importDefault || function (mod) {
+  return mod && mod.__esModule ? mod : {
+    "default": mod
+  };
+};
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var React = __importStar(require("react"));
+var icon_1 = __importDefault(require("a-base-icon/lib/icon"));
 function WalletOutlined(componentProps) {
   var IconNode = function IconNode(props) {
-    return React.createElement(
-      'svg',
-      __assign(
-        {
-          viewBox: '0 0 24 24',
-          xmlns: 'http://www.w3.org/2000/svg',
-        },
-        props,
-      ),
-      React.createElement('path', {
-        fillRule: 'evenodd',
-        clipRule: 'evenodd',
-        d: 'M5.161 3H16.84c.527 0 .982 0 1.356.03.395.033.789.104 1.167.297a3 3 0 011.311 1.311c.193.378.264.772.296 1.167.031.375.031.83.031 1.356v1.51a3 3 0 011.942 2.244c.059.293.058.62.058 1.001v.168c0 .38 0 .708-.058 1.001A3 3 0 0121 15.328v1.51c0 .528 0 .982-.03 1.357-.033.395-.104.789-.297 1.167a3 3 0 01-1.311 1.311c-.378.193-.772.264-1.167.296-.375.031-.83.031-1.356.031H5.16c-.527 0-.981 0-1.356-.03-.395-.033-.789-.104-1.167-.297a3 3 0 01-1.311-1.311c-.193-.378-.264-.772-.296-1.167C1 17.82 1 17.365 1 16.838V7.162c0-.527 0-.981.03-1.356.033-.395.104-.789.297-1.167a3 3 0 011.311-1.311c.378-.193.772-.264 1.167-.296C4.18 3 4.635 3 5.161 3zM19 15.5h-1.584c-.38 0-.708 0-1.001-.058a3 3 0 01-2.357-2.357c-.059-.293-.058-.62-.058-1.001V12v-.084c0-.38 0-.708.058-1.001a3 3 0 012.357-2.357c.293-.059.62-.058 1.001-.058H19V7.2c0-.577 0-.949-.024-1.232-.022-.272-.06-.373-.085-.422a1 1 0 00-.437-.437c-.05-.025-.15-.063-.422-.085C17.75 5 17.377 5 16.8 5H5.2c-.577 0-.949 0-1.232.024-.272.022-.373.06-.422.085a1 1 0 00-.437.437c-.025.05-.063.15-.085.422C3 6.25 3 6.623 3 7.2v9.6c0 .577 0 .949.024 1.232.022.272.06.372.085.422a1 1 0 00.437.437c.05.025.15.063.422.085C4.25 19 4.623 19 5.2 19h11.6c.577 0 .949 0 1.232-.024.272-.022.372-.06.422-.085a1 1 0 00.437-.437c.025-.05.063-.15.085-.422C19 17.75 19 17.377 19 16.8v-1.3zm-1.5-5c-.513 0-.623.005-.695.02a1 1 0 00-.786.785c-.014.072-.019.182-.019.695 0 .513.005.623.02.695a1 1 0 00.785.786c.072.014.182.019.695.019h2c.513 0 .623-.005.695-.02a1 1 0 00.786-.785c.014-.072.019-.182.019-.695 0-.513-.005-.623-.02-.695a1 1 0 00-.785-.786c-.072-.014-.182-.019-.695-.019h-2z',
-        fill: 'currentColor',
-      }),
-    );
+    return React.createElement("svg", __assign({
+      viewBox: "0 0 24 24",
+      xmlns: "http://www.w3.org/2000/svg"
+    }, props), React.createElement("path", {
+      fillRule: "evenodd",
+      clipRule: "evenodd",
+      d: "M5.161 3H16.84c.527 0 .982 0 1.356.03.395.033.789.104 1.167.297a3 3 0 011.311 1.311c.193.378.264.772.296 1.167.031.375.031.83.031 1.356v1.51a3 3 0 011.942 2.244c.059.293.058.62.058 1.001v.168c0 .38 0 .708-.058 1.001A3 3 0 0121 15.328v1.51c0 .528 0 .982-.03 1.357-.033.395-.104.789-.297 1.167a3 3 0 01-1.311 1.311c-.378.193-.772.264-1.167.296-.375.031-.83.031-1.356.031H5.16c-.527 0-.981 0-1.356-.03-.395-.033-.789-.104-1.167-.297a3 3 0 01-1.311-1.311c-.193-.378-.264-.772-.296-1.167C1 17.82 1 17.365 1 16.838V7.162c0-.527 0-.981.03-1.356.033-.395.104-.789.297-1.167a3 3 0 011.311-1.311c.378-.193.772-.264 1.167-.296C4.18 3 4.635 3 5.161 3zM19 15.5h-1.584c-.38 0-.708 0-1.001-.058a3 3 0 01-2.357-2.357c-.059-.293-.058-.62-.058-1.001V12v-.084c0-.38 0-.708.058-1.001a3 3 0 012.357-2.357c.293-.059.62-.058 1.001-.058H19V7.2c0-.577 0-.949-.024-1.232-.022-.272-.06-.373-.085-.422a1 1 0 00-.437-.437c-.05-.025-.15-.063-.422-.085C17.75 5 17.377 5 16.8 5H5.2c-.577 0-.949 0-1.232.024-.272.022-.373.06-.422.085a1 1 0 00-.437.437c-.025.05-.063.15-.085.422C3 6.25 3 6.623 3 7.2v9.6c0 .577 0 .949.024 1.232.022.272.06.372.085.422a1 1 0 00.437.437c.05.025.15.063.422.085C4.25 19 4.623 19 5.2 19h11.6c.577 0 .949 0 1.232-.024.272-.022.372-.06.422-.085a1 1 0 00.437-.437c.025-.05.063-.15.085-.422C19 17.75 19 17.377 19 16.8v-1.3zm-1.5-5c-.513 0-.623.005-.695.02a1 1 0 00-.786.785c-.014.072-.019.182-.019.695 0 .513.005.623.02.695a1 1 0 00.785.786c.072.014.182.019.695.019h2c.513 0 .623-.005.695-.02a1 1 0 00.786-.785c.014-.072.019-.182.019-.695 0-.513-.005-.623-.02-.695a1 1 0 00-.785-.786c-.072-.014-.182-.019-.695-.019h-2z",
+      fill: "currentColor"
+    }));
   };
-  return React.createElement(
-    icon_1['default'],
-    __assign({}, componentProps, {
-      component: IconNode,
-    }),
-  );
+  return React.createElement(icon_1["default"], __assign({}, componentProps, {
+    component: IconNode
+  }));
 }
 WalletOutlined.displayName = 'WalletOutlined';
-exports['default'] = WalletOutlined;
+exports["default"] = WalletOutlined;

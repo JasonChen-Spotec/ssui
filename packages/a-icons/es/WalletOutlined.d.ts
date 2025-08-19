@@ -1,6 +1,6 @@
 import { IconProps } from 'a-base-icon/lib/icon';
 declare function WalletOutlined(componentProps: IconProps): JSX.Element;
 declare namespace WalletOutlined {
-  var displayName: string;
+    var displayName: string;
 }
 export default WalletOutlined;
