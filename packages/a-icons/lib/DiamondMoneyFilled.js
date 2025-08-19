@@ -1,118 +1,83 @@
-'use strict';
+"use strict";
 
-var __assign =
-  (this && this.__assign) ||
-  function () {
-    __assign =
-      Object.assign ||
-      function (t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-          s = arguments[i];
-          for (var p in s) {
-            if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
-          }
-        }
-        return t;
-      };
-    return __assign.apply(this, arguments);
-  };
-var __createBinding =
-  (this && this.__createBinding) ||
-  (Object.create
-    ? function (o, m, k, k2) {
-        if (k2 === undefined) k2 = k;
-        var desc = Object.getOwnPropertyDescriptor(m, k);
-        if (
-          !desc ||
-          ('get' in desc ? !m.__esModule : desc.writable || desc.configurable)
-        ) {
-          desc = {
-            enumerable: true,
-            get: function get() {
-              return m[k];
-            },
-          };
-        }
-        Object.defineProperty(o, k2, desc);
+var __assign = this && this.__assign || function () {
+  __assign = Object.assign || function (t) {
+    for (var s, i = 1, n = arguments.length; i < n; i++) {
+      s = arguments[i];
+      for (var p in s) {
+        if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
       }
-    : function (o, m, k, k2) {
-        if (k2 === undefined) k2 = k;
-        o[k2] = m[k];
-      });
-var __setModuleDefault =
-  (this && this.__setModuleDefault) ||
-  (Object.create
-    ? function (o, v) {
-        Object.defineProperty(o, 'default', {
-          enumerable: true,
-          value: v,
-        });
-      }
-    : function (o, v) {
-        o['default'] = v;
-      });
-var __importStar =
-  (this && this.__importStar) ||
-  function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null)
-      for (var k in mod) {
-        if (k !== 'default' && Object.prototype.hasOwnProperty.call(mod, k))
-          __createBinding(result, mod, k);
-      }
-    __setModuleDefault(result, mod);
-    return result;
+    }
+    return t;
   };
-var __importDefault =
-  (this && this.__importDefault) ||
-  function (mod) {
-    return mod && mod.__esModule
-      ? mod
-      : {
-          default: mod,
-        };
-  };
-Object.defineProperty(exports, '__esModule', {
-  value: true,
+  return __assign.apply(this, arguments);
+};
+var __createBinding = this && this.__createBinding || (Object.create ? function (o, m, k, k2) {
+  if (k2 === undefined) k2 = k;
+  var desc = Object.getOwnPropertyDescriptor(m, k);
+  if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+    desc = {
+      enumerable: true,
+      get: function get() {
+        return m[k];
+      }
+    };
+  }
+  Object.defineProperty(o, k2, desc);
+} : function (o, m, k, k2) {
+  if (k2 === undefined) k2 = k;
+  o[k2] = m[k];
 });
-var React = __importStar(require('react'));
-var icon_1 = __importDefault(require('a-base-icon/lib/icon'));
+var __setModuleDefault = this && this.__setModuleDefault || (Object.create ? function (o, v) {
+  Object.defineProperty(o, "default", {
+    enumerable: true,
+    value: v
+  });
+} : function (o, v) {
+  o["default"] = v;
+});
+var __importStar = this && this.__importStar || function (mod) {
+  if (mod && mod.__esModule) return mod;
+  var result = {};
+  if (mod != null) for (var k in mod) {
+    if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+  }
+  __setModuleDefault(result, mod);
+  return result;
+};
+var __importDefault = this && this.__importDefault || function (mod) {
+  return mod && mod.__esModule ? mod : {
+    "default": mod
+  };
+};
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var React = __importStar(require("react"));
+var icon_1 = __importDefault(require("a-base-icon/lib/icon"));
 function DiamondMoneyFilled(componentProps) {
   var IconNode = function IconNode(props) {
-    return React.createElement(
-      'svg',
-      __assign(
-        {
-          viewBox: '0 0 24 24',
-          xmlns: 'http://www.w3.org/2000/svg',
-        },
-        props,
-      ),
-      React.createElement('path', {
-        fillRule: 'evenodd',
-        clipRule: 'evenodd',
-        d: 'M14.488 2.372H5.215a4 4 0 00-4 4V16.97a4 4 0 004 4h8.273a4.98 4.98 0 002.198-.508L13.6 18.945a1.656 1.656 0 01-.63-1.908l.671-3.28a2.096 2.096 0 012.096-1.708h2.752V6.372a4 4 0 00-4-4zM6.783 6.937a.75.75 0 10-1.152.96l1.338 1.606H5.73a.75.75 0 000 1.5h2.086v1.336H5.73a.75.75 0 000 1.5h2.086v2.086a.75.75 0 001.5 0v-2.086h2.086a.75.75 0 000-1.5H9.316v-1.336h2.086a.75.75 0 000-1.5h-1.23l1.337-1.606a.75.75 0 10-1.152-.96L8.57 9.08 6.783 6.937z',
-        fill: 'currentColor',
-      }),
-      React.createElement('path', {
-        d: 'M17.753 14.85l-1.52 1.95a.796.796 0 00.137 1.11c.14.102.309.157.482.158.242 0 .471-.112.618-.304l1.53-1.95a.788.788 0 00-1.247-.963z',
-        fill: 'currentColor',
-      }),
-      React.createElement('path', {
-        fillRule: 'evenodd',
-        clipRule: 'evenodd',
-        d: 'M21.798 13.708l.692 3.364c.21.68-.045 1.417-.629 1.823l-3.259 2.369c-.59.42-1.38.42-1.97 0l-3.259-2.369a1.656 1.656 0 01-.629-1.907l.671-3.28A2.096 2.096 0 0115.511 12h4.191a2.148 2.148 0 012.096 1.708zm-4.118 6.235l3.259-2.347a.115.115 0 00.084-.126l-.702-3.447a.576.576 0 00-.566-.461h-4.192a.576.576 0 00-.566.46l-.702 3.354c-.052.126 0 .21 0 .21l3.26 2.357c.035.032.09.032.125 0z',
-        fill: 'currentColor',
-      }),
-    );
+    return React.createElement("svg", __assign({
+      viewBox: "0 0 24 24",
+      xmlns: "http://www.w3.org/2000/svg"
+    }, props), React.createElement("path", {
+      fillRule: "evenodd",
+      clipRule: "evenodd",
+      d: "M14.488 2.372H5.215a4 4 0 00-4 4V16.97a4 4 0 004 4h8.273a4.98 4.98 0 002.198-.508L13.6 18.945a1.656 1.656 0 01-.63-1.908l.671-3.28a2.096 2.096 0 012.096-1.708h2.752V6.372a4 4 0 00-4-4zM6.783 6.937a.75.75 0 10-1.152.96l1.338 1.606H5.73a.75.75 0 000 1.5h2.086v1.336H5.73a.75.75 0 000 1.5h2.086v2.086a.75.75 0 001.5 0v-2.086h2.086a.75.75 0 000-1.5H9.316v-1.336h2.086a.75.75 0 000-1.5h-1.23l1.337-1.606a.75.75 0 10-1.152-.96L8.57 9.08 6.783 6.937z",
+      fill: "currentColor"
+    }), React.createElement("path", {
+      d: "M17.753 14.85l-1.52 1.95a.796.796 0 00.137 1.11c.14.102.309.157.482.158.242 0 .471-.112.618-.304l1.53-1.95a.788.788 0 00-1.247-.963z",
+      fill: "currentColor"
+    }), React.createElement("path", {
+      fillRule: "evenodd",
+      clipRule: "evenodd",
+      d: "M21.798 13.708l.692 3.364c.21.68-.045 1.417-.629 1.823l-3.259 2.369c-.59.42-1.38.42-1.97 0l-3.259-2.369a1.656 1.656 0 01-.629-1.907l.671-3.28A2.096 2.096 0 0115.511 12h4.191a2.148 2.148 0 012.096 1.708zm-4.118 6.235l3.259-2.347a.115.115 0 00.084-.126l-.702-3.447a.576.576 0 00-.566-.461h-4.192a.576.576 0 00-.566.46l-.702 3.354c-.052.126 0 .21 0 .21l3.26 2.357c.035.032.09.032.125 0z",
+      fill: "currentColor"
+    }));
   };
-  return React.createElement(
-    icon_1['default'],
-    __assign({}, componentProps, {
-      component: IconNode,
-    }),
-  );
+  return React.createElement(icon_1["default"], __assign({}, componentProps, {
+    component: IconNode
+  }));
 }
 DiamondMoneyFilled.displayName = 'DiamondMoneyFilled';
-exports['default'] = DiamondMoneyFilled;
+exports["default"] = DiamondMoneyFilled;

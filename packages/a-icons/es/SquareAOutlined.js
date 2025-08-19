@@ -1,52 +1,37 @@
-var __assign =
-  (this && this.__assign) ||
-  function () {
-    __assign =
-      Object.assign ||
-      function (t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-          s = arguments[i];
-          for (var p in s) {
-            if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
-          }
-        }
-        return t;
-      };
-    return __assign.apply(this, arguments);
+var __assign = this && this.__assign || function () {
+  __assign = Object.assign || function (t) {
+    for (var s, i = 1, n = arguments.length; i < n; i++) {
+      s = arguments[i];
+      for (var p in s) {
+        if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+      }
+    }
+    return t;
   };
-import Icon from 'a-base-icon/lib/icon';
+  return __assign.apply(this, arguments);
+};
 import * as React from 'react';
+import Icon from 'a-base-icon/lib/icon';
 function SquareAOutlined(componentProps) {
   var IconNode = function IconNode(props) {
-    return /*#__PURE__*/ React.createElement(
-      'svg',
-      __assign(
-        {
-          viewBox: '0 0 24 24',
-          xmlns: 'http://www.w3.org/2000/svg',
-        },
-        props,
-      ),
-      /*#__PURE__*/ React.createElement('path', {
-        fillRule: 'evenodd',
-        clipRule: 'evenodd',
-        d: 'M12.634 6.112a1.435 1.435 0 00-1.268 0c-.352.173-.537.476-.627.634-.096.17-.195.387-.293.603l-4.498 9.895 1.743.792 1.88-4.138h4.857l1.881 4.138 1.743-.792-4.498-9.895c-.098-.216-.197-.433-.293-.603-.09-.158-.275-.461-.627-.634zm.925 5.873H10.44L12 8.555l1.559 3.43z',
-        fill: 'currentColor',
-      }),
-      /*#__PURE__*/ React.createElement('path', {
-        fillRule: 'evenodd',
-        clipRule: 'evenodd',
-        d: 'M16.241 2H7.76c-.805 0-1.47 0-2.01.044-.563.046-1.08.145-1.565.392a4 4 0 00-1.748 1.748c-.247.485-.346 1.002-.392 1.564C2 6.29 2 6.954 2 7.758v8.483c0 .805 0 1.47.044 2.01.046.563.145 1.08.392 1.565a4 4 0 001.748 1.748c.485.247 1.002.346 1.564.392C6.29 22 6.954 22 7.758 22h8.483c.805 0 1.47 0 2.01-.044.563-.046 1.08-.145 1.565-.392a4 4 0 001.748-1.748c.247-.485.346-1.002.392-1.564.044-.541.044-1.206.044-2.01V7.758c0-.805 0-1.47-.044-2.01-.046-.563-.145-1.08-.392-1.565a4 4 0 00-1.748-1.748c-.485-.247-1.002-.346-1.564-.392C17.71 2 17.046 2 16.242 2zM5.092 4.218c.156-.08.38-.145.819-.18C6.361 4 6.943 4 7.8 4h8.4c.857 0 1.439 0 1.889.038.438.035.663.1.819.18a2 2 0 01.874.874c.08.156.145.38.18.819C20 6.361 20 6.943 20 7.8v8.4c0 .857 0 1.439-.038 1.889-.035.438-.1.663-.18.819a2 2 0 01-.874.874c-.156.08-.38.145-.819.18-.45.037-1.032.038-1.889.038H7.8c-.857 0-1.439 0-1.889-.038-.438-.035-.663-.1-.819-.18a2 2 0 01-.874-.874c-.08-.156-.145-.38-.18-.819C4 17.639 4 17.057 4 16.2V7.8c0-.857 0-1.439.038-1.889.035-.438.1-.663.18-.819a2 2 0 01.874-.874z',
-        fill: 'currentColor',
-      }),
-    );
+    return /*#__PURE__*/React.createElement("svg", __assign({
+      viewBox: "0 0 24 24",
+      xmlns: "http://www.w3.org/2000/svg"
+    }, props), /*#__PURE__*/React.createElement("path", {
+      fillRule: "evenodd",
+      clipRule: "evenodd",
+      d: "M12.634 6.112a1.435 1.435 0 00-1.268 0c-.352.173-.537.476-.627.634-.096.17-.195.387-.293.603l-4.498 9.895 1.743.792 1.88-4.138h4.857l1.881 4.138 1.743-.792-4.498-9.895c-.098-.216-.197-.433-.293-.603-.09-.158-.275-.461-.627-.634zm.925 5.873H10.44L12 8.555l1.559 3.43z",
+      fill: "currentColor"
+    }), /*#__PURE__*/React.createElement("path", {
+      fillRule: "evenodd",
+      clipRule: "evenodd",
+      d: "M16.241 2H7.76c-.805 0-1.47 0-2.01.044-.563.046-1.08.145-1.565.392a4 4 0 00-1.748 1.748c-.247.485-.346 1.002-.392 1.564C2 6.29 2 6.954 2 7.758v8.483c0 .805 0 1.47.044 2.01.046.563.145 1.08.392 1.565a4 4 0 001.748 1.748c.485.247 1.002.346 1.564.392C6.29 22 6.954 22 7.758 22h8.483c.805 0 1.47 0 2.01-.044.563-.046 1.08-.145 1.565-.392a4 4 0 001.748-1.748c.247-.485.346-1.002.392-1.564.044-.541.044-1.206.044-2.01V7.758c0-.805 0-1.47-.044-2.01-.046-.563-.145-1.08-.392-1.565a4 4 0 00-1.748-1.748c-.485-.247-1.002-.346-1.564-.392C17.71 2 17.046 2 16.242 2zM5.092 4.218c.156-.08.38-.145.819-.18C6.361 4 6.943 4 7.8 4h8.4c.857 0 1.439 0 1.889.038.438.035.663.1.819.18a2 2 0 01.874.874c.08.156.145.38.18.819C20 6.361 20 6.943 20 7.8v8.4c0 .857 0 1.439-.038 1.889-.035.438-.1.663-.18.819a2 2 0 01-.874.874c-.156.08-.38.145-.819.18-.45.037-1.032.038-1.889.038H7.8c-.857 0-1.439 0-1.889-.038-.438-.035-.663-.1-.819-.18a2 2 0 01-.874-.874c-.08-.156-.145-.38-.18-.819C4 17.639 4 17.057 4 16.2V7.8c0-.857 0-1.439.038-1.889.035-.438.1-.663.18-.819a2 2 0 01.874-.874z",
+      fill: "currentColor"
+    }));
   };
-  return /*#__PURE__*/ React.createElement(
-    Icon,
-    __assign({}, componentProps, {
-      component: IconNode,
-    }),
-  );
+  return /*#__PURE__*/React.createElement(Icon, __assign({}, componentProps, {
+    component: IconNode
+  }));
 }
 SquareAOutlined.displayName = 'SquareAOutlined';
 export default SquareAOutlined;
