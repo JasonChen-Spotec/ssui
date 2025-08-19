@@ -1,0 +1,62 @@
+@import '~antd/lib/style/index.less';
+@import '../../style/themes/default.less';
+@import '../../style/variables.less';
+
+.label-date-picker {
+  position: relative;
+  width: 220px;
+  height: 100%;
+  cursor: pointer;
+
+  &:not(.label-date-picker-label-scale) {
+    .@{ant-prefix}-picker-input > input {
+      cursor: pointer;
+    }
+  }
+
+  .@{ant-prefix}-picker {
+    height: 45px;
+    padding-right: 15px;
+    padding-left: 15px;
+    border: 1px solid @color_e5e5e5;
+    border-radius: @border-radius-base;
+    outline: none;
+
+    &-input input {
+      position: relative;
+      top: @pickerInputTop;
+    }
+
+    &-focused {
+      border-color: @labelFocusBorderColor;
+      box-shadow: none;
+    }
+
+    &-suffix .spotecicon {
+      width: 14px;
+      color: @color_323232;
+    }
+  }
+
+  &-text {
+    position: absolute;
+    top: 12px;
+    left: 16px;
+    z-index: 2;
+    height: 20px;
+    color: @color_9aa5b5;
+    font-size: @font-size-base;
+    line-height: 20px;
+    transform-origin: top left;
+    cursor: pointer;
+    transition: all 0.2s ease-out;
+  }
+
+  &-label-scale {
+    .label-date-picker-text {
+      transform: translateY(@labelTextLabeltranslateY) scale(@labelTextLabelScale);
+      cursor: text;
+      pointer-events: none;
+    }
+  }
+}

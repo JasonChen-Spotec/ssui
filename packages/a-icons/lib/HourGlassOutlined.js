@@ -1,0 +1,106 @@
+'use strict';
+
+var __assign =
+  (this && this.__assign) ||
+  function () {
+    __assign =
+      Object.assign ||
+      function (t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+          s = arguments[i];
+          for (var p in s) {
+            if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+          }
+        }
+        return t;
+      };
+    return __assign.apply(this, arguments);
+  };
+var __createBinding =
+  (this && this.__createBinding) ||
+  (Object.create
+    ? function (o, m, k, k2) {
+        if (k2 === undefined) k2 = k;
+        var desc = Object.getOwnPropertyDescriptor(m, k);
+        if (
+          !desc ||
+          ('get' in desc ? !m.__esModule : desc.writable || desc.configurable)
+        ) {
+          desc = {
+            enumerable: true,
+            get: function get() {
+              return m[k];
+            },
+          };
+        }
+        Object.defineProperty(o, k2, desc);
+      }
+    : function (o, m, k, k2) {
+        if (k2 === undefined) k2 = k;
+        o[k2] = m[k];
+      });
+var __setModuleDefault =
+  (this && this.__setModuleDefault) ||
+  (Object.create
+    ? function (o, v) {
+        Object.defineProperty(o, 'default', {
+          enumerable: true,
+          value: v,
+        });
+      }
+    : function (o, v) {
+        o['default'] = v;
+      });
+var __importStar =
+  (this && this.__importStar) ||
+  function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null)
+      for (var k in mod) {
+        if (k !== 'default' && Object.prototype.hasOwnProperty.call(mod, k))
+          __createBinding(result, mod, k);
+      }
+    __setModuleDefault(result, mod);
+    return result;
+  };
+var __importDefault =
+  (this && this.__importDefault) ||
+  function (mod) {
+    return mod && mod.__esModule
+      ? mod
+      : {
+          default: mod,
+        };
+  };
+Object.defineProperty(exports, '__esModule', {
+  value: true,
+});
+var React = __importStar(require('react'));
+var icon_1 = __importDefault(require('a-base-icon/lib/icon'));
+function HourGlassOutlined(componentProps) {
+  var IconNode = function IconNode(props) {
+    return React.createElement(
+      'svg',
+      __assign(
+        {
+          viewBox: '0 0 24 24',
+          xmlns: 'http://www.w3.org/2000/svg',
+        },
+        props,
+      ),
+      React.createElement('path', {
+        d: 'M18 3.6c0-.297-.001-.459-.01-.576l-.003-.012-.011-.001A8.104 8.104 0 0017.4 3H6.6c-.297 0-.459.001-.575.01l-.013.002-.001.012C6 3.141 6 3.304 6 3.6v2.075c0 .536.005.642.026.73.025.102.066.2.12.29.048.077.118.156.498.535l2.931 2.931c.187.187.37.368.51.534.149.175.308.397.402.687.13.402.13.835 0 1.236-.094.29-.253.512-.402.687-.14.166-.323.348-.51.534l-2.931 2.93c-.38.38-.45.46-.497.537-.055.09-.096.187-.12.289-.022.088-.028.194-.028.73V20.4c0 .297.001.46.01.576l.002.011.013.002c.116.01.278.011.575.011h10.8c.297 0 .46-.001.576-.01l.011-.003.002-.011c.01-.117.011-.28.011-.576v-2.075c0-.536-.006-.642-.027-.73a1.002 1.002 0 00-.12-.29c-.048-.077-.118-.156-.497-.535l-2.932-2.931c-.186-.187-.369-.368-.51-.534a2.023 2.023 0 01-.402-.687 2.001 2.001 0 010-1.236c.094-.29.254-.512.402-.687.141-.166.324-.348.51-.534l2.932-2.93c.379-.38.45-.46.497-.537.054-.09.095-.187.12-.289.021-.088.027-.194.027-.73V3.6zm-2 13.9v2H8v-2h8zm4-11.825c0 .441.006.825-.083 1.197a3 3 0 01-.36.867c-.2.326-.475.593-.787.906l-2.931 2.931a8.33 8.33 0 00-.4.414l-.008.01.008.01c.075.089.19.204.4.414l2.93 2.931c.313.313.589.58.789.906.164.268.286.56.36.867.088.372.082.756.082 1.197V20.4c0 .264.001.522-.017.739a2.023 2.023 0 01-.2.77 2 2 0 01-.875.873 2.023 2.023 0 01-.77.201c-.216.018-.474.017-.738.017H6.6c-.264 0-.522.001-.739-.017a2.023 2.023 0 01-.77-.2 2 2 0 01-.873-.875 2.023 2.023 0 01-.201-.77C3.999 20.923 4 20.665 4 20.4v-2.075c0-.441-.006-.825.083-1.197.074-.306.195-.599.36-.867.2-.326.475-.593.788-.905l2.93-2.932c.21-.21.325-.325.4-.414l.007-.01-.006-.01a8.348 8.348 0 00-.4-.414L5.23 8.645c-.313-.313-.589-.58-.789-.906a3.002 3.002 0 01-.359-.867C3.993 6.5 4 6.116 4 5.675V3.6c0-.264-.001-.522.017-.739.018-.228.063-.498.2-.77a2 2 0 01.875-.873c.271-.138.54-.183.77-.201C6.077.999 6.335 1 6.6 1h10.8c.264 0 .522-.001.739.017.228.018.498.063.77.2.329.169.604.424.796.737l.077.138.087.203c.072.2.1.395.114.566.018.217.017.475.017.739v2.075z',
+        fill: 'currentColor',
+      }),
+    );
+  };
+  return React.createElement(
+    icon_1['default'],
+    __assign({}, componentProps, {
+      component: IconNode,
+    }),
+  );
+}
+HourGlassOutlined.displayName = 'HourGlassOutlined';
+exports['default'] = HourGlassOutlined;

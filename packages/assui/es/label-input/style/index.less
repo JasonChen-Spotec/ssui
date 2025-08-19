@@ -1,0 +1,85 @@
+@import '~antd/lib/style/index.less';
+@import '../../style/themes/default.less';
+@import '../../style/variables.less';
+
+.label-input {
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  padding: 19px 15px 2px 15px;
+  color: @color_263241;
+  font-size: @font-size-base;
+  line-height: 16px;
+  border: 0;
+  outline: 0;
+
+  &:focus + label,
+  &:not([data-value='0']) + label {
+    transform: translateY(@labelTextLabeltranslateY) scale(@labelTextLabelScale);
+  }
+
+  &-control {
+    position: relative;
+    display: block;
+    width: 100%;
+  }
+
+  &-field {
+    height: 45px;
+    overflow: hidden;
+    border: 1px solid @color_e5e5e5;
+    border-radius: @border-radius-base;
+    transition: border 0.3s;
+
+    &:not(.label-input-disabled):hover {
+      border-color: @color_a0a0a0;
+    }
+  }
+
+  &-affix {
+    display: flex;
+    align-items: center;
+  }
+
+  &-focused {
+    border-color: @labelFocusBorderColor;
+  }
+
+  &-prefix {
+    flex-shrink: 0;
+    padding-left: 15px;
+  }
+
+  &-suffix {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    padding-right: 15px;
+    color: @color_b3b3b3;
+    font-weight: @font-weight-500;
+  }
+
+  &-warper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  &-text {
+    position: absolute;
+    top: 12px;
+    left: 15px;
+    z-index: 2;
+    height: 20px;
+    color: @color_9aa5b5;
+    font-size: @font-size-base;
+    line-height: 20px;
+    transform-origin: top left;
+    cursor: text;
+    transition: all 0.2s ease-out;
+  }
+
+  &-open-eye {
+    color: @primary-color;
+  }
+}

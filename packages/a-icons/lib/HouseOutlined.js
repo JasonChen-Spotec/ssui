@@ -1,0 +1,109 @@
+'use strict';
+
+var __assign =
+  (this && this.__assign) ||
+  function () {
+    __assign =
+      Object.assign ||
+      function (t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+          s = arguments[i];
+          for (var p in s) {
+            if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+          }
+        }
+        return t;
+      };
+    return __assign.apply(this, arguments);
+  };
+var __createBinding =
+  (this && this.__createBinding) ||
+  (Object.create
+    ? function (o, m, k, k2) {
+        if (k2 === undefined) k2 = k;
+        var desc = Object.getOwnPropertyDescriptor(m, k);
+        if (
+          !desc ||
+          ('get' in desc ? !m.__esModule : desc.writable || desc.configurable)
+        ) {
+          desc = {
+            enumerable: true,
+            get: function get() {
+              return m[k];
+            },
+          };
+        }
+        Object.defineProperty(o, k2, desc);
+      }
+    : function (o, m, k, k2) {
+        if (k2 === undefined) k2 = k;
+        o[k2] = m[k];
+      });
+var __setModuleDefault =
+  (this && this.__setModuleDefault) ||
+  (Object.create
+    ? function (o, v) {
+        Object.defineProperty(o, 'default', {
+          enumerable: true,
+          value: v,
+        });
+      }
+    : function (o, v) {
+        o['default'] = v;
+      });
+var __importStar =
+  (this && this.__importStar) ||
+  function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null)
+      for (var k in mod) {
+        if (k !== 'default' && Object.prototype.hasOwnProperty.call(mod, k))
+          __createBinding(result, mod, k);
+      }
+    __setModuleDefault(result, mod);
+    return result;
+  };
+var __importDefault =
+  (this && this.__importDefault) ||
+  function (mod) {
+    return mod && mod.__esModule
+      ? mod
+      : {
+          default: mod,
+        };
+  };
+Object.defineProperty(exports, '__esModule', {
+  value: true,
+});
+var React = __importStar(require('react'));
+var icon_1 = __importDefault(require('a-base-icon/lib/icon'));
+function HouseOutlined(componentProps) {
+  var IconNode = function IconNode(props) {
+    return React.createElement(
+      'svg',
+      __assign(
+        {
+          viewBox: '0 0 24 24',
+          fill: 'none',
+          xmlns: 'http://www.w3.org/2000/svg',
+        },
+        props,
+      ),
+      React.createElement('path', {
+        fillRule: 'evenodd',
+        clipRule: 'evenodd',
+        d: 'M11.477 1.336a2 2 0 011.046 0c.397.108.732.37.999.58l.074.059L20.38 7.25l.077.06c.377.292.709.55.956.884a3 3 0 01.477.975c.112.4.112.82.111 1.298v7.372c0 .527 0 .981-.03 1.356-.033.395-.104.789-.297 1.167a3 3 0 01-1.31 1.311c-.38.193-.773.264-1.168.296-.374.031-.83.031-1.356.031H15.777c-.12 0-.261 0-.387-.01a1.51 1.51 0 01-.57-.153 1.5 1.5 0 01-.656-.656 1.508 1.508 0 01-.154-.571c-.01-.125-.01-.268-.01-.387V13.6a8.143 8.143 0 00-.011-.589h-.014A8.205 8.205 0 0013.4 13h-2.8c-.296 0-.459 0-.575.01l-.013.001-.002.014c-.01.116-.01.278-.01.575v6.623c0 .12 0 .262-.01.387a1.508 1.508 0 01-.153.571 1.5 1.5 0 01-.656.655 1.51 1.51 0 01-.571.154c-.125.01-.268.01-.387.01H6.162c-.528 0-.982 0-1.357-.03-.395-.033-.788-.104-1.167-.297a3 3 0 01-1.31-1.311c-.194-.378-.265-.772-.297-1.167C2 18.82 2 18.365 2 17.838v-7.273-.098C2 9.99 1.998 9.57 2.11 9.169a3 3 0 01.477-.975c.247-.334.58-.592.956-.884l.078-.06 6.782-5.275.075-.059c.267-.21.601-.472.998-.58zm.516 1.946c-.075.05-.174.126-.361.271L4.849 8.828c-.498.388-.59.471-.653.556a1 1 0 00-.159.325c-.028.1-.037.225-.037.856V17.8c0 .576 0 .949.024 1.232.022.272.06.372.085.422a1 1 0 00.437.437c.05.025.15.063.422.085C5.251 20 5.624 20 6.2 20H8v-6.432c0-.252 0-.498.017-.706.019-.229.063-.499.201-.77a2 2 0 01.874-.874c.272-.138.541-.182.77-.201.208-.017.454-.017.706-.017h2.864c.252 0 .498 0 .706.017.229.019.499.063.77.201a2 2 0 01.874.874c.138.271.182.541.201.77.017.208.017.454.017.706V20h1.8c.577 0 .949 0 1.232-.024.272-.022.373-.06.422-.085a1 1 0 00.437-.437c.025-.05.063-.15.085-.422C20 18.75 20 18.377 20 17.8v-7.235c0-.63-.009-.755-.037-.856a.999.999 0 00-.159-.325c-.062-.085-.155-.168-.653-.556l-6.783-5.275A7.241 7.241 0 0012 3.277l-.007.005z',
+        fill: 'currentColor',
+      }),
+    );
+  };
+  return React.createElement(
+    icon_1['default'],
+    __assign({}, componentProps, {
+      component: IconNode,
+    }),
+  );
+}
+HouseOutlined.displayName = 'HouseOutlined';
+exports['default'] = HouseOutlined;

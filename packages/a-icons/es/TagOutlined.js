@@ -1,0 +1,46 @@
+var __assign =
+  (this && this.__assign) ||
+  function () {
+    __assign =
+      Object.assign ||
+      function (t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+          s = arguments[i];
+          for (var p in s) {
+            if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+          }
+        }
+        return t;
+      };
+    return __assign.apply(this, arguments);
+  };
+import Icon from 'a-base-icon/lib/icon';
+import * as React from 'react';
+function TagOutlined(componentProps) {
+  var IconNode = function IconNode(props) {
+    return /*#__PURE__*/ React.createElement(
+      'svg',
+      __assign(
+        {
+          viewBox: '0 0 24 24',
+          xmlns: 'http://www.w3.org/2000/svg',
+        },
+        props,
+      ),
+      /*#__PURE__*/ React.createElement('path', {
+        fillRule: 'evenodd',
+        clipRule: 'evenodd',
+        d: 'M13.352 3.028c.088-.022.194-.028.73-.028h4.475c.577 0 .949 0 1.232.024.272.022.373.06.422.085a1 1 0 01.437.437c.025.05.063.15.085.422.023.283.024.655.024 1.232v4.475c0 .536-.006.642-.027.73a1 1 0 01-.12.29c-.048.076-.118.156-.497.535L12.444 18.9c-.606.605-1.018 1.017-1.362 1.309-.335.285-.54.397-.707.452a2 2 0 01-1.236 0c-.167-.055-.371-.167-.707-.452-.344-.292-.756-.703-1.362-1.31l-2.212-2.211c-.605-.606-1.016-1.018-1.309-1.362-.284-.336-.397-.54-.451-.707a2 2 0 010-1.236c.054-.167.167-.371.451-.707.293-.344.704-.756 1.31-1.362l7.668-7.669c.38-.38.459-.45.536-.497a1 1 0 01.29-.12zM14 1c-.407 0-.765 0-1.114.083a3 3 0 00-.867.36c-.305.186-.559.44-.846.728l-.06.06-7.697 7.697c-.57.57-1.039 1.039-1.39 1.453-.365.43-.661.865-.83 1.383a4 4 0 000 2.472c.169.518.465.953.83 1.383.351.414.82.884 1.39 1.453l2.27 2.27c.57.57 1.04 1.04 1.453 1.39.43.366.865.661 1.383.83a4 4 0 002.472 0c.518-.169.953-.464 1.383-.83.414-.35.884-.82 1.453-1.39l7.698-7.698.059-.059c.288-.287.542-.54.73-.846a3 3 0 00.358-.867c.084-.348.084-.707.083-1.114V5.16c0-.527 0-.981-.03-1.356-.033-.395-.104-.789-.297-1.167a3 3 0 00-1.31-1.311c-.38-.193-.772-.264-1.168-.296C19.578 1 19.122 1 18.596 1H13.999zm3.258 7a1.5 1.5 0 10-3 0 1.5 1.5 0 003 0z',
+        fill: 'currentColor',
+      }),
+    );
+  };
+  return /*#__PURE__*/ React.createElement(
+    Icon,
+    __assign({}, componentProps, {
+      component: IconNode,
+    }),
+  );
+}
+TagOutlined.displayName = 'TagOutlined';
+export default TagOutlined;

@@ -1,0 +1,57 @@
+.container {
+  display: flex;
+  user-select: none;
+}
+
+.column-container {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  margin: 8px;
+  background-color: #c1c7d0;
+  border: 1px solid #7a869a;
+  border-radius: 2px;
+}
+
+.task-list {
+  flex-grow: 1;
+  min-height: 200px;
+  padding: 8px;
+  transition: background-color 0.2s ease;
+}
+
+.task-container {
+  /* needed for SelectionCount */
+  position: relative;
+  margin-bottom: 8px;
+  padding: 8px;
+  color: #091e42;
+  font-size: 18px;
+  background-color: #fafbfc;
+  border: 3px solid #8993a4;
+  border-radius: 2px;
+
+  /* avoid default outline which looks lame with the position: absolute; */
+
+  &:focus {
+    border-color: #57d9a3;
+    outline: none;
+  }
+}
+
+.task-content {
+}
+
+.selection-count {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  width: 30px;
+  height: 30px;
+  color: #fff;
+  font-size: 0.8rem;
+  line-height: 30px;
+  text-align: center;
+  background: #6b778c;
+  border-radius: 50%;
+}

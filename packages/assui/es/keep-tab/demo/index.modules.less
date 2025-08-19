@@ -1,0 +1,66 @@
+.assui-tabs-card {
+  .ant-tabs-tab + .ant-tabs-tab {
+    margin: 0;
+  }
+
+  &.ant-tabs-top > .ant-tabs-nav:before {
+    display: none;
+  }
+
+  .ant-tabs-nav-list {
+    background-color: #fff;
+    border-radius: 6px;
+    box-shadow: 0 11px rgba(92, 118, 166, 0.05);
+
+    .ant-tabs-tab {
+      min-width: 96px;
+      padding: 9px 16px;
+      color: #8598bb;
+      font-size: 16px;
+      border-radius: 6px;
+
+      .ant-tabs-tab-btn {
+        width: 100%;
+        line-height: 22px;
+        text-align: center;
+        transition: none;
+      }
+    }
+
+    .tab-badge {
+      color: #8598bb;
+      font-size: 16px;
+    }
+
+    .ant-badge-count {
+      display: inline-block;
+      height: 14px;
+      padding-right: 4px;
+      padding-left: 3px;
+      font-size: 12px;
+      line-height: 14px;
+      text-align: center;
+      vertical-align: middle;
+      background-color: #ffd100;
+      border-radius: 6.5px;
+      transform: scale(0.9);
+    }
+
+    .ant-tabs-tab-active {
+      background-color: #3093ea;
+
+      .tab-badge {
+        color: #fff;
+      }
+
+      .ant-tabs-tab-btn {
+        color: #fff;
+        transition: none;
+      }
+    }
+
+    .ant-tabs-ink-bar {
+      display: none;
+    }
+  }
+}

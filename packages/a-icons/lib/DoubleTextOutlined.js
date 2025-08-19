@@ -1,0 +1,112 @@
+'use strict';
+
+var __assign =
+  (this && this.__assign) ||
+  function () {
+    __assign =
+      Object.assign ||
+      function (t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+          s = arguments[i];
+          for (var p in s) {
+            if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+          }
+        }
+        return t;
+      };
+    return __assign.apply(this, arguments);
+  };
+var __createBinding =
+  (this && this.__createBinding) ||
+  (Object.create
+    ? function (o, m, k, k2) {
+        if (k2 === undefined) k2 = k;
+        var desc = Object.getOwnPropertyDescriptor(m, k);
+        if (
+          !desc ||
+          ('get' in desc ? !m.__esModule : desc.writable || desc.configurable)
+        ) {
+          desc = {
+            enumerable: true,
+            get: function get() {
+              return m[k];
+            },
+          };
+        }
+        Object.defineProperty(o, k2, desc);
+      }
+    : function (o, m, k, k2) {
+        if (k2 === undefined) k2 = k;
+        o[k2] = m[k];
+      });
+var __setModuleDefault =
+  (this && this.__setModuleDefault) ||
+  (Object.create
+    ? function (o, v) {
+        Object.defineProperty(o, 'default', {
+          enumerable: true,
+          value: v,
+        });
+      }
+    : function (o, v) {
+        o['default'] = v;
+      });
+var __importStar =
+  (this && this.__importStar) ||
+  function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null)
+      for (var k in mod) {
+        if (k !== 'default' && Object.prototype.hasOwnProperty.call(mod, k))
+          __createBinding(result, mod, k);
+      }
+    __setModuleDefault(result, mod);
+    return result;
+  };
+var __importDefault =
+  (this && this.__importDefault) ||
+  function (mod) {
+    return mod && mod.__esModule
+      ? mod
+      : {
+          default: mod,
+        };
+  };
+Object.defineProperty(exports, '__esModule', {
+  value: true,
+});
+var React = __importStar(require('react'));
+var icon_1 = __importDefault(require('a-base-icon/lib/icon'));
+function DoubleTextOutlined(componentProps) {
+  var IconNode = function IconNode(props) {
+    return React.createElement(
+      'svg',
+      __assign(
+        {
+          viewBox: '0 0 24 24',
+          xmlns: 'http://www.w3.org/2000/svg',
+        },
+        props,
+      ),
+      React.createElement('path', {
+        d: 'M14.75 9h-8.5v2h8.5V9zM13.125 12.2H6.25v2h6.875v-2zM9.875 15.4H6.25v2h3.625v-2z',
+        fill: 'currentColor',
+      }),
+      React.createElement('path', {
+        fillRule: 'evenodd',
+        clipRule: 'evenodd',
+        d: 'M17.44 1h-4.88c-.596 0-1.103 0-1.52.034-.436.036-.86.114-1.265.32a3.25 3.25 0 00-1.42 1.42c-.207.406-.285.83-.321 1.267-.023.279-.03.599-.033.959h-.14c-.65 0-1.195 0-1.642.036-.467.038-.913.12-1.337.332A3.42 3.42 0 003.378 6.85c-.22.422-.303.867-.341 1.33C3 8.623 3 9.161 3 9.8v8.4c0 .638 0 1.177.037 1.619.038.463.122.908.34 1.33.332.641.86 1.16 1.505 1.483.424.213.87.294 1.337.332.447.036.993.036 1.642.036h5.278c.65 0 1.195 0 1.642-.036.467-.037.913-.12 1.336-.332a3.42 3.42 0 001.505-1.483c.22-.422.303-.867.341-1.33.037-.442.037-.98.037-1.619V18c.36-.003.68-.01.96-.033.436-.036.86-.114 1.265-.32a3.25 3.25 0 001.42-1.42c.207-.406.285-.83.321-1.267.034-.416.034-.923.034-1.52V5.561c0-.597 0-1.104-.034-1.52-.036-.437-.114-.861-.32-1.266a3.25 3.25 0 00-1.42-1.42c-.406-.207-.83-.285-1.267-.321C18.543 1 18.036 1 17.44 1zM18 15.999c.33-.003.584-.009.796-.026.314-.026.445-.07.521-.11a1.25 1.25 0 00.547-.545c.039-.077.083-.208.109-.522.026-.325.027-.75.027-1.396V5.6c0-.647 0-1.071-.027-1.396-.026-.314-.07-.445-.11-.521a1.25 1.25 0 00-.546-.547c-.076-.039-.207-.083-.52-.109C18.47 3.001 18.046 3 17.4 3h-4.8c-.647 0-1.071 0-1.396.027-.314.026-.445.07-.522.11a1.25 1.25 0 00-.546.546c-.039.076-.083.207-.109.52-.017.212-.023.467-.026.797h3.139c.648 0 1.194 0 1.641.036.467.038.913.12 1.336.332a3.42 3.42 0 011.505 1.483c.22.422.303.867.341 1.33.037.442.037.98.037 1.619v6.199zM5.78 7.155c.097-.049.253-.098.6-.126C6.735 7.001 7.2 7 7.9 7h5.2c.699 0 1.164 0 1.52.03.347.027.503.076.6.125.272.137.49.353.626.615.047.09.096.24.124.576.03.35.03.805.03 1.494v8.32c0 .689 0 1.144-.03 1.494-.028.337-.077.485-.124.576a1.42 1.42 0 01-.625.615c-.098.049-.254.098-.6.126-.357.028-.822.029-1.521.029H7.9c-.699 0-1.164 0-1.52-.03-.347-.027-.503-.076-.6-.125a1.419 1.419 0 01-.626-.615c-.047-.09-.096-.24-.124-.576C5 19.304 5 18.849 5 18.16V9.84c0-.689 0-1.144.03-1.494.028-.337.077-.485.124-.576a1.42 1.42 0 01.625-.615z',
+        fill: 'currentColor',
+      }),
+    );
+  };
+  return React.createElement(
+    icon_1['default'],
+    __assign({}, componentProps, {
+      component: IconNode,
+    }),
+  );
+}
+DoubleTextOutlined.displayName = 'DoubleTextOutlined';
+exports['default'] = DoubleTextOutlined;
