@@ -1,0 +1,38 @@
+.menu-nav-icon-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 44px;
+  padding: 9px 10px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+
+.menu-nav-icon-bar {
+  display: inline-block;
+  width: 22px;
+  height: 2px;
+  margin-top: 4px;
+  background-color: #fff;
+  border-radius: 1px;
+}
+
+.menu-nav-icon span {
+  display: block;
+  transform: rotate(0deg);
+  transition: 0.25s ease-in-out;
+}
+
+.menu-nav-icon.open span:nth-child(1) {
+  position: relative;
+  top: 6px;
+  transform: rotate(45deg);
+}
+
+.menu-nav-icon.open span:nth-child(2) {
+  transform: rotate(-45deg);
+}
+
+.menu-nav-icon.open span:nth-child(3) {
+  width: 0;
+}

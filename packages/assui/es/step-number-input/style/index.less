@@ -1,0 +1,56 @@
+@import '~antd/lib/style/index.less';
+@import '../../style/variables.less';
+
+@progress-prefix-cls: ~'@{ant-prefix}';
+
+.number-range-input {
+  display: flex;
+  align-items: center;
+  width: 100%;
+
+  .@{ant-prefix}-input-group-addon {
+    padding: 0;
+  }
+}
+
+.count-minus-btn {
+  display: inline-block;
+  padding: 4px 11px;
+  cursor: pointer;
+
+  &:hover,
+  &:focus,
+  &:active,
+  &:focus-within {
+    color: @white;
+    background-color: @primary-color-hover;
+    cursor: pointer;
+  }
+}
+
+.count-add-btn {
+  display: inline-block;
+  padding: 4px 11px;
+  cursor: pointer;
+
+  &:hover,
+  &:focus,
+  &:active,
+  &:focus-within {
+    color: @white;
+    background-color: @primary-color-hover;
+    cursor: pointer;
+  }
+}
+
+.disabled-btn {
+  &,
+  &:hover,
+  &:focus,
+  &:active,
+  &:focus-within {
+    color: @disabled-color;
+    background-color: @disabled-bg;
+    cursor: not-allowed;
+  }
+}

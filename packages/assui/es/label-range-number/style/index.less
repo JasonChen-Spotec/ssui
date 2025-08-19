@@ -1,0 +1,89 @@
+@import '~antd/lib/style/index.less';
+@import '../../style/themes/default.less';
+@import '../../style/variables.less';
+
+.label-range-number {
+  position: relative;
+  width: 220px;
+  height: 45px;
+  background-color: @white;
+  border: 1px solid @color_e5e5e5;
+  border-radius: @border-radius-base;
+  cursor: pointer;
+  transition: all 0.2s ease-out;
+
+  &:not(.label-range-number-label-scale) {
+    .a-number-input > input {
+      cursor: pointer;
+    }
+  }
+
+  &:hover {
+    border: 1px solid @color_a0a0a0;
+  }
+
+  &-focused {
+    border-color: @black;
+    box-shadow: none;
+  }
+
+  .a-number {
+    position: relative;
+    display: inline-flex;
+    height: 45px;
+    padding-left: 15px;
+    outline: none;
+
+    &-input input {
+      position: relative;
+      top: 19px;
+      display: inline-flex;
+      align-items: center;
+      width: 100%;
+    }
+
+    &-range-separator {
+      position: relative;
+      top: 18px;
+      height: 14px;
+      margin: 0 3px;
+      padding: 0;
+    }
+
+    &-range-separator,
+    &-input {
+      opacity: 0;
+    }
+
+    .@{ant-prefix}-input {
+      padding: 0;
+      border-radius: 0;
+    }
+  }
+
+  &-text {
+    position: absolute;
+    top: 12px;
+    left: 16px;
+    z-index: 2;
+    color: @color_9aa5b5;
+    font-weight: 400;
+    font-size: @font-size-base;
+    line-height: 20px;
+    transform-origin: top left;
+    transition: all 0.2s ease-out;
+  }
+
+  &-label-scale {
+    .a-number-range-separator,
+    .a-number-input {
+      opacity: 1;
+    }
+
+    .label-range-number-text {
+      transform: translateY(@labelTextLabeltranslateY) scale(@labelTextLabelScale);
+      cursor: text;
+      pointer-events: none;
+    }
+  }
+}

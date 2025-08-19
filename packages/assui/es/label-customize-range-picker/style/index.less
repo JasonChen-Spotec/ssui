@@ -1,0 +1,54 @@
+@import '~antd/lib/style/index.less';
+@import '../../style/variables.less';
+
+.label-customize-range-picker-panel {
+  .customize-select-text {
+    margin-left: 8px;
+  }
+
+  .check-wrapper {
+    padding: 8px 11px 6px;
+    border-bottom: 1px solid @color_f5f6fa;
+
+    .@{ant-prefix}-checkbox-wrapper {
+      pointer-events: none;
+    }
+
+    .@{ant-prefix}-checkbox-input {
+      pointer-events: auto;
+    }
+  }
+
+  .pick-box {
+    display: flex;
+    justify-content: space-between;
+    width: 265px;
+    padding: 8px 11px 11px;
+
+    .radio {
+      display: inline-block;
+      width: 50%;
+      margin-right: 0;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+
+    .@{ant-prefix}-radio-group {
+      width: 100%;
+    }
+  }
+
+  .customize-select {
+    vertical-align: middle;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .label-customize-range-picker-panel {
+    .panel {
+      max-width: 280px;
+      overflow-x: scroll;
+    }
+  }
+}
