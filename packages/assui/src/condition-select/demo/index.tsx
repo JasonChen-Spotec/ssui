@@ -49,13 +49,21 @@ const list = [
 ];
 
 const demo = () => {
-  const [value, setValue] = useState({ selectValue: 'value' });
+  const [value, setValue] = useState({
+    selectValue: 'input',
+    input: 'default value',
+  });
   return (
     <div>
-      <Form>
-        <Form.Item name="selectValue">
+      <Form
+        initialValues={{
+          formKey: value,
+        }}
+      >
+        <Form.Item name="formKey">
           {/* <Input /> */}
           <ConditionSelect
+            selectName="selectValue"
             option={list}
             onChange={(v) => {
               console.log(v);

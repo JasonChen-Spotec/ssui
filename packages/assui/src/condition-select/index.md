@@ -25,5 +25,6 @@ group:
 | value                | value值                                           | -                              | -              |
 | onChange             | value 变化时，调用此函数                             | `(value: ValueType) => void`   | -              |
 | option               | 配置项                                             | `DynamicComponentType[]`   | -              | 
-| id                   | Form.Item传递下来的name                             | `string`                  | -              |
+| selectName           | select绑定的name                             | `string`                  | -              |
+| selectProps          | select的props                             | `SelectProps`                  | -              |
 

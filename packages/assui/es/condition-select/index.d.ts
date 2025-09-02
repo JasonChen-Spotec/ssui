@@ -3,7 +3,7 @@ declare const ConditionSelect: ({
   option,
   value,
   onChange,
-  id,
   selectProps,
+  selectName,
 }: ConditionSelectProps) => JSX.Element;
 export default ConditionSelect;

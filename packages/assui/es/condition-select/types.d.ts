@@ -15,10 +15,9 @@ export type DynamicComponentType = {
   name: string;
 } & ComponentConfig;
 export type ConditionSelectProps = {
-  option: DynamicComponentType[];
   value?: ValueType;
   onChange?: (value: ValueType) => void;
-  /** antd Form.Item 传递下来的name */
-  id?: string;
+  option: DynamicComponentType[];
+  selectName: string;
   selectProps: SelectProps;
 };

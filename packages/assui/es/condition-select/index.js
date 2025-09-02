@@ -40,16 +40,18 @@ var __read =
     }
     return ar;
   };
-import { useControllableValue } from 'ahooks';
-import { Col, Row, Select } from 'antd';
-import { omit } from 'lodash';
-import React, { useState } from 'react';
+import useControllableValue from 'ahooks/es/useControllableValue';
+import Col from 'antd/es/grid/col';
+import Row from 'antd/es/grid/row';
+import Select from 'antd/es/select';
+import omit from 'lodash/omit';
+import React from 'react';
 var ConditionSelect = function ConditionSelect(_a) {
   var option = _a.option,
     value = _a.value,
     onChange = _a.onChange,
-    id = _a.id,
-    selectProps = _a.selectProps;
+    selectProps = _a.selectProps,
+    selectName = _a.selectName;
   var _b = __read(
       useControllableValue({
         value: value,
@@ -57,10 +59,23 @@ var ConditionSelect = function ConditionSelect(_a) {
       }),
       2,
     ),
+    componentValue = _b[0],
     setComponentValue = _b[1];
-  var _c = __read(useState(option[0]), 2),
-    current = _c[0],
-    setCurrent = _c[1];
+  var current = React.useMemo(
+    function () {
+      if (!componentValue || !componentValue[selectName]) {
+        return null;
+      }
+      var result = option.find(function (item) {
+        return item.value === componentValue[selectName];
+      });
+      if (result) {
+        return result;
+      }
+      throw new Error('can not find this option');
+    },
+    [componentValue],
+  );
   var DynamicComponent =
     current === null || current === void 0 ? void 0 : current.component;
   var componentProps = omit(
@@ -71,24 +86,15 @@ var ConditionSelect = function ConditionSelect(_a) {
     current === null || current === void 0 ? void 0 : current.componentProps;
   var handleTypeChange = function handleTypeChange(val) {
     var _a;
-    setCurrent(
-      option.find(function (item) {
-        return item.value === val;
-      }),
-    );
-    setComponentValue(((_a = {}), (_a[id] = val), _a));
+    setComponentValue(((_a = {}), (_a[selectName] = val), _a));
   };
   var handleInputChange = function handleInputChange(v) {
     var _a;
     setComponentValue(
-      ((_a = {}),
-      (_a[id] = current === null || current === void 0 ? void 0 : current.value),
-      (_a[
-        componentProps === null || componentProps === void 0
-          ? void 0
-          : componentProps.name
-      ] = v),
-      _a),
+      __assign(
+        __assign({}, componentValue),
+        ((_a = {}), (_a[componentProps.name] = v), _a),
+      ),
     );
   };
   var firstSpan = DynamicComponent ? 10 : 24;
@@ -107,7 +113,10 @@ var ConditionSelect = function ConditionSelect(_a) {
         __assign(
           {
             onChange: handleTypeChange,
-            value: current === null || current === void 0 ? void 0 : current.value,
+            value:
+              componentValue === null || componentValue === void 0
+                ? void 0
+                : componentValue[selectName],
             allowClear: true,
           },
           selectProps,
@@ -133,6 +142,7 @@ var ConditionSelect = function ConditionSelect(_a) {
         /*#__PURE__*/ React.createElement(
           DynamicComponent,
           __assign(__assign({}, componentProps), {
+            value: componentValue[componentProps.name],
             onChange: function onChange(v) {
               var parseValue =
                 fieldProps === null || fieldProps === void 0

@@ -1,33 +1,44 @@
-import { useControllableValue } from 'ahooks';
-import { Col, Row, Select } from 'antd';
-import { omit } from 'lodash';
-import React, { useState } from 'react';
-import type { ConditionSelectProps, DynamicComponentType, ValueType } from './types';
+import useControllableValue from 'ahooks/lib/useControllableValue';
+import Col from 'antd/lib/grid/col';
+import Row from 'antd/lib/grid/row';
+import Select from 'antd/lib/select';
+import omit from 'lodash/omit';
+import React from 'react';
+import type { ConditionSelectProps, ValueType } from './types';
 
 const ConditionSelect = ({
   option,
   value,
   onChange,
-  id,
   selectProps,
+  selectName,
 }: ConditionSelectProps) => {
-  const [, setComponentValue] = useControllableValue({ value, onChange });
-  const [current, setCurrent] = useState<DynamicComponentType>(option[0]);
+  const [componentValue, setComponentValue] = useControllableValue({ value, onChange });
+  const current = React.useMemo(() => {
+    if (!componentValue || !componentValue[selectName]) {
+      return null;
+    }
+    const result = option.find((item) => item.value === componentValue[selectName]);
+    if (result) {
+      return result;
+    }
+    throw new Error('can not find this option');
+  }, [componentValue]);
+
   const DynamicComponent = current?.component;
   const componentProps = omit<ValueType>(current?.componentProps, 'parseValue');
   const fieldProps = current?.componentProps;
 
   const handleTypeChange = (val: string) => {
-    setCurrent(option.find((item) => item.value === val) as DynamicComponentType);
     setComponentValue({
-      [id as string]: val,
+      [selectName]: val,
     });
   };
 
   const handleInputChange = (v: any) => {
     setComponentValue({
-      [id as string]: current?.value,
-      [componentProps?.name as string]: v,
+      ...componentValue,
+      [componentProps.name]: v,
     });
   };
 
@@ -38,7 +49,7 @@ const ConditionSelect = ({
       <Col span={firstSpan}>
         <Select
           onChange={handleTypeChange}
-          value={current?.value as string}
+          value={componentValue?.[selectName]}
           allowClear
           {...selectProps}
         >
@@ -53,6 +64,7 @@ const ConditionSelect = ({
         <Col span={14}>
           {React.createElement(DynamicComponent, {
             ...componentProps,
+            value: componentValue[componentProps.name],
             onChange: (v: any) => {
               const parseValue = fieldProps?.parseValue;
               if (parseValue) {
