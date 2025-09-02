@@ -6,6 +6,7 @@ export { default as ButtonModal } from './button-modal';
 export { default as ColorSelect } from './color-select';
 export { default as ComplexValSelect } from './complex-val-select';
 export { default as ConditionInput } from './condition-input';
+export { default as ConditionSelect } from './condition-select';
 export { default as ConditionSelectInput } from './condition-select-input';
 export { default as ConfigProvider } from './config-provider';
 export { default as CopyToClipboard } from './copy-to-clipboard';
