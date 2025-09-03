@@ -331,6 +331,7 @@ export { default as SignalDiffusionOutlined } from './SignalDiffusionOutlined';
 export { default as SignalFilled } from './SignalFilled';
 export { default as SignalLineOutlined } from './SignalLineOutlined';
 export { default as SignalOutlined } from './SignalOutlined';
+export { default as SignalStopReviewOutlined } from './SignalStopReviewOutlined';
 export { default as SimpleEarthOutlined } from './SimpleEarthOutlined';
 export { default as SpeakerFilled } from './SpeakerFilled';
 export { default as SphereFilled } from './SphereFilled';
