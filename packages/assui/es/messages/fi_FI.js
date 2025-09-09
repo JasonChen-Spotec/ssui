@@ -2,7 +2,7 @@ var locale = {
   locale: 'fi_FI',
   lang: {
     global: {
-      placeholder: 'Valitse',
+      placeholder: 'Valitse'
     },
     labelCustomizeRangePicker: {
       customTime: 'mukautettu aika',
@@ -21,8 +21,8 @@ var locale = {
       last180days: 'Viimeiset 180 päivää',
       last365days: 'Viimeiset 365 päivää',
       year: 'Tänä vuonna',
-      all: 'Kaikki',
-    },
-  },
+      all: 'Kaikki'
+    }
+  }
 };
 export default locale;

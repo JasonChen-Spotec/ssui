@@ -1,16 +1,12 @@
-'use strict';
+"use strict";
 
-var __importDefault =
-  (this && this.__importDefault) ||
-  function (mod) {
-    return mod && mod.__esModule
-      ? mod
-      : {
-          default: mod,
-        };
+var __importDefault = this && this.__importDefault || function (mod) {
+  return mod && mod.__esModule ? mod : {
+    "default": mod
   };
-Object.defineProperty(exports, '__esModule', {
-  value: true,
+};
+Object.defineProperty(exports, "__esModule", {
+  value: true
 });
-var rc_motion_1 = __importDefault(require('rc-motion'));
-exports['default'] = rc_motion_1['default'];
+var rc_motion_1 = __importDefault(require("rc-motion"));
+exports["default"] = rc_motion_1["default"];

@@ -2,7 +2,7 @@ var locale = {
   locale: 'ar_EG',
   lang: {
     global: {
-      placeholder: 'اختر من فضلك',
+      placeholder: 'اختر من فضلك'
     },
     labelCustomizeRangePicker: {
       customTime: 'الوقت المخصص',
@@ -21,8 +21,8 @@ var locale = {
       last180days: 'آخر 180 يومًا',
       last365days: 'آخر 365 يومًا',
       year: 'هذا العام',
-      all: 'الجميع',
-    },
-  },
+      all: 'الجميع'
+    }
+  }
 };
 export default locale;

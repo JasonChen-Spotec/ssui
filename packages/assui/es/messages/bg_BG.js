@@ -2,7 +2,7 @@ var locale = {
   locale: 'bg_BG',
   lang: {
     global: {
-      placeholder: 'Моля избери',
+      placeholder: 'Моля избери'
     },
     labelCustomizeRangePicker: {
       customTime: 'персонализирано време',
@@ -21,8 +21,8 @@ var locale = {
       last180days: 'Последните 180 дни',
       last365days: 'Последните 365 дни',
       year: 'Тази година',
-      all: 'всичко',
-    },
-  },
+      all: 'всичко'
+    }
+  }
 };
 export default locale;

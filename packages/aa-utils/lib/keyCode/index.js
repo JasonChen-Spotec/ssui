@@ -1,57 +1,9 @@
-'use strict';
+"use strict";
 
-Object.defineProperty(exports, '__esModule', {
-  value: true,
+Object.defineProperty(exports, "__esModule", {
+  value: true
 });
-exports.FORWARD_SLASH =
-  exports.DECIMAL_POINT =
-  exports.DASH =
-  exports.COMMA =
-  exports.F12 =
-  exports.F11 =
-  exports.F10 =
-  exports.F9 =
-  exports.F8 =
-  exports.F7 =
-  exports.F6 =
-  exports.F5 =
-  exports.F4 =
-  exports.F3 =
-  exports.F2 =
-  exports.F1 =
-  exports.A =
-  exports.C =
-  exports.WINDOWS =
-  exports.UP =
-  exports.TAB =
-  exports.SPACE =
-  exports.SHIFT =
-  exports.RIGHT =
-  exports.PAGE_UP =
-  exports.PAGE_DOWN =
-  exports.NUMPAD_SUBTRACT =
-  exports.NUMPAD_MULTIPLY =
-  exports.NUMPAD_ENTER =
-  exports.NUMPAD_DIVIDE =
-  exports.NUMPAD_DECIMAL =
-  exports.NUMPAD_ADD =
-  exports.MENU =
-  exports.LEFT =
-  exports.INSERT =
-  exports.HOME =
-  exports.ESCAPE =
-  exports.ENTER =
-  exports.END =
-  exports.DOWN =
-  exports.DELETE =
-  exports.CONTROL =
-  exports.COMMAND_RIGHT =
-  exports.COMMAND_LEFT =
-  exports.COMMAND =
-  exports.CAPS_LOCK =
-  exports.BACKSPACE =
-  exports.ALT =
-    void 0;
+exports.FORWARD_SLASH = exports.DECIMAL_POINT = exports.DASH = exports.COMMA = exports.F12 = exports.F11 = exports.F10 = exports.F9 = exports.F8 = exports.F7 = exports.F6 = exports.F5 = exports.F4 = exports.F3 = exports.F2 = exports.F1 = exports.A = exports.C = exports.WINDOWS = exports.UP = exports.TAB = exports.SPACE = exports.SHIFT = exports.RIGHT = exports.PAGE_UP = exports.PAGE_DOWN = exports.NUMPAD_SUBTRACT = exports.NUMPAD_MULTIPLY = exports.NUMPAD_ENTER = exports.NUMPAD_DIVIDE = exports.NUMPAD_DECIMAL = exports.NUMPAD_ADD = exports.MENU = exports.LEFT = exports.INSERT = exports.HOME = exports.ESCAPE = exports.ENTER = exports.END = exports.DOWN = exports.DELETE = exports.CONTROL = exports.COMMAND_RIGHT = exports.COMMAND_LEFT = exports.COMMAND = exports.CAPS_LOCK = exports.BACKSPACE = exports.ALT = void 0;
 exports.ALT = 18;
 exports.BACKSPACE = 8;
 exports.CAPS_LOCK = 20;

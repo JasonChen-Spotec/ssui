@@ -1,13 +1,13 @@
-'use strict';
+"use strict";
 
-Object.defineProperty(exports, '__esModule', {
-  value: true,
+Object.defineProperty(exports, "__esModule", {
+  value: true
 });
 var locale = {
   locale: 'zh_TW',
   lang: {
     global: {
-      placeholder: '請選擇',
+      placeholder: '請選擇'
     },
     labelCustomizeRangePicker: {
       customTime: '自定義時間',
@@ -26,8 +26,8 @@ var locale = {
       last180days: '最近180天',
       last365days: '最近365天',
       year: '今年',
-      all: '全部',
-    },
-  },
+      all: '全部'
+    }
+  }
 };
-exports['default'] = locale;
+exports["default"] = locale;

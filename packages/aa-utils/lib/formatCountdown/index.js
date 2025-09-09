@@ -1,61 +1,54 @@
-'use strict';
+"use strict";
 
-var __read =
-  (this && this.__read) ||
-  function (o, n) {
-    var m = typeof Symbol === 'function' && o[Symbol.iterator];
-    if (!m) return o;
-    var i = m.call(o),
-      r,
-      ar = [],
-      e;
-    try {
-      while ((n === void 0 || n-- > 0) && !(r = i.next()).done) {
-        ar.push(r.value);
-      }
-    } catch (error) {
-      e = {
-        error: error,
-      };
-    } finally {
-      try {
-        if (r && !r.done && (m = i['return'])) m.call(i);
-      } finally {
-        if (e) throw e.error;
-      }
+var __read = this && this.__read || function (o, n) {
+  var m = typeof Symbol === "function" && o[Symbol.iterator];
+  if (!m) return o;
+  var i = m.call(o),
+    r,
+    ar = [],
+    e;
+  try {
+    while ((n === void 0 || n-- > 0) && !(r = i.next()).done) {
+      ar.push(r.value);
     }
-    return ar;
+  } catch (error) {
+    e = {
+      error: error
+    };
+  } finally {
+    try {
+      if (r && !r.done && (m = i["return"])) m.call(i);
+    } finally {
+      if (e) throw e.error;
+    }
+  }
+  return ar;
+};
+var __importDefault = this && this.__importDefault || function (mod) {
+  return mod && mod.__esModule ? mod : {
+    "default": mod
   };
-var __importDefault =
-  (this && this.__importDefault) ||
-  function (mod) {
-    return mod && mod.__esModule
-      ? mod
-      : {
-          default: mod,
-        };
-  };
-Object.defineProperty(exports, '__esModule', {
-  value: true,
+};
+Object.defineProperty(exports, "__esModule", {
+  value: true
 });
 exports.formatTimeStr = formatTimeStr;
-exports['default'] = formatCountdown;
-var padStart_1 = __importDefault(require('lodash/padStart'));
+exports["default"] = formatCountdown;
+var padStart_1 = __importDefault(require("lodash/padStart"));
 // Countdown
-var timeUnits = [
-  ['Y', 1000 * 60 * 60 * 24 * 365],
-  // years
-  ['M', 1000 * 60 * 60 * 24 * 30],
-  // months
-  ['D', 1000 * 60 * 60 * 24],
-  // days
-  ['H', 1000 * 60 * 60],
-  // hours
-  ['m', 1000 * 60],
-  // minutes
-  ['s', 1000],
-  // seconds
-  ['S', 1], // million seconds
+var timeUnits = [['Y', 1000 * 60 * 60 * 24 * 365],
+// years
+['M', 1000 * 60 * 60 * 24 * 30],
+// months
+['D', 1000 * 60 * 60 * 24],
+// days
+['H', 1000 * 60 * 60],
+// hours
+['m', 1000 * 60],
+// minutes
+['s', 1000],
+// seconds
+['S', 1] // million seconds
 ];
 
 function formatTimeStr(duration, format) {
@@ -72,9 +65,9 @@ function formatTimeStr(duration, format) {
     if (current.indexOf(name) !== -1) {
       var value_1 = Math.floor(leftDuration / unit);
       leftDuration -= value_1 * unit;
-      return current.replace(new RegExp(''.concat(name, '+'), 'g'), function (match) {
+      return current.replace(new RegExp("".concat(name, "+"), 'g'), function (match) {
         var len = match.length;
-        return (0, padStart_1['default'])(value_1.toString(), len, '0');
+        return (0, padStart_1["default"])(value_1.toString(), len, '0');
       });
     }
     return current;

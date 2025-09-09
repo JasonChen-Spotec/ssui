@@ -2,7 +2,7 @@ var locale = {
   locale: 'zh_CN',
   lang: {
     global: {
-      placeholder: '请选择',
+      placeholder: '请选择'
     },
     labelCustomizeRangePicker: {
       customTime: '自定义时间',
@@ -21,8 +21,8 @@ var locale = {
       last180days: '最近180天',
       last365days: '最近365天',
       year: '今年',
-      all: '全部',
-    },
-  },
+      all: '全部'
+    }
+  }
 };
 export default locale;

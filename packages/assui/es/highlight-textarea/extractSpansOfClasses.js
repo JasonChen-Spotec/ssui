@@ -1,44 +1,39 @@
-var __read =
-  (this && this.__read) ||
-  function (o, n) {
-    var m = typeof Symbol === 'function' && o[Symbol.iterator];
-    if (!m) return o;
-    var i = m.call(o),
-      r,
-      ar = [],
-      e;
-    try {
-      while ((n === void 0 || n-- > 0) && !(r = i.next()).done) {
-        ar.push(r.value);
-      }
-    } catch (error) {
-      e = {
-        error: error,
-      };
-    } finally {
-      try {
-        if (r && !r.done && (m = i['return'])) m.call(i);
-      } finally {
-        if (e) throw e.error;
-      }
+var __read = this && this.__read || function (o, n) {
+  var m = typeof Symbol === "function" && o[Symbol.iterator];
+  if (!m) return o;
+  var i = m.call(o),
+    r,
+    ar = [],
+    e;
+  try {
+    while ((n === void 0 || n-- > 0) && !(r = i.next()).done) {
+      ar.push(r.value);
     }
-    return ar;
-  };
-var __spreadArray =
-  (this && this.__spreadArray) ||
-  function (to, from, pack) {
-    if (pack || arguments.length === 2)
-      for (var i = 0, l = from.length, ar; i < l; i++) {
-        if (ar || !(i in from)) {
-          if (!ar) ar = Array.prototype.slice.call(from, 0, i);
-          ar[i] = from[i];
-        }
-      }
-    return to.concat(ar || Array.prototype.slice.call(from));
-  };
+  } catch (error) {
+    e = {
+      error: error
+    };
+  } finally {
+    try {
+      if (r && !r.done && (m = i["return"])) m.call(i);
+    } finally {
+      if (e) throw e.error;
+    }
+  }
+  return ar;
+};
+var __spreadArray = this && this.__spreadArray || function (to, from, pack) {
+  if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
+    if (ar || !(i in from)) {
+      if (!ar) ar = Array.prototype.slice.call(from, 0, i);
+      ar[i] = from[i];
+    }
+  }
+  return to.concat(ar || Array.prototype.slice.call(from));
+};
 /* eslint-disable no-plusplus */
 import React from 'react';
-var Span = /** @class */ (function () {
+var Span = /** @class */function () {
   function Span(text, beginIndex) {
     this.beginIndex = beginIndex;
     this.endIndex = beginIndex + text.length;
@@ -64,7 +59,7 @@ var Span = /** @class */ (function () {
     right.markClasses = new Set(__spreadArray([], __read(this.markClasses), false));
     return right;
   };
-  Object.defineProperty(Span.prototype, 'className', {
+  Object.defineProperty(Span.prototype, "className", {
     get: function get() {
       if (this.markClasses && this.markClasses.size > 0) {
         return __spreadArray([], __read(this.markClasses), false).sort().join(' ');
@@ -72,39 +67,27 @@ var Span = /** @class */ (function () {
       return '';
     },
     enumerable: false,
-    configurable: true,
+    configurable: true
   });
   Span.prototype.render = function () {
     if (this.isMark) {
       var className = this.className;
       if (className) {
-        return /*#__PURE__*/ React.createElement(
-          'mark',
-          {
-            key: this.beginIndex,
-            className: className,
-          },
-          this.text,
-        );
-      }
-      return /*#__PURE__*/ React.createElement(
-        'mark',
-        {
+        return /*#__PURE__*/React.createElement("mark", {
           key: this.beginIndex,
-        },
-        this.text,
-      );
+          className: className
+        }, this.text);
+      }
+      return /*#__PURE__*/React.createElement("mark", {
+        key: this.beginIndex
+      }, this.text);
     }
-    return /*#__PURE__*/ React.createElement(
-      'span',
-      {
-        key: this.beginIndex,
-      },
-      this.text,
-    );
+    return /*#__PURE__*/React.createElement("span", {
+      key: this.beginIndex
+    }, this.text);
   };
   return Span;
-})();
+}();
 export default function extractSpansOfClasses(value, ranges) {
   var spans = [new Span(value, 0)];
   ranges.forEach(function (range) {

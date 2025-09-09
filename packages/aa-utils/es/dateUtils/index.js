@@ -1,9 +1,9 @@
-import isDate from 'lodash/isDate';
-import isNumber from 'lodash/isNumber';
 import moment from 'moment';
 import momentTimezone from 'moment-timezone'; // fix ie tz.guess bug;
+import isNumber from 'lodash/isNumber';
+import isDate from 'lodash/isDate';
 import 'moment/locale/zh-cn';
-var DateUtils = /** @class */ (function () {
+var DateUtils = /** @class */function () {
   function DateUtils() {
     var _this = this;
     this.setLocale = function (locale) {
@@ -12,9 +12,7 @@ var DateUtils = /** @class */ (function () {
     this.createMoment = function (value) {
       if (value) {
         if (isNumber(_this.timeZoneOffset)) {
-          var val = moment(value)
-            .utc()
-            .utcOffset(_this.timeZoneOffset / 60 / 60);
+          var val = moment(value).utc().utcOffset(_this.timeZoneOffset / 60 / 60);
           if (val.isValid()) {
             return val;
           }
@@ -45,17 +43,14 @@ var DateUtils = /** @class */ (function () {
     };
     this.getToday = function (timeZoneOffset) {
       if (isNumber(timeZoneOffset) || isNumber(_this.timeZoneOffset)) {
-        var resultOffset =
-          (isNumber(timeZoneOffset) ? timeZoneOffset : _this.timeZoneOffset) / 60 / 60;
+        var resultOffset = (isNumber(timeZoneOffset) ? timeZoneOffset : _this.timeZoneOffset) / 60 / 60;
         return moment().utc().utcOffset(resultOffset);
       }
       return moment();
     };
     /** https://momentjs.cn/timezone/docs/#/using-timezones/guessing-user-timezone/ */
     this.getTimeZone = function (ignoreCache) {
-      return momentTimezone.tz.guess(
-        ignoreCache !== null && ignoreCache !== void 0 ? ignoreCache : true,
-      );
+      return momentTimezone.tz.guess(ignoreCache !== null && ignoreCache !== void 0 ? ignoreCache : true);
     };
     this.currentDateFormat = 'YYYY-MM-DD';
     this.currentTimeFormat = 'HH:mm';
@@ -67,8 +62,8 @@ var DateUtils = /** @class */ (function () {
         set: function set(v) {
           this.currentLocale = v;
           this.onIntlChange();
-        },
-      },
+        }
+      }
     });
     Object.defineProperties(this, {
       timeZoneOffset: {
@@ -77,8 +72,8 @@ var DateUtils = /** @class */ (function () {
         },
         set: function set(v) {
           this.currentANTimeZoneOffset = v;
-        },
-      },
+        }
+      }
     });
     Object.defineProperties(this, {
       dateFormat: {
@@ -87,8 +82,8 @@ var DateUtils = /** @class */ (function () {
         },
         set: function set(v) {
           this.currentDateFormat = v;
-        },
-      },
+        }
+      }
     });
     Object.defineProperties(this, {
       timeFormat: {
@@ -97,15 +92,15 @@ var DateUtils = /** @class */ (function () {
         },
         set: function set(v) {
           this.currentTimeFormat = v;
-        },
-      },
+        }
+      }
     });
     Object.defineProperties(this, {
       dateTimeFormat: {
         get: function get() {
-          return ''.concat(this.currentDateFormat, ' ').concat(this.currentTimeFormat);
-        },
-      },
+          return "".concat(this.currentDateFormat, " ").concat(this.currentTimeFormat);
+        }
+      }
     });
   }
   DateUtils.prototype.parseDate = function (date, format) {
@@ -133,5 +128,5 @@ var DateUtils = /** @class */ (function () {
     return m ? m.format(format || this.dateTimeFormat) : '';
   };
   return DateUtils;
-})();
+}();
 export default new DateUtils();

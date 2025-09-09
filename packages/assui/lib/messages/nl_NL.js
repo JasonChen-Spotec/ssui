@@ -1,13 +1,13 @@
-'use strict';
+"use strict";
 
-Object.defineProperty(exports, '__esModule', {
-  value: true,
+Object.defineProperty(exports, "__esModule", {
+  value: true
 });
 var locale = {
   locale: 'nl_NL',
   lang: {
     global: {
-      placeholder: 'Gelieve te kiezen',
+      placeholder: 'Gelieve te kiezen'
     },
     labelCustomizeRangePicker: {
       customTime: 'aangepaste tijd',
@@ -26,8 +26,8 @@ var locale = {
       last180days: 'Afgelopen 180 dagen',
       last365days: 'Afgelopen 365 dagen',
       year: 'Dit jaar',
-      all: 'Allemaal',
-    },
-  },
+      all: 'Allemaal'
+    }
+  }
 };
-exports['default'] = locale;
+exports["default"] = locale;

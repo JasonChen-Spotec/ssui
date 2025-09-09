@@ -2,7 +2,7 @@ var locale = {
   locale: 'cs_CZ',
   lang: {
     global: {
-      placeholder: 'prosím vyber si',
+      placeholder: 'prosím vyber si'
     },
     labelCustomizeRangePicker: {
       customTime: 'vlastní čas',
@@ -21,8 +21,8 @@ var locale = {
       last180days: 'Posledních 180 dní',
       last365days: 'Posledních 365 dní',
       year: 'V letošním roce',
-      all: 'Všechno',
-    },
-  },
+      all: 'Všechno'
+    }
+  }
 };
 export default locale;

@@ -1,29 +1,27 @@
-var __read =
-  (this && this.__read) ||
-  function (o, n) {
-    var m = typeof Symbol === 'function' && o[Symbol.iterator];
-    if (!m) return o;
-    var i = m.call(o),
-      r,
-      ar = [],
-      e;
-    try {
-      while ((n === void 0 || n-- > 0) && !(r = i.next()).done) {
-        ar.push(r.value);
-      }
-    } catch (error) {
-      e = {
-        error: error,
-      };
-    } finally {
-      try {
-        if (r && !r.done && (m = i['return'])) m.call(i);
-      } finally {
-        if (e) throw e.error;
-      }
+var __read = this && this.__read || function (o, n) {
+  var m = typeof Symbol === "function" && o[Symbol.iterator];
+  if (!m) return o;
+  var i = m.call(o),
+    r,
+    ar = [],
+    e;
+  try {
+    while ((n === void 0 || n-- > 0) && !(r = i.next()).done) {
+      ar.push(r.value);
     }
-    return ar;
-  };
+  } catch (error) {
+    e = {
+      error: error
+    };
+  } finally {
+    try {
+      if (r && !r.done && (m = i["return"])) m.call(i);
+    } finally {
+      if (e) throw e.error;
+    }
+  }
+  return ar;
+};
 /**
  * @desc 解决浮动运算问题，避免小数点后产生多位数和计算精度损失。
  * 问题示例：2.3 + 2.4 = 4.699999999999999，1.0 - 0.9 = 0.09999999999999998
@@ -149,11 +147,9 @@ function divide() {
   checkBoundary(num1Changed);
   checkBoundary(num2Changed);
   // fix: 类似 10 ** -4 为 0.00009999999999999999，strip 修正
-  return times(
-    num1Changed / num2Changed,
-    // eslint-disable-next-line no-restricted-properties
-    strip(Math.pow(10, digitLength(num2) - digitLength(num1))),
-  );
+  return times(num1Changed / num2Changed,
+  // eslint-disable-next-line no-restricted-properties
+  strip(Math.pow(10, digitLength(num2) - digitLength(num1))));
 }
 var _boundaryCheckingState = true;
 /**
@@ -173,22 +169,8 @@ function enableBoundaryChecking(flag) {
 function checkBoundary(num) {
   if (_boundaryCheckingState) {
     if (num > Number.MAX_SAFE_INTEGER || num < Number.MIN_SAFE_INTEGER) {
-      console.warn(
-        ''.concat(
-          num,
-          ' is beyond boundary when transfer to integer, the results may not be accurate',
-        ),
-      );
+      console.warn("".concat(num, " is beyond boundary when transfer to integer, the results may not be accurate"));
     }
   }
 }
-export {
-  digitLength,
-  divide,
-  enableBoundaryChecking,
-  float2Fixed,
-  minus,
-  plus,
-  strip,
-  times,
-};
+export { strip, plus, minus, times, divide, digitLength, float2Fixed, enableBoundaryChecking };

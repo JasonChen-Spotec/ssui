@@ -3,7 +3,7 @@ var locale = {
   lang: {
     global: {
       // eslint-disable-next-line quotes
-      placeholder: "Choisissez s'il vous plaît",
+      placeholder: "Choisissez s'il vous plaît"
     },
     labelCustomizeRangePicker: {
       customTime: 'heure personnalisée',
@@ -23,8 +23,8 @@ var locale = {
       last180days: '180 derniers jours',
       last365days: '365 derniers jours',
       year: 'Cette année',
-      all: 'Tout',
-    },
-  },
+      all: 'Tout'
+    }
+  }
 };
 export default locale;

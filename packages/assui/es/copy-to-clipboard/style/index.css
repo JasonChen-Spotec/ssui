@@ -3,14 +3,7 @@
 /* stylelint-disable */
 /* stylelint-disable declaration-bang-space-before,no-duplicate-selectors,string-no-newline */
 .ant-tooltip {
-  position: absolute;
-  z-index: 1070;
-  display: block;
   box-sizing: border-box;
-  width: -moz-max-content;
-  width: max-content;
-  width: intrinsic;
-  max-width: 250px;
   margin: 0;
   padding: 0;
   color: rgba(0, 0, 0, 0.85);
@@ -18,8 +11,15 @@
   font-variant: tabular-nums;
   line-height: 1.5715;
   list-style: none;
-  visibility: visible;
   font-feature-settings: 'tnum';
+  position: absolute;
+  z-index: 1070;
+  display: block;
+  width: -moz-max-content;
+  width: max-content;
+  width: intrinsic;
+  max-width: 250px;
+  visibility: visible;
 }
 .ant-tooltip-content {
   position: relative;
@@ -57,8 +57,7 @@
   word-wrap: break-word;
   background-color: rgba(0, 0, 0, 0.75);
   border-radius: 2px;
-  box-shadow: 0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 6px 16px 0 rgba(0, 0, 0, 0.08),
-    0 9px 28px 8px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 6px 16px 0 rgba(0, 0, 0, 0.08), 0 9px 28px 8px rgba(0, 0, 0, 0.05);
 }
 .ant-tooltip-arrow {
   position: absolute;
@@ -71,11 +70,7 @@
   pointer-events: none;
 }
 .ant-tooltip-arrow-content {
-  --antd-arrow-background-color: linear-gradient(
-    to right bottom,
-    rgba(0, 0, 0, 0.65),
-    rgba(0, 0, 0, 0.75)
-  );
+  --antd-arrow-background-color: linear-gradient(to right bottom, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.75));
   position: absolute;
   top: 0;
   right: 0;
@@ -85,9 +80,9 @@
   width: 11.3137085px;
   height: 11.3137085px;
   margin: auto;
-  border-radius: 0 0 2px;
   content: '';
   pointer-events: auto;
+  border-radius: 0 0 2px;
   pointer-events: none;
 }
 .ant-tooltip-arrow-content::before {
@@ -101,13 +96,9 @@
   background-position: -10px -10px;
   content: '';
   -webkit-clip-path: inset(33% 33%);
-  -webkit-clip-path: path(
-    'M 9.849242404917499 24.091883092036785 A 5 5 0 0 1 13.384776310850237 22.627416997969522 L 20.627416997969522 22.627416997969522 A 2 2 0 0 0 22.627416997969522 20.627416997969522 L 22.627416997969522 13.384776310850237 A 5 5 0 0 1 24.091883092036785 9.849242404917499 L 23.091883092036785 9.849242404917499 L 9.849242404917499 23.091883092036785 Z'
-  );
-  clip-path: inset(33% 33%);
-  clip-path: path(
-    'M 9.849242404917499 24.091883092036785 A 5 5 0 0 1 13.384776310850237 22.627416997969522 L 20.627416997969522 22.627416997969522 A 2 2 0 0 0 22.627416997969522 20.627416997969522 L 22.627416997969522 13.384776310850237 A 5 5 0 0 1 24.091883092036785 9.849242404917499 L 23.091883092036785 9.849242404917499 L 9.849242404917499 23.091883092036785 Z'
-  );
+          clip-path: inset(33% 33%);
+  -webkit-clip-path: path('M 9.849242404917499 24.091883092036785 A 5 5 0 0 1 13.384776310850237 22.627416997969522 L 20.627416997969522 22.627416997969522 A 2 2 0 0 0 22.627416997969522 20.627416997969522 L 22.627416997969522 13.384776310850237 A 5 5 0 0 1 24.091883092036785 9.849242404917499 L 23.091883092036785 9.849242404917499 L 9.849242404917499 23.091883092036785 Z');
+          clip-path: path('M 9.849242404917499 24.091883092036785 A 5 5 0 0 1 13.384776310850237 22.627416997969522 L 20.627416997969522 22.627416997969522 A 2 2 0 0 0 22.627416997969522 20.627416997969522 L 22.627416997969522 13.384776310850237 A 5 5 0 0 1 24.091883092036785 9.849242404917499 L 23.091883092036785 9.849242404917499 L 9.849242404917499 23.091883092036785 Z');
 }
 .ant-tooltip-placement-top .ant-tooltip-arrow,
 .ant-tooltip-placement-topLeft .ant-tooltip-arrow,

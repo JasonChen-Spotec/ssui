@@ -3,7 +3,7 @@ export var tryParseInt = function tryParseInt(value, defaultValue) {
   if (defaultValue === void 0) {
     defaultValue = 0;
   }
-  var resultValue = parseInt(''.concat(value), 10);
+  var resultValue = parseInt("".concat(value), 10);
   if (isNaN(resultValue)) {
     return defaultValue;
   }
@@ -16,7 +16,7 @@ export function addClass(elm, className) {
     if (el.classList) {
       el.classList.add(className.split(' '));
     } else {
-      el.className += ' '.concat(className);
+      el.className += " ".concat(className);
     }
   });
 }
@@ -27,10 +27,7 @@ export function removeClass(elm, className) {
     if (el.classList) {
       el.classList.remove(className.split(' '));
     } else {
-      el.className = el.className.replace(
-        new RegExp('(^|\\b)'.concat(className.split(' ').join('|'), '(\\b|$)'), 'gi'),
-        ' ',
-      );
+      el.className = el.className.replace(new RegExp("(^|\\b)".concat(className.split(' ').join('|'), "(\\b|$)"), 'gi'), ' ');
     }
   });
 }

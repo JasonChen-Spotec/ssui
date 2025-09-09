@@ -1,59 +1,50 @@
-'use strict';
+"use strict";
 
-var __read =
-  (this && this.__read) ||
-  function (o, n) {
-    var m = typeof Symbol === 'function' && o[Symbol.iterator];
-    if (!m) return o;
-    var i = m.call(o),
-      r,
-      ar = [],
-      e;
-    try {
-      while ((n === void 0 || n-- > 0) && !(r = i.next()).done) {
-        ar.push(r.value);
-      }
-    } catch (error) {
-      e = {
-        error: error,
-      };
-    } finally {
-      try {
-        if (r && !r.done && (m = i['return'])) m.call(i);
-      } finally {
-        if (e) throw e.error;
-      }
+var __read = this && this.__read || function (o, n) {
+  var m = typeof Symbol === "function" && o[Symbol.iterator];
+  if (!m) return o;
+  var i = m.call(o),
+    r,
+    ar = [],
+    e;
+  try {
+    while ((n === void 0 || n-- > 0) && !(r = i.next()).done) {
+      ar.push(r.value);
     }
-    return ar;
+  } catch (error) {
+    e = {
+      error: error
+    };
+  } finally {
+    try {
+      if (r && !r.done && (m = i["return"])) m.call(i);
+    } finally {
+      if (e) throw e.error;
+    }
+  }
+  return ar;
+};
+var __spreadArray = this && this.__spreadArray || function (to, from, pack) {
+  if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
+    if (ar || !(i in from)) {
+      if (!ar) ar = Array.prototype.slice.call(from, 0, i);
+      ar[i] = from[i];
+    }
+  }
+  return to.concat(ar || Array.prototype.slice.call(from));
+};
+var __importDefault = this && this.__importDefault || function (mod) {
+  return mod && mod.__esModule ? mod : {
+    "default": mod
   };
-var __spreadArray =
-  (this && this.__spreadArray) ||
-  function (to, from, pack) {
-    if (pack || arguments.length === 2)
-      for (var i = 0, l = from.length, ar; i < l; i++) {
-        if (ar || !(i in from)) {
-          if (!ar) ar = Array.prototype.slice.call(from, 0, i);
-          ar[i] = from[i];
-        }
-      }
-    return to.concat(ar || Array.prototype.slice.call(from));
-  };
-var __importDefault =
-  (this && this.__importDefault) ||
-  function (mod) {
-    return mod && mod.__esModule
-      ? mod
-      : {
-          default: mod,
-        };
-  };
-Object.defineProperty(exports, '__esModule', {
-  value: true,
+};
+Object.defineProperty(exports, "__esModule", {
+  value: true
 });
-exports['default'] = extractSpansOfClasses;
+exports["default"] = extractSpansOfClasses;
 /* eslint-disable no-plusplus */
-var react_1 = __importDefault(require('react'));
-var Span = /** @class */ (function () {
+var react_1 = __importDefault(require("react"));
+var Span = /** @class */function () {
   function Span(text, beginIndex) {
     this.beginIndex = beginIndex;
     this.endIndex = beginIndex + text.length;
@@ -79,7 +70,7 @@ var Span = /** @class */ (function () {
     right.markClasses = new Set(__spreadArray([], __read(this.markClasses), false));
     return right;
   };
-  Object.defineProperty(Span.prototype, 'className', {
+  Object.defineProperty(Span.prototype, "className", {
     get: function get() {
       if (this.markClasses && this.markClasses.size > 0) {
         return __spreadArray([], __read(this.markClasses), false).sort().join(' ');
@@ -87,39 +78,27 @@ var Span = /** @class */ (function () {
       return '';
     },
     enumerable: false,
-    configurable: true,
+    configurable: true
   });
   Span.prototype.render = function () {
     if (this.isMark) {
       var className = this.className;
       if (className) {
-        return react_1['default'].createElement(
-          'mark',
-          {
-            key: this.beginIndex,
-            className: className,
-          },
-          this.text,
-        );
-      }
-      return react_1['default'].createElement(
-        'mark',
-        {
+        return react_1["default"].createElement("mark", {
           key: this.beginIndex,
-        },
-        this.text,
-      );
+          className: className
+        }, this.text);
+      }
+      return react_1["default"].createElement("mark", {
+        key: this.beginIndex
+      }, this.text);
     }
-    return react_1['default'].createElement(
-      'span',
-      {
-        key: this.beginIndex,
-      },
-      this.text,
-    );
+    return react_1["default"].createElement("span", {
+      key: this.beginIndex
+    }, this.text);
   };
   return Span;
-})();
+}();
 function extractSpansOfClasses(value, ranges) {
   var spans = [new Span(value, 0)];
   ranges.forEach(function (range) {

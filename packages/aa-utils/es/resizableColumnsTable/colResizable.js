@@ -1,31 +1,27 @@
-var __assign =
-  (this && this.__assign) ||
-  function () {
-    __assign =
-      Object.assign ||
-      function (t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-          s = arguments[i];
-          for (var p in s) {
-            if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
-          }
-        }
-        return t;
-      };
-    return __assign.apply(this, arguments);
+var __assign = this && this.__assign || function () {
+  __assign = Object.assign || function (t) {
+    for (var s, i = 1, n = arguments.length; i < n; i++) {
+      s = arguments[i];
+      for (var p in s) {
+        if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+      }
+    }
+    return t;
   };
+  return __assign.apply(this, arguments);
+};
 // @ts-nocheck
 /* eslint-disable no-param-reassign */
 /* eslint-disable prefer-destructuring */
 import isFunction from 'lodash/isFunction';
-import { addClass, removeClass, tryParseInt } from './utils';
+import { tryParseInt, removeClass, addClass } from './utils';
 var defaultOptions = {
   liveDrag: true,
   defaultMinWidth: 30,
   headerOnly: true,
-  disabledColumns: [],
+  disabledColumns: []
 };
-var ColResizable = /** @class */ (function () {
+var ColResizable = /** @class */function () {
   function ColResizable(domElmTable, options) {
     if (options === void 0) {
       options = {};
@@ -41,13 +37,9 @@ var ColResizable = /** @class */ (function () {
     addClass(this.domElmTable, 'table-col-resizer');
     this.domElmHandleList = [];
     this.domElmTableTheadThList = [];
-    this.tableWidth = ''.concat(this.domElmTable.offsetWidth, 'px');
-    this.cellSpacing = tryParseInt(
-      getComputedStyle(this.domElmTable).getPropertyValue('border-spacing'),
-    );
-    this.borderLeftWidth = tryParseInt(
-      getComputedStyle(this.domElmTable).getPropertyValue('border-left-width'),
-    );
+    this.tableWidth = "".concat(this.domElmTable.offsetWidth, "px");
+    this.cellSpacing = tryParseInt(getComputedStyle(this.domElmTable).getPropertyValue('border-spacing'));
+    this.borderLeftWidth = tryParseInt(getComputedStyle(this.domElmTable).getPropertyValue('border-left-width'));
     this.createGrips();
   };
   ColResizable.prototype.createGrips = function () {
@@ -55,20 +47,12 @@ var ColResizable = /** @class */ (function () {
     var thList = this.domElmTable.querySelectorAll('thead th');
     var domElmThList = [];
     this.domElmHandleContainer = this.domElmTable.previousSibling;
-    var hasHandleContainer =
-      this.domElmHandleContainer &&
-      this.domElmHandleContainer.className === 'col-resize-container';
+    var hasHandleContainer = this.domElmHandleContainer && this.domElmHandleContainer.className === 'col-resize-container';
     if (!hasHandleContainer) {
-      this.domElmTable.insertAdjacentHTML(
-        'beforebegin',
-        '<div class="col-resize-container"/>',
-      );
+      this.domElmTable.insertAdjacentHTML('beforebegin', '<div class="col-resize-container"/>');
       this.domElmHandleContainer = this.domElmTable.previousSibling;
     } else {
-      Array.prototype.push.apply(
-        this.domElmHandleList,
-        this.domElmHandleContainer.childNodes,
-      );
+      Array.prototype.push.apply(this.domElmHandleList, this.domElmHandleContainer.childNodes);
     }
     Array.prototype.push.apply(domElmThList, thList);
     this.thLength = domElmThList.length;
@@ -79,10 +63,7 @@ var ColResizable = /** @class */ (function () {
       var disabledColumn = disabledColumns.indexOf(index) !== -1;
       var domElmHandle;
       if (!hasHandleContainer && _this.domElmHandleContainer) {
-        _this.domElmHandleContainer.insertAdjacentHTML(
-          'beforeend',
-          '<div class="drag-handle">\n          <i class="icon icon-caret-right"></i>\n          <div class="col-resizer"></div>\n          <i class="icon icon-caret-left"></i>\n        </div>',
-        );
+        _this.domElmHandleContainer.insertAdjacentHTML('beforeend', "<div class=\"drag-handle\">\n          <i class=\"icon icon-caret-right\"></i>\n          <div class=\"col-resizer\"></div>\n          <i class=\"icon icon-caret-left\"></i>\n        </div>");
         domElmHandle = _this.domElmHandleContainer.lastChild;
       } else {
         domElmHandle = _this.domElmHandleList[index];
@@ -97,7 +78,7 @@ var ColResizable = /** @class */ (function () {
       }
       domElmHandle.index = index;
       domElmTh.w = domElmTh.offsetWidth;
-      domElmTh.style.width = ''.concat(domElmTh.offsetWidth, 'px');
+      domElmTh.style.width = "".concat(domElmTh.offsetWidth, "px");
       if (!hasHandleContainer) {
         _this.domElmHandleList.push(domElmHandle);
       }
@@ -120,24 +101,19 @@ var ColResizable = /** @class */ (function () {
       if (i === 0) {
         left = domElmTh.offsetWidth + this.cellSpacing / 2;
       } else {
-        var handleColLeft =
-          this.domElmHandleList[i - 1].style.left + this.cellSpacing / 2;
+        var handleColLeft = this.domElmHandleList[i - 1].style.left + this.cellSpacing / 2;
         left = tryParseInt(handleColLeft) + domElmTh.offsetWidth;
       }
-      this.domElmHandleList[i].style.left = ''.concat(left, 'px');
-      this.domElmHandleList[i].style.height = ''.concat(height, 'px');
+      this.domElmHandleList[i].style.left = "".concat(left, "px");
+      this.domElmHandleList[i].style.height = "".concat(height, "px");
     }
     var domElmIconList = [];
-    var iconHeight = this.domElmHandleContainer.querySelector(
-      '.col-resize-container .icon',
-    ).offsetHeight;
-    var domElemIcons = this.domElmHandleContainer.querySelectorAll(
-      '.col-resize-container .icon',
-    );
+    var iconHeight = this.domElmHandleContainer.querySelector('.col-resize-container .icon').offsetHeight;
+    var domElemIcons = this.domElmHandleContainer.querySelectorAll('.col-resize-container .icon');
     Array.prototype.push.apply(domElmIconList, domElemIcons);
     domElmIconList.forEach(function (el) {
       var marginTopNumber = (theadHight - iconHeight) / 2;
-      el.style.marginTop = ''.concat(tryParseInt(marginTopNumber), 'px');
+      el.style.marginTop = "".concat(tryParseInt(marginTopNumber), "px");
     });
   };
   ColResizable.prototype.onGripMouseDown = function (e) {
@@ -164,34 +140,23 @@ var ColResizable = /** @class */ (function () {
     var pageLeftX = e.pageX;
     var x = pageLeftX - this.drag.initPageLeftX + this.drag.initLeft;
     var l = this.cellSpacing * 1.5 + minWidth + this.borderLeftWidth;
-    var min = index
-      ? tryParseInt(this.domElmHandleList[index - 1].style.left) +
-        this.cellSpacing +
-        minWidth
-      : l;
-    var max =
-      tryParseInt(this.domElmHandleList[index + 1].style.left) -
-      this.cellSpacing -
-      minWidth;
+    var min = index ? tryParseInt(this.domElmHandleList[index - 1].style.left) + this.cellSpacing + minWidth : l;
+    var max = tryParseInt(this.domElmHandleList[index + 1].style.left) - this.cellSpacing - minWidth;
     x = Math.max(min, Math.min(max, x));
     var inc = x - this.drag.initLeft;
     var domElmThNow = this.domElmTableTheadThList[index];
     var domElmThElmNext = this.domElmTableTheadThList[index + 1];
     var w = domElmThNow.w + inc;
     var w2 = domElmThElmNext.w - inc;
-    var minWidthOne = tryParseInt(
-      this.domElmTableTheadThList[index].getAttribute('data-min-width'),
-    );
-    var minWidthTwo = tryParseInt(
-      this.domElmTableTheadThList[index + 1].getAttribute('data-min-width'),
-    );
+    var minWidthOne = tryParseInt(this.domElmTableTheadThList[index].getAttribute('data-min-width'));
+    var minWidthTwo = tryParseInt(this.domElmTableTheadThList[index + 1].getAttribute('data-min-width'));
     if (minWidthOne > w) {
       x = minWidthOne - domElmThNow.w + this.drag.initLeft;
     } else if (minWidthTwo > w2) {
       x = domElmThElmNext.w - minWidthTwo + this.drag.initLeft;
     }
     this.drag.x = x;
-    this.drag.style.left = ''.concat(x, 'px');
+    this.drag.style.left = "".concat(x, "px");
     if (this.options.liveDrag) {
       this.syncCols(index);
       this.syncGrips();
@@ -208,8 +173,8 @@ var ColResizable = /** @class */ (function () {
     var domElmThNext = this.domElmTableTheadThList[i + 1];
     var w = domElmThNow.w + inc;
     var w2 = domElmThNext.w - inc;
-    domElmThNow.style.width = ''.concat(w, 'px');
-    domElmThNext.style.width = ''.concat(w2, 'px');
+    domElmThNow.style.width = "".concat(w, "px");
+    domElmThNext.style.width = "".concat(w2, "px");
     if (isOver) {
       domElmThNow.w = w;
       domElmThNext.w = w2;
@@ -235,5 +200,5 @@ var ColResizable = /** @class */ (function () {
     return true;
   };
   return ColResizable;
-})();
+}();
 export default ColResizable;

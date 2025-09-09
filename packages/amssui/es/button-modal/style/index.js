@@ -1,1 +1,1 @@
-import 'react-vant/es/dialog/style/index.css';
+import "react-vant/es/dialog/style/index.css";

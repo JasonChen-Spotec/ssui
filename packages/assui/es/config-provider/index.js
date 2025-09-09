@@ -51,14 +51,10 @@ var ConfigProvider = function ConfigProvider(props) {
     'ro': roRO.lang,
     'vi': viVN.lang,
     'ug': ugUG.lang,
-    'ms-MY': msMY.lang,
+    'ms-MY': msMY.lang
   };
-  return /*#__PURE__*/ React.createElement(
-    LocaleContext.Provider,
-    {
-      value: messagesMap[locale],
-    },
-    children,
-  );
+  return /*#__PURE__*/React.createElement(LocaleContext.Provider, {
+    value: messagesMap[locale]
+  }, children);
 };
 export default ConfigProvider;

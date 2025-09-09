@@ -2,7 +2,7 @@ var locale = {
   locale: 'id_ID',
   lang: {
     global: {
-      placeholder: 'tolong pilih',
+      placeholder: 'tolong pilih'
     },
     labelCustomizeRangePicker: {
       customTime: 'waktu khusus',
@@ -21,8 +21,8 @@ var locale = {
       last180days: '180 hari terakhir',
       last365days: '365 hari terakhir',
       year: 'Tahun ini',
-      all: 'Semua',
-    },
-  },
+      all: 'Semua'
+    }
+  }
 };
 export default locale;

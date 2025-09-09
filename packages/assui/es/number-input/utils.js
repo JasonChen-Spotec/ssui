@@ -32,6 +32,6 @@ export var filterFloat = function filterFloat(_a) {
   if (nextValue && nextValue.length > 1 && !floatNumberReg.test(nextValue)) {
     return preValue;
   }
-  var twoDecimalNumReg = new RegExp('^(\\-)*(\\d+)\\.(\\d{'.concat(precision, '}).*$'));
+  var twoDecimalNumReg = new RegExp("^(\\-)*(\\d+)\\.(\\d{".concat(precision, "}).*$"));
   return nextValue.replace(twoDecimalNumReg, '$1$2.$3');
 };

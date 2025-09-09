@@ -2,7 +2,7 @@ var locale = {
   locale: 'ro_RO',
   lang: {
     global: {
-      placeholder: 'vă rugăm să alegeți',
+      placeholder: 'vă rugăm să alegeți'
     },
     labelCustomizeRangePicker: {
       customTime: 'timp personalizat',
@@ -21,8 +21,8 @@ var locale = {
       last180days: 'Ultimele 180 de zile',
       last365days: 'Ultimele 365 de zile',
       year: 'Anul acesta',
-      all: 'Toate',
-    },
-  },
+      all: 'Toate'
+    }
+  }
 };
 export default locale;

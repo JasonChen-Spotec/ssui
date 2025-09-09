@@ -11,7 +11,7 @@ var setContent = function setContent(editor, html) {
 };
 var getContent = function getContent(editor) {
   return editor.getContent({
-    source_view: true,
+    source_view: true
   });
 };
 var open = function open(editor) {
@@ -21,33 +21,28 @@ var open = function open(editor) {
     size: 'large',
     body: {
       type: 'panel',
-      items: [
-        {
-          type: 'textarea',
-          name: 'code',
-        },
-      ],
+      items: [{
+        type: 'textarea',
+        name: 'code'
+      }]
     },
-    buttons: [
-      {
-        type: 'cancel',
-        name: 'cancel',
-        text: 'Cancel',
-      },
-      {
-        type: 'submit',
-        name: 'save',
-        text: 'Save',
-        primary: true,
-      },
-    ],
+    buttons: [{
+      type: 'cancel',
+      name: 'cancel',
+      text: 'Cancel'
+    }, {
+      type: 'submit',
+      name: 'save',
+      text: 'Save',
+      primary: true
+    }],
     initialData: {
-      code: editorContent,
+      code: editorContent
     },
     onSubmit: function onSubmit(api) {
       setContent(editor, api.getData().code);
       api.close();
-    },
+    }
   });
 };
 var register$1 = function register$1(editor) {
@@ -62,12 +57,12 @@ var register = function register(editor) {
   editor.ui.registry.addButton('code', {
     text: 'Source code',
     tooltip: 'Source code',
-    onAction: onAction,
+    onAction: onAction
   });
   editor.ui.registry.addMenuItem('code', {
     icon: 'sourcecode',
     text: 'Source code',
-    onAction: onAction,
+    onAction: onAction
   });
 };
 function initCodePlugin() {

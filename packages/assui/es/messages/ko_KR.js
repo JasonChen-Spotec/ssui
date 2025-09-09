@@ -2,7 +2,7 @@ var locale = {
   locale: 'ko_KR',
   lang: {
     global: {
-      placeholder: '선택해주세요',
+      placeholder: '선택해주세요'
     },
     labelCustomizeRangePicker: {
       customTime: '사용자 지정 시간',
@@ -21,8 +21,8 @@ var locale = {
       last180days: '지난 180일',
       last365days: '지난 365일',
       year: '금년도에는',
-      all: '모두',
-    },
-  },
+      all: '모두'
+    }
+  }
 };
 export default locale;

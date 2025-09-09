@@ -1,62 +1,57 @@
-var __read =
-  (this && this.__read) ||
-  function (o, n) {
-    var m = typeof Symbol === 'function' && o[Symbol.iterator];
-    if (!m) return o;
-    var i = m.call(o),
-      r,
-      ar = [],
-      e;
-    try {
-      while ((n === void 0 || n-- > 0) && !(r = i.next()).done) {
-        ar.push(r.value);
-      }
-    } catch (error) {
-      e = {
-        error: error,
-      };
-    } finally {
-      try {
-        if (r && !r.done && (m = i['return'])) m.call(i);
-      } finally {
-        if (e) throw e.error;
-      }
+var __read = this && this.__read || function (o, n) {
+  var m = typeof Symbol === "function" && o[Symbol.iterator];
+  if (!m) return o;
+  var i = m.call(o),
+    r,
+    ar = [],
+    e;
+  try {
+    while ((n === void 0 || n-- > 0) && !(r = i.next()).done) {
+      ar.push(r.value);
     }
-    return ar;
-  };
-var __spreadArray =
-  (this && this.__spreadArray) ||
-  function (to, from, pack) {
-    if (pack || arguments.length === 2)
-      for (var i = 0, l = from.length, ar; i < l; i++) {
-        if (ar || !(i in from)) {
-          if (!ar) ar = Array.prototype.slice.call(from, 0, i);
-          ar[i] = from[i];
-        }
-      }
-    return to.concat(ar || Array.prototype.slice.call(from));
-  };
-import dateUtils from 'aa-utils/es/dateUtils';
+  } catch (error) {
+    e = {
+      error: error
+    };
+  } finally {
+    try {
+      if (r && !r.done && (m = i["return"])) m.call(i);
+    } finally {
+      if (e) throw e.error;
+    }
+  }
+  return ar;
+};
+var __spreadArray = this && this.__spreadArray || function (to, from, pack) {
+  if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
+    if (ar || !(i in from)) {
+      if (!ar) ar = Array.prototype.slice.call(from, 0, i);
+      ar[i] = from[i];
+    }
+  }
+  return to.concat(ar || Array.prototype.slice.call(from));
+};
 import { isNumber } from 'lodash';
+import dateUtils from "aa-utils/es/dateUtils";
 import formatMessage, { langTypeEnum } from '../messages';
 export var dateTypeEnum;
 (function (dateTypeEnum) {
-  dateTypeEnum[(dateTypeEnum['TODAY'] = 1)] = 'TODAY';
-  dateTypeEnum[(dateTypeEnum['YESTERDAY'] = 2)] = 'YESTERDAY';
-  dateTypeEnum[(dateTypeEnum['WEEK'] = 3)] = 'WEEK';
-  dateTypeEnum[(dateTypeEnum['LAST_WEEK'] = 4)] = 'LAST_WEEK';
-  dateTypeEnum[(dateTypeEnum['MONTH'] = 5)] = 'MONTH';
-  dateTypeEnum[(dateTypeEnum['LAST_MONTH'] = 6)] = 'LAST_MONTH';
-  dateTypeEnum[(dateTypeEnum['QUARTER'] = 7)] = 'QUARTER';
-  dateTypeEnum[(dateTypeEnum['LAST_QUARTER'] = 8)] = 'LAST_QUARTER';
-  dateTypeEnum[(dateTypeEnum['BEFORE_7_DAY'] = 9)] = 'BEFORE_7_DAY';
-  dateTypeEnum[(dateTypeEnum['BEFORE_14_DAY'] = 10)] = 'BEFORE_14_DAY';
-  dateTypeEnum[(dateTypeEnum['BEFORE_30_DAY'] = 11)] = 'BEFORE_30_DAY';
-  dateTypeEnum[(dateTypeEnum['BEFORE_90_DAY'] = 12)] = 'BEFORE_90_DAY';
-  dateTypeEnum[(dateTypeEnum['BEFORE_180_DAY'] = 13)] = 'BEFORE_180_DAY';
-  dateTypeEnum[(dateTypeEnum['BEFORE_365_DAY'] = 14)] = 'BEFORE_365_DAY';
-  dateTypeEnum[(dateTypeEnum['YEAR'] = 15)] = 'YEAR';
-  dateTypeEnum[(dateTypeEnum['ALL'] = 16)] = 'ALL';
+  dateTypeEnum[dateTypeEnum["TODAY"] = 1] = "TODAY";
+  dateTypeEnum[dateTypeEnum["YESTERDAY"] = 2] = "YESTERDAY";
+  dateTypeEnum[dateTypeEnum["WEEK"] = 3] = "WEEK";
+  dateTypeEnum[dateTypeEnum["LAST_WEEK"] = 4] = "LAST_WEEK";
+  dateTypeEnum[dateTypeEnum["MONTH"] = 5] = "MONTH";
+  dateTypeEnum[dateTypeEnum["LAST_MONTH"] = 6] = "LAST_MONTH";
+  dateTypeEnum[dateTypeEnum["QUARTER"] = 7] = "QUARTER";
+  dateTypeEnum[dateTypeEnum["LAST_QUARTER"] = 8] = "LAST_QUARTER";
+  dateTypeEnum[dateTypeEnum["BEFORE_7_DAY"] = 9] = "BEFORE_7_DAY";
+  dateTypeEnum[dateTypeEnum["BEFORE_14_DAY"] = 10] = "BEFORE_14_DAY";
+  dateTypeEnum[dateTypeEnum["BEFORE_30_DAY"] = 11] = "BEFORE_30_DAY";
+  dateTypeEnum[dateTypeEnum["BEFORE_90_DAY"] = 12] = "BEFORE_90_DAY";
+  dateTypeEnum[dateTypeEnum["BEFORE_180_DAY"] = 13] = "BEFORE_180_DAY";
+  dateTypeEnum[dateTypeEnum["BEFORE_365_DAY"] = 14] = "BEFORE_365_DAY";
+  dateTypeEnum[dateTypeEnum["YEAR"] = 15] = "YEAR";
+  dateTypeEnum[dateTypeEnum["ALL"] = 16] = "ALL";
 })(dateTypeEnum || (dateTypeEnum = {}));
 var getDefaultRadioList = function getDefaultRadioList(_a) {
   var messages = _a.messages,
@@ -66,159 +61,72 @@ var getDefaultRadioList = function getDefaultRadioList(_a) {
     displayAllOption = _b === void 0 ? false : _b,
     startTimeOfAllOption = _a.startTimeOfAllOption;
   var now = isNumber(timeOffset) ? dateUtils.getToday(timeOffset) : dateUtils.getToday();
-  var allRadio = displayAllOption
-    ? [
-        {
-          key: dateTypeEnum.ALL,
-          text: formatMessage(messages, langTypeEnum.labelCustomizeRangePicker, 'all'),
-          value: [
-            startTimeOfAllOption || dateUtils.parseDate('2022/09/01'),
-            now.endOf('day'),
-          ],
-        },
-      ]
-    : [];
-  var defaultRadioList = __spreadArray(
-    [
-      {
-        key: dateTypeEnum.TODAY,
-        text: formatMessage(messages, langTypeEnum.labelCustomizeRangePicker, 'toDay'),
-        value: [now.clone().startOf('day'), now.clone().endOf('day')],
-      },
-      {
-        key: dateTypeEnum.YESTERDAY,
-        text: formatMessage(
-          messages,
-          langTypeEnum.labelCustomizeRangePicker,
-          'yesterDay',
-        ),
-        value: [
-          now.clone().subtract(1, 'day').startOf('day'),
-          now.clone().subtract(1, 'day').endOf('day'),
-        ],
-      },
-      {
-        key: dateTypeEnum.WEEK,
-        text: formatMessage(messages, langTypeEnum.labelCustomizeRangePicker, 'week'),
-        value: [
-          now.clone().startOf('week'),
-          naturalDate ? now.clone().endOf('week') : now.clone().endOf('day'),
-        ],
-      },
-      {
-        key: dateTypeEnum.LAST_WEEK,
-        text: formatMessage(messages, langTypeEnum.labelCustomizeRangePicker, 'lastWeek'),
-        value: [
-          now.clone().subtract(1, 'week').startOf('week'),
-          now.clone().subtract(1, 'week').endOf('week'),
-        ],
-      },
-      {
-        key: dateTypeEnum.MONTH,
-        text: formatMessage(messages, langTypeEnum.labelCustomizeRangePicker, 'month'),
-        value: [
-          now.clone().startOf('month'),
-          naturalDate ? now.clone().endOf('month') : now.clone().endOf('day'),
-        ],
-      },
-      {
-        key: dateTypeEnum.LAST_MONTH,
-        text: formatMessage(
-          messages,
-          langTypeEnum.labelCustomizeRangePicker,
-          'lastMonth',
-        ),
-        value: [
-          now.clone().subtract(1, 'month').startOf('month'),
-          now.clone().subtract(1, 'month').endOf('month'),
-        ],
-      },
-      {
-        key: dateTypeEnum.QUARTER,
-        text: formatMessage(messages, langTypeEnum.labelCustomizeRangePicker, 'quarter'),
-        value: [
-          now.clone().startOf('quarter'),
-          naturalDate ? now.clone().endOf('quarter') : now.clone().endOf('day'),
-        ],
-      },
-      {
-        key: dateTypeEnum.LAST_QUARTER,
-        text: formatMessage(
-          messages,
-          langTypeEnum.labelCustomizeRangePicker,
-          'lastQuarter',
-        ),
-        value: [
-          now.clone().subtract(1, 'quarter').startOf('quarter'),
-          now.clone().subtract(1, 'quarter').endOf('quarter'),
-        ],
-      },
-      {
-        key: dateTypeEnum.YEAR,
-        text: formatMessage(messages, langTypeEnum.labelCustomizeRangePicker, 'year'),
-        value: [
-          now.clone().startOf('year'),
-          naturalDate ? now.clone().endOf('year') : now.endOf('day'),
-        ],
-      },
-      {
-        key: dateTypeEnum.BEFORE_7_DAY,
-        text: formatMessage(
-          messages,
-          langTypeEnum.labelCustomizeRangePicker,
-          'last7days',
-        ),
-        value: [now.clone().subtract(6, 'day').startOf('day'), now.endOf('day')],
-      },
-      {
-        key: dateTypeEnum.BEFORE_14_DAY,
-        text: formatMessage(
-          messages,
-          langTypeEnum.labelCustomizeRangePicker,
-          'last14days',
-        ),
-        value: [now.clone().subtract(13, 'day').startOf('day'), now.endOf('day')],
-      },
-      {
-        key: dateTypeEnum.BEFORE_30_DAY,
-        text: formatMessage(
-          messages,
-          langTypeEnum.labelCustomizeRangePicker,
-          'last30days',
-        ),
-        value: [now.clone().subtract(29, 'day').startOf('day'), now.endOf('day')],
-      },
-      {
-        key: dateTypeEnum.BEFORE_90_DAY,
-        text: formatMessage(
-          messages,
-          langTypeEnum.labelCustomizeRangePicker,
-          'last90days',
-        ),
-        value: [now.clone().subtract(89, 'day').startOf('day'), now.endOf('day')],
-      },
-      {
-        key: dateTypeEnum.BEFORE_180_DAY,
-        text: formatMessage(
-          messages,
-          langTypeEnum.labelCustomizeRangePicker,
-          'last180days',
-        ),
-        value: [now.clone().subtract(179, 'day').startOf('day'), now.endOf('day')],
-      },
-      {
-        key: dateTypeEnum.BEFORE_365_DAY,
-        text: formatMessage(
-          messages,
-          langTypeEnum.labelCustomizeRangePicker,
-          'last365days',
-        ),
-        value: [now.clone().subtract(364, 'day').startOf('day'), now.endOf('day')],
-      },
-    ],
-    __read(allRadio),
-    false,
-  );
+  var allRadio = displayAllOption ? [{
+    key: dateTypeEnum.ALL,
+    text: formatMessage(messages, langTypeEnum.labelCustomizeRangePicker, 'all'),
+    value: [startTimeOfAllOption || dateUtils.parseDate('2022/09/01'), now.endOf('day')]
+  }] : [];
+  var defaultRadioList = __spreadArray([{
+    key: dateTypeEnum.TODAY,
+    text: formatMessage(messages, langTypeEnum.labelCustomizeRangePicker, 'toDay'),
+    value: [now.clone().startOf('day'), now.clone().endOf('day')]
+  }, {
+    key: dateTypeEnum.YESTERDAY,
+    text: formatMessage(messages, langTypeEnum.labelCustomizeRangePicker, 'yesterDay'),
+    value: [now.clone().subtract(1, 'day').startOf('day'), now.clone().subtract(1, 'day').endOf('day')]
+  }, {
+    key: dateTypeEnum.WEEK,
+    text: formatMessage(messages, langTypeEnum.labelCustomizeRangePicker, 'week'),
+    value: [now.clone().startOf('week'), naturalDate ? now.clone().endOf('week') : now.clone().endOf('day')]
+  }, {
+    key: dateTypeEnum.LAST_WEEK,
+    text: formatMessage(messages, langTypeEnum.labelCustomizeRangePicker, 'lastWeek'),
+    value: [now.clone().subtract(1, 'week').startOf('week'), now.clone().subtract(1, 'week').endOf('week')]
+  }, {
+    key: dateTypeEnum.MONTH,
+    text: formatMessage(messages, langTypeEnum.labelCustomizeRangePicker, 'month'),
+    value: [now.clone().startOf('month'), naturalDate ? now.clone().endOf('month') : now.clone().endOf('day')]
+  }, {
+    key: dateTypeEnum.LAST_MONTH,
+    text: formatMessage(messages, langTypeEnum.labelCustomizeRangePicker, 'lastMonth'),
+    value: [now.clone().subtract(1, 'month').startOf('month'), now.clone().subtract(1, 'month').endOf('month')]
+  }, {
+    key: dateTypeEnum.QUARTER,
+    text: formatMessage(messages, langTypeEnum.labelCustomizeRangePicker, 'quarter'),
+    value: [now.clone().startOf('quarter'), naturalDate ? now.clone().endOf('quarter') : now.clone().endOf('day')]
+  }, {
+    key: dateTypeEnum.LAST_QUARTER,
+    text: formatMessage(messages, langTypeEnum.labelCustomizeRangePicker, 'lastQuarter'),
+    value: [now.clone().subtract(1, 'quarter').startOf('quarter'), now.clone().subtract(1, 'quarter').endOf('quarter')]
+  }, {
+    key: dateTypeEnum.YEAR,
+    text: formatMessage(messages, langTypeEnum.labelCustomizeRangePicker, 'year'),
+    value: [now.clone().startOf('year'), naturalDate ? now.clone().endOf('year') : now.endOf('day')]
+  }, {
+    key: dateTypeEnum.BEFORE_7_DAY,
+    text: formatMessage(messages, langTypeEnum.labelCustomizeRangePicker, 'last7days'),
+    value: [now.clone().subtract(6, 'day').startOf('day'), now.endOf('day')]
+  }, {
+    key: dateTypeEnum.BEFORE_14_DAY,
+    text: formatMessage(messages, langTypeEnum.labelCustomizeRangePicker, 'last14days'),
+    value: [now.clone().subtract(13, 'day').startOf('day'), now.endOf('day')]
+  }, {
+    key: dateTypeEnum.BEFORE_30_DAY,
+    text: formatMessage(messages, langTypeEnum.labelCustomizeRangePicker, 'last30days'),
+    value: [now.clone().subtract(29, 'day').startOf('day'), now.endOf('day')]
+  }, {
+    key: dateTypeEnum.BEFORE_90_DAY,
+    text: formatMessage(messages, langTypeEnum.labelCustomizeRangePicker, 'last90days'),
+    value: [now.clone().subtract(89, 'day').startOf('day'), now.endOf('day')]
+  }, {
+    key: dateTypeEnum.BEFORE_180_DAY,
+    text: formatMessage(messages, langTypeEnum.labelCustomizeRangePicker, 'last180days'),
+    value: [now.clone().subtract(179, 'day').startOf('day'), now.endOf('day')]
+  }, {
+    key: dateTypeEnum.BEFORE_365_DAY,
+    text: formatMessage(messages, langTypeEnum.labelCustomizeRangePicker, 'last365days'),
+    value: [now.clone().subtract(364, 'day').startOf('day'), now.endOf('day')]
+  }], __read(allRadio), false);
   return defaultRadioList;
 };
 export default getDefaultRadioList;

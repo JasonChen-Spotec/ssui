@@ -3,12 +3,12 @@
 /* stylelint-disable no-duplicate-selectors */
 /* stylelint-disable */
 /* stylelint-disable declaration-bang-space-before,no-duplicate-selectors,string-no-newline */
-[class^='ant-']::-ms-clear,
-[class*='ant-']::-ms-clear,
-[class^='ant-'] input::-ms-clear,
-[class*='ant-'] input::-ms-clear,
-[class^='ant-'] input::-ms-reveal,
-[class*='ant-'] input::-ms-reveal {
+[class^=ant-]::-ms-clear,
+[class*= ant-]::-ms-clear,
+[class^=ant-] input::-ms-clear,
+[class*= ant-] input::-ms-clear,
+[class^=ant-] input::-ms-reveal,
+[class*= ant-] input::-ms-reveal {
   display: none;
 }
 /* stylelint-disable property-no-vendor-prefix, at-rule-no-vendor-prefix */
@@ -38,9 +38,7 @@ body {
   margin: 0;
   color: rgba(0, 0, 0, 0.85);
   font-size: 14px;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue',
-    Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-    'Segoe UI Symbol', 'Noto Color Emoji';
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   font-variant: tabular-nums;
   line-height: 1.5715;
   background-color: #fff;
@@ -71,9 +69,9 @@ p {
 }
 abbr[title],
 abbr[data-original-title] {
-  -webkit-text-decoration: underline dotted;
   text-decoration: underline;
-  text-decoration: underline dotted;
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted;
   border-bottom: 0;
   cursor: help;
 }
@@ -221,9 +219,9 @@ select {
   text-transform: none;
 }
 button,
-html [type='button'],
-[type='reset'],
-[type='submit'] {
+html [type="button"],
+[type="reset"],
+[type="submit"] {
   -webkit-appearance: button;
 }
 button::-moz-focus-inner,
@@ -356,13 +354,13 @@ mark {
 .ant-fade-enter,
 .ant-fade-appear {
   animation-duration: 0.2s;
-  animation-play-state: paused;
   animation-fill-mode: both;
+  animation-play-state: paused;
 }
 .ant-fade-leave {
   animation-duration: 0.2s;
-  animation-play-state: paused;
   animation-fill-mode: both;
+  animation-play-state: paused;
 }
 .ant-fade-enter.ant-fade-enter-active,
 .ant-fade-appear.ant-fade-appear-active {
@@ -401,13 +399,13 @@ mark {
 .ant-move-up-enter,
 .ant-move-up-appear {
   animation-duration: 0.2s;
-  animation-play-state: paused;
   animation-fill-mode: both;
+  animation-play-state: paused;
 }
 .ant-move-up-leave {
   animation-duration: 0.2s;
-  animation-play-state: paused;
   animation-fill-mode: both;
+  animation-play-state: paused;
 }
 .ant-move-up-enter.ant-move-up-enter-active,
 .ant-move-up-appear.ant-move-up-appear-active {
@@ -430,13 +428,13 @@ mark {
 .ant-move-down-enter,
 .ant-move-down-appear {
   animation-duration: 0.2s;
-  animation-play-state: paused;
   animation-fill-mode: both;
+  animation-play-state: paused;
 }
 .ant-move-down-leave {
   animation-duration: 0.2s;
-  animation-play-state: paused;
   animation-fill-mode: both;
+  animation-play-state: paused;
 }
 .ant-move-down-enter.ant-move-down-enter-active,
 .ant-move-down-appear.ant-move-down-appear-active {
@@ -459,13 +457,13 @@ mark {
 .ant-move-left-enter,
 .ant-move-left-appear {
   animation-duration: 0.2s;
-  animation-play-state: paused;
   animation-fill-mode: both;
+  animation-play-state: paused;
 }
 .ant-move-left-leave {
   animation-duration: 0.2s;
-  animation-play-state: paused;
   animation-fill-mode: both;
+  animation-play-state: paused;
 }
 .ant-move-left-enter.ant-move-left-enter-active,
 .ant-move-left-appear.ant-move-left-appear-active {
@@ -488,13 +486,13 @@ mark {
 .ant-move-right-enter,
 .ant-move-right-appear {
   animation-duration: 0.2s;
-  animation-play-state: paused;
   animation-fill-mode: both;
+  animation-play-state: paused;
 }
 .ant-move-right-leave {
   animation-duration: 0.2s;
-  animation-play-state: paused;
   animation-fill-mode: both;
+  animation-play-state: paused;
 }
 .ant-move-right-enter.ant-move-right-enter-active,
 .ant-move-right-appear.ant-move-right-appear-active {
@@ -635,8 +633,7 @@ html {
   box-shadow: 0 0 0 0 #1890ff;
   box-shadow: 0 0 0 0 var(--antd-wave-shadow-color);
   opacity: 0.2;
-  animation: fadeEffect 2s cubic-bezier(0.08, 0.82, 0.17, 1),
-    waveEffect 0.4s cubic-bezier(0.08, 0.82, 0.17, 1);
+  animation: fadeEffect 2s cubic-bezier(0.08, 0.82, 0.17, 1), waveEffect 0.4s cubic-bezier(0.08, 0.82, 0.17, 1);
   animation-fill-mode: forwards;
   content: '';
   pointer-events: none;
@@ -655,13 +652,13 @@ html {
 .ant-slide-up-enter,
 .ant-slide-up-appear {
   animation-duration: 0.2s;
-  animation-play-state: paused;
   animation-fill-mode: both;
+  animation-play-state: paused;
 }
 .ant-slide-up-leave {
   animation-duration: 0.2s;
-  animation-play-state: paused;
   animation-fill-mode: both;
+  animation-play-state: paused;
 }
 .ant-slide-up-enter.ant-slide-up-enter-active,
 .ant-slide-up-appear.ant-slide-up-appear-active {
@@ -684,13 +681,13 @@ html {
 .ant-slide-down-enter,
 .ant-slide-down-appear {
   animation-duration: 0.2s;
-  animation-play-state: paused;
   animation-fill-mode: both;
+  animation-play-state: paused;
 }
 .ant-slide-down-leave {
   animation-duration: 0.2s;
-  animation-play-state: paused;
   animation-fill-mode: both;
+  animation-play-state: paused;
 }
 .ant-slide-down-enter.ant-slide-down-enter-active,
 .ant-slide-down-appear.ant-slide-down-appear-active {
@@ -713,13 +710,13 @@ html {
 .ant-slide-left-enter,
 .ant-slide-left-appear {
   animation-duration: 0.2s;
-  animation-play-state: paused;
   animation-fill-mode: both;
+  animation-play-state: paused;
 }
 .ant-slide-left-leave {
   animation-duration: 0.2s;
-  animation-play-state: paused;
   animation-fill-mode: both;
+  animation-play-state: paused;
 }
 .ant-slide-left-enter.ant-slide-left-enter-active,
 .ant-slide-left-appear.ant-slide-left-appear-active {
@@ -742,13 +739,13 @@ html {
 .ant-slide-right-enter,
 .ant-slide-right-appear {
   animation-duration: 0.2s;
-  animation-play-state: paused;
   animation-fill-mode: both;
+  animation-play-state: paused;
 }
 .ant-slide-right-leave {
   animation-duration: 0.2s;
-  animation-play-state: paused;
   animation-fill-mode: both;
+  animation-play-state: paused;
 }
 .ant-slide-right-enter.ant-slide-right-enter-active,
 .ant-slide-right-appear.ant-slide-right-appear-active {
@@ -867,13 +864,13 @@ html {
 .ant-zoom-enter,
 .ant-zoom-appear {
   animation-duration: 0.2s;
-  animation-play-state: paused;
   animation-fill-mode: both;
+  animation-play-state: paused;
 }
 .ant-zoom-leave {
   animation-duration: 0.2s;
-  animation-play-state: paused;
   animation-fill-mode: both;
+  animation-play-state: paused;
 }
 .ant-zoom-enter.ant-zoom-enter-active,
 .ant-zoom-appear.ant-zoom-appear-active {
@@ -901,13 +898,13 @@ html {
 .ant-zoom-big-enter,
 .ant-zoom-big-appear {
   animation-duration: 0.2s;
-  animation-play-state: paused;
   animation-fill-mode: both;
+  animation-play-state: paused;
 }
 .ant-zoom-big-leave {
   animation-duration: 0.2s;
-  animation-play-state: paused;
   animation-fill-mode: both;
+  animation-play-state: paused;
 }
 .ant-zoom-big-enter.ant-zoom-big-enter-active,
 .ant-zoom-big-appear.ant-zoom-big-appear-active {
@@ -935,13 +932,13 @@ html {
 .ant-zoom-big-fast-enter,
 .ant-zoom-big-fast-appear {
   animation-duration: 0.1s;
-  animation-play-state: paused;
   animation-fill-mode: both;
+  animation-play-state: paused;
 }
 .ant-zoom-big-fast-leave {
   animation-duration: 0.1s;
-  animation-play-state: paused;
   animation-fill-mode: both;
+  animation-play-state: paused;
 }
 .ant-zoom-big-fast-enter.ant-zoom-big-fast-enter-active,
 .ant-zoom-big-fast-appear.ant-zoom-big-fast-appear-active {
@@ -969,13 +966,13 @@ html {
 .ant-zoom-up-enter,
 .ant-zoom-up-appear {
   animation-duration: 0.2s;
-  animation-play-state: paused;
   animation-fill-mode: both;
+  animation-play-state: paused;
 }
 .ant-zoom-up-leave {
   animation-duration: 0.2s;
-  animation-play-state: paused;
   animation-fill-mode: both;
+  animation-play-state: paused;
 }
 .ant-zoom-up-enter.ant-zoom-up-enter-active,
 .ant-zoom-up-appear.ant-zoom-up-appear-active {
@@ -1003,13 +1000,13 @@ html {
 .ant-zoom-down-enter,
 .ant-zoom-down-appear {
   animation-duration: 0.2s;
-  animation-play-state: paused;
   animation-fill-mode: both;
+  animation-play-state: paused;
 }
 .ant-zoom-down-leave {
   animation-duration: 0.2s;
-  animation-play-state: paused;
   animation-fill-mode: both;
+  animation-play-state: paused;
 }
 .ant-zoom-down-enter.ant-zoom-down-enter-active,
 .ant-zoom-down-appear.ant-zoom-down-appear-active {
@@ -1037,13 +1034,13 @@ html {
 .ant-zoom-left-enter,
 .ant-zoom-left-appear {
   animation-duration: 0.2s;
-  animation-play-state: paused;
   animation-fill-mode: both;
+  animation-play-state: paused;
 }
 .ant-zoom-left-leave {
   animation-duration: 0.2s;
-  animation-play-state: paused;
   animation-fill-mode: both;
+  animation-play-state: paused;
 }
 .ant-zoom-left-enter.ant-zoom-left-enter-active,
 .ant-zoom-left-appear.ant-zoom-left-appear-active {
@@ -1071,13 +1068,13 @@ html {
 .ant-zoom-right-enter,
 .ant-zoom-right-appear {
   animation-duration: 0.2s;
-  animation-play-state: paused;
   animation-fill-mode: both;
+  animation-play-state: paused;
 }
 .ant-zoom-right-leave {
   animation-duration: 0.2s;
-  animation-play-state: paused;
   animation-fill-mode: both;
+  animation-play-state: paused;
 }
 .ant-zoom-right-enter.ant-zoom-right-enter-active,
 .ant-zoom-right-appear.ant-zoom-right-appear-active {
@@ -1232,35 +1229,27 @@ html {
   overflow: hidden;
 }
 .ant-motion-collapse-legacy-active {
-  transition: height 0.2s cubic-bezier(0.645, 0.045, 0.355, 1),
-    opacity 0.2s cubic-bezier(0.645, 0.045, 0.355, 1) !important;
+  transition: height 0.2s cubic-bezier(0.645, 0.045, 0.355, 1), opacity 0.2s cubic-bezier(0.645, 0.045, 0.355, 1) !important;
 }
 .ant-motion-collapse {
   overflow: hidden;
-  transition: height 0.2s cubic-bezier(0.645, 0.045, 0.355, 1),
-    opacity 0.2s cubic-bezier(0.645, 0.045, 0.355, 1) !important;
+  transition: height 0.2s cubic-bezier(0.645, 0.045, 0.355, 1), opacity 0.2s cubic-bezier(0.645, 0.045, 0.355, 1) !important;
 }
 .label-auto-complete {
   position: relative;
   width: 100%;
   height: 100%;
 }
-.label-auto-complete
-  .ant-select-single.ant-select-lg:not(.ant-select-customize-input):not(.ant-select-disabled)
-  .ant-select-selector:hover {
+.label-auto-complete .ant-select-single.ant-select-lg:not(.ant-select-customize-input):not(.ant-select-disabled) .ant-select-selector:hover {
   border-color: #a0a0a0;
 }
-.label-auto-complete
-  .ant-select-single.ant-select-lg:not(.ant-select-customize-input)
-  .ant-select-selector {
+.label-auto-complete .ant-select-single.ant-select-lg:not(.ant-select-customize-input) .ant-select-selector {
   height: 45px;
   border: 1px solid #e5e5e5;
   border-radius: 2px;
   outline: none;
 }
-.label-auto-complete
-  .ant-select-focused:not(.ant-select-disabled).ant-select:not(.ant-select-customize-input)
-  .ant-select-selector {
+.label-auto-complete .ant-select-focused:not(.ant-select-disabled).ant-select:not(.ant-select-customize-input) .ant-select-selector {
   border-color: #000;
   box-shadow: none;
 }

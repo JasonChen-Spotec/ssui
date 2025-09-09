@@ -1,13 +1,13 @@
-'use strict';
+"use strict";
 
-Object.defineProperty(exports, '__esModule', {
-  value: true,
+Object.defineProperty(exports, "__esModule", {
+  value: true
 });
 var locale = {
   locale: 'nb_NO',
   lang: {
     global: {
-      placeholder: 'Vennligst velg',
+      placeholder: 'Vennligst velg'
     },
     labelCustomizeRangePicker: {
       customTime: 'egendefinert tid',
@@ -26,8 +26,8 @@ var locale = {
       last180days: 'Siste 180 dager',
       last365days: 'Siste 365 dager',
       year: 'I år',
-      all: 'Alle',
-    },
-  },
+      all: 'Alle'
+    }
+  }
 };
-exports['default'] = locale;
+exports["default"] = locale;

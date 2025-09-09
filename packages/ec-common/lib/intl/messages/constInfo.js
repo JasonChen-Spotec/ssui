@@ -1,16 +1,16 @@
-'use strict';
+"use strict";
 
-Object.defineProperty(exports, '__esModule', {
-  value: true,
+Object.defineProperty(exports, "__esModule", {
+  value: true
 });
 var constInfo = {
   male: {
     id: 'male',
-    defaultMessage: '男',
+    defaultMessage: '男'
   },
   female: {
     id: 'female',
-    defaultMessage: '女',
-  },
+    defaultMessage: '女'
+  }
 };
-exports['default'] = constInfo;
+exports["default"] = constInfo;
