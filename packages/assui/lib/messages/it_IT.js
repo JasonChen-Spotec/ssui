@@ -1,13 +1,13 @@
-'use strict';
+"use strict";
 
-Object.defineProperty(exports, '__esModule', {
-  value: true,
+Object.defineProperty(exports, "__esModule", {
+  value: true
 });
 var locale = {
   locale: 'it_IT',
   lang: {
     global: {
-      placeholder: 'si prega di scegliere',
+      placeholder: 'si prega di scegliere'
     },
     labelCustomizeRangePicker: {
       customTime: 'tempo personalizzato',
@@ -27,8 +27,8 @@ var locale = {
       last365days: 'Ultimi 365 giorni',
       // eslint-disable-next-line quotes
       year: "Quest'anno",
-      all: 'Tutto',
-    },
-  },
+      all: 'Tutto'
+    }
+  }
 };
-exports['default'] = locale;
+exports["default"] = locale;

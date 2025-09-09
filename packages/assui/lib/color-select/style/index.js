@@ -1,7 +1,7 @@
-'use strict';
+"use strict";
 
-Object.defineProperty(exports, '__esModule', {
-  value: true,
+Object.defineProperty(exports, "__esModule", {
+  value: true
 });
-require('rc-trigger/assets/index.css');
-require('./index.less');
+require("rc-trigger/assets/index.css");
+require("./index.less");

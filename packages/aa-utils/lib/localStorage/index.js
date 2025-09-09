@@ -1,9 +1,9 @@
-'use strict';
+"use strict";
 
-Object.defineProperty(exports, '__esModule', {
-  value: true,
+Object.defineProperty(exports, "__esModule", {
+  value: true
 });
-exports['default'] = {
+exports["default"] = {
   set: function set(key, value) {
     // 存储单个属性
     window.localStorage.setItem(key, value);
@@ -26,5 +26,5 @@ exports['default'] = {
       console.log('error', error);
     }
     return result;
-  },
+  }
 };

@@ -1,9 +1,9 @@
 /* eslint-disable no-unused-expressions */
 /* eslint-disable no-restricted-syntax */
-import useMount from 'ahooks/es/useMount';
-import useUpdateEffect from 'ahooks/es/useUpdateEffect';
+import React, { useRef, useEffect } from 'react';
+import useMount from "ahooks/es/useMount";
+import useUpdateEffect from "ahooks/es/useUpdateEffect";
 import classNames from 'classnames';
-import React, { useEffect, useRef } from 'react';
 var initEmptyObject = {};
 var ReactEchartCore = function ReactEchartCore(props) {
   var _a = props.className,
@@ -57,22 +57,16 @@ var ReactEchartCore = function ReactEchartCore(props) {
     bindEvents();
   });
   // need reBuild
-  useUpdateEffect(
-    function () {
-      dispose();
-      initEcharts();
-      renderEchartDom();
-      bindEvents();
-    },
-    [theme, opts],
-  );
+  useUpdateEffect(function () {
+    dispose();
+    initEcharts();
+    renderEchartDom();
+    bindEvents();
+  }, [theme, opts]);
   // need setOption
-  useUpdateEffect(
-    function () {
-      renderEchartDom();
-    },
-    [option, notMerge, lazyUpdate],
-  );
+  useUpdateEffect(function () {
+    renderEchartDom();
+  }, [option, notMerge, lazyUpdate]);
   // need resize
   var resizeChart = function resizeChart() {
     if (chartRef.current) {
@@ -87,22 +81,19 @@ var ReactEchartCore = function ReactEchartCore(props) {
       window.removeEventListener('resize', resizeChart);
     };
   }, []);
-  useUpdateEffect(
-    function () {
-      resizeChart();
-    },
-    [className],
-  );
+  useUpdateEffect(function () {
+    resizeChart();
+  }, [className]);
   var defaultStyle = {
     width: '100%',
-    height: '100%',
+    height: '100%'
   };
-  return /*#__PURE__*/ React.createElement('div', {
+  return /*#__PURE__*/React.createElement("div", {
     ref: function ref(node) {
       chartDomRef.current = node;
     },
     style: defaultStyle,
-    className: classNames('react-echart', className),
+    className: classNames('react-echart', className)
   });
 };
 export default ReactEchartCore;

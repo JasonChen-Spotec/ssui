@@ -5,7 +5,6 @@
 .ant-input-affix-wrapper {
   position: relative;
   display: inline-block;
-  display: inline-flex;
   width: 100%;
   min-width: 0;
   padding: 4px 11px;
@@ -17,17 +16,18 @@
   border: 1px solid #d9d9d9;
   border-radius: 2px;
   transition: all 0.3s;
+  display: inline-flex;
 }
 .ant-input-affix-wrapper::-moz-placeholder {
   color: #bfbfbf;
   -moz-user-select: none;
-  user-select: none;
+       user-select: none;
 }
 .ant-input-affix-wrapper::placeholder {
   color: #bfbfbf;
   -webkit-user-select: none;
-  -moz-user-select: none;
-  user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 .ant-input-affix-wrapper:-moz-placeholder-shown {
   text-overflow: ellipsis;
@@ -46,9 +46,9 @@
 .ant-input-affix-wrapper:focus,
 .ant-input-affix-wrapper-focused {
   border-color: #40a9ff;
+  box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
   border-right-width: 1px;
   outline: 0;
-  box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
 }
 .ant-input-rtl .ant-input-affix-wrapper:focus,
 .ant-input-rtl .ant-input-affix-wrapper-focused {
@@ -108,16 +108,15 @@ textarea.ant-input-affix-wrapper {
   direction: rtl;
 }
 .ant-input-affix-wrapper:not(.ant-input-affix-wrapper-disabled):hover {
-  z-index: 1;
   border-color: #40a9ff;
   border-right-width: 1px;
+  z-index: 1;
 }
 .ant-input-rtl .ant-input-affix-wrapper:not(.ant-input-affix-wrapper-disabled):hover {
   border-right-width: 0;
   border-left-width: 1px !important;
 }
-.ant-input-search-with-button
-  .ant-input-affix-wrapper:not(.ant-input-affix-wrapper-disabled):hover {
+.ant-input-search-with-button .ant-input-affix-wrapper:not(.ant-input-affix-wrapper-disabled):hover {
   z-index: 0;
 }
 .ant-input-affix-wrapper-focused,
@@ -206,9 +205,9 @@ textarea.ant-input-affix-wrapper {
 .ant-input-status-error:not(.ant-input-disabled):not(.ant-input-borderless).ant-input:focus,
 .ant-input-status-error:not(.ant-input-disabled):not(.ant-input-borderless).ant-input-focused {
   border-color: #ff7875;
+  box-shadow: 0 0 0 2px rgba(255, 77, 79, 0.2);
   border-right-width: 1px;
   outline: 0;
-  box-shadow: 0 0 0 2px rgba(255, 77, 79, 0.2);
 }
 .ant-input-status-error .ant-input-prefix {
   color: #ff4d4f;
@@ -221,9 +220,9 @@ textarea.ant-input-affix-wrapper {
 .ant-input-status-warning:not(.ant-input-disabled):not(.ant-input-borderless).ant-input:focus,
 .ant-input-status-warning:not(.ant-input-disabled):not(.ant-input-borderless).ant-input-focused {
   border-color: #ffc53d;
+  box-shadow: 0 0 0 2px rgba(250, 173, 20, 0.2);
   border-right-width: 1px;
   outline: 0;
-  box-shadow: 0 0 0 2px rgba(250, 173, 20, 0.2);
 }
 .ant-input-status-warning .ant-input-prefix {
   color: #faad14;
@@ -236,9 +235,9 @@ textarea.ant-input-affix-wrapper {
 .ant-input-affix-wrapper-status-error:not(.ant-input-affix-wrapper-disabled):not(.ant-input-affix-wrapper-borderless).ant-input-affix-wrapper:focus,
 .ant-input-affix-wrapper-status-error:not(.ant-input-affix-wrapper-disabled):not(.ant-input-affix-wrapper-borderless).ant-input-affix-wrapper-focused {
   border-color: #ff7875;
+  box-shadow: 0 0 0 2px rgba(255, 77, 79, 0.2);
   border-right-width: 1px;
   outline: 0;
-  box-shadow: 0 0 0 2px rgba(255, 77, 79, 0.2);
 }
 .ant-input-affix-wrapper-status-error .ant-input-prefix {
   color: #ff4d4f;
@@ -251,9 +250,9 @@ textarea.ant-input-affix-wrapper {
 .ant-input-affix-wrapper-status-warning:not(.ant-input-affix-wrapper-disabled):not(.ant-input-affix-wrapper-borderless).ant-input-affix-wrapper:focus,
 .ant-input-affix-wrapper-status-warning:not(.ant-input-affix-wrapper-disabled):not(.ant-input-affix-wrapper-borderless).ant-input-affix-wrapper-focused {
   border-color: #ffc53d;
+  box-shadow: 0 0 0 2px rgba(250, 173, 20, 0.2);
   border-right-width: 1px;
   outline: 0;
-  box-shadow: 0 0 0 2px rgba(250, 173, 20, 0.2);
 }
 .ant-input-affix-wrapper-status-warning .ant-input-prefix {
   color: #faad14;
@@ -273,36 +272,36 @@ textarea.ant-input-affix-wrapper {
   border-color: #faad14;
 }
 .ant-input {
-  position: relative;
-  display: inline-block;
   box-sizing: border-box;
-  width: 100%;
-  min-width: 0;
   margin: 0;
   padding: 0;
+  font-variant: tabular-nums;
+  list-style: none;
+  font-feature-settings: 'tnum';
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  min-width: 0;
   padding: 4px 11px;
   color: rgba(0, 0, 0, 0.85);
   font-size: 14px;
-  font-variant: tabular-nums;
   line-height: 1.5715;
-  list-style: none;
   background-color: #fff;
   background-image: none;
   border: 1px solid #d9d9d9;
   border-radius: 2px;
   transition: all 0.3s;
-  font-feature-settings: 'tnum';
 }
 .ant-input::-moz-placeholder {
   color: #bfbfbf;
   -moz-user-select: none;
-  user-select: none;
+       user-select: none;
 }
 .ant-input::placeholder {
   color: #bfbfbf;
   -webkit-user-select: none;
-  -moz-user-select: none;
-  user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 .ant-input:-moz-placeholder-shown {
   text-overflow: ellipsis;
@@ -321,9 +320,9 @@ textarea.ant-input-affix-wrapper {
 .ant-input:focus,
 .ant-input-focused {
   border-color: #40a9ff;
+  box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
   border-right-width: 1px;
   outline: 0;
-  box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
 }
 .ant-input-rtl .ant-input:focus,
 .ant-input-rtl .ant-input-focused {
@@ -383,10 +382,7 @@ textarea.ant-input {
   direction: rtl;
 }
 .ant-input-group {
-  position: relative;
-  display: table;
   box-sizing: border-box;
-  width: 100%;
   margin: 0;
   padding: 0;
   color: rgba(0, 0, 0, 0.85);
@@ -394,9 +390,12 @@ textarea.ant-input {
   font-variant: tabular-nums;
   line-height: 1.5715;
   list-style: none;
+  font-feature-settings: 'tnum';
+  position: relative;
+  display: table;
+  width: 100%;
   border-collapse: separate;
   border-spacing: 0;
-  font-feature-settings: 'tnum';
 }
 .ant-input-group[class*='col-'] {
   float: none;
@@ -460,9 +459,7 @@ textarea.ant-input {
 .ant-input-group-addon .ant-select {
   margin: -5px -11px;
 }
-.ant-input-group-addon
-  .ant-select.ant-select-single:not(.ant-select-customize-input)
-  .ant-select-selector {
+.ant-input-group-addon .ant-select.ant-select-single:not(.ant-select-customize-input) .ant-select-selector {
   background-color: inherit;
   border: 1px solid transparent;
   box-shadow: none;
@@ -561,14 +558,12 @@ textarea.ant-input {
 }
 .ant-input-group.ant-input-group-compact-addon:not(:first-child):not(:last-child):hover,
 .ant-input-group.ant-input-group-compact-wrap:not(:first-child):not(:last-child):hover,
-.ant-input-group.ant-input-group-compact
-  > .ant-input:not(:first-child):not(:last-child):hover {
+.ant-input-group.ant-input-group-compact > .ant-input:not(:first-child):not(:last-child):hover {
   z-index: 1;
 }
 .ant-input-group.ant-input-group-compact-addon:not(:first-child):not(:last-child):focus,
 .ant-input-group.ant-input-group-compact-wrap:not(:first-child):not(:last-child):focus,
-.ant-input-group.ant-input-group-compact
-  > .ant-input:not(:first-child):not(:last-child):focus {
+.ant-input-group.ant-input-group-compact > .ant-input:not(:first-child):not(:last-child):focus {
   z-index: 1;
 }
 .ant-input-group.ant-input-group-compact > * {
@@ -617,9 +612,7 @@ textarea.ant-input {
 }
 .ant-input-group.ant-input-group-compact > *:first-child,
 .ant-input-group.ant-input-group-compact > .ant-select:first-child > .ant-select-selector,
-.ant-input-group.ant-input-group-compact
-  > .ant-select-auto-complete:first-child
-  .ant-input,
+.ant-input-group.ant-input-group-compact > .ant-select-auto-complete:first-child .ant-input,
 .ant-input-group.ant-input-group-compact > .ant-cascader-picker:first-child .ant-input {
   border-top-left-radius: 2px;
   border-bottom-left-radius: 2px;
@@ -627,9 +620,7 @@ textarea.ant-input {
 .ant-input-group.ant-input-group-compact > *:last-child,
 .ant-input-group.ant-input-group-compact > .ant-select:last-child > .ant-select-selector,
 .ant-input-group.ant-input-group-compact > .ant-cascader-picker:last-child .ant-input,
-.ant-input-group.ant-input-group-compact
-  > .ant-cascader-picker-focused:last-child
-  .ant-input {
+.ant-input-group.ant-input-group-compact > .ant-cascader-picker-focused:last-child .ant-input {
   border-right-width: 1px;
   border-top-right-radius: 2px;
   border-bottom-right-radius: 2px;
@@ -637,28 +628,16 @@ textarea.ant-input {
 .ant-input-group.ant-input-group-compact > .ant-select-auto-complete .ant-input {
   vertical-align: top;
 }
-.ant-input-group.ant-input-group-compact
-  .ant-input-group-wrapper
-  + .ant-input-group-wrapper {
+.ant-input-group.ant-input-group-compact .ant-input-group-wrapper + .ant-input-group-wrapper {
   margin-left: -1px;
 }
-.ant-input-group.ant-input-group-compact
-  .ant-input-group-wrapper
-  + .ant-input-group-wrapper
-  .ant-input-affix-wrapper {
+.ant-input-group.ant-input-group-compact .ant-input-group-wrapper + .ant-input-group-wrapper .ant-input-affix-wrapper {
   border-radius: 0;
 }
-.ant-input-group.ant-input-group-compact
-  .ant-input-group-wrapper:not(:last-child).ant-input-search
-  > .ant-input-group
-  > .ant-input-group-addon
-  > .ant-input-search-button {
+.ant-input-group.ant-input-group-compact .ant-input-group-wrapper:not(:last-child).ant-input-search > .ant-input-group > .ant-input-group-addon > .ant-input-search-button {
   border-radius: 0;
 }
-.ant-input-group.ant-input-group-compact
-  .ant-input-group-wrapper:not(:last-child).ant-input-search
-  > .ant-input-group
-  > .ant-input {
+.ant-input-group.ant-input-group-compact .ant-input-group-wrapper:not(:last-child).ant-input-search > .ant-input-group > .ant-input {
   border-radius: 2px 0 0 2px;
 }
 .ant-input-group > .ant-input-rtl:first-child,
@@ -690,43 +669,24 @@ textarea.ant-input {
   border-left-width: 1px;
 }
 .ant-input-group-rtl.ant-input-group.ant-input-group-compact > *:first-child,
-.ant-input-group-rtl.ant-input-group.ant-input-group-compact
-  > .ant-select:first-child
-  > .ant-select-selector,
-.ant-input-group-rtl.ant-input-group.ant-input-group-compact
-  > .ant-select-auto-complete:first-child
-  .ant-input,
-.ant-input-group-rtl.ant-input-group.ant-input-group-compact
-  > .ant-cascader-picker:first-child
-  .ant-input {
+.ant-input-group-rtl.ant-input-group.ant-input-group-compact > .ant-select:first-child > .ant-select-selector,
+.ant-input-group-rtl.ant-input-group.ant-input-group-compact > .ant-select-auto-complete:first-child .ant-input,
+.ant-input-group-rtl.ant-input-group.ant-input-group-compact > .ant-cascader-picker:first-child .ant-input {
   border-radius: 0 2px 2px 0;
 }
 .ant-input-group-rtl.ant-input-group.ant-input-group-compact > *:last-child,
-.ant-input-group-rtl.ant-input-group.ant-input-group-compact
-  > .ant-select:last-child
-  > .ant-select-selector,
-.ant-input-group-rtl.ant-input-group.ant-input-group-compact
-  > .ant-select-auto-complete:last-child
-  .ant-input,
-.ant-input-group-rtl.ant-input-group.ant-input-group-compact
-  > .ant-cascader-picker:last-child
-  .ant-input,
-.ant-input-group-rtl.ant-input-group.ant-input-group-compact
-  > .ant-cascader-picker-focused:last-child
-  .ant-input {
+.ant-input-group-rtl.ant-input-group.ant-input-group-compact > .ant-select:last-child > .ant-select-selector,
+.ant-input-group-rtl.ant-input-group.ant-input-group-compact > .ant-select-auto-complete:last-child .ant-input,
+.ant-input-group-rtl.ant-input-group.ant-input-group-compact > .ant-cascader-picker:last-child .ant-input,
+.ant-input-group-rtl.ant-input-group.ant-input-group-compact > .ant-cascader-picker-focused:last-child .ant-input {
   border-left-width: 1px;
   border-radius: 2px 0 0 2px;
 }
-.ant-input-group.ant-input-group-compact
-  .ant-input-group-wrapper-rtl
-  + .ant-input-group-wrapper-rtl {
+.ant-input-group.ant-input-group-compact .ant-input-group-wrapper-rtl + .ant-input-group-wrapper-rtl {
   margin-right: -1px;
   margin-left: 0;
 }
-.ant-input-group.ant-input-group-compact
-  .ant-input-group-wrapper-rtl:not(:last-child).ant-input-search
-  > .ant-input-group
-  > .ant-input {
+.ant-input-group.ant-input-group-compact .ant-input-group-wrapper-rtl:not(:last-child).ant-input-search > .ant-input-group > .ant-input {
   border-radius: 0 2px 2px 0;
 }
 .ant-input-group-wrapper {
@@ -781,14 +741,8 @@ textarea.ant-input {
 .ant-input-search .ant-input:focus {
   border-color: #40a9ff;
 }
-.ant-input-search
-  .ant-input:hover
-  + .ant-input-group-addon
-  .ant-input-search-button:not(.ant-btn-primary),
-.ant-input-search
-  .ant-input:focus
-  + .ant-input-group-addon
-  .ant-input-search-button:not(.ant-btn-primary) {
+.ant-input-search .ant-input:hover + .ant-input-group-addon .ant-input-search-button:not(.ant-btn-primary),
+.ant-input-search .ant-input:focus + .ant-input-group-addon .ant-input-search-button:not(.ant-btn-primary) {
   border-left-color: #40a9ff;
 }
 .ant-input-search .ant-input-affix-wrapper {
@@ -802,24 +756,15 @@ textarea.ant-input {
   padding: 0;
   border: 0;
 }
-.ant-input-search
-  > .ant-input-group
-  > .ant-input-group-addon:last-child
-  .ant-input-search-button {
+.ant-input-search > .ant-input-group > .ant-input-group-addon:last-child .ant-input-search-button {
   padding-top: 0;
   padding-bottom: 0;
   border-radius: 0 2px 2px 0;
 }
-.ant-input-search
-  > .ant-input-group
-  > .ant-input-group-addon:last-child
-  .ant-input-search-button:not(.ant-btn-primary) {
+.ant-input-search > .ant-input-group > .ant-input-group-addon:last-child .ant-input-search-button:not(.ant-btn-primary) {
   color: rgba(0, 0, 0, 0.45);
 }
-.ant-input-search
-  > .ant-input-group
-  > .ant-input-group-addon:last-child
-  .ant-input-search-button:not(.ant-btn-primary).ant-btn-loading::before {
+.ant-input-search > .ant-input-group > .ant-input-group-addon:last-child .ant-input-search-button:not(.ant-btn-primary).ant-btn-loading::before {
   top: 0;
   right: 0;
   bottom: 0;
@@ -871,24 +816,12 @@ textarea.ant-input {
 .ant-input-search-rtl {
   direction: rtl;
 }
-.ant-input-search-rtl
-  .ant-input:hover
-  + .ant-input-group-addon
-  .ant-input-search-button:not(.ant-btn-primary),
-.ant-input-search-rtl
-  .ant-input:focus
-  + .ant-input-group-addon
-  .ant-input-search-button:not(.ant-btn-primary) {
+.ant-input-search-rtl .ant-input:hover + .ant-input-group-addon .ant-input-search-button:not(.ant-btn-primary),
+.ant-input-search-rtl .ant-input:focus + .ant-input-group-addon .ant-input-search-button:not(.ant-btn-primary) {
   border-left-color: #d9d9d9;
 }
-.ant-input-search-rtl
-  .ant-input:hover
-  + .ant-input-group-addon
-  .ant-input-search-button:not(.ant-btn-primary):hover,
-.ant-input-search-rtl
-  .ant-input:focus
-  + .ant-input-group-addon
-  .ant-input-search-button:not(.ant-btn-primary):hover {
+.ant-input-search-rtl .ant-input:hover + .ant-input-group-addon .ant-input-search-button:not(.ant-btn-primary):hover,
+.ant-input-search-rtl .ant-input:focus + .ant-input-group-addon .ant-input-search-button:not(.ant-btn-primary):hover {
   border-left-color: #40a9ff;
 }
 .ant-input-search-rtl > .ant-input-group > .ant-input-affix-wrapper:hover,
@@ -899,10 +832,7 @@ textarea.ant-input {
   right: -1px;
   left: auto;
 }
-.ant-input-search-rtl
-  > .ant-input-group
-  > .ant-input-group-addon:last-child
-  .ant-input-search-button {
+.ant-input-search-rtl > .ant-input-group > .ant-input-group-addon:last-child .ant-input-search-button {
   border-radius: 2px 0 0 2px;
 }
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
@@ -926,8 +856,8 @@ textarea.ant-input {
   height: 100px;
   overflow: hidden;
   -webkit-text-size-adjust: none;
-  -moz-text-size-adjust: none;
-  text-size-adjust: none;
+     -moz-text-size-adjust: none;
+          text-size-adjust: none;
 }
 .highlight-textarea-backdrop {
   overflow-x: hidden;

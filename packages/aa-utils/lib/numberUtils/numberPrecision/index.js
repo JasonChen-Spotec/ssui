@@ -1,33 +1,31 @@
-'use strict';
+"use strict";
 
-var __read =
-  (this && this.__read) ||
-  function (o, n) {
-    var m = typeof Symbol === 'function' && o[Symbol.iterator];
-    if (!m) return o;
-    var i = m.call(o),
-      r,
-      ar = [],
-      e;
-    try {
-      while ((n === void 0 || n-- > 0) && !(r = i.next()).done) {
-        ar.push(r.value);
-      }
-    } catch (error) {
-      e = {
-        error: error,
-      };
-    } finally {
-      try {
-        if (r && !r.done && (m = i['return'])) m.call(i);
-      } finally {
-        if (e) throw e.error;
-      }
+var __read = this && this.__read || function (o, n) {
+  var m = typeof Symbol === "function" && o[Symbol.iterator];
+  if (!m) return o;
+  var i = m.call(o),
+    r,
+    ar = [],
+    e;
+  try {
+    while ((n === void 0 || n-- > 0) && !(r = i.next()).done) {
+      ar.push(r.value);
     }
-    return ar;
-  };
-Object.defineProperty(exports, '__esModule', {
-  value: true,
+  } catch (error) {
+    e = {
+      error: error
+    };
+  } finally {
+    try {
+      if (r && !r.done && (m = i["return"])) m.call(i);
+    } finally {
+      if (e) throw e.error;
+    }
+  }
+  return ar;
+};
+Object.defineProperty(exports, "__esModule", {
+  value: true
 });
 exports.strip = strip;
 exports.plus = plus;
@@ -162,11 +160,9 @@ function divide() {
   checkBoundary(num1Changed);
   checkBoundary(num2Changed);
   // fix: 类似 10 ** -4 为 0.00009999999999999999，strip 修正
-  return times(
-    num1Changed / num2Changed,
-    // eslint-disable-next-line no-restricted-properties
-    strip(Math.pow(10, digitLength(num2) - digitLength(num1))),
-  );
+  return times(num1Changed / num2Changed,
+  // eslint-disable-next-line no-restricted-properties
+  strip(Math.pow(10, digitLength(num2) - digitLength(num1))));
 }
 var _boundaryCheckingState = true;
 /**
@@ -186,12 +182,7 @@ function enableBoundaryChecking(flag) {
 function checkBoundary(num) {
   if (_boundaryCheckingState) {
     if (num > Number.MAX_SAFE_INTEGER || num < Number.MIN_SAFE_INTEGER) {
-      console.warn(
-        ''.concat(
-          num,
-          ' is beyond boundary when transfer to integer, the results may not be accurate',
-        ),
-      );
+      console.warn("".concat(num, " is beyond boundary when transfer to integer, the results may not be accurate"));
     }
   }
 }

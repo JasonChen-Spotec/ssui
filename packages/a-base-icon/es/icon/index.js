@@ -1,35 +1,27 @@
-var __assign =
-  (this && this.__assign) ||
-  function () {
-    __assign =
-      Object.assign ||
-      function (t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-          s = arguments[i];
-          for (var p in s) {
-            if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
-          }
-        }
-        return t;
-      };
-    return __assign.apply(this, arguments);
-  };
-var __rest =
-  (this && this.__rest) ||
-  function (s, e) {
-    var t = {};
-    for (var p in s) {
-      if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
-    }
-    if (s != null && typeof Object.getOwnPropertySymbols === 'function')
-      for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
-        if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
-          t[p[i]] = s[p[i]];
+var __assign = this && this.__assign || function () {
+  __assign = Object.assign || function (t) {
+    for (var s, i = 1, n = arguments.length; i < n; i++) {
+      s = arguments[i];
+      for (var p in s) {
+        if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
       }
+    }
     return t;
   };
-import classNames from 'classnames';
+  return __assign.apply(this, arguments);
+};
+var __rest = this && this.__rest || function (s, e) {
+  var t = {};
+  for (var p in s) {
+    if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
+  }
+  if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+    if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i])) t[p[i]] = s[p[i]];
+  }
+  return t;
+};
 import * as React from 'react';
+import classNames from 'classnames';
 import { svgBaseProps, useInsertStyles } from './utils';
 var Icon = function Icon(props) {
   var className = props.className,
@@ -40,51 +32,32 @@ var Icon = function Icon(props) {
     tabIndex = props.tabIndex,
     onClick = props.onClick,
     children = props.children,
-    restProps = __rest(props, [
-      'className',
-      'component',
-      'viewBox',
-      'spin',
-      'rotate',
-      'tabIndex',
-      'onClick',
-      'children',
-    ]);
+    restProps = __rest(props, ["className", "component", "viewBox", "spin", "rotate", "tabIndex", "onClick", "children"]);
   useInsertStyles();
   var classString = classNames('spotecicon', className);
   var svgClassString = classNames({
-    'spotecicon-spin': !!spin,
+    'spotecicon-spin': !!spin
   });
-  var svgStyle = rotate
-    ? {
-        msTransform: 'rotate('.concat(rotate, 'deg)'),
-        transform: 'rotate('.concat(rotate, 'deg)'),
-      }
-    : undefined;
+  var svgStyle = rotate ? {
+    msTransform: "rotate(".concat(rotate, "deg)"),
+    transform: "rotate(".concat(rotate, "deg)")
+  } : undefined;
   var innerSvgProps = __assign(__assign({}, svgBaseProps), {
     className: svgClassString,
     style: svgStyle,
-    viewBox: viewBox,
+    viewBox: viewBox
   });
   if (!viewBox) {
     delete innerSvgProps.viewBox;
   }
   var renderInnerNode = function renderInnerNode() {
     if (Component) {
-      return /*#__PURE__*/ React.createElement(
-        Component,
-        __assign({}, innerSvgProps),
-        children,
-      );
+      return /*#__PURE__*/React.createElement(Component, __assign({}, innerSvgProps), children);
     }
     if (children) {
-      return /*#__PURE__*/ React.createElement(
-        'svg',
-        __assign({}, innerSvgProps, {
-          viewBox: viewBox,
-        }),
-        children,
-      );
+      return /*#__PURE__*/React.createElement("svg", __assign({}, innerSvgProps, {
+        viewBox: viewBox
+      }), children);
     }
     return null;
   };
@@ -92,21 +65,13 @@ var Icon = function Icon(props) {
   if (iconTabIndex === undefined && onClick) {
     iconTabIndex = -1;
   }
-  return /*#__PURE__*/ React.createElement(
-    'span',
-    __assign(
-      {
-        role: 'img',
-      },
-      restProps,
-      {
-        tabIndex: iconTabIndex,
-        onClick: onClick,
-        className: classString,
-      },
-    ),
-    renderInnerNode(),
-  );
+  return /*#__PURE__*/React.createElement("span", __assign({
+    role: "img"
+  }, restProps, {
+    tabIndex: iconTabIndex,
+    onClick: onClick,
+    className: classString
+  }), renderInnerNode());
 };
 Icon.displayName = 'SpotecIcon';
 export default Icon;

@@ -1,13 +1,13 @@
-'use strict';
+"use strict";
 
-Object.defineProperty(exports, '__esModule', {
-  value: true,
+Object.defineProperty(exports, "__esModule", {
+  value: true
 });
 var locale = {
   locale: 'sv_SE',
   lang: {
     global: {
-      placeholder: 'Vänligen välj',
+      placeholder: 'Vänligen välj'
     },
     labelCustomizeRangePicker: {
       customTime: 'anpassad tid',
@@ -26,8 +26,8 @@ var locale = {
       last180days: 'Senaste 180 dagarna',
       last365days: 'Senaste 365 dagarna',
       year: 'I år',
-      all: 'Allt',
-    },
-  },
+      all: 'Allt'
+    }
+  }
 };
-exports['default'] = locale;
+exports["default"] = locale;

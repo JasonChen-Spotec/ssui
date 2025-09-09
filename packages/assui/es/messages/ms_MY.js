@@ -2,7 +2,7 @@ var locale = {
   locale: 'ms_MY',
   lang: {
     global: {
-      placeholder: 'Sila pilih',
+      placeholder: 'Sila pilih'
     },
     labelCustomizeRangePicker: {
       customTime: 'Tersuai',
@@ -21,8 +21,8 @@ var locale = {
       last180days: '180 Hari Terakhir',
       last365days: '365 Hari Terakhir',
       year: 'Tahun',
-      all: 'Semua',
-    },
-  },
+      all: 'Semua'
+    }
+  }
 };
 export default locale;

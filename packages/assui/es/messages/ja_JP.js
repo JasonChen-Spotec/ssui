@@ -2,7 +2,7 @@ var locale = {
   locale: 'ja_JP',
   lang: {
     global: {
-      placeholder: '選んでください',
+      placeholder: '選んでください'
     },
     labelCustomizeRangePicker: {
       customTime: 'カスタム時間',
@@ -21,8 +21,8 @@ var locale = {
       last180days: '過去 180 日間',
       last365days: '過去 365 日間',
       year: '今年',
-      all: '全て',
-    },
-  },
+      all: '全て'
+    }
+  }
 };
 export default locale;

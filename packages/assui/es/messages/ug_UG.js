@@ -2,7 +2,7 @@ var locale = {
   locale: 'ug_UG',
   lang: {
     global: {
-      placeholder: 'تاللاڭ',
+      placeholder: 'تاللاڭ'
     },
     labelCustomizeRangePicker: {
       customTime: 'ۋاقتى ئېنىق',
@@ -21,8 +21,8 @@ var locale = {
       last180days: 'ئاخىرقى 180 كۈن',
       last365days: 'ئاخىرقى 365 كۈن',
       year: 'بۇ يىل',
-      all: 'ھەممىسى',
-    },
-  },
+      all: 'ھەممىسى'
+    }
+  }
 };
 export default locale;

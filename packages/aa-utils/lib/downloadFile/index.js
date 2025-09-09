@@ -1,33 +1,31 @@
-'use strict';
+"use strict";
 
-var __read =
-  (this && this.__read) ||
-  function (o, n) {
-    var m = typeof Symbol === 'function' && o[Symbol.iterator];
-    if (!m) return o;
-    var i = m.call(o),
-      r,
-      ar = [],
-      e;
-    try {
-      while ((n === void 0 || n-- > 0) && !(r = i.next()).done) {
-        ar.push(r.value);
-      }
-    } catch (error) {
-      e = {
-        error: error,
-      };
-    } finally {
-      try {
-        if (r && !r.done && (m = i['return'])) m.call(i);
-      } finally {
-        if (e) throw e.error;
-      }
+var __read = this && this.__read || function (o, n) {
+  var m = typeof Symbol === "function" && o[Symbol.iterator];
+  if (!m) return o;
+  var i = m.call(o),
+    r,
+    ar = [],
+    e;
+  try {
+    while ((n === void 0 || n-- > 0) && !(r = i.next()).done) {
+      ar.push(r.value);
     }
-    return ar;
-  };
-Object.defineProperty(exports, '__esModule', {
-  value: true,
+  } catch (error) {
+    e = {
+      error: error
+    };
+  } finally {
+    try {
+      if (r && !r.done && (m = i["return"])) m.call(i);
+    } finally {
+      if (e) throw e.error;
+    }
+  }
+  return ar;
+};
+Object.defineProperty(exports, "__esModule", {
+  value: true
 });
 var defaultOptions = {};
 var downloadFile = function downloadFile(url, options) {
@@ -50,18 +48,10 @@ var downloadFile = function downloadFile(url, options) {
       if (!resultFileName) {
         resultFileName = path.split('/').pop();
       } else {
-        var originalExt =
-          (_a = path.split('/').pop()) === null || _a === void 0
-            ? void 0
-            : _a.split('.').pop();
+        var originalExt = (_a = path.split('/').pop()) === null || _a === void 0 ? void 0 : _a.split('.').pop();
         // 如果提供的 fileName 没有扩展名，则添加原始扩展名
-        if (
-          originalExt &&
-          !(fileName === null || fileName === void 0
-            ? void 0
-            : fileName.toLowerCase().endsWith('.'.concat(originalExt.toLowerCase())))
-        ) {
-          resultFileName = ''.concat(fileName, '.').concat(originalExt);
+        if (originalExt && !(fileName === null || fileName === void 0 ? void 0 : fileName.toLowerCase().endsWith(".".concat(originalExt.toLowerCase())))) {
+          resultFileName = "".concat(fileName, ".").concat(originalExt);
         }
       }
       a.download = decodeURIComponent(resultFileName);
@@ -72,7 +62,7 @@ var downloadFile = function downloadFile(url, options) {
     xhr.onprogress = function (e) {
       var resultEvent = e;
       if (e.total > 0) {
-        resultEvent.percent = (e.loaded / e.total) * 100;
+        resultEvent.percent = e.loaded / e.total * 100;
       }
       onProgress === null || onProgress === void 0 ? void 0 : onProgress(resultEvent);
     };
@@ -82,4 +72,4 @@ var downloadFile = function downloadFile(url, options) {
     xhr.send();
   });
 };
-exports['default'] = downloadFile;
+exports["default"] = downloadFile;

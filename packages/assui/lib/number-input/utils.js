@@ -1,8 +1,8 @@
-'use strict';
+"use strict";
 
 /* eslint-disable no-useless-escape */
-Object.defineProperty(exports, '__esModule', {
-  value: true,
+Object.defineProperty(exports, "__esModule", {
+  value: true
 });
 exports.filterFloat = exports.filterInt = void 0;
 var intNumberReg = /^-?\d+$/;
@@ -39,7 +39,7 @@ var filterFloat = function filterFloat(_a) {
   if (nextValue && nextValue.length > 1 && !floatNumberReg.test(nextValue)) {
     return preValue;
   }
-  var twoDecimalNumReg = new RegExp('^(\\-)*(\\d+)\\.(\\d{'.concat(precision, '}).*$'));
+  var twoDecimalNumReg = new RegExp("^(\\-)*(\\d+)\\.(\\d{".concat(precision, "}).*$"));
   return nextValue.replace(twoDecimalNumReg, '$1$2.$3');
 };
 exports.filterFloat = filterFloat;

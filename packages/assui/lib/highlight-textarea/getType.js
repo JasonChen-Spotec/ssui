@@ -1,20 +1,16 @@
-'use strict';
+"use strict";
 
-Object.defineProperty(exports, '__esModule', {
-  value: true,
+Object.defineProperty(exports, "__esModule", {
+  value: true
 });
-exports['default'] = getType;
+exports["default"] = getType;
 function getType(instance) {
   var type = typeof instance;
   if (!instance) {
     return 'falsely';
   }
   if (Array.isArray(instance)) {
-    if (
-      instance.length === 2 &&
-      typeof instance[0] === 'number' &&
-      typeof instance[1] === 'number'
-    ) {
+    if (instance.length === 2 && typeof instance[0] === 'number' && typeof instance[1] === 'number') {
       return 'range';
     }
     return 'array';

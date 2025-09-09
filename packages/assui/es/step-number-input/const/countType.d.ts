@@ -1,2 +1,2 @@
-export declare const PLUS = '+';
-export declare const MINUS = '-';
+export declare const PLUS = "+";
+export declare const MINUS = "-";

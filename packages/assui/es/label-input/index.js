@@ -1,52 +1,47 @@
-var __read =
-  (this && this.__read) ||
-  function (o, n) {
-    var m = typeof Symbol === 'function' && o[Symbol.iterator];
-    if (!m) return o;
-    var i = m.call(o),
-      r,
-      ar = [],
-      e;
-    try {
-      while ((n === void 0 || n-- > 0) && !(r = i.next()).done) {
-        ar.push(r.value);
-      }
-    } catch (error) {
-      e = {
-        error: error,
-      };
-    } finally {
-      try {
-        if (r && !r.done && (m = i['return'])) m.call(i);
-      } finally {
-        if (e) throw e.error;
-      }
+var __read = this && this.__read || function (o, n) {
+  var m = typeof Symbol === "function" && o[Symbol.iterator];
+  if (!m) return o;
+  var i = m.call(o),
+    r,
+    ar = [],
+    e;
+  try {
+    while ((n === void 0 || n-- > 0) && !(r = i.next()).done) {
+      ar.push(r.value);
     }
-    return ar;
-  };
-import EyeFilled from 'a-icons/es/EyeFilled';
-import EyeOutlined from 'a-icons/es/EyeOutlined';
-import useControllableValue from 'ahooks/es/useControllableValue';
-import useSize from 'ahooks/es/useSize';
+  } catch (error) {
+    e = {
+      error: error
+    };
+  } finally {
+    try {
+      if (r && !r.done && (m = i["return"])) m.call(i);
+    } finally {
+      if (e) throw e.error;
+    }
+  }
+  return ar;
+};
+import React from 'react';
 import classNames from 'classnames';
 import trimStart from 'lodash/trimStart';
-import React from 'react';
-var PasswordSuffix = /*#__PURE__*/ React.memo(function (_a) {
+import EyeFilled from "a-icons/es/EyeFilled";
+import EyeOutlined from "a-icons/es/EyeOutlined";
+import useControllableValue from "ahooks/es/useControllableValue";
+import useSize from "ahooks/es/useSize";
+var PasswordSuffix = /*#__PURE__*/React.memo(function (_a) {
   var inputType = _a.inputType,
     onChangeInputType = _a.onChangeInputType;
-  var resultNode =
-    inputType === 'password'
-      ? /*#__PURE__*/ React.createElement(EyeOutlined, {
-          onClick: function onClick() {
-            onChangeInputType('text');
-          },
-        })
-      : /*#__PURE__*/ React.createElement(EyeFilled, {
-          className: 'label-input-open-eye',
-          onClick: function onClick() {
-            onChangeInputType('password');
-          },
-        });
+  var resultNode = inputType === 'password' ? /*#__PURE__*/React.createElement(EyeOutlined, {
+    onClick: function onClick() {
+      onChangeInputType('text');
+    }
+  }) : /*#__PURE__*/React.createElement(EyeFilled, {
+    className: "label-input-open-eye",
+    onClick: function onClick() {
+      onChangeInputType('password');
+    }
+  });
   return resultNode;
 });
 var LabelInput = function LabelInput(props) {
@@ -68,12 +63,9 @@ var LabelInput = function LabelInput(props) {
   var _c = __read(React.useState(false), 2),
     focused = _c[0],
     setFocused = _c[1];
-  var _d = __read(
-      useControllableValue(props, {
-        defaultValue: '',
-      }),
-      2,
-    ),
+  var _d = __read(useControllableValue(props, {
+      defaultValue: ''
+    }), 2),
     value = _d[0],
     setValue = _d[1];
   var _e = __read(React.useState(type), 2),
@@ -99,79 +91,45 @@ var LabelInput = function LabelInput(props) {
   var onChangeInputType = React.useCallback(function (nextInputType) {
     setInputType(nextInputType);
   }, []);
-  var controlMinWidth = (
-    labelSize === null || labelSize === void 0 ? void 0 : labelSize.width
-  )
-    ? labelSize.width + baseMinWidth
-    : undefined;
-  return /*#__PURE__*/ React.createElement(
-    'div',
-    {
-      className: classNames('label-input-control', className),
-      id: id,
-      style: {
-        minWidth: controlMinWidth,
-      },
+  var controlMinWidth = (labelSize === null || labelSize === void 0 ? void 0 : labelSize.width) ? labelSize.width + baseMinWidth : undefined;
+  return /*#__PURE__*/React.createElement("div", {
+    className: classNames('label-input-control', className),
+    id: id,
+    style: {
+      minWidth: controlMinWidth
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    className: classNames('label-input-field', {
+      'label-input-affix': prefix || suffix || isPasswordInput,
+      'label-input-focused': focused,
+      'label-input-disabled': disabled
+    })
+  }, prefix && /*#__PURE__*/React.createElement("div", {
+    className: "label-input-prefix"
+  }, prefix), /*#__PURE__*/React.createElement("div", {
+    className: "label-input-warper"
+  }, /*#__PURE__*/React.createElement("input", {
+    ref: function ref(el) {
+      return InputDomRef.current = el;
     },
-    /*#__PURE__*/ React.createElement(
-      'div',
-      {
-        className: classNames('label-input-field', {
-          'label-input-affix': prefix || suffix || isPasswordInput,
-          'label-input-focused': focused,
-          'label-input-disabled': disabled,
-        }),
-      },
-      prefix &&
-        /*#__PURE__*/ React.createElement(
-          'div',
-          {
-            className: 'label-input-prefix',
-          },
-          prefix,
-        ),
-      /*#__PURE__*/ React.createElement(
-        'div',
-        {
-          className: 'label-input-warper',
-        },
-        /*#__PURE__*/ React.createElement('input', {
-          'ref': function ref(el) {
-            return (InputDomRef.current = el);
-          },
-          'data-value': value ? value.length : 0,
-          'className': 'label-input',
-          'type': inputType,
-          'value': value || '',
-          'onFocus': handleFocus,
-          'onBlur': handleBlur,
-          'onChange': handleChange,
-          'maxLength': maxLength,
-          'disabled': disabled,
-        }),
-        /*#__PURE__*/ React.createElement(
-          'label',
-          {
-            className: 'label-input-text',
-            onClick: handleLabelClick,
-            ref: labelDomRef,
-          },
-          label,
-        ),
-      ),
-      (suffix || isPasswordInput) &&
-        /*#__PURE__*/ React.createElement(
-          'div',
-          {
-            className: 'label-input-suffix',
-          },
-          suffix ||
-            /*#__PURE__*/ React.createElement(PasswordSuffix, {
-              inputType: inputType,
-              onChangeInputType: onChangeInputType,
-            }),
-        ),
-    ),
-  );
+    "data-value": value ? value.length : 0,
+    className: "label-input",
+    type: inputType,
+    value: value || '',
+    onFocus: handleFocus,
+    onBlur: handleBlur,
+    onChange: handleChange,
+    maxLength: maxLength,
+    disabled: disabled
+  }), /*#__PURE__*/React.createElement("label", {
+    className: "label-input-text",
+    onClick: handleLabelClick,
+    ref: labelDomRef
+  }, label)), (suffix || isPasswordInput) && /*#__PURE__*/React.createElement("div", {
+    className: "label-input-suffix"
+  }, suffix || /*#__PURE__*/React.createElement(PasswordSuffix, {
+    inputType: inputType,
+    onChangeInputType: onChangeInputType
+  }))));
 };
 export default LabelInput;

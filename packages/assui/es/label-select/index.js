@@ -1,55 +1,49 @@
-var __assign =
-  (this && this.__assign) ||
-  function () {
-    __assign =
-      Object.assign ||
-      function (t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-          s = arguments[i];
-          for (var p in s) {
-            if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
-          }
-        }
-        return t;
-      };
-    return __assign.apply(this, arguments);
-  };
-var __read =
-  (this && this.__read) ||
-  function (o, n) {
-    var m = typeof Symbol === 'function' && o[Symbol.iterator];
-    if (!m) return o;
-    var i = m.call(o),
-      r,
-      ar = [],
-      e;
-    try {
-      while ((n === void 0 || n-- > 0) && !(r = i.next()).done) {
-        ar.push(r.value);
-      }
-    } catch (error) {
-      e = {
-        error: error,
-      };
-    } finally {
-      try {
-        if (r && !r.done && (m = i['return'])) m.call(i);
-      } finally {
-        if (e) throw e.error;
+var __assign = this && this.__assign || function () {
+  __assign = Object.assign || function (t) {
+    for (var s, i = 1, n = arguments.length; i < n; i++) {
+      s = arguments[i];
+      for (var p in s) {
+        if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
       }
     }
-    return ar;
+    return t;
   };
-import ArrowDropDownFilled from 'a-icons/es/ArrowDropDownFilled';
-import useControllableValue from 'ahooks/es/useControllableValue';
-import Select from 'antd/es/select';
-import classNames from 'classnames';
-import isArray from 'lodash/isArray';
-import isNull from 'lodash/isNull';
-import isUndefined from 'lodash/isUndefined';
-import omit from 'lodash/omit';
+  return __assign.apply(this, arguments);
+};
+var __read = this && this.__read || function (o, n) {
+  var m = typeof Symbol === "function" && o[Symbol.iterator];
+  if (!m) return o;
+  var i = m.call(o),
+    r,
+    ar = [],
+    e;
+  try {
+    while ((n === void 0 || n-- > 0) && !(r = i.next()).done) {
+      ar.push(r.value);
+    }
+  } catch (error) {
+    e = {
+      error: error
+    };
+  } finally {
+    try {
+      if (r && !r.done && (m = i["return"])) m.call(i);
+    } finally {
+      if (e) throw e.error;
+    }
+  }
+  return ar;
+};
 import React from 'react';
+import useControllableValue from "ahooks/es/useControllableValue";
+import Select from "antd/es/select";
 import ComplexValSelect from '../complex-val-select';
+import isArray from 'lodash/isArray';
+import isUndefined from 'lodash/isUndefined';
+import isNull from 'lodash/isNull';
+import classNames from 'classnames';
+import ArrowDropDownFilled from "a-icons/es/ArrowDropDownFilled";
+import omit from 'lodash/omit';
 var Option = Select.Option;
 export { Option };
 var LabelSelect = function LabelSelect(props, ref) {
@@ -57,13 +51,10 @@ var LabelSelect = function LabelSelect(props, ref) {
     label = props.label,
     onBlur = props.onBlur;
   var selectRef = React.useRef(null);
-  var _a = __read(
-      useControllableValue(props, {
-        valuePropName: 'open',
-        trigger: 'setOpen',
-      }),
-      2,
-    ),
+  var _a = __read(useControllableValue(props, {
+      valuePropName: 'open',
+      trigger: 'setOpen'
+    }), 2),
     open = _a[0],
     setOpen = _a[1];
   var _b = __read(useControllableValue(props), 2),
@@ -87,53 +78,31 @@ var LabelSelect = function LabelSelect(props, ref) {
   var handleBlur = function handleBlur() {
     onBlur === null || onBlur === void 0 ? void 0 : onBlur(value);
   };
-  return /*#__PURE__*/ React.createElement(
-    'div',
-    {
-      className: classNames(
-        {
-          'label-select': true,
-          'label-select-label-scale':
-            open ||
-            (!isArray(value) && !isUndefined(value) && !isNull(value)) ||
-            (isArray(value) && value.length),
-        },
-        className,
-      ),
+  return /*#__PURE__*/React.createElement("div", {
+    className: classNames({
+      'label-select': true,
+      'label-select-label-scale': open || !isArray(value) && !isUndefined(value) && !isNull(value) || isArray(value) && value.length
+    }, className)
+  }, /*#__PURE__*/React.createElement(ComplexValSelect, __assign({
+    maxTagCount: 3,
+    showSearch: false
+  }, omit(props, ['open', 'onChange', 'className', 'label', 'setOpen', 'isFocus']), {
+    open: open,
+    ref: selectRef,
+    size: "large",
+    className: "label-select-selector",
+    onChange: handleChange,
+    onBlur: handleBlur,
+    onDeselect: function onDeselect() {
+      var _a;
+      (_a = selectRef.current) === null || _a === void 0 ? void 0 : _a.focus();
     },
-    /*#__PURE__*/ React.createElement(
-      ComplexValSelect,
-      __assign(
-        {
-          maxTagCount: 3,
-          showSearch: false,
-        },
-        omit(props, ['open', 'onChange', 'className', 'label', 'setOpen', 'isFocus']),
-        {
-          open: open,
-          ref: selectRef,
-          size: 'large',
-          className: 'label-select-selector',
-          onChange: handleChange,
-          onBlur: handleBlur,
-          onDeselect: function onDeselect() {
-            var _a;
-            (_a = selectRef.current) === null || _a === void 0 ? void 0 : _a.focus();
-          },
-          onDropdownVisibleChange: onDropdownVisibleChange,
-          suffixIcon: /*#__PURE__*/ React.createElement(ArrowDropDownFilled, null),
-        },
-      ),
-    ),
-    /*#__PURE__*/ React.createElement(
-      'label',
-      {
-        className: 'label-select-text',
-        onClick: handleLabelClick,
-      },
-      label,
-    ),
-  );
+    onDropdownVisibleChange: onDropdownVisibleChange,
+    suffixIcon: /*#__PURE__*/React.createElement(ArrowDropDownFilled, null)
+  })), /*#__PURE__*/React.createElement("label", {
+    className: "label-select-text",
+    onClick: handleLabelClick
+  }, label));
 };
-var ForwardRefLabelSelect = /*#__PURE__*/ React.forwardRef(LabelSelect);
+var ForwardRefLabelSelect = /*#__PURE__*/React.forwardRef(LabelSelect);
 export default ForwardRefLabelSelect;

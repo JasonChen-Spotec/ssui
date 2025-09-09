@@ -1,13 +1,13 @@
-'use strict';
+"use strict";
 
-Object.defineProperty(exports, '__esModule', {
-  value: true,
+Object.defineProperty(exports, "__esModule", {
+  value: true
 });
 var locale = {
   locale: 'en_US',
   lang: {
     global: {
-      placeholder: 'Please select',
+      placeholder: 'Please select'
     },
     labelCustomizeRangePicker: {
       customTime: 'Custom',
@@ -26,8 +26,8 @@ var locale = {
       last180days: 'Last 180 Days',
       last365days: 'Last 365 Days',
       year: 'This year',
-      all: 'All',
-    },
-  },
+      all: 'All'
+    }
+  }
 };
-exports['default'] = locale;
+exports["default"] = locale;

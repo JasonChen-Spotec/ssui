@@ -1,13 +1,13 @@
-'use strict';
+"use strict";
 
-Object.defineProperty(exports, '__esModule', {
-  value: true,
+Object.defineProperty(exports, "__esModule", {
+  value: true
 });
 var locale = {
   locale: 'th_TH',
   lang: {
     global: {
-      placeholder: 'โปรดเลือก',
+      placeholder: 'โปรดเลือก'
     },
     labelCustomizeRangePicker: {
       customTime: 'เวลากำหนดเอง',
@@ -26,8 +26,8 @@ var locale = {
       last180days: '180 วันที่ผ่านมา',
       last365days: '365 วันที่ผ่านมา',
       year: 'ปีนี้',
-      all: 'ทั้งหมด',
-    },
-  },
+      all: 'ทั้งหมด'
+    }
+  }
 };
-exports['default'] = locale;
+exports["default"] = locale;

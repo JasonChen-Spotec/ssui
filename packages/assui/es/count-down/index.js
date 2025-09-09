@@ -1,32 +1,30 @@
-var __read =
-  (this && this.__read) ||
-  function (o, n) {
-    var m = typeof Symbol === 'function' && o[Symbol.iterator];
-    if (!m) return o;
-    var i = m.call(o),
-      r,
-      ar = [],
-      e;
-    try {
-      while ((n === void 0 || n-- > 0) && !(r = i.next()).done) {
-        ar.push(r.value);
-      }
-    } catch (error) {
-      e = {
-        error: error,
-      };
-    } finally {
-      try {
-        if (r && !r.done && (m = i['return'])) m.call(i);
-      } finally {
-        if (e) throw e.error;
-      }
+var __read = this && this.__read || function (o, n) {
+  var m = typeof Symbol === "function" && o[Symbol.iterator];
+  if (!m) return o;
+  var i = m.call(o),
+    r,
+    ar = [],
+    e;
+  try {
+    while ((n === void 0 || n-- > 0) && !(r = i.next()).done) {
+      ar.push(r.value);
     }
-    return ar;
-  };
-import useCountDown from 'ahooks/es/useCountDown';
-import isFunction from 'lodash/isFunction';
+  } catch (error) {
+    e = {
+      error: error
+    };
+  } finally {
+    try {
+      if (r && !r.done && (m = i["return"])) m.call(i);
+    } finally {
+      if (e) throw e.error;
+    }
+  }
+  return ar;
+};
 import React from 'react';
+import useCountDown from "ahooks/es/useCountDown";
+import isFunction from 'lodash/isFunction';
 var CountDown = function CountDown(_a) {
   var options = _a.options,
     render = _a.render;
@@ -39,24 +37,8 @@ var CountDown = function CountDown(_a) {
     seconds = formattedRes.seconds,
     milliseconds = formattedRes.milliseconds;
   if (isFunction(render)) {
-    return /*#__PURE__*/ React.createElement(
-      React.Fragment,
-      null,
-      render(formattedRes, countDown),
-    );
+    return /*#__PURE__*/React.createElement(React.Fragment, null, render(formattedRes, countDown));
   }
-  return /*#__PURE__*/ React.createElement(
-    'div',
-    null,
-    days,
-    ' days ',
-    hours,
-    ' hours ',
-    minutes,
-    ' minutes ',
-    seconds,
-    ' seconds ',
-    milliseconds,
-  );
+  return /*#__PURE__*/React.createElement("div", null, days, " days ", hours, " hours ", minutes, " minutes ", seconds, " seconds ", milliseconds);
 };
 export default CountDown;

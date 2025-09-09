@@ -2,7 +2,7 @@ var locale = {
   locale: 'vi_VN',
   lang: {
     global: {
-      placeholder: 'xin vui lòng chọn',
+      placeholder: 'xin vui lòng chọn'
     },
     labelCustomizeRangePicker: {
       customTime: 'thời gian tùy chỉnh',
@@ -21,8 +21,8 @@ var locale = {
       last180days: '180 ngày qua',
       last365days: '365 ngày qua',
       year: 'Năm nay',
-      all: 'Tất cả',
-    },
-  },
+      all: 'Tất cả'
+    }
+  }
 };
 export default locale;

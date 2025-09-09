@@ -2,7 +2,7 @@ var locale = {
   locale: 'de_DE',
   lang: {
     global: {
-      placeholder: 'bitte auswählen',
+      placeholder: 'bitte auswählen'
     },
     labelCustomizeRangePicker: {
       customTime: 'benutzerdefinierte Zeit',
@@ -21,8 +21,8 @@ var locale = {
       last180days: 'Letzte 180 Tage',
       last365days: 'Die letzten 365 Tage',
       year: 'Dieses Jahr',
-      all: 'Alle',
-    },
-  },
+      all: 'Alle'
+    }
+  }
 };
 export default locale;

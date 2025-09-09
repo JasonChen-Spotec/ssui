@@ -1,20 +1,16 @@
-'use strict';
+"use strict";
 
-var __importDefault =
-  (this && this.__importDefault) ||
-  function (mod) {
-    return mod && mod.__esModule
-      ? mod
-      : {
-          default: mod,
-        };
+var __importDefault = this && this.__importDefault || function (mod) {
+  return mod && mod.__esModule ? mod : {
+    "default": mod
   };
-Object.defineProperty(exports, '__esModule', {
-  value: true,
+};
+Object.defineProperty(exports, "__esModule", {
+  value: true
 });
 // @ts-nocheck
-var tinymce_1 = __importDefault(require('tinymce/tinymce'));
-var global = tinymce_1['default'].util.Tools.resolve('tinymce.PluginManager');
+var tinymce_1 = __importDefault(require("tinymce/tinymce"));
+var global = tinymce_1["default"].util.Tools.resolve('tinymce.PluginManager');
 var setContent = function setContent(editor, html) {
   editor.focus();
   editor.undoManager.transact(function () {
@@ -25,7 +21,7 @@ var setContent = function setContent(editor, html) {
 };
 var getContent = function getContent(editor) {
   return editor.getContent({
-    source_view: true,
+    source_view: true
   });
 };
 var open = function open(editor) {
@@ -35,33 +31,28 @@ var open = function open(editor) {
     size: 'large',
     body: {
       type: 'panel',
-      items: [
-        {
-          type: 'textarea',
-          name: 'code',
-        },
-      ],
+      items: [{
+        type: 'textarea',
+        name: 'code'
+      }]
     },
-    buttons: [
-      {
-        type: 'cancel',
-        name: 'cancel',
-        text: 'Cancel',
-      },
-      {
-        type: 'submit',
-        name: 'save',
-        text: 'Save',
-        primary: true,
-      },
-    ],
+    buttons: [{
+      type: 'cancel',
+      name: 'cancel',
+      text: 'Cancel'
+    }, {
+      type: 'submit',
+      name: 'save',
+      text: 'Save',
+      primary: true
+    }],
     initialData: {
-      code: editorContent,
+      code: editorContent
     },
     onSubmit: function onSubmit(api) {
       setContent(editor, api.getData().code);
       api.close();
-    },
+    }
   });
 };
 var register$1 = function register$1(editor) {
@@ -76,12 +67,12 @@ var register = function register(editor) {
   editor.ui.registry.addButton('code', {
     text: 'Source code',
     tooltip: 'Source code',
-    onAction: onAction,
+    onAction: onAction
   });
   editor.ui.registry.addMenuItem('code', {
     icon: 'sourcecode',
     text: 'Source code',
-    onAction: onAction,
+    onAction: onAction
   });
 };
 function initCodePlugin() {
@@ -91,4 +82,4 @@ function initCodePlugin() {
     return {};
   });
 }
-exports['default'] = initCodePlugin;
+exports["default"] = initCodePlugin;

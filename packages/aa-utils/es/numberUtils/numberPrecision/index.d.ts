@@ -39,13 +39,4 @@ declare function divide(...nums: numType[]): number;
  * @param flag 标记开关，true 为开启，false 为关闭，默认为 true
  */
 declare function enableBoundaryChecking(flag?: boolean): void;
-export {
-  digitLength,
-  divide,
-  enableBoundaryChecking,
-  float2Fixed,
-  minus,
-  plus,
-  strip,
-  times,
-};
+export { strip, plus, minus, times, divide, digitLength, float2Fixed, enableBoundaryChecking };

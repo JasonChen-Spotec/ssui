@@ -7,7 +7,7 @@ var fileHostMap = {
   pro: 'https://file.ecmarkets.net',
   mruPro: 'https://file.ecmarkets.mu',
   ukProTmp: 'https://file.ecmarkets.co.uk',
-  ukPro: 'https://file.ecmarkets.co.uk',
+  ukPro: 'https://file.ecmarkets.co.uk'
 };
 /** 单点登录使用 */
 var mainDomainMap = {
@@ -19,13 +19,13 @@ var mainDomainMap = {
   pro: '.ecmarkets.net',
   mruPro: '.ecmarkets.mu',
   ukProTmp: '.ecmarkets.co.uk',
-  ukPro: '.ecmarkets.co.uk',
+  ukPro: '.ecmarkets.co.uk'
 };
 /** 阅读模式单点登录使用 */
 var readDomainMap = {
   test: '192.168.0.126',
   pre: '.read.parkroadco.com',
-  pro: '.ecmarkets.asia',
+  pro: '.ecmarkets.asia'
 };
 var apiMap = {
   dev: '192.168.0.129:31000',
@@ -36,35 +36,35 @@ var apiMap = {
   pro: 'api.ecmarkets.net',
   mruPro: 'api.ecmarkets.mu',
   ukProTmp: 'api1.ecmarkets.co.uk',
-  ukPro: 'api.ecmarkets.co.uk',
+  ukPro: 'api.ecmarkets.co.uk'
 };
 var apiHostMap = {
-  dev: 'http://'.concat(apiMap.dev),
-  test1: 'http://'.concat(apiMap.test1),
-  test2: 'http://'.concat(apiMap.test2),
-  pre: 'http://'.concat(apiMap.pre),
-  tmdPre: 'http://'.concat(apiMap.tmdPre),
-  pro: 'https://'.concat(apiMap.pro),
-  mruPro: 'https://'.concat(apiMap.mruPro),
-  ukProTmp: 'https://'.concat(apiMap.ukProTmp),
-  ukPro: 'https://'.concat(apiMap.ukPro),
+  dev: "http://".concat(apiMap.dev),
+  test1: "http://".concat(apiMap.test1),
+  test2: "http://".concat(apiMap.test2),
+  pre: "http://".concat(apiMap.pre),
+  tmdPre: "http://".concat(apiMap.tmdPre),
+  pro: "https://".concat(apiMap.pro),
+  mruPro: "https://".concat(apiMap.mruPro),
+  ukProTmp: "https://".concat(apiMap.ukProTmp),
+  ukPro: "https://".concat(apiMap.ukPro)
 };
 var socketHostMap = {
-  dev: 'ws://'.concat(apiMap.dev),
-  test1: 'ws://'.concat(apiMap.test1),
-  test2: 'ws://'.concat(apiMap.test2),
-  pre: 'ws://'.concat(apiMap.pre),
-  tmdPre: 'ws://'.concat(apiMap.tmdPre),
-  pro: 'wss://'.concat(apiMap.pro),
-  mruPro: 'wss://'.concat(apiMap.mruPro),
-  ukProTmp: 'wss://'.concat(apiMap.ukProTmp),
-  ukPro: 'wss://'.concat(apiMap.ukPro),
+  dev: "ws://".concat(apiMap.dev),
+  test1: "ws://".concat(apiMap.test1),
+  test2: "ws://".concat(apiMap.test2),
+  pre: "ws://".concat(apiMap.pre),
+  tmdPre: "ws://".concat(apiMap.tmdPre),
+  pro: "wss://".concat(apiMap.pro),
+  mruPro: "wss://".concat(apiMap.mruPro),
+  ukProTmp: "wss://".concat(apiMap.ukProTmp),
+  ukPro: "wss://".concat(apiMap.ukPro)
 };
 var allSiteMap = {
-  static: {
+  "static": {
     ib: 'http://192.168.0.129:9020',
     client: 'http://192.168.0.80:9030',
-    webviewMobile: 'http://192.168.0.80:6060',
+    webviewMobile: 'http://192.168.0.80:6060'
   },
   dev: {
     ib: 'http://192.168.0.129:9020',
@@ -72,7 +72,7 @@ var allSiteMap = {
     readIb: 'http://192.168.0.126:7080',
     readClient: 'http://192.168.0.126:8030',
     website: 'http://192.168.0.129:8070',
-    webviewMobile: 'http://192.168.0.80:6060',
+    webviewMobile: 'http://192.168.0.80:6060'
   },
   test1: {
     ib: 'http://192.168.0.129:9020',
@@ -80,13 +80,13 @@ var allSiteMap = {
     website: 'http://192.168.0.129:8070',
     readIb: 'http://192.168.0.126:7080',
     readClient: 'http://192.168.0.126:8030',
-    webviewMobile: 'http://192.168.0.80:6060',
+    webviewMobile: 'http://192.168.0.80:6060'
   },
   test2: {
     ib: 'http://192.168.0.129:9020',
     client: 'http://192.168.0.129:8030',
     website: 'http://192.168.0.129:8070',
-    webviewMobile: 'http://27.102.129.76:8040',
+    webviewMobile: 'http://27.102.129.76:8040'
   },
   pre: {
     ib: 'http://ib.parkroadco.com',
@@ -94,31 +94,31 @@ var allSiteMap = {
     website: 'http://www.parkroadco.com',
     readIb: 'http://ib.read.parkroadco.com',
     readClient: 'http://crm.read.parkroadco.com',
-    webviewMobile: 'http://m.parkroadco.com',
+    webviewMobile: 'http://m.parkroadco.com'
   },
   tmdPre: {
     ib: 'http://ib.tmdtrader.com',
     client: 'http://crm.tmdtrader.com',
     website: 'http://www.tmdtrader.com',
-    webviewMobile: 'http://m.tmdtrader.com',
+    webviewMobile: 'http://m.tmdtrader.com'
   },
   mruPro: {
     ib: 'https://ib.ecmarkets.mu',
     client: 'https://crm.ecmarkets.mu',
     website: 'https://www.ecmarkets.mu',
-    webviewMobile: 'https://m.ecmarkets.mu',
+    webviewMobile: 'https://m.ecmarkets.mu'
   },
   ukProTmp: {
     ib: 'https://ib1.ecmarkets.co.uk',
     client: 'https://crm1.ecmarkets.co.uk',
     website: 'https://www1.ecmarkets.co.uk',
-    webviewMobile: 'https://m.ecmarkets.uk',
+    webviewMobile: 'https://m.ecmarkets.uk'
   },
   ukPro: {
     ib: 'https://ib.ecmarkets.co.uk',
     client: 'https://crm.ecmarkets.co.uk',
     website: 'https://www.ecmarkets.co.uk',
-    webviewMobile: 'https://m.ecmarkets.uk',
+    webviewMobile: 'https://m.ecmarkets.uk'
   },
   pro: {
     client: 'https://crm.ecmarkets.net',
@@ -126,14 +126,7 @@ var allSiteMap = {
     website: 'https://www.ecmarkets.net',
     webviewMobile: 'https://m.ecmarkets.net',
     readIb: 'https://ib.ecmarkets.asia',
-    readClient: 'https://crm.ecmarkets.asia',
-  },
+    readClient: 'https://crm.ecmarkets.asia'
+  }
 };
-export {
-  allSiteMap,
-  apiHostMap,
-  fileHostMap,
-  mainDomainMap,
-  readDomainMap,
-  socketHostMap,
-};
+export { apiHostMap, allSiteMap, socketHostMap, mainDomainMap, fileHostMap, readDomainMap };

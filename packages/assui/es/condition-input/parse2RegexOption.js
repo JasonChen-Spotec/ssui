@@ -1,33 +1,26 @@
-var __assign =
-  (this && this.__assign) ||
-  function () {
-    __assign =
-      Object.assign ||
-      function (t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-          s = arguments[i];
-          for (var p in s) {
-            if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
-          }
-        }
-        return t;
-      };
-    return __assign.apply(this, arguments);
+var __assign = this && this.__assign || function () {
+  __assign = Object.assign || function (t) {
+    for (var s, i = 1, n = arguments.length; i < n; i++) {
+      s = arguments[i];
+      for (var p in s) {
+        if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+      }
+    }
+    return t;
   };
-import isObject from 'lodash/isObject';
+  return __assign.apply(this, arguments);
+};
 import isRegExp from 'lodash/isRegExp';
 import isString from 'lodash/isString';
+import isObject from 'lodash/isObject';
 var defaultOptionValues = {
   isValid: true,
-  replacement: '',
+  replacement: ''
 };
 var parseRegex2RegexOption = function parseRegex2RegexOption(regex, options) {
-  return __assign(
-    __assign(__assign({}, defaultOptionValues), {
-      pattern: regex,
-    }),
-    options,
-  );
+  return __assign(__assign(__assign({}, defaultOptionValues), {
+    pattern: regex
+  }), options);
 };
 var parseString2RegexOption = function parseString2RegexOption(regexString, options) {
   return parseRegex2RegexOption(new RegExp(regexString), options);
@@ -40,17 +33,14 @@ var parse2RegexOption = function parse2RegexOption(regex) {
     return parseString2RegexOption(regex);
   }
   if (isObject(regex)) {
-    return __assign(
-      __assign(__assign({}, defaultOptionValues), {
-        isValid: !!regex.pattern,
-      }),
-      regex,
-    );
+    return __assign(__assign(__assign({}, defaultOptionValues), {
+      isValid: !!regex.pattern
+    }), regex);
   }
   return {
     isValid: false,
     replacement: '',
-    pattern: /./,
+    pattern: /./
   };
 };
 export default parse2RegexOption;

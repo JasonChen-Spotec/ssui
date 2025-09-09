@@ -1,13 +1,13 @@
-'use strict';
+"use strict";
 
-Object.defineProperty(exports, '__esModule', {
-  value: true,
+Object.defineProperty(exports, "__esModule", {
+  value: true
 });
 var locale = {
   locale: 'ru_RU',
   lang: {
     global: {
-      placeholder: 'пожалуйста, выберите',
+      placeholder: 'пожалуйста, выберите'
     },
     labelCustomizeRangePicker: {
       customTime: 'пользовательское время',
@@ -26,8 +26,8 @@ var locale = {
       last180days: 'Последние 180 дней',
       last365days: 'Последние 365 дней',
       year: 'В этом году',
-      all: 'Все',
-    },
-  },
+      all: 'Все'
+    }
+  }
 };
-exports['default'] = locale;
+exports["default"] = locale;

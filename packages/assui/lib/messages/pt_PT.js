@@ -1,13 +1,13 @@
-'use strict';
+"use strict";
 
-Object.defineProperty(exports, '__esModule', {
-  value: true,
+Object.defineProperty(exports, "__esModule", {
+  value: true
 });
 var locale = {
   locale: 'pt_PT',
   lang: {
     global: {
-      placeholder: 'por favor escolha',
+      placeholder: 'por favor escolha'
     },
     labelCustomizeRangePicker: {
       customTime: 'hora personalizada',
@@ -26,8 +26,8 @@ var locale = {
       last180days: 'Últimos 180 dias',
       last365days: 'Últimos 365 dias',
       year: 'Este ano',
-      all: 'Tudo',
-    },
-  },
+      all: 'Tudo'
+    }
+  }
 };
-exports['default'] = locale;
+exports["default"] = locale;

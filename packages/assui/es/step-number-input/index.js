@@ -1,75 +1,62 @@
-var __assign =
-  (this && this.__assign) ||
-  function () {
-    __assign =
-      Object.assign ||
-      function (t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-          s = arguments[i];
-          for (var p in s) {
-            if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
-          }
-        }
-        return t;
-      };
-    return __assign.apply(this, arguments);
-  };
-var __rest =
-  (this && this.__rest) ||
-  function (s, e) {
-    var t = {};
-    for (var p in s) {
-      if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
-    }
-    if (s != null && typeof Object.getOwnPropertySymbols === 'function')
-      for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
-        if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
-          t[p[i]] = s[p[i]];
+var __assign = this && this.__assign || function () {
+  __assign = Object.assign || function (t) {
+    for (var s, i = 1, n = arguments.length; i < n; i++) {
+      s = arguments[i];
+      for (var p in s) {
+        if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
       }
+    }
     return t;
   };
-var __read =
-  (this && this.__read) ||
-  function (o, n) {
-    var m = typeof Symbol === 'function' && o[Symbol.iterator];
-    if (!m) return o;
-    var i = m.call(o),
-      r,
-      ar = [],
-      e;
-    try {
-      while ((n === void 0 || n-- > 0) && !(r = i.next()).done) {
-        ar.push(r.value);
-      }
-    } catch (error) {
-      e = {
-        error: error,
-      };
-    } finally {
-      try {
-        if (r && !r.done && (m = i['return'])) m.call(i);
-      } finally {
-        if (e) throw e.error;
-      }
+  return __assign.apply(this, arguments);
+};
+var __rest = this && this.__rest || function (s, e) {
+  var t = {};
+  for (var p in s) {
+    if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
+  }
+  if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+    if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i])) t[p[i]] = s[p[i]];
+  }
+  return t;
+};
+var __read = this && this.__read || function (o, n) {
+  var m = typeof Symbol === "function" && o[Symbol.iterator];
+  if (!m) return o;
+  var i = m.call(o),
+    r,
+    ar = [],
+    e;
+  try {
+    while ((n === void 0 || n-- > 0) && !(r = i.next()).done) {
+      ar.push(r.value);
     }
-    return ar;
-  };
-import useControllableValue from 'ahooks/es/useControllableValue';
-import DisabledContext from 'antd/es/config-provider/DisabledContext';
-import BigNumber from 'bignumber.js';
-import classNames from 'classnames';
-import isUndefined from 'lodash/isUndefined';
+  } catch (error) {
+    e = {
+      error: error
+    };
+  } finally {
+    try {
+      if (r && !r.done && (m = i["return"])) m.call(i);
+    } finally {
+      if (e) throw e.error;
+    }
+  }
+  return ar;
+};
 import * as React from 'react';
-import NumberInput from '../number-input';
-import { MINUS, PLUS } from './const/countType';
+import classNames from 'classnames';
+import BigNumber from 'bignumber.js';
+import isUndefined from 'lodash/isUndefined';
+import useControllableValue from "ahooks/es/useControllableValue";
+import DisabledContext from "antd/es/config-provider/DisabledContext";
 import { INT } from './const/numberType';
+import { PLUS, MINUS } from './const/countType';
+import NumberInput from '../number-input';
 var StepNumberInput = function StepNumberInput(props) {
-  var _a = __read(
-      useControllableValue(props, {
-        defaultValue: '',
-      }),
-      2,
-    ),
+  var _a = __read(useControllableValue(props, {
+      defaultValue: ''
+    }), 2),
     value = _a[0],
     setValue = _a[1];
   var onChange = props.onChange,
@@ -85,30 +72,15 @@ var StepNumberInput = function StepNumberInput(props) {
     customDisabled = props.disabled,
     _e = props.enableMinus,
     enableMinus = _e === void 0 ? false : _e,
-    restProps = __rest(props, [
-      'onChange',
-      'onBlur',
-      'numberType',
-      'precision',
-      'step',
-      'max',
-      'min',
-      'disabled',
-      'enableMinus',
-    ]);
+    restProps = __rest(props, ["onChange", "onBlur", "numberType", "precision", "step", "max", "min", "disabled", "enableMinus"]);
   var isEmpty = isUndefined(value) || value === '';
   var plusNumber = new BigNumber(value).plus(step).toString();
   var minusNumber = new BigNumber(value).minus(step).toString();
-  var maxCondition = isUndefined(max)
-    ? false
-    : max === Number(value) || Number(max) < Number(plusNumber);
-  var minCondition = isUndefined(min)
-    ? false
-    : min === Number(value) || Number(min) > Number(minusNumber);
+  var maxCondition = isUndefined(max) ? false : max === Number(value) || Number(max) < Number(plusNumber);
+  var minCondition = isUndefined(min) ? false : min === Number(value) || Number(min) > Number(minusNumber);
   // ===================== Disabled =====================
   var disabled = React.useContext(DisabledContext);
-  var mergedDisabled =
-    customDisabled !== null && customDisabled !== void 0 ? customDisabled : disabled;
+  var mergedDisabled = customDisabled !== null && customDisabled !== void 0 ? customDisabled : disabled;
   var minusDisabled = isEmpty || minCondition || mergedDisabled;
   var addDisabled = isEmpty || maxCondition || mergedDisabled;
   var onNumberChange = function onNumberChange(lastValue) {
@@ -122,9 +94,9 @@ var StepNumberInput = function StepNumberInput(props) {
     }
     var newNumber = '';
     if (symbol === PLUS) {
-      newNumber = maxCondition ? ''.concat(max) : plusNumber;
+      newNumber = maxCondition ? "".concat(max) : plusNumber;
     } else {
-      newNumber = minCondition ? ''.concat(min) : minusNumber;
+      newNumber = minCondition ? "".concat(min) : minusNumber;
     }
     setValue(newNumber);
   };
@@ -134,62 +106,40 @@ var StepNumberInput = function StepNumberInput(props) {
       resultValue = '';
     }
     if (!isUndefined(max) && Number(value) > max) {
-      resultValue = ''.concat(max);
+      resultValue = "".concat(max);
     }
     if (!isUndefined(min) && Number(value) < min) {
-      resultValue = ''.concat(min);
+      resultValue = "".concat(min);
     }
     setValue(resultValue);
     onBlur === null || onBlur === void 0 ? void 0 : onBlur(resultValue);
   };
-  return /*#__PURE__*/ React.createElement(
-    'div',
-    {
-      className: 'number-range-input',
-    },
-    /*#__PURE__*/ React.createElement(
-      NumberInput,
-      __assign(
-        {
-          addonBefore: /*#__PURE__*/ React.createElement(
-            'span',
-            {
-              onClick: minusDisabled
-                ? undefined
-                : function () {
-                    return onClickCount(MINUS);
-                  },
-              className: classNames('count-minus-btn', {
-                'disabled-btn': minusDisabled,
-              }),
-            },
-            '-',
-          ),
-          addonAfter: /*#__PURE__*/ React.createElement(
-            'span',
-            {
-              onClick: addDisabled
-                ? undefined
-                : function () {
-                    return onClickCount(PLUS);
-                  },
-              className: classNames('count-add-btn', {
-                'disabled-btn': addDisabled,
-              }),
-            },
-            '+',
-          ),
-          value: ''.concat(value),
-          onChange: onNumberChange,
-          onBlur: onNumberBlur,
-          numberType: numberType,
-          precision: precision,
-          disabled: mergedDisabled,
-          enableMinus: enableMinus,
-        },
-        restProps,
-      ),
-    ),
-  );
+  return /*#__PURE__*/React.createElement("div", {
+    className: "number-range-input"
+  }, /*#__PURE__*/React.createElement(NumberInput, __assign({
+    addonBefore: /*#__PURE__*/React.createElement("span", {
+      onClick: minusDisabled ? undefined : function () {
+        return onClickCount(MINUS);
+      },
+      className: classNames('count-minus-btn', {
+        'disabled-btn': minusDisabled
+      })
+    }, "-"),
+    addonAfter: /*#__PURE__*/React.createElement("span", {
+      onClick: addDisabled ? undefined : function () {
+        return onClickCount(PLUS);
+      },
+      className: classNames('count-add-btn', {
+        'disabled-btn': addDisabled
+      })
+    }, "+"),
+    value: "".concat(value),
+    onChange: onNumberChange,
+    onBlur: onNumberBlur,
+    numberType: numberType,
+    precision: precision,
+    disabled: mergedDisabled,
+    enableMinus: enableMinus
+  }, restProps)));
 };
 export default StepNumberInput;

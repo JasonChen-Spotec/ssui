@@ -1,23 +1,19 @@
-'use strict';
+"use strict";
 
-var __assign =
-  (this && this.__assign) ||
-  function () {
-    __assign =
-      Object.assign ||
-      function (t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-          s = arguments[i];
-          for (var p in s) {
-            if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
-          }
-        }
-        return t;
-      };
-    return __assign.apply(this, arguments);
+var __assign = this && this.__assign || function () {
+  __assign = Object.assign || function (t) {
+    for (var s, i = 1, n = arguments.length; i < n; i++) {
+      s = arguments[i];
+      for (var p in s) {
+        if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+      }
+    }
+    return t;
   };
-Object.defineProperty(exports, '__esModule', {
-  value: true,
+  return __assign.apply(this, arguments);
+};
+Object.defineProperty(exports, "__esModule", {
+  value: true
 });
 /* eslint-disable no-bitwise */
 function CanvasToImg() {
@@ -51,7 +47,7 @@ function CanvasToImg() {
     // document.location.href = strData;
     var saveLink = document.createElement('a');
     // download file name
-    saveLink.download = ''.concat(fileName, '.').concat(fileType);
+    saveLink.download = "".concat(fileName, ".").concat(fileType);
     // download file data
     saveLink.href = strData;
     // start download
@@ -65,7 +61,7 @@ function CanvasToImg() {
   function fixType(type) {
     type = type.toLowerCase().replace(/jpg/i, 'jpeg');
     var r = type.match(/png|jpeg|bmp|gif/)[0];
-    return 'image/'.concat(r);
+    return "image/".concat(r);
   }
   function encodeData(data) {
     if (!window.btoa) {
@@ -86,12 +82,10 @@ function CanvasToImg() {
     var _a;
     var w = canvas.width;
     var h = canvas.height;
-    return (_a = canvas.getContext('2d')) === null || _a === void 0
-      ? void 0
-      : _a.getImageData(0, 0, w, h);
+    return (_a = canvas.getContext('2d')) === null || _a === void 0 ? void 0 : _a.getImageData(0, 0, w, h);
   }
   function makeURI(strData, type) {
-    return 'data:'.concat(type, ';base64,').concat(strData);
+    return "data:".concat(type, ";base64,").concat(strData);
   }
   /**
    * create bitmap image
@@ -116,27 +110,17 @@ function CanvasToImg() {
     //  } BITMAPFILEHEADER;
     //
     var BITMAPFILEHEADER = [
-      // WORD bfType -- The file type signature; must be "BM"
-      0x42,
-      0x4d,
-      // DWORD bfSize -- The size, in bytes, of the bitmap file
-      bfSize & 0xff,
-      (bfSize >> 8) & 0xff,
-      (bfSize >> 16) & 0xff,
-      (bfSize >> 24) & 0xff,
-      // WORD bfReserved1 -- Reserved; must be zero
-      0,
-      0,
-      // WORD bfReserved2 -- Reserved; must be zero
-      0,
-      0,
-      // DWORD bfOffBits -- The offset, in bytes, from the beginning of
-      // the BITMAPFILEHEADER structure to the bitmap bits.
-      54,
-      0,
-      0,
-      0,
-    ];
+    // WORD bfType -- The file type signature; must be "BM"
+    0x42, 0x4d,
+    // DWORD bfSize -- The size, in bytes, of the bitmap file
+    bfSize & 0xff, bfSize >> 8 & 0xff, bfSize >> 16 & 0xff, bfSize >> 24 & 0xff,
+    // WORD bfReserved1 -- Reserved; must be zero
+    0, 0,
+    // WORD bfReserved2 -- Reserved; must be zero
+    0, 0,
+    // DWORD bfOffBits -- The offset, in bytes, from the beginning of
+    // the BITMAPFILEHEADER structure to the bitmap bits.
+    54, 0, 0, 0];
     //
     //  typedef struct tagBITMAPINFOHEADER {
     //  	DWORD biSize;
@@ -153,60 +137,30 @@ function CanvasToImg() {
     //  } BITMAPINFOHEADER, *PBITMAPINFOHEADER;
     //
     var BITMAPINFOHEADER = [
-      // DWORD biSize -- The number of bytes required by the structure
-      40,
-      0,
-      0,
-      0,
-      // LONG biWidth -- The width of the bitmap, in pixels
-      biWidth & 0xff,
-      (biWidth >> 8) & 0xff,
-      (biWidth >> 16) & 0xff,
-      (biWidth >> 24) & 0xff,
-      // LONG biHeight -- The height of the bitmap, in pixels
-      biHeight & 0xff,
-      (biHeight >> 8) & 0xff,
-      (biHeight >> 16) & 0xff,
-      (biHeight >> 24) & 0xff,
-      // WORD biPlanes -- The number of planes for the target device. This value must be set to 1
-      1,
-      0,
-      // WORD biBitCount -- The number of bits-per-pixel, 24 bits-per-pixel -- the bitmap
-      // has a maximum of 2^24 colors (16777216, Truecolor)
-      24,
-      0,
-      // DWORD biCompression -- The type of compression, BI_RGB (code 0) -- uncompressed
-      0,
-      0,
-      0,
-      0,
-      // DWORD biSizeImage -- The size, in bytes, of the image. This may be set to zero for BI_RGB bitmaps
-      biSizeImage & 0xff,
-      (biSizeImage >> 8) & 0xff,
-      (biSizeImage >> 16) & 0xff,
-      (biSizeImage >> 24) & 0xff,
-      // LONG biXPelsPerMeter, unused
-      0,
-      0,
-      0,
-      0,
-      // LONG biYPelsPerMeter, unused
-      0,
-      0,
-      0,
-      0,
-      // DWORD biClrUsed, the number of color indexes of palette, unused
-      0,
-      0,
-      0,
-      0,
-      // DWORD biClrImportant, unused
-      0,
-      0,
-      0,
-      0,
-    ];
-    var iPadding = (4 - ((biWidth * 3) % 4)) % 4;
+    // DWORD biSize -- The number of bytes required by the structure
+    40, 0, 0, 0,
+    // LONG biWidth -- The width of the bitmap, in pixels
+    biWidth & 0xff, biWidth >> 8 & 0xff, biWidth >> 16 & 0xff, biWidth >> 24 & 0xff,
+    // LONG biHeight -- The height of the bitmap, in pixels
+    biHeight & 0xff, biHeight >> 8 & 0xff, biHeight >> 16 & 0xff, biHeight >> 24 & 0xff,
+    // WORD biPlanes -- The number of planes for the target device. This value must be set to 1
+    1, 0,
+    // WORD biBitCount -- The number of bits-per-pixel, 24 bits-per-pixel -- the bitmap
+    // has a maximum of 2^24 colors (16777216, Truecolor)
+    24, 0,
+    // DWORD biCompression -- The type of compression, BI_RGB (code 0) -- uncompressed
+    0, 0, 0, 0,
+    // DWORD biSizeImage -- The size, in bytes, of the image. This may be set to zero for BI_RGB bitmaps
+    biSizeImage & 0xff, biSizeImage >> 8 & 0xff, biSizeImage >> 16 & 0xff, biSizeImage >> 24 & 0xff,
+    // LONG biXPelsPerMeter, unused
+    0, 0, 0, 0,
+    // LONG biYPelsPerMeter, unused
+    0, 0, 0, 0,
+    // DWORD biClrUsed, the number of color indexes of palette, unused
+    0, 0, 0, 0,
+    // DWORD biClrImportant, unused
+    0, 0, 0, 0];
+    var iPadding = (4 - biWidth * 3 % 4) % 4;
     var aImgData = oData.data;
     var strPixelData = '';
     var biWidth4 = biWidth << 2;
@@ -217,19 +171,14 @@ function CanvasToImg() {
       var strPixelRow = '';
       for (var x = 0; x < biWidth; x++) {
         var iOffsetX = x << 2;
-        strPixelRow +=
-          fromCharCode(aImgData[iOffsetY + iOffsetX + 2]) +
-          fromCharCode(aImgData[iOffsetY + iOffsetX + 1]) +
-          fromCharCode(aImgData[iOffsetY + iOffsetX]);
+        strPixelRow += fromCharCode(aImgData[iOffsetY + iOffsetX + 2]) + fromCharCode(aImgData[iOffsetY + iOffsetX + 1]) + fromCharCode(aImgData[iOffsetY + iOffsetX]);
       }
       for (var c = 0; c < iPadding; c++) {
         strPixelRow += String.fromCharCode(0);
       }
       strPixelData += strPixelRow;
     } while (--y);
-    return (
-      encodeData(BITMAPFILEHEADER.concat(BITMAPINFOHEADER)) + encodeData(strPixelData)
-    );
+    return encodeData(BITMAPFILEHEADER.concat(BITMAPINFOHEADER)) + encodeData(strPixelData);
   };
   /**
    * saveAsImage
@@ -280,72 +229,48 @@ function CanvasToImg() {
   return {
     saveAsImage: saveAsImage,
     saveAsPNG: function saveAsPNG(canvas, options) {
-      return saveAsImage(
-        canvas,
-        __assign(__assign({}, options), {
-          type: 'png',
-        }),
-      );
+      return saveAsImage(canvas, __assign(__assign({}, options), {
+        type: 'png'
+      }));
     },
     saveAsJPEG: function saveAsJPEG(canvas, options) {
-      return saveAsImage(
-        canvas,
-        __assign(__assign({}, options), {
-          type: 'jpeg',
-        }),
-      );
+      return saveAsImage(canvas, __assign(__assign({}, options), {
+        type: 'jpeg'
+      }));
     },
     saveAsGIF: function saveAsGIF(canvas, options) {
-      return saveAsImage(
-        canvas,
-        __assign(__assign({}, options), {
-          type: 'gif',
-        }),
-      );
+      return saveAsImage(canvas, __assign(__assign({}, options), {
+        type: 'gif'
+      }));
     },
     saveAsBMP: function saveAsBMP(canvas, options) {
-      return saveAsImage(
-        canvas,
-        __assign(__assign({}, options), {
-          type: 'bmp',
-        }),
-      );
+      return saveAsImage(canvas, __assign(__assign({}, options), {
+        type: 'bmp'
+      }));
     },
     convertToImage: convertToImage,
     convertToPNG: function convertToPNG(canvas, options) {
-      return convertToImage(
-        canvas,
-        __assign(__assign({}, options), {
-          type: 'png',
-        }),
-      );
+      return convertToImage(canvas, __assign(__assign({}, options), {
+        type: 'png'
+      }));
     },
     convertToJPEG: function convertToJPEG(canvas, options) {
-      return convertToImage(
-        canvas,
-        __assign(__assign({}, options), {
-          type: 'jpeg',
-        }),
-      );
+      return convertToImage(canvas, __assign(__assign({}, options), {
+        type: 'jpeg'
+      }));
     },
     convertToGIF: function convertToGIF(canvas, options) {
-      return convertToImage(
-        canvas,
-        __assign(__assign({}, options), {
-          type: 'gif',
-        }),
-      );
+      return convertToImage(canvas, __assign(__assign({}, options), {
+        type: 'gif'
+      }));
     },
     convertToBMP: function convertToBMP(canvas, options) {
-      return convertToImage(
-        canvas,
-        __assign(__assign({}, options), {
-          type: 'bmp',
-        }),
-      );
-    },
+      return convertToImage(canvas, __assign(__assign({}, options), {
+        type: 'bmp'
+      }));
+    }
   };
 }
 // Export function, used in npm
 var canvasToImg = CanvasToImg();
-exports['default'] = canvasToImg;
+exports["default"] = canvasToImg;

@@ -1,13 +1,13 @@
-'use strict';
+"use strict";
 
-Object.defineProperty(exports, '__esModule', {
-  value: true,
+Object.defineProperty(exports, "__esModule", {
+  value: true
 });
 var locale = {
   locale: 'ms_MY',
   lang: {
     global: {
-      placeholder: 'Sila pilih',
+      placeholder: 'Sila pilih'
     },
     labelCustomizeRangePicker: {
       customTime: 'Tersuai',
@@ -26,8 +26,8 @@ var locale = {
       last180days: '180 Hari Terakhir',
       last365days: '365 Hari Terakhir',
       year: 'Tahun',
-      all: 'Semua',
-    },
-  },
+      all: 'Semua'
+    }
+  }
 };
-exports['default'] = locale;
+exports["default"] = locale;
