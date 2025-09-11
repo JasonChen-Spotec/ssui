@@ -63,7 +63,7 @@ var ConditionSelect = function ConditionSelect(_a) {
     componentValue = _b[0],
     setComponentValue = _b[1];
   var current = react_1["default"].useMemo(function () {
-    if (!componentValue || !componentValue[selectName]) {
+    if (!componentValue || !componentValue[selectName] || !option || option.length === 0) {
       return null;
     }
     var result = option.find(function (item) {
@@ -73,7 +73,7 @@ var ConditionSelect = function ConditionSelect(_a) {
       return result;
     }
     throw new Error('can not find this option');
-  }, [componentValue]);
+  }, [componentValue, option]);
   var DynamicComponent = current === null || current === void 0 ? void 0 : current.component;
   var componentProps = (0, omit_1["default"])(current === null || current === void 0 ? void 0 : current.componentProps, 'parseValue');
   var fieldProps = current === null || current === void 0 ? void 0 : current.componentProps;
