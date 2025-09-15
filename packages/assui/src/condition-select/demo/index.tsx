@@ -13,12 +13,10 @@ const list = [
   {
     label: 'value',
     value: 'value',
-    name: 'value',
   },
   {
     label: 'input',
     value: 'input',
-    name: 'input',
     ...getComponentConfig(Input, {
       placeholder: '123',
       name: 'input',
@@ -28,7 +26,6 @@ const list = [
   {
     label: 'hello',
     value: 'hello',
-    name: 'hello',
     ...getComponentConfig(Hello, {
       title: 'hello',
     }),
@@ -36,7 +33,6 @@ const list = [
   {
     label: 'select',
     value: 'select',
-    name: 'select',
     ...getComponentConfig(Select, {
       name: 'select',
       options: [

@@ -15,7 +15,6 @@ export type ComponentConfig<
 export type DynamicComponentType = {
   label: string | React.ReactNode;
   value: any;
-  name: string;
 } & ComponentConfig;
 
 export type ConditionSelectProps = {
