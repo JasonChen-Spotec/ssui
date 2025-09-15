@@ -10,7 +10,6 @@ export type ComponentConfig<C extends React.ComponentType<any> = React.Component
 export type DynamicComponentType = {
     label: string | React.ReactNode;
     value: any;
-    name: string;
 } & ComponentConfig;
 export type ConditionSelectProps = {
     value?: ValueType;
