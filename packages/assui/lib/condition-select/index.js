@@ -72,7 +72,7 @@ var ConditionSelect = function ConditionSelect(_a) {
     if (result) {
       return result;
     }
-    throw new Error('can not find this option');
+    return null;
   }, [componentValue, option]);
   var DynamicComponent = current === null || current === void 0 ? void 0 : current.component;
   var componentProps = (0, omit_1["default"])(current === null || current === void 0 ? void 0 : current.componentProps, 'parseValue');
