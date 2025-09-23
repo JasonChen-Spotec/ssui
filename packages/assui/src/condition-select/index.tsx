@@ -15,15 +15,15 @@ const ConditionSelect = ({
 }: ConditionSelectProps) => {
   const [componentValue, setComponentValue] = useControllableValue({ value, onChange });
   const current = React.useMemo(() => {
-    if (!componentValue || !componentValue[selectName] || !option || option.length===0) {
+    if (!componentValue || !componentValue[selectName] || !option || option.length === 0) {
       return null;
     }
     const result = option.find((item) => item.value === componentValue[selectName]);
     if (result) {
       return result;
     }
-    throw new Error('can not find this option');
-  }, [componentValue,option]);
+    return null;
+  }, [componentValue, option]);
 
   const DynamicComponent = current?.component;
   const componentProps = omit<ValueType>(current?.componentProps, 'parseValue');
