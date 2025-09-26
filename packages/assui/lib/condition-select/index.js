@@ -49,6 +49,7 @@ var col_1 = __importDefault(require("antd/lib/grid/col"));
 var row_1 = __importDefault(require("antd/lib/grid/row"));
 var select_1 = __importDefault(require("antd/lib/select"));
 var omit_1 = __importDefault(require("lodash/omit"));
+var isNil_1 = __importDefault(require("lodash/isNil"));
 var react_1 = __importDefault(require("react"));
 var ConditionSelect = function ConditionSelect(_a) {
   var option = _a.option,
@@ -63,7 +64,7 @@ var ConditionSelect = function ConditionSelect(_a) {
     componentValue = _b[0],
     setComponentValue = _b[1];
   var current = react_1["default"].useMemo(function () {
-    if (!componentValue || !componentValue[selectName] || !option || option.length === 0) {
+    if ((0, isNil_1["default"])(componentValue) || (0, isNil_1["default"])(componentValue[selectName]) || !option || option.length === 0) {
       return null;
     }
     var result = option.find(function (item) {
