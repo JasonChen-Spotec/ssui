@@ -39,6 +39,7 @@ import Col from "antd/es/grid/col";
 import Row from "antd/es/grid/row";
 import Select from "antd/es/select";
 import omit from 'lodash/omit';
+import isNil from 'lodash/isNil';
 import React from 'react';
 var ConditionSelect = function ConditionSelect(_a) {
   var option = _a.option,
@@ -53,7 +54,7 @@ var ConditionSelect = function ConditionSelect(_a) {
     componentValue = _b[0],
     setComponentValue = _b[1];
   var current = React.useMemo(function () {
-    if (!componentValue || !componentValue[selectName] || !option || option.length === 0) {
+    if (isNil(componentValue) || isNil(componentValue[selectName]) || !option || option.length === 0) {
       return null;
     }
     var result = option.find(function (item) {
