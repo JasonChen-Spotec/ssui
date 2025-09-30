@@ -1,13 +1,14 @@
 import isNil from 'lodash/isNil';
 import isEmpty from 'lodash/isEmpty';
 import classNames from 'classnames';
-import ComplexValSelect, {
-  ComplexValSelectProps,
-  ComplexValSelectValueType,
-} from '../complex-val-select';
 import type { SelectProps } from 'antd/lib/select';
 import React, { useEffect, useState } from 'react';
 import useControllableValue from 'ahooks/lib/useControllableValue';
+import ComplexValSelect from '../complex-val-select';
+import type {
+  ComplexValSelectProps,
+  ComplexValSelectValueType,
+} from '../complex-val-select';
 import ConditionInput from '../condition-input';
 import type { ConditionInputProps } from '../condition-input';
 

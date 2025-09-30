@@ -29,8 +29,8 @@
     "gh-pages": "gh-pages -d dist",
     "pub:doc-gitee": "npm run build:doc && cd ./dist && rm -rf .git && touch .spa && touch .nojekyll && git init && git remote add origin git@gitee.com:uso/sui.git && git add -A && git commit -m \"publish docs\" && git push origin master -f",
     "pub": "lerna publish",
-    "dbuild":"dumi build",
-    "preview":"dumi build && dumi preview"
+    "dbuild": "dumi build",
+    "preview": "dumi build && dumi preview"
   },
   "devDependencies": {
     "@babel/cli": "^7.10.1",
@@ -91,5 +91,7 @@
     "webpack-cli": "^3.3.10",
     "webpack-merge": "^4.2.2"
   },
-  "dependencies": {}
+  "dependencies": {
+    "signature_pad": "^5.1.1"
+  }
 }
