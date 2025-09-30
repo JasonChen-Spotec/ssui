@@ -45,14 +45,15 @@ var SignaturePadComponent = (0, react_1.forwardRef)(function (_a, ref) {
     width = _c === void 0 ? 500 : _c,
     _d = _a.height,
     height = _d === void 0 ? 300 : _d,
-    _e = _a.className,
-    className = _e === void 0 ? '' : _e,
-    _f = _a.penColor,
-    penColor = _f === void 0 ? 'black' : _f,
-    _g = _a.backgroundColor,
-    backgroundColor = _g === void 0 ? 'white' : _g,
-    _h = _a.backgroundTextColor,
-    backgroundTextColor = _h === void 0 ? '#ccc' : _h,
+    className = _a.className,
+    _e = _a.penColor,
+    penColor = _e === void 0 ? 'black' : _e,
+    _f = _a.backgroundColor,
+    backgroundColor = _f === void 0 ? 'white' : _f,
+    _g = _a.backgroundTextColor,
+    backgroundTextColor = _g === void 0 ? '#ccc' : _g,
+    _h = _a.backgroundTextSize,
+    backgroundTextSize = _h === void 0 ? '30px' : _h,
     onEnd = _a.onEnd,
     onBegin = _a.onBegin;
   var canvasRef = (0, react_1.useRef)(null);
@@ -73,7 +74,7 @@ var SignaturePadComponent = (0, react_1.forwardRef)(function (_a, ref) {
         ctx.fillStyle = backgroundColor;
         ctx.fillRect(0, 0, canvas.width, canvas.height);
         // 设置文字样式
-        ctx.font = '30px Arial';
+        ctx.font = "".concat(backgroundTextSize, " Arial");
         ctx.fillStyle = backgroundTextColor;
         ctx.textAlign = 'center';
         ctx.textBaseline = 'middle';
@@ -108,8 +109,7 @@ var SignaturePadComponent = (0, react_1.forwardRef)(function (_a, ref) {
   // 保存签名
   var saveSignature = (0, react_1.useCallback)(function () {
     if (signaturePadRef.current && !signaturePadRef.current.isEmpty()) {
-      var signatureData = signaturePadRef.current.toDataURL();
-      return signatureData;
+      return signaturePadRef.current;
     }
     return null;
   }, []);
@@ -190,6 +190,21 @@ var SignaturePadComponent = (0, react_1.forwardRef)(function (_a, ref) {
             }
           }, 50);
         };
+        signaturePadRef.current.addEventListener('beginStroke', function () {
+          console.log('签名开始事件触发');
+          onBegin === null || onBegin === void 0 ? void 0 : onBegin();
+        });
+        signaturePadRef.current.addEventListener('endStroke', function () {
+          console.log('签名结束事件触发');
+          setTimeout(function () {
+            if (signaturePadRef.current) {
+              var isPadEmpty = signaturePadRef.current.isEmpty();
+              console.log('签名结束时的isEmpty:', isPadEmpty);
+              saveToHistory();
+              onEnd === null || onEnd === void 0 ? void 0 : onEnd();
+            }
+          }, 50);
+        });
       });
     }
     return function () {

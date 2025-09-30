@@ -1,13 +1,24 @@
 import React from 'react';
 interface SignaturePadProps {
+    /** 默认背景文字 */
     defaultText?: string;
+    /** canvas宽度 */
     width?: number;
+    /** canvas高度 */
     height?: number;
+    /** 自定义类名 */
     className?: string;
+    /** 画笔颜色 */
     penColor?: string;
+    /** 背景颜色 */
     backgroundColor?: string;
+    /** 背景文字颜色 */
     backgroundTextColor?: string;
+    /** 背景文字大小 */
+    backgroundTextSize?: string;
+    /** 签名结束回调 */
     onEnd?: () => void;
+    /** 签名开始回调 */
     onBegin?: () => void;
 }
 export interface SignaturePadRef {

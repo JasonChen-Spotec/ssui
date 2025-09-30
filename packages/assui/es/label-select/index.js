@@ -37,13 +37,13 @@ var __read = this && this.__read || function (o, n) {
 import React from 'react';
 import useControllableValue from "ahooks/es/useControllableValue";
 import Select from "antd/es/select";
-import ComplexValSelect from '../complex-val-select';
 import isArray from 'lodash/isArray';
 import isUndefined from 'lodash/isUndefined';
 import isNull from 'lodash/isNull';
 import classNames from 'classnames';
 import ArrowDropDownFilled from "a-icons/es/ArrowDropDownFilled";
 import omit from 'lodash/omit';
+import ComplexValSelect from '../complex-val-select';
 var Option = Select.Option;
 export { Option };
 var LabelSelect = function LabelSelect(props, ref) {

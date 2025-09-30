@@ -8,15 +8,27 @@ import React, {
 } from 'react';
 
 interface SignaturePadProps {
-  defaultText?: string; // 默认背景文字
-  width?: number; // canvas宽度
-  height?: number; // canvas高度
-  className?: string; // 自定义类名
-  penColor?: string; // 画笔颜色
-  backgroundColor?: string; // 背景颜色
-  backgroundTextColor?: string; // 背景文字颜色
-  onEnd?: () => void; // 新增：签名结束回调
-  onBegin?: () => void; // 新增：签名开始回调
+    /** 默认背景文字 */
+  defaultText?: string; 
+  /** canvas宽度 */
+  width?: number;
+  /** canvas高度 */
+  height?: number; 
+  /** 自定义类名 */
+  className?: string;
+  /** 画笔颜色 */
+  penColor?: string;
+  /** 背景颜色 */
+  backgroundColor?: string;
+  /** 背景文字颜色 */
+  backgroundTextColor?: string;
+
+    /** 背景文字大小 */
+  backgroundTextSize?: string;
+  /** 签名结束回调 */
+  onEnd?: () => void;
+  /** 签名开始回调 */
+  onBegin?: () => void;
 }
 
 // 定义暴露给父组件的方法类型
@@ -33,10 +45,11 @@ const SignaturePadComponent = forwardRef<SignaturePadRef, SignaturePadProps>(
       defaultText = '请在此处签名',
       width = 500,
       height = 300,
-      className = '',
+      className,
       penColor = 'black',
       backgroundColor = 'white',
       backgroundTextColor = '#ccc',
+      backgroundTextSize = '30px',
       onEnd,
       onBegin,
     },
@@ -65,7 +78,7 @@ const SignaturePadComponent = forwardRef<SignaturePadRef, SignaturePadProps>(
           ctx.fillRect(0, 0, canvas.width, canvas.height);
 
           // 设置文字样式
-          ctx.font = '30px Arial';
+          ctx.font = `${backgroundTextSize} Arial`;
           ctx.fillStyle = backgroundTextColor;
           ctx.textAlign = 'center';
           ctx.textBaseline = 'middle';
@@ -108,8 +121,7 @@ const SignaturePadComponent = forwardRef<SignaturePadRef, SignaturePadProps>(
     // 保存签名
     const saveSignature = useCallback(() => {
       if (signaturePadRef.current && !signaturePadRef.current.isEmpty()) {
-        const signatureData = signaturePadRef.current.toDataURL();
-        return signatureData;
+        return signaturePadRef.current;
       }
       return null;
     }, []);

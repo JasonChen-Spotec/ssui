@@ -1,6 +1,6 @@
 import { useCallback, useRef, useState } from 'react';
-import type { SignaturePadRef } from '..';
-import SignaturePad from '..';
+import type { SignaturePadRef } from 'assui';
+import { SignaturePad } from 'assui';
 
 const SigDemo = () => {
   const signaturePadRef = useRef<SignaturePadRef>(null);
@@ -71,7 +71,11 @@ const SigDemo = () => {
     if (signaturePadRef.current) {
       const signatureData = signaturePadRef.current.saveSignature();
       if (signatureData) {
-        console.log('签名数据保存成功',signatureData);
+        // signaturePad.toDataURL(); // save image as PNG
+        // signaturePad.toDataURL("image/jpeg"); // save image as JPEG
+        // signaturePad.toDataURL("image/jpeg", 0.5); // save image as JPEG with 0.5 image quality
+        // signaturePad.toDataURL("image/svg+xml"); // save image as SVG data url
+        console.log('签名数据保存成功',signatureData.toDataURL());
         addLog('保存签名成功');
       } else {
         console.log('签名为空');
@@ -92,6 +96,7 @@ const SigDemo = () => {
         penColor="#1890ff"
         backgroundColor="#fafafa"
         backgroundTextColor="#d9d9d9"
+        backgroundTextSize="50px"
         onBegin={handleSignatureBegin}
         onEnd={handleSignatureEnd}
       />
