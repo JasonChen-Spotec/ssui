@@ -46,3 +46,4 @@ export { default as ComplexValSelect } from './complex-val-select';
 export { default as CountDown } from './count-down';
 export { default as CountUp } from './count-up';
 export { default as ConditionSelect } from './condition-select';
+export { default as SignaturePad } from './signature-pad';

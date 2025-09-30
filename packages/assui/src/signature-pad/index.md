@@ -32,6 +32,7 @@ yarn add signature_pad
 | penColor      | 画笔颜色 | string         | "black"      |
 | backgroundColor      | 背景颜色 | string         | "white"    |
 | backgroundTextColor      | 背景文字颜色 | string         | "#ccc"    |
+| backgroundTextSize      | 背景文字大小 | string         | "30px"    |
 | className      | 自定义css类名 | string         | ""  |
 | onBegin      |  签名开始回调 | () => void         | -  |
 | onEnd      |  签名结束回调 | () => void         | -  |

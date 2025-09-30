@@ -1,5 +1,5 @@
 import React from 'react';
-interface SignaturePadProps {
+export type SignaturePadProps = {
     /** 默认背景文字 */
     defaultText?: string;
     /** canvas宽度 */
@@ -20,7 +20,7 @@ interface SignaturePadProps {
     onEnd?: () => void;
     /** 签名开始回调 */
     onBegin?: () => void;
-}
+};
 export interface SignaturePadRef {
     clearSignature: () => void;
     saveSignature: () => string | null;

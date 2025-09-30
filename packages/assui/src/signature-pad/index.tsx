@@ -7,8 +7,8 @@ import React, {
   useRef,
 } from 'react';
 
-interface SignaturePadProps {
-    /** 默认背景文字 */
+export type SignaturePadProps = {
+  /** 默认背景文字 */
   defaultText?: string; 
   /** canvas宽度 */
   width?: number;
@@ -22,8 +22,7 @@ interface SignaturePadProps {
   backgroundColor?: string;
   /** 背景文字颜色 */
   backgroundTextColor?: string;
-
-    /** 背景文字大小 */
+  /** 背景文字大小 */
   backgroundTextSize?: string;
   /** 签名结束回调 */
   onEnd?: () => void;

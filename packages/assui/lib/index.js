@@ -8,7 +8,7 @@ var __importDefault = this && this.__importDefault || function (mod) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.ConditionSelect = exports.CountUp = exports.CountDown = exports.ComplexValSelect = exports.MultipartUpload = exports.LabelConditionSelectInput = exports.Flex = exports.Resizable = exports.RichTextEditor = exports.BeautifulDnd = exports.LabelCustomizeRangePicker = exports.TableCol = exports.LabelTreeSelect = exports.LabelConditionInput = exports.LabelNumberInput = exports.LabelAutoComplete = exports.LabelDatePicker = exports.LabelRangePicker = exports.JsonEditor = exports.AreaText = exports.LabelTextArea = exports.ASelect = exports.LabelSelect = exports.ColorSelect = exports.LabelInput = exports.TextInput = exports.TextArea = exports.SplitPane = exports.sortableHoc = exports.SingleImgUpload = exports.RcTransitionGroup = exports.RcQRcode = exports.RcEchart = exports.StepNumberInput = exports.LabelRangeNumber = exports.NumberInput = exports.RcMotion = exports.KeepTab = exports.ImgCrop = exports.HighlightWords = exports.HighlightTextarea = exports.CopyToClipboard = exports.NumberFormatInput = exports.ConfigProvider = exports.ConditionSelectInput = exports.ConditionInput = exports.ButtonModal = exports.ButtonDrawer = void 0;
+exports.SignaturePad = exports.ConditionSelect = exports.CountUp = exports.CountDown = exports.ComplexValSelect = exports.MultipartUpload = exports.LabelConditionSelectInput = exports.Flex = exports.Resizable = exports.RichTextEditor = exports.BeautifulDnd = exports.LabelCustomizeRangePicker = exports.TableCol = exports.LabelTreeSelect = exports.LabelConditionInput = exports.LabelNumberInput = exports.LabelAutoComplete = exports.LabelDatePicker = exports.LabelRangePicker = exports.JsonEditor = exports.AreaText = exports.LabelTextArea = exports.ASelect = exports.LabelSelect = exports.ColorSelect = exports.LabelInput = exports.TextInput = exports.TextArea = exports.SplitPane = exports.sortableHoc = exports.SingleImgUpload = exports.RcTransitionGroup = exports.RcQRcode = exports.RcEchart = exports.StepNumberInput = exports.LabelRangeNumber = exports.NumberInput = exports.RcMotion = exports.KeepTab = exports.ImgCrop = exports.HighlightWords = exports.HighlightTextarea = exports.CopyToClipboard = exports.NumberFormatInput = exports.ConfigProvider = exports.ConditionSelectInput = exports.ConditionInput = exports.ButtonModal = exports.ButtonDrawer = void 0;
 var button_drawer_1 = require("./button-drawer");
 Object.defineProperty(exports, "ButtonDrawer", {
   enumerable: true,
@@ -343,5 +343,12 @@ Object.defineProperty(exports, "ConditionSelect", {
   enumerable: true,
   get: function get() {
     return __importDefault(condition_select_1)["default"];
+  }
+});
+var signature_pad_1 = require("./signature-pad");
+Object.defineProperty(exports, "SignaturePad", {
+  enumerable: true,
+  get: function get() {
+    return __importDefault(signature_pad_1)["default"];
   }
 });
