@@ -80,6 +80,11 @@
     "@types/cheerio" "*"
     "@types/react" "^16"
 
+"@types/js-cookie@^3.0.6":
+  version "3.0.6"
+  resolved "https://registry.yarnpkg.com/@types/js-cookie/-/js-cookie-3.0.6.tgz#a04ca19e877687bd449f5ad37d33b104b71fdf95"
+  integrity sha512-wkw9yd1kEXOPnvEeEV1Go1MmxtBJL0RR79aOTAApecWFVu7w0NNXNqhcWgvw2YgZDYadliXkl14pa3WXw5jlCQ==
+
 "@types/node@*":
   version "20.14.5"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-20.14.5.tgz#fe35e3022ebe58b8f201580eb24e1fcfc0f2487d"
@@ -123,15 +128,16 @@
   resolved "https://registry.yarnpkg.com/@vant/popperjs/-/popperjs-1.3.0.tgz#e0eff017124b5b2352ef3b36a6df06277f4400f2"
   integrity sha512-hB+czUG+aHtjhaEmCJDuXOep0YTZjdlRR+4MSmIFnkCQIxJaXLQdSsR90XWvAI2yvKUI7TCGqR8pQg2RtvkMHw==
 
-ahooks@^3.0.8:
-  version "3.8.0"
-  resolved "https://registry.yarnpkg.com/ahooks/-/ahooks-3.8.0.tgz#62476bf3459862ff706de2189b87de5e4f49b298"
-  integrity sha512-M01m+mxLRNNeJ/PCT3Fom26UyreTj6oMqJBetUrJnK4VNI5j6eMA543Xxo53OBXn6XibA2FXKcCCgrT6YCTtKQ==
+ahooks@^3.9.5:
+  version "3.9.5"
+  resolved "https://registry.yarnpkg.com/ahooks/-/ahooks-3.9.5.tgz#de9bb2233ae8e95ac2b2d2ba1dd716eb6adf4228"
+  integrity sha512-TrjXie49Q8HuHKTa84Fm9A+famMDAG1+7a9S9Gq6RQ0h90Jgqmiq3CkObuRjWT/C4d6nRZCw35Y2k2fmybb5eA==
   dependencies:
     "@babel/runtime" "^7.21.0"
+    "@types/js-cookie" "^3.0.6"
     dayjs "^1.9.1"
     intersection-observer "^0.12.0"
-    js-cookie "^2.x.x"
+    js-cookie "^3.0.5"
     lodash "^4.17.21"
     react-fast-compare "^3.2.2"
     resize-observer-polyfill "^1.5.1"
@@ -236,14 +242,14 @@ jest-websocket-mock@^2.1.0:
     jest-diff "^29.2.0"
     mock-socket "^9.3.0"
 
-js-cookie@^2.x.x:
-  version "2.2.1"
-  resolved "https://registry.yarnpkg.com/js-cookie/-/js-cookie-2.2.1.tgz#69e106dc5d5806894562902aa5baec3744e9b2b8"
-  integrity sha512-HvdH2LzI/EAZcUwA8+0nKNtWHqS+ZmijLA30RwZA0bo7ToCckjK5MkGhjED9KoRcXO6BaGI3I9UIzSA1FKFPOQ==
+js-cookie@^3.0.5:
+  version "3.0.5"
+  resolved "https://registry.yarnpkg.com/js-cookie/-/js-cookie-3.0.5.tgz#0b7e2fd0c01552c58ba86e0841f94dc2557dcdbc"
+  integrity sha512-cEiJEAEoIbWfCZYKWhVwFuvPX1gETRYPw6LlaTKoxD3s2AkXzkCjnp6h0V77ozyqj0jakteJ4YqDJT830+lVGw==
 
 "js-tokens@^3.0.0 || ^4.0.0":
   version "4.0.0"
-  resolved "https://registry.npmjs.org/js-tokens/-/js-tokens-4.0.0.tgz#19203fb59991df98e3a287050d4647cdeaf32499"
+  resolved "https://registry.yarnpkg.com/js-tokens/-/js-tokens-4.0.0.tgz#19203fb59991df98e3a287050d4647cdeaf32499"
   integrity sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==
 
 lodash@^4.17.21:

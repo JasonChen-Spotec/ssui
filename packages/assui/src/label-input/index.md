@@ -11,7 +11,7 @@ group:
 
 # LabelInput
 
-输入 Input 组件
+输入 LabelInput 组件
 
 ## 1. 代码演示
 
@@ -19,4 +19,3 @@ group:
 
 <code hideActions='["CSB", "EXTERNAL"]' src="./demo/index.tsx" ></code>
 
- 
