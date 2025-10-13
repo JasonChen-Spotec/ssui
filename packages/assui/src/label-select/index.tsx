@@ -2,8 +2,6 @@ import React from 'react';
 import useControllableValue from 'ahooks/lib/useControllableValue';
 import type { RefSelectProps, SelectProps } from 'antd/lib/select';
 import Select from 'antd/lib/select';
-import type { ComplexValSelectProps } from '../complex-val-select';
-import ComplexValSelect from '../complex-val-select';
 import type { BaseSelectRef } from 'rc-select/lib/BaseSelect';
 import isArray from 'lodash/isArray';
 import isUndefined from 'lodash/isUndefined';
@@ -11,6 +9,8 @@ import isNull from 'lodash/isNull';
 import classNames from 'classnames';
 import ArrowDropDownFilled from 'a-icons/lib/ArrowDropDownFilled';
 import omit from 'lodash/omit';
+import ComplexValSelect from '../complex-val-select';
+import type { ComplexValSelectProps } from '../complex-val-select';
 
 const { Option } = Select;
 
