@@ -219,11 +219,14 @@ var classnames_1 = __importDefault(require("classnames"));
 var CloseOutlined_1 = __importDefault(require("a-icons/lib/CloseOutlined"));
 var isObject_1 = __importDefault(require("lodash/isObject"));
 var isFunction_1 = __importDefault(require("lodash/isFunction"));
+var pdf_svg_1 = require("./assets/pdf.svg");
 var getLocalImgURL = function getLocalImgURL(file) {
   var URL = window.URL || window.webkitURL;
   var imgURL = URL.createObjectURL(file);
   return imgURL;
 };
+var IMAGE_TYPE = 'image';
+var PDF_TYPE = 'pdf';
 var initBeforeUpload = function initBeforeUpload() {
   return true;
 };
@@ -256,24 +259,39 @@ var SingleImgUpload = function SingleImgUpload(props) {
   var _e = __read(React.useState(false), 2),
     imageLoading = _e[0],
     setImageLoading = _e[1];
+  var _f = __read(React.useState(IMAGE_TYPE), 2),
+    fileType = _f[0],
+    setFileType = _f[1];
   React.useEffect(function () {
+    if (!value) {
+      setUploadStatus('init');
+      setFileUrl('');
+      return;
+    }
+    setUploadStatus('done');
     setFileUrl(value);
-    if (value) {
+    var isPdf = /\.pdf($|\?)/i.test(value);
+    var isImage = /\.(jpg|jpeg|png|gif|webp|bmp|svg|heic)($|\?)/i.test(value);
+    if (isImage) {
+      setFileType(IMAGE_TYPE);
       setImageLoading(true);
-      setUploadStatus('done');
       // eslint-disable-next-line global-require
       var heic2Jpeg = require('aa-utils/lib/heic2Jpeg')["default"];
       if ((0, isFunction_1["default"])(heic2Jpeg)) {
         heic2Jpeg(value).then(function (resultUrl) {
           setFileUrl(resultUrl);
           setImageLoading(false);
+        })["catch"](function () {
+          return setImageLoading(false);
         });
       } else {
-        setFileUrl(value);
         setImageLoading(false);
       }
-    } else {
-      setUploadStatus('init');
+      return;
+    }
+    if (isPdf) {
+      setFileType(PDF_TYPE);
+      setImageLoading(false);
     }
   }, [value]);
   var onBeforeUpload = function onBeforeUpload() {
@@ -304,6 +322,8 @@ var SingleImgUpload = function SingleImgUpload(props) {
   var handleStart = function handleStart(file) {
     fileRef.current = file;
     setUploadPercent(0);
+    var isImage = file.type.startsWith('image/');
+    setFileType(isImage ? IMAGE_TYPE : PDF_TYPE);
     if (!fileUrl) {
       setFileUrl(getLocalImgURL(file));
     }
@@ -339,15 +359,26 @@ var SingleImgUpload = function SingleImgUpload(props) {
     onCancel === null || onCancel === void 0 ? void 0 : onCancel();
   };
   var cls = (0, classnames_1["default"])('as-img-upload', wrapperClassName);
+  var getShowNode = function getShowNode() {
+    if (fileType === IMAGE_TYPE) {
+      return React.createElement(image_1["default"], {
+        wrapperClassName: "as-img-upload-preview",
+        src: fileUrl,
+        preview: true
+      });
+    }
+    return React.createElement("div", {
+      className: "as-img-upload-pdf-preview",
+      onClick: function onClick() {
+        return window.open(fileUrl || value, '_blank');
+      }
+    }, React.createElement(pdf_svg_1.ReactComponent, null));
+  };
   return React.createElement("div", {
     className: cls
   }, uploadStatus === 'uploading' && React.createElement("div", {
     className: "as-img-upload-content"
-  }, React.createElement(image_1["default"], {
-    wrapperClassName: "as-img-upload-preview",
-    src: fileUrl,
-    preview: true
-  }), React.createElement("div", {
+  }, getShowNode(), React.createElement("div", {
     className: "dark"
   }), React.createElement(progress_1["default"], {
     className: "as-img-upload-upload-progress",
@@ -361,11 +392,7 @@ var SingleImgUpload = function SingleImgUpload(props) {
     spinning: imageLoading
   }, React.createElement("div", {
     className: "as-img-upload-content"
-  }, React.createElement(image_1["default"], {
-    wrapperClassName: "as-img-upload-preview",
-    src: fileUrl,
-    preview: true
-  }), !disabled && React.createElement("div", {
+  }, getShowNode(), !disabled && React.createElement("div", {
     className: "as-img-upload-close-button",
     onClick: handleDeleteUpload
   }, React.createElement(CloseOutlined_1["default"], null)))), React.createElement(rc_upload_1["default"], __assign({

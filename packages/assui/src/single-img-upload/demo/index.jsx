@@ -8,7 +8,7 @@ const Demo = () => {
   };
 
   return (
-    <SingleImgUpload action="http://192.168.0.126:10000/oss/file/upload" onSuccess={onSuccess}>
+    <SingleImgUpload action="http://192.168.0.129:31000/api/h5/oss/upload/file/kyc" onSuccess={onSuccess}>
       <PlusOutlined />
     </SingleImgUpload>
   );

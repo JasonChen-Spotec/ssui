@@ -9,12 +9,19 @@ import classNames from 'classnames';
 import CloseOutlined from 'a-icons/lib/CloseOutlined';
 import isObject from 'lodash/isObject';
 import isFunction from 'lodash/isFunction';
+import { ReactComponent as PDFSVG } from './assets/pdf.svg';
 
 const getLocalImgURL = (file: File) => {
   const URL = window.URL || window.webkitURL;
   const imgURL = URL.createObjectURL(file);
   return imgURL;
 };
+
+const IMAGE_TYPE = 'image';
+
+const PDF_TYPE = 'pdf';
+
+type FileType =typeof IMAGE_TYPE | typeof PDF_TYPE
 
 export interface RcFile extends File {
   uid: string;
@@ -57,25 +64,45 @@ const SingleImgUpload = (props: SingleImgUploadProps) => {
   const [fileUrl, setFileUrl] = React.useState(value);
   const [uploadPercent, setUploadPercent] = React.useState(0);
   const [imageLoading, setImageLoading] = React.useState<boolean>(false);
+  const [fileType, setFileType] = React.useState<FileType>(IMAGE_TYPE);
 
   React.useEffect(() => {
+    if (!value) {
+      setUploadStatus('init');
+      setFileUrl('');
+      return;
+    }
+
+    setUploadStatus('done');
     setFileUrl(value);
-    if (value) {
+
+    const isPdf = /\.pdf($|\?)/i.test(value);
+    const isImage = /\.(jpg|jpeg|png|gif|webp|bmp|svg|heic)($|\?)/i.test(value);
+
+
+    if (isImage) {
+      setFileType(IMAGE_TYPE);
       setImageLoading(true);
-      setUploadStatus('done');
       // eslint-disable-next-line global-require
       const heic2Jpeg = require('aa-utils/lib/heic2Jpeg').default;
       if (isFunction(heic2Jpeg)) {
-        heic2Jpeg(value).then((resultUrl: string) => {
-          setFileUrl(resultUrl);
-          setImageLoading(false);
-        });
+        heic2Jpeg(value)
+          .then((resultUrl: string) => {
+            setFileUrl(resultUrl);
+            setImageLoading(false);
+          })
+          .catch(() => setImageLoading(false));
       } else {
-        setFileUrl(value);
         setImageLoading(false);
       }
-    } else {
-      setUploadStatus('init');
+      return;
+
+    }
+
+
+    if (isPdf) {
+      setFileType(PDF_TYPE);
+      setImageLoading(false);
     }
   }, [value]);
 
@@ -97,6 +124,10 @@ const SingleImgUpload = (props: SingleImgUploadProps) => {
   const handleStart = (file: RcFile) => {
     fileRef.current = file;
     setUploadPercent(0);
+
+    const isImage = file.type.startsWith('image/');
+    setFileType(isImage ? IMAGE_TYPE : PDF_TYPE);
+
     if (!fileUrl) {
       setFileUrl(getLocalImgURL(file));
     }
@@ -139,11 +170,32 @@ const SingleImgUpload = (props: SingleImgUploadProps) => {
 
   const cls = classNames('as-img-upload', wrapperClassName);
 
+  const getShowNode = () => {
+    if (fileType === IMAGE_TYPE) {
+      return (
+        <Image wrapperClassName="as-img-upload-preview"
+          src={fileUrl}
+          preview
+        />
+      )
+    }
+
+    return (
+      <div
+        className="as-img-upload-pdf-preview"
+        onClick={() => window.open(fileUrl || value, '_blank')}
+      >
+        <PDFSVG />
+      </div>
+    )
+
+  }
+
   return (
     <div className={cls}>
       {uploadStatus === 'uploading' && (
         <div className="as-img-upload-content">
-          <Image wrapperClassName="as-img-upload-preview" src={fileUrl} preview />
+          {getShowNode()}
           <div className="dark" />
           <Progress
             className="as-img-upload-upload-progress"
@@ -159,7 +211,7 @@ const SingleImgUpload = (props: SingleImgUploadProps) => {
       {uploadStatus === 'done' && (
         <Spin spinning={imageLoading}>
           <div className="as-img-upload-content">
-            <Image wrapperClassName="as-img-upload-preview" src={fileUrl} preview />
+            {getShowNode()}
             {!disabled && (
               <div className="as-img-upload-close-button" onClick={handleDeleteUpload}>
                 <CloseOutlined />
