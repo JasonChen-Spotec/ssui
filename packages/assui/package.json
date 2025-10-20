@@ -68,6 +68,7 @@
     "ahooks": "3.9.5"
   },
   "devDependencies": {
+    "@svgr/webpack": "^8.1.0",
     "@types/enzyme": "^3.10.5",
     "@types/insert-css": "^2.0.1",
     "@types/jsoneditor": "^9.5.1",
