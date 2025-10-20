@@ -8,7 +8,7 @@ group:
   title: 数据录入
   path: /components/input
 ---
-# SingleImgUpload 上传单个图片
+# SingleImgUpload 上传单个图片或者PDF
 
 ##  1. 代码演示
 ### 1.1. 基础用法

@@ -176,11 +176,14 @@ import classNames from 'classnames';
 import CloseOutlined from "a-icons/es/CloseOutlined";
 import isObject from 'lodash/isObject';
 import isFunction from 'lodash/isFunction';
+import { ReactComponent as PDFSVG } from './assets/pdf.svg';
 var getLocalImgURL = function getLocalImgURL(file) {
   var URL = window.URL || window.webkitURL;
   var imgURL = URL.createObjectURL(file);
   return imgURL;
 };
+var IMAGE_TYPE = 'image';
+var PDF_TYPE = 'pdf';
 var initBeforeUpload = function initBeforeUpload() {
   return true;
 };
@@ -213,24 +216,39 @@ var SingleImgUpload = function SingleImgUpload(props) {
   var _e = __read(React.useState(false), 2),
     imageLoading = _e[0],
     setImageLoading = _e[1];
+  var _f = __read(React.useState(IMAGE_TYPE), 2),
+    fileType = _f[0],
+    setFileType = _f[1];
   React.useEffect(function () {
+    if (!value) {
+      setUploadStatus('init');
+      setFileUrl('');
+      return;
+    }
+    setUploadStatus('done');
     setFileUrl(value);
-    if (value) {
+    var isPdf = /\.pdf($|\?)/i.test(value);
+    var isImage = /\.(jpg|jpeg|png|gif|webp|bmp|svg|heic)($|\?)/i.test(value);
+    if (isImage) {
+      setFileType(IMAGE_TYPE);
       setImageLoading(true);
-      setUploadStatus('done');
       // eslint-disable-next-line global-require
       var heic2Jpeg = require('aa-utils/lib/heic2Jpeg')["default"];
       if (isFunction(heic2Jpeg)) {
         heic2Jpeg(value).then(function (resultUrl) {
           setFileUrl(resultUrl);
           setImageLoading(false);
+        })["catch"](function () {
+          return setImageLoading(false);
         });
       } else {
-        setFileUrl(value);
         setImageLoading(false);
       }
-    } else {
-      setUploadStatus('init');
+      return;
+    }
+    if (isPdf) {
+      setFileType(PDF_TYPE);
+      setImageLoading(false);
     }
   }, [value]);
   var onBeforeUpload = function onBeforeUpload() {
@@ -261,6 +279,8 @@ var SingleImgUpload = function SingleImgUpload(props) {
   var handleStart = function handleStart(file) {
     fileRef.current = file;
     setUploadPercent(0);
+    var isImage = file.type.startsWith('image/');
+    setFileType(isImage ? IMAGE_TYPE : PDF_TYPE);
     if (!fileUrl) {
       setFileUrl(getLocalImgURL(file));
     }
@@ -296,15 +316,26 @@ var SingleImgUpload = function SingleImgUpload(props) {
     onCancel === null || onCancel === void 0 ? void 0 : onCancel();
   };
   var cls = classNames('as-img-upload', wrapperClassName);
+  var getShowNode = function getShowNode() {
+    if (fileType === IMAGE_TYPE) {
+      return /*#__PURE__*/React.createElement(Image, {
+        wrapperClassName: "as-img-upload-preview",
+        src: fileUrl,
+        preview: true
+      });
+    }
+    return /*#__PURE__*/React.createElement("div", {
+      className: "as-img-upload-pdf-preview",
+      onClick: function onClick() {
+        return window.open(fileUrl || value, '_blank');
+      }
+    }, /*#__PURE__*/React.createElement(PDFSVG, null));
+  };
   return /*#__PURE__*/React.createElement("div", {
     className: cls
   }, uploadStatus === 'uploading' && /*#__PURE__*/React.createElement("div", {
     className: "as-img-upload-content"
-  }, /*#__PURE__*/React.createElement(Image, {
-    wrapperClassName: "as-img-upload-preview",
-    src: fileUrl,
-    preview: true
-  }), /*#__PURE__*/React.createElement("div", {
+  }, getShowNode(), /*#__PURE__*/React.createElement("div", {
     className: "dark"
   }), /*#__PURE__*/React.createElement(Progress, {
     className: "as-img-upload-upload-progress",
@@ -318,11 +349,7 @@ var SingleImgUpload = function SingleImgUpload(props) {
     spinning: imageLoading
   }, /*#__PURE__*/React.createElement("div", {
     className: "as-img-upload-content"
-  }, /*#__PURE__*/React.createElement(Image, {
-    wrapperClassName: "as-img-upload-preview",
-    src: fileUrl,
-    preview: true
-  }), !disabled && /*#__PURE__*/React.createElement("div", {
+  }, getShowNode(), !disabled && /*#__PURE__*/React.createElement("div", {
     className: "as-img-upload-close-button",
     onClick: handleDeleteUpload
   }, /*#__PURE__*/React.createElement(CloseOutlined, null)))), /*#__PURE__*/React.createElement(Upload, __assign({
