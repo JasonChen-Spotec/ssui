@@ -4,9 +4,7 @@ var __assign = this && this.__assign || function () {
   __assign = Object.assign || function (t) {
     for (var s, i = 1, n = arguments.length; i < n; i++) {
       s = arguments[i];
-      for (var p in s) {
-        if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
-      }
+      for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
     }
     return t;
   };
@@ -39,9 +37,7 @@ var __setModuleDefault = this && this.__setModuleDefault || (Object.create ? fun
 var __importStar = this && this.__importStar || function (mod) {
   if (mod && mod.__esModule) return mod;
   var result = {};
-  if (mod != null) for (var k in mod) {
-    if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-  }
+  if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
   __setModuleDefault(result, mod);
   return result;
 };
@@ -53,9 +49,7 @@ var __read = this && this.__read || function (o, n) {
     ar = [],
     e;
   try {
-    while ((n === void 0 || n-- > 0) && !(r = i.next()).done) {
-      ar.push(r.value);
-    }
+    while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
   } catch (error) {
     e = {
       error: error
@@ -88,11 +82,11 @@ var select_1 = __importDefault(require("antd/lib/select"));
 var useControllableValue_1 = __importDefault(require("ahooks/lib/useControllableValue"));
 var Option = select_1["default"].Option;
 exports.Option = Option;
-var formatOptions = function formatOptions(dateSource) {
+var _formatOptions = function formatOptions(dateSource) {
   if (dateSource) {
     var options = dateSource.map(function (item) {
       var otherProps = item.options ? {
-        options: formatOptions(item.options)
+        options: _formatOptions(item.options)
       } : {};
       return __assign(__assign(__assign({}, item), {
         label: item.label,
@@ -131,7 +125,7 @@ var ComplexValSelect = React.forwardRef(function (props, ref) {
   });
   // 判断是否需要将optionValue转为JSON字符串
   var isReferenceTypeVal = (0, exports.isReferenceTypeOption)(options);
-  var finalOptions = isReferenceTypeVal ? formatOptions(options) : options;
+  var finalOptions = isReferenceTypeVal ? _formatOptions(options) : options;
   var handleChange = function handleChange(val) {
     var nextVal = val && isReferenceTypeVal ? JSON.parse(val) : val;
     setValue(nextVal, options);

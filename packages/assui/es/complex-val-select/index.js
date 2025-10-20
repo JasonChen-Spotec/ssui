@@ -2,9 +2,7 @@ var __assign = this && this.__assign || function () {
   __assign = Object.assign || function (t) {
     for (var s, i = 1, n = arguments.length; i < n; i++) {
       s = arguments[i];
-      for (var p in s) {
-        if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
-      }
+      for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
     }
     return t;
   };
@@ -18,9 +16,7 @@ var __read = this && this.__read || function (o, n) {
     ar = [],
     e;
   try {
-    while ((n === void 0 || n-- > 0) && !(r = i.next()).done) {
-      ar.push(r.value);
-    }
+    while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
   } catch (error) {
     e = {
       error: error
@@ -44,11 +40,11 @@ import Select from "antd/es/select";
 import useControllableValue from "ahooks/es/useControllableValue";
 var Option = Select.Option;
 export { Option };
-var formatOptions = function formatOptions(dateSource) {
+var _formatOptions = function formatOptions(dateSource) {
   if (dateSource) {
     var options = dateSource.map(function (item) {
       var otherProps = item.options ? {
-        options: formatOptions(item.options)
+        options: _formatOptions(item.options)
       } : {};
       return __assign(__assign(__assign({}, item), {
         label: item.label,
@@ -86,7 +82,7 @@ var ComplexValSelect = /*#__PURE__*/React.forwardRef(function (props, ref) {
   });
   // 判断是否需要将optionValue转为JSON字符串
   var isReferenceTypeVal = isReferenceTypeOption(options);
-  var finalOptions = isReferenceTypeVal ? formatOptions(options) : options;
+  var finalOptions = isReferenceTypeVal ? _formatOptions(options) : options;
   var handleChange = function handleChange(val) {
     var nextVal = val && isReferenceTypeVal ? JSON.parse(val) : val;
     setValue(nextVal, options);
