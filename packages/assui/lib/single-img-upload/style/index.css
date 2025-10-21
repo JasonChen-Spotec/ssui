@@ -1275,6 +1275,10 @@ html {
   justify-content: center;
   cursor: pointer;
 }
+.as-img-upload .as-img-upload-pdf-preview .spotecicon {
+  width: 40px;
+  height: 40px;
+}
 .as-img-upload-close-button {
   position: absolute;
   top: 0;
