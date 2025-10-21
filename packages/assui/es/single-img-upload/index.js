@@ -193,7 +193,8 @@ var SingleImgUpload = function SingleImgUpload(props) {
     beforeUpload = _a === void 0 ? initBeforeUpload : _a,
     onError = props.onError,
     disabled = props.disabled,
-    restProps = __rest(props, ["className", "wrapperClassName", "children", "value", "onStart", "onDeleteUpload", "onFormatResData", "onSuccess", "onCancel", "beforeUpload", "onError", "disabled"]);
+    pdfName = props.pdfName,
+    restProps = __rest(props, ["className", "wrapperClassName", "children", "value", "onStart", "onDeleteUpload", "onFormatResData", "onSuccess", "onCancel", "beforeUpload", "onError", "disabled", "pdfName"]);
   var uploadInstanceRef = React.useRef();
   var fileRef = React.useRef();
   var _b = __read(React.useState(value ? 'done' : 'init'), 2),
@@ -321,7 +322,11 @@ var SingleImgUpload = function SingleImgUpload(props) {
       onClick: function onClick() {
         return window.open(fileUrl || value, '_blank');
       }
-    }, /*#__PURE__*/React.createElement(Pdf, null));
+    }, /*#__PURE__*/React.createElement("div", {
+      className: "as-img-upload-pdf-preview-content"
+    }, /*#__PURE__*/React.createElement(Pdf, null), pdfName && /*#__PURE__*/React.createElement("div", {
+      className: "as-img-upload-pdf-name"
+    }, pdfName)));
   };
   return /*#__PURE__*/React.createElement("div", {
     className: cls
