@@ -166,9 +166,9 @@ import Image from "antd/es/image";
 import Spin from "antd/es/spin";
 import classNames from 'classnames';
 import CloseOutlined from "a-icons/es/CloseOutlined";
+import Pdf from "a-icons/es/Pdf";
 import isObject from 'lodash/isObject';
 import isFunction from 'lodash/isFunction';
-var pdfpng = "pdf.png";
 var getLocalImgURL = function getLocalImgURL(file) {
   var URL = window.URL || window.webkitURL;
   var imgURL = URL.createObjectURL(file);
@@ -321,9 +321,7 @@ var SingleImgUpload = function SingleImgUpload(props) {
       onClick: function onClick() {
         return window.open(fileUrl || value, '_blank');
       }
-    }, /*#__PURE__*/React.createElement("img", {
-      src: pdfpng
-    }));
+    }, /*#__PURE__*/React.createElement(Pdf, null));
   };
   return /*#__PURE__*/React.createElement("div", {
     className: cls

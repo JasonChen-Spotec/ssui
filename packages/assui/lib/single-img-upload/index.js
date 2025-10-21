@@ -207,9 +207,9 @@ var image_1 = __importDefault(require("antd/lib/image"));
 var spin_1 = __importDefault(require("antd/lib/spin"));
 var classnames_1 = __importDefault(require("classnames"));
 var CloseOutlined_1 = __importDefault(require("a-icons/lib/CloseOutlined"));
+var Pdf_1 = __importDefault(require("a-icons/lib/Pdf"));
 var isObject_1 = __importDefault(require("lodash/isObject"));
 var isFunction_1 = __importDefault(require("lodash/isFunction"));
-var pdf_png_1 = __importDefault("pdf.png");
 var getLocalImgURL = function getLocalImgURL(file) {
   var URL = window.URL || window.webkitURL;
   var imgURL = URL.createObjectURL(file);
@@ -362,9 +362,7 @@ var SingleImgUpload = function SingleImgUpload(props) {
       onClick: function onClick() {
         return window.open(fileUrl || value, '_blank');
       }
-    }, React.createElement("img", {
-      src: pdf_png_1["default"]
-    }));
+    }, React.createElement(Pdf_1["default"], null));
   };
   return React.createElement("div", {
     className: cls

@@ -132,13 +132,7 @@ gulp.task('cjs', () => {
         ],
         include: '**/*.js',
         exclude: '**/*.ts',
-        plugins: [
-          'babel-plugin-transform-async-to-promises',
-          [
-            'babel-plugin-transform-assets-import-to-string',
-            { extensions: ['.png', '.jpg', '.jpeg', '.svg'] },
-          ],
-        ],
+        plugins: ['babel-plugin-transform-async-to-promises'],
       }),
     )
     .pipe(gulp.dest('lib/'));
@@ -165,14 +159,7 @@ gulp.task('es', () => {
         ],
         include: '**/*.js',
         exclude: '**/*.ts',
-        plugins: [
-          'babel-plugin-transform-async-to-promises',
-          replaceLib,
-          [
-            'babel-plugin-transform-assets-import-to-string',
-            { extensions: ['.png', '.jpg', '.jpeg', '.svg'] },
-          ],
-        ],
+        plugins: ['babel-plugin-transform-async-to-promises', replaceLib],
       }),
     )
     .pipe(gulp.dest('es/'));
