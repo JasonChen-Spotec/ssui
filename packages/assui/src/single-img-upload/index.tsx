@@ -7,9 +7,9 @@ import Image from 'antd/lib/image';
 import Spin from 'antd/lib/spin';
 import classNames from 'classnames';
 import CloseOutlined from 'a-icons/lib/CloseOutlined';
+import Pdf from 'a-icons/lib/Pdf';
 import isObject from 'lodash/isObject';
 import isFunction from 'lodash/isFunction';
-import pdfpng from './assets/pdf.png';
 
 const getLocalImgURL = (file: File) => {
   const URL = window.URL || window.webkitURL;
@@ -185,7 +185,7 @@ const SingleImgUpload = (props: SingleImgUploadProps) => {
         className="as-img-upload-pdf-preview"
         onClick={() => window.open(fileUrl || value, '_blank')}
       >
-        <img src={pdfpng} />
+        <Pdf />
       </div>
     )
 
