@@ -6163,11 +6163,6 @@ babel-plugin-react-compiler@0.0.0-experimental-c23de8d-20240515:
     zod "^3.22.4"
     zod-validation-error "^2.1.0"
 
-babel-plugin-transform-assets-import-to-string@^1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/babel-plugin-transform-assets-import-to-string/-/babel-plugin-transform-assets-import-to-string-1.2.0.tgz#9eb40850d637c67ce2f0fed38c99f365ae09beea"
-  integrity sha512-JQQs2smZuTajHelwi2nTxX2/a9y1nReHnbNB+jZU5aB5IrQzXiTe69yQP4hmuE9fKoSnIJgBywSQwtUnIpBY1w==
-
 babel-plugin-transform-async-to-promises@^0.8.15:
   version "0.8.18"
   resolved "https://registry.npmmirror.com/babel-plugin-transform-async-to-promises/-/babel-plugin-transform-async-to-promises-0.8.18.tgz#f4dc5980b8afa0fc9c784b8d931afde913413e39"
