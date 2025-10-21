@@ -12,6 +12,8 @@ export interface SingleImgUploadProps extends UploadProps {
     onCancel?: () => void;
     /** 格式化接口返回数据 */
     onFormatResData?: (res: any) => string;
+    /** pdf名称 */
+    pdfName?: string;
 }
 declare const SingleImgUpload: (props: SingleImgUploadProps) => JSX.Element;
 export default SingleImgUpload;

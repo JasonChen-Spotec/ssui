@@ -38,6 +38,8 @@ export interface SingleImgUploadProps extends UploadProps {
   onCancel?: () => void;
   /** 格式化接口返回数据 */
   onFormatResData?: (res: any) => string;
+  /** pdf名称 */
+  pdfName?: string
 }
 
 const initBeforeUpload = () => true;
@@ -56,6 +58,7 @@ const SingleImgUpload = (props: SingleImgUploadProps) => {
     beforeUpload = initBeforeUpload,
     onError,
     disabled,
+    pdfName,
     ...restProps
   } = props;
   const uploadInstanceRef = React.useRef<Upload | null>();
@@ -185,7 +188,10 @@ const SingleImgUpload = (props: SingleImgUploadProps) => {
         className="as-img-upload-pdf-preview"
         onClick={() => window.open(fileUrl || value, '_blank')}
       >
-        <Pdf />
+        <div className="as-img-upload-pdf-preview-content">
+          <Pdf />
+          {pdfName && <div className="as-img-upload-pdf-name">{pdfName}</div>}
+        </div>
       </div>
     )
 

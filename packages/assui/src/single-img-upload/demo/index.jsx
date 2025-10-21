@@ -8,7 +8,11 @@ const Demo = () => {
   };
 
   return (
-    <SingleImgUpload action="http://192.168.0.129:31000/api/h5/oss/upload/file/kyc" onSuccess={onSuccess}>
+    <SingleImgUpload
+    action="http://192.168.0.129:31000/api/h5/oss/upload/file/kyc"
+    onSuccess={onSuccess}
+    pdfName='123123123123'
+    >
       <PlusOutlined />
     </SingleImgUpload>
   );
