@@ -185,7 +185,7 @@ const SingleImgUpload = (props: SingleImgUploadProps) => {
         className="as-img-upload-pdf-preview"
         onClick={() => window.open(fileUrl || value, '_blank')}
       >
-        <img  src={pdfpng} />
+        <img src={pdfpng} />
       </div>
     )
 

@@ -168,7 +168,7 @@ import classNames from 'classnames';
 import CloseOutlined from "a-icons/es/CloseOutlined";
 import isObject from 'lodash/isObject';
 import isFunction from 'lodash/isFunction';
-import pdfpng from './assets/pdf.png';
+var pdfpng = "pdf.png";
 var getLocalImgURL = function getLocalImgURL(file) {
   var URL = window.URL || window.webkitURL;
   var imgURL = URL.createObjectURL(file);
