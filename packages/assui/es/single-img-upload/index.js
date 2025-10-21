@@ -168,7 +168,7 @@ import classNames from 'classnames';
 import CloseOutlined from "a-icons/es/CloseOutlined";
 import isObject from 'lodash/isObject';
 import isFunction from 'lodash/isFunction';
-import { ReactComponent as PDFSVG } from './assets/pdf.svg';
+import pdfpng from './assets/pdf.png';
 var getLocalImgURL = function getLocalImgURL(file) {
   var URL = window.URL || window.webkitURL;
   var imgURL = URL.createObjectURL(file);
@@ -321,7 +321,9 @@ var SingleImgUpload = function SingleImgUpload(props) {
       onClick: function onClick() {
         return window.open(fileUrl || value, '_blank');
       }
-    }, /*#__PURE__*/React.createElement(PDFSVG, null));
+    }, /*#__PURE__*/React.createElement("img", {
+      src: pdfpng
+    }));
   };
   return /*#__PURE__*/React.createElement("div", {
     className: cls

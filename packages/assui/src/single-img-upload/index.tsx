@@ -9,7 +9,7 @@ import classNames from 'classnames';
 import CloseOutlined from 'a-icons/lib/CloseOutlined';
 import isObject from 'lodash/isObject';
 import isFunction from 'lodash/isFunction';
-import { ReactComponent as PDFSVG } from './assets/pdf.svg';
+import pdfpng from './assets/pdf.png';
 
 const getLocalImgURL = (file: File) => {
   const URL = window.URL || window.webkitURL;
@@ -21,7 +21,7 @@ const IMAGE_TYPE = 'image';
 
 const PDF_TYPE = 'pdf';
 
-type FileType =typeof IMAGE_TYPE | typeof PDF_TYPE
+type FileType = typeof IMAGE_TYPE | typeof PDF_TYPE
 
 export interface RcFile extends File {
   uid: string;
@@ -185,7 +185,7 @@ const SingleImgUpload = (props: SingleImgUploadProps) => {
         className="as-img-upload-pdf-preview"
         onClick={() => window.open(fileUrl || value, '_blank')}
       >
-        <PDFSVG />
+        <img  src={pdfpng} />
       </div>
     )
 
