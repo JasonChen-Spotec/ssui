@@ -28,7 +28,7 @@ export default {
   'Increase indent': '\u589e\u52a0\u7f29\u8fdb',
   'Close': '\u5173\u95ed',
   'Formats': '\u683c\u5f0f',
-  "Your browser doesn't support direct access to the clipboard. Please use the Ctrl+X/C/V keyboard shortcuts instead.":
+  'Your browser doesn\'t support direct access to the clipboard. Please use the Ctrl+X/C/V keyboard shortcuts instead.':
     '\u4f60\u7684\u6d4f\u89c8\u5668\u4e0d\u652f\u6301\u6253\u5f00\u526a\u8d34\u677f\uff0c\u8bf7\u4f7f\u7528Ctrl+X/C/V\u7b49\u5feb\u6377\u952e\u3002',
   'Headings': '\u6807\u9898',
   'Heading 1': '\u6807\u98981',

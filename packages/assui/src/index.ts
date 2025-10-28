@@ -141,3 +141,6 @@ export type { CountUpProps } from './count-up';
 
 export { default as ConditionSelect } from './condition-select';
 export type { ConditionSelectProps } from './condition-select/types';
+
+export { default as SignaturePad } from './signature-pad';
+export type { SignaturePadProps } from './signature-pad';
