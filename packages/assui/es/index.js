@@ -47,4 +47,4 @@ export { default as CountDown } from './count-down';
 export { default as CountUp } from './count-up';
 export { default as ConditionSelect } from './condition-select';
 export { default as SignaturePad } from './signature-pad';
-export { default as MultiLineEllipsisText } from './multiLine-ellipsis-text';
+export { default as MultiLineEllipsisText } from './multi-line-ellipsis-text';

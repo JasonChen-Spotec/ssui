@@ -1,0 +1,18 @@
+.ellipsis-modal-content {
+  width: 100%;
+  max-height: 40vh;
+  overflow: auto;
+  color: #7d7d7d;
+  white-space: pre-wrap;
+}
+.ellipsis-tooltip {
+  max-width: 320px;
+}
+.ellipsis-tooltip-content {
+  max-height: 40vh;
+  overflow: auto;
+  white-space: pre-wrap;
+}
+.cursor {
+  cursor: pointer;
+}

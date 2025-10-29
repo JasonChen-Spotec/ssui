@@ -352,10 +352,10 @@ Object.defineProperty(exports, "SignaturePad", {
     return __importDefault(signature_pad_1)["default"];
   }
 });
-var multiLine_ellipsis_text_1 = require("./multiLine-ellipsis-text");
+var multi_line_ellipsis_text_1 = require("./multi-line-ellipsis-text");
 Object.defineProperty(exports, "MultiLineEllipsisText", {
   enumerable: true,
   get: function get() {
-    return __importDefault(multiLine_ellipsis_text_1)["default"];
+    return __importDefault(multi_line_ellipsis_text_1)["default"];
   }
 });
