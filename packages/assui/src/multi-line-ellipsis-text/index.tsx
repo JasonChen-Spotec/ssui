@@ -12,6 +12,7 @@ export interface MultiLineEllipsisTextProps {
   text?: string;
   /** 展示的行数 */
   lines?: number;
+  /** 文案样式 */
   className?: string;
   /** 展示完整内容的交互类型，不传则不提示 */
   tipType?: 'modal' | 'tooltip';
