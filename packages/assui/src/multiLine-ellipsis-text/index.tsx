@@ -1,0 +1,109 @@
+import React from 'react';
+import type { TooltipProps } from 'antd/lib/tooltip';
+import Tooltip from 'antd/lib/tooltip';
+import classNames from 'classnames';
+import omit from 'lodash/omit';
+import type { ButtonModalProps } from '../button-modal';
+import ButtonModal from '../button-modal';
+
+
+export interface MultiLineEllipsisTextProps {
+  text?: string;
+  lines?: number;
+  className?: string;
+  /** 展示全部的交互类型，不传则不提示 */
+  tipType?: 'modal' | 'tooltip';
+  buttonModalProps?: Omit<ButtonModalProps, 'children'> & {
+    children?: ButtonModalProps['children'];
+  };
+  tooltipProps?: Omit<TooltipProps, 'title'>;
+  onEllipsisChange?: (isEllipsis: boolean) => void;
+  onClick?: () => void;
+}
+
+const MultiLineEllipsisText: React.FC<MultiLineEllipsisTextProps> = ({
+  text = '',
+  lines = 3,
+  className = '',
+  tipType,
+  buttonModalProps,
+  tooltipProps,
+  onEllipsisChange,
+  onClick,
+}) => {
+  const ref = React.useRef<HTMLDivElement>(null);
+  const [isEllipsis, setIsEllipsis] = React.useState(false);
+
+  React.useEffect(() => {
+    const el = ref.current;
+    if (!el) {
+      return;
+    }
+
+    // 等待浏览器渲染完再计算高度
+    requestAnimationFrame(() => {
+      const style = window.getComputedStyle(el);
+      const lineHeight = parseFloat(style.lineHeight);
+      const maxHeight = lineHeight * lines;
+
+      const overflow = el.scrollHeight > maxHeight + 1; // +1 容差
+      setIsEllipsis(overflow);
+      onEllipsisChange?.(overflow);
+    });
+  }, [text, lines, onEllipsisChange]);
+
+  const ellipsisNode = (
+    <div
+      ref={ref}
+      className={classNames('ellipsis', className, {
+        cursor: isEllipsis && tipType,
+      })}
+      style={{
+        WebkitLineClamp: lines,
+        display: '-webkit-box',
+        WebkitBoxOrient: 'vertical',
+        overflow: 'hidden',
+        textOverflow: 'ellipsis',
+        whiteSpace: 'pre-wrap',
+        wordBreak: 'break-all',
+      }}
+      title={isEllipsis ? text : undefined} // 鼠标悬浮显示完整内容
+      onClick={isEllipsis ? onClick : undefined}
+    >
+      {text}
+    </div>
+  );
+
+  if (isEllipsis && tipType === 'modal') {
+    return (
+      <ButtonModal
+        destroyOnClose
+        width={325}
+        footer={null}
+        {...omit(buttonModalProps, 'children')}
+        className={classNames('ellipsis-modal', buttonModalProps?.className)}
+        trigger={ellipsisNode}
+      >
+        {buttonModalProps?.children || (
+          <div className="ellipsis-modal-content">{text}</div>
+        )}
+      </ButtonModal>
+    );
+  }
+
+  if (isEllipsis && tipType === 'tooltip') {
+    return (
+      <Tooltip
+        {...tooltipProps}
+        overlayClassName={classNames('ellipsis-tooltip', tooltipProps?.overlayClassName)}
+        title={<div className="ellipsis-tooltip-content">{text}</div>}
+      >
+        {ellipsisNode}
+      </Tooltip>
+    );
+  }
+
+  return ellipsisNode;
+};
+
+export default MultiLineEllipsisText;
