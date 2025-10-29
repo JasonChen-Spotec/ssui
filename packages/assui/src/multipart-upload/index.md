@@ -6,7 +6,7 @@ nav:
   path: /assui
 group:
   title: 数据录入
-  path: /components/input
+  path: /components/multiLine-ellipsis-text
 ---
 
 # MultipartUpload
@@ -20,4 +20,3 @@ group:
 <code hideActions='["CSB", "EXTERNAL"]' src="./demo/index.tsx" ></code>
 
 ### 1.2. API
- 

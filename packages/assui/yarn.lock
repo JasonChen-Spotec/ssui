@@ -3165,6 +3165,11 @@ side-channel@^1.0.4:
     get-intrinsic "^1.0.2"
     object-inspect "^1.9.0"
 
+signature_pad@^5.1.1:
+  version "5.1.1"
+  resolved "https://registry.yarnpkg.com/signature_pad/-/signature_pad-5.1.1.tgz#0bf3c7341c91b119a17d8afdc7206ad9fc991aa6"
+  integrity sha512-BT5JJygS5BS0oV+tffPRorIud6q17bM7v/1LdQwd0o6mTqGoI25yY1NjSL99OqkekWltS4uon6p52Y8j1Zqu7g==
+
 snake-case@^3.0.4:
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/snake-case/-/snake-case-3.0.4.tgz#4f2bbd568e9935abdfd593f34c691dadb49c452c"
