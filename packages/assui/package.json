@@ -1,6 +1,6 @@
 {
   "name": "assui",
-  "version": "3.2.57",
+  "version": "3.2.58",
   "description": "react ui library",
   "author": "jason <usochen@gmail.com>",
   "main": "./lib/index.js",
@@ -58,8 +58,8 @@
     "react-split-pane": "^0.1.92",
     "react-transition-group": "^4.4.2",
     "resize-observer-polyfill": "^1.5.1",
-    "tinymce": "^6.0.2",
-    "signature_pad": "^5.1.1"
+    "signature_pad": "^5.1.1",
+    "tinymce": "^6.0.2"
   },
   "peerDependencies": {
     "antd": "^4.23.1",
