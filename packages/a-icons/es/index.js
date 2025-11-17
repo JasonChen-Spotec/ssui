@@ -241,6 +241,7 @@ export { default as MediumVolumeOutlined } from './MediumVolumeOutlined';
 export { default as MenuListOutlined } from './MenuListOutlined';
 export { default as MessageSmileOutlined } from './MessageSmileOutlined';
 export { default as MessageSquareOutlined } from './MessageSquareOutlined';
+export { default as MessageTipOutlined } from './MessageTipOutlined';
 export { default as MinusSquareOutlined } from './MinusSquareOutlined';
 export { default as MoneySymbolFilled } from './MoneySymbolFilled';
 export { default as MoneySymbolOutlined } from './MoneySymbolOutlined';
