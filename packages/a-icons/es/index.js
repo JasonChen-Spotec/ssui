@@ -312,6 +312,7 @@ export { default as RefreshFilled } from './RefreshFilled';
 export { default as RefreshOutlined } from './RefreshOutlined';
 export { default as RefreshRightOutlined } from './RefreshRightOutlined';
 export { default as ResourceOutlined } from './ResourceOutlined';
+export { default as RetryFilled } from './RetryFilled';
 export { default as RetryRefreshFilled } from './RetryRefreshFilled';
 export { default as RingDotsFilled } from './RingDotsFilled';
 export { default as RiskControlFilled } from './RiskControlFilled';
