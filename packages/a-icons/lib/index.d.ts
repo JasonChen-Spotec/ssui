@@ -75,6 +75,7 @@ export { default as CirclePointsTriangleOutlined } from './CirclePointsTriangleO
 export { default as CircleRLetterOutlined } from './CircleRLetterOutlined';
 export { default as CircleStopFilled } from './CircleStopFilled';
 export { default as CircleThreeLinesOutlined } from './CircleThreeLinesOutlined';
+export { default as CircleThreeRectFilled } from './CircleThreeRectFilled';
 export { default as CirculationFilled } from './CirculationFilled';
 export { default as ClientOutlined } from './ClientOutlined';
 export { default as ClipboardOutlined } from './ClipboardOutlined';
