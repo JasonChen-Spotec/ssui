@@ -1,6 +1,7 @@
 export { default as DailyFinanceFilled } from './DailyFinanceFilled'
 export { default as ImpassabilityFilled } from './ImpassabilityFilled'
 export { default as AdFilled } from './AdFilled'
+export { default as AddChildOutlined } from './AddChildOutlined'
 export { default as AddFilled } from './AddFilled'
 export { default as AddMoneyFilled } from './AddMoneyFilled'
 export { default as AddOutlined } from './AddOutlined'
