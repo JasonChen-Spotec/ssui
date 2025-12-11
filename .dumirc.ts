@@ -25,6 +25,7 @@ export default defineConfig({
       { type: 'utils', dir: 'packages/aa-utils/src' },
       { type: 'ec-common', dir: 'packages/ec-common/src/consts' },
       { type: 'amssui', dir: 'packages/amssui/src' },
+      { type: 'aa-hooks', dir: 'packages/aa-hooks/src' },
     ],
   },
   alias: {
@@ -32,6 +33,7 @@ export default defineConfig({
     'assui': resolve(__dirname, 'packages/assui'),
     'a-icons': resolve(__dirname, 'packages/a-icons'),
     'amssui': resolve(__dirname, 'packages/amssui'),
+    'aa-hooks': resolve(__dirname, 'packages/aa-hooks'),
   },
   chainWebpack(memo, { env, webpack, createCSSRule }) {
     memo.module.rules.delete('svg');
@@ -96,6 +98,15 @@ export default defineConfig({
         camel2DashComponentName: false,
       },
       'aa-utils',
+    ],
+    [
+      'babel-plugin-import',
+      {
+        libraryName: 'aa-hooks',
+        style: false,
+        camel2DashComponentName: false,
+      },
+      'aa-hooks',
     ],
   ],
 });
