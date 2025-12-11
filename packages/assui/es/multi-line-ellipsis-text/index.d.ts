@@ -19,7 +19,7 @@ export interface MultiLineEllipsisTextProps {
     /** 省略的回调 */
     onEllipsisChange?: (isEllipsis: boolean) => void;
     /** 点击的回调 */
-    onClick?: () => void;
+    onClick?: (e: React.MouseEvent) => void;
 }
 declare const MultiLineEllipsisText: React.FC<MultiLineEllipsisTextProps>;
 export default MultiLineEllipsisText;
