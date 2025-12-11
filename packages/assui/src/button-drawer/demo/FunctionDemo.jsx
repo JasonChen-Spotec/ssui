@@ -11,7 +11,7 @@ const Demo = () => (
   <ButtonDrawer
     title="demo"
     footer={null}
-    onCancel={() => console.log('onCancel')}
+    onClose={() => console.log('onClose')}
     trigger={<span>open modal</span>}
   >
     {(drawerAction) => (

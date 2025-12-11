@@ -20,7 +20,7 @@ const Demo = () => {
       <ButtonDrawer
         title="demo"
         ref={drawerRef}
-        onCancel={() => console.log('onCancel')}
+        onClose={() => console.log('onClose')}
         trigger={<Button disabled> disabled </Button>}
       >
         <Content />
