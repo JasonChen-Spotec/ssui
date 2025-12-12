@@ -22,5 +22,6 @@
   },
   "resolutions": {
     "ahooks": "3.9.5"
-  }
+  },
+  "private": true
 }
