@@ -1,5 +1,12 @@
 {
-  "packages": ["packages/*", "!packages/aa-hooks"],
+  "packages": [
+    "packages/a-base-icon",
+    "packages/a-icons",
+    "packages/aa-utils",
+    "packages/amssui",
+    "packages/assui",
+    "packages/ec-common"
+  ],
   "npmClient": "yarn",
   "userWorkspaces": true,
   "command": {
