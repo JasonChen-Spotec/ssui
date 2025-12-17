@@ -1,5 +1,3 @@
-"use strict";
-
 var __assign = this && this.__assign || function () {
   __assign = Object.assign || function (t) {
     for (var s, i = 1, n = arguments.length; i < n; i++) {
@@ -46,26 +44,22 @@ var __read = this && this.__read || function (o, n) {
   }
   return ar;
 };
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.defaultProps = void 0;
-var lodash_1 = require("lodash");
-var react_1 = require("react");
-exports.defaultProps = Symbol('defaultProps');
-var useDrawer = function useDrawer(props) {
-  var _a = __read((0, react_1.useState)(false), 2),
+import { omit } from 'lodash';
+import { useCallback, useMemo, useRef, useState } from 'react';
+export var defaultProps = Symbol('defaultProps');
+var useModal = function useModal(props) {
+  var _a = __read(useState(false), 2),
     open = _a[0],
     setOpen = _a[1];
   var _b = props !== null && props !== void 0 ? props : {},
-    _c = exports.defaultProps,
+    _c = defaultProps,
     defaultParams = _b[_c],
     restState = __rest(_b, [typeof _c === "symbol" ? _c : _c + ""]);
-  var restProps = (0, react_1.useRef)(restState);
-  var closeDrawer = (0, react_1.useCallback)(function () {
+  var restProps = useRef(restState);
+  var closeModal = useCallback(function () {
     setOpen(false);
   }, []);
-  var openDrawer = (0, react_1.useCallback)(function (params) {
+  var openModal = useCallback(function (params) {
     if (params) {
       restProps.current = __assign(__assign({}, restState), params);
     } else {
@@ -73,20 +67,20 @@ var useDrawer = function useDrawer(props) {
     }
     setOpen(true);
   }, [restState]);
-  var actionRef = (0, react_1.useRef)({
+  var actionRef = useRef({
     close: function close() {
-      closeDrawer();
+      closeModal();
     },
     open: function open(params) {
-      openDrawer(params);
+      openModal(params);
     }
   });
-  var drawerProps = (0, react_1.useMemo)(function () {
+  var modalProps = useMemo(function () {
     var _a, _b, _c;
     var data = __assign(__assign({
       open: open,
-      onClose: closeDrawer
-    }, (0, lodash_1.omit)(defaultParams, 'renderChildren')), (0, lodash_1.omit)(restProps.current, 'renderChildren'));
+      onCancel: closeModal
+    }, omit(defaultParams, 'renderChildren')), omit(restProps.current, 'renderChildren'));
     if (defaultParams && 'renderChildren' in defaultParams) {
       data.children = (_a = defaultParams.renderChildren) === null || _a === void 0 ? void 0 : _a.call(defaultParams, actionRef.current);
     }
@@ -94,7 +88,7 @@ var useDrawer = function useDrawer(props) {
       data.children = (_c = (_b = restProps.current).renderChildren) === null || _c === void 0 ? void 0 : _c.call(_b, actionRef.current);
     }
     return data;
-  }, [closeDrawer, defaultParams, open, restProps]);
-  return [drawerProps, actionRef.current];
+  }, [closeModal, defaultParams, open, restProps]);
+  return [modalProps, actionRef.current];
 };
-exports["default"] = useDrawer;
+export default useModal;

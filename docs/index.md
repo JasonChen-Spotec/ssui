@@ -13,6 +13,7 @@ hero:
 2. utils 是一个js工具方法集合，无框架依赖，可以用react， vue或者其他框架项目
 3. icons 是一个基于svg的icon库
 4. amssui 是一个react library 主要是用于移动端。
+5. aa-hooks是一个react library,作为ahooks的补充，里面有antd组件的hook调用方式等
 
 
 ## 轻松上手
@@ -25,6 +26,9 @@ npm i aa-utils --save
 ```
 ```bash
 npm i a-icons --save
+```
+```bash
+npm i aa-hooks --save
 ```
 
 > 推荐使用 babel-plugin-import

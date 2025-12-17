@@ -44,52 +44,51 @@ var __read = this && this.__read || function (o, n) {
   }
   return ar;
 };
-import classNames from 'classnames';
-import { useRef, useState } from 'react';
-export var useDrawer = function useDrawer(props) {
+import { omit } from 'lodash';
+import { useCallback, useMemo, useRef, useState } from 'react';
+export var defaultProps = Symbol('defaultProps');
+var useDrawer = function useDrawer(props) {
   var _a = __read(useState(false), 2),
     open = _a[0],
     setOpen = _a[1];
   var _b = props !== null && props !== void 0 ? props : {},
-    onBeforeOpen = _b.onBeforeOpen,
-    onBeforeClose = _b.onBeforeClose,
-    renderChildren = _b.renderChildren,
-    restProps = __rest(_b, ["onBeforeOpen", "onBeforeClose", "renderChildren"]);
-  var closeDrawer = function closeDrawer() {
-    if (onBeforeClose) {
-      onBeforeClose();
-    }
+    _c = defaultProps,
+    defaultParams = _b[_c],
+    restState = __rest(_b, [typeof _c === "symbol" ? _c : _c + ""]);
+  var restProps = useRef(restState);
+  var closeDrawer = useCallback(function () {
     setOpen(false);
-  };
-  var openDrawer = function openDrawer() {
-    if (onBeforeOpen) {
-      onBeforeOpen();
+  }, []);
+  var openDrawer = useCallback(function (params) {
+    if (params) {
+      restProps.current = __assign(__assign({}, restState), params);
+    } else {
+      restProps.current = restState;
     }
     setOpen(true);
-  };
+  }, [restState]);
   var actionRef = useRef({
     close: function close() {
       closeDrawer();
     },
-    open: function open() {
-      openDrawer();
+    open: function open(params) {
+      openDrawer(params);
     }
   });
-  var drawerProps = __assign({
-    open: open,
-    onClose: closeDrawer
-  }, restProps);
-  if (renderChildren) {
-    drawerProps.children = renderChildren(actionRef.current);
-  }
+  var drawerProps = useMemo(function () {
+    var _a, _b, _c;
+    var data = __assign(__assign({
+      open: open,
+      onClose: closeDrawer
+    }, omit(defaultParams, 'renderChildren')), omit(restProps.current, 'renderChildren'));
+    if (defaultParams && 'renderChildren' in defaultParams) {
+      data.children = (_a = defaultParams.renderChildren) === null || _a === void 0 ? void 0 : _a.call(defaultParams, actionRef.current);
+    }
+    if ('renderChildren' in restProps.current) {
+      data.children = (_c = (_b = restProps.current).renderChildren) === null || _c === void 0 ? void 0 : _c.call(_b, actionRef.current);
+    }
+    return data;
+  }, [closeDrawer, defaultParams, open, restProps]);
   return [drawerProps, actionRef.current];
 };
-// eslint-disable-next-line max-len
-export var generateUseDrawer = function generateUseDrawer(defaultProps) {
-  return function useDrawerFunc(newProps) {
-    var props = __assign(__assign(__assign({}, defaultProps), newProps), {
-      className: classNames(defaultProps.className, newProps === null || newProps === void 0 ? void 0 : newProps.className)
-    });
-    return useDrawer(props);
-  };
-};
+export default useDrawer;
