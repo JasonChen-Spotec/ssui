@@ -4,11 +4,19 @@ export type DrawerAction = {
     close: () => void;
     open: () => void;
 };
-export interface ButtonDrawerProps extends Omit<DrawerProps, 'children'> {
-    onClose?: () => void;
+type ControlledProps = {
+    open: boolean;
     onOpen?: () => void;
-    trigger: React.ReactElement;
+    onClose: () => void;
+};
+type UncontrolledProps = {
+    onOpen?: () => void;
+    onClose?: () => void;
+};
+export interface BaseButtonDrawerProps extends Omit<DrawerProps, 'children'> {
+    trigger?: ((fun: () => void) => React.ReactElement) | React.ReactElement;
     children: ((v: DrawerAction) => React.ReactElement) | React.ReactElement;
 }
-declare const ForwardRefButtonDrawer: React.ForwardRefExoticComponent<ButtonDrawerProps & React.RefAttributes<unknown>>;
-export default ForwardRefButtonDrawer;
+export type ButtonDrawerProps = (BaseButtonDrawerProps & ControlledProps) | (BaseButtonDrawerProps & UncontrolledProps);
+declare const ButtonDrawer: (props: ButtonDrawerProps) => JSX.Element;
+export default ButtonDrawer;

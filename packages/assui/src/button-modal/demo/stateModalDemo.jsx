@@ -1,30 +1,33 @@
 import React, { useRef } from 'react';
 import { Button } from 'antd';
 import { ButtonModal } from 'assui';
+import { useBoolean } from 'ahooks';
 
 const Content = ({ modalAction }) => {
+
+  console.log(modalAction, 'modalAction');
   return (
     <div>
-      这是弹框内容
+      这是弹框内容122
       <Button type="primary" onClick={() => modalAction.close()}>
-        点击这里关闭弹框
+        点击这里关闭弹框1
       </Button>
     </div>
   );
 };
 
 const Demo = () => {
-  const modalRef = useRef();
-  console.log('23', modalRef);
+  const [state, { setTrue, setFalse }] = useBoolean(false);
   return (
     <div>
-      <span onClick={() => modalRef.current.open()}>Ref打开</span>
+      <span onClick={setTrue}>state打开</span>
 
       <ButtonModal
         title="demo"
-        ref={modalRef}
-        onCancel={() => console.log('onCancel')}
-        onOk={() => modalRef.current.close()}
+        onClose={setFalse}
+        onOk={setFalse}
+        onOpen={setTrue}
+        open={state}
         trigger={<Button disabled> disabled </Button>}
       >
         <Content />

@@ -42,10 +42,8 @@ import * as React from 'react';
 import isFunction from 'lodash/isFunction';
 import Modal from "antd/es/modal";
 import CloseOutlined from "a-icons/es/CloseOutlined";
-var ButtonModal = function ButtonModal(props, ref) {
-  var _a = __read(React.useState(false), 2),
-    visible = _a[0],
-    setModalVisible = _a[1];
+import { useControllableValue } from 'ahooks';
+var ButtonModal = function ButtonModal(props) {
   var children = props.children,
     trigger = props.trigger,
     onOpen = props.onOpen,
@@ -53,6 +51,11 @@ var ButtonModal = function ButtonModal(props, ref) {
     onOk = props.onOk,
     onCancel = props.onCancel,
     restModalProps = __rest(props, ["children", "trigger", "onOpen", "onClose", "onOk", "onCancel"]);
+  var _a = __read(useControllableValue(props, {
+      valuePropName: 'open'
+    }), 2),
+    visible = _a[0],
+    setModalVisible = _a[1];
   var openModal = function openModal() {
     setModalVisible(true);
     onOpen === null || onOpen === void 0 ? void 0 : onOpen();
@@ -65,26 +68,23 @@ var ButtonModal = function ButtonModal(props, ref) {
     open: openModal,
     close: closeModal
   });
-  React.useImperativeHandle(ref, function () {
-    return modalActionRef.current;
-  });
   var handleModalOk = function handleModalOk(e) {
-    if (onOk) {
-      return onOk(e);
-    }
+    onOk === null || onOk === void 0 ? void 0 : onOk(e);
     closeModal();
-    return null;
   };
   var handleModalCancel = function handleModalCancel(e) {
-    if (onCancel) {
-      onCancel(e);
-    }
+    onCancel === null || onCancel === void 0 ? void 0 : onCancel(e);
     closeModal();
   };
-  var buttonNode = trigger && /*#__PURE__*/React.cloneElement(trigger, {
-    onClick: openModal
-  });
-  return /*#__PURE__*/React.createElement(React.Fragment, null, buttonNode, /*#__PURE__*/React.createElement(Modal, __assign({
+  var triggerNode;
+  if (isFunction(trigger)) {
+    triggerNode = trigger(openModal);
+  } else {
+    triggerNode = trigger && /*#__PURE__*/React.cloneElement(trigger, {
+      onClick: openModal
+    });
+  }
+  return /*#__PURE__*/React.createElement(React.Fragment, null, triggerNode, /*#__PURE__*/React.createElement(Modal, __assign({
     open: visible,
     onOk: handleModalOk,
     onCancel: handleModalCancel,
@@ -95,5 +95,4 @@ var ButtonModal = function ButtonModal(props, ref) {
     modalAction: modalActionRef.current
   })));
 };
-var ForwardRefButtonModal = /*#__PURE__*/React.forwardRef(ButtonModal);
-export default ForwardRefButtonModal;
+export default ButtonModal;

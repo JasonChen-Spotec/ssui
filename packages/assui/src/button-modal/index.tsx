@@ -3,25 +3,39 @@ import isFunction from 'lodash/isFunction';
 import type { ModalProps } from 'antd/lib/modal';
 import Modal from 'antd/lib/modal';
 import CloseOutlined from 'a-icons/lib/CloseOutlined';
+import { useControllableValue } from 'ahooks';
 
 export interface ModalAction {
   open: () => void;
   close: () => void;
 }
 
-export interface ButtonModalProps extends Omit<ModalProps, 'children'> {
-  onClose?: () => void;
+type ControlledProps = {
+  open: boolean;
   onOpen?: () => void;
-  trigger?: React.ReactElement;
+  onClose: () => void;
+};
+
+type UncontrolledProps = {
+  onOpen?: () => void;
+  onClose?: () => void;
+};
+
+export interface BaseButtonModalProps
+  extends Omit<ModalProps, 'children'> {
+  trigger?: ((fun: () => void) => React.ReactElement) | React.ReactElement;
   children: ((v: ModalAction) => React.ReactElement) | React.ReactElement;
 }
 
-const ButtonModal: React.ForwardRefRenderFunction<unknown, ButtonModalProps> = (
-  props,
-  ref,
-) => {
-  const [visible, setModalVisible] = React.useState(false);
-  const { children, trigger, onOpen, onClose, onOk, onCancel, ...restModalProps } = props;
+export type ButtonModalProps =
+  | (BaseButtonModalProps & ControlledProps)
+  | (BaseButtonModalProps & UncontrolledProps);
+
+const ButtonModal = (props: ButtonModalProps) => {
+  const {
+    children, trigger, onOpen, onClose, onOk, onCancel, ...restModalProps
+  } = props;
+  const [visible, setModalVisible] = useControllableValue(props, { valuePropName: 'open' });
 
   const openModal = () => {
     setModalVisible(true);
@@ -38,34 +52,30 @@ const ButtonModal: React.ForwardRefRenderFunction<unknown, ButtonModalProps> = (
     close: closeModal,
   });
 
-  React.useImperativeHandle(ref, () => modalActionRef.current);
-
   const handleModalOk = (e: React.MouseEvent<HTMLElement>) => {
-    if (onOk) {
-      return onOk(e);
-    }
-
+    onOk?.(e);
     closeModal();
-
-    return null;
   };
 
   const handleModalCancel = (e: React.MouseEvent<HTMLElement>) => {
-    if (onCancel) {
-      onCancel(e);
-    }
-
+    onCancel?.(e);
     closeModal();
   };
 
-  const buttonNode =
-    trigger &&
-    React.cloneElement(trigger, {
-      onClick: openModal,
-    });
+  let triggerNode;
+  if (isFunction(trigger)) {
+    triggerNode = trigger(openModal)
+  } else {
+    triggerNode = trigger &&
+      React.cloneElement(trigger, {
+        onClick: openModal,
+      });
+  }
+
+
   return (
     <>
-      {buttonNode}
+      {triggerNode}
       <Modal
         open={visible}
         onOk={handleModalOk}
@@ -83,6 +93,4 @@ const ButtonModal: React.ForwardRefRenderFunction<unknown, ButtonModalProps> = (
   );
 };
 
-const ForwardRefButtonModal = React.forwardRef<unknown, ButtonModalProps>(ButtonModal);
-
-export default ForwardRefButtonModal;
+export default ButtonModal;
