@@ -19,7 +19,7 @@ group:
 
 <code hideActions='["CSB", "EXTERNAL"]' src="./demo/index.jsx" ></code>
 
-### 1.1. Ref打开关闭
+### 1.1. state打开关闭
 
 <code hideActions='["CSB", "EXTERNAL"]' src="./demo/stateDrawerDemo.jsx" ></code>
 

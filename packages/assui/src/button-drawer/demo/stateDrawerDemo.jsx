@@ -23,9 +23,13 @@ const Demo = () => {
         title="demo"
         onClose={setFalse}
         open={state}
-        trigger={<Button disabled> disabled </Button>}
+        trigger={
+          (openDrawer)=> <Button disabled onClick={openDrawer}> disabled </Button>
+        }
       >
-        <Content />
+        {
+          (drawerAction)=> <Content  drawerAction={drawerAction} />
+        }
       </ButtonDrawer>
     </div>
   );

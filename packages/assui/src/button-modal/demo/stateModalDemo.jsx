@@ -28,9 +28,13 @@ const Demo = () => {
         onOk={setFalse}
         onOpen={setTrue}
         open={state}
-        trigger={<Button disabled> disabled </Button>}
+        trigger={
+            (openModal)=> <Button disabled onClick={openModal}> disabled </Button>
+          }
       >
-        <Content />
+        {
+          (modalAction)=> <Content  modalAction={modalAction} />
+        }
       </ButtonModal>
     </div>
   );

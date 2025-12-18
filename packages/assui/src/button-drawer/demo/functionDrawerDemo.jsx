@@ -12,7 +12,9 @@ const Demo = () => (
     title="demo"
     footer={null}
     onClose={() => console.log('onClose')}
-    trigger={<span>open modal</span>}
+    trigger={
+      (openDrawer)=> <span onClick={openDrawer}>open modal</span>
+    }
   >
     {(drawerAction) => (
       <div>

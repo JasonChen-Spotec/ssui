@@ -12,7 +12,9 @@ const Demo = () => (
     title="demo"
     footer={null}
     onCancel={() => console.log('onCancel')}
-    trigger={<span>open modal2</span>}
+    trigger={
+      (openModal)=><span onClick={openModal}>open modal</span>
+    }
   >
     {(modalAction) => (
       <div>
