@@ -1,7 +1,7 @@
 import React from 'react';
 import { RcSplitView } from 'assui';
 
-import styles from './index.less';
+import styles from './index.modules.less';
 
 const demo1 = () => {
   const minSize = 50;

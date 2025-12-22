@@ -15,10 +15,10 @@ group:
 ## 1. 代码演示
 ### 1.1. 基础使用
 
-<code hideActions='["CSB", "EXTERNAL"]' src="./demo/Demo1.tsx" />
+<code hideActions='["CSB", "EXTERNAL"]' src="./demo/Demo1.tsx" ></code>
 
 ### 1.2. 多窗口水平分割
 
-<code hideActions='["CSB", "EXTERNAL"]' src="./demo/Demo2.tsx" />
+<code hideActions='["CSB", "EXTERNAL"]' src="./demo/Demo2.tsx" ></code>
 
 <API></API>
