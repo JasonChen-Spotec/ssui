@@ -22,9 +22,13 @@ export default () => (
       title="demo"
       footer={null}
       onClose={() => console.log('onClose')}
-      trigger={<span>open modal</span>}
+      trigger={
+          (openDrawer)=><span onClick={openDrawer}>open drawer</span>
+      }
     >
-      <Content />
+        {
+          (drawerAction)=> <Content  drawerAction={drawerAction} />
+        }
     </ButtonDrawer>
   </div>
 );

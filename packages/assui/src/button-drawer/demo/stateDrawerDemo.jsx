@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
 import { Button } from 'antd';
 import { ButtonDrawer } from 'assui';
+import { useBoolean } from 'ahooks';
 
 const Content = ({ drawerAction }) => (
   <div>
@@ -12,18 +13,23 @@ const Content = ({ drawerAction }) => (
 );
 
 const Demo = () => {
-  const drawerRef = useRef();
+    const [state, { setTrue, setFalse }] = useBoolean(false);
+
   return (
     <div>
-      <span onClick={() => drawerRef.current.open()}>Ref打开</span>
+      <span onClick={setTrue}>state打开</span>
 
       <ButtonDrawer
         title="demo"
-        ref={drawerRef}
-        onClose={() => console.log('onClose')}
-        trigger={<Button disabled> disabled </Button>}
+        onClose={setFalse}
+        open={state}
+        trigger={
+          (openDrawer)=> <Button disabled onClick={openDrawer}> disabled </Button>
+        }
       >
-        <Content />
+        {
+          (drawerAction)=> <Content  drawerAction={drawerAction} />
+        }
       </ButtonDrawer>
     </div>
   );
