@@ -38,13 +38,19 @@ var __read = this && this.__read || function (o, n) {
   }
   return ar;
 };
-import React, { useRef } from 'react';
+import React, { useRef, useImperativeHandle } from 'react';
 import Drawer from "antd/es/drawer";
 import isFunction from 'lodash/isFunction';
 import classNames from 'classnames';
 import CloseOutlined from "a-icons/es/CloseOutlined";
 import { useControllableValue } from 'ahooks';
-var ButtonDrawer = function ButtonDrawer(props) {
+var ButtonDrawer = function ButtonDrawer(props, ref) {
+  var _a = __read(useControllableValue(props, {
+      valuePropName: 'open',
+      defaultValue: false
+    }), 2),
+    drawerVisible = _a[0],
+    setDrawerVisible = _a[1];
   var children = props.children,
     onOpen = props.onOpen,
     onClose = props.onClose,
@@ -52,26 +58,20 @@ var ButtonDrawer = function ButtonDrawer(props) {
     title = props.title,
     className = props.className,
     restProps = __rest(props, ["children", "onOpen", "onClose", "trigger", "title", "className"]);
-  var _a = __read(useControllableValue(props, {
-      valuePropName: 'open'
-    }), 2),
-    drawerVisible = _a[0],
-    setDrawerVisible = _a[1];
   var closeDrawer = function closeDrawer() {
-    onClose === null || onClose === void 0 ? void 0 : onClose();
     setDrawerVisible(false);
+    onClose === null || onClose === void 0 ? void 0 : onClose();
   };
   var openDrawer = function openDrawer() {
-    onOpen === null || onOpen === void 0 ? void 0 : onOpen();
     setDrawerVisible(true);
+    onOpen === null || onOpen === void 0 ? void 0 : onOpen();
   };
   var actionRef = useRef({
-    close: function close() {
-      closeDrawer();
-    },
-    open: function open() {
-      openDrawer();
-    }
+    open: openDrawer,
+    close: closeDrawer
+  });
+  useImperativeHandle(ref, function () {
+    return actionRef.current;
   });
   var triggerNode;
   if (isFunction(trigger)) {
@@ -92,4 +92,5 @@ var ButtonDrawer = function ButtonDrawer(props) {
     drawerAction: actionRef.current
   })));
 };
-export default ButtonDrawer;
+var ForwardRefButtonDrawer = /*#__PURE__*/React.forwardRef(ButtonDrawer);
+export default ForwardRefButtonDrawer;

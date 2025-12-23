@@ -43,7 +43,13 @@ import isFunction from 'lodash/isFunction';
 import Modal from "antd/es/modal";
 import CloseOutlined from "a-icons/es/CloseOutlined";
 import { useControllableValue } from 'ahooks';
-var ButtonModal = function ButtonModal(props) {
+var ButtonModal = function ButtonModal(props, ref) {
+  var _a = __read(useControllableValue(props, {
+      valuePropName: 'open',
+      defaultValue: false
+    }), 2),
+    visible = _a[0],
+    setModalVisible = _a[1];
   var children = props.children,
     trigger = props.trigger,
     onOpen = props.onOpen,
@@ -51,11 +57,6 @@ var ButtonModal = function ButtonModal(props) {
     onOk = props.onOk,
     onCancel = props.onCancel,
     restModalProps = __rest(props, ["children", "trigger", "onOpen", "onClose", "onOk", "onCancel"]);
-  var _a = __read(useControllableValue(props, {
-      valuePropName: 'open'
-    }), 2),
-    visible = _a[0],
-    setModalVisible = _a[1];
   var openModal = function openModal() {
     setModalVisible(true);
     onOpen === null || onOpen === void 0 ? void 0 : onOpen();
@@ -67,6 +68,9 @@ var ButtonModal = function ButtonModal(props) {
   var modalActionRef = React.useRef({
     open: openModal,
     close: closeModal
+  });
+  React.useImperativeHandle(ref, function () {
+    return modalActionRef.current;
   });
   var handleModalOk = function handleModalOk(e) {
     onOk === null || onOk === void 0 ? void 0 : onOk(e);
@@ -95,4 +99,5 @@ var ButtonModal = function ButtonModal(props) {
     modalAction: modalActionRef.current
   })));
 };
-export default ButtonModal;
+var ForwardRefButtonModal = /*#__PURE__*/React.forwardRef(ButtonModal);
+export default ForwardRefButtonModal;

@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useImperativeHandle } from 'react';
 import type { DrawerProps } from 'antd/lib/drawer';
 import Drawer from 'antd/lib/drawer';
 import isFunction from 'lodash/isFunction';
@@ -10,53 +10,39 @@ export type DrawerAction = {
   close: () => void;
   open: () => void;
 };
-
-type ControlledProps = {
-  open: boolean;
-  onOpen?: () => void;
-  onClose: () => void;
-};
-
-type UncontrolledProps = {
-  onOpen?: () => void;
+export interface ButtonDrawerProps extends Omit<DrawerProps, 'children'> {
   onClose?: () => void;
-};
-
-export interface BaseButtonDrawerProps
-  extends Omit<DrawerProps, 'children'> {
+  onOpen?: () => void;
   trigger?: ((fun: () => void) => React.ReactElement) | React.ReactElement;
   children: ((v: DrawerAction) => React.ReactElement) | React.ReactElement;
 }
 
-export type ButtonDrawerProps =
-  | (BaseButtonDrawerProps & ControlledProps)
-  | (BaseButtonDrawerProps & UncontrolledProps);
-
-
-const ButtonDrawer = (
-  props: ButtonDrawerProps
+const ButtonDrawer: React.ForwardRefRenderFunction<DrawerAction, ButtonDrawerProps> = (
+  props,
+  ref,
 ) => {
+  const [drawerVisible, setDrawerVisible] = useControllableValue(props, {
+    valuePropName: 'open',
+    defaultValue: false,
+  });
   const { children, onOpen, onClose, trigger, title, className, ...restProps } = props;
-  const [drawerVisible, setDrawerVisible] = useControllableValue(props, { valuePropName: 'open' });
 
   const closeDrawer = () => {
-    onClose?.();
     setDrawerVisible(false);
+    onClose?.();
   };
 
   const openDrawer = () => {
-    onOpen?.();
     setDrawerVisible(true);
+    onOpen?.();
   };
 
   const actionRef = useRef<DrawerAction>({
-    close() {
-      closeDrawer();
-    },
-    open() {
-      openDrawer();
-    },
+    open: openDrawer,
+    close: closeDrawer,
   });
+
+  useImperativeHandle(ref, () => actionRef.current);
 
 
   let triggerNode;
@@ -89,5 +75,6 @@ const ButtonDrawer = (
   );
 };
 
+const ForwardRefButtonDrawer = React.forwardRef<DrawerAction, ButtonDrawerProps>(ButtonDrawer);
 
-export default ButtonDrawer;
+export default ForwardRefButtonDrawer;

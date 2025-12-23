@@ -10,32 +10,23 @@ export interface ModalAction {
   close: () => void;
 }
 
-type ControlledProps = {
-  open: boolean;
-  onOpen?: () => void;
-  onClose: () => void;
-};
-
-type UncontrolledProps = {
-  onOpen?: () => void;
+export interface ButtonModalProps extends Omit<ModalProps, 'children'> {
   onClose?: () => void;
-};
-
-export interface BaseButtonModalProps
-  extends Omit<ModalProps, 'children'> {
+  onOpen?: () => void;
   trigger?: ((fun: () => void) => React.ReactElement) | React.ReactElement;
   children: ((v: ModalAction) => React.ReactElement) | React.ReactElement;
 }
 
-export type ButtonModalProps =
-  | (BaseButtonModalProps & ControlledProps)
-  | (BaseButtonModalProps & UncontrolledProps);
+const ButtonModal: React.ForwardRefRenderFunction<ModalAction, ButtonModalProps> = (
+  props,
+  ref,
+) => {
+  const [visible, setModalVisible] = useControllableValue(props, {
+    valuePropName: 'open',
+    defaultValue: false,
+  });
 
-const ButtonModal = (props: ButtonModalProps) => {
-  const {
-    children, trigger, onOpen, onClose, onOk, onCancel, ...restModalProps
-  } = props;
-  const [visible, setModalVisible] = useControllableValue(props, { valuePropName: 'open' });
+  const { children, trigger, onOpen, onClose, onOk, onCancel, ...restModalProps } = props;
 
   const openModal = () => {
     setModalVisible(true);
@@ -51,6 +42,8 @@ const ButtonModal = (props: ButtonModalProps) => {
     open: openModal,
     close: closeModal,
   });
+
+  React.useImperativeHandle(ref, () => modalActionRef.current);
 
   const handleModalOk = (e: React.MouseEvent<HTMLElement>) => {
     onOk?.(e);
@@ -93,4 +86,6 @@ const ButtonModal = (props: ButtonModalProps) => {
   );
 };
 
-export default ButtonModal;
+const ForwardRefButtonModal = React.forwardRef<ModalAction, ButtonModalProps>(ButtonModal);
+
+export default ForwardRefButtonModal;

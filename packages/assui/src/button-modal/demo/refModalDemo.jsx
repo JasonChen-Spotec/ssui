@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
-import { Button } from 'react-vant';
-import { ButtonModal } from 'amssui';
+import { Button } from 'antd';
+import { ButtonModal } from 'assui';
 
 const Content = ({ modalAction }) => {
   return (
@@ -25,9 +25,13 @@ const Demo = () => {
         ref={modalRef}
         onCancel={() => console.log('onCancel')}
         onOk={() => modalRef.current.close()}
-        trigger={<Button disabled> disabled </Button>}
-      >
-        <Content />
+        trigger={
+              (openModal)=> <Button disabled onClick={openModal}> disabled </Button>
+            }
+        >
+       {
+          (modalAction)=> <Content  modalAction={modalAction} />
+        }
       </ButtonModal>
     </div>
   );

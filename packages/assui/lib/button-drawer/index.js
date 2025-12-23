@@ -85,7 +85,13 @@ var isFunction_1 = __importDefault(require("lodash/isFunction"));
 var classnames_1 = __importDefault(require("classnames"));
 var CloseOutlined_1 = __importDefault(require("a-icons/lib/CloseOutlined"));
 var ahooks_1 = require("ahooks");
-var ButtonDrawer = function ButtonDrawer(props) {
+var ButtonDrawer = function ButtonDrawer(props, ref) {
+  var _a = __read((0, ahooks_1.useControllableValue)(props, {
+      valuePropName: 'open',
+      defaultValue: false
+    }), 2),
+    drawerVisible = _a[0],
+    setDrawerVisible = _a[1];
   var children = props.children,
     onOpen = props.onOpen,
     onClose = props.onClose,
@@ -93,26 +99,20 @@ var ButtonDrawer = function ButtonDrawer(props) {
     title = props.title,
     className = props.className,
     restProps = __rest(props, ["children", "onOpen", "onClose", "trigger", "title", "className"]);
-  var _a = __read((0, ahooks_1.useControllableValue)(props, {
-      valuePropName: 'open'
-    }), 2),
-    drawerVisible = _a[0],
-    setDrawerVisible = _a[1];
   var closeDrawer = function closeDrawer() {
-    onClose === null || onClose === void 0 ? void 0 : onClose();
     setDrawerVisible(false);
+    onClose === null || onClose === void 0 ? void 0 : onClose();
   };
   var openDrawer = function openDrawer() {
-    onOpen === null || onOpen === void 0 ? void 0 : onOpen();
     setDrawerVisible(true);
+    onOpen === null || onOpen === void 0 ? void 0 : onOpen();
   };
   var actionRef = (0, react_1.useRef)({
-    close: function close() {
-      closeDrawer();
-    },
-    open: function open() {
-      openDrawer();
-    }
+    open: openDrawer,
+    close: closeDrawer
+  });
+  (0, react_1.useImperativeHandle)(ref, function () {
+    return actionRef.current;
   });
   var triggerNode;
   if ((0, isFunction_1["default"])(trigger)) {
@@ -133,4 +133,5 @@ var ButtonDrawer = function ButtonDrawer(props) {
     drawerAction: actionRef.current
   })));
 };
-exports["default"] = ButtonDrawer;
+var ForwardRefButtonDrawer = react_1["default"].forwardRef(ButtonDrawer);
+exports["default"] = ForwardRefButtonDrawer;
