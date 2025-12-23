@@ -93,7 +93,4 @@ var ButtonDrawer = function ButtonDrawer(props, ref) {
   })));
 };
 var ForwardRefButtonDrawer = /*#__PURE__*/React.forwardRef(ButtonDrawer);
-/**
- * @deprecated 请改用受控方式（open / onOpen / onClose），不再推荐使用 ref
- */
 export default ForwardRefButtonDrawer;

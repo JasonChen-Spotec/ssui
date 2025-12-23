@@ -100,7 +100,4 @@ var ButtonModal = function ButtonModal(props, ref) {
   })));
 };
 var ForwardRefButtonModal = /*#__PURE__*/React.forwardRef(ButtonModal);
-/**
- * @deprecated 请改用受控方式（open / onOpen / onClose），不再推荐使用 ref
- */
 export default ForwardRefButtonModal;

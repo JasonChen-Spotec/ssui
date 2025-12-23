@@ -88,7 +88,4 @@ const ButtonModal: React.ForwardRefRenderFunction<ModalAction, ButtonModalProps>
 
 const ForwardRefButtonModal = React.forwardRef<ModalAction, ButtonModalProps>(ButtonModal);
 
-/**
- * @deprecated 请改用受控方式（open / onOpen / onClose），不再推荐使用 ref
- */
 export default ForwardRefButtonModal;

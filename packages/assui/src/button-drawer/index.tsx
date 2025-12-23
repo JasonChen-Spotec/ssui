@@ -77,7 +77,4 @@ const ButtonDrawer: React.ForwardRefRenderFunction<DrawerAction, ButtonDrawerPro
 
 const ForwardRefButtonDrawer = React.forwardRef<DrawerAction, ButtonDrawerProps>(ButtonDrawer);
 
-/**
- * @deprecated 请改用受控方式（open / onOpen / onClose），不再推荐使用 ref
- */
 export default ForwardRefButtonDrawer;

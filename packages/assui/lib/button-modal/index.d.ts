@@ -11,7 +11,4 @@ export interface ButtonModalProps extends Omit<ModalProps, 'children'> {
     children: ((v: ModalAction) => React.ReactElement) | React.ReactElement;
 }
 declare const ForwardRefButtonModal: React.ForwardRefExoticComponent<ButtonModalProps & React.RefAttributes<ModalAction>>;
-/**
- * @deprecated 请改用受控方式（open / onOpen / onClose），不再推荐使用 ref
- */
 export default ForwardRefButtonModal;

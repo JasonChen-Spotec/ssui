@@ -11,7 +11,4 @@ export interface ButtonDrawerProps extends Omit<DrawerProps, 'children'> {
     children: ((v: DrawerAction) => React.ReactElement) | React.ReactElement;
 }
 declare const ForwardRefButtonDrawer: React.ForwardRefExoticComponent<ButtonDrawerProps & React.RefAttributes<DrawerAction>>;
-/**
- * @deprecated 请改用受控方式（open / onOpen / onClose），不再推荐使用 ref
- */
 export default ForwardRefButtonDrawer;
