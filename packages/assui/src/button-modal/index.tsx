@@ -27,19 +27,14 @@ const ButtonModal: React.ForwardRefRenderFunction<ModalAction, ButtonModalProps>
   });
 
   const { children, trigger, onOpen, onClose, onOk, onCancel, ...restModalProps } = props;
-  const isControl = 'open' in props;
 
   const openModal = () => {
-    if (!isControl) {
-      setModalVisible(true);
-    }
+    setModalVisible(true);
     onOpen?.();
   };
 
   const closeModal = () => {
-    if (!isControl) {
-      setModalVisible(false);
-    }
+    setModalVisible(false);
     onClose?.();
   };
 
@@ -66,10 +61,7 @@ const ButtonModal: React.ForwardRefRenderFunction<ModalAction, ButtonModalProps>
   } else {
     triggerNode = trigger &&
       React.cloneElement(trigger, {
-        onClick: (e: React.MouseEvent) => {
-          trigger.props.onClick?.(e);
-          openModal();
-        },
+        onClick: openModal,
       });
   }
 

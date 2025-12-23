@@ -21,22 +21,19 @@ const ButtonDrawer: React.ForwardRefRenderFunction<DrawerAction, ButtonDrawerPro
   props,
   ref,
 ) => {
-  const [drawerVisible, setDrawerVisible] = useControllableValue(props, { valuePropName: 'open' });
+  const [drawerVisible, setDrawerVisible] = useControllableValue(props, {
+    valuePropName: 'open',
+    defaultValue: false,
+  });
   const { children, onOpen, onClose, trigger, title, className, ...restProps } = props;
 
-  const isControl = 'open' in props;
-
   const closeDrawer = () => {
-    if (!isControl) {
-      setDrawerVisible(false);
-    }
+    setDrawerVisible(false);
     onClose?.();
   };
 
   const openDrawer = () => {
-    if (!isControl) {
-      setDrawerVisible(true);
-    }
+    setDrawerVisible(true);
     onOpen?.();
   };
 
@@ -54,10 +51,7 @@ const ButtonDrawer: React.ForwardRefRenderFunction<DrawerAction, ButtonDrawerPro
   } else {
     triggerNode = trigger &&
       React.cloneElement(trigger, {
-        onClick: (e: React.MouseEvent) => {
-          trigger.props.onClick?.(e);
-          openDrawer();
-        },
+        onClick: openDrawer,
       });
   }
 
@@ -83,4 +77,4 @@ const ButtonDrawer: React.ForwardRefRenderFunction<DrawerAction, ButtonDrawerPro
 
 const ForwardRefButtonDrawer = React.forwardRef<DrawerAction, ButtonDrawerProps>(ButtonDrawer);
 
-export default ForwardRefButtonDrawer;
+
