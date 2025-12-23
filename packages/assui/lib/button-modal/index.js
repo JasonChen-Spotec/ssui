@@ -98,17 +98,12 @@ var ButtonModal = function ButtonModal(props, ref) {
     onOk = props.onOk,
     onCancel = props.onCancel,
     restModalProps = __rest(props, ["children", "trigger", "onOpen", "onClose", "onOk", "onCancel"]);
-  var isControl = ('open' in props);
   var openModal = function openModal() {
-    if (!isControl) {
-      setModalVisible(true);
-    }
+    setModalVisible(true);
     onOpen === null || onOpen === void 0 ? void 0 : onOpen();
   };
   var closeModal = function closeModal() {
-    if (!isControl) {
-      setModalVisible(false);
-    }
+    setModalVisible(false);
     onClose === null || onClose === void 0 ? void 0 : onClose();
   };
   var modalActionRef = React.useRef({
@@ -131,11 +126,7 @@ var ButtonModal = function ButtonModal(props, ref) {
     triggerNode = trigger(openModal);
   } else {
     triggerNode = trigger && React.cloneElement(trigger, {
-      onClick: function onClick(e) {
-        var _a, _b;
-        (_b = (_a = trigger.props).onClick) === null || _b === void 0 ? void 0 : _b.call(_a, e);
-        openModal();
-      }
+      onClick: openModal
     });
   }
   return React.createElement(React.Fragment, null, triggerNode, React.createElement(modal_1["default"], __assign({
@@ -150,4 +141,7 @@ var ButtonModal = function ButtonModal(props, ref) {
   })));
 };
 var ForwardRefButtonModal = React.forwardRef(ButtonModal);
+/**
+ * @deprecated 请改用受控方式（open / onOpen / onClose），不再推荐使用 ref
+ */
 exports["default"] = ForwardRefButtonModal;

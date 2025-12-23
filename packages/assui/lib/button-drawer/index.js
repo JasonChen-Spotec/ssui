@@ -87,7 +87,8 @@ var CloseOutlined_1 = __importDefault(require("a-icons/lib/CloseOutlined"));
 var ahooks_1 = require("ahooks");
 var ButtonDrawer = function ButtonDrawer(props, ref) {
   var _a = __read((0, ahooks_1.useControllableValue)(props, {
-      valuePropName: 'open'
+      valuePropName: 'open',
+      defaultValue: false
     }), 2),
     drawerVisible = _a[0],
     setDrawerVisible = _a[1];
@@ -98,17 +99,12 @@ var ButtonDrawer = function ButtonDrawer(props, ref) {
     title = props.title,
     className = props.className,
     restProps = __rest(props, ["children", "onOpen", "onClose", "trigger", "title", "className"]);
-  var isControl = ('open' in props);
   var closeDrawer = function closeDrawer() {
-    if (!isControl) {
-      setDrawerVisible(false);
-    }
+    setDrawerVisible(false);
     onClose === null || onClose === void 0 ? void 0 : onClose();
   };
   var openDrawer = function openDrawer() {
-    if (!isControl) {
-      setDrawerVisible(true);
-    }
+    setDrawerVisible(true);
     onOpen === null || onOpen === void 0 ? void 0 : onOpen();
   };
   var actionRef = (0, react_1.useRef)({
@@ -123,11 +119,7 @@ var ButtonDrawer = function ButtonDrawer(props, ref) {
     triggerNode = trigger(openDrawer);
   } else {
     triggerNode = trigger && react_1["default"].cloneElement(trigger, {
-      onClick: function onClick(e) {
-        var _a, _b;
-        (_b = (_a = trigger.props).onClick) === null || _b === void 0 ? void 0 : _b.call(_a, e);
-        openDrawer();
-      }
+      onClick: openDrawer
     });
   }
   return react_1["default"].createElement(react_1["default"].Fragment, null, triggerNode, react_1["default"].createElement(drawer_1["default"], __assign({
@@ -142,4 +134,7 @@ var ButtonDrawer = function ButtonDrawer(props, ref) {
   })));
 };
 var ForwardRefButtonDrawer = react_1["default"].forwardRef(ButtonDrawer);
+/**
+ * @deprecated 请改用受控方式（open / onOpen / onClose），不再推荐使用 ref
+ */
 exports["default"] = ForwardRefButtonDrawer;
