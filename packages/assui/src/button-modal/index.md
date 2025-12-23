@@ -19,13 +19,19 @@ group:
 
 <code hideActions='["CSB", "EXTERNAL"]' src="./demo/index.jsx" ></code>
 
-### 1.1. state打开关闭
+### 1.2. state打开关闭
 
 <code hideActions='["CSB", "EXTERNAL"]' src="./demo/stateModalDemo.jsx" ></code>
 
-### 1.1. FunctionChildren打开关闭
+
+### 1.3. FunctionChildren打开关闭
 
 <code hideActions='["CSB", "EXTERNAL"]' src="./demo/functionModalDemo.jsx" ></code>
+
+### 1.4. ref打开关闭
+
+<code hideActions='["CSB", "EXTERNAL"]' src="./demo/refModalDemo.jsx" ></code>
+
 
 
 ## API

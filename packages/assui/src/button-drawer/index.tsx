@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useImperativeHandle } from 'react';
 import type { DrawerProps } from 'antd/lib/drawer';
 import Drawer from 'antd/lib/drawer';
 import isFunction from 'lodash/isFunction';
@@ -10,53 +10,42 @@ export type DrawerAction = {
   close: () => void;
   open: () => void;
 };
-
-type ControlledProps = {
-  open: boolean;
-  onOpen?: () => void;
-  onClose: () => void;
-};
-
-type UncontrolledProps = {
-  onOpen?: () => void;
+export interface ButtonDrawerProps extends Omit<DrawerProps, 'children'> {
   onClose?: () => void;
-};
-
-export interface BaseButtonDrawerProps
-  extends Omit<DrawerProps, 'children'> {
+  onOpen?: () => void;
   trigger?: ((fun: () => void) => React.ReactElement) | React.ReactElement;
   children: ((v: DrawerAction) => React.ReactElement) | React.ReactElement;
 }
 
-export type ButtonDrawerProps =
-  | (BaseButtonDrawerProps & ControlledProps)
-  | (BaseButtonDrawerProps & UncontrolledProps);
-
-
-const ButtonDrawer = (
-  props: ButtonDrawerProps
+const ButtonDrawer: React.ForwardRefRenderFunction<DrawerAction, ButtonDrawerProps> = (
+  props,
+  ref,
 ) => {
-  const { children, onOpen, onClose, trigger, title, className, ...restProps } = props;
   const [drawerVisible, setDrawerVisible] = useControllableValue(props, { valuePropName: 'open' });
+  const { children, onOpen, onClose, trigger, title, className, ...restProps } = props;
+
+  const isControl = 'open' in props;
 
   const closeDrawer = () => {
+    if (!isControl) {
+      setDrawerVisible(false);
+    }
     onClose?.();
-    setDrawerVisible(false);
   };
 
   const openDrawer = () => {
+    if (!isControl) {
+      setDrawerVisible(true);
+    }
     onOpen?.();
-    setDrawerVisible(true);
   };
 
   const actionRef = useRef<DrawerAction>({
-    close() {
-      closeDrawer();
-    },
-    open() {
-      openDrawer();
-    },
+    open: openDrawer,
+    close: closeDrawer,
   });
+
+  useImperativeHandle(ref, () => actionRef.current);
 
 
   let triggerNode;
@@ -65,7 +54,10 @@ const ButtonDrawer = (
   } else {
     triggerNode = trigger &&
       React.cloneElement(trigger, {
-        onClick: openDrawer,
+        onClick: (e: React.MouseEvent) => {
+          trigger.props.onClick?.(e);
+          openDrawer();
+        },
       });
   }
 
@@ -89,5 +81,6 @@ const ButtonDrawer = (
   );
 };
 
+const ForwardRefButtonDrawer = React.forwardRef<DrawerAction, ButtonDrawerProps>(ButtonDrawer);
 
-export default ButtonDrawer;
+export default ForwardRefButtonDrawer;

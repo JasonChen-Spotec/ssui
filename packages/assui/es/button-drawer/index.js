@@ -38,13 +38,18 @@ var __read = this && this.__read || function (o, n) {
   }
   return ar;
 };
-import React, { useRef } from 'react';
+import React, { useRef, useImperativeHandle } from 'react';
 import Drawer from "antd/es/drawer";
 import isFunction from 'lodash/isFunction';
 import classNames from 'classnames';
 import CloseOutlined from "a-icons/es/CloseOutlined";
 import { useControllableValue } from 'ahooks';
-var ButtonDrawer = function ButtonDrawer(props) {
+var ButtonDrawer = function ButtonDrawer(props, ref) {
+  var _a = __read(useControllableValue(props, {
+      valuePropName: 'open'
+    }), 2),
+    drawerVisible = _a[0],
+    setDrawerVisible = _a[1];
   var children = props.children,
     onOpen = props.onOpen,
     onClose = props.onClose,
@@ -52,33 +57,36 @@ var ButtonDrawer = function ButtonDrawer(props) {
     title = props.title,
     className = props.className,
     restProps = __rest(props, ["children", "onOpen", "onClose", "trigger", "title", "className"]);
-  var _a = __read(useControllableValue(props, {
-      valuePropName: 'open'
-    }), 2),
-    drawerVisible = _a[0],
-    setDrawerVisible = _a[1];
+  var isControl = ('open' in props);
   var closeDrawer = function closeDrawer() {
+    if (!isControl) {
+      setDrawerVisible(false);
+    }
     onClose === null || onClose === void 0 ? void 0 : onClose();
-    setDrawerVisible(false);
   };
   var openDrawer = function openDrawer() {
+    if (!isControl) {
+      setDrawerVisible(true);
+    }
     onOpen === null || onOpen === void 0 ? void 0 : onOpen();
-    setDrawerVisible(true);
   };
   var actionRef = useRef({
-    close: function close() {
-      closeDrawer();
-    },
-    open: function open() {
-      openDrawer();
-    }
+    open: openDrawer,
+    close: closeDrawer
+  });
+  useImperativeHandle(ref, function () {
+    return actionRef.current;
   });
   var triggerNode;
   if (isFunction(trigger)) {
     triggerNode = trigger(openDrawer);
   } else {
     triggerNode = trigger && /*#__PURE__*/React.cloneElement(trigger, {
-      onClick: openDrawer
+      onClick: function onClick(e) {
+        var _a, _b;
+        (_b = (_a = trigger.props).onClick) === null || _b === void 0 ? void 0 : _b.call(_a, e);
+        openDrawer();
+      }
     });
   }
   return /*#__PURE__*/React.createElement(React.Fragment, null, triggerNode, /*#__PURE__*/React.createElement(Drawer, __assign({
@@ -92,4 +100,5 @@ var ButtonDrawer = function ButtonDrawer(props) {
     drawerAction: actionRef.current
   })));
 };
-export default ButtonDrawer;
+var ForwardRefButtonDrawer = /*#__PURE__*/React.forwardRef(ButtonDrawer);
+export default ForwardRefButtonDrawer;

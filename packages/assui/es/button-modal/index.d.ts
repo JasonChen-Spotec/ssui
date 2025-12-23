@@ -4,19 +4,11 @@ export interface ModalAction {
     open: () => void;
     close: () => void;
 }
-type ControlledProps = {
-    open: boolean;
-    onOpen?: () => void;
-    onClose: () => void;
-};
-type UncontrolledProps = {
-    onOpen?: () => void;
+export interface ButtonModalProps extends Omit<ModalProps, 'children'> {
     onClose?: () => void;
-};
-export interface BaseButtonModalProps extends Omit<ModalProps, 'children'> {
+    onOpen?: () => void;
     trigger?: ((fun: () => void) => React.ReactElement) | React.ReactElement;
     children: ((v: ModalAction) => React.ReactElement) | React.ReactElement;
 }
-export type ButtonModalProps = (BaseButtonModalProps & ControlledProps) | (BaseButtonModalProps & UncontrolledProps);
-declare const ButtonModal: (props: ButtonModalProps) => JSX.Element;
-export default ButtonModal;
+declare const ForwardRefButtonModal: React.ForwardRefExoticComponent<ButtonModalProps & React.RefAttributes<ModalAction>>;
+export default ForwardRefButtonModal;
