@@ -59,11 +59,12 @@ function StopFilled(componentProps) {
   var IconNode = function IconNode(props) {
     return React.createElement("svg", __assign({
       viewBox: "0 0 24 24",
+      fill: "none",
       xmlns: "http://www.w3.org/2000/svg"
     }, props), React.createElement("path", {
       fillRule: "evenodd",
       clipRule: "evenodd",
-      d: "M2 12C2 6.477 6.477 2 12 2A10 10 0 112 12zm5.72 5.11l9.39-9.39a.59.59 0 00-.83-.83l-9.39 9.39a.59.59 0 000 .83.63.63 0 00.42.17.58.58 0 00.41-.17z",
+      d: "M12 1C5.925 1 1 5.925 1 12s4.925 11 11 11 11-4.925 11-11S18.075 1 12 1zM6.343 4.929L4.929 6.343l12.728 12.728 1.414-1.414L6.343 4.929z",
       fill: "currentColor"
     }));
   };

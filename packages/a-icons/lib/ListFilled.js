@@ -59,23 +59,15 @@ function ListFilled(componentProps) {
   var IconNode = function IconNode(props) {
     return React.createElement("svg", __assign({
       viewBox: "0 0 24 24",
+      fill: "none",
       xmlns: "http://www.w3.org/2000/svg"
-    }, props), React.createElement("rect", {
-      x: 1.62,
-      y: 3,
-      width: 8,
-      height: 8,
-      rx: 2.25,
-      fill: "currentColor"
-    }), React.createElement("rect", {
-      x: 1.62,
-      y: 13,
-      width: 8,
-      height: 8,
-      rx: 2.25,
+    }, props), React.createElement("path", {
+      fillRule: "evenodd",
+      clipRule: "evenodd",
+      d: "M2 4a2 2 0 012-2h5a2 2 0 012 2v5a2 2 0 01-2 2H4a2 2 0 01-2-2V4zM2.008 15.001a2 2 0 012-2h5a2 2 0 012 2v5a2 2 0 01-2 2h-5a2 2 0 01-2-2v-5z",
       fill: "currentColor"
     }), React.createElement("path", {
-      d: "M13.62 6.75h5a.75.75 0 000-1.5h-5a.75.75 0 000 1.5zM13.62 9.75h8a.75.75 0 000-1.5h-8a.75.75 0 000 1.5zM13.62 16.75h5a.75.75 0 000-1.5h-5a.75.75 0 000 1.5zM21.62 18.25h-8a.75.75 0 000 1.5h8a.75.75 0 000-1.5z",
+      d: "M13 3.5h6v2h-6v-2zM22 7.5h-9v2h9v-2zM13.008 14.501h6v2h-6v-2zM13.008 18.501h9v2h-9v-2z",
       fill: "currentColor"
     }));
   };

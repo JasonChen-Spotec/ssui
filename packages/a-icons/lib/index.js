@@ -8,21 +8,14 @@ var __importDefault = this && this.__importDefault || function (mod) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.CallFailOutlined = exports.CalendarOutlined = exports.BusinessCardOutlined = exports.BusinessCardFilled = exports.BrokenLineOutlined = exports.BrokenLineFilled = exports.BrokenHeartFilled = exports.BoxOutlined = exports.BoxFilled = exports.BoxAddFilled = exports.BookOutlined = exports.BookFilled = exports.BoardOutlined = exports.BoardFilled = exports.BlockChainOutlined = exports.BlockChainFilled = exports.BiscuitOutlined = exports.BiscuitFilled = exports.BindChainOutlined = exports.BindChainFilled = exports.BigArticleBoardFilled = exports.BellOutlined = exports.BarsOutlined = exports.BarChartFilled = exports.BankCardFilled = exports.AtOutlined = exports.AscOutlined = exports.ArticleBoardFilled = exports.ArrowsRightLeftOutlined = exports.ArrowsRightLeftFilled = exports.ArrowsChevronOutlined = exports.ArrowsChevronFilled = exports.ArrowUpFilled = exports.ArrowTopRightOutlined = exports.ArrowSwapHorizontal = exports.ArrowRightOutlined = exports.ArrowLeftOutlined = exports.ArrowDropDownFilled = exports.ArrowDownFilled = exports.ArrowCircleOutlined = exports.AppstoreOutlined = exports.AlertTriangleOutlined = exports.AlertTriangleFilled = exports.AddOutlined = exports.AddMoneyFilled = exports.AddFilled = exports.AddChildOutlined = exports.AdFilled = exports.ImpassabilityFilled = exports.DailyFinanceFilled = void 0;
-exports.ConfirmCircleOutlined = exports.ConfirmCircleFilled = exports.ComputerOutlined = exports.ComputerFilled = exports.ComputerCheckOutlined = exports.ColumnarAnalyzeOutlined = exports.CoinOverlapLockFilled = exports.CoinOverlapFilled = exports.CloudUploadOutlined = exports.CloseSquareOutlined = exports.CloseSquareFilled = exports.CloseOutlined = exports.CloseFilled = exports.CloseCircleOutlined = exports.CloseCircleFilled = exports.ClockFastForwardOutlined = exports.ClockCircleOutline = exports.ClockCircleFilled = exports.ClipboardOutlined = exports.ClientOutlined = exports.CirculationFilled = exports.CircleThreeRectFilled = exports.CircleThreeLinesOutlined = exports.CircleStopFilled = exports.CircleRLetterOutlined = exports.CirclePointsTriangleOutlined = exports.CirclePointsTriangleFilled = exports.CirclePlusFilled = exports.CircleDollarOutlined = exports.CircleDollarFilled = exports.CircleCLetterOutlined = exports.ChevronUpFilled = exports.ChevronRightOutlined = exports.CheckboxMultipleOutlined = exports.CheckboxMultipleBlankFilled = exports.CheckOutlined = exports.ChainOutlined = exports.ChainFilled = exports.CellPhoneCallFilled = exports.CategoryOutlined = exports.CategoryFilled = exports.CardOutlined = exports.CardLoopOutlined = exports.CardLoopFilled = exports.CardFilled = exports.CameraOutlined = exports.CameraFilled = exports.CallRecordOutlined = exports.CallOutlined = exports.CallFilled = void 0;
-exports.EditFilled = exports.Edit2Filled = exports.EcLogo = exports.EarthOutlined = exports.EarthFilled = exports.DragUpAndDownOutlined = exports.DraftLineOutlined = exports.DownloadOutlined = exports.DownloadOutlinedFile = exports.DownloadLineOutlined = exports.DownloadFilled = exports.DoubleUsersOutlined = exports.DoubleTextOutlined = exports.DoubleTextFilled = exports.DoubleDownOutlined = exports.DoubleDocumentOutlined = exports.DoubleDocumentFilled = exports.DoubleChevronOutlined = exports.DoubleChainOutlined = exports.DoubleChainFilled = exports.DotsOutlined = exports.DollarOutlined = exports.DollarInCircleOutlined = exports.DocumentVoteFilled = exports.DocumentTextFilled = exports.DocumentPassFilled = exports.DocumentOutlined = exports.DocumentFilled = exports.DocumentErrorFilled = exports.DocumentEditOutlined = exports.DisplayerOutlined = exports.DiamondMoneyOutlined = exports.DiamondMoneyFilled = exports.DiamondFileOutlined = exports.DiamondFileFilled = exports.DescOutlined = exports.DataPanelOutlined = exports.DataLogOutlined = exports.DashboardOutlined = exports.DashboardFilled = exports.DailyFinanceOutlined = exports.CyclePlusFilled = exports.CustomerServiceOutlined = exports.CreditCardOutlined = exports.CreditCardFilled = exports.CornerRightArrowsOutlined = exports.CopyLineOutlined = exports.CopyFilled = exports.ContinueInvestFilled = exports.ConfirmCircleSolidFilled = void 0;
-exports.HomeFilled = exports.HandleOutlined = exports.HandCoinsOutlined = exports.HandCoinsFilled = exports.GrowthGraphOutlined = exports.GroupOutlined = exports.GroupFilled = exports.GiftWithClipFilled = exports.GiftFilled = exports.GiftBoxOutlined = exports.GarbageCanOutlined = exports.FunnelFilled = exports.FundProjectionScreenOutlined = exports.FundProjectionScreenFilled = exports.FourDotOutlined = exports.FourDotFilled = exports.FormOutlined = exports.ForbidFireOutlined = exports.ForbidFireFilled = exports.FolderBracketOutlined = exports.FolderAddOutlined = exports.FoldSearchFileOutlined = exports.FoldSearchFileFilled = exports.FlagOutlined = exports.FireOutlined = exports.FireFilled = exports.FilterOutlined = exports.FilterFilled = exports.FilterCupOutlined = exports.FilletFileListOutlined = exports.FilletFileListFilled = exports.FileTextOutlined = exports.FileShieldOutlined = exports.FileSearchFilled = exports.FileOutlined = exports.FileListFilled = exports.FileFinishFilled = exports.FileFilled = exports.FacebookFilled = exports.EyeSlashOutlined = exports.EyeSlashFilled = exports.EyeOutlined = exports.EyeFilled = exports.EyeCornerFilled = exports.ExternalLinkFilled = exports.ErrorWarningOutlined = exports.ErrorWarningFilled = exports.EmailWithTextFilled = exports.EditSimpleOutlined = exports.EditOutlined = void 0;
-exports.MoneySymbolOutlined = exports.MoneySymbolFilled = exports.MinusSquareOutlined = exports.MessageTipOutlined = exports.MessageSquareOutlined = exports.MessageSmileOutlined = exports.MenuListOutlined = exports.MediumVolumeOutlined = exports.MappingAddOutlined = exports.MailOutlined = exports.MailHollowFilled = exports.MailFilled = exports.LoopOutlined = exports.LoopFolderOutlined = exports.LoopFolderFilled = exports.LoopFilled = exports.LockOutlined = exports.LockFilled = exports.LockEllipsisFilled = exports.LocationOutlined = exports.LoadingFilled = exports.ListOutlined = exports.ListFilled = exports.ListCaptionOutlined = exports.ListCaptionFilled = exports.LinkedinFilled = exports.LinkOutlined = exports.LineUpOutlined = exports.LineUpFilled = exports.LineChartUpOutlined = exports.LimitlessFilled = exports.LightbulbOutlined = exports.LeftOutlined = exports.LayerOutlined = exports.LayerFilled = exports.LanguageOutlined = exports.KeyFilled = exports.InvoiceOutlined = exports.InviteFriendFilled = exports.InternalResourceOutlined = exports.InsFilled = exports.InformationOutlined = exports.InformationFilled = exports.ImageOutlined = exports.ImageFilled = exports.ImacFilled = exports.IbFilled = exports.HouseOutlined = exports.HourGlassOutlined = exports.HomeOutlined = void 0;
-exports.PlaySolidFilled = exports.PlaySharpFilled = exports.PlayFilled = exports.PhoneOutlined = exports.PhoneCallFilled = exports.PersonWarningFilled = exports.PersonTransferFilled = exports.PersonLeftArrowFilled = exports.PersonGroupFilled = exports.PeopleTieOutlined = exports.PeopleTeamOutlined = exports.PeopleTeamFilled = exports.PeopleSettingFilled = exports.PeopleQuestionFilled = exports.PeopleOutlined = exports.PeopleLockFilled = exports.PeopleGroupOutlined = exports.PeopleGroupFilled = exports.PeopleGetOutlined = exports.PeopleFolderFilled = exports.PeopleFilled = exports.PeopleErrorFilled = exports.PeopleEllipsisFilled = exports.PeopleConfirmFilled = exports.PeopleCloseFilled = exports.PeopleCircleOutlined = exports.PeopleCardFilled = exports.PeopleAddOutlined = exports.PeopleAddFilled = exports.PencilOutlined = exports.Pdf = exports.PauseInvestFilled = exports.PauseCircleFilled = exports.OtcMerchant = exports.OtcMerchantLine = exports.OppositeArrowsOutlined = exports.OppositeArrowsFilled = exports.OpenMailOutlined = exports.OpenMailFilled = exports.OngoingFilled = exports.OfficeBagOutlined = exports.OffOutlined = exports.OctagonPromptOutlined = exports.OctagonPromptFilled = exports.NoteOutlined = exports.NoteFilled = exports.NoteBoardOutlined = exports.NoteBoardFilled = exports.NewspaperOutlined = exports.MoveOutlined = void 0;
-exports.SignalOutlined = exports.SignalLineOutlined = exports.SignalFilled = exports.SignalDiffusionOutlined = exports.SignalDiffusionFilled = exports.SignBankCardFilled = exports.ShopKeeperOutlined = exports.ShopKeeperFilled = exports.ShieldTickAsteriskFilled = exports.ShieldOutlined = exports.ShieldFilled = exports.ShareOutlined = exports.ShareFilled = exports.ShapeOutlined = exports.ShapeFilled = exports.ShapArrowRightFilled = exports.ShapArrowLeftFilled = exports.SettingSquareOutlined = exports.SettingSquareFilled = exports.SettingOutlined = exports.SettingFilled = exports.SeoOutlined = exports.SeoFilled = exports.SearchOutlined = exports.SearchFilled = exports.SearchDocumentFilled = exports.RoundedRectangleClockFilled = exports.RiskControlOutlined = exports.RiskControlFilled = exports.RingDotsFilled = exports.RetryRefreshFilled = exports.RetryFilled = exports.ResourceOutlined = exports.RefreshRightOutlined = exports.RefreshOutlined = exports.RefreshFilled = exports.RectsPlusFilled = exports.RectTwoBarOutlined = exports.RectTwoBarFilled = exports.RectForkFilled = exports.RectBoardOutlined = exports.ReceiptOutlined = exports.ReceiptFilled = exports.QuestionMarkOutlined = exports.QuestionMarkFilled = exports.QrCodeOutlined = exports.QrCodeFilled = exports.PlusOutlined = exports.PlusFilled = exports.PlusBoldSquareFilled = void 0;
-exports.YoutubeFilled = exports.WarningRuleOutlined = exports.WarningRuleFilled = exports.WarningOutlined = exports.WarningFilled = exports.WalletOutlined = exports.WalletFilled = exports.UserOutlined = exports.UserCheckOutlined = exports.UploadSendOutlined = exports.UpgradeFilled = exports.UpFilled = exports.UnlockFilled = exports.UnbindChainOutlined = exports.UnbindChainFilled = exports.TwoSwitchOutlined = exports.TwoPersonConfirmFilled = exports.TwoPeopleRectOutlined = exports.TwitterFilled = exports.TriangleArrowDownFilled = exports.TreeOutlined = exports.TreeFilled = exports.TreeCircleFilled = exports.TreeAreaOutlined = exports.TrashCanFilled = exports.TransferFileFilled = exports.TmdLogo = exports.TimeZoneSiteFilled = exports.TimeCardFilled = exports.TagOutlined = exports.TagFilled = exports.StopOutlined = exports.StopFilled = exports.StarOutlined = exports.StarFilled = exports.StampFilled = exports.SquareRightUpOutlined = exports.SquareLeftTurnFilled = exports.SquareFilled = exports.SquareAOutlined = exports.SphereOutlined = exports.SphereFilled = exports.SpeakerFilled = exports.SimpleEarthOutlined = exports.SignalStopReviewOutlined = void 0;
-var DailyFinanceFilled_1 = require("./DailyFinanceFilled");
-Object.defineProperty(exports, "DailyFinanceFilled", {
-  enumerable: true,
-  get: function get() {
-    return __importDefault(DailyFinanceFilled_1)["default"];
-  }
-});
+exports.CategoryFilled = exports.CardOutlined = exports.CardLoopOutlined = exports.CardLoopFilled = exports.CardFilled = exports.CameraOutlined = exports.CameraFilled = exports.Call = exports.CallRecordOutlined = exports.CallOutlined = exports.CallFailOutlined = exports.CalendarOutlined = exports.CalendarFilled = exports.BusinessCardOutlined = exports.BrokenLineOutlined = exports.BoxOutlined = exports.BoxFilled = exports.BoxAddFilled = exports.BookOutlined = exports.BookFilled = exports.BoardOutlined = exports.BoardFilled = exports.BlockChainOutlined = exports.BlockChainFilled = exports.BiscuitOutlined = exports.BiscuitFilled = exports.BindChainOutlined = exports.BindChainFilled = exports.BellOutlined = exports.BarsOutlined = exports.BarChartFilled = exports.BankAddFilled = exports.AtOutlined = exports.AscOutlined = exports.ArrowsRightLeftOutlined = exports.ArrowsChevronOutlined = exports.ArrowTopRightOutlined = exports.ArrowRightOutlined = exports.ArrowLeftOutlined = exports.ArrowDropDownFilled = exports.ArrowCircleOutlined = exports.AppstoreOutlined = exports.AlertTriangleOutlined = exports.AlertTriangleFilled = exports.AddOutlined = exports.AddMoneyFilled = exports.AddFilled = exports.AddChildOutlined = exports.AdFilled = exports.ImpassabilityFilled = void 0;
+exports.DiamondMoneyFilled = exports.DiamondFileOutlined = exports.DiamondFileFilled = exports.DescOutlined = exports.DataPanelOutlined = exports.DataLogOutlined = exports.DashboardOutlined = exports.DashboardFilled = exports.DailyFinanceOutlined = exports.CustomerServiceOutlined = exports.CreditCardOutlined = exports.CreditCardFilled = exports.CornerRightArrowsOutlined = exports.CopyLineOutlined = exports.CopyFilled = exports.ContinueInvestFilled = exports.ConfirmCircleOutlined = exports.ConfirmCircleFilled = exports.ComputerOutlined = exports.ComputerFilled = exports.ComputerCheckOutlined = exports.ColumnarAnalyzeOutlined = exports.CloudUploadOutlined = exports.CloseSquareOutlined = exports.CloseSquareFilled = exports.CloseOutlined = exports.CloseCircleOutlined = exports.CloseCircleFilled = exports.ClockFastForwardOutlined = exports.ClockCircleOutline = exports.ClockCircleFilled = exports.ClipboardOutlined = exports.ClientOutlined = exports.CircleThreeRectFilled = exports.CircleThreeLinesOutlined = exports.CircleStopFilled = exports.CircleRLetterOutlined = exports.CirclePointsTriangleOutlined = exports.CirclePointsTriangleFilled = exports.CirclePlusFilled = exports.CircleDollarOutlined = exports.CircleDollarFilled = exports.CircleCLetterOutlined = exports.ChevronUpFilled = exports.ChevronRightOutlined = exports.CheckboxMultipleOutlined = exports.CheckOutlined = exports.ChainOutlined = exports.ChainFilled = exports.CategoryOutlined = void 0;
+exports.FilterFilled = exports.FilterCupOutlined = exports.FilletFileListOutlined = exports.FileTextOutlined = exports.FileShieldOutlined = exports.FileSearchFilled = exports.FileOutlined = exports.FileListFilled = exports.FileFinishFilled = exports.FileFilled = exports.EyeSlashOutlined = exports.EyeSlashFilled = exports.EyeOutlined = exports.EyeFilled = exports.ExternalLinkFilled = exports.ErrorWarningOutlined = exports.ErrorWarningFilled = exports.EditSimpleOutlined = exports.EditOutlined = exports.EditFilled = exports.Edit2Filled = exports.EarthOutlined = exports.EarthFilled = exports.DragUpAndDownOutlined = exports.DraftLineOutlined = exports.DownloadOutlined = exports.DownloadOutlinedFile = exports.DownloadLineOutlined = exports.DownloadFilled = exports.DoubleUsersOutlined = exports.DoubleTextOutlined = exports.DoubleTextFilled = exports.DoubleDownOutlined = exports.DoubleDocumentOutlined = exports.DoubleDocumentFilled = exports.DoubleChevronOutlined = exports.DoubleChainOutlined = exports.DoubleChainFilled = exports.DotsOutlined = exports.DollarOutlined = exports.DollarInCircleOutlined = exports.DocumentVoteFilled = exports.DocumentTextFilled = exports.DocumentPassFilled = exports.DocumentOutlined = exports.DocumentFilled = exports.DocumentErrorFilled = exports.DocumentEditOutlined = exports.DisplayerOutlined = exports.DiamondMoneyOutlined = void 0;
+exports.ListOutlined = exports.ListFilled = exports.ListCaptionOutlined = exports.LinkOutlined = exports.LineUpOutlined = exports.LineUpFilled = exports.LineChartUpOutlined = exports.LimitlessFilled = exports.LightbulbOutlined = exports.LeftOutlined = exports.LayerOutlined = exports.LayerFilled = exports.LanguageOutlined = exports.KeyFilled = exports.InvoiceOutlined = exports.InternalResourceOutlined = exports.InformationOutlined = exports.InformationFilled = exports.ImageOutlined = exports.ImageFilled = exports.ImacFilled = exports.IdCardFilled = exports.HouseOutlined = exports.HourGlassOutlined = exports.HomeOutlined = exports.HomeFilled = exports.HandleOutlined = exports.HandCoinsOutlined = exports.HandCoinsFilled = exports.GrowthGraphOutlined = exports.GroupOutlined = exports.GroupFilled = exports.GiftFilled = exports.GiftBoxOutlined = exports.GarbageCanOutlined = exports.FunnelFilled = exports.FundProjectionScreenOutlined = exports.FundProjectionScreenFilled = exports.FourDotOutlined = exports.FourDotFilled = exports.FormOutlined = exports.ForbidFireOutlined = exports.ForbidFireFilled = exports.FolderBracketOutlined = exports.FolderAddOutlined = exports.FoldSearchFileOutlined = exports.FlagOutlined = exports.FireOutlined = exports.FireFilled = exports.FilterOutlined = void 0;
+exports.PeopleQuestionFilled = exports.PeopleOutlined = exports.PeopleGroupOutlined = exports.PeopleGroupFilled = exports.PeopleGetOutlined = exports.PeopleFilled = exports.PeopleEllipsisFilled = exports.PeopleConfirmFilled = exports.PeopleCloseFilled = exports.PeopleCircleOutlined = exports.PeopleAddOutlined = exports.PeopleAddFilled = exports.PencilOutlined = exports.Pdf = exports.PauseInvestFilled = exports.PauseCircleFilled = exports.OtcMerchantLine = exports.OppositeArrowsOutlined = exports.OpenMailOutlined = exports.OpenMailFilled = exports.OfficeBagOutlined = exports.OffOutlined = exports.OctagonPromptOutlined = exports.OctagonPromptFilled = exports.NoteOutlined = exports.NoteFilled = exports.NoteBoardOutlined = exports.NoteBoardFilled = exports.NewspaperOutlined = exports.MoveOutlined = exports.MoneySymbolOutlined = exports.MoneySymbolFilled = exports.MinusSquareOutlined = exports.MessageTipOutlined = exports.MessageSquareOutlined = exports.MessageSmileOutlined = exports.MenuListOutlined = exports.MediumVolumeOutlined = exports.MappingAddOutlined = exports.MailOutlined = exports.MailFilled = exports.LoopOutlined = exports.LoopFolderOutlined = exports.LoopFolderFilled = exports.LogoTmd = exports.LogoEc = exports.LockOutlined = exports.LockFilled = exports.LockEllipsisFilled = exports.LocationOutlined = void 0;
+exports.ShapArrowRightFilled = exports.ShapArrowLeftFilled = exports.SettingSquareOutlined = exports.SettingSquareFilled = exports.SettingOutlined = exports.SettingFilled = exports.SeoOutlined = exports.SeoFilled = exports.SearchOutlined = exports.SearchFilled = exports.RoleSubAccount = exports.RoleSignalResource = exports.RoleSale = exports.RoleOtcMerchant = exports.RoleManage = exports.RoleIb = exports.RoleFollower = exports.RoleDirect = exports.RiskControlOutlined = exports.RiskControlFilled = exports.RetryFilled = exports.ResourceOutlined = exports.RelationInternal = exports.RelationCircle = exports.RefreshRightOutlined = exports.RefreshOutlined = exports.RefreshFilled = exports.RectsPlusFilled = exports.RectTwoBarOutlined = exports.RectTwoBarFilled = exports.RectBoardOutlined = exports.ReceiptOutlined = exports.ReceiptFilled = exports.QuestionMarkOutlined = exports.QuestionMarkFilled = exports.QrCodeOutlined = exports.QrCodeFilled = exports.PlusOutlined = exports.PlaySolidFilled = exports.PlaySharpFilled = exports.PlayFilled = exports.PhoneOutlined = exports.PhoneCallFilled = exports.PersonWarningFilled = exports.PersonTransferFilled = exports.PersonLeftArrowFilled = exports.PeopleTieOutlined = exports.PeopleTeamOutlined = exports.PeopleTeamFilled = exports.PeopleSettingFilled = void 0;
+exports.UserInfoEmail = exports.UserInfoData = exports.UserInfoCellPhone = exports.UserInfoAuth = exports.UserCheckOutlined = exports.UploadSendOutlined = exports.UpgradeFilled = exports.UnlockFilled = exports.UnbindChainOutlined = exports.TwoSwitchOutlined = exports.TwoPersonConfirm = exports.TwoPeopleRectOutlined = exports.TreeOutlined = exports.TreeFilled = exports.TreeAreaOutlined = exports.TrashCanFilled = exports.TransferFileFilled = exports.TagRecharged = exports.TagOutlined = exports.TagFilled = exports.TagBrokenHeart = exports.StopOutlined = exports.StopFilled = exports.StarOutlined = exports.StarFilled = exports.StampFilled = exports.SquareRightUpOutlined = exports.SquareLeftTurnFilled = exports.SquareAOutlined = exports.SphereOutlined = exports.SphereFilled = exports.SpeakerFilled = exports.SocialMediaYoutube = exports.SocialMediaTwitter = exports.SocialMediaIns = exports.SocialMediaIn = exports.SocialMediaFacebook = exports.SimpleEarthOutlined = exports.SignalStopReviewOutlined = exports.SignalOutlined = exports.SignalLineOutlined = exports.SignalDiffusionOutlined = exports.ShopKeeperOutlined = exports.ShopKeeperFilled = exports.ShieldOutlined = exports.ShieldFilled = exports.ShareOutlined = exports.ShareFilled = exports.ShapeOutlined = exports.ShapeFilled = void 0;
+exports.WarningRuleOutlined = exports.WarningRuleFilled = exports.WarningOutlined = exports.WarningFilled = exports.WalletOutlined = exports.WalletFilled = exports.UserOutlined = exports.UserInfoTime = exports.UserInfoTimeZone = exports.UserInfoRealname = exports.UserInfoPassword = exports.UserInfoGift = void 0;
 var ImpassabilityFilled_1 = require("./ImpassabilityFilled");
 Object.defineProperty(exports, "ImpassabilityFilled", {
   enumerable: true,
@@ -93,13 +86,6 @@ Object.defineProperty(exports, "ArrowCircleOutlined", {
     return __importDefault(ArrowCircleOutlined_1)["default"];
   }
 });
-var ArrowDownFilled_1 = require("./ArrowDownFilled");
-Object.defineProperty(exports, "ArrowDownFilled", {
-  enumerable: true,
-  get: function get() {
-    return __importDefault(ArrowDownFilled_1)["default"];
-  }
-});
 var ArrowDropDownFilled_1 = require("./ArrowDropDownFilled");
 Object.defineProperty(exports, "ArrowDropDownFilled", {
   enumerable: true,
@@ -121,32 +107,11 @@ Object.defineProperty(exports, "ArrowRightOutlined", {
     return __importDefault(ArrowRightOutlined_1)["default"];
   }
 });
-var ArrowSwapHorizontal_1 = require("./ArrowSwapHorizontal");
-Object.defineProperty(exports, "ArrowSwapHorizontal", {
-  enumerable: true,
-  get: function get() {
-    return __importDefault(ArrowSwapHorizontal_1)["default"];
-  }
-});
 var ArrowTopRightOutlined_1 = require("./ArrowTopRightOutlined");
 Object.defineProperty(exports, "ArrowTopRightOutlined", {
   enumerable: true,
   get: function get() {
     return __importDefault(ArrowTopRightOutlined_1)["default"];
-  }
-});
-var ArrowUpFilled_1 = require("./ArrowUpFilled");
-Object.defineProperty(exports, "ArrowUpFilled", {
-  enumerable: true,
-  get: function get() {
-    return __importDefault(ArrowUpFilled_1)["default"];
-  }
-});
-var ArrowsChevronFilled_1 = require("./ArrowsChevronFilled");
-Object.defineProperty(exports, "ArrowsChevronFilled", {
-  enumerable: true,
-  get: function get() {
-    return __importDefault(ArrowsChevronFilled_1)["default"];
   }
 });
 var ArrowsChevronOutlined_1 = require("./ArrowsChevronOutlined");
@@ -156,25 +121,11 @@ Object.defineProperty(exports, "ArrowsChevronOutlined", {
     return __importDefault(ArrowsChevronOutlined_1)["default"];
   }
 });
-var ArrowsRightLeftFilled_1 = require("./ArrowsRightLeftFilled");
-Object.defineProperty(exports, "ArrowsRightLeftFilled", {
-  enumerable: true,
-  get: function get() {
-    return __importDefault(ArrowsRightLeftFilled_1)["default"];
-  }
-});
 var ArrowsRightLeftOutlined_1 = require("./ArrowsRightLeftOutlined");
 Object.defineProperty(exports, "ArrowsRightLeftOutlined", {
   enumerable: true,
   get: function get() {
     return __importDefault(ArrowsRightLeftOutlined_1)["default"];
-  }
-});
-var ArticleBoardFilled_1 = require("./ArticleBoardFilled");
-Object.defineProperty(exports, "ArticleBoardFilled", {
-  enumerable: true,
-  get: function get() {
-    return __importDefault(ArticleBoardFilled_1)["default"];
   }
 });
 var AscOutlined_1 = require("./AscOutlined");
@@ -191,11 +142,11 @@ Object.defineProperty(exports, "AtOutlined", {
     return __importDefault(AtOutlined_1)["default"];
   }
 });
-var BankCardFilled_1 = require("./BankCardFilled");
-Object.defineProperty(exports, "BankCardFilled", {
+var BankAddFilled_1 = require("./BankAddFilled");
+Object.defineProperty(exports, "BankAddFilled", {
   enumerable: true,
   get: function get() {
-    return __importDefault(BankCardFilled_1)["default"];
+    return __importDefault(BankAddFilled_1)["default"];
   }
 });
 var BarChartFilled_1 = require("./BarChartFilled");
@@ -217,13 +168,6 @@ Object.defineProperty(exports, "BellOutlined", {
   enumerable: true,
   get: function get() {
     return __importDefault(BellOutlined_1)["default"];
-  }
-});
-var BigArticleBoardFilled_1 = require("./BigArticleBoardFilled");
-Object.defineProperty(exports, "BigArticleBoardFilled", {
-  enumerable: true,
-  get: function get() {
-    return __importDefault(BigArticleBoardFilled_1)["default"];
   }
 });
 var BindChainFilled_1 = require("./BindChainFilled");
@@ -317,20 +261,6 @@ Object.defineProperty(exports, "BoxOutlined", {
     return __importDefault(BoxOutlined_1)["default"];
   }
 });
-var BrokenHeartFilled_1 = require("./BrokenHeartFilled");
-Object.defineProperty(exports, "BrokenHeartFilled", {
-  enumerable: true,
-  get: function get() {
-    return __importDefault(BrokenHeartFilled_1)["default"];
-  }
-});
-var BrokenLineFilled_1 = require("./BrokenLineFilled");
-Object.defineProperty(exports, "BrokenLineFilled", {
-  enumerable: true,
-  get: function get() {
-    return __importDefault(BrokenLineFilled_1)["default"];
-  }
-});
 var BrokenLineOutlined_1 = require("./BrokenLineOutlined");
 Object.defineProperty(exports, "BrokenLineOutlined", {
   enumerable: true,
@@ -338,18 +268,18 @@ Object.defineProperty(exports, "BrokenLineOutlined", {
     return __importDefault(BrokenLineOutlined_1)["default"];
   }
 });
-var BusinessCardFilled_1 = require("./BusinessCardFilled");
-Object.defineProperty(exports, "BusinessCardFilled", {
-  enumerable: true,
-  get: function get() {
-    return __importDefault(BusinessCardFilled_1)["default"];
-  }
-});
 var BusinessCardOutlined_1 = require("./BusinessCardOutlined");
 Object.defineProperty(exports, "BusinessCardOutlined", {
   enumerable: true,
   get: function get() {
     return __importDefault(BusinessCardOutlined_1)["default"];
+  }
+});
+var CalendarFilled_1 = require("./CalendarFilled");
+Object.defineProperty(exports, "CalendarFilled", {
+  enumerable: true,
+  get: function get() {
+    return __importDefault(CalendarFilled_1)["default"];
   }
 });
 var CalendarOutlined_1 = require("./CalendarOutlined");
@@ -366,13 +296,6 @@ Object.defineProperty(exports, "CallFailOutlined", {
     return __importDefault(CallFailOutlined_1)["default"];
   }
 });
-var CallFilled_1 = require("./CallFilled");
-Object.defineProperty(exports, "CallFilled", {
-  enumerable: true,
-  get: function get() {
-    return __importDefault(CallFilled_1)["default"];
-  }
-});
 var CallOutlined_1 = require("./CallOutlined");
 Object.defineProperty(exports, "CallOutlined", {
   enumerable: true,
@@ -385,6 +308,13 @@ Object.defineProperty(exports, "CallRecordOutlined", {
   enumerable: true,
   get: function get() {
     return __importDefault(CallRecordOutlined_1)["default"];
+  }
+});
+var Call_1 = require("./Call");
+Object.defineProperty(exports, "Call", {
+  enumerable: true,
+  get: function get() {
+    return __importDefault(Call_1)["default"];
   }
 });
 var CameraFilled_1 = require("./CameraFilled");
@@ -443,13 +373,6 @@ Object.defineProperty(exports, "CategoryOutlined", {
     return __importDefault(CategoryOutlined_1)["default"];
   }
 });
-var CellPhoneCallFilled_1 = require("./CellPhoneCallFilled");
-Object.defineProperty(exports, "CellPhoneCallFilled", {
-  enumerable: true,
-  get: function get() {
-    return __importDefault(CellPhoneCallFilled_1)["default"];
-  }
-});
 var ChainFilled_1 = require("./ChainFilled");
 Object.defineProperty(exports, "ChainFilled", {
   enumerable: true,
@@ -469,13 +392,6 @@ Object.defineProperty(exports, "CheckOutlined", {
   enumerable: true,
   get: function get() {
     return __importDefault(CheckOutlined_1)["default"];
-  }
-});
-var CheckboxMultipleBlankFilled_1 = require("./CheckboxMultipleBlankFilled");
-Object.defineProperty(exports, "CheckboxMultipleBlankFilled", {
-  enumerable: true,
-  get: function get() {
-    return __importDefault(CheckboxMultipleBlankFilled_1)["default"];
   }
 });
 var CheckboxMultipleOutlined_1 = require("./CheckboxMultipleOutlined");
@@ -569,13 +485,6 @@ Object.defineProperty(exports, "CircleThreeRectFilled", {
     return __importDefault(CircleThreeRectFilled_1)["default"];
   }
 });
-var CirculationFilled_1 = require("./CirculationFilled");
-Object.defineProperty(exports, "CirculationFilled", {
-  enumerable: true,
-  get: function get() {
-    return __importDefault(CirculationFilled_1)["default"];
-  }
-});
 var ClientOutlined_1 = require("./ClientOutlined");
 Object.defineProperty(exports, "ClientOutlined", {
   enumerable: true,
@@ -625,13 +534,6 @@ Object.defineProperty(exports, "CloseCircleOutlined", {
     return __importDefault(CloseCircleOutlined_1)["default"];
   }
 });
-var CloseFilled_1 = require("./CloseFilled");
-Object.defineProperty(exports, "CloseFilled", {
-  enumerable: true,
-  get: function get() {
-    return __importDefault(CloseFilled_1)["default"];
-  }
-});
 var CloseOutlined_1 = require("./CloseOutlined");
 Object.defineProperty(exports, "CloseOutlined", {
   enumerable: true,
@@ -658,20 +560,6 @@ Object.defineProperty(exports, "CloudUploadOutlined", {
   enumerable: true,
   get: function get() {
     return __importDefault(CloudUploadOutlined_1)["default"];
-  }
-});
-var CoinOverlapFilled_1 = require("./CoinOverlapFilled");
-Object.defineProperty(exports, "CoinOverlapFilled", {
-  enumerable: true,
-  get: function get() {
-    return __importDefault(CoinOverlapFilled_1)["default"];
-  }
-});
-var CoinOverlapLockFilled_1 = require("./CoinOverlapLockFilled");
-Object.defineProperty(exports, "CoinOverlapLockFilled", {
-  enumerable: true,
-  get: function get() {
-    return __importDefault(CoinOverlapLockFilled_1)["default"];
   }
 });
 var ColumnarAnalyzeOutlined_1 = require("./ColumnarAnalyzeOutlined");
@@ -714,13 +602,6 @@ Object.defineProperty(exports, "ConfirmCircleOutlined", {
   enumerable: true,
   get: function get() {
     return __importDefault(ConfirmCircleOutlined_1)["default"];
-  }
-});
-var ConfirmCircleSolidFilled_1 = require("./ConfirmCircleSolidFilled");
-Object.defineProperty(exports, "ConfirmCircleSolidFilled", {
-  enumerable: true,
-  get: function get() {
-    return __importDefault(ConfirmCircleSolidFilled_1)["default"];
   }
 });
 var ContinueInvestFilled_1 = require("./ContinueInvestFilled");
@@ -770,13 +651,6 @@ Object.defineProperty(exports, "CustomerServiceOutlined", {
   enumerable: true,
   get: function get() {
     return __importDefault(CustomerServiceOutlined_1)["default"];
-  }
-});
-var CyclePlusFilled_1 = require("./CyclePlusFilled");
-Object.defineProperty(exports, "CyclePlusFilled", {
-  enumerable: true,
-  get: function get() {
-    return __importDefault(CyclePlusFilled_1)["default"];
   }
 });
 var DailyFinanceOutlined_1 = require("./DailyFinanceOutlined");
@@ -1045,13 +919,6 @@ Object.defineProperty(exports, "EarthOutlined", {
     return __importDefault(EarthOutlined_1)["default"];
   }
 });
-var EcLogo_1 = require("./EcLogo");
-Object.defineProperty(exports, "EcLogo", {
-  enumerable: true,
-  get: function get() {
-    return __importDefault(EcLogo_1)["default"];
-  }
-});
 var Edit2Filled_1 = require("./Edit2Filled");
 Object.defineProperty(exports, "Edit2Filled", {
   enumerable: true,
@@ -1080,13 +947,6 @@ Object.defineProperty(exports, "EditSimpleOutlined", {
     return __importDefault(EditSimpleOutlined_1)["default"];
   }
 });
-var EmailWithTextFilled_1 = require("./EmailWithTextFilled");
-Object.defineProperty(exports, "EmailWithTextFilled", {
-  enumerable: true,
-  get: function get() {
-    return __importDefault(EmailWithTextFilled_1)["default"];
-  }
-});
 var ErrorWarningFilled_1 = require("./ErrorWarningFilled");
 Object.defineProperty(exports, "ErrorWarningFilled", {
   enumerable: true,
@@ -1106,13 +966,6 @@ Object.defineProperty(exports, "ExternalLinkFilled", {
   enumerable: true,
   get: function get() {
     return __importDefault(ExternalLinkFilled_1)["default"];
-  }
-});
-var EyeCornerFilled_1 = require("./EyeCornerFilled");
-Object.defineProperty(exports, "EyeCornerFilled", {
-  enumerable: true,
-  get: function get() {
-    return __importDefault(EyeCornerFilled_1)["default"];
   }
 });
 var EyeFilled_1 = require("./EyeFilled");
@@ -1141,13 +994,6 @@ Object.defineProperty(exports, "EyeSlashOutlined", {
   enumerable: true,
   get: function get() {
     return __importDefault(EyeSlashOutlined_1)["default"];
-  }
-});
-var FacebookFilled_1 = require("./FacebookFilled");
-Object.defineProperty(exports, "FacebookFilled", {
-  enumerable: true,
-  get: function get() {
-    return __importDefault(FacebookFilled_1)["default"];
   }
 });
 var FileFilled_1 = require("./FileFilled");
@@ -1199,13 +1045,6 @@ Object.defineProperty(exports, "FileTextOutlined", {
     return __importDefault(FileTextOutlined_1)["default"];
   }
 });
-var FilletFileListFilled_1 = require("./FilletFileListFilled");
-Object.defineProperty(exports, "FilletFileListFilled", {
-  enumerable: true,
-  get: function get() {
-    return __importDefault(FilletFileListFilled_1)["default"];
-  }
-});
 var FilletFileListOutlined_1 = require("./FilletFileListOutlined");
 Object.defineProperty(exports, "FilletFileListOutlined", {
   enumerable: true,
@@ -1253,13 +1092,6 @@ Object.defineProperty(exports, "FlagOutlined", {
   enumerable: true,
   get: function get() {
     return __importDefault(FlagOutlined_1)["default"];
-  }
-});
-var FoldSearchFileFilled_1 = require("./FoldSearchFileFilled");
-Object.defineProperty(exports, "FoldSearchFileFilled", {
-  enumerable: true,
-  get: function get() {
-    return __importDefault(FoldSearchFileFilled_1)["default"];
   }
 });
 var FoldSearchFileOutlined_1 = require("./FoldSearchFileOutlined");
@@ -1360,13 +1192,6 @@ Object.defineProperty(exports, "GiftFilled", {
     return __importDefault(GiftFilled_1)["default"];
   }
 });
-var GiftWithClipFilled_1 = require("./GiftWithClipFilled");
-Object.defineProperty(exports, "GiftWithClipFilled", {
-  enumerable: true,
-  get: function get() {
-    return __importDefault(GiftWithClipFilled_1)["default"];
-  }
-});
 var GroupFilled_1 = require("./GroupFilled");
 Object.defineProperty(exports, "GroupFilled", {
   enumerable: true,
@@ -1437,11 +1262,11 @@ Object.defineProperty(exports, "HouseOutlined", {
     return __importDefault(HouseOutlined_1)["default"];
   }
 });
-var IbFilled_1 = require("./IbFilled");
-Object.defineProperty(exports, "IbFilled", {
+var IdCardFilled_1 = require("./IdCardFilled");
+Object.defineProperty(exports, "IdCardFilled", {
   enumerable: true,
   get: function get() {
-    return __importDefault(IbFilled_1)["default"];
+    return __importDefault(IdCardFilled_1)["default"];
   }
 });
 var ImacFilled_1 = require("./ImacFilled");
@@ -1479,25 +1304,11 @@ Object.defineProperty(exports, "InformationOutlined", {
     return __importDefault(InformationOutlined_1)["default"];
   }
 });
-var InsFilled_1 = require("./InsFilled");
-Object.defineProperty(exports, "InsFilled", {
-  enumerable: true,
-  get: function get() {
-    return __importDefault(InsFilled_1)["default"];
-  }
-});
 var InternalResourceOutlined_1 = require("./InternalResourceOutlined");
 Object.defineProperty(exports, "InternalResourceOutlined", {
   enumerable: true,
   get: function get() {
     return __importDefault(InternalResourceOutlined_1)["default"];
-  }
-});
-var InviteFriendFilled_1 = require("./InviteFriendFilled");
-Object.defineProperty(exports, "InviteFriendFilled", {
-  enumerable: true,
-  get: function get() {
-    return __importDefault(InviteFriendFilled_1)["default"];
   }
 });
 var InvoiceOutlined_1 = require("./InvoiceOutlined");
@@ -1584,20 +1395,6 @@ Object.defineProperty(exports, "LinkOutlined", {
     return __importDefault(LinkOutlined_1)["default"];
   }
 });
-var LinkedinFilled_1 = require("./LinkedinFilled");
-Object.defineProperty(exports, "LinkedinFilled", {
-  enumerable: true,
-  get: function get() {
-    return __importDefault(LinkedinFilled_1)["default"];
-  }
-});
-var ListCaptionFilled_1 = require("./ListCaptionFilled");
-Object.defineProperty(exports, "ListCaptionFilled", {
-  enumerable: true,
-  get: function get() {
-    return __importDefault(ListCaptionFilled_1)["default"];
-  }
-});
 var ListCaptionOutlined_1 = require("./ListCaptionOutlined");
 Object.defineProperty(exports, "ListCaptionOutlined", {
   enumerable: true,
@@ -1617,13 +1414,6 @@ Object.defineProperty(exports, "ListOutlined", {
   enumerable: true,
   get: function get() {
     return __importDefault(ListOutlined_1)["default"];
-  }
-});
-var LoadingFilled_1 = require("./LoadingFilled");
-Object.defineProperty(exports, "LoadingFilled", {
-  enumerable: true,
-  get: function get() {
-    return __importDefault(LoadingFilled_1)["default"];
   }
 });
 var LocationOutlined_1 = require("./LocationOutlined");
@@ -1654,11 +1444,18 @@ Object.defineProperty(exports, "LockOutlined", {
     return __importDefault(LockOutlined_1)["default"];
   }
 });
-var LoopFilled_1 = require("./LoopFilled");
-Object.defineProperty(exports, "LoopFilled", {
+var LogoEc_1 = require("./LogoEc");
+Object.defineProperty(exports, "LogoEc", {
   enumerable: true,
   get: function get() {
-    return __importDefault(LoopFilled_1)["default"];
+    return __importDefault(LogoEc_1)["default"];
+  }
+});
+var LogoTmd_1 = require("./LogoTmd");
+Object.defineProperty(exports, "LogoTmd", {
+  enumerable: true,
+  get: function get() {
+    return __importDefault(LogoTmd_1)["default"];
   }
 });
 var LoopFolderFilled_1 = require("./LoopFolderFilled");
@@ -1687,13 +1484,6 @@ Object.defineProperty(exports, "MailFilled", {
   enumerable: true,
   get: function get() {
     return __importDefault(MailFilled_1)["default"];
-  }
-});
-var MailHollowFilled_1 = require("./MailHollowFilled");
-Object.defineProperty(exports, "MailHollowFilled", {
-  enumerable: true,
-  get: function get() {
-    return __importDefault(MailHollowFilled_1)["default"];
   }
 });
 var MailOutlined_1 = require("./MailOutlined");
@@ -1836,13 +1626,6 @@ Object.defineProperty(exports, "OfficeBagOutlined", {
     return __importDefault(OfficeBagOutlined_1)["default"];
   }
 });
-var OngoingFilled_1 = require("./OngoingFilled");
-Object.defineProperty(exports, "OngoingFilled", {
-  enumerable: true,
-  get: function get() {
-    return __importDefault(OngoingFilled_1)["default"];
-  }
-});
 var OpenMailFilled_1 = require("./OpenMailFilled");
 Object.defineProperty(exports, "OpenMailFilled", {
   enumerable: true,
@@ -1857,13 +1640,6 @@ Object.defineProperty(exports, "OpenMailOutlined", {
     return __importDefault(OpenMailOutlined_1)["default"];
   }
 });
-var OppositeArrowsFilled_1 = require("./OppositeArrowsFilled");
-Object.defineProperty(exports, "OppositeArrowsFilled", {
-  enumerable: true,
-  get: function get() {
-    return __importDefault(OppositeArrowsFilled_1)["default"];
-  }
-});
 var OppositeArrowsOutlined_1 = require("./OppositeArrowsOutlined");
 Object.defineProperty(exports, "OppositeArrowsOutlined", {
   enumerable: true,
@@ -1876,13 +1652,6 @@ Object.defineProperty(exports, "OtcMerchantLine", {
   enumerable: true,
   get: function get() {
     return __importDefault(OtcMerchantLine_1)["default"];
-  }
-});
-var OtcMerchant_1 = require("./OtcMerchant");
-Object.defineProperty(exports, "OtcMerchant", {
-  enumerable: true,
-  get: function get() {
-    return __importDefault(OtcMerchant_1)["default"];
   }
 });
 var PauseCircleFilled_1 = require("./PauseCircleFilled");
@@ -1927,13 +1696,6 @@ Object.defineProperty(exports, "PeopleAddOutlined", {
     return __importDefault(PeopleAddOutlined_1)["default"];
   }
 });
-var PeopleCardFilled_1 = require("./PeopleCardFilled");
-Object.defineProperty(exports, "PeopleCardFilled", {
-  enumerable: true,
-  get: function get() {
-    return __importDefault(PeopleCardFilled_1)["default"];
-  }
-});
 var PeopleCircleOutlined_1 = require("./PeopleCircleOutlined");
 Object.defineProperty(exports, "PeopleCircleOutlined", {
   enumerable: true,
@@ -1962,25 +1724,11 @@ Object.defineProperty(exports, "PeopleEllipsisFilled", {
     return __importDefault(PeopleEllipsisFilled_1)["default"];
   }
 });
-var PeopleErrorFilled_1 = require("./PeopleErrorFilled");
-Object.defineProperty(exports, "PeopleErrorFilled", {
-  enumerable: true,
-  get: function get() {
-    return __importDefault(PeopleErrorFilled_1)["default"];
-  }
-});
 var PeopleFilled_1 = require("./PeopleFilled");
 Object.defineProperty(exports, "PeopleFilled", {
   enumerable: true,
   get: function get() {
     return __importDefault(PeopleFilled_1)["default"];
-  }
-});
-var PeopleFolderFilled_1 = require("./PeopleFolderFilled");
-Object.defineProperty(exports, "PeopleFolderFilled", {
-  enumerable: true,
-  get: function get() {
-    return __importDefault(PeopleFolderFilled_1)["default"];
   }
 });
 var PeopleGetOutlined_1 = require("./PeopleGetOutlined");
@@ -2002,13 +1750,6 @@ Object.defineProperty(exports, "PeopleGroupOutlined", {
   enumerable: true,
   get: function get() {
     return __importDefault(PeopleGroupOutlined_1)["default"];
-  }
-});
-var PeopleLockFilled_1 = require("./PeopleLockFilled");
-Object.defineProperty(exports, "PeopleLockFilled", {
-  enumerable: true,
-  get: function get() {
-    return __importDefault(PeopleLockFilled_1)["default"];
   }
 });
 var PeopleOutlined_1 = require("./PeopleOutlined");
@@ -2051,13 +1792,6 @@ Object.defineProperty(exports, "PeopleTieOutlined", {
   enumerable: true,
   get: function get() {
     return __importDefault(PeopleTieOutlined_1)["default"];
-  }
-});
-var PersonGroupFilled_1 = require("./PersonGroupFilled");
-Object.defineProperty(exports, "PersonGroupFilled", {
-  enumerable: true,
-  get: function get() {
-    return __importDefault(PersonGroupFilled_1)["default"];
   }
 });
 var PersonLeftArrowFilled_1 = require("./PersonLeftArrowFilled");
@@ -2116,20 +1850,6 @@ Object.defineProperty(exports, "PlaySolidFilled", {
     return __importDefault(PlaySolidFilled_1)["default"];
   }
 });
-var PlusBoldSquareFilled_1 = require("./PlusBoldSquareFilled");
-Object.defineProperty(exports, "PlusBoldSquareFilled", {
-  enumerable: true,
-  get: function get() {
-    return __importDefault(PlusBoldSquareFilled_1)["default"];
-  }
-});
-var PlusFilled_1 = require("./PlusFilled");
-Object.defineProperty(exports, "PlusFilled", {
-  enumerable: true,
-  get: function get() {
-    return __importDefault(PlusFilled_1)["default"];
-  }
-});
 var PlusOutlined_1 = require("./PlusOutlined");
 Object.defineProperty(exports, "PlusOutlined", {
   enumerable: true,
@@ -2186,13 +1906,6 @@ Object.defineProperty(exports, "RectBoardOutlined", {
     return __importDefault(RectBoardOutlined_1)["default"];
   }
 });
-var RectForkFilled_1 = require("./RectForkFilled");
-Object.defineProperty(exports, "RectForkFilled", {
-  enumerable: true,
-  get: function get() {
-    return __importDefault(RectForkFilled_1)["default"];
-  }
-});
 var RectTwoBarFilled_1 = require("./RectTwoBarFilled");
 Object.defineProperty(exports, "RectTwoBarFilled", {
   enumerable: true,
@@ -2235,6 +1948,20 @@ Object.defineProperty(exports, "RefreshRightOutlined", {
     return __importDefault(RefreshRightOutlined_1)["default"];
   }
 });
+var RelationCircle_1 = require("./RelationCircle");
+Object.defineProperty(exports, "RelationCircle", {
+  enumerable: true,
+  get: function get() {
+    return __importDefault(RelationCircle_1)["default"];
+  }
+});
+var RelationInternal_1 = require("./RelationInternal");
+Object.defineProperty(exports, "RelationInternal", {
+  enumerable: true,
+  get: function get() {
+    return __importDefault(RelationInternal_1)["default"];
+  }
+});
 var ResourceOutlined_1 = require("./ResourceOutlined");
 Object.defineProperty(exports, "ResourceOutlined", {
   enumerable: true,
@@ -2247,20 +1974,6 @@ Object.defineProperty(exports, "RetryFilled", {
   enumerable: true,
   get: function get() {
     return __importDefault(RetryFilled_1)["default"];
-  }
-});
-var RetryRefreshFilled_1 = require("./RetryRefreshFilled");
-Object.defineProperty(exports, "RetryRefreshFilled", {
-  enumerable: true,
-  get: function get() {
-    return __importDefault(RetryRefreshFilled_1)["default"];
-  }
-});
-var RingDotsFilled_1 = require("./RingDotsFilled");
-Object.defineProperty(exports, "RingDotsFilled", {
-  enumerable: true,
-  get: function get() {
-    return __importDefault(RingDotsFilled_1)["default"];
   }
 });
 var RiskControlFilled_1 = require("./RiskControlFilled");
@@ -2277,18 +1990,60 @@ Object.defineProperty(exports, "RiskControlOutlined", {
     return __importDefault(RiskControlOutlined_1)["default"];
   }
 });
-var RoundedRectangleClockFilled_1 = require("./RoundedRectangleClockFilled");
-Object.defineProperty(exports, "RoundedRectangleClockFilled", {
+var RoleDirect_1 = require("./RoleDirect");
+Object.defineProperty(exports, "RoleDirect", {
   enumerable: true,
   get: function get() {
-    return __importDefault(RoundedRectangleClockFilled_1)["default"];
+    return __importDefault(RoleDirect_1)["default"];
   }
 });
-var SearchDocumentFilled_1 = require("./SearchDocumentFilled");
-Object.defineProperty(exports, "SearchDocumentFilled", {
+var RoleFollower_1 = require("./RoleFollower");
+Object.defineProperty(exports, "RoleFollower", {
   enumerable: true,
   get: function get() {
-    return __importDefault(SearchDocumentFilled_1)["default"];
+    return __importDefault(RoleFollower_1)["default"];
+  }
+});
+var RoleIb_1 = require("./RoleIb");
+Object.defineProperty(exports, "RoleIb", {
+  enumerable: true,
+  get: function get() {
+    return __importDefault(RoleIb_1)["default"];
+  }
+});
+var RoleManage_1 = require("./RoleManage");
+Object.defineProperty(exports, "RoleManage", {
+  enumerable: true,
+  get: function get() {
+    return __importDefault(RoleManage_1)["default"];
+  }
+});
+var RoleOtcMerchant_1 = require("./RoleOtcMerchant");
+Object.defineProperty(exports, "RoleOtcMerchant", {
+  enumerable: true,
+  get: function get() {
+    return __importDefault(RoleOtcMerchant_1)["default"];
+  }
+});
+var RoleSale_1 = require("./RoleSale");
+Object.defineProperty(exports, "RoleSale", {
+  enumerable: true,
+  get: function get() {
+    return __importDefault(RoleSale_1)["default"];
+  }
+});
+var RoleSignalResource_1 = require("./RoleSignalResource");
+Object.defineProperty(exports, "RoleSignalResource", {
+  enumerable: true,
+  get: function get() {
+    return __importDefault(RoleSignalResource_1)["default"];
+  }
+});
+var RoleSubAccount_1 = require("./RoleSubAccount");
+Object.defineProperty(exports, "RoleSubAccount", {
+  enumerable: true,
+  get: function get() {
+    return __importDefault(RoleSubAccount_1)["default"];
   }
 });
 var SearchFilled_1 = require("./SearchFilled");
@@ -2403,13 +2158,6 @@ Object.defineProperty(exports, "ShieldOutlined", {
     return __importDefault(ShieldOutlined_1)["default"];
   }
 });
-var ShieldTickAsteriskFilled_1 = require("./ShieldTickAsteriskFilled");
-Object.defineProperty(exports, "ShieldTickAsteriskFilled", {
-  enumerable: true,
-  get: function get() {
-    return __importDefault(ShieldTickAsteriskFilled_1)["default"];
-  }
-});
 var ShopKeeperFilled_1 = require("./ShopKeeperFilled");
 Object.defineProperty(exports, "ShopKeeperFilled", {
   enumerable: true,
@@ -2424,32 +2172,11 @@ Object.defineProperty(exports, "ShopKeeperOutlined", {
     return __importDefault(ShopKeeperOutlined_1)["default"];
   }
 });
-var SignBankCardFilled_1 = require("./SignBankCardFilled");
-Object.defineProperty(exports, "SignBankCardFilled", {
-  enumerable: true,
-  get: function get() {
-    return __importDefault(SignBankCardFilled_1)["default"];
-  }
-});
-var SignalDiffusionFilled_1 = require("./SignalDiffusionFilled");
-Object.defineProperty(exports, "SignalDiffusionFilled", {
-  enumerable: true,
-  get: function get() {
-    return __importDefault(SignalDiffusionFilled_1)["default"];
-  }
-});
 var SignalDiffusionOutlined_1 = require("./SignalDiffusionOutlined");
 Object.defineProperty(exports, "SignalDiffusionOutlined", {
   enumerable: true,
   get: function get() {
     return __importDefault(SignalDiffusionOutlined_1)["default"];
-  }
-});
-var SignalFilled_1 = require("./SignalFilled");
-Object.defineProperty(exports, "SignalFilled", {
-  enumerable: true,
-  get: function get() {
-    return __importDefault(SignalFilled_1)["default"];
   }
 });
 var SignalLineOutlined_1 = require("./SignalLineOutlined");
@@ -2480,6 +2207,41 @@ Object.defineProperty(exports, "SimpleEarthOutlined", {
     return __importDefault(SimpleEarthOutlined_1)["default"];
   }
 });
+var SocialMediaFacebook_1 = require("./SocialMediaFacebook");
+Object.defineProperty(exports, "SocialMediaFacebook", {
+  enumerable: true,
+  get: function get() {
+    return __importDefault(SocialMediaFacebook_1)["default"];
+  }
+});
+var SocialMediaIn_1 = require("./SocialMediaIn");
+Object.defineProperty(exports, "SocialMediaIn", {
+  enumerable: true,
+  get: function get() {
+    return __importDefault(SocialMediaIn_1)["default"];
+  }
+});
+var SocialMediaIns_1 = require("./SocialMediaIns");
+Object.defineProperty(exports, "SocialMediaIns", {
+  enumerable: true,
+  get: function get() {
+    return __importDefault(SocialMediaIns_1)["default"];
+  }
+});
+var SocialMediaTwitter_1 = require("./SocialMediaTwitter");
+Object.defineProperty(exports, "SocialMediaTwitter", {
+  enumerable: true,
+  get: function get() {
+    return __importDefault(SocialMediaTwitter_1)["default"];
+  }
+});
+var SocialMediaYoutube_1 = require("./SocialMediaYoutube");
+Object.defineProperty(exports, "SocialMediaYoutube", {
+  enumerable: true,
+  get: function get() {
+    return __importDefault(SocialMediaYoutube_1)["default"];
+  }
+});
 var SpeakerFilled_1 = require("./SpeakerFilled");
 Object.defineProperty(exports, "SpeakerFilled", {
   enumerable: true,
@@ -2506,13 +2268,6 @@ Object.defineProperty(exports, "SquareAOutlined", {
   enumerable: true,
   get: function get() {
     return __importDefault(SquareAOutlined_1)["default"];
-  }
-});
-var SquareFilled_1 = require("./SquareFilled");
-Object.defineProperty(exports, "SquareFilled", {
-  enumerable: true,
-  get: function get() {
-    return __importDefault(SquareFilled_1)["default"];
   }
 });
 var SquareLeftTurnFilled_1 = require("./SquareLeftTurnFilled");
@@ -2564,6 +2319,13 @@ Object.defineProperty(exports, "StopOutlined", {
     return __importDefault(StopOutlined_1)["default"];
   }
 });
+var TagBrokenHeart_1 = require("./TagBrokenHeart");
+Object.defineProperty(exports, "TagBrokenHeart", {
+  enumerable: true,
+  get: function get() {
+    return __importDefault(TagBrokenHeart_1)["default"];
+  }
+});
 var TagFilled_1 = require("./TagFilled");
 Object.defineProperty(exports, "TagFilled", {
   enumerable: true,
@@ -2578,25 +2340,11 @@ Object.defineProperty(exports, "TagOutlined", {
     return __importDefault(TagOutlined_1)["default"];
   }
 });
-var TimeCardFilled_1 = require("./TimeCardFilled");
-Object.defineProperty(exports, "TimeCardFilled", {
+var TagRecharged_1 = require("./TagRecharged");
+Object.defineProperty(exports, "TagRecharged", {
   enumerable: true,
   get: function get() {
-    return __importDefault(TimeCardFilled_1)["default"];
-  }
-});
-var TimeZoneSiteFilled_1 = require("./TimeZoneSiteFilled");
-Object.defineProperty(exports, "TimeZoneSiteFilled", {
-  enumerable: true,
-  get: function get() {
-    return __importDefault(TimeZoneSiteFilled_1)["default"];
-  }
-});
-var TmdLogo_1 = require("./TmdLogo");
-Object.defineProperty(exports, "TmdLogo", {
-  enumerable: true,
-  get: function get() {
-    return __importDefault(TmdLogo_1)["default"];
+    return __importDefault(TagRecharged_1)["default"];
   }
 });
 var TransferFileFilled_1 = require("./TransferFileFilled");
@@ -2620,13 +2368,6 @@ Object.defineProperty(exports, "TreeAreaOutlined", {
     return __importDefault(TreeAreaOutlined_1)["default"];
   }
 });
-var TreeCircleFilled_1 = require("./TreeCircleFilled");
-Object.defineProperty(exports, "TreeCircleFilled", {
-  enumerable: true,
-  get: function get() {
-    return __importDefault(TreeCircleFilled_1)["default"];
-  }
-});
 var TreeFilled_1 = require("./TreeFilled");
 Object.defineProperty(exports, "TreeFilled", {
   enumerable: true,
@@ -2641,20 +2382,6 @@ Object.defineProperty(exports, "TreeOutlined", {
     return __importDefault(TreeOutlined_1)["default"];
   }
 });
-var TriangleArrowDownFilled_1 = require("./TriangleArrowDownFilled");
-Object.defineProperty(exports, "TriangleArrowDownFilled", {
-  enumerable: true,
-  get: function get() {
-    return __importDefault(TriangleArrowDownFilled_1)["default"];
-  }
-});
-var TwitterFilled_1 = require("./TwitterFilled");
-Object.defineProperty(exports, "TwitterFilled", {
-  enumerable: true,
-  get: function get() {
-    return __importDefault(TwitterFilled_1)["default"];
-  }
-});
 var TwoPeopleRectOutlined_1 = require("./TwoPeopleRectOutlined");
 Object.defineProperty(exports, "TwoPeopleRectOutlined", {
   enumerable: true,
@@ -2662,11 +2389,11 @@ Object.defineProperty(exports, "TwoPeopleRectOutlined", {
     return __importDefault(TwoPeopleRectOutlined_1)["default"];
   }
 });
-var TwoPersonConfirmFilled_1 = require("./TwoPersonConfirmFilled");
-Object.defineProperty(exports, "TwoPersonConfirmFilled", {
+var TwoPersonConfirm_1 = require("./TwoPersonConfirm");
+Object.defineProperty(exports, "TwoPersonConfirm", {
   enumerable: true,
   get: function get() {
-    return __importDefault(TwoPersonConfirmFilled_1)["default"];
+    return __importDefault(TwoPersonConfirm_1)["default"];
   }
 });
 var TwoSwitchOutlined_1 = require("./TwoSwitchOutlined");
@@ -2674,13 +2401,6 @@ Object.defineProperty(exports, "TwoSwitchOutlined", {
   enumerable: true,
   get: function get() {
     return __importDefault(TwoSwitchOutlined_1)["default"];
-  }
-});
-var UnbindChainFilled_1 = require("./UnbindChainFilled");
-Object.defineProperty(exports, "UnbindChainFilled", {
-  enumerable: true,
-  get: function get() {
-    return __importDefault(UnbindChainFilled_1)["default"];
   }
 });
 var UnbindChainOutlined_1 = require("./UnbindChainOutlined");
@@ -2695,13 +2415,6 @@ Object.defineProperty(exports, "UnlockFilled", {
   enumerable: true,
   get: function get() {
     return __importDefault(UnlockFilled_1)["default"];
-  }
-});
-var UpFilled_1 = require("./UpFilled");
-Object.defineProperty(exports, "UpFilled", {
-  enumerable: true,
-  get: function get() {
-    return __importDefault(UpFilled_1)["default"];
   }
 });
 var UpgradeFilled_1 = require("./UpgradeFilled");
@@ -2723,6 +2436,69 @@ Object.defineProperty(exports, "UserCheckOutlined", {
   enumerable: true,
   get: function get() {
     return __importDefault(UserCheckOutlined_1)["default"];
+  }
+});
+var UserInfoAuth_1 = require("./UserInfoAuth");
+Object.defineProperty(exports, "UserInfoAuth", {
+  enumerable: true,
+  get: function get() {
+    return __importDefault(UserInfoAuth_1)["default"];
+  }
+});
+var UserInfoCellPhone_1 = require("./UserInfoCellPhone");
+Object.defineProperty(exports, "UserInfoCellPhone", {
+  enumerable: true,
+  get: function get() {
+    return __importDefault(UserInfoCellPhone_1)["default"];
+  }
+});
+var UserInfoData_1 = require("./UserInfoData");
+Object.defineProperty(exports, "UserInfoData", {
+  enumerable: true,
+  get: function get() {
+    return __importDefault(UserInfoData_1)["default"];
+  }
+});
+var UserInfoEmail_1 = require("./UserInfoEmail");
+Object.defineProperty(exports, "UserInfoEmail", {
+  enumerable: true,
+  get: function get() {
+    return __importDefault(UserInfoEmail_1)["default"];
+  }
+});
+var UserInfoGift_1 = require("./UserInfoGift");
+Object.defineProperty(exports, "UserInfoGift", {
+  enumerable: true,
+  get: function get() {
+    return __importDefault(UserInfoGift_1)["default"];
+  }
+});
+var UserInfoPassword_1 = require("./UserInfoPassword");
+Object.defineProperty(exports, "UserInfoPassword", {
+  enumerable: true,
+  get: function get() {
+    return __importDefault(UserInfoPassword_1)["default"];
+  }
+});
+var UserInfoRealname_1 = require("./UserInfoRealname");
+Object.defineProperty(exports, "UserInfoRealname", {
+  enumerable: true,
+  get: function get() {
+    return __importDefault(UserInfoRealname_1)["default"];
+  }
+});
+var UserInfoTimeZone_1 = require("./UserInfoTimeZone");
+Object.defineProperty(exports, "UserInfoTimeZone", {
+  enumerable: true,
+  get: function get() {
+    return __importDefault(UserInfoTimeZone_1)["default"];
+  }
+});
+var UserInfoTime_1 = require("./UserInfoTime");
+Object.defineProperty(exports, "UserInfoTime", {
+  enumerable: true,
+  get: function get() {
+    return __importDefault(UserInfoTime_1)["default"];
   }
 });
 var UserOutlined_1 = require("./UserOutlined");
@@ -2772,12 +2548,5 @@ Object.defineProperty(exports, "WarningRuleOutlined", {
   enumerable: true,
   get: function get() {
     return __importDefault(WarningRuleOutlined_1)["default"];
-  }
-});
-var YoutubeFilled_1 = require("./YoutubeFilled");
-Object.defineProperty(exports, "YoutubeFilled", {
-  enumerable: true,
-  get: function get() {
-    return __importDefault(YoutubeFilled_1)["default"];
   }
 });

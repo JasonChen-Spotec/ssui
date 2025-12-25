@@ -1,7 +1,5 @@
-<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path fill-rule="evenodd" clip-rule="evenodd"
-        d="M12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 0.999999 5.92487 1 12C0.999999 18.0751 5.92487 23 12 23Z"
+        d="M12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 0.999999 5.92487 1 12C0.999999 18.0751 5.92487 23 12 23ZM11 16L11 18H13L13 16H11ZM11 5.99996V14H13L13 5.99996H11Z"
         fill="currentColor" />
-    <path d="M11 18V16H13L13 18H11Z" fill="inherit" />
-    <path d="M11 14V6H13L13 14H11Z" fill="inherit" />
 </svg>

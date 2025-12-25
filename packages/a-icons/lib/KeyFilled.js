@@ -62,7 +62,7 @@ function KeyFilled(componentProps) {
       fill: "none",
       xmlns: "http://www.w3.org/2000/svg"
     }, props), React.createElement("path", {
-      d: "M10.313 11.566l7.94-7.94 2.121 2.121-1.414 1.414 2.121 2.121-3.535 3.536-2.121-2.121-2.99 2.99a5.003 5.003 0 01-7.97 5.849 5 5 0 015.848-7.97zm-.899 5.848a2 2 0 10-2.78-2.877 2 2 0 002.78 2.877z",
+      d: "M17 14h-4.341a6 6 0 110-4H23v4h-2v4h-4v-4zM7 14a2 2 0 100-4 2 2 0 000 4z",
       fill: "currentColor"
     }));
   };

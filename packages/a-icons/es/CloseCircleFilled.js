@@ -19,10 +19,11 @@ function CloseCircleFilled(componentProps) {
       fill: "none",
       xmlns: "http://www.w3.org/2000/svg"
     }, props), /*#__PURE__*/React.createElement("path", {
-      fillRule: "evenodd",
-      clipRule: "evenodd",
-      d: "M3 12a9 9 0 1118 0 9 9 0 01-18 0zm10.662-2.705a.7.7 0 11.99.99l-1.768 1.768 1.91 1.909a.7.7 0 01-.99.99l-1.91-1.91-1.91 1.91a.7.7 0 11-.989-.99l1.91-1.91-1.768-1.767a.7.7 0 01.99-.99l1.767 1.768 1.768-1.768z",
-      fill: "currentColor"
+      d: "M12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2zm3.535 5.05a1 1 0 00-1.414 0L12 9.17 9.879 7.05A1 1 0 008.54 6.98l-.075.069L7.05 8.465a1 1 0 000 1.414L9.17 12l-2.12 2.121a1 1 0 000 1.414l1.415 1.415a1 1 0 001.414 0L12 14.828l2.121 2.122a1 1 0 001.414 0l1.415-1.415a1 1 0 000-1.414L14.828 12l2.122-2.121a1 1 0 000-1.414L15.535 7.05z",
+      fill: "currentColor",
+      stroke: "currentColor",
+      strokeWidth: 2,
+      strokeLinejoin: "round"
     }));
   };
   return /*#__PURE__*/React.createElement(Icon, __assign({}, componentProps, {

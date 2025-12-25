@@ -62,7 +62,7 @@ function ArrowDropDownFilled(componentProps) {
       fill: "none",
       xmlns: "http://www.w3.org/2000/svg"
     }, props), React.createElement("path", {
-      d: "M12 14l-4-4h8l-4 4z",
+      d: "M12.469 17.414a.6.6 0 01-.937 0L4.78 8.974A.6.6 0 015.25 8h13.503a.6.6 0 01.468.975l-6.751 8.44z",
       fill: "currentColor"
     }));
   };

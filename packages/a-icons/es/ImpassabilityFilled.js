@@ -16,9 +16,10 @@ function ImpassabilityFilled(componentProps) {
   var IconNode = function IconNode(props) {
     return /*#__PURE__*/React.createElement("svg", __assign({
       viewBox: "0 0 24 24",
+      fill: "none",
       xmlns: "http://www.w3.org/2000/svg"
     }, props), /*#__PURE__*/React.createElement("path", {
-      d: "M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zM7 11v2h10v-2H7z",
+      d: "M12 1c6.075 0 11 4.925 11 11s-4.925 11-11 11S1 18.075 1 12 5.925 1 12 1zM7 11v2h10v-2H7z",
       fill: "currentColor"
     }));
   };

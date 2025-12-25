@@ -59,11 +59,12 @@ function RefreshFilled(componentProps) {
   var IconNode = function IconNode(props) {
     return React.createElement("svg", __assign({
       viewBox: "0 0 24 24",
+      fill: "none",
       xmlns: "http://www.w3.org/2000/svg"
     }, props), React.createElement("path", {
       fillRule: "evenodd",
       clipRule: "evenodd",
-      d: "M7.56 2h8.88A5.56 5.56 0 0122 7.56v8.88A5.56 5.56 0 0116.44 22H7.56A5.56 5.56 0 012 16.44V7.56A5.56 5.56 0 017.56 2zM5.709 15.205A6.76 6.76 0 0012 19.5a6.76 6.76 0 001.17-13.41l.16-.17a.83.83 0 00-1.17-1.18l-1.49 1.48a.82.82 0 000 1.18l1.49 1.49a.84.84 0 00.58.24.87.87 0 00.59-.24.82.82 0 00.11-1A5.12 5.12 0 118.54 9a.831.831 0 00-1.13-1.22 6.76 6.76 0 00-1.701 7.425z",
+      d: "M12 23c6.075 0 11-4.925 11-11S18.075 1 12 1 1 5.925 1 12s4.925 11 11 11zm0-18c-1.766 0-3.38.654-4.61 1.733-.247.215-.188.602.098.76l3.77 2.094A.5.5 0 0012 9.15V7a5 5 0 11-4.587 3.007l-1.755-.975A7 7 0 1012 5z",
       fill: "currentColor"
     }));
   };

@@ -16,11 +16,15 @@ function CreditCardFilled(componentProps) {
   var IconNode = function IconNode(props) {
     return /*#__PURE__*/React.createElement("svg", __assign({
       viewBox: "0 0 24 24",
+      fill: "none",
       xmlns: "http://www.w3.org/2000/svg"
     }, props), /*#__PURE__*/React.createElement("path", {
+      d: "M1 7a3 3 0 013-3h16a3 3 0 013 3v2H1V7z",
+      fill: "currentColor"
+    }), /*#__PURE__*/React.createElement("path", {
       fillRule: "evenodd",
       clipRule: "evenodd",
-      d: "M6 5h12a4 4 0 014 4v6a4 4 0 01-4 4H6a4 4 0 01-4-4V9a4 4 0 014-4zm-.74 9.75h13.48a.75.75 0 000-1.5H5.26a.75.75 0 000 1.5z",
+      d: "M1 11h22v6a3 3 0 01-3 3H4a3 3 0 01-3-3v-6zm11 2H5v2h7v-2z",
       fill: "currentColor"
     }));
   };

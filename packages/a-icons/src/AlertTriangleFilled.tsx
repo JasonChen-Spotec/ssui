@@ -3,11 +3,11 @@ import Icon, { IconProps } from 'a-base-icon/lib/icon';
 
 function AlertTriangleFilled(componentProps: IconProps) {
   const IconNode = (props: React.SVGProps<SVGSVGElement>) => (
-    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" {...props}>
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
       <path
         fillRule="evenodd"
         clipRule="evenodd"
-        d="M20.855 15.504l-5.64-10.44a4 4 0 00-7 0l-5.73 10.43a4 4 0 003.51 5.91h11.34a4 4 0 003.52-5.9zm-10-5.76a.75.75 0 011.5 0v3.09a.75.75 0 01-1.5 0v-3.09zm.76 6.75a.75.75 0 00.75-.75l-.01-.01a.74.74 0 00-.74-.74.76.76 0 00-.75.75c0 .414.336.75.75.75z"
+        d="M13.722 2.375c-.776-1.3-2.658-1.3-3.434 0L.822 18.225c-.797 1.333.164 3.025 1.717 3.025H21.47c1.553 0 2.514-1.692 1.717-3.026l-9.466-15.85zM11 14h2V8h-2v6zm2.01 4v-2H11v2h2.01z"
         fill="currentColor"
       />
     </svg>

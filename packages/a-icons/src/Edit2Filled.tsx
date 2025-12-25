@@ -5,7 +5,7 @@ function Edit2Filled(componentProps: IconProps) {
   const IconNode = (props: React.SVGProps<SVGSVGElement>) => (
     <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
       <path
-        d="M9.243 19H21v2H3v-4.243l9.9-9.9 4.242 4.244-7.9 7.9h.001zm5.07-13.556l2.122-2.122a1 1 0 011.414 0l2.829 2.83a1 1 0 010 1.413l-2.122 2.121-4.242-4.242h-.001z"
+        d="M18.58 2.944a2 2 0 00-2.828 0L14.107 4.59l5.303 5.303 1.645-1.645a2 2 0 000-2.828L18.58 2.944zM17.996 11.307l-5.303-5.303-8.722 8.722a.5.5 0 00-.14.27l-.932 5.53a.5.5 0 00.576.576l5.529-.933a.5.5 0 00.27-.14l8.722-8.722z"
         fill="currentColor"
       />
     </svg>

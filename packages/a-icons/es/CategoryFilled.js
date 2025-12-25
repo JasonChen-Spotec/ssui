@@ -16,34 +16,10 @@ function CategoryFilled(componentProps) {
   var IconNode = function IconNode(props) {
     return /*#__PURE__*/React.createElement("svg", __assign({
       viewBox: "0 0 24 24",
+      fill: "none",
       xmlns: "http://www.w3.org/2000/svg"
-    }, props), /*#__PURE__*/React.createElement("rect", {
-      x: 2.33,
-      y: 2,
-      width: 8.67,
-      height: 6.67,
-      rx: 2.25,
-      fill: "currentColor"
-    }), /*#__PURE__*/React.createElement("rect", {
-      x: 13.67,
-      y: 2,
-      width: 8,
-      height: 11.33,
-      rx: 2.25,
-      fill: "currentColor"
-    }), /*#__PURE__*/React.createElement("rect", {
-      x: 13.67,
-      y: 16,
-      width: 8,
-      height: 6,
-      rx: 2.25,
-      fill: "currentColor"
-    }), /*#__PURE__*/React.createElement("rect", {
-      x: 2.33,
-      y: 11.33,
-      width: 8.67,
-      height: 10.67,
-      rx: 2.25,
+    }, props), /*#__PURE__*/React.createElement("path", {
+      d: "M4 2a2 2 0 00-2 2v3a2 2 0 002 2h5a2 2 0 002-2V4a2 2 0 00-2-2H4zM15 15a2 2 0 00-2 2v3a2 2 0 002 2h5a2 2 0 002-2v-3a2 2 0 00-2-2h-5zM13 4a2 2 0 012-2h5a2 2 0 012 2v7a2 2 0 01-2 2h-5a2 2 0 01-2-2V4zM4 11a2 2 0 00-2 2v7a2 2 0 002 2h5a2 2 0 002-2v-7a2 2 0 00-2-2H4z",
       fill: "currentColor"
     }));
   };

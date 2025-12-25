@@ -59,13 +59,14 @@ function SphereFilled(componentProps) {
   var IconNode = function IconNode(props) {
     return React.createElement("svg", __assign({
       viewBox: "0 0 24 24",
+      fill: "none",
       xmlns: "http://www.w3.org/2000/svg"
     }, props), React.createElement("path", {
-      d: "M21.045 9.985a9.62 9.62 0 00-11.2 9.46 8.43 8.43 0 00.14 1.6 9.59 9.59 0 1111.06-11.06z",
-      fill: "currentColor"
+      d: "M11 1.045C5.394 1.55 1 6.262 1 12c0 6.075 4.925 11 11 11 2.154 0 4.164-.62 5.86-1.69l-6.654-8.702A1 1 0 0111 12V1.045z",
+      fill: "currentCOlor"
     }), React.createElement("path", {
-      d: "M21.175 12.585a8.45 8.45 0 01-8.46 8.46 7.325 7.325 0 01-1.41-.12 7.316 7.316 0 01-.13-1.4 8.47 8.47 0 018.46-8.47c.476-.003.952.04 1.42.13.08.462.12.93.12 1.4z",
-      fill: "currentColor"
+      d: "M19.449 20.094A10.972 10.972 0 0022.955 13h-8.931l5.425 7.094zM22.955 11H13V1.045A11.003 11.003 0 0122.955 11z",
+      fill: "currentCOlor"
     }));
   };
   return React.createElement(icon_1["default"], __assign({}, componentProps, {
