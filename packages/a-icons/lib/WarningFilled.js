@@ -62,22 +62,10 @@ function WarningFilled(componentProps) {
       fill: "none",
       xmlns: "http://www.w3.org/2000/svg"
     }, props), React.createElement("path", {
-      d: "M5.5 11a6.5 6.5 0 0113 0v8.5h-13V11z",
-      fill: "currentColor",
-      stroke: "currentColor",
-      strokeWidth: 1.5
-    }), React.createElement("path", {
-      d: "M12 8.5l-2 4.19h4l-2 3.81",
-      stroke: "#fff",
-      strokeWidth: 1.5,
-      strokeLinecap: "round",
-      strokeLinejoin: "round"
-    }), React.createElement("path", {
-      d: "M3.5 19.5h17",
-      stroke: "currentColor",
-      strokeWidth: 1.5,
-      strokeLinecap: "round",
-      strokeLinejoin: "round"
+      fillRule: "evenodd",
+      clipRule: "evenodd",
+      d: "M21 21V10a9 9 0 10-18 0v11H1v2h22v-2h-2zm-9.312-10.274L14.414 8 13 6.586l-3.707 3.707a1 1 0 00.26 1.602l2.759 1.379L9.586 16 11 17.414l3.707-3.707a1 1 0 00-.26-1.601l-2.759-1.38z",
+      fill: "currentColor"
     }));
   };
   return React.createElement(icon_1["default"], __assign({}, componentProps, {

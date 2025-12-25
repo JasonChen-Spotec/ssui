@@ -16,11 +16,12 @@ function SearchFilled(componentProps) {
   var IconNode = function IconNode(props) {
     return /*#__PURE__*/React.createElement("svg", __assign({
       viewBox: "0 0 24 24",
+      fill: "none",
       xmlns: "http://www.w3.org/2000/svg"
     }, props), /*#__PURE__*/React.createElement("path", {
       fillRule: "evenodd",
       clipRule: "evenodd",
-      d: "M4.062 7.67A9.21 9.21 0 0112.539 2a9.22 9.22 0 11-5.39 16.66l-2.87 2.87a.75.75 0 01-1.06-1.06l2.79-2.79A9.21 9.21 0 014.062 7.67zm10.798.372A1.56 1.56 0 0016.31 9a1.55 1.55 0 001.55-1.55 1.56 1.56 0 10-3 .592z",
+      d: "M11 2a9 9 0 105.36 16.231l3.682 3.683 1.414-1.414-3.632-3.632A9 9 0 0011 2z",
       fill: "currentColor"
     }));
   };

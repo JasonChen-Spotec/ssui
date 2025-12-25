@@ -1,6 +1,14 @@
-<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-  <rect x="2.32996" y="2" width="8.67" height="6.67" rx="2.25" fill="currentColor" />
-  <rect x="13.6699" y="2" width="8" height="11.33" rx="2.25" fill="currentColor" />
-  <rect x="13.6699" y="16" width="8" height="6" rx="2.25" fill="currentColor" />
-  <rect x="2.32996" y="11.33" width="8.67" height="10.67" rx="2.25" fill="currentColor" />
+<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path
+        d="M4 2C2.89543 2 2 2.89543 2 4V7C2 8.10457 2.89543 9 4 9H9C10.1046 9 11 8.10457 11 7V4C11 2.89543 10.1046 2 9 2H4Z"
+        fill="currentColor" />
+    <path
+        d="M15 15C13.8954 15 13 15.8954 13 17V20C13 21.1046 13.8954 22 15 22H20C21.1046 22 22 21.1046 22 20V17C22 15.8954 21.1046 15 20 15H15Z"
+        fill="currentColor" />
+    <path
+        d="M13 4C13 2.89543 13.8954 2 15 2H20C21.1046 2 22 2.89543 22 4V11C22 12.1046 21.1046 13 20 13H15C13.8954 13 13 12.1046 13 11V4Z"
+        fill="currentColor" />
+    <path
+        d="M4 11C2.89543 11 2 11.8954 2 13V20C2 21.1046 2.89543 22 4 22H9C10.1046 22 11 21.1046 11 20V13C11 11.8954 10.1046 11 9 11H4Z"
+        fill="currentColor" />
 </svg>

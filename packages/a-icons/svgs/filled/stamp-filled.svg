@@ -1,6 +1,5 @@
-<svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-    <rect x="4" y="13" width="16" height="5" rx="2" fill="currentColor" />
-    <rect x="10" y="10" width="4" height="4" fill="currentColor" />
-    <circle cx="12" cy="7" r="4" fill="currentColor" />
-    <rect x="5" y="19" width="14" height="2" rx="1" fill="currentColor" />
+<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path
+        d="M19 22H5V19H19V22ZM12 1.41211C14.8235 1.41211 17.1172 3.61327 17.1172 6.32227C17.1171 8.1846 16.0585 9.70816 14.5586 10.5547V12.502H18.4414C19.8531 12.5021 21 13.6026 21 14.957V17.4121H3V14.957C3 13.6026 4.14693 12.5021 5.55859 12.502H9.44141V10.5547C7.94147 9.70816 6.8829 8.09995 6.88281 6.32227C6.88281 3.61327 9.17647 1.41211 12 1.41211Z"
+        fill="currentColor" />
 </svg>

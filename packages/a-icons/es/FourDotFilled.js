@@ -16,9 +16,12 @@ function FourDotFilled(componentProps) {
   var IconNode = function IconNode(props) {
     return /*#__PURE__*/React.createElement("svg", __assign({
       viewBox: "0 0 24 24",
+      fill: "none",
       xmlns: "http://www.w3.org/2000/svg"
     }, props), /*#__PURE__*/React.createElement("path", {
-      d: "M11 7.5a3.5 3.5 0 11-7 0 3.5 3.5 0 017 0zM21 7.5a3.5 3.5 0 11-7 0 3.5 3.5 0 017 0zM11 17.5a3.5 3.5 0 11-7 0 3.5 3.5 0 017 0zM21 17.5a3.5 3.5 0 11-7 0 3.5 3.5 0 017 0z",
+      fillRule: "evenodd",
+      clipRule: "evenodd",
+      d: "M2.5 6.75a4.25 4.25 0 118.5 0 4.25 4.25 0 01-8.5 0zM17.25 2.5a4.25 4.25 0 100 8.5 4.25 4.25 0 000-8.5zM17.25 13a4.25 4.25 0 100 8.5 4.25 4.25 0 000-8.5zM6.75 13a4.25 4.25 0 100 8.5 4.25 4.25 0 000-8.5z",
       fill: "currentColor"
     }));
   };

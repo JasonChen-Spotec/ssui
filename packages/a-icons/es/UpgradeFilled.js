@@ -16,9 +16,12 @@ function UpgradeFilled(componentProps) {
   var IconNode = function IconNode(props) {
     return /*#__PURE__*/React.createElement("svg", __assign({
       viewBox: "0 0 24 24",
+      fill: "none",
       xmlns: "http://www.w3.org/2000/svg"
     }, props), /*#__PURE__*/React.createElement("path", {
-      d: "M12 2c5.52 0 10 4.48 10 10s-4.48 10-10 10S2 17.52 2 12 6.48 2 12 2zm1 10h3l-4-4-4 4h3v4h2v-4z",
+      fillRule: "evenodd",
+      clipRule: "evenodd",
+      d: "M1 12C1 5.925 5.925 1 12 1s11 4.925 11 11-4.925 11-11 11S1 18.075 1 12zm11.707-4.707a1 1 0 00-1.414 0L6.586 12 8 13.414l3-3V17h2v-6.586l3 3L17.414 12l-4.707-4.707z",
       fill: "currentColor"
     }));
   };

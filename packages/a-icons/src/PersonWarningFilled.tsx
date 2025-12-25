@@ -3,21 +3,16 @@ import Icon, { IconProps } from 'a-base-icon/lib/icon';
 
 function PersonWarningFilled(componentProps: IconProps) {
   const IconNode = (props: React.SVGProps<SVGSVGElement>) => (
-    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" {...props}>
-      <path
-        d="M10.781 11.17h-.997a3.988 3.988 0 01-3.988-3.988V4.55a3.34 3.34 0 013.35-3.35h2.273a3.34 3.34 0 013.35 3.35v2.632a3.988 3.988 0 01-3.988 3.988z"
-        fill="currentColor"
-      />
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+      <path d="M17.5 6.5a5.5 5.5 0 11-11 0 5.5 5.5 0 0111 0z" fill="currentColor" />
       <path
         fillRule="evenodd"
         clipRule="evenodd"
-        d="M12.959 12.83H5.886a3.28 3.28 0 00-3.16 2.702l-.24 1.136a3.38 3.38 0 003.17 4.138h5.76a6.619 6.619 0 01-.708-2.99 6.63 6.63 0 012.25-4.986z"
+        d="M18 12.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zm.752 2.25v3.5h-1.5v-3.5h1.5zm0 6.5v-1.5h-1.504v1.5h1.505z"
         fill="currentColor"
       />
       <path
-        fillRule="evenodd"
-        clipRule="evenodd"
-        d="M17.354 22.8a4.985 4.985 0 100-9.97 4.985 4.985 0 000 9.97zM17 15h1v4h-1v-4zm1 5h-1v1h1v-1z"
+        d="M7 14h4.655a7.464 7.464 0 00-1.155 4c0 1.47.423 2.842 1.155 4H2v-3a5 5 0 015-5z"
         fill="currentColor"
       />
     </svg>
