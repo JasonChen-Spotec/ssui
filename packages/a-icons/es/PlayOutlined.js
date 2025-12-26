@@ -12,7 +12,7 @@ var __assign = this && this.__assign || function () {
 };
 import * as React from 'react';
 import Icon from 'a-base-icon/lib/icon';
-function PlaySharpFilled(componentProps) {
+function PlayOutlined(componentProps) {
   var IconNode = function IconNode(props) {
     return /*#__PURE__*/React.createElement("svg", __assign({
       viewBox: "0 0 24 24",
@@ -27,5 +27,5 @@ function PlaySharpFilled(componentProps) {
     component: IconNode
   }));
 }
-PlaySharpFilled.displayName = 'PlaySharpFilled';
-export default PlaySharpFilled;
+PlayOutlined.displayName = 'PlayOutlined';
+export default PlayOutlined;

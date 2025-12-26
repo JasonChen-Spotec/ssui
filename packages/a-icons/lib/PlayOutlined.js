@@ -55,7 +55,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 var React = __importStar(require("react"));
 var icon_1 = __importDefault(require("a-base-icon/lib/icon"));
-function PlaySharpFilled(componentProps) {
+function PlayOutlined(componentProps) {
   var IconNode = function IconNode(props) {
     return React.createElement("svg", __assign({
       viewBox: "0 0 24 24",
@@ -70,5 +70,5 @@ function PlaySharpFilled(componentProps) {
     component: IconNode
   }));
 }
-PlaySharpFilled.displayName = 'PlaySharpFilled';
-exports["default"] = PlaySharpFilled;
+PlayOutlined.displayName = 'PlayOutlined';
+exports["default"] = PlayOutlined;
