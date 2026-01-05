@@ -353,6 +353,7 @@ export { default as UserInfoRealname } from './UserInfoRealname';
 export { default as UserInfoTimeZone } from './UserInfoTimeZone';
 export { default as UserInfoTime } from './UserInfoTime';
 export { default as UserOutlined } from './UserOutlined';
+export { default as VoidFilled } from './VoidFilled';
 export { default as WalletFilled } from './WalletFilled';
 export { default as WalletOutlined } from './WalletOutlined';
 export { default as WarningFilled } from './WarningFilled';
