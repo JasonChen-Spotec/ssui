@@ -3,13 +3,12 @@ import { Button } from 'antd';
 import { ButtonModal } from 'assui';
 import { useBoolean } from 'ahooks';
 
-const Content = ({ modalAction }) => {
+const Content = ({onClose}) => {
 
-  console.log(modalAction, 'modalAction');
   return (
     <div>
       这是弹框内容122
-      <Button type="primary" onClick={() => modalAction.close()}>
+      <Button type="primary" onClick={() => onClose()}>
         点击这里关闭弹框1
       </Button>
     </div>
@@ -28,9 +27,9 @@ const Demo = () => {
         onOk={setFalse}
         onOpen={setTrue}
         open={state}
-        trigger={<Button disabled onClick={openModal}> disabled </Button>}
+        trigger={<Button disabled > disabled </Button>}
       >
-        <Content  modalAction={modalAction} onOpen={setTrue} onClose={setFalse} />
+        <Content onClose={setFalse} />
       </ButtonModal>
     </div>
   );

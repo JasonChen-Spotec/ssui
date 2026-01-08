@@ -3,10 +3,10 @@ import { Button } from 'antd';
 import { ButtonDrawer } from 'assui';
 import { useBoolean } from 'ahooks';
 
-const Content = ({ drawerAction }) => (
+const Content = ({onClose}) => (
   <div>
     这是弹框内容
-    <Button type="primary" onClick={() => drawerAction.close()}>
+    <Button type="primary" onClick={() => onClose()}>
       点击这里关闭弹框
     </Button>
   </div>
@@ -22,14 +22,13 @@ const Demo = () => {
       <ButtonDrawer
         title="demo"
         onClose={setFalse}
+        onOk={setFalse}
+        onOpen={setTrue}
         open={state}
-        trigger={
-          (openDrawer)=> <Button disabled onClick={openDrawer}> disabled </Button>
+        trigger={ <Button disabled > disabled </Button>
         }
       >
-        {
-          (drawerAction)=> <Content  drawerAction={drawerAction} />
-        }
+        <Content  onClose={setFalse}/>
       </ButtonDrawer>
     </div>
   );
