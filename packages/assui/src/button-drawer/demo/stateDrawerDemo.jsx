@@ -25,8 +25,6 @@ const Demo = () => {
         onOk={setFalse}
         onOpen={setTrue}
         open={state}
-        trigger={ <Button disabled > disabled </Button>
-        }
       >
         <Content  onClose={setFalse}/>
       </ButtonDrawer>
