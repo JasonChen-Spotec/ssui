@@ -329,6 +329,7 @@ export { default as StarFilled } from './StarFilled';
 export { default as StarOutlined } from './StarOutlined';
 export { default as StopFilled } from './StopFilled';
 export { default as StopOutlined } from './StopOutlined';
+export { default as SubtractFilled } from './SubtractFilled';
 export { default as TagBrokenHeart } from './TagBrokenHeart';
 export { default as TagFilled } from './TagFilled';
 export { default as TagOutlined } from './TagOutlined';
