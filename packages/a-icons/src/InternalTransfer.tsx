@@ -1,10 +1,10 @@
 import * as React from 'react';
 import Icon, { IconProps } from 'a-base-icon/lib/icon';
 
-function InternalTransferFilled(componentProps: IconProps) {
+function InternalTransfer(componentProps: IconProps) {
   const IconNode = (props: React.SVGProps<SVGSVGElement>) => (
     <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
-      <g clipPath="url(#internal-transfer-filled_svg__clip0_20026_31801)">
+      <g clipPath="url(#internal-transfer_svg__clip0_20026_31801)">
         <rect
           x={0.667}
           y={0.667}
@@ -19,7 +19,7 @@ function InternalTransferFilled(componentProps: IconProps) {
         />
       </g>
       <defs>
-        <clipPath id="internal-transfer-filled_svg__clip0_20026_31801">
+        <clipPath id="internal-transfer_svg__clip0_20026_31801">
           <path fill="#fff" d="M0 0h16v16H0z" />
         </clipPath>
       </defs>
@@ -29,5 +29,5 @@ function InternalTransferFilled(componentProps: IconProps) {
   return <Icon {...componentProps} component={IconNode} />;
 }
 
-InternalTransferFilled.displayName = 'InternalTransferFilled';
-export default InternalTransferFilled;
+InternalTransfer.displayName = 'InternalTransfer';
+export default InternalTransfer;

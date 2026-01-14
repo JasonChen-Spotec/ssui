@@ -12,7 +12,7 @@ var __assign = this && this.__assign || function () {
 };
 import * as React from 'react';
 import Icon from 'a-base-icon/lib/icon';
-function Hours24Filled(componentProps) {
+function Hours24(componentProps) {
   var IconNode = function IconNode(props) {
     return /*#__PURE__*/React.createElement("svg", __assign({
       viewBox: "0 0 15 15",
@@ -31,5 +31,5 @@ function Hours24Filled(componentProps) {
     component: IconNode
   }));
 }
-Hours24Filled.displayName = 'Hours24Filled';
-export default Hours24Filled;
+Hours24.displayName = 'Hours24';
+export default Hours24;
