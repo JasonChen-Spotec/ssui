@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Icon, { IconProps } from 'a-base-icon/lib/icon';
 
-function Hours24Filled(componentProps: IconProps) {
+function Hours24(componentProps: IconProps) {
   const IconNode = (props: React.SVGProps<SVGSVGElement>) => (
     <svg viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg" {...props}>
       <rect width={14.667} height={14.667} rx={2.444} fill="currentColor" />
@@ -15,5 +15,5 @@ function Hours24Filled(componentProps: IconProps) {
   return <Icon {...componentProps} component={IconNode} />;
 }
 
-Hours24Filled.displayName = 'Hours24Filled';
-export default Hours24Filled;
+Hours24.displayName = 'Hours24';
+export default Hours24;

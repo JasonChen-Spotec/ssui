@@ -55,24 +55,34 @@ Object.defineProperty(exports, "__esModule", {
 });
 var React = __importStar(require("react"));
 var icon_1 = __importDefault(require("a-base-icon/lib/icon"));
-function Hours24Filled(componentProps) {
+function InternalTransfer(componentProps) {
   var IconNode = function IconNode(props) {
     return React.createElement("svg", __assign({
-      viewBox: "0 0 15 15",
+      viewBox: "0 0 16 16",
+      fill: "none",
       xmlns: "http://www.w3.org/2000/svg"
-    }, props), React.createElement("rect", {
+    }, props), React.createElement("g", {
+      clipPath: "url(#internal-transfer_svg__clip0_20026_31801)"
+    }, React.createElement("rect", {
+      x: 0.667,
+      y: 0.667,
       width: 14.667,
       height: 14.667,
       rx: 2.444,
       fill: "currentColor"
     }), React.createElement("path", {
-      d: "M13.334 10.07h-1.25V7.585c0-.442-.32-.533-.48-.533-.16 0-.48.091-.48.533v2.485H9.872V4.643h1.25v1.662c.26-.26.587-.381.9-.381.884 0 1.31.655 1.31 1.486v2.66zM9.204 9.354H8.8v.716H7.61v-.716H5.363v-1.19l1.8-3.52h1.371l-1.799 3.52h.877v-.716H8.8v.717h.404v1.189zM4.824 10.07H1.333V8.942L3.3 6.808c.198-.214.274-.351.274-.58 0-.297-.168-.503-.488-.503-.229 0-.503.107-.503.526h-1.25c0-1.067.808-1.654 1.753-1.654 1.006 0 1.738.618 1.738 1.639 0 .572-.236.877-.67 1.334L2.856 8.942h1.967v1.128z",
+      d: "M11.977 9.002c.066-.338.087-1.142.066-1.505C11.895 4.87 9.617 3.583 8 4.12c1.217.553 2.455 2.06 2.464 3.843.001.22-.012.434-.037.645l-1.307-.18.847 1.285.847 1.287 1.093-.914L13 9.173l-1.023-.171zM4.248 6.941c-.09.331-.133 1.128-.117 1.487C4.25 11.033 7.01 12.383 9 11.905c-1.477-.588-2.956-2.12-2.925-3.886.004-.217.025-.43.06-.636l1.595.219-1.005-1.3L5.72 5l-1.36.868-1.36.87 1.248.203z",
       fill: "#fff"
-    }));
+    })), React.createElement("defs", null, React.createElement("clipPath", {
+      id: "internal-transfer_svg__clip0_20026_31801"
+    }, React.createElement("path", {
+      fill: "#fff",
+      d: "M0 0h16v16H0z"
+    }))));
   };
   return React.createElement(icon_1["default"], __assign({}, componentProps, {
     component: IconNode
   }));
 }
-Hours24Filled.displayName = 'Hours24Filled';
-exports["default"] = Hours24Filled;
+InternalTransfer.displayName = 'InternalTransfer';
+exports["default"] = InternalTransfer;
