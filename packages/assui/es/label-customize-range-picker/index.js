@@ -245,7 +245,8 @@ var LabelCustomizeRangePicker = function LabelCustomizeRangePicker(props) {
     showTime: showTime,
     label: label
   }, omit(restProps, 'onChange', 'value', 'open'), baseOptions)) : /*#__PURE__*/React.createElement(RangePicker, __assign({
-    showTime: showTime
+    showTime: showTime,
+    format: showTime ? 'YYYY/MM/DD HH:mm:ss' : 'YYYY/MM/DD'
   }, baseOptions, omit(restProps, 'onChange')));
 };
 export default LabelCustomizeRangePicker;
