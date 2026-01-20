@@ -43,7 +43,7 @@ import Drawer from "antd/es/drawer";
 import isFunction from 'lodash/isFunction';
 import classNames from 'classnames';
 import CloseOutlined from "a-icons/es/CloseOutlined";
-import { useControllableValue } from 'ahooks';
+import useControllableValue from "ahooks/es/useControllableValue";
 var ButtonDrawer = function ButtonDrawer(props, ref) {
   var _a = __read(useControllableValue(props, {
       valuePropName: 'open',

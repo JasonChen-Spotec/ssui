@@ -42,7 +42,7 @@ import * as React from 'react';
 import isFunction from 'lodash/isFunction';
 import Modal from "antd/es/modal";
 import CloseOutlined from "a-icons/es/CloseOutlined";
-import { useControllableValue } from 'ahooks';
+import useControllableValue from "ahooks/es/useControllableValue";
 var ButtonModal = function ButtonModal(props, ref) {
   var _a = __read(useControllableValue(props, {
       valuePropName: 'open',

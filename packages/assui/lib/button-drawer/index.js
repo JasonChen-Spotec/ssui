@@ -84,9 +84,9 @@ var drawer_1 = __importDefault(require("antd/lib/drawer"));
 var isFunction_1 = __importDefault(require("lodash/isFunction"));
 var classnames_1 = __importDefault(require("classnames"));
 var CloseOutlined_1 = __importDefault(require("a-icons/lib/CloseOutlined"));
-var ahooks_1 = require("ahooks");
+var useControllableValue_1 = __importDefault(require("ahooks/lib/useControllableValue"));
 var ButtonDrawer = function ButtonDrawer(props, ref) {
-  var _a = __read((0, ahooks_1.useControllableValue)(props, {
+  var _a = __read((0, useControllableValue_1["default"])(props, {
       valuePropName: 'open',
       defaultValue: false
     }), 2),
