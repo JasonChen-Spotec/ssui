@@ -7,10 +7,11 @@ import classNames from 'classnames';
 
 export interface LabelDatePickerProps extends Omit<DatePickerProps, 'label'> {
   label?: React.ReactNode;
+  showTime?: any;
 }
 
 const LabelDatePicker: React.FC<LabelDatePickerProps> = (props) => {
-  const { className, label } = props;
+  const { className, label, showTime } = props;
   const datePickerRef = React.useRef<any>(null);
   const [open, setOpen] = useControllableValue(props, {
     valuePropName: 'open',
@@ -49,6 +50,7 @@ const LabelDatePicker: React.FC<LabelDatePickerProps> = (props) => {
       )}
     >
       <DatePicker
+        format={showTime ? 'YYYY/MM/DD HH:mm:ss' : 'YYYY/MM/DD'}
         {...props}
         open={open}
         onChange={handleChange}

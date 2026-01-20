@@ -285,7 +285,12 @@ const LabelCustomizeRangePicker = (props: LabelCustomizeRangePickerProps) => {
       {...baseOptions}
     />
   ) : (
-    <RangePicker showTime={showTime} {...baseOptions} {...omit(restProps, 'onChange')} />
+    <RangePicker
+      showTime={showTime} 
+      format={showTime ? 'YYYY/MM/DD HH:mm:ss' : 'YYYY/MM/DD'}
+      {...baseOptions}
+      {...omit(restProps, 'onChange')}
+    />
   );
 };
 

@@ -37,7 +37,8 @@ import CalendarOutlined from "a-icons/es/CalendarOutlined";
 import classNames from 'classnames';
 var LabelDatePicker = function LabelDatePicker(props) {
   var className = props.className,
-    label = props.label;
+    label = props.label,
+    showTime = props.showTime;
   var datePickerRef = React.useRef(null);
   var _a = __read(useControllableValue(props, {
       valuePropName: 'open',
@@ -68,7 +69,9 @@ var LabelDatePicker = function LabelDatePicker(props) {
       'label-date-picker': true,
       'label-date-picker-label-scale': open || value
     }, className)
-  }, /*#__PURE__*/React.createElement(DatePicker, __assign({}, props, {
+  }, /*#__PURE__*/React.createElement(DatePicker, __assign({
+    format: showTime ? 'YYYY/MM/DD HH:mm:ss' : 'YYYY/MM/DD'
+  }, props, {
     open: open,
     onChange: handleChange,
     ref: datePickerRef,
