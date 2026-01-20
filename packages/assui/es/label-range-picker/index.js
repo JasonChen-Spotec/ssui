@@ -80,7 +80,7 @@ var LabelDatePicker = function LabelDatePicker(props) {
       'label-range-picker-label-scale': open || value
     }, className)
   }, /*#__PURE__*/React.createElement(RangePicker, __assign({
-    format: showTime ? 'YYYY.MM.DD HH:mm:ss' : 'YYYY.MM.DD',
+    format: showTime ? 'YYYY/MM/DD HH:mm:ss' : 'YYYY/MM/DD',
     allowEmpty: [true, true],
     showTime: showTime
   }, omit(restProps, 'onOpenChange'), {

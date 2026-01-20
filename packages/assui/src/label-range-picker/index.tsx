@@ -50,7 +50,7 @@ const LabelDatePicker: React.FC<LabelRangePickerProps> = (props) => {
       )}
     >
       <RangePicker
-        format={showTime ? 'YYYY.MM.DD HH:mm:ss' : 'YYYY.MM.DD'}
+        format={showTime ? 'YYYY/MM/DD HH:mm:ss' : 'YYYY/MM/DD'}
         allowEmpty={[true, true]}
         showTime={showTime}
         {...omit(restProps, 'onOpenChange')}
