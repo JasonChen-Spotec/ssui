@@ -4,7 +4,7 @@ import Drawer from 'antd/lib/drawer';
 import isFunction from 'lodash/isFunction';
 import classNames from 'classnames';
 import CloseOutlined from 'a-icons/lib/CloseOutlined';
-import { useControllableValue } from 'ahooks';
+import useControllableValue from 'ahooks/lib/useControllableValue';
 
 export type DrawerAction = {
   close: () => void;

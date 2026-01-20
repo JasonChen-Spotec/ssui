@@ -83,9 +83,9 @@ var React = __importStar(require("react"));
 var isFunction_1 = __importDefault(require("lodash/isFunction"));
 var modal_1 = __importDefault(require("antd/lib/modal"));
 var CloseOutlined_1 = __importDefault(require("a-icons/lib/CloseOutlined"));
-var ahooks_1 = require("ahooks");
+var useControllableValue_1 = __importDefault(require("ahooks/lib/useControllableValue"));
 var ButtonModal = function ButtonModal(props, ref) {
-  var _a = __read((0, ahooks_1.useControllableValue)(props, {
+  var _a = __read((0, useControllableValue_1["default"])(props, {
       valuePropName: 'open',
       defaultValue: false
     }), 2),
