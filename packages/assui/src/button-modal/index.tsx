@@ -3,7 +3,7 @@ import isFunction from 'lodash/isFunction';
 import type { ModalProps } from 'antd/lib/modal';
 import Modal from 'antd/lib/modal';
 import CloseOutlined from 'a-icons/lib/CloseOutlined';
-import { useControllableValue } from 'ahooks';
+import useControllableValue from 'ahooks/lib/useControllableValue';
 
 export interface ModalAction {
   open: () => void;
