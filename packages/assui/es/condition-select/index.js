@@ -37,6 +37,8 @@ import Select from "antd/es/select";
 import omit from 'lodash/omit';
 import isNil from 'lodash/isNil';
 import React from 'react';
+import classNames from 'classnames';
+import ArrowDownOutlined from "a-icons/es/ArrowDownOutlined";
 var ConditionSelect = function ConditionSelect(_a) {
   var option = _a.option,
     value = _a.value,
@@ -80,7 +82,9 @@ var ConditionSelect = function ConditionSelect(_a) {
   }, /*#__PURE__*/React.createElement(Select, __assign({
     onChange: handleTypeChange,
     value: componentValue === null || componentValue === void 0 ? void 0 : componentValue[selectName],
-    allowClear: true
+    allowClear: true,
+    className: classNames('condition-select', selectProps === null || selectProps === void 0 ? void 0 : selectProps.className),
+    suffixIcon: /*#__PURE__*/React.createElement(ArrowDownOutlined, null)
   }, selectProps), option.map(function (item) {
     return /*#__PURE__*/React.createElement(Select.Option, {
       key: item.value,

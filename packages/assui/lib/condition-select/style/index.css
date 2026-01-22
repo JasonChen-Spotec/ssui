@@ -1234,86 +1234,19 @@ html {
   overflow: hidden;
   transition: height 0.2s cubic-bezier(0.645, 0.045, 0.355, 1), opacity 0.2s cubic-bezier(0.645, 0.045, 0.355, 1) !important;
 }
-.label-select {
-  position: relative;
-  width: 100%;
-  height: 100%;
+.condition-select.ant-select-open .ant-select-arrow {
+  color: #121212;
+  transform: rotate(180deg);
 }
-.label-select .ant-select {
-  width: 100%;
+.condition-select .ant-select-arrow {
+  top: 44%;
+  right: 10px;
+  width: 16px;
+  height: 16px;
+  color: #999999;
+  transition: all 0.2s;
 }
-.label-select .ant-select:not(.ant-select-disabled) .ant-select-selector:hover,
-.label-select .ant-select-single.ant-select-lg:not(.ant-select-customize-input):not(.ant-select-disabled) .ant-select-selector:hover {
-  border-color: #a0a0a0;
-}
-.label-select .ant-select-multiple .ant-select-selector {
-  height: 45px;
-  padding: 6px 11px 7px;
-  border: 1px solid #e5e5e5;
-  border-radius: 2px;
-  outline: none;
-}
-.label-select .ant-select-multiple .ant-select-selection-overflow {
-  display: flex;
-  width: 100%;
-  height: 36px;
-  transform: translateY(8px);
-}
-.label-select .ant-select-multiple .ant-select-selection-overflow-item {
-  max-width: 25%;
-}
-.label-select .ant-select-multiple .ant-select-selection-overflow-item .ant-select-selection-search {
-  padding: 0;
-}
-.label-select .ant-select-multiple.ant-select-lg .ant-select-selection-item {
-  width: auto;
-  height: auto;
-  margin: 0 4px 4px 0;
-  padding: 1px 4px;
-  color: #333;
-  font-size: 12px;
-  line-height: 17px;
-  background-color: #fff;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-.label-select .ant-select-allow-clear .ant-select-clear {
-  right: 16px;
-}
-.label-select .ant-select-single.ant-select-lg:not(.ant-select-customize-input) .ant-select-selector {
-  height: 45px;
-  border: 1px solid #e5e5e5;
-  border-radius: 2px;
-  outline: none;
-}
-.label-select .ant-select-focused:not(.ant-select-disabled).ant-select:not(.ant-select-customize-input) .ant-select-selector {
-  border-color: #000;
-  box-shadow: none;
-}
-.label-select .ant-select-single.ant-select-show-arrow .ant-select-selection-item {
-  padding-top: 11px;
-  padding-left: 4px;
-  font-size: 14px;
-}
-.label-select .ant-select-selection-search {
-  padding-top: 11px;
-  padding-left: 2px;
-}
-.label-select-text {
-  position: absolute;
-  top: 12px;
-  left: 16px;
-  z-index: 2;
-  height: 20px;
-  color: #9e9e9e;
-  font-size: 14px;
-  line-height: 20px;
-  transform-origin: top left;
-  cursor: pointer;
-  transition: all 0.2s ease-out;
-}
-.label-select-label-scale .label-select-text {
-  transform: translateY(-8px) scale(0.8);
-  cursor: text;
-  pointer-events: none;
+.condition-select .ant-select-arrow .spotecicon {
+  width: 16px;
+  height: 16px;
 }

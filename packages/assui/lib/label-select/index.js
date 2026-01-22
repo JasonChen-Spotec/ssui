@@ -48,7 +48,6 @@ var isArray_1 = __importDefault(require("lodash/isArray"));
 var isUndefined_1 = __importDefault(require("lodash/isUndefined"));
 var isNull_1 = __importDefault(require("lodash/isNull"));
 var classnames_1 = __importDefault(require("classnames"));
-var ArrowDropDownFilled_1 = __importDefault(require("a-icons/lib/ArrowDropDownFilled"));
 var omit_1 = __importDefault(require("lodash/omit"));
 var complex_val_select_1 = __importDefault(require("../complex-val-select"));
 var Option = select_1["default"].Option;
@@ -104,8 +103,7 @@ var LabelSelect = function LabelSelect(props, ref) {
       var _a;
       (_a = selectRef.current) === null || _a === void 0 ? void 0 : _a.focus();
     },
-    onDropdownVisibleChange: onDropdownVisibleChange,
-    suffixIcon: react_1["default"].createElement(ArrowDropDownFilled_1["default"], null)
+    onDropdownVisibleChange: onDropdownVisibleChange
   })), react_1["default"].createElement("label", {
     className: "label-select-text",
     onClick: handleLabelClick

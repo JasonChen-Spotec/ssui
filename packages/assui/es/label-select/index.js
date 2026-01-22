@@ -37,7 +37,6 @@ import isArray from 'lodash/isArray';
 import isUndefined from 'lodash/isUndefined';
 import isNull from 'lodash/isNull';
 import classNames from 'classnames';
-import ArrowDropDownFilled from "a-icons/es/ArrowDropDownFilled";
 import omit from 'lodash/omit';
 import ComplexValSelect from '../complex-val-select';
 var Option = Select.Option;
@@ -93,8 +92,7 @@ var LabelSelect = function LabelSelect(props, ref) {
       var _a;
       (_a = selectRef.current) === null || _a === void 0 ? void 0 : _a.focus();
     },
-    onDropdownVisibleChange: onDropdownVisibleChange,
-    suffixIcon: /*#__PURE__*/React.createElement(ArrowDropDownFilled, null)
+    onDropdownVisibleChange: onDropdownVisibleChange
   })), /*#__PURE__*/React.createElement("label", {
     className: "label-select-text",
     onClick: handleLabelClick

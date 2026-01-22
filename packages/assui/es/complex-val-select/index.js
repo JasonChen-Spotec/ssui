@@ -37,6 +37,8 @@ import some from 'lodash/some';
 import isArray from 'lodash/isArray';
 import isObject from 'lodash/isObject';
 import Select from "antd/es/select";
+import classNames from 'classnames';
+import ArrowDownOutlined from "a-icons/es/ArrowDownOutlined";
 import useControllableValue from "ahooks/es/useControllableValue";
 var Option = Select.Option;
 export { Option };
@@ -96,10 +98,12 @@ var ComplexValSelect = /*#__PURE__*/React.forwardRef(function (props, ref) {
   };
   return /*#__PURE__*/React.createElement(Select, __assign({
     ref: selectRef,
+    className: classNames('complex-val-select', props === null || props === void 0 ? void 0 : props.className),
+    suffixIcon: /*#__PURE__*/React.createElement(ArrowDownOutlined, null),
     value: value && isReferenceTypeVal ? JSON.stringify(value) : value,
     options: finalOptions,
     onChange: handleChange,
     onSelect: handleSelect
-  }, omit(props, ['value', 'onChange', 'options', 'onSelect'])));
+  }, omit(props, ['value', 'onChange', 'options', 'onSelect', 'className'])));
 });
 export default ComplexValSelect;

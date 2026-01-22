@@ -79,6 +79,8 @@ var some_1 = __importDefault(require("lodash/some"));
 var isArray_1 = __importDefault(require("lodash/isArray"));
 var isObject_1 = __importDefault(require("lodash/isObject"));
 var select_1 = __importDefault(require("antd/lib/select"));
+var classnames_1 = __importDefault(require("classnames"));
+var ArrowDownOutlined_1 = __importDefault(require("a-icons/lib/ArrowDownOutlined"));
 var useControllableValue_1 = __importDefault(require("ahooks/lib/useControllableValue"));
 var Option = select_1["default"].Option;
 exports.Option = Option;
@@ -139,10 +141,12 @@ var ComplexValSelect = React.forwardRef(function (props, ref) {
   };
   return React.createElement(select_1["default"], __assign({
     ref: selectRef,
+    className: (0, classnames_1["default"])('complex-val-select', props === null || props === void 0 ? void 0 : props.className),
+    suffixIcon: React.createElement(ArrowDownOutlined_1["default"], null),
     value: value && isReferenceTypeVal ? JSON.stringify(value) : value,
     options: finalOptions,
     onChange: handleChange,
     onSelect: handleSelect
-  }, (0, omit_1["default"])(props, ['value', 'onChange', 'options', 'onSelect'])));
+  }, (0, omit_1["default"])(props, ['value', 'onChange', 'options', 'onSelect', 'className'])));
 });
 exports["default"] = ComplexValSelect;
