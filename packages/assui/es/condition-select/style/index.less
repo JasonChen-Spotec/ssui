@@ -1,0 +1,29 @@
+@import '~antd/lib/style/index.less';
+@import '../../style/themes/default.less';
+@import '../../style/variables.less';
+
+.condition-select {
+  &.@{ant-prefix}-select-open {
+    .@{ant-prefix}-select-arrow {
+      color: @color_121212;
+      transform: rotate(180deg);
+    }
+  }
+
+  .@{ant-prefix}-select-arrow {
+    top: 44%;
+    right: 10px;
+    width: 16px;
+    height: 16px;
+    color: @color_999999;
+    transition: all 0.2s;
+
+    .spotecicon {
+      width: 16px;
+      height: 16px;
+    }
+  }
+}
+
+
+

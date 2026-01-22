@@ -7,7 +7,6 @@ import isArray from 'lodash/isArray';
 import isUndefined from 'lodash/isUndefined';
 import isNull from 'lodash/isNull';
 import classNames from 'classnames';
-import ArrowDropDownFilled from 'a-icons/lib/ArrowDropDownFilled';
 import omit from 'lodash/omit';
 import ComplexValSelect from '../complex-val-select';
 import type { ComplexValSelectProps } from '../complex-val-select';
@@ -82,7 +81,6 @@ const LabelSelect: React.ForwardRefRenderFunction<unknown, LabelSelectProps> = (
           selectRef.current?.focus();
         }}
         onDropdownVisibleChange={onDropdownVisibleChange}
-        suffixIcon={<ArrowDropDownFilled />}
       />
       <label className="label-select-text" onClick={handleLabelClick}>
         {label}

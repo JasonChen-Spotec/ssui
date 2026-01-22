@@ -6,6 +6,8 @@ import isArray from 'lodash/isArray';
 import isObject from 'lodash/isObject';
 import type { DefaultOptionType, RefSelectProps, SelectProps } from 'antd/lib/select';
 import Select from 'antd/lib/select';
+import classNames from 'classnames';
+import ArrowDownOutlined from 'a-icons/lib/ArrowDownOutlined';
 import useControllableValue from 'ahooks/lib/useControllableValue';
 
 const { Option } = Select;
@@ -100,11 +102,13 @@ const ComplexValSelect = React.forwardRef<
   return (
     <Select
       ref={selectRef}
+      className={classNames('complex-val-select', props?.className)}
+      suffixIcon={<ArrowDownOutlined />}
       value={value && isReferenceTypeVal ? JSON.stringify(value) : value}
       options={finalOptions}
       onChange={handleChange}
       onSelect={handleSelect}
-      {...omit(props, ['value', 'onChange', 'options', 'onSelect'])}
+      {...omit(props, ['value', 'onChange', 'options', 'onSelect', 'className'])}
     />
   );
 });

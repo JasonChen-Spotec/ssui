@@ -47,6 +47,8 @@ var select_1 = __importDefault(require("antd/lib/select"));
 var omit_1 = __importDefault(require("lodash/omit"));
 var isNil_1 = __importDefault(require("lodash/isNil"));
 var react_1 = __importDefault(require("react"));
+var classnames_1 = __importDefault(require("classnames"));
+var ArrowDownOutlined_1 = __importDefault(require("a-icons/lib/ArrowDownOutlined"));
 var ConditionSelect = function ConditionSelect(_a) {
   var option = _a.option,
     value = _a.value,
@@ -90,7 +92,9 @@ var ConditionSelect = function ConditionSelect(_a) {
   }, react_1["default"].createElement(select_1["default"], __assign({
     onChange: handleTypeChange,
     value: componentValue === null || componentValue === void 0 ? void 0 : componentValue[selectName],
-    allowClear: true
+    allowClear: true,
+    className: (0, classnames_1["default"])('condition-select', selectProps === null || selectProps === void 0 ? void 0 : selectProps.className),
+    suffixIcon: react_1["default"].createElement(ArrowDownOutlined_1["default"], null)
   }, selectProps), option.map(function (item) {
     return react_1["default"].createElement(select_1["default"].Option, {
       key: item.value,

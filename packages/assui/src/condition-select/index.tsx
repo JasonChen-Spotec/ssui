@@ -5,6 +5,8 @@ import Select from 'antd/lib/select';
 import omit from 'lodash/omit';
 import isNil from 'lodash/isNil';
 import React from 'react';
+import classNames from 'classnames';
+import ArrowDownOutlined from 'a-icons/lib/ArrowDownOutlined';
 import type { ConditionSelectProps, ValueType } from './types';
 
 const ConditionSelect = ({
@@ -52,6 +54,8 @@ const ConditionSelect = ({
           onChange={handleTypeChange}
           value={componentValue?.[selectName]}
           allowClear
+          className={classNames('condition-select', selectProps?.className)}
+          suffixIcon={<ArrowDownOutlined />}
           {...selectProps}
         >
           {option.map((item) => (
