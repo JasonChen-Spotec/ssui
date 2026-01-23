@@ -60,7 +60,7 @@ const Demo = () => {
   return (
     <Form onFinish={onFinish} style={{ width: 500 }}>
       <Form.Item name="account" rules={[{ required: true }]}>
-        <LabelSelect label="账户" options={options} />
+        <LabelSelect allowClear label="账户" options={options} />
       </Form.Item>
       <Form.Item name="account1" rules={[{ required: true }]}>
         <LabelSelect label="账户1" options={options} />

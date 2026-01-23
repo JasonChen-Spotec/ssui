@@ -5,3 +5,4 @@ Object.defineProperty(exports, "__esModule", {
 });
 require("antd/lib/select/style");
 require("./index.less");
+require("../../complex-val-select/style/index.less");

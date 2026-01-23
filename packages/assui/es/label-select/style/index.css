@@ -1317,3 +1317,6 @@ html {
   cursor: text;
   pointer-events: none;
 }
+.label-select .complex-val-select .ant-select-arrow {
+  right: 14px;
+}
