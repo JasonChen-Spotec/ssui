@@ -75,6 +75,6 @@ const ButtonDrawer: React.ForwardRefRenderFunction<DrawerAction, ButtonDrawerPro
   );
 };
 
-const ForwardRefButtonDrawer = React.forwardRef<DrawerAction, ButtonDrawerProps>(ButtonDrawer);
+const ForwardRefButtonDrawer = React.forwardRef<unknown, ButtonDrawerProps>(ButtonDrawer);
 
 export default ForwardRefButtonDrawer;

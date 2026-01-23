@@ -10,5 +10,5 @@ export interface ButtonDrawerProps extends Omit<DrawerProps, 'children'> {
     trigger?: ((fun: () => void) => React.ReactElement) | React.ReactElement;
     children: ((v: DrawerAction) => React.ReactElement) | React.ReactElement;
 }
-declare const ForwardRefButtonDrawer: React.ForwardRefExoticComponent<ButtonDrawerProps & React.RefAttributes<DrawerAction>>;
+declare const ForwardRefButtonDrawer: React.ForwardRefExoticComponent<ButtonDrawerProps & React.RefAttributes<unknown>>;
 export default ForwardRefButtonDrawer;

@@ -86,6 +86,6 @@ const ButtonModal: React.ForwardRefRenderFunction<ModalAction, ButtonModalProps>
   );
 };
 
-const ForwardRefButtonModal = React.forwardRef<ModalAction, ButtonModalProps>(ButtonModal);
+const ForwardRefButtonModal = React.forwardRef<unknown, ButtonModalProps>(ButtonModal);
 
 export default ForwardRefButtonModal;
