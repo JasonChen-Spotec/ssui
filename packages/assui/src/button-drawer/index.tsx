@@ -1,4 +1,4 @@
-import React, { useRef, useImperativeHandle } from 'react';
+import React, { useRef, useImperativeHandle, useEffect } from 'react';
 import type { DrawerProps } from 'antd/lib/drawer';
 import Drawer from 'antd/lib/drawer';
 import isFunction from 'lodash/isFunction';
@@ -15,6 +15,8 @@ export interface ButtonDrawerProps extends Omit<DrawerProps, 'children'> {
   onOpen?: () => void;
   trigger?: ((fun: () => void) => React.ReactElement) | React.ReactElement;
   children: ((v: DrawerAction) => React.ReactElement) | React.ReactElement;
+  /** 防止滚动穿透(解决移动端滚动穿透问题) */
+  preventRollingPenetration?: boolean;
 }
 
 const ButtonDrawer: React.ForwardRefRenderFunction<DrawerAction, ButtonDrawerProps> = (
@@ -25,7 +27,8 @@ const ButtonDrawer: React.ForwardRefRenderFunction<DrawerAction, ButtonDrawerPro
     valuePropName: 'open',
     defaultValue: false,
   });
-  const { children, onOpen, onClose, trigger, title, className, ...restProps } = props;
+  // eslint-disable-next-line max-len
+  const { children, onOpen, onClose, trigger, title, className,preventRollingPenetration=false, ...restProps } = props;
 
   const closeDrawer = () => {
     setDrawerVisible(false);
@@ -37,13 +40,23 @@ const ButtonDrawer: React.ForwardRefRenderFunction<DrawerAction, ButtonDrawerPro
     onOpen?.();
   };
 
+  useEffect(() => {
+    if(preventRollingPenetration) {
+      if(drawerVisible) {
+        document.body.style.overflow = 'hidden'
+      } else {
+        document.body.style.overflow = ''
+      }
+    }
+    return () => {if(preventRollingPenetration) document.body.style.overflow = ''}
+  }, [drawerVisible, preventRollingPenetration])
+
   const actionRef = useRef<DrawerAction>({
     open: openDrawer,
     close: closeDrawer,
   });
 
   useImperativeHandle(ref, () => actionRef.current);
-
 
   let triggerNode;
   if (isFunction(trigger)) {
