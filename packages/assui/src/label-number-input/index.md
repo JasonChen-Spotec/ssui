@@ -17,7 +17,8 @@ group:
 
 <code hideActions='["CSB", "EXTERNAL"]' src="./demo/index.tsx" ></code>
 
-### 1.2. 输入float数字
+### 1.2. labelEllipsis,label可以省略并且通过tooltip展示
+<code hideActions='["CSB", "EXTERNAL"]' src="./demo/ellipsis.tsx" ></code>
 
 
  

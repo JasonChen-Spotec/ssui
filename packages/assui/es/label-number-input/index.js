@@ -37,11 +37,13 @@ import isUndefined from 'lodash/isUndefined';
 import classNames from 'classnames';
 import omit from 'lodash/omit';
 import NumberInput from '../number-input';
+import MultiLineEllipsisText from '../multi-line-ellipsis-text';
 var LabelNumberInput = function LabelNumberInput(props) {
   var className = props.className,
     label = props.label,
     onBlur = props.onBlur,
     onFocus = props.onFocus,
+    labelEllipsis = props.labelEllipsis,
     id = props.id,
     _a = props.baseMinWidth,
     baseMinWidth = _a === void 0 ? 50 : _a;
@@ -88,7 +90,13 @@ var LabelNumberInput = function LabelNumberInput(props) {
     onChange: function onChange(inputValue) {
       return setValue(inputValue);
     }
-  })), /*#__PURE__*/React.createElement("label", {
+  })), labelEllipsis ? /*#__PURE__*/React.createElement(MultiLineEllipsisText, {
+    text: label,
+    lines: 1,
+    tipType: "tooltip",
+    className: "label-number-input-ellipsis",
+    onClick: handleLabelClick
+  }) : /*#__PURE__*/React.createElement("label", {
     className: "label-number-input-text",
     onClick: handleLabelClick
   }, label)));

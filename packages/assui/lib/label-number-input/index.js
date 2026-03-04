@@ -47,11 +47,13 @@ var isUndefined_1 = __importDefault(require("lodash/isUndefined"));
 var classnames_1 = __importDefault(require("classnames"));
 var omit_1 = __importDefault(require("lodash/omit"));
 var number_input_1 = __importDefault(require("../number-input"));
+var multi_line_ellipsis_text_1 = __importDefault(require("../multi-line-ellipsis-text"));
 var LabelNumberInput = function LabelNumberInput(props) {
   var className = props.className,
     label = props.label,
     onBlur = props.onBlur,
     onFocus = props.onFocus,
+    labelEllipsis = props.labelEllipsis,
     id = props.id,
     _a = props.baseMinWidth,
     baseMinWidth = _a === void 0 ? 50 : _a;
@@ -98,7 +100,13 @@ var LabelNumberInput = function LabelNumberInput(props) {
     onChange: function onChange(inputValue) {
       return setValue(inputValue);
     }
-  })), react_1["default"].createElement("label", {
+  })), labelEllipsis ? react_1["default"].createElement(multi_line_ellipsis_text_1["default"], {
+    text: label,
+    lines: 1,
+    tipType: "tooltip",
+    className: "label-number-input-ellipsis",
+    onClick: handleLabelClick
+  }) : react_1["default"].createElement("label", {
     className: "label-number-input-text",
     onClick: handleLabelClick
   }, label)));
