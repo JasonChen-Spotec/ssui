@@ -19,7 +19,9 @@
     outline: 0;
 
     &:focus + label,
-    &:not([data-value='0']) + label {
+    &:not([data-value='0']) + label,
+    &:focus + div,
+    &:not([data-value='0']) + div {
       transform: translateY(@labelTextLabeltranslateY) scale(@labelTextLabelScale);
     }
 
@@ -52,5 +54,26 @@
       cursor: text;
       transition: all 0.2s ease-out;
     }
+
+    &-ellipsis {
+      position: absolute;
+      top: 12px;
+      left: 16px;
+      z-index: 2;
+      width: 85%;             /* 必须设置固定宽度 */
+      height: 20px;
+      overflow: hidden;         /* 溢出隐藏 */
+      color: @color_9aa5b5;
+      font-size: @font-size-base;
+      line-height: 20px;
+      white-space: nowrap;      /* 强制不换行 */
+      text-overflow: ellipsis;  /* 超出部分显示省略号 */
+      transform-origin: top left;
+      cursor: text;
+      transition: all 0.2s ease-out;
+    }
   }
+
 }
+
+
