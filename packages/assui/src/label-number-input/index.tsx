@@ -8,7 +8,7 @@ import type { NumberInputProps } from '../number-input';
 import NumberInput from '../number-input';
 import MultiLineEllipsisText from '../multi-line-ellipsis-text';
 
-export interface LabelNumberInputProps extends NumberInputProps {
+interface LabelNumberInputBaseProps extends NumberInputProps {
   /** label 标签的文本 */
   label?: React.ReactNode;
   /** label 是否省略 */
@@ -18,10 +18,10 @@ export interface LabelNumberInputProps extends NumberInputProps {
   /** 组件dom id */
   id?: string;
 }
-/** 当label需要省略时，label为string且必填 */
-export interface LabelNumberInputEllipsisProps extends NumberInputProps {
+/** 当label需要省略时，label为string */
+interface LabelNumberInputEllipsisProps extends NumberInputProps {
   /** label 标签的文本 */
-  label: string;
+  label?: string;
   /** label 是否省略 */
   labelEllipsis: true;
   /** 输入框除去label之后的最小末尾宽度 */
@@ -29,8 +29,9 @@ export interface LabelNumberInputEllipsisProps extends NumberInputProps {
   /** 组件dom id */
   id?: string;
 }
+export type LabelNumberInputProps = LabelNumberInputBaseProps | LabelNumberInputEllipsisProps;
 
-const LabelNumberInput = (props: LabelNumberInputProps | LabelNumberInputEllipsisProps) => {
+const LabelNumberInput = (props: LabelNumberInputProps) => {
   const { className, label, onBlur, onFocus,labelEllipsis, id, baseMinWidth = 50 } = props;
   const numberInputRef = React.useRef<HTMLInputElement>(null);
   const labelDomRef = React.useRef<HTMLLabelElement>(null);
