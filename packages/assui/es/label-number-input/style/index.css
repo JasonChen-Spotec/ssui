@@ -1287,7 +1287,7 @@ html {
   top: 12px;
   left: 16px;
   z-index: 2;
-  max-width: 90%;
+  max-width: calc(100% - 32px);
   height: 20px;
   overflow: hidden;
   color: #9e9e9e;
