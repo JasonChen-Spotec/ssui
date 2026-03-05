@@ -83,8 +83,7 @@ var MultiLineEllipsisText = function MultiLineEllipsisText(_a) {
       whiteSpace: 'pre-wrap',
       wordBreak: 'break-all'
     },
-    title: isEllipsis ? text : undefined,
-    onClick: isEllipsis ? onClick : undefined
+    onClick: onClick
   }, text);
   if (isEllipsis && tipType === 'modal') {
     return /*#__PURE__*/React.createElement(ButtonModal, __assign({

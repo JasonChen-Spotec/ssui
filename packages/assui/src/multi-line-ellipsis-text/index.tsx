@@ -77,8 +77,7 @@ const MultiLineEllipsisText: React.FC<MultiLineEllipsisTextProps> = ({
         whiteSpace: 'pre-wrap',
         wordBreak: 'break-all',
       }}
-      title={isEllipsis ? text : undefined} // 鼠标悬浮显示完整内容
-      onClick={isEllipsis ? onClick : undefined}
+      onClick={ onClick }
     >
       {text}
     </div>
