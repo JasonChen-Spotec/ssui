@@ -1,6 +1,5 @@
 import React from 'react';
 import useControllableValue from 'ahooks/lib/useControllableValue';
-import useSize from 'ahooks/lib/useSize';
 import isUndefined from 'lodash/isUndefined';
 import classNames from 'classnames';
 import omit from 'lodash/omit';
@@ -24,7 +23,7 @@ interface LabelNumberInputEllipsisProps extends NumberInputProps {
   label?: string;
   /** label 是否省略 */
   labelEllipsis: true;
-  /** 输入框除去label之后的最小末尾宽度 */
+  /** 输入框最小宽度 */
   baseMinWidth?: number;
   /** 组件dom id */
   id?: string;
@@ -34,8 +33,6 @@ export type LabelNumberInputProps = LabelNumberInputBaseProps | LabelNumberInput
 const LabelNumberInput = (props: LabelNumberInputProps) => {
   const { className, label, onBlur, onFocus,labelEllipsis, id, baseMinWidth = 50 } = props;
   const numberInputRef = React.useRef<HTMLInputElement>(null);
-  const labelDomRef = React.useRef<HTMLLabelElement>(null);
-  const labelSize = useSize(labelDomRef);
   const [value, setValue] = useControllableValue(props);
   const [focused, setFocused] = React.useState<boolean>(false);
 
@@ -54,13 +51,11 @@ const LabelNumberInput = (props: LabelNumberInputProps) => {
     onBlur?.(value);
   };
 
-  const controlMinWidth = labelSize?.width ? labelSize.width + baseMinWidth : undefined;
-
   return (
     <div
       className={classNames('label-number-input-warper', className)}
       id={id}
-      style={{ minWidth: controlMinWidth }}
+      style={{ minWidth: baseMinWidth }}
     >
       <div
         className={classNames('label-number-input-field', {
