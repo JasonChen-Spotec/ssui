@@ -86,7 +86,7 @@ var LabelNumberInput = function LabelNumberInput(props) {
       'label-number-input-focused': focused,
       'label-number-input-disabled': props.disabled
     })
-  }, react_1["default"].createElement(number_input_1["default"], __assign({}, (0, omit_1["default"])(props, ['onChange', 'onBlur', 'onFocus', 'className', 'label', 'placeholder', 'baseMinWidth']), {
+  }, react_1["default"].createElement(number_input_1["default"], __assign({}, (0, omit_1["default"])(props, ['onChange', 'onBlur', 'onFocus', 'className', 'label', 'placeholder', 'baseMinWidth', 'labelEllipsis']), {
     ref: numberInputRef,
     "data-value": !(0, isUndefined_1["default"])(value) ? "".concat(value).length : 0,
     value: value,
