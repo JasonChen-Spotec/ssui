@@ -16,7 +16,7 @@ interface LabelNumberInputEllipsisProps extends NumberInputProps {
     label?: string;
     /** label 是否省略 */
     labelEllipsis: true;
-    /** 输入框除去label之后的最小末尾宽度 */
+    /** 输入框最小宽度 */
     baseMinWidth?: number;
     /** 组件dom id */
     id?: string;

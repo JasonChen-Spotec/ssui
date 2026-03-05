@@ -34,6 +34,7 @@ import React from 'react';
 import Tooltip from "antd/es/tooltip";
 import classNames from 'classnames';
 import omit from 'lodash/omit';
+import useSize from "ahooks/es/useSize";
 import ButtonModal from '../button-modal';
 var MultiLineEllipsisText = function MultiLineEllipsisText(_a) {
   var _b = _a.text,
@@ -48,6 +49,8 @@ var MultiLineEllipsisText = function MultiLineEllipsisText(_a) {
     onEllipsisChange = _a.onEllipsisChange,
     onClick = _a.onClick;
   var ref = React.useRef(null);
+  // 监听容器宽度变化，重新计算是否需要省略
+  var containerSize = useSize(ref);
   var _e = __read(React.useState(false), 2),
     isEllipsis = _e[0],
     setIsEllipsis = _e[1];
@@ -65,7 +68,7 @@ var MultiLineEllipsisText = function MultiLineEllipsisText(_a) {
       setIsEllipsis(overflow);
       onEllipsisChange === null || onEllipsisChange === void 0 ? void 0 : onEllipsisChange(overflow);
     });
-  }, [text, lines, onEllipsisChange]);
+  }, [text, lines, onEllipsisChange, containerSize === null || containerSize === void 0 ? void 0 : containerSize.width]);
   var ellipsisNode = /*#__PURE__*/React.createElement("div", {
     ref: ref,
     className: classNames('ellipsis', className, {

@@ -32,7 +32,6 @@ var __read = this && this.__read || function (o, n) {
 };
 import React from 'react';
 import useControllableValue from "ahooks/es/useControllableValue";
-import useSize from "ahooks/es/useSize";
 import isUndefined from 'lodash/isUndefined';
 import classNames from 'classnames';
 import omit from 'lodash/omit';
@@ -48,8 +47,6 @@ var LabelNumberInput = function LabelNumberInput(props) {
     _a = props.baseMinWidth,
     baseMinWidth = _a === void 0 ? 50 : _a;
   var numberInputRef = React.useRef(null);
-  var labelDomRef = React.useRef(null);
-  var labelSize = useSize(labelDomRef);
   var _b = __read(useControllableValue(props), 2),
     value = _b[0],
     setValue = _b[1];
@@ -68,12 +65,11 @@ var LabelNumberInput = function LabelNumberInput(props) {
     setFocused(false);
     onBlur === null || onBlur === void 0 ? void 0 : onBlur(value);
   };
-  var controlMinWidth = (labelSize === null || labelSize === void 0 ? void 0 : labelSize.width) ? labelSize.width + baseMinWidth : undefined;
   return /*#__PURE__*/React.createElement("div", {
     className: classNames('label-number-input-warper', className),
     id: id,
     style: {
-      minWidth: controlMinWidth
+      minWidth: baseMinWidth
     }
   }, /*#__PURE__*/React.createElement("div", {
     className: classNames('label-number-input-field', {

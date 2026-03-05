@@ -3,6 +3,7 @@ import type { TooltipProps } from 'antd/lib/tooltip';
 import Tooltip from 'antd/lib/tooltip';
 import classNames from 'classnames';
 import omit from 'lodash/omit';
+import useSize from 'ahooks/lib/useSize';
 import type { ButtonModalProps } from '../button-modal';
 import ButtonModal from '../button-modal';
 
@@ -39,6 +40,8 @@ const MultiLineEllipsisText: React.FC<MultiLineEllipsisTextProps> = ({
   onClick,
 }) => {
   const ref = React.useRef<HTMLDivElement>(null);
+  // 监听容器宽度变化，重新计算是否需要省略
+  const containerSize = useSize(ref);
   const [isEllipsis, setIsEllipsis] = React.useState(false);
 
   React.useEffect(() => {
@@ -57,7 +60,7 @@ const MultiLineEllipsisText: React.FC<MultiLineEllipsisTextProps> = ({
       setIsEllipsis(overflow);
       onEllipsisChange?.(overflow);
     });
-  }, [text, lines, onEllipsisChange]);
+  }, [text, lines, onEllipsisChange, containerSize?.width]);
 
   const ellipsisNode = (
     <div

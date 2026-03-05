@@ -44,6 +44,7 @@ var react_1 = __importDefault(require("react"));
 var tooltip_1 = __importDefault(require("antd/lib/tooltip"));
 var classnames_1 = __importDefault(require("classnames"));
 var omit_1 = __importDefault(require("lodash/omit"));
+var useSize_1 = __importDefault(require("ahooks/lib/useSize"));
 var button_modal_1 = __importDefault(require("../button-modal"));
 var MultiLineEllipsisText = function MultiLineEllipsisText(_a) {
   var _b = _a.text,
@@ -58,6 +59,8 @@ var MultiLineEllipsisText = function MultiLineEllipsisText(_a) {
     onEllipsisChange = _a.onEllipsisChange,
     onClick = _a.onClick;
   var ref = react_1["default"].useRef(null);
+  // 监听容器宽度变化，重新计算是否需要省略
+  var containerSize = (0, useSize_1["default"])(ref);
   var _e = __read(react_1["default"].useState(false), 2),
     isEllipsis = _e[0],
     setIsEllipsis = _e[1];
@@ -75,7 +78,7 @@ var MultiLineEllipsisText = function MultiLineEllipsisText(_a) {
       setIsEllipsis(overflow);
       onEllipsisChange === null || onEllipsisChange === void 0 ? void 0 : onEllipsisChange(overflow);
     });
-  }, [text, lines, onEllipsisChange]);
+  }, [text, lines, onEllipsisChange, containerSize === null || containerSize === void 0 ? void 0 : containerSize.width]);
   var ellipsisNode = react_1["default"].createElement("div", {
     ref: ref,
     className: (0, classnames_1["default"])('ellipsis', className, {
