@@ -19,6 +19,7 @@ export { default as AscOutlined } from './AscOutlined';
 export { default as AtOutlined } from './AtOutlined';
 export { default as BankAddFilled } from './BankAddFilled';
 export { default as BarChartFilled } from './BarChartFilled';
+export { default as BarLineOutlined } from './BarLineOutlined';
 export { default as BarsOutlined } from './BarsOutlined';
 export { default as BellOutlined } from './BellOutlined';
 export { default as BindChainOutlined } from './BindChainOutlined';
