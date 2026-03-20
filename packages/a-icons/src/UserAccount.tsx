@@ -1,0 +1,45 @@
+import * as React from 'react';
+import Icon, { IconProps } from 'a-base-icon/lib/icon';
+
+function UserAccount(componentProps: IconProps) {
+  const IconNode = (props: React.SVGProps<SVGSVGElement>) => (
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+      <g clipPath="url(#userAccount_svg__clip0_4046_27238)">
+        <path
+          d="M2.967 14.42c-.913 1.276.145 2.834 1.705 2.998l10.33 1.086c1.56.164 2.918-1.14 2.29-2.578a8.272 8.272 0 00-6.724-4.928 8.272 8.272 0 00-7.601 3.422z"
+          fill="currentColor"
+        />
+        <circle
+          cx={11.561}
+          cy={6.001}
+          transform="rotate(6 11.56 6)"
+          fill="currentColor"
+          r={3.969}
+        />
+        <circle cx={16.287} cy={17.313} fill="#DC4946" r={5.313} />
+        <g clipPath="url(#userAccount_svg__clip1_4046_27238)">
+          <path
+            d="M15.738 17.587a1.374 1.374 0 002.072.149l.824-.825a1.374 1.374 0 00-1.943-1.942l-.472.47m.618 1.599a1.373 1.373 0 00-2.072-.149l-.824.825a1.373 1.373 0 001.942 1.943l.47-.47"
+            stroke="#fff"
+            strokeWidth={0.7}
+            strokeLinecap="square"
+            strokeLinejoin="round"
+          />
+        </g>
+      </g>
+      <defs>
+        <clipPath id="userAccount_svg__clip0_4046_27238">
+          <path fill="#fff" d="M0 0h24v24H0z" />
+        </clipPath>
+        <clipPath id="userAccount_svg__clip1_4046_27238">
+          <path fill="#fff" transform="translate(12.99 14.016)" d="M0 0h6.595v6.595H0z" />
+        </clipPath>
+      </defs>
+    </svg>
+  );
+
+  return <Icon {...componentProps} component={IconNode} />;
+}
+
+UserAccount.displayName = 'UserAccount';
+export default UserAccount;
