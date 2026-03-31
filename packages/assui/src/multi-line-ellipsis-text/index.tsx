@@ -75,7 +75,7 @@ const MultiLineEllipsisText: React.FC<MultiLineEllipsisTextProps> = ({
         overflow: 'hidden',
         textOverflow: 'ellipsis',
         whiteSpace: 'pre-wrap',
-        wordBreak: 'break-all',
+        wordBreak: 'break-word',
       }}
       onClick={ onClick }
     >
