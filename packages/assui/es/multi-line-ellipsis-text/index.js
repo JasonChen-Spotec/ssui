@@ -81,7 +81,7 @@ var MultiLineEllipsisText = function MultiLineEllipsisText(_a) {
       overflow: 'hidden',
       textOverflow: 'ellipsis',
       whiteSpace: 'pre-wrap',
-      wordBreak: 'break-all'
+      wordBreak: 'break-word'
     },
     onClick: onClick
   }, text);
