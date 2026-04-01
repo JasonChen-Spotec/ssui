@@ -10,6 +10,7 @@ var __assign = this && this.__assign || function () {
   };
   return __assign.apply(this, arguments);
 };
+import { ZH, ES, JA, FR, PT, TH, KO, MS, VI, EN, TW, AR, ID } from "ec-common/es/consts/langType";
 // 基础半角映射（EN风格）
 var DEFAULT_MAPPING = {
   ',': ', ',
@@ -108,28 +109,28 @@ function getSignByLang(lang, symbol) {
   }
   var mapping;
   switch (lang) {
-    case 'zh-CN': // 简体中文
-    case 'zh-TW': // 繁体中文
-    case 'ko':
+    case ZH: // 简体中文
+    case TW: // 繁体中文
+    case KO:
       // 韩语（标点习惯与中文类似）
       mapping = ZH_MAPPING;
       break;
-    case 'ja':
+    case JA:
       // 日语
       mapping = JA_MAPPING;
       break;
-    case 'fr':
+    case FR:
       // 法语
       mapping = FR_MAPPING;
       break;
-    case 'en-US': // 英语
-    case 'ar': // 阿拉伯语
-    case 'es': // 西班牙语
-    case 'id': // 印度尼西亚语
-    case 'ms-MY': // 马来西亚语
-    case 'pt': // 葡萄牙语
-    case 'th': // 泰语
-    case 'vi':
+    case EN: // 英语
+    case AR: // 阿拉伯语
+    case ES: // 西班牙语
+    case ID: // 印度尼西亚语
+    case MS: // 马来西亚语
+    case PT: // 葡萄牙语
+    case TH: // 泰语
+    case VI:
       // 越南语
       mapping = DEFAULT_MAPPING;
       break;

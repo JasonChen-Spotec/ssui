@@ -15,6 +15,7 @@ var __assign = this && this.__assign || function () {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+var langType_1 = require("ec-common/lib/consts/langType");
 // 基础半角映射（EN风格）
 var DEFAULT_MAPPING = {
   ',': ', ',
@@ -113,28 +114,28 @@ function getSignByLang(lang, symbol) {
   }
   var mapping;
   switch (lang) {
-    case 'zh-CN': // 简体中文
-    case 'zh-TW': // 繁体中文
-    case 'ko':
+    case langType_1.ZH: // 简体中文
+    case langType_1.TW: // 繁体中文
+    case langType_1.KO:
       // 韩语（标点习惯与中文类似）
       mapping = ZH_MAPPING;
       break;
-    case 'ja':
+    case langType_1.JA:
       // 日语
       mapping = JA_MAPPING;
       break;
-    case 'fr':
+    case langType_1.FR:
       // 法语
       mapping = FR_MAPPING;
       break;
-    case 'en-US': // 英语
-    case 'ar': // 阿拉伯语
-    case 'es': // 西班牙语
-    case 'id': // 印度尼西亚语
-    case 'ms-MY': // 马来西亚语
-    case 'pt': // 葡萄牙语
-    case 'th': // 泰语
-    case 'vi':
+    case langType_1.EN: // 英语
+    case langType_1.AR: // 阿拉伯语
+    case langType_1.ES: // 西班牙语
+    case langType_1.ID: // 印度尼西亚语
+    case langType_1.MS: // 马来西亚语
+    case langType_1.PT: // 葡萄牙语
+    case langType_1.TH: // 泰语
+    case langType_1.VI:
       // 越南语
       mapping = DEFAULT_MAPPING;
       break;

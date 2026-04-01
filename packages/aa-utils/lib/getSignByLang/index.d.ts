@@ -1,4 +1,4 @@
-import { Languages } from '../../../ec-common/lib/consts/langType';
+import { Languages } from 'ec-common/lib/consts/langType';
 export type HalfWidthSymbol = ',' | '.' | '?' | '!' | ';' | ':' | '(' | ')' | '[' | ']' | '{' | '}' | '<' | '>' | '"' | "'" | '`' | '~' | '@' | '#' | '$' | '%' | '^' | '&' | '*' | '_' | '+' | '-' | '=' | '\\' | '|' | '/';
 /**
  * 半角标点符号转本地化符号
