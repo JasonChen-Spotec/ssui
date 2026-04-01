@@ -14,5 +14,6 @@ export { default as intervalExecution } from './intervalExecution';
 export { default as downloadFile } from './downloadFile';
 export { default as heic2Jpeg } from './heic2Jpeg';
 export { default as htmlToPdf } from './htmlToPdf';
+export { default as getSignByLang } from './getSignByLang';
 import * as _keyCode from './keyCode';
 export { _keyCode as keyCode };
