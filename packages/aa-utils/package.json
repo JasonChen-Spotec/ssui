@@ -30,6 +30,7 @@
     "jspdf": "^2.5.2",
     "lodash": "^4.17.21",
     "moment": "^2.29.4",
+    "ec-common": "^1.1.37",
     "moment-timezone": "^0.5.34",
     "path-to-regexp": "^6.2.0",
     "qs": "^6.10.3",
