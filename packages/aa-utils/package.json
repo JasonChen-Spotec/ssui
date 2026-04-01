@@ -1,6 +1,6 @@
 {
   "name": "aa-utils",
-  "version": "2.1.31",
+  "version": "2.1.32",
   "author": "jason <usochen@gmail.com>",
   "license": "MIT",
   "main": "./lib/index.js",
@@ -24,13 +24,13 @@
   "dependencies": {
     "bignumber.js": "^9.0.1",
     "dom-to-image": "^2.6.0",
+    "ec-common": "^1.1.37",
     "events": "^3.2.0",
     "heic2any": "^0.0.3",
     "html2canvas": "^1.4.1",
     "jspdf": "^2.5.2",
     "lodash": "^4.17.21",
     "moment": "^2.29.4",
-    "ec-common": "^1.1.37",
     "moment-timezone": "^0.5.34",
     "path-to-regexp": "^6.2.0",
     "qs": "^6.10.3",
