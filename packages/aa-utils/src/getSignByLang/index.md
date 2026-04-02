@@ -104,8 +104,8 @@ getSignByLang('en-US', ':') // ': '
 getSignByLang('en-US', ';') // '; '
 
 // 法文标点（冒号、分号、感叹号、问号前加不换行空格）
-getSignByLang('fr', ',') // ','
-getSignByLang('fr', '.') // '.'
+getSignByLang('fr', ',') // ', '
+getSignByLang('fr', '.') // '. '
 getSignByLang('fr', '?') // ' ? '
 getSignByLang('fr', '!') // ' ! '
 getSignByLang('fr', ':') // ' : '

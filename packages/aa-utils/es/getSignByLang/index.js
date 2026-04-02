@@ -87,8 +87,6 @@ var JA_MAPPING = __assign(__assign({}, ZH_MAPPING), {
 });
 // 法语映射（某些符号（如冒号、分号、感叹号和问号）前需加不换行空格 &nbsp;）
 var FR_MAPPING = __assign(__assign({}, DEFAULT_MAPPING), {
-  ',': ' , ',
-  '.': ' . ',
   '?': ' ? ',
   '!': ' ! ',
   ';': ' ; ',

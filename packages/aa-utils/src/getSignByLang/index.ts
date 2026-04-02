@@ -117,8 +117,6 @@ const JA_MAPPING: MappingTable = {
 // 法语映射（某些符号（如冒号、分号、感叹号和问号）前需加不换行空格 &nbsp;）
 const FR_MAPPING: MappingTable = {
   ...DEFAULT_MAPPING,
-  ',': ' , ',
-  '.': ' . ',
   '?': ' ? ',
   '!': ' ! ',
   ';': ' ; ',
