@@ -307,6 +307,7 @@ export { default as ShapeFilled } from './ShapeFilled';
 export { default as ShapeOutlined } from './ShapeOutlined';
 export { default as ShareFilled } from './ShareFilled';
 export { default as ShareOutlined } from './ShareOutlined';
+export { default as ShieldCheckedOutlined } from './ShieldCheckedOutlined';
 export { default as ShieldFilled } from './ShieldFilled';
 export { default as ShieldOutlined } from './ShieldOutlined';
 export { default as ShopKeeperFilled } from './ShopKeeperFilled';
