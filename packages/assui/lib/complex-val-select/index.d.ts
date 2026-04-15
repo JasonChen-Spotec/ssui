@@ -14,6 +14,7 @@ export interface ComplexValSelectProps<T> extends Omit<SelectProps, 'value' | 'o
     value?: T;
     onChange?: (val: T, opt?: ComplexValSelectOptionType[]) => void;
     options?: ComplexValSelectOptionType[];
+    maxLength?: number;
 }
 declare const ComplexValSelect: React.ForwardRefExoticComponent<ComplexValSelectProps<ComplexValSelectValueType> & React.RefAttributes<unknown>>;
 export default ComplexValSelect;

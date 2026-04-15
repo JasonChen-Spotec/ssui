@@ -49,3 +49,4 @@ export { default as ConditionSelect } from './condition-select';
 export { default as SignaturePad } from './signature-pad';
 export { default as MultiLineEllipsisText } from './multi-line-ellipsis-text';
 export { default as RcSplitView } from './rc-split-view';
+export { default as BaseButton } from './base-button';

@@ -96,3 +96,5 @@ export { default as MultiLineEllipsisText } from './multi-line-ellipsis-text';
 export type { MultiLineEllipsisTextProps } from './multi-line-ellipsis-text';
 export type { RcSplitViewProps } from './rc-split-view';
 export { default as RcSplitView } from './rc-split-view';
+export { default as BaseButton } from './base-button';
+export type { BaseButtonProps } from './base-button';
