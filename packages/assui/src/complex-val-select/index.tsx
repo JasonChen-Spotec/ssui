@@ -69,6 +69,7 @@ export interface ComplexValSelectProps<T>
   value?: T;
   onChange?: (val: T, opt?: ComplexValSelectOptionType[]) => void;
   options?: ComplexValSelectOptionType[];
+  maxLength?: number;
 }
 
 const ComplexValSelect = React.forwardRef<
@@ -76,7 +77,7 @@ const ComplexValSelect = React.forwardRef<
   ComplexValSelectProps<ComplexValSelectValueType>
 >((props, ref) => {
   const [value, setValue] = useControllableValue(props);
-  const { options, onSelect } = props;
+  const { options, maxLength, onSelect } = props;
   const selectRef = React.useRef<RefSelectProps>(null);
 
   React.useImperativeHandle(ref, () => selectRef.current);
@@ -87,6 +88,20 @@ const ComplexValSelect = React.forwardRef<
   const finalOptions = (
     isReferenceTypeVal ? formatOptions(options) : options
   ) as SelectProps['options'];
+
+  const disabledOptions = React.useMemo(() => {
+    if (value?.length === maxLength) {
+      return finalOptions?.map((item) => {
+        if (value.includes(item.value)) {
+          return item
+        }
+        return {
+          ...item, disabled: true
+        }
+      })
+    }
+    return finalOptions
+  }, [finalOptions, value, maxLength])
 
   const handleChange: SelectProps['onChange'] = (val) => {
     const nextVal = val && isReferenceTypeVal ? JSON.parse(val as string) : val;
@@ -105,7 +120,7 @@ const ComplexValSelect = React.forwardRef<
       className={classNames('complex-val-select', props?.className)}
       suffixIcon={<ArrowDownOutlined />}
       value={value && isReferenceTypeVal ? JSON.stringify(value) : value}
-      options={finalOptions}
+      options={maxLength ? disabledOptions : finalOptions}
       onChange={handleChange}
       onSelect={handleSelect}
       {...omit(props, ['value', 'onChange', 'options', 'onSelect', 'className'])}

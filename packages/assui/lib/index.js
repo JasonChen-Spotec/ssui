@@ -9,7 +9,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.MultiLineEllipsisText = exports.SignaturePad = exports.ConditionSelect = exports.CountUp = exports.CountDown = exports.ComplexValSelect = exports.MultipartUpload = exports.LabelConditionSelectInput = exports.Flex = exports.Resizable = exports.RichTextEditor = exports.BeautifulDnd = exports.LabelCustomizeRangePicker = exports.TableCol = exports.LabelTreeSelect = exports.LabelConditionInput = exports.LabelNumberInput = exports.LabelAutoComplete = exports.LabelDatePicker = exports.LabelRangePicker = exports.JsonEditor = exports.AreaText = exports.LabelTextArea = exports.ASelect = exports.LabelSelect = exports.ColorSelect = exports.LabelInput = exports.TextInput = exports.TextArea = exports.SplitPane = exports.sortableHoc = exports.SingleImgUpload = exports.RcTransitionGroup = exports.RcQRcode = exports.RcEchart = exports.StepNumberInput = exports.LabelRangeNumber = exports.NumberInput = exports.RcMotion = exports.KeepTab = exports.ImgCrop = exports.HighlightWords = exports.HighlightTextarea = exports.CopyToClipboard = exports.NumberFormatInput = exports.ConfigProvider = exports.ConditionSelectInput = exports.ConditionInput = exports.ButtonModal = exports.ButtonDrawer = void 0;
-exports.RcSplitView = void 0;
+exports.BaseButton = exports.RcSplitView = void 0;
 var button_drawer_1 = require("./button-drawer");
 Object.defineProperty(exports, "ButtonDrawer", {
   enumerable: true,
@@ -365,5 +365,12 @@ Object.defineProperty(exports, "RcSplitView", {
   enumerable: true,
   get: function get() {
     return __importDefault(rc_split_view_1)["default"];
+  }
+});
+var base_button_1 = require("./base-button");
+Object.defineProperty(exports, "BaseButton", {
+  enumerable: true,
+  get: function get() {
+    return __importDefault(base_button_1)["default"];
   }
 });
