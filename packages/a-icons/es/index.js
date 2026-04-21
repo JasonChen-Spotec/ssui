@@ -135,6 +135,7 @@ export { default as EditOutlined } from './EditOutlined';
 export { default as EditSimpleOutlined } from './EditSimpleOutlined';
 export { default as ErrorWarningFilled } from './ErrorWarningFilled';
 export { default as ErrorWarningOutlined } from './ErrorWarningOutlined';
+export { default as ExchangeArrowOutlined } from './ExchangeArrowOutlined';
 export { default as ExternalLinkFilled } from './ExternalLinkFilled';
 export { default as EyeFilled } from './EyeFilled';
 export { default as EyeOutlined } from './EyeOutlined';
