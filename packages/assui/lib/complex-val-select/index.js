@@ -120,7 +120,6 @@ var ComplexValSelect = React.forwardRef(function (props, ref) {
     value = _a[0],
     setValue = _a[1];
   var options = props.options,
-    maxLength = props.maxLength,
     onSelect = props.onSelect;
   var selectRef = React.useRef(null);
   React.useImperativeHandle(ref, function () {
@@ -129,19 +128,6 @@ var ComplexValSelect = React.forwardRef(function (props, ref) {
   // 判断是否需要将optionValue转为JSON字符串
   var isReferenceTypeVal = (0, exports.isReferenceTypeOption)(options);
   var finalOptions = isReferenceTypeVal ? _formatOptions(options) : options;
-  var disabledOptions = React.useMemo(function () {
-    if ((value === null || value === void 0 ? void 0 : value.length) === maxLength) {
-      return finalOptions === null || finalOptions === void 0 ? void 0 : finalOptions.map(function (item) {
-        if (value.includes(item.value)) {
-          return item;
-        }
-        return __assign(__assign({}, item), {
-          disabled: true
-        });
-      });
-    }
-    return finalOptions;
-  }, [finalOptions, value, maxLength]);
   var handleChange = function handleChange(val) {
     var nextVal = val && isReferenceTypeVal ? JSON.parse(val) : val;
     setValue(nextVal, options);
@@ -158,7 +144,7 @@ var ComplexValSelect = React.forwardRef(function (props, ref) {
     className: (0, classnames_1["default"])('complex-val-select', props === null || props === void 0 ? void 0 : props.className),
     suffixIcon: React.createElement(ArrowDownOutlined_1["default"], null),
     value: value && isReferenceTypeVal ? JSON.stringify(value) : value,
-    options: maxLength ? disabledOptions : finalOptions,
+    options: finalOptions,
     onChange: handleChange,
     onSelect: handleSelect
   }, (0, omit_1["default"])(props, ['value', 'onChange', 'options', 'onSelect', 'className'])));
