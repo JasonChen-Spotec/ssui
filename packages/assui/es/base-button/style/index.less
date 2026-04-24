@@ -4,7 +4,8 @@
 
 .@{base-button-name} {
   display: inline-flex;
-  gap: 12px;
+  font-size: @font-size-base;
+  gap: 8px;
   align-items: center;
   height: 32px;
   padding: 0 16px;
@@ -21,9 +22,11 @@
     padding: 0 8px;
     font-size: @font-size-sm;
     line-height: 20px;
+    gap: 4px;
   }
 
   &-large {
+    gap: 12px;
     height: 40px;
     padding: 0 24px;
     font-size: @font-size_16;
@@ -38,6 +41,9 @@
     display: flex;
     justify-content: center;
     width: 100%;
+    height: 40px;
+    font-size: @font-size_16;
+    line-height: 24px;
   }
 
   &-loading {
@@ -46,9 +52,10 @@
 
   &-default {
     --font-color: @color_121212;
-    --border-color: @color_e6e6e6;
+    --border-color: @color_d9d9d9;
     --hover-bg-color: @color_f2f2f2;
     --active-bg-color: @color_e6e6e6;
+    --disabled-border-color: @color_d9d9d9;
     color: @color_121212;
     &:hover {
       background-color:@color_f2f2f2;
@@ -62,6 +69,8 @@
     --theme-color: @color_dc4946;
     --hover-color: @color_e7807e;
     --active-color: @color_c6423f;
+    --hover-text-color: var(--hover-color);
+    --active-text-color: var(--active-color);
     color: @white;
     background: var(--theme-color);
     &:hover {
@@ -78,6 +87,8 @@
     --theme-color: @color_47a92a;
     --hover-color: @color_7ec36a;
     --active-color: @color_409826;
+    --hover-text-color: var(--hover-color);
+    --active-text-color: var(--active-color);
     &:hover {
       background-color: var(--hover-color);
     }
@@ -90,6 +101,8 @@
     --theme-color: @color_121212;
     --hover-color: @color_595959;
     --active-color: @color_333;
+    --hover-text-color: var(--hover-color);
+    --active-text-color: var(--active-color);
     color: @white;
     background: var(--theme-color);
     &:hover {
@@ -102,11 +115,13 @@
 
   &-gray {
     --font-color: @color_121212;
-    --border-color: @color_f2f2f2;
+    --border-color: @color_d9d9d9;
     --hover-color: @color_f7f7f7;
     --active-color: @color_e6e6e6;
     --hover-bg-color: @color_f7f7f7;
     --active-bg-color: @color_e6e6e6;
+    --hover-text-color: var(--font-color);
+    --active-text-color: var(--font-color);
     color: var(--font-color);
     background: @color_f2f2f2;
     border: none;
@@ -123,10 +138,12 @@
     background-color: @white;
     border: 1px solid var(--theme-color, var(--border-color));
     &:hover {
+      color: var(--hover-text-color, var(--font-color));
       background-color: var(--hover-bg-color, @white);
       border-color: var(--hover-color, var(--border-color));
     }
     &:active {
+      color:  var(--active-text-color, var(--font-color));
       background-color: var(--active-bg-color, @white);
       border-color: var(--active-color, var(--border-color));
     }
@@ -136,20 +153,6 @@
         background-color: @white;
       }
     }
-
-    &.@{base-button-name}-disabled {
-      color: @color_bfbfbf;
-      background-color: @color_e6e6e6;
-      border-color: @color_e6e6e6;
-      &:hover {
-        background-color: @color_e6e6e6;
-        border-color: @color_e6e6e6;
-      }
-      &:active {
-        background-color: @color_e6e6e6;
-        border-color: @color_e6e6e6;
-      }
-    }
   }
 
   &-variant-dashed {
@@ -157,10 +160,12 @@
     background-color: @white;
     border: 1px dashed var(--theme-color, var(--border-color));
     &:hover {
+      color: var(--hover-text-color, var(--font-color));
       background-color: var(--hover-bg-color, @white);
       border-color: var(--hover-color, var(--border-color));
     }
     &:active {
+      color:  var(--active-text-color, var(--font-color));
       background-color: var(--active-bg-color, @white);
       border-color: var(--active-color, var(--border-color));
     }
@@ -193,15 +198,17 @@
   }
 
   &-disabled {
-    color: @color_bfbfbf;
-    background-color: @color_e6e6e6;
-    border-color: @color_e6e6e6;
+    color: @color_bfbfbf !important;
+    background-color: @color_f2f2f2 !important;
+    border-color: var(--disabled-border-color, @color_f2f2f2) !important;
     cursor: not-allowed;
     &:hover {
-      background-color: @color_e6e6e6;
+      color: @color_bfbfbf !important;
+      background-color: @color_f2f2f2 !important;
     }
     &:active {
-      background-color: @color_e6e6e6;
+      color: @color_bfbfbf !important;
+      background-color: @color_f2f2f2 !important;
     }
   }
 

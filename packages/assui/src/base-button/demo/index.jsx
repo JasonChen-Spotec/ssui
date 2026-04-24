@@ -95,8 +95,8 @@ const Demo = () => {
           <BaseButton variant="link">variant-link</BaseButton>
         </div>
         <h1>图标按钮</h1>
-        <div>
-          <BaseButton color="primary" prefixIcon={<EarthOutlined />}>
+        <div className='icon-box'>
+          <BaseButton color="primary" prefixIcon={<EarthOutlined  />}>
             prefixIcon
           </BaseButton>
           <BaseButton color="primary" suffixIcon={<EarthOutlined />}>
