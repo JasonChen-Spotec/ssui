@@ -12,7 +12,7 @@ export interface ComplexValSelectOptionType extends Omit<DefaultOptionType, 'val
 export declare const isReferenceTypeOption: (options?: ComplexValSelectOptionType[]) => boolean;
 export interface ComplexValSelectProps<T> extends Omit<SelectProps, 'value' | 'onChange' | 'options'> {
     value?: T;
-    onChange?: (val: T, opt?: ComplexValSelectOptionType[]) => void;
+    onChange?: (val: T, opt?: ComplexValSelectOptionType | ComplexValSelectOptionType[]) => void;
     options?: ComplexValSelectOptionType[];
 }
 declare const ComplexValSelect: React.ForwardRefExoticComponent<ComplexValSelectProps<ComplexValSelectValueType> & React.RefAttributes<unknown>>;
