@@ -32,10 +32,10 @@ var __read = this && this.__read || function (o, n) {
 };
 import * as React from 'react';
 import omit from 'lodash/omit';
-import find from 'lodash/find';
 import some from 'lodash/some';
 import isArray from 'lodash/isArray';
 import isObject from 'lodash/isObject';
+import isUndefined from 'lodash/isUndefined';
 import Select from "antd/es/select";
 import classNames from 'classnames';
 import ArrowDownOutlined from "a-icons/es/ArrowDownOutlined";
@@ -50,7 +50,7 @@ var _formatOptions = function formatOptions(dateSource) {
       } : {};
       return __assign(__assign(__assign({}, item), {
         label: item.label,
-        value: item.value ? JSON.stringify(item.value) : undefined
+        value: isUndefined(item.value) ? undefined : JSON.stringify(item.value)
       }), otherProps);
     });
     return options;
@@ -85,25 +85,35 @@ var ComplexValSelect = /*#__PURE__*/React.forwardRef(function (props, ref) {
   // 判断是否需要将optionValue转为JSON字符串
   var isReferenceTypeVal = isReferenceTypeOption(options);
   var finalOptions = isReferenceTypeVal ? _formatOptions(options) : options;
-  var handleChange = function handleChange(val) {
-    var nextVal = val && isReferenceTypeVal ? JSON.parse(val) : val;
-    setValue(nextVal, options);
+  var handleChange = function handleChange(val, option) {
+    var nextVal = val;
+    if (val && isReferenceTypeVal) {
+      nextVal = isArray(val) ? val.map(function (item) {
+        return JSON.parse(item);
+      }) : JSON.parse(val);
+    }
+    setValue(nextVal, option);
   };
-  var handleSelect = function handleSelect(val) {
+  var handleSelect = function handleSelect(val, option) {
     var nextVal = val && isReferenceTypeVal ? JSON.parse(val) : val;
-    var selectOption = find(finalOptions, {
-      value: val
-    });
-    onSelect === null || onSelect === void 0 ? void 0 : onSelect(nextVal, selectOption);
+    onSelect === null || onSelect === void 0 ? void 0 : onSelect(nextVal, option);
   };
+  var displayValue = React.useMemo(function () {
+    if (value && isReferenceTypeVal) {
+      return isArray(value) ? value.map(function (v) {
+        return JSON.stringify(v);
+      }) : JSON.stringify(value);
+    }
+    return value;
+  }, [value, isReferenceTypeVal]);
   return /*#__PURE__*/React.createElement(Select, __assign({
     ref: selectRef,
     className: classNames('complex-val-select', props === null || props === void 0 ? void 0 : props.className),
     suffixIcon: /*#__PURE__*/React.createElement(ArrowDownOutlined, null),
-    value: value && isReferenceTypeVal ? JSON.stringify(value) : value,
+    value: displayValue,
     options: finalOptions,
     onChange: handleChange,
     onSelect: handleSelect
-  }, omit(props, ['value', 'onChange', 'options', 'onSelect', 'className'])));
+  }, omit(props, ['value', 'defaultValue', 'onChange', 'options', 'onSelect', 'className'])));
 });
 export default ComplexValSelect;

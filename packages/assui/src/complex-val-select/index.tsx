@@ -1,9 +1,9 @@
 import * as React from 'react';
 import omit from 'lodash/omit';
-import find from 'lodash/find';
 import some from 'lodash/some';
 import isArray from 'lodash/isArray';
 import isObject from 'lodash/isObject';
+import isUndefined from 'lodash/isUndefined';
 import type { DefaultOptionType, RefSelectProps, SelectProps } from 'antd/lib/select';
 import Select from 'antd/lib/select';
 import classNames from 'classnames';
@@ -38,7 +38,7 @@ const formatOptions = (
       return {
         ...item,
         label: item.label,
-        value: item.value ? JSON.stringify(item.value) : undefined,
+        value: isUndefined(item.value) ? undefined : JSON.stringify(item.value),
         ...otherProps,
       };
     });
@@ -67,7 +67,10 @@ export const isReferenceTypeOption = (options?: ComplexValSelectOptionType[]) =>
 export interface ComplexValSelectProps<T>
   extends Omit<SelectProps, 'value' | 'onChange' | 'options'> {
   value?: T;
-  onChange?: (val: T, opt?: ComplexValSelectOptionType[]) => void;
+  onChange?: (
+    val: T,
+    opt?: ComplexValSelectOptionType | ComplexValSelectOptionType[],
+  ) => void;
   options?: ComplexValSelectOptionType[];
 }
 
@@ -88,27 +91,40 @@ const ComplexValSelect = React.forwardRef<
     isReferenceTypeVal ? formatOptions(options) : options
   ) as SelectProps['options'];
 
-  const handleChange: SelectProps['onChange'] = (val) => {
-    const nextVal = val && isReferenceTypeVal ? JSON.parse(val as string) : val;
-    setValue(nextVal, options);
+  const handleChange: SelectProps['onChange'] = (val, option) => {
+    let nextVal = val;
+    if (val && isReferenceTypeVal) {
+      nextVal = isArray(val)
+        ? val.map((item) => JSON.parse(item as string))
+        : JSON.parse(val as string);
+    }
+    setValue(nextVal, option as ComplexValSelectOptionType | ComplexValSelectOptionType[]);
   };
 
-  const handleSelect = (val: ComplexValSelectValueType) => {
+  const handleSelect = (val: any, option: DefaultOptionType) => {
     const nextVal = val && isReferenceTypeVal ? JSON.parse(val as string) : val;
-    const selectOption = find(finalOptions, { value: val }) as DefaultOptionType;
-    onSelect?.(nextVal, selectOption);
+    onSelect?.(nextVal, option);
   };
+
+  const displayValue = React.useMemo(() => {
+    if (value && isReferenceTypeVal) {
+      return isArray(value)
+        ? value.map((v) => JSON.stringify(v))
+        : JSON.stringify(value);
+    }
+    return value;
+  }, [value, isReferenceTypeVal]);
 
   return (
     <Select
       ref={selectRef}
       className={classNames('complex-val-select', props?.className)}
       suffixIcon={<ArrowDownOutlined />}
-      value={value && isReferenceTypeVal ? JSON.stringify(value) : value}
+      value={displayValue}
       options={finalOptions}
       onChange={handleChange}
       onSelect={handleSelect}
-      {...omit(props, ['value', 'onChange', 'options', 'onSelect', 'className'])}
+      {...omit(props, ['value', 'defaultValue', 'onChange', 'options', 'onSelect', 'className'])}
     />
   );
 });
