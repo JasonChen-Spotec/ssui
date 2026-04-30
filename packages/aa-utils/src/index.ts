@@ -15,4 +15,5 @@ export { default as downloadFile } from './downloadFile';
 export { default as heic2Jpeg } from './heic2Jpeg';
 export { default as htmlToPdf } from './htmlToPdf';
 export { default as getSignByLang } from './getSignByLang';
+export { default as stableStringify } from './stableStringify';
 export * as keyCode from './keyCode';

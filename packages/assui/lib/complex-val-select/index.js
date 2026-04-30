@@ -71,7 +71,7 @@ var __importDefault = this && this.__importDefault || function (mod) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.isReferenceTypeOption = exports.Option = void 0;
+exports.stableStringify = exports.Option = exports.isReferenceTypeOption = void 0;
 var React = __importStar(require("react"));
 var omit_1 = __importDefault(require("lodash/omit"));
 var some_1 = __importDefault(require("lodash/some"));
@@ -82,27 +82,34 @@ var select_1 = __importDefault(require("antd/lib/select"));
 var classnames_1 = __importDefault(require("classnames"));
 var ArrowDownOutlined_1 = __importDefault(require("a-icons/lib/ArrowDownOutlined"));
 var useControllableValue_1 = __importDefault(require("ahooks/lib/useControllableValue"));
-var Option = select_1["default"].Option;
-exports.Option = Option;
-var _formatOptions = function formatOptions(dateSource) {
-  if (dateSource) {
-    var options = dateSource.map(function (item) {
-      var otherProps = item.options ? {
-        options: _formatOptions(item.options)
-      } : {};
-      return __assign(__assign(__assign({}, item), {
-        label: item.label,
-        value: (0, isUndefined_1["default"])(item.value) ? undefined : JSON.stringify(item.value)
-      }), otherProps);
-    });
-    return options;
+var aa_utils_1 = require("aa-utils");
+var lodash_1 = require("lodash");
+// 核心防御：防止非标准 JSON 字符串（如 tags 模式下手敲的纯文本或 undefined）导致页面崩溃
+var safeParse = function safeParse(str) {
+  if (typeof str !== 'string') return str;
+  try {
+    return JSON.parse(str);
+  } catch (_a) {
+    return str; // 解析失败直接返回原字符串
   }
-  return dateSource;
 };
-/** 判断optionsValue是否是引用类型 */
+/** 递归格式化 options，将复杂 value 序列化为字符串 */
+var _formatOptions = function formatOptions(dataSource) {
+  if (!dataSource) return dataSource;
+  return dataSource.map(function (item) {
+    var otherProps = item.options ? {
+      options: _formatOptions(item.options)
+    } : {};
+    return __assign(__assign(__assign({}, item), {
+      label: item.label,
+      value: (0, isUndefined_1["default"])(item.value) ? undefined : (0, aa_utils_1.stableStringify)(item.value)
+    }), otherProps);
+  });
+};
+/** 判断 options 的 value 中是否包含引用类型（对象或数组） */
 var isReferenceTypeOption = function isReferenceTypeOption(options) {
-  var resultBoolean = (0, some_1["default"])(options, function (item) {
-    if (item.value) {
+  return (0, some_1["default"])(options, function (item) {
+    if (!(0, isUndefined_1["default"])(item.value)) {
       return (0, isArray_1["default"])(item.value) || (0, isObject_1["default"])(item.value);
     }
     if (item.options) {
@@ -112,7 +119,6 @@ var isReferenceTypeOption = function isReferenceTypeOption(options) {
     }
     return false;
   });
-  return resultBoolean;
 };
 exports.isReferenceTypeOption = isReferenceTypeOption;
 var ComplexValSelect = React.forwardRef(function (props, ref) {
@@ -120,35 +126,42 @@ var ComplexValSelect = React.forwardRef(function (props, ref) {
     value = _a[0],
     setValue = _a[1];
   var options = props.options,
-    onSelect = props.onSelect;
+    onSelect = props.onSelect,
+    mode = props.mode;
   var selectRef = React.useRef(null);
   React.useImperativeHandle(ref, function () {
     return selectRef.current;
   });
-  // 判断是否需要将optionValue转为JSON字符串
+  // 判断是否为多选模式 (multiple 或 tags)
+  var isMultiple = mode === 'multiple' || mode === 'tags';
+  // 判断是否需要将 option 的 value 转为 JSON 字符串
   var isReferenceTypeVal = (0, exports.isReferenceTypeOption)(options);
   var finalOptions = isReferenceTypeVal ? _formatOptions(options) : options;
+  // 处理选中值改变：将底层传出的字符串安全地 parse 回真实的数据结构
   var handleChange = function handleChange(val, option) {
     var nextVal = val;
-    if (val && isReferenceTypeVal) {
-      nextVal = (0, isArray_1["default"])(val) ? val.map(function (item) {
-        return JSON.parse(item);
-      }) : JSON.parse(val);
+    if (!(0, lodash_1.isNil)(val) && isReferenceTypeVal) {
+      nextVal = isMultiple && (0, isArray_1["default"])(val) ? val.map(function (item) {
+        return safeParse(item);
+      }) : safeParse(val);
     }
     setValue(nextVal, option);
   };
   var handleSelect = function handleSelect(val, option) {
-    var nextVal = val && isReferenceTypeVal ? JSON.parse(val) : val;
+    var nextVal = !(0, lodash_1.isNil)(val) && isReferenceTypeVal ? safeParse(val) : val;
     onSelect === null || onSelect === void 0 ? void 0 : onSelect(nextVal, option);
   };
+  // 处理回显展示值：将传入的真实数据结构 stringify 成字符串去匹配底层 Option
   var displayValue = React.useMemo(function () {
-    if (value && isReferenceTypeVal) {
-      return (0, isArray_1["default"])(value) ? value.map(function (v) {
-        return JSON.stringify(v);
-      }) : JSON.stringify(value);
+    if (!(0, lodash_1.isNil)(value) && isReferenceTypeVal) {
+      return isMultiple && (0, isArray_1["default"])(value) ? value.map(function (v) {
+        // 在 tags 模式下，如果 v 已经是手敲的基础字符串，直接放行，避免产生多余的双引号
+        if (mode === 'tags' && typeof v === 'string') return v;
+        return (0, aa_utils_1.stableStringify)(v);
+      }) : (0, aa_utils_1.stableStringify)(value);
     }
     return value;
-  }, [value, isReferenceTypeVal]);
+  }, [value, isReferenceTypeVal, isMultiple, mode]);
   return React.createElement(select_1["default"], __assign({
     ref: selectRef,
     className: (0, classnames_1["default"])('complex-val-select', props === null || props === void 0 ? void 0 : props.className),
@@ -160,3 +173,12 @@ var ComplexValSelect = React.forwardRef(function (props, ref) {
   }, (0, omit_1["default"])(props, ['value', 'defaultValue', 'onChange', 'options', 'onSelect', 'className'])));
 });
 exports["default"] = ComplexValSelect;
+var Option = select_1["default"].Option;
+exports.Option = Option;
+var aa_utils_2 = require("aa-utils");
+Object.defineProperty(exports, "stableStringify", {
+  enumerable: true,
+  get: function get() {
+    return aa_utils_2.stableStringify;
+  }
+});

@@ -9,10 +9,18 @@ import Select from 'antd/lib/select';
 import classNames from 'classnames';
 import ArrowDownOutlined from 'a-icons/lib/ArrowDownOutlined';
 import useControllableValue from 'ahooks/lib/useControllableValue';
+import { stableStringify } from 'aa-utils';
+import { isNil } from 'lodash';
 
-const { Option } = Select;
-
-export { Option };
+// 核心防御：防止非标准 JSON 字符串（如 tags 模式下手敲的纯文本或 undefined）导致页面崩溃
+const safeParse = (str: string) => {
+  if (typeof str !== 'string') return str;
+  try {
+    return JSON.parse(str);
+  } catch {
+    return str; // 解析失败直接返回原字符串
+  }
+};
 
 export type ComplexValSelectValueType =
   | string
@@ -29,30 +37,28 @@ export interface ComplexValSelectOptionType
   options?: Omit<ComplexValSelectOptionType, 'children' | 'options'>[];
 }
 
+/** 递归格式化 options，将复杂 value 序列化为字符串 */
 const formatOptions = (
-  dateSource?: ComplexValSelectOptionType[],
+  dataSource?: ComplexValSelectOptionType[],
 ): DefaultOptionType[] | undefined => {
-  if (dateSource) {
-    const options = dateSource.map((item) => {
-      const otherProps = item.options ? { options: formatOptions(item.options) } : {};
-      return {
-        ...item,
-        label: item.label,
-        value: isUndefined(item.value) ? undefined : JSON.stringify(item.value),
-        ...otherProps,
-      };
-    });
+  if (!dataSource) return dataSource;
 
-    return options;
-  }
+  return dataSource.map((item) => {
+    const otherProps = item.options ? { options: formatOptions(item.options) } : {};
 
-  return dateSource;
+    return {
+      ...item,
+      label: item.label,
+      value: isUndefined(item.value) ? undefined : stableStringify(item.value),
+      ...otherProps,
+    };
+  });
 };
 
-/** 判断optionsValue是否是引用类型 */
-export const isReferenceTypeOption = (options?: ComplexValSelectOptionType[]) => {
-  const resultBoolean = some(options, (item) => {
-    if (item.value) {
+/** 判断 options 的 value 中是否包含引用类型（对象或数组） */
+export const isReferenceTypeOption = (options?: ComplexValSelectOptionType[]) =>
+  some(options, (item) => {
+    if (!isUndefined(item.value)) {
       return isArray(item.value) || isObject(item.value);
     }
     if (item.options) {
@@ -60,9 +66,6 @@ export const isReferenceTypeOption = (options?: ComplexValSelectOptionType[]) =>
     }
     return false;
   });
-
-  return resultBoolean;
-};
 
 export interface ComplexValSelectProps<T>
   extends Omit<SelectProps, 'value' | 'onChange' | 'options'> {
@@ -79,41 +82,51 @@ const ComplexValSelect = React.forwardRef<
   ComplexValSelectProps<ComplexValSelectValueType>
 >((props, ref) => {
   const [value, setValue] = useControllableValue(props);
-  const { options, onSelect } = props;
+  const { options, onSelect, mode } = props;
   const selectRef = React.useRef<RefSelectProps>(null);
 
   React.useImperativeHandle(ref, () => selectRef.current);
 
-  // 判断是否需要将optionValue转为JSON字符串
+  // 判断是否为多选模式 (multiple 或 tags)
+  const isMultiple = mode === 'multiple' || mode === 'tags';
+
+  // 判断是否需要将 option 的 value 转为 JSON 字符串
   const isReferenceTypeVal = isReferenceTypeOption(options);
 
   const finalOptions = (
     isReferenceTypeVal ? formatOptions(options) : options
   ) as SelectProps['options'];
 
+  // 处理选中值改变：将底层传出的字符串安全地 parse 回真实的数据结构
   const handleChange: SelectProps['onChange'] = (val, option) => {
     let nextVal = val;
-    if (val && isReferenceTypeVal) {
-      nextVal = isArray(val)
-        ? val.map((item) => JSON.parse(item as string))
-        : JSON.parse(val as string);
+
+    if (!isNil(val) && isReferenceTypeVal) {
+      nextVal = isMultiple && isArray(val)
+        ? val.map((item) => safeParse(item as string))
+        : safeParse(val as string);
     }
     setValue(nextVal, option as ComplexValSelectOptionType | ComplexValSelectOptionType[]);
   };
 
   const handleSelect = (val: any, option: DefaultOptionType) => {
-    const nextVal = val && isReferenceTypeVal ? JSON.parse(val as string) : val;
+    const nextVal = !isNil(val) && isReferenceTypeVal ? safeParse(val as string) : val;
     onSelect?.(nextVal, option);
   };
 
+  // 处理回显展示值：将传入的真实数据结构 stringify 成字符串去匹配底层 Option
   const displayValue = React.useMemo(() => {
-    if (value && isReferenceTypeVal) {
-      return isArray(value)
-        ? value.map((v) => JSON.stringify(v))
-        : JSON.stringify(value);
+    if (!isNil(value) && isReferenceTypeVal) {
+      return isMultiple && isArray(value)
+        ? value.map((v) => {
+            // 在 tags 模式下，如果 v 已经是手敲的基础字符串，直接放行，避免产生多余的双引号
+            if (mode === 'tags' && typeof v === 'string') return v;
+            return stableStringify(v);
+          })
+        : stableStringify(value);
     }
     return value;
-  }, [value, isReferenceTypeVal]);
+  }, [value, isReferenceTypeVal, isMultiple, mode]);
 
   return (
     <Select
@@ -124,9 +137,20 @@ const ComplexValSelect = React.forwardRef<
       options={finalOptions}
       onChange={handleChange}
       onSelect={handleSelect}
-      {...omit(props, ['value', 'defaultValue', 'onChange', 'options', 'onSelect', 'className'])}
+      {...omit(props, [
+        'value',
+        'defaultValue',
+        'onChange',
+        'options',
+        'onSelect',
+        'className',
+      ])}
     />
   );
 });
 
 export default ComplexValSelect;
+
+const { Option } = Select;
+export { Option };
+export { stableStringify } from 'aa-utils';
