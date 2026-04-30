@@ -9,8 +9,11 @@ import Select from 'antd/lib/select';
 import classNames from 'classnames';
 import ArrowDownOutlined from 'a-icons/lib/ArrowDownOutlined';
 import useControllableValue from 'ahooks/lib/useControllableValue';
-import { stableStringify } from 'aa-utils';
+import stableStringify from 'aa-utils/lib/stableStringify';
 import { isNil } from 'lodash';
+
+const { Option } = Select;
+export { Option };
 
 // 核心防御：防止非标准 JSON 字符串（如 tags 模式下手敲的纯文本或 undefined）导致页面崩溃
 const safeParse = (str: string) => {
@@ -150,7 +153,3 @@ const ComplexValSelect = React.forwardRef<
 });
 
 export default ComplexValSelect;
-
-const { Option } = Select;
-export { Option };
-export { stableStringify } from 'aa-utils';
