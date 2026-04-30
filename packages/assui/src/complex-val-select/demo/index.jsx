@@ -84,6 +84,15 @@ const Demo = () => {
           ]}
         />
       </Form.Item>
+      <Form.Item label="下拉Value是序列化数组">
+        <ComplexValSelect
+          value={[1, 6, 2, 7]}
+          options={[
+            { label: '张三指头个数', value: [2, 1, 3, 6] },
+            { label: '李四指头个数', value: [1, 6, 2, 7] },
+          ]}
+        />
+      </Form.Item>
       <Form.Item name="object" label="下拉Value是对象">
         <ComplexValSelect
           options={[
@@ -97,6 +106,63 @@ const Demo = () => {
       </Form.Item>
       <Form.Item name="options" label="更复杂的分组下拉数据">
         <ComplexValSelect options={complexValOptions} />
+      </Form.Item>
+      <Form.Item label="下拉Value是对象">
+        <ComplexValSelect
+          value={{ sex: '男', name: '张三' }}
+          options={[
+            { label: '张三信息', value: { name: '张三', sex: '男' } },
+            { label: '李四信息', value: { name: '李四', sex: '女' } },
+          ]}
+        />
+      </Form.Item>
+      <Form.Item label="多选对象">
+        <ComplexValSelect
+          mode="multiple"
+          value={[
+            { name: '张三', sex: '男' },
+            { sex: '男', name: '王二' }
+          ]}
+          options={[
+            { label: '张三信息', value: { name: '张三', sex: '男' } },
+            { label: '李四信息', value: { name: '李四', sex: '女' } },
+            { label: '王二信息', value: { name: '王二', sex: '男' } },
+          ]}
+        />
+      </Form.Item>
+      <Form.Item label="多选数组">
+        <ComplexValSelect
+          mode="multiple"
+          value={[
+            [1, 2, 3],
+            [3, 2, 2]
+          ]}
+          options={[
+            { label: '张三信息', value: [1, 2, 3] },
+            { label: '李四信息', value: [3, 2, 2] },
+            { label: '王二信息', value: [4, 3, 3] },
+          ]}
+        />
+      </Form.Item>
+      <Form.Item label="多选数组(可选)" name="multiArray">
+        <ComplexValSelect
+          mode="multiple"
+          options={[
+            { label: '张三信息', value: [1, 2, 3] },
+            { label: '李四信息', value: [3, 2, 2] },
+            { label: '王二信息', value: [4, 3, 3] },
+          ]}
+        />
+      </Form.Item>
+      <Form.Item label="多选tags" name="multiTags">
+        <ComplexValSelect
+          mode="tags"
+          options={[
+            { label: '张三tag', value: '1' },
+            { label: '李四tag', value: '2' },
+            { label: '王二tag', value: '3' },
+          ]}
+        />
       </Form.Item>
       <Form.Item>
         <Button type="primary" htmlType="submit">

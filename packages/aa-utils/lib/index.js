@@ -41,7 +41,7 @@ var __importDefault = this && this.__importDefault || function (mod) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.keyCode = exports.getSignByLang = exports.htmlToPdf = exports.heic2Jpeg = exports.downloadFile = exports.intervalExecution = exports.resizableColumnsTable = exports.cookieUtils = exports.addPrefixToEumValue = exports.scrollIntoView = exports.qsHelp = exports.numberUtils = exports.localStorage = exports.formatCountdown = exports.events = exports.dateUtils = exports.html2canvas = exports.canvasToImg = void 0;
+exports.keyCode = exports.stableStringify = exports.getSignByLang = exports.htmlToPdf = exports.heic2Jpeg = exports.downloadFile = exports.intervalExecution = exports.resizableColumnsTable = exports.cookieUtils = exports.addPrefixToEumValue = exports.scrollIntoView = exports.qsHelp = exports.numberUtils = exports.localStorage = exports.formatCountdown = exports.events = exports.dateUtils = exports.html2canvas = exports.canvasToImg = void 0;
 var canvasToImg_1 = require("./canvasToImg");
 Object.defineProperty(exports, "canvasToImg", {
   enumerable: true,
@@ -159,6 +159,13 @@ Object.defineProperty(exports, "getSignByLang", {
   enumerable: true,
   get: function get() {
     return __importDefault(getSignByLang_1)["default"];
+  }
+});
+var stableStringify_1 = require("./stableStringify");
+Object.defineProperty(exports, "stableStringify", {
+  enumerable: true,
+  get: function get() {
+    return __importDefault(stableStringify_1)["default"];
   }
 });
 exports.keyCode = __importStar(require("./keyCode"));
