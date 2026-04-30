@@ -40,8 +40,10 @@ import Select from "antd/es/select";
 import classNames from 'classnames';
 import ArrowDownOutlined from "a-icons/es/ArrowDownOutlined";
 import useControllableValue from "ahooks/es/useControllableValue";
-import { stableStringify } from 'aa-utils';
+import stableStringify from "aa-utils/es/stableStringify";
 import { isNil } from 'lodash';
+var Option = Select.Option;
+export { Option };
 // 核心防御：防止非标准 JSON 字符串（如 tags 模式下手敲的纯文本或 undefined）导致页面崩溃
 var safeParse = function safeParse(str) {
   if (typeof str !== 'string') return str;
@@ -130,6 +132,3 @@ var ComplexValSelect = /*#__PURE__*/React.forwardRef(function (props, ref) {
   }, omit(props, ['value', 'defaultValue', 'onChange', 'options', 'onSelect', 'className'])));
 });
 export default ComplexValSelect;
-var Option = Select.Option;
-export { Option };
-export { stableStringify } from 'aa-utils';

@@ -71,7 +71,7 @@ var __importDefault = this && this.__importDefault || function (mod) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.stableStringify = exports.Option = exports.isReferenceTypeOption = void 0;
+exports.isReferenceTypeOption = exports.Option = void 0;
 var React = __importStar(require("react"));
 var omit_1 = __importDefault(require("lodash/omit"));
 var some_1 = __importDefault(require("lodash/some"));
@@ -82,8 +82,10 @@ var select_1 = __importDefault(require("antd/lib/select"));
 var classnames_1 = __importDefault(require("classnames"));
 var ArrowDownOutlined_1 = __importDefault(require("a-icons/lib/ArrowDownOutlined"));
 var useControllableValue_1 = __importDefault(require("ahooks/lib/useControllableValue"));
-var aa_utils_1 = require("aa-utils");
+var stableStringify_1 = __importDefault(require("aa-utils/lib/stableStringify"));
 var lodash_1 = require("lodash");
+var Option = select_1["default"].Option;
+exports.Option = Option;
 // 核心防御：防止非标准 JSON 字符串（如 tags 模式下手敲的纯文本或 undefined）导致页面崩溃
 var safeParse = function safeParse(str) {
   if (typeof str !== 'string') return str;
@@ -102,7 +104,7 @@ var _formatOptions = function formatOptions(dataSource) {
     } : {};
     return __assign(__assign(__assign({}, item), {
       label: item.label,
-      value: (0, isUndefined_1["default"])(item.value) ? undefined : (0, aa_utils_1.stableStringify)(item.value)
+      value: (0, isUndefined_1["default"])(item.value) ? undefined : (0, stableStringify_1["default"])(item.value)
     }), otherProps);
   });
 };
@@ -157,8 +159,8 @@ var ComplexValSelect = React.forwardRef(function (props, ref) {
       return isMultiple && (0, isArray_1["default"])(value) ? value.map(function (v) {
         // 在 tags 模式下，如果 v 已经是手敲的基础字符串，直接放行，避免产生多余的双引号
         if (mode === 'tags' && typeof v === 'string') return v;
-        return (0, aa_utils_1.stableStringify)(v);
-      }) : (0, aa_utils_1.stableStringify)(value);
+        return (0, stableStringify_1["default"])(v);
+      }) : (0, stableStringify_1["default"])(value);
     }
     return value;
   }, [value, isReferenceTypeVal, isMultiple, mode]);
@@ -173,12 +175,3 @@ var ComplexValSelect = React.forwardRef(function (props, ref) {
   }, (0, omit_1["default"])(props, ['value', 'defaultValue', 'onChange', 'options', 'onSelect', 'className'])));
 });
 exports["default"] = ComplexValSelect;
-var Option = select_1["default"].Option;
-exports.Option = Option;
-var aa_utils_2 = require("aa-utils");
-Object.defineProperty(exports, "stableStringify", {
-  enumerable: true,
-  get: function get() {
-    return aa_utils_2.stableStringify;
-  }
-});
