@@ -16,15 +16,35 @@ const Content = ({ modalAction }) => (
   </div>
 );
 
+/** onOk后内置了close方法 所以modalAction没啥用 */
+const handleOk1 = async (modalAction) => {
+  await new Promise((resolve) => {
+    setTimeout(() => {
+      resolve();
+    }, 1000);
+  });
+  console.log(1)
+};
+
+const handleOk2 = (modalAction) => {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve();
+    }, 1000);
+  }).then(()=>{
+    console.log(2)
+  });
+};
+
 export default () => (
   <div>
     <ButtonModal
       title="demo"
-      footer={null}
       onCancel={() => console.log('onCancel')}
       trigger={
         (openModal)=><span onClick={openModal}>open modal</span>
       }
+      onOk={handleOk1}
     >
        {
           (modalAction)=> <Content  modalAction={modalAction} />

@@ -4,15 +4,17 @@ import type { ModalProps } from 'antd/lib/modal';
 import Modal from 'antd/lib/modal';
 import CloseOutlined from 'a-icons/lib/CloseOutlined';
 import useControllableValue from 'ahooks/lib/useControllableValue';
+import isPromise from 'aa-utils/lib/isPromise';
 
 export interface ModalAction {
   open: () => void;
   close: () => void;
 }
 
-export interface ButtonModalProps extends Omit<ModalProps, 'children'> {
+export interface ButtonModalProps extends Omit<ModalProps, 'children' | 'onOk'> {
   onClose?: () => void;
   onOpen?: () => void;
+  onOk: ((v:React.MouseEvent<HTMLElement>) => void | Promise<void>);
   trigger?: ((fun: () => void) => React.ReactElement) | React.ReactElement;
   children: ((v: ModalAction) => React.ReactElement) | React.ReactElement;
 }
@@ -45,8 +47,11 @@ const ButtonModal: React.ForwardRefRenderFunction<ModalAction, ButtonModalProps>
 
   React.useImperativeHandle(ref, () => modalActionRef.current);
 
-  const handleModalOk = (e: React.MouseEvent<HTMLElement>) => {
-    onOk?.(e);
+  const handleModalOk = async (e: React.MouseEvent<HTMLElement>) => {
+    const result = onOk?.(e);
+    if (isPromise(result)) {
+      await result;
+    }
     closeModal();
   };
 
