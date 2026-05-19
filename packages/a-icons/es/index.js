@@ -350,6 +350,7 @@ export { default as TreeOutlined } from './TreeOutlined';
 export { default as TwoPeopleRectOutlined } from './TwoPeopleRectOutlined';
 export { default as TwoPersonConfirm } from './TwoPersonConfirm';
 export { default as TwoSwitchOutlined } from './TwoSwitchOutlined';
+export { default as TwoWayFilled } from './TwoWayFilled';
 export { default as UnbindChainOutlined } from './UnbindChainOutlined';
 export { default as UnionOutlined } from './UnionOutlined';
 export { default as UnlockFilled } from './UnlockFilled';
