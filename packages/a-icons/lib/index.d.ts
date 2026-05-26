@@ -261,6 +261,7 @@ export { default as PeopleTeamFilled } from './PeopleTeamFilled';
 export { default as PeopleTeamOutlined } from './PeopleTeamOutlined';
 export { default as PeopleTieOutlined } from './PeopleTieOutlined';
 export { default as PersonLeftArrowFilled } from './PersonLeftArrowFilled';
+export { default as PersonThreeLineOutlined } from './PersonThreeLineOutlined';
 export { default as PersonTransferFilled } from './PersonTransferFilled';
 export { default as PersonWarningFilled } from './PersonWarningFilled';
 export { default as PhoneCallFilled } from './PhoneCallFilled';
