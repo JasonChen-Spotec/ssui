@@ -1,6 +1,6 @@
 import React from 'react';
-export interface BaseButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
-    color?: 'primary' | 'success' | 'dark' | 'gray';
+export interface BaseButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+    color?: 'default' | 'primary' | 'success' | 'dark' | 'gray';
     variant?: 'outlined' | 'dashed' | 'link' | 'text';
     size?: 'small' | 'medium' | 'large';
     disabled?: boolean;
