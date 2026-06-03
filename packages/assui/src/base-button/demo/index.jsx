@@ -8,7 +8,7 @@ const Demo = () => {
      <div className="btn-box">
         <h1>基础按钮</h1>
         <div>
-          <BaseButton className="adfad" color="primary">primary</BaseButton>
+          <BaseButton className="adfad" color="primary" type="submit">primary</BaseButton>
           <BaseButton color="primary" variant="outlined">
             primary
           </BaseButton>
