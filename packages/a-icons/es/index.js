@@ -36,6 +36,7 @@ export { default as BookOutlined } from './BookOutlined';
 export { default as BoxAddFilled } from './BoxAddFilled';
 export { default as BoxFilled } from './BoxFilled';
 export { default as BoxOutlined } from './BoxOutlined';
+export { default as BranchLineOutlined } from './BranchLineOutlined';
 export { default as BrokenLineOutlined } from './BrokenLineOutlined';
 export { default as BrowseEyes } from './BrowseEyes';
 export { default as BusinessCardOutlined } from './BusinessCardOutlined';

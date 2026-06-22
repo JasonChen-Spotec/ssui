@@ -1,0 +1,76 @@
+"use strict";
+
+var __assign = this && this.__assign || function () {
+  __assign = Object.assign || function (t) {
+    for (var s, i = 1, n = arguments.length; i < n; i++) {
+      s = arguments[i];
+      for (var p in s) {
+        if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+      }
+    }
+    return t;
+  };
+  return __assign.apply(this, arguments);
+};
+var __createBinding = this && this.__createBinding || (Object.create ? function (o, m, k, k2) {
+  if (k2 === undefined) k2 = k;
+  var desc = Object.getOwnPropertyDescriptor(m, k);
+  if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+    desc = {
+      enumerable: true,
+      get: function get() {
+        return m[k];
+      }
+    };
+  }
+  Object.defineProperty(o, k2, desc);
+} : function (o, m, k, k2) {
+  if (k2 === undefined) k2 = k;
+  o[k2] = m[k];
+});
+var __setModuleDefault = this && this.__setModuleDefault || (Object.create ? function (o, v) {
+  Object.defineProperty(o, "default", {
+    enumerable: true,
+    value: v
+  });
+} : function (o, v) {
+  o["default"] = v;
+});
+var __importStar = this && this.__importStar || function (mod) {
+  if (mod && mod.__esModule) return mod;
+  var result = {};
+  if (mod != null) for (var k in mod) {
+    if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+  }
+  __setModuleDefault(result, mod);
+  return result;
+};
+var __importDefault = this && this.__importDefault || function (mod) {
+  return mod && mod.__esModule ? mod : {
+    "default": mod
+  };
+};
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var React = __importStar(require("react"));
+var icon_1 = __importDefault(require("a-base-icon/lib/icon"));
+function BranchLineOutlined(componentProps) {
+  var IconNode = function IconNode(props) {
+    return React.createElement("svg", __assign({
+      viewBox: "0 0 24 24",
+      xmlns: "http://www.w3.org/2000/svg"
+    }, props), React.createElement("path", {
+      d: "M21.707 17.293a1 1 0 010 1.414L18 22.414 16.586 21l2-2h-.017c-.877 0-1.524.01-2.126-.173a4.002 4.002 0 01-1.378-.737c-.485-.4-.835-.944-1.322-1.673l-.242-.362-.555-.832 1.664-1.11.555.832.242.363c.556.833.727 1.07.929 1.237.203.167.437.293.688.37.251.075.544.085 1.545.085h.017l-2-2L18 13.586l3.707 3.707zM21.707 5.293a1 1 0 010 1.414L18 10.414 16.586 9l2-2h-.017c-1.001 0-1.294.01-1.545.086a2.001 2.001 0 00-.688.37c-.202.165-.373.403-.929 1.236l-5.15 7.725c-.486.73-.837 1.273-1.322 1.673a4.002 4.002 0 01-1.378.737c-.602.183-1.25.173-2.126.173H2v-2h3.43c1.002 0 1.295-.01 1.546-.086.251-.076.485-.202.688-.37.202-.165.373-.403.929-1.236l5.15-7.725c.486-.73.837-1.273 1.322-1.673a4.003 4.003 0 011.378-.737C17.045 4.99 17.693 5 18.57 5h.017l-2-2L18 1.586l3.707 3.707z",
+      fill: "currentColor"
+    }), React.createElement("path", {
+      d: "M9.035 13H2v-2h7.035v2zM5.43 5c.878 0 1.525-.01 2.127.173.503.153.971.403 1.378.737.485.4.836.944 1.322 1.673l.242.362.555.832-1.664 1.11-.555-.832-.242-.363c-.556-.833-.727-1.07-.929-1.237a2 2 0 00-.688-.37C6.725 7.01 6.432 7 5.43 7H2V5h3.43z",
+      fill: "currentColor"
+    }));
+  };
+  return React.createElement(icon_1["default"], __assign({}, componentProps, {
+    component: IconNode
+  }));
+}
+BranchLineOutlined.displayName = 'BranchLineOutlined';
+exports["default"] = BranchLineOutlined;
