@@ -200,6 +200,7 @@ export { default as LanguageOutlined } from './LanguageOutlined';
 export { default as LayerFilled } from './LayerFilled';
 export { default as LayerOutlined } from './LayerOutlined';
 export { default as LeftOutlined } from './LeftOutlined';
+export { default as LegalDocument } from './LegalDocument';
 export { default as LightbulbOutlined } from './LightbulbOutlined';
 export { default as LimitlessFilled } from './LimitlessFilled';
 export { default as LineChartUpOutlined } from './LineChartUpOutlined';
