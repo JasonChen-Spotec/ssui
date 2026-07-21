@@ -17,6 +17,8 @@
   outline: none;
   cursor: pointer;
   transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+
+  --btn-icon-size: 16px;
   &-small {
     height: 24px;
     padding: 0 8px;
@@ -124,7 +126,6 @@
     --active-text-color: var(--font-color);
     color: var(--font-color);
     background: @color_f2f2f2;
-    border: none;
     &:hover {
       background-color: var(--hover-color);
     }
@@ -143,7 +144,7 @@
       border-color: var(--hover-color, var(--border-color));
     }
     &:active {
-      color:  var(--active-text-color, var(--font-color));
+      color: var(--active-text-color, var(--font-color));
       background-color: var(--active-bg-color, @white);
       border-color: var(--active-color, var(--border-color));
     }
@@ -165,7 +166,7 @@
       border-color: var(--hover-color, var(--border-color));
     }
     &:active {
-      color:  var(--active-text-color, var(--font-color));
+      color: var(--active-text-color, var(--font-color));
       background-color: var(--active-bg-color, @white);
       border-color: var(--active-color, var(--border-color));
     }
@@ -181,34 +182,24 @@
     &:active {
       background-color: @color_e6e6e6;
     }
-    &.@{base-button-name}-disabled {
-      color: @color_bfbfbf;
-      background-color: transparent;
-    }
     .@{base-button-name}-loading-icon {
-      background: conic-gradient(
-        from 180deg,
-        rgba(0, 0, 0, 0),
-        var(--theme-color, var(--font-color))
-      );
+      background: conic-gradient(from 180deg, rgba(0, 0, 0, 0), var(--theme-color, var(--font-color)));
       .@{base-button-name}-loading-icon-mask {
         background-color: @white;
       }
     }
   }
 
-  &-disabled {
-    color: @color_bfbfbf !important;
-    background-color: @color_f2f2f2 !important;
-    border-color: var(--disabled-border-color, @color_f2f2f2) !important;
+  &.@{base-button-name}-disabled {
+    color: @color_bfbfbf;
+    background-color: @color_f2f2f2;
+    border-color: var(--disabled-border-color, @color_f2f2f2);
     cursor: not-allowed;
-    &:hover {
-      color: @color_bfbfbf !important;
-      background-color: @color_f2f2f2 !important;
-    }
+
+    &:hover,
     &:active {
-      color: @color_bfbfbf !important;
-      background-color: @color_f2f2f2 !important;
+      color: @color_bfbfbf;
+      background-color: @color_f2f2f2;
     }
   }
 
@@ -221,12 +212,20 @@
     }
   }
 
+  &-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--btn-icon-size);
+    height: var(--btn-icon-size);
+  }
+
   &-loading-icon {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 16px;
-    height: 16px;
+    width: var(--btn-icon-size);
+    height: var(--btn-icon-size);
     background: conic-gradient(from 180deg, rgba(0, 0, 0, 0), rgba(255, 255, 255, 1));
     border-radius: 50%;
     animation: loading 1.2s linear infinite;

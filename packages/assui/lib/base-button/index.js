@@ -29,37 +29,43 @@ Object.defineProperty(exports, "__esModule", {
 var react_1 = __importDefault(require("react"));
 var classnames_1 = __importDefault(require("classnames"));
 var btnNamePrefix = 'base-btn';
+var loadingIcon = react_1["default"].createElement("div", {
+  className: "".concat(btnNamePrefix, "-loading-icon")
+}, react_1["default"].createElement("div", {
+  className: "".concat(btnNamePrefix, "-loading-icon-mask")
+}));
 var BaseButton = function BaseButton(_a) {
   var _b;
   var _c = _a.color,
     color = _c === void 0 ? 'default' : _c,
-    _d = _a.variant,
-    variant = _d === void 0 ? '' : _d,
-    _e = _a.size,
-    size = _e === void 0 ? 'medium' : _e,
+    variant = _a.variant,
+    _d = _a.size,
+    size = _d === void 0 ? 'medium' : _d,
     disabled = _a.disabled,
-    _f = _a.round,
-    round = _f === void 0 ? false : _f,
-    _g = _a.block,
-    block = _g === void 0 ? false : _g,
-    _h = _a.loading,
-    loading = _h === void 0 ? false : _h,
+    _e = _a.round,
+    round = _e === void 0 ? false : _e,
+    _f = _a.block,
+    block = _f === void 0 ? false : _f,
+    _g = _a.loading,
+    loading = _g === void 0 ? false : _g,
     prefixIcon = _a.prefixIcon,
     suffixIcon = _a.suffixIcon,
     children = _a.children,
-    resetProps = __rest(_a, ["color", "variant", "size", "disabled", "round", "block", "loading", "prefixIcon", "suffixIcon", "children"]);
-  var className = resetProps.className;
-  var loadingIcon = react_1["default"].createElement("div", {
-    className: "".concat(btnNamePrefix, "-loading-icon")
-  }, react_1["default"].createElement("div", {
-    className: "".concat(btnNamePrefix, "-loading-icon-mask")
-  }));
-  var prefixIconWithLoading = loading ? loadingIcon : prefixIcon;
-  var suffixIconWithLoading = loading ? loadingIcon : suffixIcon;
-  return react_1["default"].createElement("button", __assign({}, resetProps, {
-    className: (0, classnames_1["default"])(btnNamePrefix, "".concat(btnNamePrefix, "-").concat(color), "".concat(btnNamePrefix, "-").concat(size), "".concat(btnNamePrefix, "-variant-").concat(variant), (_b = {}, _b["".concat(btnNamePrefix, "-round")] = round, _b["".concat(btnNamePrefix, "-block")] = block, _b["".concat(btnNamePrefix, "-disabled")] = disabled, _b["".concat(btnNamePrefix, "-loading")] = loading, _b), className)
-  }), (prefixIcon || loading && !suffixIcon) && prefixIconWithLoading, react_1["default"].createElement("span", {
+    className = _a.className,
+    restProps = __rest(_a, ["color", "variant", "size", "disabled", "round", "block", "loading", "prefixIcon", "suffixIcon", "children", "className"]);
+  return react_1["default"].createElement("button", __assign({
+    type: "button",
+    disabled: disabled || loading
+  }, restProps, {
+    className: (0, classnames_1["default"])(btnNamePrefix, "".concat(btnNamePrefix, "-").concat(color), "".concat(btnNamePrefix, "-").concat(size), variant && "".concat(btnNamePrefix, "-variant-").concat(variant), (_b = {}, _b["".concat(btnNamePrefix, "-round")] = round, _b["".concat(btnNamePrefix, "-block")] = block, _b["".concat(btnNamePrefix, "-disabled")] = disabled, _b["".concat(btnNamePrefix, "-loading")] = loading, _b), className)
+  }), react_1["default"].createElement(react_1["default"].Fragment, null, prefixIcon && react_1["default"].createElement("span", {
+    className: "".concat(btnNamePrefix, "-icon")
+  }, loading ? loadingIcon : prefixIcon), loading && !prefixIcon && !suffixIcon && loadingIcon, react_1["default"].createElement("span", {
     className: "".concat(btnNamePrefix, "-content")
-  }, children), suffixIcon && suffixIconWithLoading);
+  }, children), loading && !prefixIcon && suffixIcon && react_1["default"].createElement("span", {
+    className: "".concat(btnNamePrefix, "-icon")
+  }, loadingIcon), (!loading || prefixIcon) && suffixIcon && react_1["default"].createElement("span", {
+    className: "".concat(btnNamePrefix, "-icon")
+  }, suffixIcon)));
 };
 exports["default"] = BaseButton;
