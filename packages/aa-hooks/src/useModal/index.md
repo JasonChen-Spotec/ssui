@@ -1,6 +1,6 @@
 ---
 mobile: false
-title: useDrawer
+title: useModal
 nav:
   title: aa-hooks
   path: /aa-hooks
@@ -10,8 +10,8 @@ group:
   order: 1
 ---
 
-# useDrawer
-通过hook来调用Drawer组件
+# useModal
+通过hook来调用Modal组件
 
 ## 1. 代码演示
 
@@ -19,8 +19,8 @@ group:
 
 <code hideActions='["CSB", "EXTERNAL"]' src="./demo/Base.jsx" ></code>
 
-### 1.2. 通过drawerAction.open 打开不同配置的抽屉
+### 1.2. 通过modalAction.open 打开不同配置的抽屉
 <code hideActions='["CSB", "EXTERNAL"]' src="./demo/Advanced1.jsx" ></code>
 
 
-更多属性请参考 [antd drawer](https://ant.design/components/drawer-cn/)
+更多属性请参考 [antd modal](https://ant.design/components/modal-cn/)

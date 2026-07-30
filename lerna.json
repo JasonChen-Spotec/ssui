@@ -5,7 +5,8 @@
     "packages/aa-utils",
     "packages/amssui",
     "packages/assui",
-    "packages/ec-common"
+    "packages/ec-common",
+    "packages/aa-hooks"
   ],
   "npmClient": "yarn",
   "userWorkspaces": true,

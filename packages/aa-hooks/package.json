@@ -9,12 +9,11 @@
   "main": "./lib/index.js",
   "module": "./es/index.js",
   "types": "./lib/index.d.ts",
+  "files": [
+    "lib"  
+  ],
   "scripts": {
     "build": "gulp"
-  },
-  "directories": {
-    "lib": "lib",
-    "test": "__tests__"
   },
   "peerDependencies": {
     "antd": "^4.23.1",
@@ -22,6 +21,5 @@
   },
   "resolutions": {
     "ahooks": "3.9.5"
-  },
-  "private": true
+  }
 }
