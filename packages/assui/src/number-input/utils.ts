@@ -42,7 +42,7 @@ export const filterFloat = ({
     nextValue = value.replace(/[^\d.]/g, '');
   }
 
-  const floatNumberReg = /^-?\d+\.?\d*$/;
+  const floatNumberReg = /^-?(?:\d+\.?\d*|\.\d+)$/;
 
   if (nextValue && nextValue.length > 1 && !floatNumberReg.test(nextValue)) {
     return preValue;
