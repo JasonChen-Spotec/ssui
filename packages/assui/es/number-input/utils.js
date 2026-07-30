@@ -28,7 +28,7 @@ export var filterFloat = function filterFloat(_a) {
   if (!enableMinus) {
     nextValue = value.replace(/[^\d.]/g, '');
   }
-  var floatNumberReg = /^-?\d+\.?\d*$/;
+  var floatNumberReg = /^-?(?:\d+\.?\d*|\.\d+)$/;
   if (nextValue && nextValue.length > 1 && !floatNumberReg.test(nextValue)) {
     return preValue;
   }
