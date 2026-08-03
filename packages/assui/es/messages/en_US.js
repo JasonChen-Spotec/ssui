@@ -20,6 +20,7 @@ var locale = {
       last90days: 'Last 90 Days',
       last180days: 'Last 180 Days',
       last365days: 'Last 365 Days',
+      last3months: 'Last 3 Months',
       year: 'This year',
       all: 'All'
     }

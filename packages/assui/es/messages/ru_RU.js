@@ -20,6 +20,7 @@ var locale = {
       last90days: 'последние 90 дней',
       last180days: 'Последние 180 дней',
       last365days: 'Последние 365 дней',
+      last3months: 'Last 3 months',
       year: 'В этом году',
       all: 'Все'
     }

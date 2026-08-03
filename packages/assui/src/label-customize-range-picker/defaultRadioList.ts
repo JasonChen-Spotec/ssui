@@ -21,6 +21,7 @@ export enum dateTypeEnum {
   BEFORE_365_DAY = 14,
   YEAR = 15,
   ALL = 16,
+  BEFORE_3_MONTH = 17,
 }
 
 export type RadioListType = {
@@ -175,6 +176,11 @@ const getDefaultRadioList = ({
         'last365days',
       ),
       value: [now.clone().subtract(364, 'day').startOf('day'), now.endOf('day')],
+    },
+    {
+      key: dateTypeEnum.BEFORE_3_MONTH,
+      text: formatMessage(messages, langTypeEnum.labelCustomizeRangePicker, 'last3months'),
+      value: [now.clone().subtract(2, 'month').startOf('month'), now.endOf('day')],
     },
     ...allRadio,
   ];

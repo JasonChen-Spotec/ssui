@@ -25,6 +25,7 @@ var locale = {
       last90days: 'آخر 90 يومًا',
       last180days: 'آخر 180 يومًا',
       last365days: 'آخر 365 يومًا',
+      last3months: 'آخر 3 أشهر',
       year: 'هذا العام',
       all: 'الجميع'
     }

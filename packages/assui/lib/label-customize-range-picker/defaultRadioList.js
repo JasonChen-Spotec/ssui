@@ -92,6 +92,7 @@ var dateTypeEnum;
   dateTypeEnum[dateTypeEnum["BEFORE_365_DAY"] = 14] = "BEFORE_365_DAY";
   dateTypeEnum[dateTypeEnum["YEAR"] = 15] = "YEAR";
   dateTypeEnum[dateTypeEnum["ALL"] = 16] = "ALL";
+  dateTypeEnum[dateTypeEnum["BEFORE_3_MONTH"] = 17] = "BEFORE_3_MONTH";
 })(dateTypeEnum || (exports.dateTypeEnum = dateTypeEnum = {}));
 var getDefaultRadioList = function getDefaultRadioList(_a) {
   var messages = _a.messages,
@@ -166,6 +167,10 @@ var getDefaultRadioList = function getDefaultRadioList(_a) {
     key: dateTypeEnum.BEFORE_365_DAY,
     text: (0, messages_1["default"])(messages, messages_1.langTypeEnum.labelCustomizeRangePicker, 'last365days'),
     value: [now.clone().subtract(364, 'day').startOf('day'), now.endOf('day')]
+  }, {
+    key: dateTypeEnum.BEFORE_3_MONTH,
+    text: (0, messages_1["default"])(messages, messages_1.langTypeEnum.labelCustomizeRangePicker, 'last3months'),
+    value: [now.clone().subtract(2, 'month').startOf('month'), now.endOf('day')]
   }], __read(allRadio), false);
   return defaultRadioList;
 };

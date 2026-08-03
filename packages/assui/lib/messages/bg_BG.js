@@ -25,6 +25,7 @@ var locale = {
       last90days: 'последните 90 дни',
       last180days: 'Последните 180 дни',
       last365days: 'Последните 365 дни',
+      last3months: 'Last 3 months',
       year: 'Тази година',
       all: 'всичко'
     }

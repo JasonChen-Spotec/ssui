@@ -20,6 +20,7 @@ var locale = {
       last90days: 'ultimele 90 de zile',
       last180days: 'Ultimele 180 de zile',
       last365days: 'Ultimele 365 de zile',
+      last3months: 'Last 3 months',
       year: 'Anul acesta',
       all: 'Toate'
     }

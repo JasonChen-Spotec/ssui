@@ -16,7 +16,8 @@ export declare enum dateTypeEnum {
     BEFORE_180_DAY = 13,
     BEFORE_365_DAY = 14,
     YEAR = 15,
-    ALL = 16
+    ALL = 16,
+    BEFORE_3_MONTH = 17
 }
 export type RadioListType = {
     key: string | number | dateTypeEnum;
