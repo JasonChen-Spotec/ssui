@@ -20,6 +20,7 @@ const locale = {
       last90days: 'siste 90 dager',
       last180days: 'Siste 180 dager',
       last365days: 'Siste 365 dager',
+      last3months: 'Last 3 months',
       year: 'I år',
       all: 'Alle',
     },

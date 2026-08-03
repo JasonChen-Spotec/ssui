@@ -25,6 +25,7 @@ var locale = {
       last90days: '90 ngày qua',
       last180days: '180 ngày qua',
       last365days: '365 ngày qua',
+      last3months: '3 tháng gần nhất',
       year: 'Năm nay',
       all: 'Tất cả'
     }

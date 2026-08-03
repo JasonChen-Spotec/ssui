@@ -20,6 +20,7 @@ var locale = {
       last90days: '90 hari terakhir',
       last180days: '180 hari terakhir',
       last365days: '365 hari terakhir',
+      last3months: '3 bulan terakhir',
       year: 'Tahun ini',
       all: 'Semua'
     }

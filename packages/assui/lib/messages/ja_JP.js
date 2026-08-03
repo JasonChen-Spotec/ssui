@@ -25,6 +25,7 @@ var locale = {
       last90days: '過去 90 日間',
       last180days: '過去 180 日間',
       last365days: '過去 365 日間',
+      last3months: '最近3か月',
       year: '今年',
       all: '全て'
     }

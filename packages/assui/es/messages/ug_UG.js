@@ -20,6 +20,7 @@ var locale = {
       last90days: 'ئاخىرقى 90 كۈن',
       last180days: 'ئاخىرقى 180 كۈن',
       last365days: 'ئاخىرقى 365 كۈن',
+      last3months: 'Last 3 months',
       year: 'بۇ يىل',
       all: 'ھەممىسى'
     }

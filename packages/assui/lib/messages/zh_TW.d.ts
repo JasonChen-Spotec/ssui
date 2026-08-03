@@ -20,6 +20,7 @@ declare const locale: {
             last90days: string;
             last180days: string;
             last365days: string;
+            last3months: string;
             year: string;
             all: string;
         };
