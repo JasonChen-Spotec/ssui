@@ -42,9 +42,11 @@ var BaseButton = function BaseButton(_a) {
     suffixIcon = _a.suffixIcon,
     children = _a.children,
     className = _a.className,
-    restProps = __rest(_a, ["color", "variant", "size", "disabled", "round", "block", "loading", "prefixIcon", "suffixIcon", "children", "className"]);
+    _h = _a.type,
+    type = _h === void 0 ? "button" : _h,
+    restProps = __rest(_a, ["color", "variant", "size", "disabled", "round", "block", "loading", "prefixIcon", "suffixIcon", "children", "className", "type"]);
   return /*#__PURE__*/React.createElement("button", __assign({
-    type: "button",
+    type: type,
     disabled: disabled || loading
   }, restProps, {
     className: classNames(btnNamePrefix, "".concat(btnNamePrefix, "-").concat(color), "".concat(btnNamePrefix, "-").concat(size), variant && "".concat(btnNamePrefix, "-variant-").concat(variant), (_b = {}, _b["".concat(btnNamePrefix, "-round")] = round, _b["".concat(btnNamePrefix, "-block")] = block, _b["".concat(btnNamePrefix, "-disabled")] = disabled, _b["".concat(btnNamePrefix, "-loading")] = loading, _b), className)

@@ -35,10 +35,11 @@ const BaseButton: React.FC<BaseButtonProps> = ({
   suffixIcon,
   children,
   className,
+  type="button",
   ...restProps
 }) => (
   <button
-    type="button"
+    type={type}
     disabled={disabled || loading}
     {...restProps}
     className={classNames(
