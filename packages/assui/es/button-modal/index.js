@@ -151,7 +151,7 @@ var __read = this && this.__read || function (o, n) {
 };
 import * as React from 'react';
 import isFunction from 'lodash/isFunction';
-import Modal from 'antd/lib/modal';
+import Modal from "antd/es/modal";
 import CloseOutlined from "a-icons/es/CloseOutlined";
 import useControllableValue from "ahooks/es/useControllableValue";
 import isPromise from "aa-utils/es/isPromise";

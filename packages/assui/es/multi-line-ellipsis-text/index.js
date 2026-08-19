@@ -31,7 +31,7 @@ var __read = this && this.__read || function (o, n) {
   return ar;
 };
 import React from 'react';
-import Tooltip from 'antd/lib/tooltip';
+import Tooltip from "antd/es/tooltip";
 import classNames from 'classnames';
 import omit from 'lodash/omit';
 import useSize from "ahooks/es/useSize";

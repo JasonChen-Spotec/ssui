@@ -77,6 +77,4 @@ var ASelect = function ASelect(props) {
   })));
 };
 exports["default"] = ASelect;
-Object.assign(ASelect, {
-  Option: select_1["default"].Option
-});
+ASelect.Option = select_1["default"].Option;

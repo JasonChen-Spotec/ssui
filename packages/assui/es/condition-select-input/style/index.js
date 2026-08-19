@@ -1,3 +1,3 @@
-import 'antd/lib/select/style';
-import 'antd/lib/input/style';
+import "antd/es/select/style";
+import "antd/es/input/style";
 import './index.less';

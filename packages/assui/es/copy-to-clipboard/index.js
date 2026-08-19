@@ -32,7 +32,7 @@ var __read = this && this.__read || function (o, n) {
 };
 import React, { useState } from 'react';
 import copy from 'copy-to-clipboard';
-import Tooltip from 'antd/lib/tooltip';
+import Tooltip from "antd/es/tooltip";
 var CopyToClipboard = function CopyToClipboard(props) {
   var text = props.text,
     onCopy = props.onCopy,

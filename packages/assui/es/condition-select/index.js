@@ -31,9 +31,9 @@ var __read = this && this.__read || function (o, n) {
   return ar;
 };
 import useControllableValue from "ahooks/es/useControllableValue";
-import Col from 'antd/lib/grid/col';
-import Row from 'antd/lib/grid/row';
-import Select from 'antd/lib/select';
+import Col from "antd/es/grid/col";
+import Row from "antd/es/grid/row";
+import Select from "antd/es/select";
 import omit from 'lodash/omit';
 import isNil from 'lodash/isNil';
 import React from 'react';

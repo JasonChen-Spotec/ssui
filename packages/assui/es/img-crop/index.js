@@ -149,8 +149,8 @@ var __read = this && this.__read || function (o, n) {
   }
   return ar;
 };
-import Modal from 'antd/lib/modal';
-import Slider from 'antd/lib/slider';
+import Modal from "antd/es/modal";
+import Slider from "antd/es/slider";
 import * as React from 'react';
 import EasyCrop from './EasyCrop';
 import getCroppedImg from './getCroppedImg';

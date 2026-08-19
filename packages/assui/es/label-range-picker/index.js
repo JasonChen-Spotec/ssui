@@ -40,7 +40,7 @@ var __read = this && this.__read || function (o, n) {
 };
 import React from 'react';
 import useControllableValue from "ahooks/es/useControllableValue";
-import DatePicker from 'antd/lib/date-picker';
+import DatePicker from "antd/es/date-picker";
 import classNames from 'classnames';
 import omit from 'lodash/omit';
 import CalendarOutlined from "a-icons/es/CalendarOutlined";

@@ -41,8 +41,8 @@ var __read = this && this.__read || function (o, n) {
 import * as React from 'react';
 import find from 'lodash/find';
 import qsHelp from "aa-utils/es/qsHelp";
-import Badge from 'antd/lib/badge';
-import Tabs from 'antd/lib/tabs';
+import Badge from "antd/es/badge";
+import Tabs from "antd/es/tabs";
 import useUrlState from '@ahooksjs/use-url-state';
 import useControllableValue from "ahooks/es/useControllableValue";
 var TabPane = Tabs.TabPane;

@@ -39,7 +39,7 @@ var __read = this && this.__read || function (o, n) {
   return ar;
 };
 import React from 'react';
-import Select from 'antd/lib/select';
+import Select from "antd/es/select";
 import classNames from 'classnames';
 import useControllableValue from "ahooks/es/useControllableValue";
 var ASelect = function ASelect(props) {
@@ -67,6 +67,4 @@ var ASelect = function ASelect(props) {
   })));
 };
 export default ASelect;
-Object.assign(ASelect, {
-  Option: Select.Option
-});
+ASelect.Option = Select.Option;

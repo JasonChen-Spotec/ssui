@@ -1,6 +1,6 @@
 import React from 'react';
 import useControllableValue from 'ahooks/lib/useControllableValue';
-import type { RefSelectProps } from 'antd/lib/select';
+import type { BaseSelectRef } from 'rc-select';
 import type { TreeSelectProps } from 'antd/lib/tree-select';
 import TreeSelect from 'antd/lib/tree-select';
 import classNames from 'classnames';
@@ -17,7 +17,7 @@ export interface LabelTreeSelectProps
 
 const LabelTreeSelect = (props: LabelTreeSelectProps) => {
   const { className, label, unit, showSearch = false, onDropdownVisibleChange } = props;
-  const selectRef = React.useRef<RefSelectProps>(null);
+  const selectRef = React.useRef<BaseSelectRef>(null);
   const [open, setOpen] = useControllableValue(props, {
     valuePropName: 'open',
     trigger: 'setOpen',
