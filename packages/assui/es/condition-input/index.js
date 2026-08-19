@@ -40,7 +40,7 @@ var __read = this && this.__read || function (o, n) {
 };
 import * as React from 'react';
 import isArray from 'lodash/isArray';
-import Input from "antd/es/input";
+import Input from 'antd/lib/input';
 import isFunction from 'lodash/isFunction';
 import useControllableValue from "ahooks/es/useControllableValue";
 import parse2RegexOption from './parse2RegexOption';

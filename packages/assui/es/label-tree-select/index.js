@@ -32,7 +32,7 @@ var __read = this && this.__read || function (o, n) {
 };
 import React from 'react';
 import useControllableValue from "ahooks/es/useControllableValue";
-import TreeSelect from "antd/es/tree-select";
+import TreeSelect from 'antd/lib/tree-select';
 import classNames from 'classnames';
 import omit from 'lodash/omit';
 var LabelTreeSelect = function LabelTreeSelect(props) {

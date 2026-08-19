@@ -43,7 +43,7 @@ import classNames from 'classnames';
 import BigNumber from 'bignumber.js';
 import isUndefined from 'lodash/isUndefined';
 import useControllableValue from "ahooks/es/useControllableValue";
-import DisabledContext from "antd/es/config-provider/DisabledContext";
+import DisabledContext from 'antd/lib/config-provider/DisabledContext';
 import { INT } from './const/numberType';
 import { PLUS, MINUS } from './const/countType';
 import NumberInput from '../number-input';

@@ -84,8 +84,7 @@ var ArrowDownOutlined_1 = __importDefault(require("a-icons/lib/ArrowDownOutlined
 var useControllableValue_1 = __importDefault(require("ahooks/lib/useControllableValue"));
 var stableStringify_1 = __importDefault(require("aa-utils/lib/stableStringify"));
 var lodash_1 = require("lodash");
-var Option = select_1["default"].Option;
-exports.Option = Option;
+exports.Option = select_1["default"].Option;
 // 核心防御：防止非标准 JSON 字符串（如 tags 模式下手敲的纯文本或 undefined）导致页面崩溃
 var safeParse = function safeParse(str) {
   if (typeof str !== 'string') return str;

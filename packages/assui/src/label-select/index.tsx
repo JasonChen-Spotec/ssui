@@ -2,7 +2,6 @@ import React from 'react';
 import useControllableValue from 'ahooks/lib/useControllableValue';
 import type { RefSelectProps, SelectProps } from 'antd/lib/select';
 import Select from 'antd/lib/select';
-import type { BaseSelectRef } from 'rc-select/lib/BaseSelect';
 import isArray from 'lodash/isArray';
 import isUndefined from 'lodash/isUndefined';
 import isNull from 'lodash/isNull';
@@ -11,9 +10,7 @@ import omit from 'lodash/omit';
 import ComplexValSelect from '../complex-val-select';
 import type { ComplexValSelectProps } from '../complex-val-select';
 
-const { Option } = Select;
-
-export { Option };
+export const { Option } = Select;
 
 export interface LabelSelectProps extends ComplexValSelectProps<any> {
   label?: React.ReactNode;
@@ -43,7 +40,7 @@ const LabelSelect: React.ForwardRefRenderFunction<unknown, LabelSelectProps> = (
     if (!open) {
       setOpen(!open);
     }
-    (selectRef.current as BaseSelectRef).focus();
+    (selectRef.current as RefSelectProps).focus();
   };
 
   const onDropdownVisibleChange = (nextOpen: boolean) => {

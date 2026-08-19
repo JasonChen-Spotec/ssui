@@ -315,7 +315,8 @@ mark {
   content: '';
 }
 .anticon {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
   color: inherit;
   font-style: normal;
   line-height: 0;
@@ -671,6 +672,8 @@ html {
 }
 .ant-slide-up-enter,
 .ant-slide-up-appear {
+  transform: scale(0);
+  transform-origin: 0% 0%;
   opacity: 0;
   animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
 }
@@ -700,6 +703,8 @@ html {
 }
 .ant-slide-down-enter,
 .ant-slide-down-appear {
+  transform: scale(0);
+  transform-origin: 0% 0%;
   opacity: 0;
   animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
 }
@@ -729,6 +734,8 @@ html {
 }
 .ant-slide-left-enter,
 .ant-slide-left-appear {
+  transform: scale(0);
+  transform-origin: 0% 0%;
   opacity: 0;
   animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
 }
@@ -758,6 +765,8 @@ html {
 }
 .ant-slide-right-enter,
 .ant-slide-right-appear {
+  transform: scale(0);
+  transform-origin: 0% 0%;
   opacity: 0;
   animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
 }
