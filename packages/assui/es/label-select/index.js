@@ -32,14 +32,15 @@ var __read = this && this.__read || function (o, n) {
 };
 import React from 'react';
 import useControllableValue from "ahooks/es/useControllableValue";
-import Select from 'antd/lib/select';
+import Select from "antd/es/select";
 import isArray from 'lodash/isArray';
 import isUndefined from 'lodash/isUndefined';
 import isNull from 'lodash/isNull';
 import classNames from 'classnames';
 import omit from 'lodash/omit';
 import ComplexValSelect from '../complex-val-select';
-export var Option = Select.Option;
+var Option = Select.Option;
+export { Option };
 var LabelSelect = function LabelSelect(props, ref) {
   var className = props.className,
     label = props.label,

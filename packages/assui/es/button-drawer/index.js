@@ -39,7 +39,7 @@ var __read = this && this.__read || function (o, n) {
   return ar;
 };
 import React, { useRef, useImperativeHandle } from 'react';
-import Drawer from 'antd/lib/drawer';
+import Drawer from "antd/es/drawer";
 import isFunction from 'lodash/isFunction';
 import classNames from 'classnames';
 import CloseOutlined from "a-icons/es/CloseOutlined";

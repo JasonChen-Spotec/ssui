@@ -39,7 +39,7 @@ var __read = this && this.__read || function (o, n) {
   return ar;
 };
 import * as React from 'react';
-import Input from 'antd/lib/input';
+import Input from "antd/es/input";
 import useControllableValue from "ahooks/es/useControllableValue";
 import omit from 'lodash/omit';
 import * as dataTypeEnum from './const/dataTypeEnum';

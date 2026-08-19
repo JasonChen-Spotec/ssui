@@ -12,7 +12,8 @@ import useControllableValue from 'ahooks/lib/useControllableValue';
 import stableStringify from 'aa-utils/lib/stableStringify';
 import { isNil } from 'lodash';
 
-export const { Option } = Select;
+const { Option } = Select;
+export { Option };
 
 // 核心防御：防止非标准 JSON 字符串（如 tags 模式下手敲的纯文本或 undefined）导致页面崩溃
 const safeParse = (str: string) => {

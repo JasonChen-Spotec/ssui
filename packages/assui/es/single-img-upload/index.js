@@ -161,9 +161,9 @@ var __spreadArray = this && this.__spreadArray || function (to, from, pack) {
 /* eslint-disable @typescript-eslint/no-unused-expressions */
 import * as React from 'react';
 import Upload from 'rc-upload';
-import Progress from 'antd/lib/progress';
-import Image from 'antd/lib/image';
-import Spin from 'antd/lib/spin';
+import Progress from "antd/es/progress";
+import Image from "antd/es/image";
+import Spin from "antd/es/spin";
 import classNames from 'classnames';
 import CloseOutlined from "a-icons/es/CloseOutlined";
 import Pdf from "a-icons/es/Pdf";

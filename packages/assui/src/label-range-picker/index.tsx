@@ -1,5 +1,6 @@
 import React from 'react';
 import useControllableValue from 'ahooks/lib/useControllableValue';
+import type { RangePickerProps } from 'antd/lib/date-picker';
 import DatePicker from 'antd/lib/date-picker';
 import classNames from 'classnames';
 import omit from 'lodash/omit';
@@ -7,8 +8,7 @@ import CalendarOutlined from 'a-icons/lib/CalendarOutlined';
 
 const { RangePicker } = DatePicker;
 
-export interface LabelRangePickerProps
-  extends Omit<React.ComponentProps<typeof RangePicker>, 'label'> {
+export interface LabelRangePickerProps extends Omit<RangePickerProps, 'label'> {
   label: React.ReactNode;
   showTime?: any;
 }
