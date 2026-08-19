@@ -39,7 +39,7 @@ var __read = this && this.__read || function (o, n) {
   return ar;
 };
 import * as React from 'react';
-import Input from "antd/es/input";
+import Input from 'antd/lib/input';
 import trimStart from 'lodash/trimStart';
 var TextArea = function TextArea(_a) {
   var value = _a.value,

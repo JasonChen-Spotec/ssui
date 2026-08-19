@@ -4,8 +4,5 @@ export interface ASelectProps extends SelectProps {
     className?: string;
     valueRender?: (value: any) => React.ReactNode;
 }
-declare const ASelect: {
-    (props: ASelectProps): JSX.Element;
-    Option: import("rc-select/lib/Option").OptionFC;
-};
+declare const ASelect: React.FC<ASelectProps>;
 export default ASelect;

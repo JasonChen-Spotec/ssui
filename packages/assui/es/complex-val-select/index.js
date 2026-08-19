@@ -36,14 +36,13 @@ import some from 'lodash/some';
 import isArray from 'lodash/isArray';
 import isObject from 'lodash/isObject';
 import isUndefined from 'lodash/isUndefined';
-import Select from "antd/es/select";
+import Select from 'antd/lib/select';
 import classNames from 'classnames';
 import ArrowDownOutlined from "a-icons/es/ArrowDownOutlined";
 import useControllableValue from "ahooks/es/useControllableValue";
 import stableStringify from "aa-utils/es/stableStringify";
 import { isNil } from 'lodash';
-var Option = Select.Option;
-export { Option };
+export var Option = Select.Option;
 // 核心防御：防止非标准 JSON 字符串（如 tags 模式下手敲的纯文本或 undefined）导致页面崩溃
 var safeParse = function safeParse(str) {
   if (typeof str !== 'string') return str;

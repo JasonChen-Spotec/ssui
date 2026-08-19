@@ -1,4 +1,4 @@
-import "antd/es/image/style";
-import "antd/es/progress/style";
-import "antd/es/spin/style";
+import 'antd/lib/image/style';
+import 'antd/lib/progress/style';
+import 'antd/lib/spin/style';
 import './index.less';

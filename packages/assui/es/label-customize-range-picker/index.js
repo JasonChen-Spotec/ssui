@@ -39,9 +39,9 @@ var __read = this && this.__read || function (o, n) {
   return ar;
 };
 import React, { useState, useEffect, useContext } from 'react';
-import Radio from "antd/es/radio";
-import Checkbox from "antd/es/checkbox";
-import DatePicker from "antd/es/date-picker";
+import Radio from 'antd/lib/radio';
+import Checkbox from 'antd/lib/checkbox';
+import DatePicker from 'antd/lib/date-picker';
 import useControllableValue from "ahooks/es/useControllableValue";
 import omit from 'lodash/omit';
 import getDefaultRadioList from './defaultRadioList';

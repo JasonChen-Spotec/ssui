@@ -9,7 +9,7 @@ export interface ASelectProps extends SelectProps {
   valueRender?: (value: any) => React.ReactNode;
 }
 
-const ASelect = (props: ASelectProps) => {
+const ASelect: React.FC<ASelectProps> = (props) => {
   const { valueRender, className, ...restProps } = props;
   const [value, onChange] = useControllableValue(props);
   if (!valueRender) {
@@ -24,4 +24,4 @@ const ASelect = (props: ASelectProps) => {
 };
 export default ASelect;
 
-ASelect.Option = Select.Option;
+Object.assign(ASelect, { Option: Select.Option });

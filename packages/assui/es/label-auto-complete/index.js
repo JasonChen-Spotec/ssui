@@ -32,7 +32,7 @@ var __read = this && this.__read || function (o, n) {
 };
 import React from 'react';
 import useControllableValue from "ahooks/es/useControllableValue";
-import AutoComplete from "antd/es/auto-complete";
+import AutoComplete from 'antd/lib/auto-complete';
 import classNames from 'classnames';
 import omit from 'lodash/omit';
 import trimStart from 'lodash/trimStart';
