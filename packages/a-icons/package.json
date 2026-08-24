@@ -13,7 +13,7 @@
   },
   "devDependencies": {
     "@svgr/cli": "^5.4.0",
-    "antd": "^4.16.11"
+    "antd": "^4.24.16"
   },
   "dependencies": {
     "@svgr/webpack": "^5.5.0",

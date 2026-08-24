@@ -22,5 +22,5 @@ interface LabelNumberInputEllipsisProps extends NumberInputProps {
     id?: string;
 }
 export type LabelNumberInputProps = LabelNumberInputBaseProps | LabelNumberInputEllipsisProps;
-declare const LabelNumberInput: (props: LabelNumberInputProps) => JSX.Element;
+declare const LabelNumberInput: (props: LabelNumberInputProps) => import("react/jsx-runtime").JSX.Element;
 export default LabelNumberInput;

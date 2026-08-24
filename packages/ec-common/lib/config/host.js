@@ -48,27 +48,27 @@ var apiMap = {
   ukPro: 'api.ecmarkets.co.uk'
 };
 var apiHostMap = {
-  dev: "http://".concat(apiMap.dev),
-  test1: "http://".concat(apiMap.test1),
-  test2: "http://".concat(apiMap.test2),
-  pre: "http://".concat(apiMap.pre),
-  tmdPre: "http://".concat(apiMap.tmdPre),
-  pro: "https://".concat(apiMap.pro),
-  mruPro: "https://".concat(apiMap.mruPro),
-  ukProTmp: "https://".concat(apiMap.ukProTmp),
-  ukPro: "https://".concat(apiMap.ukPro)
+  dev: "http://" + apiMap.dev,
+  test1: "http://" + apiMap.test1,
+  test2: "http://" + apiMap.test2,
+  pre: "http://" + apiMap.pre,
+  tmdPre: "http://" + apiMap.tmdPre,
+  pro: "https://" + apiMap.pro,
+  mruPro: "https://" + apiMap.mruPro,
+  ukProTmp: "https://" + apiMap.ukProTmp,
+  ukPro: "https://" + apiMap.ukPro
 };
 exports.apiHostMap = apiHostMap;
 var socketHostMap = {
-  dev: "ws://".concat(apiMap.dev),
-  test1: "ws://".concat(apiMap.test1),
-  test2: "ws://".concat(apiMap.test2),
-  pre: "ws://".concat(apiMap.pre),
-  tmdPre: "ws://".concat(apiMap.tmdPre),
-  pro: "wss://".concat(apiMap.pro),
-  mruPro: "wss://".concat(apiMap.mruPro),
-  ukProTmp: "wss://".concat(apiMap.ukProTmp),
-  ukPro: "wss://".concat(apiMap.ukPro)
+  dev: "ws://" + apiMap.dev,
+  test1: "ws://" + apiMap.test1,
+  test2: "ws://" + apiMap.test2,
+  pre: "ws://" + apiMap.pre,
+  tmdPre: "ws://" + apiMap.tmdPre,
+  pro: "wss://" + apiMap.pro,
+  mruPro: "wss://" + apiMap.mruPro,
+  ukProTmp: "wss://" + apiMap.ukProTmp,
+  ukPro: "wss://" + apiMap.ukPro
 };
 exports.socketHostMap = socketHostMap;
 var allSiteMap = {

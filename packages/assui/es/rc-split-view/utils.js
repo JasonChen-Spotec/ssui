@@ -41,7 +41,7 @@ export var removeNullChildren = function removeNullChildren(children) {
 };
 /** 失去焦点 */
 export var unFocus = function unFocus(document, window) {
-  var _a, _b;
-  (_a = document.getSelection()) === null || _a === void 0 ? void 0 : _a.empty();
-  (_b = window.getSelection()) === null || _b === void 0 ? void 0 : _b.removeAllRanges();
+  var _document$getSelectio, _window$getSelection;
+  (_document$getSelectio = document.getSelection()) == null || _document$getSelectio.empty();
+  (_window$getSelection = window.getSelection()) == null || _window$getSelection.removeAllRanges();
 };

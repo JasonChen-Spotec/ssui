@@ -1,5 +1,5 @@
-import * as React from 'react';
-import Icon, { IconProps } from 'a-base-icon/lib/icon';
+import * as React from "react";
+import Icon, { IconProps } from "a-base-icon/lib/icon";
 
 function FundProjectionScreenOutlined(componentProps: IconProps) {
   const IconNode = (props: React.SVGProps<SVGSVGElement>) => (
@@ -22,5 +22,5 @@ function FundProjectionScreenOutlined(componentProps: IconProps) {
   return <Icon {...componentProps} component={IconNode} />;
 }
 
-FundProjectionScreenOutlined.displayName = 'FundProjectionScreenOutlined';
+FundProjectionScreenOutlined.displayName = "FundProjectionScreenOutlined";
 export default FundProjectionScreenOutlined;

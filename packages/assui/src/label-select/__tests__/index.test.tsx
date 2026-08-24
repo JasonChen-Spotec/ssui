@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, fireEvent, waitFor } from '@testing-library/react';
+import { fireEvent, render, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import LabelSelect from '../index';
 
@@ -41,7 +41,9 @@ describe('label-select', () => {
     });
 
     expect(container.querySelector('.ant-select-open')).toBeFalsy();
-    expect(container.querySelector('.ant-select-selection-item')).toHaveTextContent('lucy');
+    expect(container.querySelector('.ant-select-selection-item')).toHaveTextContent(
+      'lucy',
+    );
     expect(baseProps.onChange).toBeCalledWith('lucy');
   });
 });

@@ -1,6 +1,6 @@
 import dateUtils from 'aa-utils/lib/dateUtils';
-import type { RangeValue } from 'rc-picker/lib/interface';
 import type { Moment } from 'moment';
+import type { RangeValue } from 'rc-picker/lib/interface';
 
 /** 1整天的毫秒数 */
 export const ONE_DAY_MILLISECOND = 1000 * 60 * 60 * 24;

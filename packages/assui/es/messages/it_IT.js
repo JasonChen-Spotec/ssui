@@ -21,7 +21,6 @@ var locale = {
       last180days: 'Ultimi 180 giorni',
       last365days: 'Ultimi 365 giorni',
       last3months: 'Last 3 months',
-      // eslint-disable-next-line quotes
       year: "Quest'anno",
       all: 'Tutto'
     }

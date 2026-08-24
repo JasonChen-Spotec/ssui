@@ -1,27 +1,4 @@
-var __read = this && this.__read || function (o, n) {
-  var m = typeof Symbol === "function" && o[Symbol.iterator];
-  if (!m) return o;
-  var i = m.call(o),
-    r,
-    ar = [],
-    e;
-  try {
-    while ((n === void 0 || n-- > 0) && !(r = i.next()).done) {
-      ar.push(r.value);
-    }
-  } catch (error) {
-    e = {
-      error: error
-    };
-  } finally {
-    try {
-      if (r && !r.done && (m = i["return"])) m.call(i);
-    } finally {
-      if (e) throw e.error;
-    }
-  }
-  return ar;
-};
+function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
 /**
  * @desc 解决浮动运算问题，避免小数点后产生多位数和计算精度损失。
  * 问题示例：2.3 + 2.4 = 4.699999999999999，1.0 - 0.9 = 0.09999999999999998
@@ -41,9 +18,10 @@ function strip(num, precision) {
  * @param {*number} num Input number
  */
 function digitLength(num) {
+  var _eSplit$;
   // Get digit length of e
   var eSplit = num.toString().split(/[eE]/);
-  var len = (eSplit[0].split('.')[1] || '').length - +(eSplit[1] || 0);
+  var len = (((_eSplit$ = eSplit[0]) == null ? void 0 : _eSplit$.split('.')[1]) || '').length - +(eSplit[1] || 0);
   return len > 0 ? len : 0;
 }
 /**
@@ -61,10 +39,9 @@ function float2Fixed(num) {
  * 迭代操作
  */
 function iteratorOperation(arr, operation) {
-  var _a = __read(arr),
-    num1 = _a[0],
-    num2 = _a[1],
-    others = _a.slice(2);
+  var num1 = arr[0],
+    num2 = arr[1],
+    others = _arrayLikeToArray(arr).slice(2);
   var res = operation(num1, num2);
   others.forEach(function (num) {
     res = operation(res, num);
@@ -75,16 +52,14 @@ function iteratorOperation(arr, operation) {
  * 精确乘法
  */
 function times() {
-  var nums = [];
-  for (var _i = 0; _i < arguments.length; _i++) {
-    nums[_i] = arguments[_i];
+  for (var _len = arguments.length, nums = new Array(_len), _key = 0; _key < _len; _key++) {
+    nums[_key] = arguments[_key];
   }
   if (nums.length > 2) {
     return iteratorOperation(nums, times);
   }
-  var _a = __read(nums, 2),
-    num1 = _a[0],
-    num2 = _a[1];
+  var num1 = nums[0],
+    num2 = nums[1];
   var num1Changed = float2Fixed(num1);
   var num2Changed = float2Fixed(num2);
   var baseNum = digitLength(num1) + digitLength(num2);
@@ -96,16 +71,14 @@ function times() {
  * 精确加法
  */
 function plus() {
-  var nums = [];
-  for (var _i = 0; _i < arguments.length; _i++) {
-    nums[_i] = arguments[_i];
+  for (var _len2 = arguments.length, nums = new Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
+    nums[_key2] = arguments[_key2];
   }
   if (nums.length > 2) {
     return iteratorOperation(nums, plus);
   }
-  var _a = __read(nums, 2),
-    num1 = _a[0],
-    num2 = _a[1];
+  var num1 = nums[0],
+    num2 = nums[1];
   // 取最大的小数位
   var baseNum = Math.pow(10, Math.max(digitLength(num1), digitLength(num2)));
   // 把小数都转为整数然后再计算
@@ -115,16 +88,14 @@ function plus() {
  * 精确减法
  */
 function minus() {
-  var nums = [];
-  for (var _i = 0; _i < arguments.length; _i++) {
-    nums[_i] = arguments[_i];
+  for (var _len3 = arguments.length, nums = new Array(_len3), _key3 = 0; _key3 < _len3; _key3++) {
+    nums[_key3] = arguments[_key3];
   }
   if (nums.length > 2) {
     return iteratorOperation(nums, minus);
   }
-  var _a = __read(nums, 2),
-    num1 = _a[0],
-    num2 = _a[1];
+  var num1 = nums[0],
+    num2 = nums[1];
   var baseNum = Math.pow(10, Math.max(digitLength(num1), digitLength(num2)));
   return (times(num1, baseNum) - times(num2, baseNum)) / baseNum;
 }
@@ -132,24 +103,20 @@ function minus() {
  * 精确除法
  */
 function divide() {
-  var nums = [];
-  for (var _i = 0; _i < arguments.length; _i++) {
-    nums[_i] = arguments[_i];
+  for (var _len4 = arguments.length, nums = new Array(_len4), _key4 = 0; _key4 < _len4; _key4++) {
+    nums[_key4] = arguments[_key4];
   }
   if (nums.length > 2) {
     return iteratorOperation(nums, divide);
   }
-  var _a = __read(nums, 2),
-    num1 = _a[0],
-    num2 = _a[1];
+  var num1 = nums[0],
+    num2 = nums[1];
   var num1Changed = float2Fixed(num1);
   var num2Changed = float2Fixed(num2);
   checkBoundary(num1Changed);
   checkBoundary(num2Changed);
   // fix: 类似 10 ** -4 为 0.00009999999999999999，strip 修正
-  return times(num1Changed / num2Changed,
-  // eslint-disable-next-line no-restricted-properties
-  strip(Math.pow(10, digitLength(num2) - digitLength(num1))));
+  return times(num1Changed / num2Changed, strip(Math.pow(10, digitLength(num2) - digitLength(num1))));
 }
 var _boundaryCheckingState = true;
 /**
@@ -169,8 +136,8 @@ function enableBoundaryChecking(flag) {
 function checkBoundary(num) {
   if (_boundaryCheckingState) {
     if (num > Number.MAX_SAFE_INTEGER || num < Number.MIN_SAFE_INTEGER) {
-      console.warn("".concat(num, " is beyond boundary when transfer to integer, the results may not be accurate"));
+      console.warn(num + " is beyond boundary when transfer to integer, the results may not be accurate");
     }
   }
 }
-export { strip, plus, minus, times, divide, digitLength, float2Fixed, enableBoundaryChecking };
+export { digitLength, divide, enableBoundaryChecking, float2Fixed, minus, plus, strip, times };

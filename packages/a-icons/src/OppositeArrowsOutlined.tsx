@@ -1,5 +1,5 @@
-import * as React from 'react';
-import Icon, { IconProps } from 'a-base-icon/lib/icon';
+import * as React from "react";
+import Icon, { IconProps } from "a-base-icon/lib/icon";
 
 function OppositeArrowsOutlined(componentProps: IconProps) {
   const IconNode = (props: React.SVGProps<SVGSVGElement>) => (
@@ -23,5 +23,5 @@ function OppositeArrowsOutlined(componentProps: IconProps) {
   return <Icon {...componentProps} component={IconNode} />;
 }
 
-OppositeArrowsOutlined.displayName = 'OppositeArrowsOutlined';
+OppositeArrowsOutlined.displayName = "OppositeArrowsOutlined";
 export default OppositeArrowsOutlined;

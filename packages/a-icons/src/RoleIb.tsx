@@ -1,9 +1,14 @@
-import * as React from 'react';
-import Icon, { IconProps } from 'a-base-icon/lib/icon';
+import * as React from "react";
+import Icon, { IconProps } from "a-base-icon/lib/icon";
 
 function RoleIb(componentProps: IconProps) {
   const IconNode = (props: React.SVGProps<SVGSVGElement>) => (
-    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
       <path
         d="M14.217 8.438h-2.654v2.992h2.625c.733 0 1.247-.132 1.555-.367.293-.25.455-.645.455-1.188 0-.498-.162-.865-.455-1.085-.323-.235-.822-.352-1.526-.352zM14.452 12.838h-2.89v3.256h2.846c.646 0 1.159-.103 1.526-.308.469-.264.704-.675.704-1.261 0-.602-.177-1.027-.514-1.291-.352-.264-.91-.396-1.672-.396z"
         fill="#47A92A"
@@ -20,5 +25,5 @@ function RoleIb(componentProps: IconProps) {
   return <Icon {...componentProps} component={IconNode} />;
 }
 
-RoleIb.displayName = 'RoleIb';
+RoleIb.displayName = "RoleIb";
 export default RoleIb;

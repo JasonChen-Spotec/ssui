@@ -1,23 +1,29 @@
 import * as React from 'react';
-import omit from 'lodash/omit';
-import some from 'lodash/some';
+import ArrowDownOutlined from 'a-icons/lib/ArrowDownOutlined';
+import stableStringify from 'aa-utils/lib/stableStringify';
+import useControllableValue from 'ahooks/lib/useControllableValue';
+import type {
+  DefaultOptionType,
+  OptionProps,
+  RefSelectProps,
+  SelectProps,
+} from 'antd/lib/select';
+import Select from 'antd/lib/select';
+import classNames from 'classnames';
+import { isNil } from 'lodash';
 import isArray from 'lodash/isArray';
 import isObject from 'lodash/isObject';
 import isUndefined from 'lodash/isUndefined';
-import type { DefaultOptionType, RefSelectProps, SelectProps } from 'antd/lib/select';
-import Select from 'antd/lib/select';
-import classNames from 'classnames';
-import ArrowDownOutlined from 'a-icons/lib/ArrowDownOutlined';
-import useControllableValue from 'ahooks/lib/useControllableValue';
-import stableStringify from 'aa-utils/lib/stableStringify';
-import { isNil } from 'lodash';
+import omit from 'lodash/omit';
+import some from 'lodash/some';
 
-const { Option } = Select;
-export { Option };
+export const Option: React.FC<OptionProps> = Select.Option;
 
 // 核心防御：防止非标准 JSON 字符串（如 tags 模式下手敲的纯文本或 undefined）导致页面崩溃
 const safeParse = (str: string) => {
-  if (typeof str !== 'string') return str;
+  if (typeof str !== 'string') {
+    return str;
+  }
   try {
     return JSON.parse(str);
   } catch {
@@ -44,7 +50,9 @@ export interface ComplexValSelectOptionType
 const formatOptions = (
   dataSource?: ComplexValSelectOptionType[],
 ): DefaultOptionType[] | undefined => {
-  if (!dataSource) return dataSource;
+  if (!dataSource) {
+    return dataSource;
+  }
 
   return dataSource.map((item) => {
     const otherProps = item.options ? { options: formatOptions(item.options) } : {};
@@ -105,11 +113,15 @@ const ComplexValSelect = React.forwardRef<
     let nextVal = val;
 
     if (!isNil(val) && isReferenceTypeVal) {
-      nextVal = isMultiple && isArray(val)
-        ? val.map((item) => safeParse(item as string))
-        : safeParse(val as string);
+      nextVal =
+        isMultiple && isArray(val)
+          ? val.map((item) => safeParse(item as string))
+          : safeParse(val as string);
     }
-    setValue(nextVal, option as ComplexValSelectOptionType | ComplexValSelectOptionType[]);
+    setValue(
+      nextVal,
+      option as ComplexValSelectOptionType | ComplexValSelectOptionType[],
+    );
   };
 
   const handleSelect = (val: any, option: DefaultOptionType) => {
@@ -123,7 +135,9 @@ const ComplexValSelect = React.forwardRef<
       return isMultiple && isArray(value)
         ? value.map((v) => {
             // 在 tags 模式下，如果 v 已经是手敲的基础字符串，直接放行，避免产生多余的双引号
-            if (mode === 'tags' && typeof v === 'string') return v;
+            if (mode === 'tags' && typeof v === 'string') {
+              return v;
+            }
             return stableStringify(v);
           })
         : stableStringify(value);

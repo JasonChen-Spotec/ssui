@@ -1,5 +1,5 @@
 import React from 'react';
-import type { Options, FormattedRes } from 'ahooks/lib/useCountDown';
+import type { FormattedRes, Options } from 'ahooks/lib/useCountDown';
 import useCountDown from 'ahooks/lib/useCountDown';
 import isFunction from 'lodash/isFunction';
 

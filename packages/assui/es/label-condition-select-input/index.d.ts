@@ -9,7 +9,7 @@ export declare enum EntryTypeEnum {
     FIRST_ENTRY = "firstEntry",
     SECOND_ENTRY = "secondEntry"
 }
-export type ChangedEntryType = typeof EntryTypeEnum[keyof typeof EntryTypeEnum];
+export type ChangedEntryType = (typeof EntryTypeEnum)[keyof typeof EntryTypeEnum];
 type SelectOptionsType = {
     value: number;
     label: string;
@@ -46,5 +46,5 @@ export interface LabelConditionSelectInputProps {
     /** 样式 */
     className?: string;
 }
-declare const LabelConditionSelectInput: (props: LabelConditionSelectInputProps) => JSX.Element;
+declare const LabelConditionSelectInput: (props: LabelConditionSelectInputProps) => import("react/jsx-runtime").JSX.Element;
 export default LabelConditionSelectInput;

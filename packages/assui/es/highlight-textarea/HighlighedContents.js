@@ -1,14 +1,16 @@
-import React from 'react';
+import { Fragment as _Fragment, jsx as _jsx } from "react/jsx-runtime";
 import getRanges from './getRanges';
 import extractSpansOfClasses from './extractSpansOfClasses';
-var HighlighedContents = function HighlighedContents(_a) {
-  var value = _a.value,
-    _b = _a.highlight,
-    highlight = _b === void 0 ? '' : _b;
+var HighlighedContents = function HighlighedContents(_ref) {
+  var value = _ref.value,
+    _ref$highlight = _ref.highlight,
+    highlight = _ref$highlight === void 0 ? '' : _ref$highlight;
   var ranges = getRanges(value, highlight);
   var parts = extractSpansOfClasses(value, ranges);
-  return /*#__PURE__*/React.createElement(React.Fragment, null, parts.map(function (part) {
-    return part.render();
-  }));
+  return _jsx(_Fragment, {
+    children: parts.map(function (part) {
+      return part.render();
+    })
+  });
 };
 export default HighlighedContents;

@@ -8,7 +8,7 @@ const FEMALE = 2 as const;
 /** 空 */
 const EMPTY = -1 as const;
 
-export { MALE, FEMALE, EMPTY };
+export { EMPTY, FEMALE, MALE };
 
 export type SexType = 1 | 2;
 

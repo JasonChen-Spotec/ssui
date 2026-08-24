@@ -1,12 +1,13 @@
 import React from 'react';
-import classNames from 'classnames';
-import omit from 'lodash/omit';
 import useControllableValue from 'ahooks/lib/useControllableValue';
 import useSize from 'ahooks/lib/useSize';
+import classNames from 'classnames';
+import omit from 'lodash/omit';
 import type { ConditionInputProps } from '../condition-input';
 import ConditionInput from '../condition-input';
 
-export interface LabelConditionInputProps extends Omit<ConditionInputProps, 'onBlur' | 'onChange'> {
+export interface LabelConditionInputProps
+  extends Omit<ConditionInputProps, 'onBlur' | 'onChange'> {
   /** label 标签的文本 */
   label?: React.ReactNode;
   /** 输入框内容变化时的回调 */
@@ -73,7 +74,12 @@ const LabelConditionInput = (props: LabelConditionInputProps) => {
           className="label-condition-input"
           onChange={(inputValue: string) => setValue(inputValue)}
         />
-        <label ref={labelDomRef} className="label-condition-input-text" onClick={handleLabelClick}>
+        {/* biome-ignore lint/a11y/noLabelWithoutControl: 点击触发的展示文本，非表单 label */}
+        <label
+          ref={labelDomRef}
+          className="label-condition-input-text"
+          onClick={handleLabelClick}
+        >
           {label}
         </label>
       </div>

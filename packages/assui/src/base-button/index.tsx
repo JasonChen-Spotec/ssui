@@ -55,19 +55,19 @@ const BaseButton: React.FC<BaseButtonProps> = ({
       className,
     )}
   >
-    <>
-      {prefixIcon && (
-        <span className={`${btnNamePrefix}-icon`}>{loading ? loadingIcon : prefixIcon}</span>
-      )}
-      {loading && !prefixIcon && !suffixIcon && loadingIcon}
-      <span className={`${btnNamePrefix}-content`}>{children}</span>
-      {loading && !prefixIcon && suffixIcon && (
-        <span className={`${btnNamePrefix}-icon`}>{loadingIcon}</span>
-      )}
-      {(!loading || prefixIcon) && suffixIcon && (
-        <span className={`${btnNamePrefix}-icon`}>{suffixIcon}</span>
-      )}
-    </>
+    {prefixIcon && (
+      <span className={`${btnNamePrefix}-icon`}>
+        {loading ? loadingIcon : prefixIcon}
+      </span>
+    )}
+    {loading && !prefixIcon && !suffixIcon && loadingIcon}
+    <span className={`${btnNamePrefix}-content`}>{children}</span>
+    {loading && !prefixIcon && suffixIcon && (
+      <span className={`${btnNamePrefix}-icon`}>{loadingIcon}</span>
+    )}
+    {(!loading || prefixIcon) && suffixIcon && (
+      <span className={`${btnNamePrefix}-icon`}>{suffixIcon}</span>
+    )}
   </button>
 );
 

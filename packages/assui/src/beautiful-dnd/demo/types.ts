@@ -1,5 +1,5 @@
 // @flow
-import type { DraggableId, DraggableLocation } from 'react-beautiful-dnd';
+import type { DraggableId, DraggableLocation } from '@hello-pangea/dnd';
 
 export type Id = string;
 

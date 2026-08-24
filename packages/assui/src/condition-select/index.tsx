@@ -1,12 +1,12 @@
+import React from 'react';
+import ArrowDownOutlined from 'a-icons/lib/ArrowDownOutlined';
 import useControllableValue from 'ahooks/lib/useControllableValue';
 import Col from 'antd/lib/grid/col';
 import Row from 'antd/lib/grid/row';
 import Select from 'antd/lib/select';
-import omit from 'lodash/omit';
-import isNil from 'lodash/isNil';
-import React from 'react';
 import classNames from 'classnames';
-import ArrowDownOutlined from 'a-icons/lib/ArrowDownOutlined';
+import isNil from 'lodash/isNil';
+import omit from 'lodash/omit';
 import type { ConditionSelectProps, ValueType } from './types';
 
 const ConditionSelect = ({
@@ -18,7 +18,12 @@ const ConditionSelect = ({
 }: ConditionSelectProps) => {
   const [componentValue, setComponentValue] = useControllableValue({ value, onChange });
   const current = React.useMemo(() => {
-    if (isNil(componentValue) || isNil(componentValue[selectName]) || !option || option.length === 0) {
+    if (
+      isNil(componentValue) ||
+      isNil(componentValue[selectName]) ||
+      !option ||
+      option.length === 0
+    ) {
       return null;
     }
     const result = option.find((item) => item.value === componentValue[selectName]);
@@ -85,4 +90,5 @@ const ConditionSelect = ({
     </Row>
   );
 };
+
 export default ConditionSelect;

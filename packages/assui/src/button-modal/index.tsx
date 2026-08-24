@@ -1,10 +1,10 @@
 import * as React from 'react';
-import isFunction from 'lodash/isFunction';
+import CloseOutlined from 'a-icons/lib/CloseOutlined';
+import isPromise from 'aa-utils/lib/isPromise';
+import useControllableValue from 'ahooks/lib/useControllableValue';
 import type { ModalProps } from 'antd/lib/modal';
 import Modal from 'antd/lib/modal';
-import CloseOutlined from 'a-icons/lib/CloseOutlined';
-import useControllableValue from 'ahooks/lib/useControllableValue';
-import isPromise from 'aa-utils/lib/isPromise';
+import isFunction from 'lodash/isFunction';
 
 export interface ModalAction {
   open: () => void;
@@ -14,7 +14,7 @@ export interface ModalAction {
 export interface ButtonModalProps extends Omit<ModalProps, 'children' | 'onOk'> {
   onClose?: () => void;
   onOpen?: () => void;
-  onOk?: ((v:React.MouseEvent<HTMLElement>) => void | Promise<void>);
+  onOk?: (v: React.MouseEvent<HTMLElement>) => void | Promise<void>;
   trigger?: ((fun: () => void) => React.ReactElement) | React.ReactElement;
   children: ((v: ModalAction) => React.ReactElement) | React.ReactElement;
 }
@@ -62,14 +62,14 @@ const ButtonModal: React.ForwardRefRenderFunction<ModalAction, ButtonModalProps>
 
   let triggerNode;
   if (isFunction(trigger)) {
-    triggerNode = trigger(openModal)
+    triggerNode = trigger(openModal);
   } else {
-    triggerNode = trigger &&
+    triggerNode =
+      trigger &&
       React.cloneElement(trigger, {
         onClick: openModal,
       });
   }
-
 
   return (
     <>
@@ -91,6 +91,8 @@ const ButtonModal: React.ForwardRefRenderFunction<ModalAction, ButtonModalProps>
   );
 };
 
-const ForwardRefButtonModal = React.forwardRef<unknown, ButtonModalProps>(ButtonModal);
+const ForwardRefButtonModal = React.forwardRef<ModalAction, ButtonModalProps>(
+  ButtonModal,
+);
 
 export default ForwardRefButtonModal;

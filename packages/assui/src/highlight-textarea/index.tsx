@@ -1,7 +1,7 @@
 import * as React from 'react';
+import useMount from 'ahooks/lib/useMount';
 import classNames from 'classnames';
 import trimStart from 'lodash/trimStart';
-import useMount from 'ahooks/lib/useMount';
 import type { HighlighedContentsProps } from './HighlighedContents';
 import HighlighedContents from './HighlighedContents';
 import type { HighlightType } from './types';

@@ -1,12 +1,13 @@
 import React from 'react';
-import { render, fireEvent, screen } from '@testing-library/react';
-import { act } from '@testing-library/react';
-import ButtonModal, { ModalAction } from '../index';
+import { act, fireEvent, render, screen, waitFor } from '@testing-library/react';
+import ButtonModal, { type ModalAction } from '../index';
 
 const Content = ({ modalAction }: any) => (
   <div>
     这是弹框内容
-    <button onClick={() => modalAction.close()}>点击这里关闭弹框</button>
+    <button type="button" onClick={() => modalAction.close()}>
+      点击这里关闭弹框
+    </button>
   </div>
 );
 
@@ -35,19 +36,28 @@ describe('ButtonModal', () => {
     fireEvent.click(okButton);
     expect(baseProps.onOk).toBeCalled();
 
-    const maskNode = await screen.queryByText((_, element) => {
-      return element?.className === 'ant-modal-mask';
+    // 点击 OK 会关闭弹窗（同时触发 onClose）：mask 应消失
+    await waitFor(() => {
+      const maskNode = screen.queryByText(
+        (_, element) => element?.className === 'ant-modal-mask',
+      );
+      expect(maskNode).toBeFalsy();
     });
-    expect(maskNode).toBeTruthy();
+    expect(baseProps.onClose).toHaveBeenCalledTimes(1);
 
+    // 重新打开，通过右上角关闭按钮关闭
+    fireEvent.click(button);
+    await screen.findByText('这是弹框内容');
     const closeButton = await screen.getByLabelText('Close');
     fireEvent.click(closeButton);
-    expect(baseProps.onClose).toBeCalled();
+    expect(baseProps.onClose).toHaveBeenCalledTimes(2);
 
-    const maskNode1 = await screen.queryByText((_, element) => {
-      return element?.className === 'ant-modal-mask';
+    await waitFor(() => {
+      const maskNode1 = screen.queryByText(
+        (_, element) => element?.className === 'ant-modal-mask',
+      );
+      expect(maskNode1).toBeFalsy();
     });
-    expect(maskNode1).toBeFalsy();
   });
 
   it('ButtonModal base props should work fine ', async () => {

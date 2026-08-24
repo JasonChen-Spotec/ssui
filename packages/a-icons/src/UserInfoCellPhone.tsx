@@ -1,9 +1,14 @@
-import * as React from 'react';
-import Icon, { IconProps } from 'a-base-icon/lib/icon';
+import * as React from "react";
+import Icon, { IconProps } from "a-base-icon/lib/icon";
 
 function UserInfoCellPhone(componentProps: IconProps) {
   const IconNode = (props: React.SVGProps<SVGSVGElement>) => (
-    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
       <path
         d="M16.14 1.5c2.76 0 3.76 1 3.76 3.81v12.38c0 2.81-1 3.81-3.77 3.81H7.66c-2.76 0-3.76-1-3.76-3.81V5.31c0-2.81 1-3.81 3.76-3.81h8.48zM11.9 15.3c-.96 0-1.75.79-1.75 1.75s.79 1.75 1.75 1.75 1.75-.79 1.75-1.75-.79-1.75-1.75-1.75zM7.5 3A1.5 1.5 0 006 4.5V12a1.5 1.5 0 001.5 1.5h9A1.5 1.5 0 0018 12V4.5A1.5 1.5 0 0016.5 3h-9z"
         fill="currentColor"
@@ -19,5 +24,5 @@ function UserInfoCellPhone(componentProps: IconProps) {
   return <Icon {...componentProps} component={IconNode} />;
 }
 
-UserInfoCellPhone.displayName = 'UserInfoCellPhone';
+UserInfoCellPhone.displayName = "UserInfoCellPhone";
 export default UserInfoCellPhone;

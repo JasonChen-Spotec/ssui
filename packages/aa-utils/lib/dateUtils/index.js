@@ -1,21 +1,24 @@
 "use strict";
 
-var __importDefault = this && this.__importDefault || function (mod) {
-  return mod && mod.__esModule ? mod : {
-    "default": mod
-  };
-};
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-var moment_1 = __importDefault(require("moment"));
-var moment_timezone_1 = __importDefault(require("moment-timezone")); // fix ie tz.guess bug;
-var isNumber_1 = __importDefault(require("lodash/isNumber"));
-var isDate_1 = __importDefault(require("lodash/isDate"));
+var tslib_1 = require("tslib");
+var isDate_1 = tslib_1.__importDefault(require("lodash/isDate"));
+var isNumber_1 = tslib_1.__importDefault(require("lodash/isNumber"));
+var moment_1 = tslib_1.__importDefault(require("moment"));
+var moment_timezone_1 = tslib_1.__importDefault(require("moment-timezone")); // fix ie tz.guess bug;
 require("moment/locale/zh-cn");
-var DateUtils = /** @class */function () {
+var DateUtils = /*#__PURE__*/function () {
   function DateUtils() {
     var _this = this;
+    this.currentDateFormat = void 0;
+    this.currentTimeFormat = void 0;
+    this.currentLocale = void 0;
+    this.dateTimeFormat = void 0;
+    this.dateFormat = void 0;
+    this.timeFormat = void 0;
+    this.timeZoneOffset = void 0;
     this.setLocale = function (locale) {
       moment_1["default"].locale(locale);
     };
@@ -27,9 +30,9 @@ var DateUtils = /** @class */function () {
             return val;
           }
         } else {
-          var val = (0, moment_1["default"])(value).local();
-          if (val.isValid()) {
-            return val;
+          var _val = (0, moment_1["default"])(value).local();
+          if (_val.isValid()) {
+            return _val;
           }
         }
       }
@@ -46,8 +49,9 @@ var DateUtils = /** @class */function () {
       if (options === void 0) {
         options = {};
       }
-      var format = options.format,
-        utcOffset = options.utcOffset;
+      var _options = options,
+        format = _options.format,
+        utcOffset = _options.utcOffset;
       var m = utcOffset ? moment_1["default"].utc(date).utcOffset(utcOffset) : moment_1["default"].utc(date);
       return m.format(format || _this.dateTimeFormat);
     };
@@ -60,7 +64,7 @@ var DateUtils = /** @class */function () {
     };
     /** https://momentjs.cn/timezone/docs/#/using-timezones/guessing-user-timezone/ */
     this.getTimeZone = function (ignoreCache) {
-      return moment_timezone_1["default"].tz.guess(ignoreCache !== null && ignoreCache !== void 0 ? ignoreCache : true);
+      return moment_timezone_1["default"].tz.guess(ignoreCache != null ? ignoreCache : true);
     };
     this.currentDateFormat = 'YYYY-MM-DD';
     this.currentTimeFormat = 'HH:mm';
@@ -108,32 +112,33 @@ var DateUtils = /** @class */function () {
     Object.defineProperties(this, {
       dateTimeFormat: {
         get: function get() {
-          return "".concat(this.currentDateFormat, " ").concat(this.currentTimeFormat);
+          return this.currentDateFormat + " " + this.currentTimeFormat;
         }
       }
     });
   }
-  DateUtils.prototype.parseDate = function (date, format) {
+  var _proto = DateUtils.prototype;
+  _proto.parseDate = function parseDate(date, format) {
     return (0, moment_1["default"])(date, format || this.dateFormat);
   };
-  DateUtils.prototype.parseTime = function (time, format) {
+  _proto.parseTime = function parseTime(time, format) {
     return (0, moment_1["default"])(time, format || this.timeFormat);
   };
-  DateUtils.prototype.parseDateTime = function (dateTime, format) {
+  _proto.parseDateTime = function parseDateTime(dateTime, format) {
     if ((0, isNumber_1["default"])(dateTime) || (0, isDate_1["default"])(dateTime)) {
       return (0, moment_1["default"])(dateTime);
     }
     return (0, moment_1["default"])(dateTime, format || this.dateTimeFormat);
   };
-  DateUtils.prototype.formatDate = function (date, format) {
+  _proto.formatDate = function formatDate(date, format) {
     var m = this.createMoment(date);
     return m ? m.format(format || this.dateFormat) : '';
   };
-  DateUtils.prototype.formatTime = function (date, format) {
+  _proto.formatTime = function formatTime(date, format) {
     var m = this.createMoment(date);
     return m ? m.format(format || this.timeFormat) : '';
   };
-  DateUtils.prototype.formatDateTime = function (dateTime, format) {
+  _proto.formatDateTime = function formatDateTime(dateTime, format) {
     var m = this.createMoment(dateTime);
     return m ? m.format(format || this.dateTimeFormat) : '';
   };

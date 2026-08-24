@@ -1,10 +1,10 @@
 import React from 'react';
-import classNames from 'classnames';
-import trimStart from 'lodash/trimStart';
 import EyeFilled from 'a-icons/lib/EyeFilled';
 import EyeOutlined from 'a-icons/lib/EyeOutlined';
 import useControllableValue from 'ahooks/lib/useControllableValue';
 import useSize from 'ahooks/lib/useSize';
+import classNames from 'classnames';
+import trimStart from 'lodash/trimStart';
 
 export interface LabelInputProps
   extends Omit<
@@ -140,6 +140,7 @@ const LabelInput: React.FC<LabelInputProps> = (props) => {
             maxLength={maxLength}
             disabled={disabled}
           />
+          {/* biome-ignore lint/a11y/noLabelWithoutControl: 点击触发的展示文本，非表单 label */}
           <label
             className="label-input-text"
             onClick={handleLabelClick}

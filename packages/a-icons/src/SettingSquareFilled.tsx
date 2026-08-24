@@ -1,9 +1,14 @@
-import * as React from 'react';
-import Icon, { IconProps } from 'a-base-icon/lib/icon';
+import * as React from "react";
+import Icon, { IconProps } from "a-base-icon/lib/icon";
 
 function SettingSquareFilled(componentProps: IconProps) {
   const IconNode = (props: React.SVGProps<SVGSVGElement>) => (
-    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
       <path
         d="M12 14.16c1.142 0 2.068-.96 2.068-2.144 0-1.184-.926-2.144-2.068-2.144s-2.068.96-2.068 2.144c0 1.184.926 2.144 2.068 2.144z"
         fill="currentColor"
@@ -20,5 +25,5 @@ function SettingSquareFilled(componentProps: IconProps) {
   return <Icon {...componentProps} component={IconNode} />;
 }
 
-SettingSquareFilled.displayName = 'SettingSquareFilled';
+SettingSquareFilled.displayName = "SettingSquareFilled";
 export default SettingSquareFilled;

@@ -8,5 +8,5 @@ export interface TAreaProps extends Omit<TextAreaProps, 'onChange'> {
     /** 变化回调 */
     onChange?: (value: string, e: React.ChangeEvent<HTMLTextAreaElement>) => void;
 }
-declare const TextArea: ({ value, onChange, formatter, ...restProps }: TAreaProps) => JSX.Element;
+declare const TextArea: ({ value, onChange, formatter, ...restProps }: TAreaProps) => import("react/jsx-runtime").JSX.Element;
 export default TextArea;

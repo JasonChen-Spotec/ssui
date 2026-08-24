@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, fireEvent } from '@testing-library/react';
+import { act, fireEvent, render } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import LabelInput from '../index';
 
@@ -25,7 +25,7 @@ describe('LabelInput', () => {
 
     expect(queryByText('我是标题')).toBeTruthy();
 
-    label.click();
+    act(() => label.click());
     expect(container.querySelector('.label-input-focused')).toBeTruthy();
     expect(input).toHaveFocus();
 
@@ -33,26 +33,28 @@ describe('LabelInput', () => {
     expect(input.value).toBe('hello world');
     expect(baseProps.onChange).toBeCalledWith('hello world');
 
-    input.blur();
+    act(() => input.blur());
     expect(container.querySelector('.label-input-focused')).toBeFalsy();
     expect(input).not.toHaveFocus();
     expect(baseProps.onBlur).toBeCalledWith('hello world');
 
-    input.focus();
+    act(() => input.focus());
     expect(container.querySelector('.label-input-focused')).toBeTruthy();
     expect(input).toHaveFocus();
     expect(baseProps.onFocus).toBeCalledWith('hello world');
   });
 
   it('type of password', () => {
-    const { getByRole, container } = render(<LabelInput type="password" {...baseProps} />);
+    const { getByRole, container } = render(
+      <LabelInput type="password" {...baseProps} />,
+    );
 
     const eyeIcon = getByRole('img');
-    eyeIcon.click();
+    act(() => eyeIcon.click());
     expect(container.querySelector('.label-input-open-eye')).toBeTruthy();
 
     const eyeIcon2 = getByRole('img');
-    eyeIcon2.click();
+    act(() => eyeIcon2.click());
     expect(container.querySelector('.label-input-open-eye')).toBeFalsy();
   });
 

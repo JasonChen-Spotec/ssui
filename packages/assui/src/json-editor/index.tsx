@@ -1,11 +1,11 @@
-import type { JSONEditorOptions } from 'jsoneditor';
-import JSONEditor from 'jsoneditor';
 import React, { useEffect, useImperativeHandle } from 'react';
 import useControllableValue from 'ahooks/lib/useControllableValue';
 import useMount from 'ahooks/lib/useMount';
-import isEqual from 'lodash/isEqual';
 import useUnmount from 'ahooks/lib/useUnmount';
 import classNames from 'classnames';
+import type { JSONEditorOptions } from 'jsoneditor';
+import JSONEditor from 'jsoneditor';
+import isEqual from 'lodash/isEqual';
 
 export type JSONEditorProps = {
   className?: string;
@@ -14,7 +14,10 @@ export type JSONEditorProps = {
   value?: string;
 };
 
-const JsonEditor: React.ForwardRefRenderFunction<unknown, JSONEditorProps> = (props, ref) => {
+const JsonEditor: React.ForwardRefRenderFunction<unknown, JSONEditorProps> = (
+  props,
+  ref,
+) => {
   const { options, className } = props;
   const [value, setValue] = useControllableValue(props);
   const containerRef = React.useRef<HTMLDivElement | null>();

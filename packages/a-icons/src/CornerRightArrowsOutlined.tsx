@@ -1,5 +1,5 @@
-import * as React from 'react';
-import Icon, { IconProps } from 'a-base-icon/lib/icon';
+import * as React from "react";
+import Icon, { IconProps } from "a-base-icon/lib/icon";
 
 function CornerRightArrowsOutlined(componentProps: IconProps) {
   const IconNode = (props: React.SVGProps<SVGSVGElement>) => (
@@ -16,5 +16,5 @@ function CornerRightArrowsOutlined(componentProps: IconProps) {
   return <Icon {...componentProps} component={IconNode} />;
 }
 
-CornerRightArrowsOutlined.displayName = 'CornerRightArrowsOutlined';
+CornerRightArrowsOutlined.displayName = "CornerRightArrowsOutlined";
 export default CornerRightArrowsOutlined;

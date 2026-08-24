@@ -107,22 +107,24 @@ const Demo = () => {
       <Form.Item name="options" label="更复杂的分组下拉数据">
         <ComplexValSelect options={complexValOptions} />
       </Form.Item>
-      <Form.Item label="下拉Value是对象">
+      <Form.Item label="下拉Value是对象" name="optionsObject" initialValue={{sex: '男', name:'张三'}}>
         <ComplexValSelect
-          value={{ sex: '男', name: '张三' }}
           options={[
             { label: '张三信息', value: { name: '张三', sex: '男' } },
             { label: '李四信息', value: { name: '李四', sex: '女' } },
           ]}
         />
       </Form.Item>
-      <Form.Item label="多选对象">
+      <Form.Item
+        label="多选对象"
+        name="multiObject"
+        initialValue={[
+          { name: '张三', sex: '男' },
+          { sex: '男', name: '王二' },
+        ]}
+      >
         <ComplexValSelect
           mode="multiple"
-          value={[
-            { name: '张三', sex: '男' },
-            { sex: '男', name: '王二' }
-          ]}
           options={[
             { label: '张三信息', value: { name: '张三', sex: '男' } },
             { label: '李四信息', value: { name: '李四', sex: '女' } },
@@ -130,13 +132,16 @@ const Demo = () => {
           ]}
         />
       </Form.Item>
-      <Form.Item label="多选数组">
+      <Form.Item
+        label="多选数组"
+        name="multiArrayPreset"
+        initialValue={[
+          [1, 2, 3],
+          [3, 2, 2],
+        ]}
+      >
         <ComplexValSelect
           mode="multiple"
-          value={[
-            [1, 2, 3],
-            [3, 2, 2]
-          ]}
           options={[
             { label: '张三信息', value: [1, 2, 3] },
             { label: '李四信息', value: [3, 2, 2] },

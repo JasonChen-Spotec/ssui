@@ -1,6 +1,6 @@
 import moment from 'moment';
-import localStorage from '../localStorage';
 import dateUtils from '../dateUtils';
+import localStorage from '../localStorage';
 
 const today = dateUtils.getToday();
 

@@ -2,12 +2,10 @@ var locale = {
   locale: 'fr_FR',
   lang: {
     global: {
-      // eslint-disable-next-line quotes
       placeholder: "Choisissez s'il vous plaît"
     },
     labelCustomizeRangePicker: {
       customTime: 'heure personnalisée',
-      // eslint-disable-next-line quotes
       toDay: "aujourd'hui",
       yesterDay: 'hier',
       week: 'cette semaine',

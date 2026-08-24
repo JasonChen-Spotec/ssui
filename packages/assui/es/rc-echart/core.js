@@ -1,23 +1,22 @@
-/* eslint-disable no-unused-expressions */
-/* eslint-disable no-restricted-syntax */
-import React, { useRef, useEffect } from 'react';
+import { jsx as _jsx } from "react/jsx-runtime";
+import { useEffect, useRef } from 'react';
 import useMount from "ahooks/es/useMount";
 import useUpdateEffect from "ahooks/es/useUpdateEffect";
 import classNames from 'classnames';
 var initEmptyObject = {};
 var ReactEchartCore = function ReactEchartCore(props) {
-  var _a = props.className,
-    className = _a === void 0 ? '' : _a,
+  var _props$className = props.className,
+    className = _props$className === void 0 ? '' : _props$className,
     option = props.option,
     echarts = props.echarts,
-    _b = props.notMerge,
-    notMerge = _b === void 0 ? false : _b,
-    _c = props.lazyUpdate,
-    lazyUpdate = _c === void 0 ? false : _c,
-    _d = props.onEvents,
-    onEvents = _d === void 0 ? initEmptyObject : _d,
-    _e = props.opts,
-    opts = _e === void 0 ? initEmptyObject : _e,
+    _props$notMerge = props.notMerge,
+    notMerge = _props$notMerge === void 0 ? false : _props$notMerge,
+    _props$lazyUpdate = props.lazyUpdate,
+    lazyUpdate = _props$lazyUpdate === void 0 ? false : _props$lazyUpdate,
+    _props$onEvents = props.onEvents,
+    onEvents = _props$onEvents === void 0 ? initEmptyObject : _props$onEvents,
+    _props$opts = props.opts,
+    opts = _props$opts === void 0 ? initEmptyObject : _props$opts,
     theme = props.theme;
   var chartDomRef = useRef();
   var chartRef = useRef();
@@ -32,7 +31,7 @@ var ReactEchartCore = function ReactEchartCore(props) {
       }
     };
     for (var eventName in onEvents) {
-      if (Object.prototype.hasOwnProperty.call(onEvents, eventName)) {
+      if (Object.hasOwn(onEvents, eventName)) {
         bindEventFunc(eventName, onEvents[eventName]);
       }
     }
@@ -88,7 +87,7 @@ var ReactEchartCore = function ReactEchartCore(props) {
     width: '100%',
     height: '100%'
   };
-  return /*#__PURE__*/React.createElement("div", {
+  return _jsx("div", {
     ref: function ref(node) {
       chartDomRef.current = node;
     },

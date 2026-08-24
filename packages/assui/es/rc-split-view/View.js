@@ -1,3 +1,4 @@
+import { jsx as _jsx } from "react/jsx-runtime";
 import React from 'react';
 import isUndefined from 'lodash/isUndefined';
 var View = /*#__PURE__*/React.forwardRef(function (props, ref) {
@@ -19,10 +20,11 @@ var View = /*#__PURE__*/React.forwardRef(function (props, ref) {
     }
     viewStyle.flex = 'none';
   }
-  return /*#__PURE__*/React.createElement("div", {
+  return _jsx("div", {
     ref: ref,
     className: className,
-    style: viewStyle
-  }, children);
+    style: viewStyle,
+    children: children
+  });
 });
 export default View;

@@ -1,24 +1,24 @@
-import React, { useState, useEffect, useContext } from 'react';
-import Radio from 'antd/lib/radio';
+import React, { useContext, useEffect, useState } from 'react';
+import useControllableValue from 'ahooks/lib/useControllableValue';
+import type { CheckboxChangeEvent } from 'antd/lib/checkbox';
 import Checkbox from 'antd/lib/checkbox';
 import DatePicker from 'antd/lib/date-picker';
 import type { RadioChangeEvent } from 'antd/lib/radio';
-import type { RangeValue } from 'rc-picker/lib/interface';
-import type { CheckboxChangeEvent } from 'antd/lib/checkbox';
-import useControllableValue from 'ahooks/lib/useControllableValue';
-import type { Moment } from 'moment';
+import Radio from 'antd/lib/radio';
 import omit from 'lodash/omit';
+import type { Moment } from 'moment';
+import type { RangeValue } from 'rc-picker/lib/interface';
+import LocaleContext from '../config-provider/context';
+import type { LabelRangePickerProps } from '../label-range-picker';
+import LabelRangePicker from '../label-range-picker';
+import formatMessage, { langTypeEnum } from '../messages';
 import type { dateTypeEnum } from './defaultRadioList';
 import getDefaultRadioList from './defaultRadioList';
-import LabelRangePicker from '../label-range-picker';
-import type { LabelRangePickerProps } from '../label-range-picker';
-import LocaleContext from '../config-provider/context';
-import formatMessage, { langTypeEnum } from '../messages';
 import {
   formatMaxScope,
   getDateDiffScope,
-  ONE_DAY_MILLISECOND,
   getTimeDiffOfShowTime,
+  ONE_DAY_MILLISECOND,
 } from './utils';
 
 export type RadioListType = {
@@ -92,7 +92,9 @@ const LabelCustomizeRangePicker = (props: LabelCustomizeRangePickerProps) => {
 
   useEffect(() => {
     const filterItemList = dataSource.filter((item) => {
-      if (!date) return false;
+      if (!date) {
+        return false;
+      }
       const [startTime, endTime] = item.value;
       const [defaultStartTime, defaultEndTime] = date || [];
       if (
@@ -286,7 +288,7 @@ const LabelCustomizeRangePicker = (props: LabelCustomizeRangePickerProps) => {
     />
   ) : (
     <RangePicker
-      showTime={showTime} 
+      showTime={showTime}
       format={showTime ? 'YYYY/MM/DD HH:mm:ss' : 'YYYY/MM/DD'}
       {...baseOptions}
       {...omit(restProps, 'onChange')}

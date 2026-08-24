@@ -1,11 +1,11 @@
 import React, { Component, Fragment } from 'react';
-import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
+import { DragDropContext, Droppable, Draggable } from '@hello-pangea/dnd';
 import type {
   DropResult,
   DroppableProvided,
   DraggableProvided,
   DraggableStateSnapshot,
-} from 'react-beautiful-dnd';
+} from '@hello-pangea/dnd';
 import { quotes } from '../data';
 import reorder from '../reorder';
 import styles from './index.modules.less';
@@ -52,7 +52,7 @@ type AppState = {
   layout: 'fixed' | 'auto';
 };
 export default class TableApp extends Component<AppProps, AppState> {
-  // eslint-disable-next-line react/sort-comp
+  
   tableRef?: HTMLElement;
 
   state: AppState = {

@@ -1,13 +1,13 @@
+import * as React from 'react';
 import Modal from 'antd/lib/modal';
 import Slider from 'antd/lib/slider';
-import * as React from 'react';
-
 import type { CropperProps } from 'react-easy-crop';
 import EasyCrop from './EasyCrop';
 import getCroppedImg from './getCroppedImg';
 import './style/index.less';
 
 const noop = () => {};
+
 const ZOOM_STEP = 0.1;
 
 const MIN_ROTATE = 0;
@@ -146,19 +146,27 @@ const ImgCrop = (props: ImgCropProps) => {
   const isMaxRotate = rotateVal === MAX_ROTATE;
 
   const subZoomVal = React.useCallback(() => {
-    if (!isMinZoom) setZoomVal(zoomVal - ZOOM_STEP);
+    if (!isMinZoom) {
+      setZoomVal(zoomVal - ZOOM_STEP);
+    }
   }, [isMinZoom, zoomVal]);
 
   const addZoomVal = React.useCallback(() => {
-    if (!isMaxZoom) setZoomVal(zoomVal + ZOOM_STEP);
+    if (!isMaxZoom) {
+      setZoomVal(zoomVal + ZOOM_STEP);
+    }
   }, [isMaxZoom, zoomVal]);
 
   const subRotateVal = React.useCallback(() => {
-    if (!isMinRotate) setRotateVal(rotateVal - ROTATE_STEP);
+    if (!isMinRotate) {
+      setRotateVal(rotateVal - ROTATE_STEP);
+    }
   }, [isMinRotate, rotateVal]);
 
   const addRotateVal = React.useCallback(() => {
-    if (!isMaxRotate) setRotateVal(rotateVal + ROTATE_STEP);
+    if (!isMaxRotate) {
+      setRotateVal(rotateVal + ROTATE_STEP);
+    }
   }, [isMaxRotate, rotateVal]);
 
   /**
@@ -220,7 +228,10 @@ const ImgCrop = (props: ImgCropProps) => {
     const { type, name, uid } = fileRef.current as RcFile;
 
     canvas.toBlob(
-      async (blob: Blob) => {
+      async (blob) => {
+        if (!blob) {
+          return null;
+        }
         let newFile = new File([blob], name, { type }) as RcFile;
 
         if (zipImg) {
@@ -233,22 +244,28 @@ const ImgCrop = (props: ImgCropProps) => {
           newFile = fileObj;
         }
         newFile.uid = uid;
-        if (typeof beforeUploadRef.current !== 'function')
+        if (typeof beforeUploadRef.current !== 'function') {
           return resolveRef.current(newFile);
+        }
 
         const res = beforeUploadRef.current(newFile, [newFile]);
 
         if (typeof res !== 'boolean' && !res) {
           console.error('beforeUpload must return a boolean or Promise');
         } else {
-          if (res === true) return resolveRef.current(newFile);
-          if (res === false) return rejectRef.current('not upload');
+          if (res === true) {
+            return resolveRef.current(newFile);
+          }
+          if (res === false) {
+            return rejectRef.current('not upload');
+          }
           if (res && typeof (res as Promise<beforeUploadFunc>).then === 'function') {
             try {
               const passedFile = await res;
               const fileType = Object.prototype.toString.call(passedFile);
-              if (fileType === '[object File]' || fileType === '[object Blob]')
+              if (fileType === '[object File]' || fileType === '[object Blob]') {
                 newFile = passedFile;
+              }
               resolveRef.current(newFile);
             } catch (err) {
               rejectRef.current(err);
@@ -334,6 +351,7 @@ const ImgCrop = (props: ImgCropProps) => {
       )}
     </>
   );
+
   return renderComponent(modalTitle);
 };
 

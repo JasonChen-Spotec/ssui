@@ -1,9 +1,9 @@
 import React from 'react';
+import type { SizeType } from 'antd/lib/config-provider/SizeContext';
 import classNames from 'classnames';
 import omit from 'rc-util/lib/omit';
-import type { SizeType } from 'antd/lib/config-provider/SizeContext';
-import { isPresetSize } from './utils/gapSize';
 import createFlexClassNames from './utils';
+import { isPresetSize } from './utils/gapSize';
 
 export interface FlexProps<P = Record<PropertyKey, any>>
   extends React.HTMLAttributes<HTMLElement> {

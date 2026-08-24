@@ -1,5 +1,5 @@
-import * as React from 'react';
-import Icon, { IconProps } from 'a-base-icon/lib/icon';
+import * as React from "react";
+import Icon, { IconProps } from "a-base-icon/lib/icon";
 
 function BusinessCardOutlined(componentProps: IconProps) {
   const IconNode = (props: React.SVGProps<SVGSVGElement>) => (
@@ -10,7 +10,10 @@ function BusinessCardOutlined(componentProps: IconProps) {
         d="M18.25 10.5c0 .675-.223 1.299-.6 1.8.972.73 1.6 1.891 1.6 3.2v1h-2v-1a2 2 0 10-4 0v1h-2v-1c0-1.309.628-2.47 1.6-3.2a3 3 0 115.4-1.8zm-4 0a1 1 0 112 0 1 1 0 01-2 0z"
         fill="currentColor"
       />
-      <path d="M9.25 9v2h-4.5V9h4.5zM9.25 13v2h-4.5v-2h4.5z" fill="currentColor" />
+      <path
+        d="M9.25 9v2h-4.5V9h4.5zM9.25 13v2h-4.5v-2h4.5z"
+        fill="currentColor"
+      />
       <path
         fillRule="evenodd"
         clipRule="evenodd"
@@ -23,5 +26,5 @@ function BusinessCardOutlined(componentProps: IconProps) {
   return <Icon {...componentProps} component={IconNode} />;
 }
 
-BusinessCardOutlined.displayName = 'BusinessCardOutlined';
+BusinessCardOutlined.displayName = "BusinessCardOutlined";
 export default BusinessCardOutlined;

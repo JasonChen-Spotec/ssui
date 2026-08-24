@@ -1,8 +1,8 @@
 import React from 'react';
 import useControllableValue from 'ahooks/lib/useControllableValue';
-import type { RefSelectProps } from 'antd/lib/select';
 import type { AutoCompleteProps } from 'antd/lib/auto-complete';
 import AutoComplete from 'antd/lib/auto-complete';
+import type { RefSelectProps } from 'antd/lib/select';
 import classNames from 'classnames';
 import omit from 'lodash/omit';
 import trimStart from 'lodash/trimStart';
@@ -25,7 +25,7 @@ const LabelAutoComplete = (props: LabelAutoCompleteProps) => {
   const handleChange = (nextValue: string) => {
     const finallyValue = trimStart(nextValue);
     setValue(finallyValue);
-    onChange && onChange(finallyValue, options || []);
+    onChange?.(finallyValue, options || []);
   };
 
   const handleLabelClick = () => {
@@ -43,7 +43,7 @@ const LabelAutoComplete = (props: LabelAutoCompleteProps) => {
     if (value === '' || !value) {
       setOpen(false);
     }
-    onBlur && onBlur(event);
+    onBlur?.(event);
   };
 
   return (
@@ -67,6 +67,7 @@ const LabelAutoComplete = (props: LabelAutoCompleteProps) => {
         onChange={handleChange}
         onDropdownVisibleChange={onDropdownVisibleChange}
       />
+      {/* biome-ignore lint/a11y/noLabelWithoutControl: 点击触发的展示文本，非表单 label */}
       <label className="label-auto-complete-text" onClick={handleLabelClick}>
         {label}
       </label>

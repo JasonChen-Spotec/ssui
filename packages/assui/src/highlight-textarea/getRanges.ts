@@ -1,16 +1,13 @@
-/* eslint-disable no-param-reassign */
-/* eslint-disable @typescript-eslint/no-use-before-define */
-/* eslint-disable no-cond-assign */
 import getType from './getType';
 import type {
-  HighlightType,
-  StringType,
   AdmixArrayType,
+  FuncType,
+  HighlightType,
   NumberArrayType,
   ObjectType,
-  FuncType,
-  RegExpType,
   RangesType,
+  RegExpType,
+  StringType,
 } from './types';
 
 export default function getRanges(input: string, highlight: HighlightType): RangesType {
@@ -52,7 +49,11 @@ function getRegExpRanges(input: string, regex: RegExpType): RangesType {
   const ranges: RangesType = [];
   let match: RegExpExecArray | null;
 
-  while (((match = regex.exec(input)), match !== null)) {
+  while (true) {
+    match = regex.exec(input);
+    if (match === null) {
+      break;
+    }
     ranges.push([match.index, match.index + match[0].length]);
     if (!regex.global) {
       // non-global regexes do not increase lastIndex, causing an infinite loop,
@@ -68,7 +69,11 @@ function getStringRanges(input: string, str: StringType): RangesType {
   const inputLower = input.toLowerCase();
   const strLower = str.toLowerCase();
   let index = 0;
-  while (((index = inputLower.indexOf(strLower, index)), index !== -1)) {
+  while (true) {
+    index = inputLower.indexOf(strLower, index);
+    if (index === -1) {
+      break;
+    }
     ranges.push([index, index + strLower.length]);
     index += strLower.length;
   }

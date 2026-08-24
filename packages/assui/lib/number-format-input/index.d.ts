@@ -1,5 +1,5 @@
 import React from 'react';
-import type { NumberFormatBaseProps as ReactNumberFormatProps } from 'react-number-format';
-export type NumberFormatInputProps = ReactNumberFormatProps;
+import type { NumericFormatProps, PatternFormatProps } from 'react-number-format';
+export type NumberFormatInputProps = Partial<NumericFormatProps> & Partial<PatternFormatProps>;
 declare const NumberFormatInput: React.FC<NumberFormatInputProps>;
 export default NumberFormatInput;

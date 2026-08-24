@@ -1,79 +1,13 @@
 "use strict";
 
-var __createBinding = this && this.__createBinding || (Object.create ? function (o, m, k, k2) {
-  if (k2 === undefined) k2 = k;
-  var desc = Object.getOwnPropertyDescriptor(m, k);
-  if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
-    desc = {
-      enumerable: true,
-      get: function get() {
-        return m[k];
-      }
-    };
-  }
-  Object.defineProperty(o, k2, desc);
-} : function (o, m, k, k2) {
-  if (k2 === undefined) k2 = k;
-  o[k2] = m[k];
-});
-var __setModuleDefault = this && this.__setModuleDefault || (Object.create ? function (o, v) {
-  Object.defineProperty(o, "default", {
-    enumerable: true,
-    value: v
-  });
-} : function (o, v) {
-  o["default"] = v;
-});
-var __importStar = this && this.__importStar || function (mod) {
-  if (mod && mod.__esModule) return mod;
-  var result = {};
-  if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-  __setModuleDefault(result, mod);
-  return result;
-};
-var __read = this && this.__read || function (o, n) {
-  var m = typeof Symbol === "function" && o[Symbol.iterator];
-  if (!m) return o;
-  var i = m.call(o),
-    r,
-    ar = [],
-    e;
-  try {
-    while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
-  } catch (error) {
-    e = {
-      error: error
-    };
-  } finally {
-    try {
-      if (r && !r.done && (m = i["return"])) m.call(i);
-    } finally {
-      if (e) throw e.error;
-    }
-  }
-  return ar;
-};
-var __spreadArray = this && this.__spreadArray || function (to, from, pack) {
-  if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
-    if (ar || !(i in from)) {
-      if (!ar) ar = Array.prototype.slice.call(from, 0, i);
-      ar[i] = from[i];
-    }
-  }
-  return to.concat(ar || Array.prototype.slice.call(from));
-};
-var __importDefault = this && this.__importDefault || function (mod) {
-  return mod && mod.__esModule ? mod : {
-    "default": mod
-  };
-};
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.dateTypeEnum = void 0;
+var tslib_1 = require("tslib");
 var lodash_1 = require("lodash");
-var dateUtils_1 = __importDefault(require("aa-utils/lib/dateUtils"));
-var messages_1 = __importStar(require("../messages"));
+var dateUtils_1 = tslib_1.__importDefault(require("aa-utils/lib/dateUtils"));
+var messages_1 = tslib_1.__importStar(require("../messages"));
 var dateTypeEnum;
 (function (dateTypeEnum) {
   dateTypeEnum[dateTypeEnum["TODAY"] = 1] = "TODAY";
@@ -94,20 +28,20 @@ var dateTypeEnum;
   dateTypeEnum[dateTypeEnum["ALL"] = 16] = "ALL";
   dateTypeEnum[dateTypeEnum["BEFORE_3_MONTH"] = 17] = "BEFORE_3_MONTH";
 })(dateTypeEnum || (exports.dateTypeEnum = dateTypeEnum = {}));
-var getDefaultRadioList = function getDefaultRadioList(_a) {
-  var messages = _a.messages,
-    timeOffset = _a.timeOffset,
-    naturalDate = _a.naturalDate,
-    _b = _a.displayAllOption,
-    displayAllOption = _b === void 0 ? false : _b,
-    startTimeOfAllOption = _a.startTimeOfAllOption;
+var getDefaultRadioList = function getDefaultRadioList(_ref) {
+  var messages = _ref.messages,
+    timeOffset = _ref.timeOffset,
+    naturalDate = _ref.naturalDate,
+    _ref$displayAllOption = _ref.displayAllOption,
+    displayAllOption = _ref$displayAllOption === void 0 ? false : _ref$displayAllOption,
+    startTimeOfAllOption = _ref.startTimeOfAllOption;
   var now = (0, lodash_1.isNumber)(timeOffset) ? dateUtils_1["default"].getToday(timeOffset) : dateUtils_1["default"].getToday();
   var allRadio = displayAllOption ? [{
     key: dateTypeEnum.ALL,
     text: (0, messages_1["default"])(messages, messages_1.langTypeEnum.labelCustomizeRangePicker, 'all'),
     value: [startTimeOfAllOption || dateUtils_1["default"].parseDate('2022/09/01'), now.endOf('day')]
   }] : [];
-  var defaultRadioList = __spreadArray([{
+  var defaultRadioList = [{
     key: dateTypeEnum.TODAY,
     text: (0, messages_1["default"])(messages, messages_1.langTypeEnum.labelCustomizeRangePicker, 'toDay'),
     value: [now.clone().startOf('day'), now.clone().endOf('day')]
@@ -171,7 +105,7 @@ var getDefaultRadioList = function getDefaultRadioList(_a) {
     key: dateTypeEnum.BEFORE_3_MONTH,
     text: (0, messages_1["default"])(messages, messages_1.langTypeEnum.labelCustomizeRangePicker, 'last3months'),
     value: [now.clone().subtract(2, 'month').startOf('month'), now.endOf('day')]
-  }], __read(allRadio), false);
+  }].concat(allRadio);
   return defaultRadioList;
 };
 exports["default"] = getDefaultRadioList;

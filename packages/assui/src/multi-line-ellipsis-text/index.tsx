@@ -1,12 +1,11 @@
 import React from 'react';
+import useSize from 'ahooks/lib/useSize';
 import type { TooltipProps } from 'antd/lib/tooltip';
 import Tooltip from 'antd/lib/tooltip';
 import classNames from 'classnames';
 import omit from 'lodash/omit';
-import useSize from 'ahooks/lib/useSize';
 import type { ButtonModalProps } from '../button-modal';
 import ButtonModal from '../button-modal';
-
 
 export interface MultiLineEllipsisTextProps {
   /** 需要处理的文案 */
@@ -77,7 +76,7 @@ const MultiLineEllipsisText: React.FC<MultiLineEllipsisTextProps> = ({
         whiteSpace: 'pre-wrap',
         wordBreak: 'break-word',
       }}
-      onClick={ onClick }
+      onClick={onClick}
     >
       {text}
     </div>

@@ -1,34 +1,3 @@
-var __read = this && this.__read || function (o, n) {
-  var m = typeof Symbol === "function" && o[Symbol.iterator];
-  if (!m) return o;
-  var i = m.call(o),
-    r,
-    ar = [],
-    e;
-  try {
-    while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
-  } catch (error) {
-    e = {
-      error: error
-    };
-  } finally {
-    try {
-      if (r && !r.done && (m = i["return"])) m.call(i);
-    } finally {
-      if (e) throw e.error;
-    }
-  }
-  return ar;
-};
-var __spreadArray = this && this.__spreadArray || function (to, from, pack) {
-  if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
-    if (ar || !(i in from)) {
-      if (!ar) ar = Array.prototype.slice.call(from, 0, i);
-      ar[i] = from[i];
-    }
-  }
-  return to.concat(ar || Array.prototype.slice.call(from));
-};
 import { isNumber } from 'lodash';
 import dateUtils from "aa-utils/es/dateUtils";
 import formatMessage, { langTypeEnum } from '../messages';
@@ -52,20 +21,20 @@ export var dateTypeEnum;
   dateTypeEnum[dateTypeEnum["ALL"] = 16] = "ALL";
   dateTypeEnum[dateTypeEnum["BEFORE_3_MONTH"] = 17] = "BEFORE_3_MONTH";
 })(dateTypeEnum || (dateTypeEnum = {}));
-var getDefaultRadioList = function getDefaultRadioList(_a) {
-  var messages = _a.messages,
-    timeOffset = _a.timeOffset,
-    naturalDate = _a.naturalDate,
-    _b = _a.displayAllOption,
-    displayAllOption = _b === void 0 ? false : _b,
-    startTimeOfAllOption = _a.startTimeOfAllOption;
+var getDefaultRadioList = function getDefaultRadioList(_ref) {
+  var messages = _ref.messages,
+    timeOffset = _ref.timeOffset,
+    naturalDate = _ref.naturalDate,
+    _ref$displayAllOption = _ref.displayAllOption,
+    displayAllOption = _ref$displayAllOption === void 0 ? false : _ref$displayAllOption,
+    startTimeOfAllOption = _ref.startTimeOfAllOption;
   var now = isNumber(timeOffset) ? dateUtils.getToday(timeOffset) : dateUtils.getToday();
   var allRadio = displayAllOption ? [{
     key: dateTypeEnum.ALL,
     text: formatMessage(messages, langTypeEnum.labelCustomizeRangePicker, 'all'),
     value: [startTimeOfAllOption || dateUtils.parseDate('2022/09/01'), now.endOf('day')]
   }] : [];
-  var defaultRadioList = __spreadArray([{
+  var defaultRadioList = [{
     key: dateTypeEnum.TODAY,
     text: formatMessage(messages, langTypeEnum.labelCustomizeRangePicker, 'toDay'),
     value: [now.clone().startOf('day'), now.clone().endOf('day')]
@@ -129,7 +98,7 @@ var getDefaultRadioList = function getDefaultRadioList(_a) {
     key: dateTypeEnum.BEFORE_3_MONTH,
     text: formatMessage(messages, langTypeEnum.labelCustomizeRangePicker, 'last3months'),
     value: [now.clone().subtract(2, 'month').startOf('month'), now.endOf('day')]
-  }], __read(allRadio), false);
+  }].concat(allRadio);
   return defaultRadioList;
 };
 export default getDefaultRadioList;

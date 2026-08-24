@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, fireEvent, waitFor } from '@testing-library/react';
+import { fireEvent, render, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import LabelAutoComplete from '../index';
 
@@ -11,7 +11,7 @@ const baseProps = {
 describe('LabelAutoComplete', () => {
   it('LabelAutoComplete base test', async () => {
     const TestComponet = (props: any) => {
-      const [options, setOptions] = React.useState<any[]>([
+      const [options, _setOptions] = React.useState<any[]>([
         { value: 'Burns Bay Road', disabled: true },
         { value: 'Downing Street' },
         { value: 'Wall Street' },
@@ -21,7 +21,9 @@ describe('LabelAutoComplete', () => {
 
     const { container, getByTitle, getByRole } = render(<TestComponet {...baseProps} />);
 
-    const labelNode = container.querySelector('.label-auto-complete-text') as HTMLLabelElement;
+    const labelNode = container.querySelector(
+      '.label-auto-complete-text',
+    ) as HTMLLabelElement;
     const input = getByRole('combobox') as HTMLInputElement;
 
     expect(labelNode).toHaveTextContent('我是标题');
@@ -48,7 +50,9 @@ describe('LabelAutoComplete', () => {
 
     expect(baseProps.onBlur).toBeCalled();
     expect(baseProps.onBlur).toBeCalledWith(
-      expect.objectContaining({ target: expect.objectContaining({ value: 'Downing Street' }) }),
+      expect.objectContaining({
+        target: expect.objectContaining({ value: 'Downing Street' }),
+      }),
     );
 
     fireEvent.change(input, { target: { value: '' } });

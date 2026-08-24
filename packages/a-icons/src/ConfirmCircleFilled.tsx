@@ -1,9 +1,14 @@
-import * as React from 'react';
-import Icon, { IconProps } from 'a-base-icon/lib/icon';
+import * as React from "react";
+import Icon, { IconProps } from "a-base-icon/lib/icon";
 
 function ConfirmCircleFilled(componentProps: IconProps) {
   const IconNode = (props: React.SVGProps<SVGSVGElement>) => (
-    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
       <path
         d="M12 2a9.966 9.966 0 017.071 2.929A9.966 9.966 0 0122 12a9.966 9.966 0 01-2.929 7.071A9.966 9.966 0 0112 22a9.966 9.966 0 01-7.071-2.929A9.966 9.966 0 012 12a9.966 9.966 0 012.929-7.071A9.966 9.966 0 0112 2zm5.121 5.293a1 1 0 00-1.338-.068l-.076.068-5.293 5.293-2.293-2.293a1 1 0 00-1.338-.068l-.076.068-1.414 1.414a1 1 0 000 1.414L9 16.828a2 2 0 002.828 0l6.707-6.707a1 1 0 000-1.414l-1.414-1.414z"
         fill="currentColor"
@@ -17,5 +22,5 @@ function ConfirmCircleFilled(componentProps: IconProps) {
   return <Icon {...componentProps} component={IconNode} />;
 }
 
-ConfirmCircleFilled.displayName = 'ConfirmCircleFilled';
+ConfirmCircleFilled.displayName = "ConfirmCircleFilled";
 export default ConfirmCircleFilled;

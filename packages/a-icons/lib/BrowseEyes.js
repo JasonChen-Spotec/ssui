@@ -1,91 +1,45 @@
 "use strict";
 
-var __assign = this && this.__assign || function () {
-  __assign = Object.assign || function (t) {
-    for (var s, i = 1, n = arguments.length; i < n; i++) {
-      s = arguments[i];
-      for (var p in s) {
-        if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
-      }
-    }
-    return t;
-  };
-  return __assign.apply(this, arguments);
-};
-var __createBinding = this && this.__createBinding || (Object.create ? function (o, m, k, k2) {
-  if (k2 === undefined) k2 = k;
-  var desc = Object.getOwnPropertyDescriptor(m, k);
-  if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
-    desc = {
-      enumerable: true,
-      get: function get() {
-        return m[k];
-      }
-    };
-  }
-  Object.defineProperty(o, k2, desc);
-} : function (o, m, k, k2) {
-  if (k2 === undefined) k2 = k;
-  o[k2] = m[k];
-});
-var __setModuleDefault = this && this.__setModuleDefault || (Object.create ? function (o, v) {
-  Object.defineProperty(o, "default", {
-    enumerable: true,
-    value: v
-  });
-} : function (o, v) {
-  o["default"] = v;
-});
-var __importStar = this && this.__importStar || function (mod) {
-  if (mod && mod.__esModule) return mod;
-  var result = {};
-  if (mod != null) for (var k in mod) {
-    if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-  }
-  __setModuleDefault(result, mod);
-  return result;
-};
-var __importDefault = this && this.__importDefault || function (mod) {
-  return mod && mod.__esModule ? mod : {
-    "default": mod
-  };
-};
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-var React = __importStar(require("react"));
-var icon_1 = __importDefault(require("a-base-icon/lib/icon"));
+var tslib_1 = require("tslib");
+var jsx_runtime_1 = require("react/jsx-runtime");
+var icon_1 = tslib_1.__importDefault(require("a-base-icon/lib/icon"));
 function BrowseEyes(componentProps) {
   var IconNode = function IconNode(props) {
-    return React.createElement("svg", __assign({
+    return (0, jsx_runtime_1.jsxs)("svg", _extends({
       viewBox: "0 0 24 24",
       fill: "none",
       xmlns: "http://www.w3.org/2000/svg"
-    }, props), React.createElement("rect", {
-      x: 0.5,
-      y: 0.5,
-      width: 23,
-      height: 23,
-      rx: 11.5,
-      fill: "#EFFDF4"
-    }), React.createElement("rect", {
-      x: 0.5,
-      y: 0.5,
-      width: 23,
-      height: 23,
-      rx: 11.5,
-      stroke: "#fff"
-    }), React.createElement("path", {
-      d: "M10.2 12a1.8 1.8 0 113.6 0 1.8 1.8 0 01-3.6 0z",
-      fill: "#377C51"
-    }), React.createElement("path", {
-      d: "M12 6.6a7.503 7.503 0 00-7.147 5.218L4.795 12l.058.182a7.503 7.503 0 0014.293 0l.058-.182-.058-.182A7.503 7.503 0 0011.999 6.6zM12 9a3 3 0 110 6 3 3 0 010-6z",
-      fill: "#377C51"
+    }, props, {
+      children: [(0, jsx_runtime_1.jsx)("rect", {
+        x: 0.5,
+        y: 0.5,
+        width: 23,
+        height: 23,
+        rx: 11.5,
+        fill: "#EFFDF4"
+      }), (0, jsx_runtime_1.jsx)("rect", {
+        x: 0.5,
+        y: 0.5,
+        width: 23,
+        height: 23,
+        rx: 11.5,
+        stroke: "#fff"
+      }), (0, jsx_runtime_1.jsx)("path", {
+        d: "M10.2 12a1.8 1.8 0 113.6 0 1.8 1.8 0 01-3.6 0z",
+        fill: "#377C51"
+      }), (0, jsx_runtime_1.jsx)("path", {
+        d: "M12 6.6a7.503 7.503 0 00-7.147 5.218L4.795 12l.058.182a7.503 7.503 0 0014.293 0l.058-.182-.058-.182A7.503 7.503 0 0011.999 6.6zM12 9a3 3 0 110 6 3 3 0 010-6z",
+        fill: "#377C51"
+      })]
     }));
   };
-  return React.createElement(icon_1["default"], __assign({}, componentProps, {
+  return (0, jsx_runtime_1.jsx)(icon_1["default"], _extends({}, componentProps, {
     component: IconNode
   }));
 }
-BrowseEyes.displayName = 'BrowseEyes';
+BrowseEyes.displayName = "BrowseEyes";
 exports["default"] = BrowseEyes;

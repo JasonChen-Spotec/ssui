@@ -1,6 +1,6 @@
-import CountUp, { useCountUp } from 'react-countup';
 import type { CountUpProps } from 'react-countup';
+import CountUp, { useCountUp } from 'react-countup';
 
-export { useCountUp, CountUpProps };
+export { type CountUpProps, useCountUp };
 
 export default CountUp;

@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, fireEvent } from '@testing-library/react';
+import { fireEvent, render } from '@testing-library/react';
 import TextInput from '../index';
 
 describe('TextInput', () => {
@@ -18,7 +18,9 @@ describe('TextInput', () => {
   });
 
   it('multiple regexp', () => {
-    const { getByRole } = render(<TextInput regexp={[{ pattern: /\d/g, replacement: 'p' }]} />);
+    const { getByRole } = render(
+      <TextInput regexp={[{ pattern: /\d/g, replacement: 'p' }]} />,
+    );
     const input = getByRole('textbox') as HTMLInputElement;
     fireEvent.change(input, { target: { value: '       enter@3456####' } });
     expect(input.value).toBe('enter@pppp####');

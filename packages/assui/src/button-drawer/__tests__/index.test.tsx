@@ -1,9 +1,8 @@
 import React from 'react';
+import { act, fireEvent, render, screen } from '@testing-library/react';
 import { Button } from 'antd';
-import { render, fireEvent, screen } from '@testing-library/react';
-import { act } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import ButtonDrawer, { DrawerAction } from '../index';
+import ButtonDrawer, { type DrawerAction } from '../index';
 
 const Content = ({ drawerAction }: any) => (
   <div>
@@ -22,7 +21,12 @@ const baseProps = {
 describe('ButtonDrawer', () => {
   it('ButtonDrawer base props should work fine ', async () => {
     const { getByText, debug } = render(
-      <ButtonDrawer title="demo" footer={null} trigger={<span>open modal</span>} {...baseProps}>
+      <ButtonDrawer
+        title="demo"
+        footer={null}
+        trigger={<span>open modal</span>}
+        {...baseProps}
+      >
         <Content />
       </ButtonDrawer>,
     );

@@ -1,76 +1,30 @@
 "use strict";
 
-var __assign = this && this.__assign || function () {
-  __assign = Object.assign || function (t) {
-    for (var s, i = 1, n = arguments.length; i < n; i++) {
-      s = arguments[i];
-      for (var p in s) {
-        if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
-      }
-    }
-    return t;
-  };
-  return __assign.apply(this, arguments);
-};
-var __createBinding = this && this.__createBinding || (Object.create ? function (o, m, k, k2) {
-  if (k2 === undefined) k2 = k;
-  var desc = Object.getOwnPropertyDescriptor(m, k);
-  if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
-    desc = {
-      enumerable: true,
-      get: function get() {
-        return m[k];
-      }
-    };
-  }
-  Object.defineProperty(o, k2, desc);
-} : function (o, m, k, k2) {
-  if (k2 === undefined) k2 = k;
-  o[k2] = m[k];
-});
-var __setModuleDefault = this && this.__setModuleDefault || (Object.create ? function (o, v) {
-  Object.defineProperty(o, "default", {
-    enumerable: true,
-    value: v
-  });
-} : function (o, v) {
-  o["default"] = v;
-});
-var __importStar = this && this.__importStar || function (mod) {
-  if (mod && mod.__esModule) return mod;
-  var result = {};
-  if (mod != null) for (var k in mod) {
-    if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-  }
-  __setModuleDefault(result, mod);
-  return result;
-};
-var __importDefault = this && this.__importDefault || function (mod) {
-  return mod && mod.__esModule ? mod : {
-    "default": mod
-  };
-};
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-var React = __importStar(require("react"));
-var icon_1 = __importDefault(require("a-base-icon/lib/icon"));
+var tslib_1 = require("tslib");
+var jsx_runtime_1 = require("react/jsx-runtime");
+var icon_1 = tslib_1.__importDefault(require("a-base-icon/lib/icon"));
 function QrCodeOutlined(componentProps) {
   var IconNode = function IconNode(props) {
-    return React.createElement("svg", __assign({
+    return (0, jsx_runtime_1.jsx)("svg", _extends({
       viewBox: "0 0 24 24",
       fill: "none",
       xmlns: "http://www.w3.org/2000/svg"
-    }, props), React.createElement("path", {
-      fillRule: "evenodd",
-      clipRule: "evenodd",
-      d: "M4.568 2h3.864c.252 0 .498 0 .706.017.229.019.499.063.77.201a2 2 0 01.874.874c.138.271.182.541.201.77.017.208.017.454.017.706v3.864c0 .252 0 .498-.017.706a2.022 2.022 0 01-.201.77 2 2 0 01-.874.874 2.022 2.022 0 01-.77.201C8.93 11 8.684 11 8.432 11H4.568c-.252 0-.498 0-.706-.017a2.022 2.022 0 01-.77-.201 2 2 0 01-.874-.874 2.022 2.022 0 01-.201-.77C2 8.93 2 8.684 2 8.432V4.6v-.032c0-.252 0-.498.017-.706.019-.229.063-.499.201-.77a2 2 0 01.874-.874c.271-.138.541-.182.77-.201C4.07 2 4.316 2 4.568 2zm-.557 2.011v.014C4 4.14 4 4.303 4 4.6v3.8a8.185 8.185 0 00.011.589h.014C4.14 9 4.303 9 4.6 9h3.8a8.183 8.183 0 00.589-.011v-.014C9 8.86 9 8.697 9 8.4V4.6a8.184 8.184 0 00-.011-.589h-.014A8.185 8.185 0 008.4 4H4.6a8.186 8.186 0 00-.589.011zM15.568 2h3.864c.252 0 .498 0 .706.017.229.019.499.063.77.201a2 2 0 01.874.874c.138.271.182.541.201.77.017.208.017.454.017.706v3.864c0 .252 0 .498-.017.706a2.022 2.022 0 01-.201.77 2 2 0 01-.874.874 2.022 2.022 0 01-.77.201c-.208.017-.454.017-.706.017h-3.864c-.252 0-.498 0-.706-.017a2.022 2.022 0 01-.77-.201 2 2 0 01-.874-.874 2.022 2.022 0 01-.201-.77C13 8.93 13 8.684 13 8.432V4.568c0-.252 0-.498.017-.706.019-.229.063-.499.201-.77a2 2 0 01.874-.874c.271-.138.541-.182.77-.201C15.07 2 15.316 2 15.568 2zm-.556 2.011l-.002.014C15 4.14 15 4.303 15 4.6v3.8a8.205 8.205 0 00.011.589h.014c.116.01.278.011.575.011h3.8a8.185 8.185 0 00.589-.011v-.014C20 8.86 20 8.697 20 8.4V4.6a8.205 8.205 0 00-.012-.589h-.013A8.187 8.187 0 0019.4 4h-3.8a8.187 8.187 0 00-.588.011zM5.5 5.5h2.01v2H5.5v-2zm11 0h2.01v2H16.5v-2zM4.568 13h3.864c.252 0 .498 0 .706.017.229.019.499.063.77.201a2 2 0 01.874.874c.138.271.182.541.201.77.017.208.017.454.017.706v3.864c0 .252 0 .498-.017.706a2.022 2.022 0 01-.201.77 2 2 0 01-.874.874 2.022 2.022 0 01-.77.201C8.93 22 8.684 22 8.432 22H4.568c-.252 0-.498 0-.706-.017a2.022 2.022 0 01-.77-.201 2 2 0 01-.874-.874 2.022 2.022 0 01-.201-.77C2 19.93 2 19.684 2 19.432v-3.864c0-.252 0-.498.017-.706.019-.229.063-.499.201-.77a2 2 0 01.874-.874c.271-.138.541-.182.77-.201C4.07 13 4.316 13 4.568 13zm-.557 2.011v.014C4 15.14 4 15.303 4 15.6v3.8a8.187 8.187 0 00.011.588l.014.002c.116.01.278.01.575.01h3.8a8.205 8.205 0 00.589-.012v-.013C9 19.86 9 19.696 9 19.4v-3.8a8.185 8.185 0 00-.011-.588l-.014-.002A8.205 8.205 0 008.4 15H4.6a8.205 8.205 0 00-.589.011zM13 13h2.01v2H13v-2zm3 2v-2h6v2h-6zM5.5 16.5h2.01v2H5.5v-2zm11 2v-2h2.01v2H16.5zM15 16v6h-2v-6h2zm7 0v5a1 1 0 01-1 1h-5v-2h4v-4h2z",
-      fill: "currentColor"
+    }, props, {
+      children: (0, jsx_runtime_1.jsx)("path", {
+        fillRule: "evenodd",
+        clipRule: "evenodd",
+        d: "M4.568 2h3.864c.252 0 .498 0 .706.017.229.019.499.063.77.201a2 2 0 01.874.874c.138.271.182.541.201.77.017.208.017.454.017.706v3.864c0 .252 0 .498-.017.706a2.022 2.022 0 01-.201.77 2 2 0 01-.874.874 2.022 2.022 0 01-.77.201C8.93 11 8.684 11 8.432 11H4.568c-.252 0-.498 0-.706-.017a2.022 2.022 0 01-.77-.201 2 2 0 01-.874-.874 2.022 2.022 0 01-.201-.77C2 8.93 2 8.684 2 8.432V4.6v-.032c0-.252 0-.498.017-.706.019-.229.063-.499.201-.77a2 2 0 01.874-.874c.271-.138.541-.182.77-.201C4.07 2 4.316 2 4.568 2zm-.557 2.011v.014C4 4.14 4 4.303 4 4.6v3.8a8.185 8.185 0 00.011.589h.014C4.14 9 4.303 9 4.6 9h3.8a8.183 8.183 0 00.589-.011v-.014C9 8.86 9 8.697 9 8.4V4.6a8.184 8.184 0 00-.011-.589h-.014A8.185 8.185 0 008.4 4H4.6a8.186 8.186 0 00-.589.011zM15.568 2h3.864c.252 0 .498 0 .706.017.229.019.499.063.77.201a2 2 0 01.874.874c.138.271.182.541.201.77.017.208.017.454.017.706v3.864c0 .252 0 .498-.017.706a2.022 2.022 0 01-.201.77 2 2 0 01-.874.874 2.022 2.022 0 01-.77.201c-.208.017-.454.017-.706.017h-3.864c-.252 0-.498 0-.706-.017a2.022 2.022 0 01-.77-.201 2 2 0 01-.874-.874 2.022 2.022 0 01-.201-.77C13 8.93 13 8.684 13 8.432V4.568c0-.252 0-.498.017-.706.019-.229.063-.499.201-.77a2 2 0 01.874-.874c.271-.138.541-.182.77-.201C15.07 2 15.316 2 15.568 2zm-.556 2.011l-.002.014C15 4.14 15 4.303 15 4.6v3.8a8.205 8.205 0 00.011.589h.014c.116.01.278.011.575.011h3.8a8.185 8.185 0 00.589-.011v-.014C20 8.86 20 8.697 20 8.4V4.6a8.205 8.205 0 00-.012-.589h-.013A8.187 8.187 0 0019.4 4h-3.8a8.187 8.187 0 00-.588.011zM5.5 5.5h2.01v2H5.5v-2zm11 0h2.01v2H16.5v-2zM4.568 13h3.864c.252 0 .498 0 .706.017.229.019.499.063.77.201a2 2 0 01.874.874c.138.271.182.541.201.77.017.208.017.454.017.706v3.864c0 .252 0 .498-.017.706a2.022 2.022 0 01-.201.77 2 2 0 01-.874.874 2.022 2.022 0 01-.77.201C8.93 22 8.684 22 8.432 22H4.568c-.252 0-.498 0-.706-.017a2.022 2.022 0 01-.77-.201 2 2 0 01-.874-.874 2.022 2.022 0 01-.201-.77C2 19.93 2 19.684 2 19.432v-3.864c0-.252 0-.498.017-.706.019-.229.063-.499.201-.77a2 2 0 01.874-.874c.271-.138.541-.182.77-.201C4.07 13 4.316 13 4.568 13zm-.557 2.011v.014C4 15.14 4 15.303 4 15.6v3.8a8.187 8.187 0 00.011.588l.014.002c.116.01.278.01.575.01h3.8a8.205 8.205 0 00.589-.012v-.013C9 19.86 9 19.696 9 19.4v-3.8a8.185 8.185 0 00-.011-.588l-.014-.002A8.205 8.205 0 008.4 15H4.6a8.205 8.205 0 00-.589.011zM13 13h2.01v2H13v-2zm3 2v-2h6v2h-6zM5.5 16.5h2.01v2H5.5v-2zm11 2v-2h2.01v2H16.5zM15 16v6h-2v-6h2zm7 0v5a1 1 0 01-1 1h-5v-2h4v-4h2z",
+        fill: "currentColor"
+      })
     }));
   };
-  return React.createElement(icon_1["default"], __assign({}, componentProps, {
+  return (0, jsx_runtime_1.jsx)(icon_1["default"], _extends({}, componentProps, {
     component: IconNode
   }));
 }
-QrCodeOutlined.displayName = 'QrCodeOutlined';
+QrCodeOutlined.displayName = "QrCodeOutlined";
 exports["default"] = QrCodeOutlined;

@@ -1,43 +1,27 @@
 "use strict";
 
-var __assign = this && this.__assign || function () {
-  __assign = Object.assign || function (t) {
-    for (var s, i = 1, n = arguments.length; i < n; i++) {
-      s = arguments[i];
-      for (var p in s) {
-        if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
-      }
-    }
-    return t;
-  };
-  return __assign.apply(this, arguments);
-};
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-/* eslint-disable no-bitwise */
 function CanvasToImg() {
   // check if support sth.
   var downloadMime = 'image/octet-stream';
   function scaleCanvas(canvas, width, height) {
     var w = canvas.width;
     var h = canvas.height;
-    if (width === undefined) {
-      width = w;
-    }
-    if (height === undefined) {
-      height = h;
-    }
+    var retWidth = width === undefined ? w : width;
+    var retHeight = height === undefined ? h : height;
     var retCanvas = document.createElement('canvas');
     var retCtx = retCanvas.getContext('2d');
-    retCanvas.width = width;
-    retCanvas.height = height;
-    retCtx.drawImage(canvas, 0, 0, w, h, 0, 0, width, height);
+    retCanvas.width = retWidth;
+    retCanvas.height = retHeight;
+    retCtx.drawImage(canvas, 0, 0, w, h, 0, 0, retWidth, retHeight);
     return retCanvas;
   }
   function getDataURL(canvas, type, width, height) {
-    canvas = scaleCanvas(canvas, width, height);
-    return canvas.toDataURL(type);
+    var scaledCanvas = scaleCanvas(canvas, width, height);
+    return scaledCanvas.toDataURL(type);
   }
   // save file to local with file name and file type
   function saveFile(strData, fileType, fileName) {
@@ -47,7 +31,7 @@ function CanvasToImg() {
     // document.location.href = strData;
     var saveLink = document.createElement('a');
     // download file name
-    saveLink.download = "".concat(fileName, ".").concat(fileType);
+    saveLink.download = fileName + "." + fileType;
     // download file data
     saveLink.href = strData;
     // start download
@@ -59,13 +43,12 @@ function CanvasToImg() {
     return img;
   }
   function fixType(type) {
-    type = type.toLowerCase().replace(/jpg/i, 'jpeg');
-    var r = type.match(/png|jpeg|bmp|gif/)[0];
-    return "image/".concat(r);
+    var fixedType = type.toLowerCase().replace(/jpg/i, 'jpeg');
+    var r = fixedType.match(/png|jpeg|bmp|gif/)[0];
+    return "image/" + r;
   }
   function encodeData(data) {
     if (!window.btoa) {
-      // eslint-disable-next-line no-throw-literal
       throw 'btoa undefined';
     }
     var str = '';
@@ -79,13 +62,13 @@ function CanvasToImg() {
     return btoa(str);
   }
   function getImageData(canvas) {
-    var _a;
+    var _canvas$getContext;
     var w = canvas.width;
     var h = canvas.height;
-    return (_a = canvas.getContext('2d')) === null || _a === void 0 ? void 0 : _a.getImageData(0, 0, w, h);
+    return (_canvas$getContext = canvas.getContext('2d')) == null ? void 0 : _canvas$getContext.getImageData(0, 0, w, h);
   }
   function makeURI(strData, type) {
-    return "data:".concat(type, ";base64,").concat(strData);
+    return "data:" + type + ";base64," + strData;
   }
   /**
    * create bitmap image
@@ -188,14 +171,14 @@ function CanvasToImg() {
    * @param type {string} [optional] png height
    * @param fileName {String} image name
    */
-  var saveAsImage = function saveAsImage(canvas, _a) {
-    var _b = _a.width,
-      width = _b === void 0 ? 100 : _b,
-      _c = _a.height,
-      height = _c === void 0 ? 100 : _c,
-      _d = _a.type,
-      type = _d === void 0 ? 'jpeg' : _d,
-      fileName = _a.fileName;
+  var saveAsImage = function saveAsImage(canvas, _ref) {
+    var _ref$width = _ref.width,
+      width = _ref$width === void 0 ? 100 : _ref$width,
+      _ref$height = _ref.height,
+      height = _ref$height === void 0 ? 100 : _ref$height,
+      _ref$type = _ref.type,
+      type = _ref$type === void 0 ? 'jpeg' : _ref$type,
+      fileName = _ref.fileName;
     // save file type
     var fileType = type;
     var finallyType = fixType(type);
@@ -205,23 +188,23 @@ function CanvasToImg() {
       // use new parameter: fileType
       saveFile(makeURI(strData, downloadMime), fileType, fileName);
     } else {
-      var strData = getDataURL(canvas, finallyType, width, height);
+      var _strData = getDataURL(canvas, finallyType, width, height);
       // use new parameter: fileType
-      saveFile(strData.replace(finallyType, downloadMime), fileType, fileName);
+      saveFile(_strData.replace(finallyType, downloadMime), fileType, fileName);
     }
   };
-  var convertToImage = function convertToImage(canvas, _a) {
-    var _b = _a.width,
-      width = _b === void 0 ? 100 : _b,
-      _c = _a.height,
-      height = _c === void 0 ? 100 : _c,
-      _d = _a.type,
-      type = _d === void 0 ? 'jpeg' : _d;
+  var convertToImage = function convertToImage(canvas, _ref2) {
+    var _ref2$width = _ref2.width,
+      width = _ref2$width === void 0 ? 100 : _ref2$width,
+      _ref2$height = _ref2.height,
+      height = _ref2$height === void 0 ? 100 : _ref2$height,
+      _ref2$type = _ref2.type,
+      type = _ref2$type === void 0 ? 'jpeg' : _ref2$type;
     var finallyType = fixType(type);
     if (/bmp/.test(finallyType)) {
       var data = getImageData(scaleCanvas(canvas, width, height));
-      var strData_1 = genBitmapImage(data);
-      return genImage(makeURI(strData_1, 'image/bmp'));
+      var _strData2 = genBitmapImage(data);
+      return genImage(makeURI(_strData2, 'image/bmp'));
     }
     var strData = getDataURL(canvas, finallyType, width, height);
     return genImage(strData);
@@ -229,43 +212,43 @@ function CanvasToImg() {
   return {
     saveAsImage: saveAsImage,
     saveAsPNG: function saveAsPNG(canvas, options) {
-      return saveAsImage(canvas, __assign(__assign({}, options), {
+      return saveAsImage(canvas, _extends({}, options, {
         type: 'png'
       }));
     },
     saveAsJPEG: function saveAsJPEG(canvas, options) {
-      return saveAsImage(canvas, __assign(__assign({}, options), {
+      return saveAsImage(canvas, _extends({}, options, {
         type: 'jpeg'
       }));
     },
     saveAsGIF: function saveAsGIF(canvas, options) {
-      return saveAsImage(canvas, __assign(__assign({}, options), {
+      return saveAsImage(canvas, _extends({}, options, {
         type: 'gif'
       }));
     },
     saveAsBMP: function saveAsBMP(canvas, options) {
-      return saveAsImage(canvas, __assign(__assign({}, options), {
+      return saveAsImage(canvas, _extends({}, options, {
         type: 'bmp'
       }));
     },
     convertToImage: convertToImage,
     convertToPNG: function convertToPNG(canvas, options) {
-      return convertToImage(canvas, __assign(__assign({}, options), {
+      return convertToImage(canvas, _extends({}, options, {
         type: 'png'
       }));
     },
     convertToJPEG: function convertToJPEG(canvas, options) {
-      return convertToImage(canvas, __assign(__assign({}, options), {
+      return convertToImage(canvas, _extends({}, options, {
         type: 'jpeg'
       }));
     },
     convertToGIF: function convertToGIF(canvas, options) {
-      return convertToImage(canvas, __assign(__assign({}, options), {
+      return convertToImage(canvas, _extends({}, options, {
         type: 'gif'
       }));
     },
     convertToBMP: function convertToBMP(canvas, options) {
-      return convertToImage(canvas, __assign(__assign({}, options), {
+      return convertToImage(canvas, _extends({}, options, {
         type: 'bmp'
       }));
     }

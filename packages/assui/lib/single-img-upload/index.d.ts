@@ -2,8 +2,8 @@ import type { UploadProps } from 'rc-upload';
 export interface RcFile extends File {
     uid: string;
 }
-export interface UploadProgressEvent extends ProgressEvent {
-    percent: number;
+export interface UploadProgressEvent extends Partial<ProgressEvent> {
+    percent?: number;
 }
 export interface SingleImgUploadProps extends UploadProps {
     value?: string;
@@ -15,5 +15,5 @@ export interface SingleImgUploadProps extends UploadProps {
     /** pdf名称 */
     pdfName?: string;
 }
-declare const SingleImgUpload: (props: SingleImgUploadProps) => JSX.Element;
+declare const SingleImgUpload: (props: SingleImgUploadProps) => import("react/jsx-runtime").JSX.Element;
 export default SingleImgUpload;

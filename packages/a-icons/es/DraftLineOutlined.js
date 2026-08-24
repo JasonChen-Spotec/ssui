@@ -1,39 +1,34 @@
-var __assign = this && this.__assign || function () {
-  __assign = Object.assign || function (t) {
-    for (var s, i = 1, n = arguments.length; i < n; i++) {
-      s = arguments[i];
-      for (var p in s) {
-        if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
-      }
-    }
-    return t;
-  };
-  return __assign.apply(this, arguments);
-};
-import * as React from 'react';
-import Icon from 'a-base-icon/lib/icon';
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
+import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
+import Icon from "a-base-icon/lib/icon";
 function DraftLineOutlined(componentProps) {
   var IconNode = function IconNode(props) {
-    return /*#__PURE__*/React.createElement("svg", __assign({
+    return _jsxs("svg", _extends({
       viewBox: "0 0 24 24",
       xmlns: "http://www.w3.org/2000/svg"
-    }, props), /*#__PURE__*/React.createElement("g", {
-      clipPath: "url(#draft-line-outlined_svg__clip0_15863_16074)",
-      fill: "currentColor"
-    }, /*#__PURE__*/React.createElement("path", {
-      d: "M15.241 1c.805 0 1.47 0 2.011.044.562.046 1.08.144 1.564.392a4.001 4.001 0 011.748 1.748c.248.485.346 1.002.392 1.564.044.54.043 1.205.043 2.009l-1.999 2V6.8c0-.857 0-1.439-.037-1.889-.036-.438-.101-.663-.18-.82a2 2 0 00-.875-.873c-.156-.08-.38-.145-.82-.18C16.639 3 16.058 3 15.2 3H8.8c-.857 0-1.439 0-1.889.037-.438.036-.663.101-.82.18a2 2 0 00-.873.875c-.08.156-.145.38-.18.82C5 5.361 5 5.942 5 6.8v10.4c0 .857 0 1.439.037 1.889.036.438.101.663.18.82a2 2 0 00.875.873c.156.08.38.145.82.18C7.361 21 7.942 21 8.8 21h6.4c.857 0 1.439 0 1.889-.037.438-.036.663-.101.82-.18a2 2 0 00.873-.875c.08-.156.145-.38.18-.82.037-.442.037-1.012.037-1.846l2.001-2v2c0 .804 0 1.469-.044 2.01-.046.562-.144 1.08-.392 1.564a4.002 4.002 0 01-1.748 1.748c-.485.248-1.002.346-1.564.392-.541.044-1.206.044-2.01.044H8.758c-.805 0-1.47 0-2.011-.044-.562-.046-1.08-.144-1.564-.392a4.001 4.001 0 01-1.748-1.748c-.248-.485-.346-1.002-.392-1.564C3 18.711 3 18.046 3 17.242V6.758c0-.805 0-1.47.044-2.011.046-.562.144-1.08.392-1.564a4.001 4.001 0 011.748-1.748c.485-.248 1.002-.346 1.564-.392C7.29 1 7.954 1 8.758 1h6.483z"
-    }), /*#__PURE__*/React.createElement("path", {
-      d: "M23.192 10.222L15.414 18l-1.416-.002.002-1.412 7.778-7.778 1.414 1.414zM13 14H8v-2h5v2zM16 10H8V8h8v2z"
-    })), /*#__PURE__*/React.createElement("defs", null, /*#__PURE__*/React.createElement("clipPath", {
-      id: "draft-line-outlined_svg__clip0_15863_16074"
-    }, /*#__PURE__*/React.createElement("path", {
-      fill: "currentColor",
-      d: "M0 0h24v24H0z"
-    }))));
+    }, props, {
+      children: [_jsxs("g", {
+        clipPath: "url(#draft-line-outlined_svg__clip0_15863_16074)",
+        fill: "currentColor",
+        children: [_jsx("path", {
+          d: "M15.241 1c.805 0 1.47 0 2.011.044.562.046 1.08.144 1.564.392a4.001 4.001 0 011.748 1.748c.248.485.346 1.002.392 1.564.044.54.043 1.205.043 2.009l-1.999 2V6.8c0-.857 0-1.439-.037-1.889-.036-.438-.101-.663-.18-.82a2 2 0 00-.875-.873c-.156-.08-.38-.145-.82-.18C16.639 3 16.058 3 15.2 3H8.8c-.857 0-1.439 0-1.889.037-.438.036-.663.101-.82.18a2 2 0 00-.873.875c-.08.156-.145.38-.18.82C5 5.361 5 5.942 5 6.8v10.4c0 .857 0 1.439.037 1.889.036.438.101.663.18.82a2 2 0 00.875.873c.156.08.38.145.82.18C7.361 21 7.942 21 8.8 21h6.4c.857 0 1.439 0 1.889-.037.438-.036.663-.101.82-.18a2 2 0 00.873-.875c.08-.156.145-.38.18-.82.037-.442.037-1.012.037-1.846l2.001-2v2c0 .804 0 1.469-.044 2.01-.046.562-.144 1.08-.392 1.564a4.002 4.002 0 01-1.748 1.748c-.485.248-1.002.346-1.564.392-.541.044-1.206.044-2.01.044H8.758c-.805 0-1.47 0-2.011-.044-.562-.046-1.08-.144-1.564-.392a4.001 4.001 0 01-1.748-1.748c-.248-.485-.346-1.002-.392-1.564C3 18.711 3 18.046 3 17.242V6.758c0-.805 0-1.47.044-2.011.046-.562.144-1.08.392-1.564a4.001 4.001 0 011.748-1.748c.485-.248 1.002-.346 1.564-.392C7.29 1 7.954 1 8.758 1h6.483z"
+        }), _jsx("path", {
+          d: "M23.192 10.222L15.414 18l-1.416-.002.002-1.412 7.778-7.778 1.414 1.414zM13 14H8v-2h5v2zM16 10H8V8h8v2z"
+        })]
+      }), _jsx("defs", {
+        children: _jsx("clipPath", {
+          id: "draft-line-outlined_svg__clip0_15863_16074",
+          children: _jsx("path", {
+            fill: "currentColor",
+            d: "M0 0h24v24H0z"
+          })
+        })
+      })]
+    }));
   };
-  return /*#__PURE__*/React.createElement(Icon, __assign({}, componentProps, {
+  return _jsx(Icon, _extends({}, componentProps, {
     component: IconNode
   }));
 }
-DraftLineOutlined.displayName = 'DraftLineOutlined';
+DraftLineOutlined.displayName = "DraftLineOutlined";
 export default DraftLineOutlined;

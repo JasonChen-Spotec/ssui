@@ -1,211 +1,138 @@
-var __assign = this && this.__assign || function () {
-  __assign = Object.assign || function (t) {
-    for (var s, i = 1, n = arguments.length; i < n; i++) {
-      s = arguments[i];
-      for (var p in s) {
-        if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
-      }
+function _await(value, then, direct) {
+  if (direct) {
+    return then ? then(value) : value;
+  }
+  if (!value || !value.then) {
+    value = Promise.resolve(value);
+  }
+  return then ? value.then(then) : value;
+}
+function _catch(body, recover) {
+  try {
+    var result = body();
+  } catch (e) {
+    return recover(e);
+  }
+  if (result && result.then) {
+    return result.then(void 0, recover);
+  }
+  return result;
+}
+function _rethrow(thrown, value) {
+  if (thrown) throw value;
+  return value;
+}
+function _finallyRethrows(body, finalizer) {
+  try {
+    var result = body();
+  } catch (e) {
+    return finalizer(true, e);
+  }
+  if (result && result.then) {
+    return result.then(finalizer.bind(null, false), finalizer.bind(null, true));
+  }
+  return finalizer(false, result);
+}
+function _empty() {}
+function _continueIgnored(value) {
+  if (value && value.then) {
+    return value.then(_empty);
+  }
+}
+function _async(f) {
+  return function () {
+    for (var args = [], i = 0; i < arguments.length; i++) {
+      args[i] = arguments[i];
     }
-    return t;
+    try {
+      return Promise.resolve(f.apply(this, args));
+    } catch (e) {
+      return Promise.reject(e);
+    }
   };
-  return __assign.apply(this, arguments);
-};
-var __awaiter = this && this.__awaiter || function (thisArg, _arguments, P, generator) {
-  function adopt(value) {
-    return value instanceof P ? value : new P(function (resolve) {
-      resolve(value);
-    });
-  }
-  return new (P || (P = Promise))(function (resolve, reject) {
-    function fulfilled(value) {
-      try {
-        step(generator.next(value));
-      } catch (e) {
-        reject(e);
-      }
-    }
-    function rejected(value) {
-      try {
-        step(generator["throw"](value));
-      } catch (e) {
-        reject(e);
-      }
-    }
-    function step(result) {
-      result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected);
-    }
-    step((generator = generator.apply(thisArg, _arguments || [])).next());
-  });
-};
-var __generator = this && this.__generator || function (thisArg, body) {
-  var _ = {
-      label: 0,
-      sent: function sent() {
-        if (t[0] & 1) throw t[1];
-        return t[1];
-      },
-      trys: [],
-      ops: []
-    },
-    f,
-    y,
-    t,
-    g = Object.create((typeof Iterator === "function" ? Iterator : Object).prototype);
-  return g.next = verb(0), g["throw"] = verb(1), g["return"] = verb(2), typeof Symbol === "function" && (g[Symbol.iterator] = function () {
-    return this;
-  }), g;
-  function verb(n) {
-    return function (v) {
-      return step([n, v]);
-    };
-  }
-  function step(op) {
-    if (f) throw new TypeError("Generator is already executing.");
-    while (g && (g = 0, op[0] && (_ = 0)), _) {
-      try {
-        if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
-        if (y = 0, t) op = [op[0] & 2, t.value];
-        switch (op[0]) {
-          case 0:
-          case 1:
-            t = op;
-            break;
-          case 4:
-            _.label++;
-            return {
-              value: op[1],
-              done: false
-            };
-          case 5:
-            _.label++;
-            y = op[1];
-            op = [0];
-            continue;
-          case 7:
-            op = _.ops.pop();
-            _.trys.pop();
-            continue;
-          default:
-            if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) {
-              _ = 0;
-              continue;
-            }
-            if (op[0] === 3 && (!t || op[1] > t[0] && op[1] < t[3])) {
-              _.label = op[1];
-              break;
-            }
-            if (op[0] === 6 && _.label < t[1]) {
-              _.label = t[1];
-              t = op;
-              break;
-            }
-            if (t && _.label < t[2]) {
-              _.label = t[2];
-              _.ops.push(op);
-              break;
-            }
-            if (t[2]) _.ops.pop();
-            _.trys.pop();
-            continue;
-        }
-        op = body.call(thisArg, _);
-      } catch (e) {
-        op = [6, e];
-        y = 0;
-      } finally {
-        f = t = 0;
-      }
-    }
-    if (op[0] & 5) throw op[1];
-    return {
-      value: op[0] ? op[1] : void 0,
-      done: true
-    };
-  }
-};
+}
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 import html2canvas from 'html2canvas';
 import JsPDF from 'jspdf';
-var htmlToPdf = function htmlToPdf(element, options) {
-  return __awaiter(void 0, void 0, void 0, function () {
-    var _a, heightPerPage, _b, fileName, _c, html2canvasOptions, _d, jsPDFOptions, onSuccess, onError, onSettled, onBeforeCapture, CANVAS_CHROME_FF_LIMIT, CANVAS_SAFARI_LIMIT, MAX_CANVAS_HEIGHT, pdf_1, totalHeight, totalWidth, capturedHeight, canvasPromises, remainingHeight, captureHeight, canvasPromise, canvases, error_1;
-    return __generator(this, function (_e) {
-      switch (_e.label) {
-        case 0:
-          _a = options.heightPerPage, heightPerPage = _a === void 0 ? 840 : _a, _b = options.fileName, fileName = _b === void 0 ? 'document.pdf' : _b, _c = options.html2canvasOptions, html2canvasOptions = _c === void 0 ? {} : _c, _d = options.jsPDFOptions, jsPDFOptions = _d === void 0 ? {} : _d, onSuccess = options.onSuccess, onError = options.onError, onSettled = options.onSettled, onBeforeCapture = options.onBeforeCapture;
-          if (!element) return [2 /*return*/];
-          CANVAS_CHROME_FF_LIMIT = 32767;
-          CANVAS_SAFARI_LIMIT = 4096;
-          // eslint-disable-next-line no-param-reassign
-          element.style.gap = '0px';
-          MAX_CANVAS_HEIGHT = navigator.userAgent.includes('Chrome') || navigator.userAgent.includes('Firefox') ? CANVAS_CHROME_FF_LIMIT % heightPerPage * heightPerPage : CANVAS_SAFARI_LIMIT % heightPerPage * heightPerPage;
-          onBeforeCapture === null || onBeforeCapture === void 0 ? void 0 : onBeforeCapture();
-          _e.label = 1;
-        case 1:
-          _e.trys.push([1, 3, 4, 5]);
-          pdf_1 = new JsPDF(__assign({
-            orientation: 'l',
-            unit: 'px',
-            format: [element.offsetWidth, heightPerPage],
-            compress: true
-          }, jsPDFOptions));
-          totalHeight = element.scrollHeight;
-          totalWidth = element.scrollWidth;
-          capturedHeight = 0;
-          canvasPromises = [];
-          while (capturedHeight < totalHeight) {
-            remainingHeight = totalHeight - capturedHeight;
-            captureHeight = Math.min(remainingHeight, MAX_CANVAS_HEIGHT);
-            canvasPromise = html2canvas(element, __assign({
-              logging: false,
-              windowWidth: totalWidth,
-              windowHeight: totalHeight,
-              x: 0,
-              y: capturedHeight,
-              width: totalWidth,
-              height: captureHeight
-            }, html2canvasOptions));
-            canvasPromises.push(canvasPromise);
-            capturedHeight += captureHeight;
-          }
-          return [4 /*yield*/, Promise.all(canvasPromises)];
-        case 2:
-          canvases = _e.sent();
-          canvases.forEach(function (canvas) {
-            var contentWidth = canvas.width;
-            var contentHeight = canvas.height;
-            var pageHeight = contentWidth / element.offsetWidth * heightPerPage;
-            var position = 0;
-            var imgWidth = element.offsetWidth;
-            var imgHeight = element.offsetWidth / contentWidth * contentHeight;
-            var imgData = canvas.toDataURL('image/jpeg');
-            if (contentHeight < pageHeight) {
-              pdf_1.addImage(imgData, 'JPEG', 0, 0, imgWidth, imgHeight, undefined, 'FAST');
-            } else {
-              while (contentHeight > 0) {
-                pdf_1.addImage(imgData, 'JPEG', 0, position, imgWidth, imgHeight, undefined, 'FAST');
-                contentHeight -= pageHeight;
-                position -= heightPerPage;
-                if (contentHeight > 0) {
-                  pdf_1.addPage();
-                }
+var htmlToPdf = _async(function (element, options) {
+  var _options$heightPerPag = options.heightPerPage,
+    heightPerPage = _options$heightPerPag === void 0 ? 840 : _options$heightPerPag,
+    _options$fileName = options.fileName,
+    fileName = _options$fileName === void 0 ? 'document.pdf' : _options$fileName,
+    _options$html2canvasO = options.html2canvasOptions,
+    html2canvasOptions = _options$html2canvasO === void 0 ? {} : _options$html2canvasO,
+    _options$jsPDFOptions = options.jsPDFOptions,
+    jsPDFOptions = _options$jsPDFOptions === void 0 ? {} : _options$jsPDFOptions,
+    onSuccess = options.onSuccess,
+    onError = options.onError,
+    onSettled = options.onSettled,
+    onBeforeCapture = options.onBeforeCapture;
+  if (!element) {
+    return;
+  }
+  var CANVAS_CHROME_FF_LIMIT = 32767;
+  var CANVAS_SAFARI_LIMIT = 4096;
+  element.style.gap = '0px';
+  var MAX_CANVAS_HEIGHT = navigator.userAgent.includes('Chrome') || navigator.userAgent.includes('Firefox') ? CANVAS_CHROME_FF_LIMIT % heightPerPage * heightPerPage : CANVAS_SAFARI_LIMIT % heightPerPage * heightPerPage;
+  onBeforeCapture == null || onBeforeCapture();
+  return _continueIgnored(_finallyRethrows(function () {
+    return _catch(function () {
+      var pdf = new JsPDF(_extends({
+        orientation: 'l',
+        unit: 'px',
+        format: [element.offsetWidth, heightPerPage],
+        compress: true
+      }, jsPDFOptions));
+      var totalHeight = element.scrollHeight;
+      var totalWidth = element.scrollWidth;
+      var capturedHeight = 0;
+      var canvasPromises = [];
+      while (capturedHeight < totalHeight) {
+        var remainingHeight = totalHeight - capturedHeight;
+        var captureHeight = Math.min(remainingHeight, MAX_CANVAS_HEIGHT);
+        var canvasPromise = html2canvas(element, _extends({
+          logging: false,
+          windowWidth: totalWidth,
+          windowHeight: totalHeight,
+          x: 0,
+          y: capturedHeight,
+          width: totalWidth,
+          height: captureHeight
+        }, html2canvasOptions));
+        canvasPromises.push(canvasPromise);
+        capturedHeight += captureHeight;
+      }
+      return _await(Promise.all(canvasPromises), function (canvases) {
+        canvases.forEach(function (canvas) {
+          var contentWidth = canvas.width;
+          var contentHeight = canvas.height;
+          var pageHeight = contentWidth / element.offsetWidth * heightPerPage;
+          var position = 0;
+          var imgWidth = element.offsetWidth;
+          var imgHeight = element.offsetWidth / contentWidth * contentHeight;
+          var imgData = canvas.toDataURL('image/jpeg');
+          if (contentHeight < pageHeight) {
+            pdf.addImage(imgData, 'JPEG', 0, 0, imgWidth, imgHeight, undefined, 'FAST');
+          } else {
+            while (contentHeight > 0) {
+              pdf.addImage(imgData, 'JPEG', 0, position, imgWidth, imgHeight, undefined, 'FAST');
+              contentHeight -= pageHeight;
+              position -= heightPerPage;
+              if (contentHeight > 0) {
+                pdf.addPage();
               }
             }
-          });
-          pdf_1.save(fileName);
-          onSuccess === null || onSuccess === void 0 ? void 0 : onSuccess();
-          return [3 /*break*/, 5];
-        case 3:
-          error_1 = _e.sent();
-          onError === null || onError === void 0 ? void 0 : onError(error_1);
-          return [3 /*break*/, 5];
-        case 4:
-          onSettled === null || onSettled === void 0 ? void 0 : onSettled();
-          return [7 /*endfinally*/];
-        case 5:
-          return [2 /*return*/];
-      }
+          }
+        });
+        pdf.save(fileName);
+        onSuccess == null || onSuccess();
+      });
+    }, function (error) {
+      onError == null || onError(error);
     });
-  });
-};
-
+  }, function (_wasThrown, _result) {
+    onSettled == null || onSettled();
+    return _rethrow(_wasThrown, _result);
+  }));
+});
 export default htmlToPdf;

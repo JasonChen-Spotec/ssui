@@ -1,57 +1,17 @@
 "use strict";
 
-var __assign = this && this.__assign || function () {
-  __assign = Object.assign || function (t) {
-    for (var s, i = 1, n = arguments.length; i < n; i++) {
-      s = arguments[i];
-      for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
-    }
-    return t;
-  };
-  return __assign.apply(this, arguments);
-};
-var __rest = this && this.__rest || function (s, e) {
-  var t = {};
-  for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
-  if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
-    if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i])) t[p[i]] = s[p[i]];
-  }
-  return t;
-};
-var __read = this && this.__read || function (o, n) {
-  var m = typeof Symbol === "function" && o[Symbol.iterator];
-  if (!m) return o;
-  var i = m.call(o),
-    r,
-    ar = [],
-    e;
-  try {
-    while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
-  } catch (error) {
-    e = {
-      error: error
-    };
-  } finally {
-    try {
-      if (r && !r.done && (m = i["return"])) m.call(i);
-    } finally {
-      if (e) throw e.error;
-    }
-  }
-  return ar;
-};
-var __importDefault = this && this.__importDefault || function (mod) {
-  return mod && mod.__esModule ? mod : {
-    "default": mod
-  };
-};
+var _excluded = ["className", "label", "id", "formatter", "onFocus", "onBlur"];
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
+function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (-1 !== e.indexOf(n)) continue; t[n] = r[n]; } return t; }
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-var react_1 = __importDefault(require("react"));
-var classnames_1 = __importDefault(require("classnames"));
-var useControllableValue_1 = __importDefault(require("ahooks/lib/useControllableValue"));
-var trimStart_1 = __importDefault(require("lodash/trimStart"));
+var tslib_1 = require("tslib");
+var jsx_runtime_1 = require("react/jsx-runtime");
+var react_1 = tslib_1.__importDefault(require("react"));
+var useControllableValue_1 = tslib_1.__importDefault(require("ahooks/lib/useControllableValue"));
+var classnames_1 = tslib_1.__importDefault(require("classnames"));
+var trimStart_1 = tslib_1.__importDefault(require("lodash/trimStart"));
 var LabelTextArea = function LabelTextArea(props) {
   var className = props.className,
     label = props.label,
@@ -59,21 +19,21 @@ var LabelTextArea = function LabelTextArea(props) {
     formatter = props.formatter,
     onFocus = props.onFocus,
     onBlur = props.onBlur,
-    restProps = __rest(props, ["className", "label", "id", "formatter", "onFocus", "onBlur"]);
-  var _a = __read(react_1["default"].useState(false), 2),
-    focused = _a[0],
-    setFocused = _a[1];
-  var _b = __read((0, useControllableValue_1["default"])(props), 2),
-    value = _b[0],
-    setValue = _b[1];
+    restProps = _objectWithoutPropertiesLoose(props, _excluded);
+  var _react_1$default$useS = react_1["default"].useState(false),
+    focused = _react_1$default$useS[0],
+    setFocused = _react_1$default$useS[1];
+  var _ref = (0, useControllableValue_1["default"])(props),
+    value = _ref[0],
+    setValue = _ref[1];
   var TextAreaDomRef = react_1["default"].useRef(null);
   var handleFocus = function handleFocus() {
     setFocused(true);
-    onFocus === null || onFocus === void 0 ? void 0 : onFocus(value);
+    onFocus == null || onFocus(value);
   };
   var handleBlur = function handleBlur() {
     setFocused(false);
-    onBlur === null || onBlur === void 0 ? void 0 : onBlur(value);
+    onBlur == null || onBlur(value);
   };
   var handleLabelClick = function handleLabelClick() {
     TextAreaDomRef.current.focus();
@@ -85,26 +45,29 @@ var LabelTextArea = function LabelTextArea(props) {
     }
     setValue(finallyValue);
   };
-  return react_1["default"].createElement("div", {
+  return (0, jsx_runtime_1.jsx)("div", {
     className: (0, classnames_1["default"])('label-input-control', className),
-    id: id
-  }, react_1["default"].createElement("div", {
-    className: (0, classnames_1["default"])('label-textarea-warper', {
-      'textarea-warper-focused': focused
-    }),
-    onClick: handleLabelClick
-  }, react_1["default"].createElement("textarea", __assign({}, restProps, {
-    ref: function ref(el) {
-      return TextAreaDomRef.current = el;
-    },
-    "data-value": value ? value.length : 0,
-    className: "label-textarea",
-    value: value,
-    onFocus: handleFocus,
-    onChange: handleChange,
-    onBlur: handleBlur
-  })), react_1["default"].createElement("label", {
-    className: "label-textarea-text"
-  }, label)));
+    id: id,
+    children: (0, jsx_runtime_1.jsxs)("div", {
+      className: (0, classnames_1["default"])('label-textarea-warper', {
+        'textarea-warper-focused': focused
+      }),
+      onClick: handleLabelClick,
+      children: [(0, jsx_runtime_1.jsx)("textarea", _extends({}, restProps, {
+        ref: function ref(el) {
+          return TextAreaDomRef.current = el;
+        },
+        "data-value": value ? value.length : 0,
+        className: "label-textarea",
+        value: value,
+        onFocus: handleFocus,
+        onChange: handleChange,
+        onBlur: handleBlur
+      })), (0, jsx_runtime_1.jsx)("label", {
+        className: "label-textarea-text",
+        children: label
+      })]
+    })
+  });
 };
 exports["default"] = LabelTextArea;

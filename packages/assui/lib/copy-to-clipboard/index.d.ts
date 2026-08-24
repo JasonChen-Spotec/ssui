@@ -18,5 +18,5 @@ export interface CopyToClipboardProps {
         format?: string;
     };
 }
-declare const _default: React.MemoExoticComponent<(props: CopyToClipboardProps) => JSX.Element>;
+declare const _default: React.MemoExoticComponent<(props: CopyToClipboardProps) => import("react/jsx-runtime").JSX.Element>;
 export default _default;

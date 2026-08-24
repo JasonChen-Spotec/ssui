@@ -1,15 +1,11 @@
 "use strict";
 
-var __importDefault = this && this.__importDefault || function (mod) {
-  return mod && mod.__esModule ? mod : {
-    "default": mod
-  };
-};
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+var tslib_1 = require("tslib");
 // @ts-nocheck
-var tinymce_1 = __importDefault(require("tinymce/tinymce"));
+var tinymce_1 = tslib_1.__importDefault(require("tinymce/tinymce"));
 var global = tinymce_1["default"].util.Tools.resolve('tinymce.PluginManager');
 var setContent = function setContent(editor, html) {
   editor.focus();

@@ -1,5 +1,5 @@
-import * as React from 'react';
-import Icon, { IconProps } from 'a-base-icon/lib/icon';
+import * as React from "react";
+import Icon, { IconProps } from "a-base-icon/lib/icon";
 
 function Hours24(componentProps: IconProps) {
   const IconNode = (props: React.SVGProps<SVGSVGElement>) => (
@@ -15,5 +15,5 @@ function Hours24(componentProps: IconProps) {
   return <Icon {...componentProps} component={IconNode} />;
 }
 
-Hours24.displayName = 'Hours24';
+Hours24.displayName = "Hours24";
 export default Hours24;

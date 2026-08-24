@@ -1,9 +1,14 @@
-import * as React from 'react';
-import Icon, { IconProps } from 'a-base-icon/lib/icon';
+import * as React from "react";
+import Icon, { IconProps } from "a-base-icon/lib/icon";
 
 function CircleDollarFilled(componentProps: IconProps) {
   const IconNode = (props: React.SVGProps<SVGSVGElement>) => (
-    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
       <path
         d="M23 9c0 2.98-1.629 5.579-4.045 6.956.03-.315.045-.634.045-.956C19 9.477 14.523 5 9 5c-.322 0-.641.015-.956.045A8 8 0 0123 9z"
         fill="currentColor"
@@ -20,5 +25,5 @@ function CircleDollarFilled(componentProps: IconProps) {
   return <Icon {...componentProps} component={IconNode} />;
 }
 
-CircleDollarFilled.displayName = 'CircleDollarFilled';
+CircleDollarFilled.displayName = "CircleDollarFilled";
 export default CircleDollarFilled;

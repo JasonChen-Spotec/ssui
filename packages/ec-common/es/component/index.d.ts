@@ -1,4 +1,4 @@
 declare const _default: ({ title }: {
     title: string;
-}) => JSX.Element;
+}) => import("react/jsx-runtime").JSX.Element;
 export default _default;

@@ -9,11 +9,11 @@ import React, {
 
 export type SignaturePadProps = {
   /** 默认背景文字 */
-  defaultText?: string; 
+  defaultText?: string;
   /** canvas宽度 */
   width?: number;
   /** canvas高度 */
-  height?: number; 
+  height?: number;
   /** 自定义类名 */
   className?: string;
   /** 画笔颜色 */
@@ -28,7 +28,7 @@ export type SignaturePadProps = {
   onEnd?: () => void;
   /** 签名开始回调 */
   onBegin?: () => void;
-}
+};
 
 // 定义暴露给父组件的方法类型
 export interface SignaturePadRef {
@@ -219,7 +219,7 @@ const SignaturePadComponent = forwardRef<SignaturePadRef, SignaturePadProps>(
               }
             }, 50);
           };
-        signaturePadRef.current.addEventListener('beginStroke', () => {
+          signaturePadRef.current.addEventListener('beginStroke', () => {
             console.log('签名开始事件触发');
             onBegin?.();
           });

@@ -32,8 +32,14 @@ describe('stableStringify (保留原貌版)', () => {
   // 3. 业务场景：Ant Design 回显匹配测试
   // --------------------------------------------------------
   it('无论前后端数据键名顺序如何，序列化后必须全等（解决 Select 回显失败）', () => {
-    const backendData = [{ channelId: 7, type: 1 }, { channelId: 9, type: 1 }];
-    const frontendFormValue = [{ type: 1, channelId: 7 }, { type: 1, channelId: 9 }];
+    const backendData = [
+      { channelId: 7, type: 1 },
+      { channelId: 9, type: 1 },
+    ];
+    const frontendFormValue = [
+      { type: 1, channelId: 7 },
+      { type: 1, channelId: 9 },
+    ];
 
     expect(stableStringify(backendData)).toEqual(stableStringify(frontendFormValue));
   });
@@ -55,7 +61,7 @@ describe('stableStringify (保留原貌版)', () => {
     expect(stableStringify(undefined)).toBe('undefined');
 
     // 定义一个简单的测试函数
-    const testFunc = function () { return 1; };
+    const testFunc = () => 1;
     const funcStr = testFunc.toString();
     expect(stableStringify(testFunc)).toBe(funcStr);
 

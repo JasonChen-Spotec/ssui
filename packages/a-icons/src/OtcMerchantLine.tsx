@@ -1,9 +1,14 @@
-import * as React from 'react';
-import Icon, { IconProps } from 'a-base-icon/lib/icon';
+import * as React from "react";
+import Icon, { IconProps } from "a-base-icon/lib/icon";
 
 function OtcMerchantLine(componentProps: IconProps) {
   const IconNode = (props: React.SVGProps<SVGSVGElement>) => (
-    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
       <path
         d="M7.605 17.395c-1.582 0-2.478-.61-2.478-2.946 0-2.335.897-2.946 2.478-2.946 1.605 0 2.478.611 2.478 2.946s-.873 2.946-2.478 2.946zm0-1.048c1.007 0 1.227-.487 1.227-1.898 0-1.394-.22-1.922-1.227-1.922-1 0-1.22.528-1.22 1.922 0 1.411.22 1.898 1.22 1.898zM13.909 11.586a.549.549 0 110 1.098h-.883v4.034a.594.594 0 11-1.188 0v-4.035h-.884a.549.549 0 010-1.098h2.955zM17.544 17.395c-1.597 0-2.644-.545-2.644-2.946 0-2.211 1.03-2.946 2.636-2.946.352 0 .664.032.934.092.208.046.34.24.34.453 0 .353-.354.602-.704.558a3.934 3.934 0 00-.491-.03c-.984 0-1.417.462-1.417 1.865 0 1.485.433 1.865 1.4 1.865.194 0 .38-.012.563-.039.353-.051.712.197.712.554 0 .203-.12.39-.316.444-.287.08-.638.13-1.013.13z"
         fill="currentColor"
@@ -27,5 +32,5 @@ function OtcMerchantLine(componentProps: IconProps) {
   return <Icon {...componentProps} component={IconNode} />;
 }
 
-OtcMerchantLine.displayName = 'OtcMerchantLine';
+OtcMerchantLine.displayName = "OtcMerchantLine";
 export default OtcMerchantLine;

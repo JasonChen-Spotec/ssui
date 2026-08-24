@@ -1,9 +1,14 @@
-import * as React from 'react';
-import Icon, { IconProps } from 'a-base-icon/lib/icon';
+import * as React from "react";
+import Icon, { IconProps } from "a-base-icon/lib/icon";
 
 function DownloadFilled(componentProps: IconProps) {
   const IconNode = (props: React.SVGProps<SVGSVGElement>) => (
-    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
       <path
         d="M14 8h3.793a.5.5 0 01.353.854l-5.792 5.792a.5.5 0 01-.708 0L5.854 8.854A.5.5 0 016.207 8H10V2.5a.5.5 0 01.5-.5h3a.5.5 0 01.5.5V8z"
         fill="currentColor"
@@ -18,5 +23,5 @@ function DownloadFilled(componentProps: IconProps) {
   return <Icon {...componentProps} component={IconNode} />;
 }
 
-DownloadFilled.displayName = 'DownloadFilled';
+DownloadFilled.displayName = "DownloadFilled";
 export default DownloadFilled;

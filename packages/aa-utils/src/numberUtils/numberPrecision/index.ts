@@ -1,4 +1,3 @@
-/* eslint-disable no-restricted-properties */
 type numType = number | string;
 /**
  * @desc 解决浮动运算问题，避免小数点后产生多位数和计算精度损失。
@@ -20,7 +19,7 @@ function strip(num: numType, precision = 15): number {
 function digitLength(num: numType): number {
   // Get digit length of e
   const eSplit = num.toString().split(/[eE]/);
-  const len = (eSplit[0].split('.')[1] || '').length - +(eSplit[1] || 0);
+  const len = (eSplit[0]?.split('.')[1] || '').length - +(eSplit[1] || 0);
   return len > 0 ? len : 0;
 }
 
@@ -33,15 +32,18 @@ function float2Fixed(num: numType): number {
     return Number(num.toString().replace('.', ''));
   }
   const dLen = digitLength(num);
-  return dLen > 0 ? strip(Number(num) * Math.pow(10, dLen)) : Number(num);
+  return dLen > 0 ? strip(Number(num) * 10 ** dLen) : Number(num);
 }
 
 /**
  * 迭代操作
  */
-function iteratorOperation(arr: numType[], operation: (...args: numType[]) => number): number {
+function iteratorOperation(
+  arr: numType[],
+  operation: (...args: numType[]) => number,
+): number {
   const [num1, num2, ...others] = arr;
-  let res = operation(num1, num2);
+  let res = operation(num1!, num2!);
 
   others.forEach((num) => {
     res = operation(res, num);
@@ -59,14 +61,14 @@ function times(...nums: numType[]): number {
   }
 
   const [num1, num2] = nums;
-  const num1Changed = float2Fixed(num1);
-  const num2Changed = float2Fixed(num2);
-  const baseNum = digitLength(num1) + digitLength(num2);
+  const num1Changed = float2Fixed(num1!);
+  const num2Changed = float2Fixed(num2!);
+  const baseNum = digitLength(num1!) + digitLength(num2!);
   const leftValue = num1Changed * num2Changed;
 
   checkBoundary(leftValue);
 
-  return leftValue / Math.pow(10, baseNum);
+  return leftValue / 10 ** baseNum;
 }
 
 /**
@@ -79,7 +81,7 @@ function plus(...nums: numType[]): number {
 
   const [num1, num2] = nums;
   // 取最大的小数位
-  const baseNum = Math.pow(10, Math.max(digitLength(num1), digitLength(num2)));
+  const baseNum = 10 ** Math.max(digitLength(num1), digitLength(num2));
   // 把小数都转为整数然后再计算
   return (times(num1, baseNum) + times(num2, baseNum)) / baseNum;
 }
@@ -93,7 +95,7 @@ function minus(...nums: numType[]): number {
   }
 
   const [num1, num2] = nums;
-  const baseNum = Math.pow(10, Math.max(digitLength(num1), digitLength(num2)));
+  const baseNum = 10 ** Math.max(digitLength(num1), digitLength(num2));
   return (times(num1, baseNum) - times(num2, baseNum)) / baseNum;
 }
 
@@ -113,12 +115,13 @@ function divide(...nums: numType[]): number {
   // fix: 类似 10 ** -4 为 0.00009999999999999999，strip 修正
   return times(
     num1Changed / num2Changed,
-    // eslint-disable-next-line no-restricted-properties
-    strip(Math.pow(10, digitLength(num2) - digitLength(num1))),
+
+    strip(10 ** (digitLength(num2) - digitLength(num1))),
   );
 }
 
 let _boundaryCheckingState = true;
+
 /**
  * 是否进行边界检查，默认开启
  * @param flag 标记开关，true 为开启，false 为关闭，默认为 true
@@ -141,4 +144,13 @@ function checkBoundary(num: number) {
   }
 }
 
-export { strip, plus, minus, times, divide, digitLength, float2Fixed, enableBoundaryChecking };
+export {
+  digitLength,
+  divide,
+  enableBoundaryChecking,
+  float2Fixed,
+  minus,
+  plus,
+  strip,
+  times,
+};

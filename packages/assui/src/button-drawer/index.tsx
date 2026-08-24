@@ -1,10 +1,10 @@
-import React, { useRef, useImperativeHandle } from 'react';
-import type { DrawerProps } from 'antd/lib/drawer';
-import Drawer from 'antd/lib/drawer';
-import isFunction from 'lodash/isFunction';
-import classNames from 'classnames';
+import React, { useImperativeHandle, useRef } from 'react';
 import CloseOutlined from 'a-icons/lib/CloseOutlined';
 import useControllableValue from 'ahooks/lib/useControllableValue';
+import type { DrawerProps } from 'antd/lib/drawer';
+import Drawer from 'antd/lib/drawer';
+import classNames from 'classnames';
+import isFunction from 'lodash/isFunction';
 
 export type DrawerAction = {
   close: () => void;
@@ -44,12 +44,12 @@ const ButtonDrawer: React.ForwardRefRenderFunction<DrawerAction, ButtonDrawerPro
 
   useImperativeHandle(ref, () => actionRef.current);
 
-
   let triggerNode;
   if (isFunction(trigger)) {
-    triggerNode = trigger(openDrawer)
+    triggerNode = trigger(openDrawer);
   } else {
-    triggerNode = trigger &&
+    triggerNode =
+      trigger &&
       React.cloneElement(trigger, {
         onClick: openDrawer,
       });
@@ -75,6 +75,8 @@ const ButtonDrawer: React.ForwardRefRenderFunction<DrawerAction, ButtonDrawerPro
   );
 };
 
-const ForwardRefButtonDrawer = React.forwardRef<unknown, ButtonDrawerProps>(ButtonDrawer);
+const ForwardRefButtonDrawer = React.forwardRef<DrawerAction, ButtonDrawerProps>(
+  ButtonDrawer,
+);
 
 export default ForwardRefButtonDrawer;

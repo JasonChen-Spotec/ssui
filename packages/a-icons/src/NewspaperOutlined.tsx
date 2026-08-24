@@ -1,10 +1,13 @@
-import * as React from 'react';
-import Icon, { IconProps } from 'a-base-icon/lib/icon';
+import * as React from "react";
+import Icon, { IconProps } from "a-base-icon/lib/icon";
 
 function NewspaperOutlined(componentProps: IconProps) {
   const IconNode = (props: React.SVGProps<SVGSVGElement>) => (
     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" {...props}>
-      <path d="M14 7H6v2h8V7zM14 11H6v2h8v-2zM6 15h5v2H6v-2z" fill="currentColor" />
+      <path
+        d="M14 7H6v2h8V7zM14 11H6v2h8v-2zM6 15h5v2H6v-2z"
+        fill="currentColor"
+      />
       <path
         fillRule="evenodd"
         clipRule="evenodd"
@@ -17,5 +20,5 @@ function NewspaperOutlined(componentProps: IconProps) {
   return <Icon {...componentProps} component={IconNode} />;
 }
 
-NewspaperOutlined.displayName = 'NewspaperOutlined';
+NewspaperOutlined.displayName = "NewspaperOutlined";
 export default NewspaperOutlined;

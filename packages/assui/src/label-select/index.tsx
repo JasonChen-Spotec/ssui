@@ -1,19 +1,16 @@
 import React from 'react';
 import useControllableValue from 'ahooks/lib/useControllableValue';
-import type { RefSelectProps, SelectProps } from 'antd/lib/select';
+import type { OptionProps, RefSelectProps, SelectProps } from 'antd/lib/select';
 import Select from 'antd/lib/select';
-import type { BaseSelectRef } from 'rc-select/lib/BaseSelect';
-import isArray from 'lodash/isArray';
-import isUndefined from 'lodash/isUndefined';
-import isNull from 'lodash/isNull';
 import classNames from 'classnames';
+import isArray from 'lodash/isArray';
+import isNull from 'lodash/isNull';
+import isUndefined from 'lodash/isUndefined';
 import omit from 'lodash/omit';
-import ComplexValSelect from '../complex-val-select';
 import type { ComplexValSelectProps } from '../complex-val-select';
+import ComplexValSelect from '../complex-val-select';
 
-const { Option } = Select;
-
-export { Option };
+export const Option: React.FC<OptionProps> = Select.Option;
 
 export interface LabelSelectProps extends ComplexValSelectProps<any> {
   label?: React.ReactNode;
@@ -35,7 +32,7 @@ const LabelSelect: React.ForwardRefRenderFunction<unknown, LabelSelectProps> = (
 
   React.useImperativeHandle(ref, () => selectRef.current);
 
-  const handleChange: ComplexValSelectProps<string>['onChange'] = (nextValue) => {
+  const handleChange = (nextValue: any) => {
     setValue(nextValue);
   };
 
@@ -43,7 +40,7 @@ const LabelSelect: React.ForwardRefRenderFunction<unknown, LabelSelectProps> = (
     if (!open) {
       setOpen(!open);
     }
-    (selectRef.current as BaseSelectRef).focus();
+    (selectRef.current as RefSelectProps).focus();
   };
 
   const onDropdownVisibleChange = (nextOpen: boolean) => {
@@ -82,6 +79,7 @@ const LabelSelect: React.ForwardRefRenderFunction<unknown, LabelSelectProps> = (
         }}
         onDropdownVisibleChange={onDropdownVisibleChange}
       />
+      {/* biome-ignore lint/a11y/noLabelWithoutControl: 点击触发的展示文本，非表单 label */}
       <label className="label-select-text" onClick={handleLabelClick}>
         {label}
       </label>

@@ -1,6 +1,6 @@
 .col-resize-container {
   position: relative;
-  height: 0px;
+  height: 0;
 
   & + .table-col-resizer:first-of-type {
     table-layout: fixed;
@@ -30,6 +30,7 @@
       &:first-child {
         left: -2px;
       }
+
       &:last-child {
         left: 6px;
       }
@@ -39,6 +40,7 @@
       .icon {
         visibility: visible;
       }
+
       .col-resizer {
         border: 1px solid;
       }
@@ -51,7 +53,7 @@
 
     .col-resizer {
       position: absolute;
-      top: 0px;
+      top: 0;
       left: 3px;
       width: 1px;
       height: 100%;

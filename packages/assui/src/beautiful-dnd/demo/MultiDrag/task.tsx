@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Draggable } from 'react-beautiful-dnd';
-import type { DraggableProvided, DraggableStateSnapshot } from 'react-beautiful-dnd';
+import { Draggable } from '@hello-pangea/dnd';
+import type { DraggableProvided, DraggableStateSnapshot } from '@hello-pangea/dnd';
 import styles from './index.modules.less';
 
 type Id = string;

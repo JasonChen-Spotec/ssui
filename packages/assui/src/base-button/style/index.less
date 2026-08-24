@@ -4,12 +4,12 @@
 
 .@{base-button-name} {
   display: inline-flex;
-  font-size: @font-size-base;
   gap: 8px;
   align-items: center;
   height: 32px;
   padding: 0 16px;
   font-weight: 400;
+  font-size: @font-size-base;
   line-height: 22px;
   background-color: @white;
   border: none;
@@ -19,12 +19,13 @@
   transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
 
   --btn-icon-size: 16px;
+
   &-small {
+    gap: 4px;
     height: 24px;
     padding: 0 8px;
     font-size: @font-size-sm;
     line-height: 20px;
-    gap: 4px;
   }
 
   &-large {
@@ -58,10 +59,13 @@
     --hover-bg-color: @color_f2f2f2;
     --active-bg-color: @color_e6e6e6;
     --disabled-border-color: @color_d9d9d9;
+
     color: @color_121212;
+
     &:hover {
       background-color:@color_f2f2f2;
     }
+
     &:active {
       background-color: @color_e6e6e6;
     }
@@ -73,11 +77,14 @@
     --active-color: @color_c6423f;
     --hover-text-color: var(--hover-color);
     --active-text-color: var(--active-color);
+
     color: @white;
     background: var(--theme-color);
+
     &:hover {
       background-color: var(--hover-color);
     }
+
     &:active {
       background-color: var(--active-color);
     }
@@ -86,14 +93,17 @@
   &-success {
     color: @white;
     background: var(--theme-color);
+
     --theme-color: @color_47a92a;
     --hover-color: @color_7ec36a;
     --active-color: @color_409826;
     --hover-text-color: var(--hover-color);
     --active-text-color: var(--active-color);
+
     &:hover {
       background-color: var(--hover-color);
     }
+
     &:active {
       background-color: var(--active-color);
     }
@@ -105,11 +115,14 @@
     --active-color: @color_333;
     --hover-text-color: var(--hover-color);
     --active-text-color: var(--active-color);
+
     color: @white;
     background: var(--theme-color);
+
     &:hover {
       background-color: var(--hover-color);
     }
+
     &:active {
       background-color: var(--active-color);
     }
@@ -124,11 +137,14 @@
     --active-bg-color: @color_e6e6e6;
     --hover-text-color: var(--font-color);
     --active-text-color: var(--font-color);
+
     color: var(--font-color);
     background: @color_f2f2f2;
+
     &:hover {
       background-color: var(--hover-color);
     }
+
     &:active {
       background-color: var(--active-color);
     }
@@ -138,11 +154,13 @@
     color: var(--theme-color, var(--font-color));
     background-color: @white;
     border: 1px solid var(--theme-color, var(--border-color));
+
     &:hover {
       color: var(--hover-text-color, var(--font-color));
       background-color: var(--hover-bg-color, @white);
       border-color: var(--hover-color, var(--border-color));
     }
+
     &:active {
       color: var(--active-text-color, var(--font-color));
       background-color: var(--active-bg-color, @white);
@@ -160,11 +178,13 @@
     color: var(--theme-color, var(--font-color));
     background-color: @white;
     border: 1px dashed var(--theme-color, var(--border-color));
+
     &:hover {
       color: var(--hover-text-color, var(--font-color));
       background-color: var(--hover-bg-color, @white);
       border-color: var(--hover-color, var(--border-color));
     }
+
     &:active {
       color: var(--active-text-color, var(--font-color));
       background-color: var(--active-bg-color, @white);
@@ -176,9 +196,11 @@
     color: var(--theme-color);
     background-color: transparent;
     border: none;
+
     &:hover {
       background-color: @color_f2f2f2;
     }
+
     &:active {
       background-color: @color_e6e6e6;
     }
@@ -207,6 +229,7 @@
     0% {
       transform: rotate(0deg);
     }
+
     100% {
       transform: rotate(360deg);
     }

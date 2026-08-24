@@ -1,6 +1,6 @@
 import React from 'react';
-import useControllableValue from 'ahooks/lib/useControllableValue';
 import useClickAway from 'ahooks/lib/useClickAway';
+import useControllableValue from 'ahooks/lib/useControllableValue';
 import classNames from 'classnames';
 import type { NumberInputProps } from '../number-input';
 import NumberInput from '../number-input';
@@ -106,7 +106,7 @@ const LabelDatePicker: React.FC<LabelRangeNumberProps> = (props) => {
         className,
       )}
     >
-      <div className="a-number a-number-range" aria-required="true">
+      <div className="a-number a-number-range">
         <div className="a-number-input">
           <NumberInput
             bordered={false}
@@ -136,6 +136,7 @@ const LabelDatePicker: React.FC<LabelRangeNumberProps> = (props) => {
           />
         </div>
       </div>
+      {/* biome-ignore lint/a11y/noLabelWithoutControl: 点击触发的展示文本，非表单 label */}
       <label className="label-range-number-text" onClick={handleLabelClick}>
         {label}
       </label>

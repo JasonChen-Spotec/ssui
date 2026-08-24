@@ -11,6 +11,6 @@ export declare const getSizeUpdate: (props: {
     primary: "first" | "second";
 }, state: StatesTypes) => any;
 /** 排除空的子元素 */
-export declare const removeNullChildren: (children: React.ReactNode) => (string | number | React.ReactElement<any, string | React.JSXElementConstructor<any>> | React.ReactFragment | React.ReactPortal)[];
+export declare const removeNullChildren: (children: React.ReactNode) => (string | number | React.ReactElement<any, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal)[];
 /** 失去焦点 */
 export declare const unFocus: (document: Document, window: Window) => void;

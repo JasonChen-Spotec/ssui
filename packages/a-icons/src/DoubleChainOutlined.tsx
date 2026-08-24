@@ -1,5 +1,5 @@
-import * as React from 'react';
-import Icon, { IconProps } from 'a-base-icon/lib/icon';
+import * as React from "react";
+import Icon, { IconProps } from "a-base-icon/lib/icon";
 
 function DoubleChainOutlined(componentProps: IconProps) {
   const IconNode = (props: React.SVGProps<SVGSVGElement>) => (
@@ -17,5 +17,5 @@ function DoubleChainOutlined(componentProps: IconProps) {
   return <Icon {...componentProps} component={IconNode} />;
 }
 
-DoubleChainOutlined.displayName = 'DoubleChainOutlined';
+DoubleChainOutlined.displayName = "DoubleChainOutlined";
 export default DoubleChainOutlined;

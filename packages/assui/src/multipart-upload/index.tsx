@@ -1,10 +1,10 @@
-import React, { useState, useRef } from 'react';
-import Upload from 'rc-upload';
-import type { UploadProps } from 'rc-upload';
+import React, { useRef, useState } from 'react';
+import { CirclePlusFilled, CloseOutlined } from 'a-icons';
 import { useMount, useUpdateEffect } from 'ahooks';
-import classNames from 'classnames';
 import { Progress } from 'antd';
-import { CloseOutlined, CirclePlusFilled } from 'a-icons';
+import classNames from 'classnames';
+import type { UploadProps } from 'rc-upload';
+import Upload from 'rc-upload';
 import getMultipartUploadHandler from './getMultipartUploadHandler';
 
 export interface RcFile extends File {
@@ -110,12 +110,12 @@ const MultipartUpload = (props: MultipartUploadProps) => {
     fileNameRef.current = file.name;
     totalChunks = Math.ceil(fileRef.current.size / resChunkSize);
     setUploadStatus('uploading');
-    onStart && onStart(file);
+    onStart?.(file);
   };
 
   const handleError = (error: Error, ret: Record<string, unknown>, file: RcFile) => {
     setUploadStatus('init');
-    onError && onError(error, ret, file);
+    onError?.(error, ret, file);
   };
 
   const uploadCls = classNames(className, {
@@ -126,7 +126,7 @@ const MultipartUpload = (props: MultipartUploadProps) => {
     if (fileRef.current) {
       uploadRef.current?.abort(fileRef.current);
       setUploadStatus('init');
-      cancelUpload && cancelUpload();
+      cancelUpload?.();
     }
   };
 
@@ -169,12 +169,12 @@ const MultipartUpload = (props: MultipartUploadProps) => {
               list: uploadList,
             }).then((fileUrl: string) => {
               setUploadStatus('done');
-              onSuccess && onSuccess(fileUrl, fileNameRef.current);
+              onSuccess?.(fileUrl, fileNameRef.current);
             });
           }
         })
         .catch((error) => {
-          errorCatch && errorCatch(error);
+          errorCatch?.(error);
         });
     }
   };

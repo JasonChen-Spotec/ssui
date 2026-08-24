@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, fireEvent } from '@testing-library/react';
+import { fireEvent, render } from '@testing-library/react';
 import ConditionInput from '../index';
 
 const baseProps = {
@@ -43,7 +43,9 @@ describe('ConditionInput', () => {
   });
 
   it('when regexp is any', () => {
-    const { getByRole } = render(<ConditionInput regexp={[undefined as any]} {...baseProps} />);
+    const { getByRole } = render(
+      <ConditionInput regexp={[undefined as any]} {...baseProps} />,
+    );
     const input = getByRole('textbox') as HTMLInputElement;
 
     fireEvent.change(input, { target: { value: 'hello world 2022' } });

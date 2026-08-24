@@ -1,48 +1,19 @@
 "use strict";
 
-var __read = this && this.__read || function (o, n) {
-  var m = typeof Symbol === "function" && o[Symbol.iterator];
-  if (!m) return o;
-  var i = m.call(o),
-    r,
-    ar = [],
-    e;
-  try {
-    while ((n === void 0 || n-- > 0) && !(r = i.next()).done) {
-      ar.push(r.value);
-    }
-  } catch (error) {
-    e = {
-      error: error
-    };
-  } finally {
-    try {
-      if (r && !r.done && (m = i["return"])) m.call(i);
-    } finally {
-      if (e) throw e.error;
-    }
-  }
-  return ar;
-};
-var __importDefault = this && this.__importDefault || function (mod) {
-  return mod && mod.__esModule ? mod : {
-    "default": mod
-  };
-};
+function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.divide = exports.minus = exports.times = exports.plus = void 0;
-var bignumber_js_1 = __importDefault(require("bignumber.js"));
+var tslib_1 = require("tslib");
+var bignumber_js_1 = tslib_1.__importDefault(require("bignumber.js"));
 var buildCalculateFunc = function buildCalculateFunc(method) {
   return function () {
-    var value = [];
-    for (var _i = 0; _i < arguments.length; _i++) {
-      value[_i] = arguments[_i];
+    for (var _len = arguments.length, value = new Array(_len), _key = 0; _key < _len; _key++) {
+      value[_key] = arguments[_key];
     }
-    var _a = __read(value),
-      firstValue = _a[0],
-      restValues = _a.slice(1);
+    var firstValue = value[0],
+      restValues = _arrayLikeToArray(value).slice(1);
     var resultValue = new bignumber_js_1["default"](firstValue);
     if (restValues.length > 0) {
       restValues.forEach(function (v) {

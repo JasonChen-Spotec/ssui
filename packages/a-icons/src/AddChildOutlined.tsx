@@ -1,9 +1,14 @@
-import * as React from 'react';
-import Icon, { IconProps } from 'a-base-icon/lib/icon';
+import * as React from "react";
+import Icon, { IconProps } from "a-base-icon/lib/icon";
 
 function AddChildOutlined(componentProps: IconProps) {
   const IconNode = (props: React.SVGProps<SVGSVGElement>) => (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" {...props}>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="none"
+      {...props}
+    >
       <path d="M18.5 18h3v2h-3v3h-2v-3h-3v-2h3v-3h2v3z" fill="currentColor" />
       <path
         fillRule="evenodd"
@@ -17,5 +22,5 @@ function AddChildOutlined(componentProps: IconProps) {
   return <Icon {...componentProps} component={IconNode} />;
 }
 
-AddChildOutlined.displayName = 'AddChildOutlined';
+AddChildOutlined.displayName = "AddChildOutlined";
 export default AddChildOutlined;

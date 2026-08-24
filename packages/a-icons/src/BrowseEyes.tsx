@@ -1,9 +1,14 @@
-import * as React from 'react';
-import Icon, { IconProps } from 'a-base-icon/lib/icon';
+import * as React from "react";
+import Icon, { IconProps } from "a-base-icon/lib/icon";
 
 function BrowseEyes(componentProps: IconProps) {
   const IconNode = (props: React.SVGProps<SVGSVGElement>) => (
-    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
       <rect x={0.5} y={0.5} width={23} height={23} rx={11.5} fill="#EFFDF4" />
       <rect x={0.5} y={0.5} width={23} height={23} rx={11.5} stroke="#fff" />
       <path d="M10.2 12a1.8 1.8 0 113.6 0 1.8 1.8 0 01-3.6 0z" fill="#377C51" />
@@ -17,5 +22,5 @@ function BrowseEyes(componentProps: IconProps) {
   return <Icon {...componentProps} component={IconNode} />;
 }
 
-BrowseEyes.displayName = 'BrowseEyes';
+BrowseEyes.displayName = "BrowseEyes";
 export default BrowseEyes;

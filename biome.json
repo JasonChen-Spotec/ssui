@@ -1,0 +1,159 @@
+{
+  "$schema": "https://biomejs.dev/schemas/2.5.6/schema.json",
+  "vcs": {
+    "enabled": true,
+    "clientKind": "git",
+    "useIgnoreFile": true
+  },
+  "files": {
+    "maxSize": 4194304,
+    "includes": [
+      "**",
+      "!**/node_modules",
+      "!**/dist",
+      "!**/lib/**/*",
+      "!**/es/**/*",
+      "!**/a-icons/**/*",
+      "!**/.umi",
+      "!**/.umi-production",
+      "!**/.umi-test",
+      "!**/tmd-common",
+      "!**/mock",
+      "!**/public",
+      "!**/src/locales",
+      "!**/src/proto",
+      "!**/src/**/*.md",
+      "!**/*.svg",
+      "!**/*.ejs",
+      "!**/*.html",
+      "!**/package.json",
+      "!**/yarn.lock",
+      "!**/src/api",
+      "!**/demo",
+      "!**/demo.tsx",
+      "!**/tmd-common",
+      "!**/__tests__",
+      "!**/*.test.*",
+      "!**/*.spec.*"
+    ]
+  },
+  "formatter": {
+    "enabled": true,
+    "formatWithErrors": false,
+    "useEditorconfig": true,
+    "indentStyle": "space",
+    "indentWidth": 2,
+    "lineEnding": "lf",
+    "lineWidth": 90,
+    "attributePosition": "auto",
+    "bracketSameLine": false,
+    "bracketSpacing": true
+  },
+  "javascript": {
+    "jsxRuntime": "reactClassic",
+    "formatter": {
+      "quoteStyle": "single",
+      "jsxQuoteStyle": "double",
+      "quoteProperties": "preserve",
+      "trailingCommas": "all",
+      "semicolons": "always",
+      "arrowParentheses": "always",
+      "bracketSameLine": false,
+      "bracketSpacing": true,
+      "attributePosition": "auto"
+    },
+    "globals": [
+      "location",
+      "BASE_URL",
+      "PREFIX_CLS",
+      "mockStore",
+      "jest",
+      "describe",
+      "it",
+      "test",
+      "expect",
+      "beforeAll",
+      "afterAll",
+      "beforeEach",
+      "afterEach"
+    ]
+  },
+  "json": {
+    "formatter": {
+      "enabled": true
+    }
+  },
+  "css": {
+    "formatter": {
+      "enabled": false
+    },
+    "linter": {
+      "enabled": false
+    }
+  },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "a11y": {
+        "useKeyWithClickEvents": "off",
+        "noStaticElementInteractions": "off",
+        "useAltText": "off",
+        "noSvgWithoutTitle": "off",
+        "useValidAnchor": "off",
+        "useMediaCaption": "off"
+      },
+      "complexity": {
+        "noUselessFragments": "error",
+        "noBannedTypes": "error"
+      },
+      "correctness": {
+        "noUnusedVariables": "error",
+        "noUnusedImports": "error",
+        "noChildrenProp": "off",
+        "useExhaustiveDependencies": "off"
+      },
+      "style": {
+        "useSelfClosingElements": "error",
+        "noParameterAssign": "error",
+        "useBlockStatements": "error",
+        "useImportType": "error",
+        "useExportType": "error",
+        "noNonNullAssertion": "off"
+      },
+      "suspicious": {
+        "noExplicitAny": "off",
+        "noArrayIndexKey": "off",
+        "noTsIgnore": "off",
+        "noImplicitAnyLet": "off",
+        "noTemplateCurlyInString": "off"
+      }
+    }
+  },
+  "assist": {
+    "enabled": true,
+    "actions": {
+      "source": {
+        "organizeImports": {
+          "level": "on",
+          "options": {
+            "groups": [
+              [
+                "react",
+                "react/**",
+                "react-dom",
+                "react-dom/**",
+                "react-router",
+                "react-router/**",
+                "react-intl"
+              ],
+              ":PACKAGE:",
+              ["@/**"],
+              ["**", "!:STYLE:"],
+              [":STYLE:"]
+            ]
+          }
+        }
+      }
+    }
+  }
+}

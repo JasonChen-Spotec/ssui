@@ -1,7 +1,7 @@
 import * as React from 'react';
+import useMount from 'ahooks/lib/useMount';
 import type { QRCodeRenderersOptions, QRCodeSegment } from 'qrcode';
 import QRCode from 'qrcode';
-import useMount from 'ahooks/lib/useMount';
 import useQrcode from './useQrcode';
 
 export interface RcQrcodeProps {
@@ -28,7 +28,7 @@ const RcQrcode = (props: RcQrcodeProps) => {
         throw err;
       }
 
-      getCanvasInstance && getCanvasInstance(result);
+      getCanvasInstance?.(result);
       domElRef.current?.appendChild(result);
     });
   });

@@ -1,14 +1,14 @@
 // @ts-nocheck
-/* eslint-disable no-param-reassign */
 import isElement from 'lodash/isElement';
 import type { Options } from './colResizable';
 import ColResizable from './colResizable';
 
 const createColResizable = (domEleTable: HTMLTableElement, options: Options) => {
   if (isElement(domEleTable) && domEleTable.nodeName === 'TABLE') {
-    return (
-      domEleTable.__resizable || (domEleTable.__resizable = new ColResizable(domEleTable, options))
-    );
+    if (!domEleTable.__resizable) {
+      domEleTable.__resizable = new ColResizable(domEleTable, options);
+    }
+    return domEleTable.__resizable;
   }
 
   return null;

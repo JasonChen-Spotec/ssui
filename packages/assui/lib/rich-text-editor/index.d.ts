@@ -31,6 +31,6 @@ import 'tinymce/plugins/pagebreak';
 export type RichTextEditorProps = IAllProps;
 declare const defaultPlugins: string[];
 declare const defaultToolbar: string;
-declare const RichTextEditor: (props: IAllProps) => JSX.Element;
+declare const RichTextEditor: (props: IAllProps) => import("react/jsx-runtime").JSX.Element;
 export { defaultPlugins, defaultToolbar };
 export default RichTextEditor;

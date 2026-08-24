@@ -1,63 +1,21 @@
-var __assign = this && this.__assign || function () {
-  __assign = Object.assign || function (t) {
-    for (var s, i = 1, n = arguments.length; i < n; i++) {
-      s = arguments[i];
-      for (var p in s) {
-        if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
-      }
-    }
-    return t;
-  };
-  return __assign.apply(this, arguments);
-};
-var __rest = this && this.__rest || function (s, e) {
-  var t = {};
-  for (var p in s) {
-    if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
-  }
-  if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
-    if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i])) t[p[i]] = s[p[i]];
-  }
-  return t;
-};
-var __read = this && this.__read || function (o, n) {
-  var m = typeof Symbol === "function" && o[Symbol.iterator];
-  if (!m) return o;
-  var i = m.call(o),
-    r,
-    ar = [],
-    e;
-  try {
-    while ((n === void 0 || n-- > 0) && !(r = i.next()).done) {
-      ar.push(r.value);
-    }
-  } catch (error) {
-    e = {
-      error: error
-    };
-  } finally {
-    try {
-      if (r && !r.done && (m = i["return"])) m.call(i);
-    } finally {
-      if (e) throw e.error;
-    }
-  }
-  return ar;
-};
+var _excluded = ["children", "trigger", "onOpen", "onClose", "onConfirm", "onCancel"];
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
+function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (-1 !== e.indexOf(n)) continue; t[n] = r[n]; } return t; }
+import { jsx as _jsx, Fragment as _Fragment, jsxs as _jsxs } from "react/jsx-runtime";
 import * as React from 'react';
 import isFunction from 'lodash/isFunction';
-import Dialog from "react-vant/es/dialog";
-var ButtonModal = function ButtonModal(props, ref) {
-  var _a = __read(React.useState(false), 2),
-    visible = _a[0],
-    setModalVisible = _a[1];
+import { Dialog } from 'react-vant';
+var ForwardRefButtonModal = /*#__PURE__*/React.forwardRef(function (props, ref) {
+  var _React$useState = React.useState(false),
+    visible = _React$useState[0],
+    setModalVisible = _React$useState[1];
   var children = props.children,
     trigger = props.trigger,
     onOpen = props.onOpen,
     onClose = props.onClose,
     onConfirm = props.onConfirm,
     onCancel = props.onCancel,
-    restModalProps = __rest(props, ["children", "trigger", "onOpen", "onClose", "onConfirm", "onCancel"]);
+    restModalProps = _objectWithoutPropertiesLoose(props, _excluded);
   var openModal = function openModal() {
     if (onOpen) {
       onOpen();
@@ -93,13 +51,16 @@ var ButtonModal = function ButtonModal(props, ref) {
   var buttonNode = trigger && /*#__PURE__*/React.cloneElement(trigger, {
     onClick: openModal
   });
-  return /*#__PURE__*/React.createElement(React.Fragment, null, buttonNode, /*#__PURE__*/React.createElement(Dialog, __assign({
-    visible: visible,
-    onConfirm: handleModalOk,
-    onCancel: handleModalCancel
-  }, restModalProps), isFunction(children) ? children(modalActionRef.current) : /*#__PURE__*/React.cloneElement(children, {
-    modalAction: modalActionRef.current
-  })));
-};
-var ForwardRefButtonModal = /*#__PURE__*/React.forwardRef(ButtonModal);
+  return _jsxs(_Fragment, {
+    children: [buttonNode, _jsx(Dialog, _extends({
+      visible: visible,
+      onConfirm: handleModalOk,
+      onCancel: handleModalCancel
+    }, restModalProps, {
+      children: isFunction(children) ? children(modalActionRef.current) : /*#__PURE__*/React.cloneElement(children, {
+        modalAction: modalActionRef.current
+      })
+    }))]
+  });
+});
 export default ForwardRefButtonModal;

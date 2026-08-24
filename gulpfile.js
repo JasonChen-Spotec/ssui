@@ -1,5 +1,5 @@
 const gulp = require('gulp');
-const path = require('path');
+const path = require('node:path');
 const through2 = require('through2');
 const rimraf = require('rimraf');
 const babel = require('gulp-babel');
@@ -7,7 +7,7 @@ const ts = require('gulp-typescript');
 const del = require('del');
 const merge2 = require('merge2');
 const less = require('less');
-const { readFileSync } = require('fs');
+const { readFileSync } = require('node:fs');
 const postcss = require('postcss');
 const autoprefixer = require('autoprefixer');
 const NpmImportPlugin = require('less-plugin-npm-import');
@@ -16,8 +16,8 @@ function getProjectPath(...filePath) {
   return path.join(process.cwd(), ...filePath);
 }
 
-const { dirname } = require('path');
-const fs = require('fs');
+const { dirname } = require('node:path');
+const fs = require('node:fs');
 
 function replacePath(path) {
   if (path.node.source && /\/lib\//.test(path.node.source.value)) {
@@ -74,7 +74,7 @@ function compileLess(modules) {
   const lessS = gulp
     .src(['src/**/*.less'])
     .pipe(
-      through2.obj(function (file, encoding, next) {
+      through2.obj(function (file, _encoding, next) {
         this.push(file.clone());
         if (
           file.path.match(/(\/|\\)style(\/|\\)index\.less$/) ||

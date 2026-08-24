@@ -10,7 +10,7 @@
 // HALF_EVEN  6 Towards nearest neighbour. If equidistant, towards even neighbour.
 // HALF_CEIL  7 Towards nearest neighbour. If equidistant, towards +Infinity.
 // HALF_FLOOR 8 Towards nearest neighbour. If equidistant, towards -Infinity.
-var _a;
+var _exports$roundingMode;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -24,4 +24,4 @@ exports.HALF_DOWN = 'halfDown';
 exports.HALF_EVEN = 'halfEven';
 exports.HALF_CEIL = 'halfCeil';
 exports.HALF_FLOOR = 'halfFloor';
-exports.roundingModeMap = (_a = {}, _a[exports.UP] = 0, _a[exports.DOWN] = 1, _a[exports.CEIL] = 2, _a[exports.FLOOR] = 3, _a[exports.HALF_UP] = 4, _a[exports.HALF_DOWN] = 5, _a[exports.HALF_EVEN] = 6, _a[exports.HALF_CEIL] = 7, _a[exports.HALF_FLOOR] = 8, _a);
+exports.roundingModeMap = (_exports$roundingMode = {}, _exports$roundingMode[exports.UP] = 0, _exports$roundingMode[exports.DOWN] = 1, _exports$roundingMode[exports.CEIL] = 2, _exports$roundingMode[exports.FLOOR] = 3, _exports$roundingMode[exports.HALF_UP] = 4, _exports$roundingMode[exports.HALF_DOWN] = 5, _exports$roundingMode[exports.HALF_EVEN] = 6, _exports$roundingMode[exports.HALF_CEIL] = 7, _exports$roundingMode[exports.HALF_FLOOR] = 8, _exports$roundingMode);

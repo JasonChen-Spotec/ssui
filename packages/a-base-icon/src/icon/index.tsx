@@ -18,7 +18,9 @@ export interface CustomIconComponentProps {
 
 export interface IconProps extends IconBaseProps {
   className?: string;
-  component?: React.ComponentType<CustomIconComponentProps | React.SVGProps<SVGSVGElement>>;
+  component?: React.ComponentType<
+    CustomIconComponentProps | React.SVGProps<SVGSVGElement>
+  >;
   viewBox?: string;
   tabIndex?: number;
   style?: React.CSSProperties;

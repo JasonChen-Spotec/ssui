@@ -1,6 +1,6 @@
 import React from 'react';
-import isUndefined from 'lodash/isUndefined';
 import isNumber from 'lodash/isNumber';
+import isUndefined from 'lodash/isUndefined';
 import type { StatesTypes } from './index';
 
 /** 获取默认尺寸 */

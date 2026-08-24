@@ -1,9 +1,14 @@
-import * as React from 'react';
-import Icon, { IconProps } from 'a-base-icon/lib/icon';
+import * as React from "react";
+import Icon, { IconProps } from "a-base-icon/lib/icon";
 
 function FileSearchFilled(componentProps: IconProps) {
   const IconNode = (props: React.SVGProps<SVGSVGElement>) => (
-    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
       <path d="M12 17a2.5 2.5 0 100-5 2.5 2.5 0 000 5z" fill="currentCOlor" />
       <path
         fillRule="evenodd"
@@ -18,5 +23,5 @@ function FileSearchFilled(componentProps: IconProps) {
   return <Icon {...componentProps} component={IconNode} />;
 }
 
-FileSearchFilled.displayName = 'FileSearchFilled';
+FileSearchFilled.displayName = "FileSearchFilled";
 export default FileSearchFilled;

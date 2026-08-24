@@ -1,9 +1,14 @@
-import * as React from 'react';
-import Icon, { IconProps } from 'a-base-icon/lib/icon';
+import * as React from "react";
+import Icon, { IconProps } from "a-base-icon/lib/icon";
 
 function UserInfoGift(componentProps: IconProps) {
   const IconNode = (props: React.SVGProps<SVGSVGElement>) => (
-    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
       <path
         d="M7.808 11.167c.458 0 .834.375.834.833v2.616a1.678 1.678 0 001.667 1.676c.316 0 .633-.092.908-.275l.79-.517.735.492a1.641 1.641 0 001.699.09 1.66 1.66 0 00.892-1.473V12c0-.458.375-.833.833-.833h1.668c.458 0 .833.375.833.833v5a3.334 3.334 0 01-3.334 3.334H8.666A3.334 3.334 0 015.333 17v-5c0-.458.375-.833.833-.833h1.642z"
         fill="currentColor"
@@ -25,5 +30,5 @@ function UserInfoGift(componentProps: IconProps) {
   return <Icon {...componentProps} component={IconNode} />;
 }
 
-UserInfoGift.displayName = 'UserInfoGift';
+UserInfoGift.displayName = "UserInfoGift";
 export default UserInfoGift;

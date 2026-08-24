@@ -1,9 +1,14 @@
-import * as React from 'react';
-import Icon, { IconProps } from 'a-base-icon/lib/icon';
+import * as React from "react";
+import Icon, { IconProps } from "a-base-icon/lib/icon";
 
 function MoneyReceiveOutlined(componentProps: IconProps) {
   const IconNode = (props: React.SVGProps<SVGSVGElement>) => (
-    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
       <path
         d="M12.999 3.004h-1c-4.968 0-9 4.032-9 9s4.032 9 9 9 9-4.032 9-9v-1h2v1c0 6.072-4.928 11-11 11s-11-4.928-11-11 4.928-11 11-11h1v2z"
         fill="currentColor"
@@ -18,5 +23,5 @@ function MoneyReceiveOutlined(componentProps: IconProps) {
   return <Icon {...componentProps} component={IconNode} />;
 }
 
-MoneyReceiveOutlined.displayName = 'MoneyReceiveOutlined';
+MoneyReceiveOutlined.displayName = "MoneyReceiveOutlined";
 export default MoneyReceiveOutlined;

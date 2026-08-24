@@ -1,8 +1,8 @@
 // @flow
 import React, { Component } from 'react';
 import memoizeOne from 'memoize-one';
-import { Droppable } from 'react-beautiful-dnd';
-import type { DroppableProvided, DroppableStateSnapshot } from 'react-beautiful-dnd';
+import { Droppable } from '@hello-pangea/dnd';
+import type { DroppableProvided, DroppableStateSnapshot } from '@hello-pangea/dnd';
 import Task from './task';
 import styles from './index.modules.less';
 

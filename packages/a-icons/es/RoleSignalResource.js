@@ -1,31 +1,22 @@
-var __assign = this && this.__assign || function () {
-  __assign = Object.assign || function (t) {
-    for (var s, i = 1, n = arguments.length; i < n; i++) {
-      s = arguments[i];
-      for (var p in s) {
-        if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
-      }
-    }
-    return t;
-  };
-  return __assign.apply(this, arguments);
-};
-import * as React from 'react';
-import Icon from 'a-base-icon/lib/icon';
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
+import { jsx as _jsx } from "react/jsx-runtime";
+import Icon from "a-base-icon/lib/icon";
 function RoleSignalResource(componentProps) {
   var IconNode = function IconNode(props) {
-    return /*#__PURE__*/React.createElement("svg", __assign({
+    return _jsx("svg", _extends({
       viewBox: "0 0 24 24",
       fill: "none",
       xmlns: "http://www.w3.org/2000/svg"
-    }, props), /*#__PURE__*/React.createElement("path", {
-      d: "M19.33 1A3.67 3.67 0 0123 4.67v14.66A3.67 3.67 0 0119.33 23H4.67A3.67 3.67 0 011 19.33V4.67A3.67 3.67 0 014.67 1h14.66zM6.574 6.589a7.637 7.637 0 000 10.822l.494.493.986-.988-.494-.493a6.242 6.242 0 010-8.847l.494-.492-.986-.988-.494.493zm9.372.495l.494.493a6.241 6.241 0 010 8.847l-.494.492.986.988.494-.492a7.637 7.637 0 000-10.823l-.494-.492-.986.987zM8.734 8.315c-2.156 2.01-2.156 5.29 0 7.3l.511.475.951-1.02-.51-.476c-1.565-1.458-1.565-3.8 0-5.258l.51-.476-.95-1.02-.512.475zm5.07.545l.511.476c1.565 1.458 1.564 3.8 0 5.258l-.51.475.95 1.02.512-.475c2.155-2.01 2.156-5.29 0-7.299l-.511-.475-.951 1.02zM12 10.42c-.875 0-1.585.708-1.585 1.581s.71 1.58 1.585 1.58c.876 0 1.586-.707 1.586-1.58 0-.873-.71-1.581-1.586-1.581z",
-      fill: "#47A92A"
+    }, props, {
+      children: _jsx("path", {
+        d: "M19.33 1A3.67 3.67 0 0123 4.67v14.66A3.67 3.67 0 0119.33 23H4.67A3.67 3.67 0 011 19.33V4.67A3.67 3.67 0 014.67 1h14.66zM6.574 6.589a7.637 7.637 0 000 10.822l.494.493.986-.988-.494-.493a6.242 6.242 0 010-8.847l.494-.492-.986-.988-.494.493zm9.372.495l.494.493a6.241 6.241 0 010 8.847l-.494.492.986.988.494-.492a7.637 7.637 0 000-10.823l-.494-.492-.986.987zM8.734 8.315c-2.156 2.01-2.156 5.29 0 7.3l.511.475.951-1.02-.51-.476c-1.565-1.458-1.565-3.8 0-5.258l.51-.476-.95-1.02-.512.475zm5.07.545l.511.476c1.565 1.458 1.564 3.8 0 5.258l-.51.475.95 1.02.512-.475c2.155-2.01 2.156-5.29 0-7.299l-.511-.475-.951 1.02zM12 10.42c-.875 0-1.585.708-1.585 1.581s.71 1.58 1.585 1.58c.876 0 1.586-.707 1.586-1.58 0-.873-.71-1.581-1.586-1.581z",
+        fill: "#47A92A"
+      })
     }));
   };
-  return /*#__PURE__*/React.createElement(Icon, __assign({}, componentProps, {
+  return _jsx(Icon, _extends({}, componentProps, {
     component: IconNode
   }));
 }
-RoleSignalResource.displayName = 'RoleSignalResource';
+RoleSignalResource.displayName = "RoleSignalResource";
 export default RoleSignalResource;

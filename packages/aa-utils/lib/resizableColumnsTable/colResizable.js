@@ -1,29 +1,12 @@
 "use strict";
 
-var __assign = this && this.__assign || function () {
-  __assign = Object.assign || function (t) {
-    for (var s, i = 1, n = arguments.length; i < n; i++) {
-      s = arguments[i];
-      for (var p in s) {
-        if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
-      }
-    }
-    return t;
-  };
-  return __assign.apply(this, arguments);
-};
-var __importDefault = this && this.__importDefault || function (mod) {
-  return mod && mod.__esModule ? mod : {
-    "default": mod
-  };
-};
+// @ts-nocheck
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-// @ts-nocheck
-/* eslint-disable no-param-reassign */
-/* eslint-disable prefer-destructuring */
-var isFunction_1 = __importDefault(require("lodash/isFunction"));
+var tslib_1 = require("tslib");
+var isFunction_1 = tslib_1.__importDefault(require("lodash/isFunction"));
 var utils_1 = require("./utils");
 var defaultOptions = {
   liveDrag: true,
@@ -31,28 +14,43 @@ var defaultOptions = {
   headerOnly: true,
   disabledColumns: []
 };
-var ColResizable = /** @class */function () {
+var ColResizable = /*#__PURE__*/function () {
   function ColResizable(domElmTable, options) {
     if (options === void 0) {
       options = {};
     }
-    this.options = __assign(__assign({}, defaultOptions), options);
+    this.options = void 0;
+    this.domElmTable = void 0;
+    this.domElmThList = void 0;
+    this.domElmTableTheadThList = void 0;
+    /** 存放拖动标签的容器 */
+    this.domElmHandleContainer = void 0;
+    this.tableWidth = void 0;
+    this.cellSpacing = void 0;
+    this.borderLeftWidth = void 0;
+    this.lastThIndex = void 0;
+    this.thLength = void 0;
+    this.domElmHandleList = void 0;
+    this.disabledColumns = void 0;
+    this.drag = void 0;
+    this.options = _extends({}, defaultOptions, options);
     this.domElmTable = domElmTable;
     this.onGripMouseDown = this.onGripMouseDown.bind(this);
     this.onMouseMove = this.onMouseMove.bind(this);
     this.onMouseUp = this.onMouseUp.bind(this);
     this.init();
   }
-  ColResizable.prototype.init = function () {
+  var _proto = ColResizable.prototype;
+  _proto.init = function init() {
     (0, utils_1.addClass)(this.domElmTable, 'table-col-resizer');
     this.domElmHandleList = [];
     this.domElmTableTheadThList = [];
-    this.tableWidth = "".concat(this.domElmTable.offsetWidth, "px");
+    this.tableWidth = this.domElmTable.offsetWidth + "px";
     this.cellSpacing = (0, utils_1.tryParseInt)(getComputedStyle(this.domElmTable).getPropertyValue('border-spacing'));
     this.borderLeftWidth = (0, utils_1.tryParseInt)(getComputedStyle(this.domElmTable).getPropertyValue('border-left-width'));
     this.createGrips();
   };
-  ColResizable.prototype.createGrips = function () {
+  _proto.createGrips = function createGrips() {
     var _this = this;
     var thList = this.domElmTable.querySelectorAll('thead th');
     var domElmThList = [];
@@ -67,8 +65,8 @@ var ColResizable = /** @class */function () {
     Array.prototype.push.apply(domElmThList, thList);
     this.thLength = domElmThList.length;
     this.lastThIndex = this.thLength - 1;
-    var _a = this.options.disabledColumns,
-      disabledColumns = _a === void 0 ? [] : _a;
+    var _this$options$disable = this.options.disabledColumns,
+      disabledColumns = _this$options$disable === void 0 ? [] : _this$options$disable;
     domElmThList.forEach(function (domElmTh, index) {
       var disabledColumn = disabledColumns.indexOf(index) !== -1;
       var domElmHandle;
@@ -88,7 +86,7 @@ var ColResizable = /** @class */function () {
       }
       domElmHandle.index = index;
       domElmTh.w = domElmTh.offsetWidth;
-      domElmTh.style.width = "".concat(domElmTh.offsetWidth, "px");
+      domElmTh.style.width = domElmTh.offsetWidth + "px";
       if (!hasHandleContainer) {
         _this.domElmHandleList.push(domElmHandle);
       }
@@ -96,7 +94,7 @@ var ColResizable = /** @class */function () {
     });
     this.syncGrips();
   };
-  ColResizable.prototype.syncGrips = function () {
+  _proto.syncGrips = function syncGrips() {
     var headerOnly = this.options.headerOnly;
     var theadHight = this.domElmTableTheadThList[0].offsetHeight;
     var height;
@@ -114,8 +112,8 @@ var ColResizable = /** @class */function () {
         var handleColLeft = this.domElmHandleList[i - 1].style.left + this.cellSpacing / 2;
         left = (0, utils_1.tryParseInt)(handleColLeft) + domElmTh.offsetWidth;
       }
-      this.domElmHandleList[i].style.left = "".concat(left, "px");
-      this.domElmHandleList[i].style.height = "".concat(height, "px");
+      this.domElmHandleList[i].style.left = left + "px";
+      this.domElmHandleList[i].style.height = height + "px";
     }
     var domElmIconList = [];
     var iconHeight = this.domElmHandleContainer.querySelector('.col-resize-container .icon').offsetHeight;
@@ -123,10 +121,10 @@ var ColResizable = /** @class */function () {
     Array.prototype.push.apply(domElmIconList, domElemIcons);
     domElmIconList.forEach(function (el) {
       var marginTopNumber = (theadHight - iconHeight) / 2;
-      el.style.marginTop = "".concat((0, utils_1.tryParseInt)(marginTopNumber), "px");
+      el.style.marginTop = (0, utils_1.tryParseInt)(marginTopNumber) + "px";
     });
   };
-  ColResizable.prototype.onGripMouseDown = function (e) {
+  _proto.onGripMouseDown = function onGripMouseDown(e) {
     e.preventDefault();
     var index = e.currentTarget.index;
     var domElmHandle = this.domElmHandleList[index];
@@ -139,7 +137,7 @@ var ColResizable = /** @class */function () {
     document.addEventListener('mouseup', this.onMouseUp);
     return false;
   };
-  ColResizable.prototype.onMouseMove = function (e) {
+  _proto.onMouseMove = function onMouseMove(e) {
     e.preventDefault();
     if (!this.drag) {
       return false;
@@ -166,7 +164,7 @@ var ColResizable = /** @class */function () {
       x = domElmThElmNext.w - minWidthTwo + this.drag.initLeft;
     }
     this.drag.x = x;
-    this.drag.style.left = "".concat(x, "px");
+    this.drag.style.left = x + "px";
     if (this.options.liveDrag) {
       this.syncCols(index);
       this.syncGrips();
@@ -177,20 +175,20 @@ var ColResizable = /** @class */function () {
     }
     return false;
   };
-  ColResizable.prototype.syncCols = function (i, isOver) {
+  _proto.syncCols = function syncCols(i, isOver) {
     var inc = this.drag.x - this.drag.initLeft;
     var domElmThNow = this.domElmTableTheadThList[i];
     var domElmThNext = this.domElmTableTheadThList[i + 1];
     var w = domElmThNow.w + inc;
     var w2 = domElmThNext.w - inc;
-    domElmThNow.style.width = "".concat(w, "px");
-    domElmThNext.style.width = "".concat(w2, "px");
+    domElmThNow.style.width = w + "px";
+    domElmThNext.style.width = w2 + "px";
     if (isOver) {
       domElmThNow.w = w;
       domElmThNext.w = w2;
     }
   };
-  ColResizable.prototype.onMouseUp = function (e) {
+  _proto.onMouseUp = function onMouseUp(e) {
     document.removeEventListener('mouseup', this.onMouseUp);
     document.removeEventListener('mousemove', this.onMouseMove);
     if (!this.drag) {

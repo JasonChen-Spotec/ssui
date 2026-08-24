@@ -1,33 +1,32 @@
 "use strict";
 
-/* eslint-disable no-useless-escape */
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.filterFloat = exports.filterInt = void 0;
 var intNumberReg = /^-?\d+$/;
-var filterInt = function filterInt(_a) {
-  var value = _a.value,
-    enableMinus = _a.enableMinus,
-    preValue = _a.preValue;
-  var nextValue = value.replace(/[^\d\-]/g, '');
+var filterInt = function filterInt(_ref) {
+  var value = _ref.value,
+    enableMinus = _ref.enableMinus,
+    preValue = _ref.preValue;
+  var nextValue = value.replace(/[^\d-]/g, '');
   if (!enableMinus) {
     nextValue = value.replace(/\D/g, '');
   }
   if (nextValue && nextValue.length > 1 && !intNumberReg.test(nextValue)) {
-    return preValue !== null && preValue !== void 0 ? preValue : '';
+    return preValue != null ? preValue : '';
   }
   return nextValue;
 };
 exports.filterInt = filterInt;
-var filterFloat = function filterFloat(_a) {
-  var value = _a.value,
-    _b = _a.preValue,
-    preValue = _b === void 0 ? '' : _b,
-    _c = _a.precision,
-    precision = _c === void 0 ? 2 : _c,
-    enableMinus = _a.enableMinus;
-  var nextValue = value.replace(/[^\d.\-]/g, '');
+var filterFloat = function filterFloat(_ref2) {
+  var value = _ref2.value,
+    _ref2$preValue = _ref2.preValue,
+    preValue = _ref2$preValue === void 0 ? '' : _ref2$preValue,
+    _ref2$precision = _ref2.precision,
+    precision = _ref2$precision === void 0 ? 2 : _ref2$precision,
+    enableMinus = _ref2.enableMinus;
+  var nextValue = value.replace(/[^\d.-]/g, '');
   var matchDecimalPoint = nextValue.match(/\./g) || [];
   if (matchDecimalPoint.length > 1) {
     return preValue;
@@ -39,7 +38,7 @@ var filterFloat = function filterFloat(_a) {
   if (nextValue && nextValue.length > 1 && !floatNumberReg.test(nextValue)) {
     return preValue;
   }
-  var twoDecimalNumReg = new RegExp("^(\\-)*(\\d+)\\.(\\d{".concat(precision, "}).*$"));
+  var twoDecimalNumReg = new RegExp("^(\\-)*(\\d+)\\.(\\d{" + precision + "}).*$");
   return nextValue.replace(twoDecimalNumReg, '$1$2.$3');
 };
 exports.filterFloat = filterFloat;

@@ -1,26 +1,7 @@
-var __assign = this && this.__assign || function () {
-  __assign = Object.assign || function (t) {
-    for (var s, i = 1, n = arguments.length; i < n; i++) {
-      s = arguments[i];
-      for (var p in s) {
-        if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
-      }
-    }
-    return t;
-  };
-  return __assign.apply(this, arguments);
-};
-var __rest = this && this.__rest || function (s, e) {
-  var t = {};
-  for (var p in s) {
-    if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
-  }
-  if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
-    if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i])) t[p[i]] = s[p[i]];
-  }
-  return t;
-};
-import * as React from 'react';
+var _excluded = ["className", "component", "viewBox", "spin", "rotate", "tabIndex", "onClick", "children"];
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
+function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (-1 !== e.indexOf(n)) continue; t[n] = r[n]; } return t; }
+import { jsx as _jsx } from "react/jsx-runtime";
 import classNames from 'classnames';
 import { svgBaseProps, useInsertStyles } from './utils';
 var Icon = function Icon(props) {
@@ -32,17 +13,17 @@ var Icon = function Icon(props) {
     tabIndex = props.tabIndex,
     onClick = props.onClick,
     children = props.children,
-    restProps = __rest(props, ["className", "component", "viewBox", "spin", "rotate", "tabIndex", "onClick", "children"]);
+    restProps = _objectWithoutPropertiesLoose(props, _excluded);
   useInsertStyles();
   var classString = classNames('spotecicon', className);
   var svgClassString = classNames({
     'spotecicon-spin': !!spin
   });
   var svgStyle = rotate ? {
-    msTransform: "rotate(".concat(rotate, "deg)"),
-    transform: "rotate(".concat(rotate, "deg)")
+    msTransform: "rotate(" + rotate + "deg)",
+    transform: "rotate(" + rotate + "deg)"
   } : undefined;
-  var innerSvgProps = __assign(__assign({}, svgBaseProps), {
+  var innerSvgProps = _extends({}, svgBaseProps, {
     className: svgClassString,
     style: svgStyle,
     viewBox: viewBox
@@ -52,12 +33,15 @@ var Icon = function Icon(props) {
   }
   var renderInnerNode = function renderInnerNode() {
     if (Component) {
-      return /*#__PURE__*/React.createElement(Component, __assign({}, innerSvgProps), children);
+      return _jsx(Component, _extends({}, innerSvgProps, {
+        children: children
+      }));
     }
     if (children) {
-      return /*#__PURE__*/React.createElement("svg", __assign({}, innerSvgProps, {
-        viewBox: viewBox
-      }), children);
+      return _jsx("svg", _extends({}, innerSvgProps, {
+        viewBox: viewBox,
+        children: children
+      }));
     }
     return null;
   };
@@ -65,13 +49,14 @@ var Icon = function Icon(props) {
   if (iconTabIndex === undefined && onClick) {
     iconTabIndex = -1;
   }
-  return /*#__PURE__*/React.createElement("span", __assign({
+  return _jsx("span", _extends({
     role: "img"
   }, restProps, {
     tabIndex: iconTabIndex,
     onClick: onClick,
-    className: classString
-  }), renderInnerNode());
+    className: classString,
+    children: renderInnerNode()
+  }));
 };
 Icon.displayName = 'SpotecIcon';
 export default Icon;

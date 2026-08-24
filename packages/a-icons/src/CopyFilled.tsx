@@ -1,9 +1,14 @@
-import * as React from 'react';
-import Icon, { IconProps } from 'a-base-icon/lib/icon';
+import * as React from "react";
+import Icon, { IconProps } from "a-base-icon/lib/icon";
 
 function CopyFilled(componentProps: IconProps) {
   const IconNode = (props: React.SVGProps<SVGSVGElement>) => (
-    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
       <path
         d="M14.6 4c1.137 0 1.929 0 2.546.051.605.05.953.142 1.216.276a3 3 0 011.311 1.311c.134.263.226.611.276 1.216.05.617.051 1.41.051 2.546v8.1h2V9.357c0-1.084 0-1.958-.058-2.666-.06-.728-.185-1.369-.487-1.96a5 5 0 00-2.185-2.186c-.592-.302-1.232-.428-1.961-.487C16.6 2 15.727 2 14.643 2H6.5v2h8.1z"
         fill="currentColor"
@@ -18,5 +23,5 @@ function CopyFilled(componentProps: IconProps) {
   return <Icon {...componentProps} component={IconNode} />;
 }
 
-CopyFilled.displayName = 'CopyFilled';
+CopyFilled.displayName = "CopyFilled";
 export default CopyFilled;

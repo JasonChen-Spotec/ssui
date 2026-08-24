@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, fireEvent } from '@testing-library/react';
+import { fireEvent, render } from '@testing-library/react';
 import StepNumberInput from '../index';
 
 const baseProps = {
@@ -10,7 +10,14 @@ const baseProps = {
 describe('StepNumberInput', () => {
   it('base operate', () => {
     const { getByRole, getByText, container } = render(
-      <StepNumberInput min={0} max={10} maxLength={4} step={4} enableMinus {...baseProps} />,
+      <StepNumberInput
+        min={0}
+        max={10}
+        maxLength={4}
+        step={4}
+        enableMinus
+        {...baseProps}
+      />,
     );
     const input = getByRole('textbox') as HTMLInputElement;
     const minusSign = getByText('-');
@@ -97,7 +104,9 @@ describe('StepNumberInput', () => {
   });
 
   it('enter "-" or "." ', () => {
-    const { getByRole } = render(<StepNumberInput enableMinus numberType="float" {...baseProps} />);
+    const { getByRole } = render(
+      <StepNumberInput enableMinus numberType="float" {...baseProps} />,
+    );
     const input = getByRole('textbox') as HTMLInputElement;
 
     fireEvent.change(input, { target: { value: '-' } });
@@ -131,17 +140,17 @@ describe('StepNumberInput', () => {
   });
 
   it('only max value', () => {
-    const { getByRole, getByText } = render(<StepNumberInput max={10} onChange={jest.fn()} />);
+    const { getByRole } = render(<StepNumberInput max={10} onChange={jest.fn()} />);
     const input = getByRole('textbox') as HTMLInputElement;
     fireEvent.change(input, { target: { value: '123' } });
-    const addSign = getByText('+');
-
-    fireEvent.click(addSign);
+    fireEvent.blur(input);
     expect(input.value).toBe('10');
   });
 
   it('only min value', () => {
-    const { getByRole, getByText } = render(<StepNumberInput min={10} onChange={jest.fn()} />);
+    const { getByRole, getByText } = render(
+      <StepNumberInput min={10} onChange={jest.fn()} />,
+    );
     const input = getByRole('textbox') as HTMLInputElement;
     fireEvent.change(input, { target: { value: '10' } });
     const minusSign = getByText('-');

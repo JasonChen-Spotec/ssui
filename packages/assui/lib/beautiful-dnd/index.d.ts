@@ -1,2 +1,2 @@
-import * as beautifulDnd from 'react-beautiful-dnd';
+import * as beautifulDnd from '@hello-pangea/dnd';
 export default beautifulDnd;

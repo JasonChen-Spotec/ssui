@@ -1,7 +1,7 @@
+import isDate from 'lodash/isDate';
+import isNumber from 'lodash/isNumber';
 import moment from 'moment';
 import momentTimezone from 'moment-timezone'; // fix ie tz.guess bug;
-import isNumber from 'lodash/isNumber';
-import isDate from 'lodash/isDate';
 
 import 'moment/locale/zh-cn';
 
@@ -10,15 +10,15 @@ class DateUtils {
 
   currentTimeFormat: string;
 
-  currentLocale: string;
+  currentLocale?: string;
 
-  dateTimeFormat: string;
+  dateTimeFormat?: string;
 
-  dateFormat: string;
+  dateFormat?: string;
 
-  timeFormat: string;
+  timeFormat?: string;
 
-  timeZoneOffset: number;
+  timeZoneOffset?: number;
 
   constructor() {
     this.currentDateFormat = 'YYYY-MM-DD';
@@ -159,7 +159,7 @@ class DateUtils {
   getToday = (timeZoneOffset?: number) => {
     if (isNumber(timeZoneOffset) || isNumber(this.timeZoneOffset)) {
       const resultOffset =
-        (isNumber(timeZoneOffset) ? timeZoneOffset : this.timeZoneOffset) / 60 / 60;
+        (isNumber(timeZoneOffset) ? timeZoneOffset : this.timeZoneOffset)! / 60 / 60;
       return moment().utc().utcOffset(resultOffset);
     }
 

@@ -1,4 +1,5 @@
 import * as echarts from 'echarts';
+import type { EchartEventFunc } from './core';
 export type Opts = {
     devicePixelRatio?: number;
     renderer?: 'canvas' | 'svg';
@@ -12,8 +13,8 @@ export interface RcEchartPropsType {
     lazyUpdate?: boolean;
     className?: string;
     theme?: string;
-    onEvents?: Record<string, Function>;
+    onEvents?: Record<string, EchartEventFunc>;
     opts?: Opts;
 }
-declare const RcEcharts: (props: RcEchartPropsType) => JSX.Element;
+declare const RcEcharts: (props: RcEchartPropsType) => import("react/jsx-runtime").JSX.Element;
 export default RcEcharts;

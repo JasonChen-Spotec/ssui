@@ -1,9 +1,14 @@
-import * as React from 'react';
-import Icon, { IconProps } from 'a-base-icon/lib/icon';
+import * as React from "react";
+import Icon, { IconProps } from "a-base-icon/lib/icon";
 
 function LineUpFilled(componentProps: IconProps) {
   const IconNode = (props: React.SVGProps<SVGSVGElement>) => (
-    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
       <path
         d="M16.241 2H7.76c-.805 0-1.47 0-2.01.044-.563.046-1.08.145-1.565.392a4 4 0 00-1.748 1.748c-.247.485-.346 1.002-.392 1.564C2 6.29 2 6.954 2 7.758v8.759l4.744-4.675c.084-.084.184-.185.28-.266.111-.094.28-.22.512-.296a1.5 1.5 0 01.928 0c.232.076.4.202.512.296.096.081.196.182.28.266L11 13.586 14.586 10H12V8h5a1 1 0 011 1v5h-2v-2.586l-3.744 3.744c-.084.084-.184.185-.28.266-.111.094-.28.22-.513.296a1.5 1.5 0 01-.926 0 1.508 1.508 0 01-.513-.296c-.096-.081-.196-.182-.28-.266L8 13.414 2.216 19.26c.056.19.128.376.22.557a4 4 0 001.748 1.748c.485.247 1.002.346 1.564.392C6.29 22 6.954 22 7.758 22h8.483c.805 0 1.47 0 2.01-.044.563-.046 1.08-.145 1.565-.392a4 4 0 001.748-1.748c.247-.485.346-1.002.392-1.564.044-.541.044-1.206.044-2.01V7.758c0-.805 0-1.47-.044-2.01-.046-.563-.145-1.08-.392-1.565a4 4 0 00-1.748-1.748c-.485-.247-1.002-.346-1.564-.392C17.71 2 17.046 2 16.242 2z"
         fill="currentColor"
@@ -14,5 +19,5 @@ function LineUpFilled(componentProps: IconProps) {
   return <Icon {...componentProps} component={IconNode} />;
 }
 
-LineUpFilled.displayName = 'LineUpFilled';
+LineUpFilled.displayName = "LineUpFilled";
 export default LineUpFilled;

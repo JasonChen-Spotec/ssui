@@ -1,42 +1,12 @@
-var __assign = this && this.__assign || function () {
-  __assign = Object.assign || function (t) {
-    for (var s, i = 1, n = arguments.length; i < n; i++) {
-      s = arguments[i];
-      for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
-    }
-    return t;
-  };
-  return __assign.apply(this, arguments);
-};
-var __read = this && this.__read || function (o, n) {
-  var m = typeof Symbol === "function" && o[Symbol.iterator];
-  if (!m) return o;
-  var i = m.call(o),
-    r,
-    ar = [],
-    e;
-  try {
-    while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
-  } catch (error) {
-    e = {
-      error: error
-    };
-  } finally {
-    try {
-      if (r && !r.done && (m = i["return"])) m.call(i);
-    } finally {
-      if (e) throw e.error;
-    }
-  }
-  return ar;
-};
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
+import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import React from 'react';
 import useControllableValue from "ahooks/es/useControllableValue";
-import isUndefined from 'lodash/isUndefined';
 import classNames from 'classnames';
+import isUndefined from 'lodash/isUndefined';
 import omit from 'lodash/omit';
-import NumberInput from '../number-input';
 import MultiLineEllipsisText from '../multi-line-ellipsis-text';
+import NumberInput from '../number-input';
 var LabelNumberInput = function LabelNumberInput(props) {
   var className = props.className,
     label = props.label,
@@ -44,57 +14,62 @@ var LabelNumberInput = function LabelNumberInput(props) {
     onFocus = props.onFocus,
     labelEllipsis = props.labelEllipsis,
     id = props.id,
-    _a = props.baseMinWidth,
-    baseMinWidth = _a === void 0 ? 50 : _a;
+    _props$baseMinWidth = props.baseMinWidth,
+    baseMinWidth = _props$baseMinWidth === void 0 ? 50 : _props$baseMinWidth;
   var numberInputRef = React.useRef(null);
-  var _b = __read(useControllableValue(props), 2),
-    value = _b[0],
-    setValue = _b[1];
-  var _c = __read(React.useState(false), 2),
-    focused = _c[0],
-    setFocused = _c[1];
+  var _useControllableValue = useControllableValue(props),
+    value = _useControllableValue[0],
+    setValue = _useControllableValue[1];
+  var _React$useState = React.useState(false),
+    focused = _React$useState[0],
+    setFocused = _React$useState[1];
   var handleLabelClick = function handleLabelClick() {
     setFocused(true);
     numberInputRef.current.focus();
   };
   var handleFocus = function handleFocus() {
     setFocused(true);
-    onFocus === null || onFocus === void 0 ? void 0 : onFocus(value);
+    onFocus == null || onFocus(value);
   };
   var handleBlur = function handleBlur() {
     setFocused(false);
-    onBlur === null || onBlur === void 0 ? void 0 : onBlur(value);
+    onBlur == null || onBlur(value);
   };
-  return /*#__PURE__*/React.createElement("div", {
+  return _jsx("div", {
     className: classNames('label-number-input-warper', className),
     id: id,
     style: {
       minWidth: baseMinWidth
-    }
-  }, /*#__PURE__*/React.createElement("div", {
-    className: classNames('label-number-input-field', {
-      'label-number-input-focused': focused,
-      'label-number-input-disabled': props.disabled
+    },
+    children: _jsxs("div", {
+      className: classNames('label-number-input-field', {
+        'label-number-input-focused': focused,
+        'label-number-input-disabled': props.disabled
+      }),
+      children: [_jsx(NumberInput, _extends({}, omit(props, ['onChange', 'onBlur', 'onFocus', 'className', 'label', 'placeholder', 'baseMinWidth', 'labelEllipsis']), {
+        ref: numberInputRef,
+        "data-value": !isUndefined(value) ? ("" + value).length : 0,
+        value: value,
+        onBlur: handleBlur,
+        onFocus: handleFocus,
+        className: "label-number-input",
+        onChange: function onChange(inputValue) {
+          return setValue(inputValue);
+        }
+      })), labelEllipsis ? _jsx(MultiLineEllipsisText, {
+        text: label,
+        lines: 1,
+        tipType: "tooltip",
+        className: "label-number-input-ellipsis",
+        onClick: handleLabelClick
+      }) :
+      // biome-ignore lint/a11y/noLabelWithoutControl: 点击触发的展示文本，非表单 label
+      _jsx("label", {
+        className: "label-number-input-text",
+        onClick: handleLabelClick,
+        children: label
+      })]
     })
-  }, /*#__PURE__*/React.createElement(NumberInput, __assign({}, omit(props, ['onChange', 'onBlur', 'onFocus', 'className', 'label', 'placeholder', 'baseMinWidth', 'labelEllipsis']), {
-    ref: numberInputRef,
-    "data-value": !isUndefined(value) ? "".concat(value).length : 0,
-    value: value,
-    onBlur: handleBlur,
-    onFocus: handleFocus,
-    className: "label-number-input",
-    onChange: function onChange(inputValue) {
-      return setValue(inputValue);
-    }
-  })), labelEllipsis ? /*#__PURE__*/React.createElement(MultiLineEllipsisText, {
-    text: label,
-    lines: 1,
-    tipType: "tooltip",
-    className: "label-number-input-ellipsis",
-    onClick: handleLabelClick
-  }) : /*#__PURE__*/React.createElement("label", {
-    className: "label-number-input-text",
-    onClick: handleLabelClick
-  }, label)));
+  });
 };
 export default LabelNumberInput;

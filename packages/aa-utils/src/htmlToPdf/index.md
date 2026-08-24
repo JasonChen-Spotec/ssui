@@ -11,19 +11,20 @@ group:
 ---
 
 # htmlToPdf
-将html转换为pdf
+
+将 html 转换为 pdf
 
 ## 代码演示
 
 <code hideActions='["CSB", "EXTERNAL"]' src="./demo/index.jsx" ></code>
 
-
 ## API
+
 ```ts
-import html2canvas from 'html2canvas';
-import type { Options as Html2canvasOptions } from 'html2canvas';
-import JsPDF from 'jspdf';
-import type { jsPDFOptions as JsPDFOptions } from 'jspdf';
+import html2canvas from "html2canvas";
+import type { Options as Html2canvasOptions } from "html2canvas";
+import JsPDF from "jspdf";
+import type { jsPDFOptions as JsPDFOptions } from "jspdf";
 
 type GeneratePDFOptions = {
   /** 文件名称 */
@@ -44,10 +45,13 @@ type GeneratePDFOptions = {
   onBeforeCapture?: () => void;
 };
 
-const htmlToPdf = async (element: HTMLElement | null, options: GeneratePDFOptions) => {
+const htmlToPdf = async (
+  element: HTMLElement | null,
+  options: GeneratePDFOptions
+) => {
   const {
     heightPerPage = 840,
-    fileName = 'document.pdf',
+    fileName = "document.pdf",
     html2canvasOptions = {},
     jsPDFOptions = {},
     onSuccess,
@@ -60,11 +64,12 @@ const htmlToPdf = async (element: HTMLElement | null, options: GeneratePDFOption
 
   const CANVAS_CHROME_FF_LIMIT = 32_767;
   const CANVAS_SAFARI_LIMIT = 4096;
-  // eslint-disable-next-line no-param-reassign
-  element.style.gap = '0px';
+
+  element.style.gap = "0px";
 
   const MAX_CANVAS_HEIGHT =
-    navigator.userAgent.includes('Chrome') || navigator.userAgent.includes('Firefox')
+    navigator.userAgent.includes("Chrome") ||
+    navigator.userAgent.includes("Firefox")
       ? (CANVAS_CHROME_FF_LIMIT % heightPerPage) * heightPerPage
       : (CANVAS_SAFARI_LIMIT % heightPerPage) * heightPerPage;
 
@@ -72,8 +77,8 @@ const htmlToPdf = async (element: HTMLElement | null, options: GeneratePDFOption
 
   try {
     const pdf = new JsPDF({
-      orientation: 'l',
-      unit: 'px',
+      orientation: "l",
+      unit: "px",
       format: [element.offsetWidth, heightPerPage],
       compress: true,
       ...jsPDFOptions,
@@ -112,21 +117,30 @@ const htmlToPdf = async (element: HTMLElement | null, options: GeneratePDFOption
       let position = 0;
       const imgWidth = element.offsetWidth;
       const imgHeight = (element.offsetWidth / contentWidth) * contentHeight;
-      const imgData = canvas.toDataURL('image/jpeg');
+      const imgData = canvas.toDataURL("image/jpeg");
 
       if (contentHeight < pageHeight) {
-        pdf.addImage(imgData, 'JPEG', 0, 0, imgWidth, imgHeight, undefined, 'FAST');
+        pdf.addImage(
+          imgData,
+          "JPEG",
+          0,
+          0,
+          imgWidth,
+          imgHeight,
+          undefined,
+          "FAST"
+        );
       } else {
         while (contentHeight > 0) {
           pdf.addImage(
             imgData,
-            'JPEG',
+            "JPEG",
             0,
             position,
             imgWidth,
             imgHeight,
             undefined,
-            'FAST',
+            "FAST"
           );
           contentHeight -= pageHeight;
           position -= heightPerPage;
@@ -147,5 +161,4 @@ const htmlToPdf = async (element: HTMLElement | null, options: GeneratePDFOption
 };
 
 export default htmlToPdf;
-
 ```

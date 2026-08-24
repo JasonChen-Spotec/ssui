@@ -42,5 +42,5 @@ export interface ConditionSelectInputProps {
     /** select options */
     optionsList: MainSelectOptionsType[];
 }
-declare const ConditionSelectInput: (props: ConditionSelectInputProps) => JSX.Element;
+declare const ConditionSelectInput: (props: ConditionSelectInputProps) => import("react/jsx-runtime").JSX.Element;
 export default ConditionSelectInput;

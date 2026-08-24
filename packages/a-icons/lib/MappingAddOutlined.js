@@ -1,79 +1,33 @@
 "use strict";
 
-var __assign = this && this.__assign || function () {
-  __assign = Object.assign || function (t) {
-    for (var s, i = 1, n = arguments.length; i < n; i++) {
-      s = arguments[i];
-      for (var p in s) {
-        if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
-      }
-    }
-    return t;
-  };
-  return __assign.apply(this, arguments);
-};
-var __createBinding = this && this.__createBinding || (Object.create ? function (o, m, k, k2) {
-  if (k2 === undefined) k2 = k;
-  var desc = Object.getOwnPropertyDescriptor(m, k);
-  if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
-    desc = {
-      enumerable: true,
-      get: function get() {
-        return m[k];
-      }
-    };
-  }
-  Object.defineProperty(o, k2, desc);
-} : function (o, m, k, k2) {
-  if (k2 === undefined) k2 = k;
-  o[k2] = m[k];
-});
-var __setModuleDefault = this && this.__setModuleDefault || (Object.create ? function (o, v) {
-  Object.defineProperty(o, "default", {
-    enumerable: true,
-    value: v
-  });
-} : function (o, v) {
-  o["default"] = v;
-});
-var __importStar = this && this.__importStar || function (mod) {
-  if (mod && mod.__esModule) return mod;
-  var result = {};
-  if (mod != null) for (var k in mod) {
-    if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-  }
-  __setModuleDefault(result, mod);
-  return result;
-};
-var __importDefault = this && this.__importDefault || function (mod) {
-  return mod && mod.__esModule ? mod : {
-    "default": mod
-  };
-};
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-var React = __importStar(require("react"));
-var icon_1 = __importDefault(require("a-base-icon/lib/icon"));
+var tslib_1 = require("tslib");
+var jsx_runtime_1 = require("react/jsx-runtime");
+var icon_1 = tslib_1.__importDefault(require("a-base-icon/lib/icon"));
 function MappingAddOutlined(componentProps) {
   var IconNode = function IconNode(props) {
-    return React.createElement("svg", __assign({
+    return (0, jsx_runtime_1.jsxs)("svg", _extends({
       viewBox: "0 0 24 24",
       xmlns: "http://www.w3.org/2000/svg"
-    }, props), React.createElement("path", {
-      d: "M15.25 11.2c0-.572-.001-.957-.025-1.253-.024-.287-.066-.424-.112-.514a1.251 1.251 0 00-.546-.547c-.09-.046-.228-.088-.514-.111-.296-.024-.68-.025-1.253-.025H5.2c-.572 0-.957 0-1.253.025-.287.023-.424.065-.514.111a1.25 1.25 0 00-.547.547c-.046.09-.088.227-.111.514-.024.296-.025.681-.025 1.254v7.6c0 .572 0 .956.025 1.252.023.286.065.423.111.514.12.235.311.426.547.546.09.046.227.088.514.112.296.024.681.024 1.254.024h7.6c.572 0 .956 0 1.252-.024.286-.024.423-.066.514-.112.235-.12.426-.31.546-.546.046-.09.088-.228.112-.514.024-.296.024-.68.024-1.253v-7.6zm6.757 1.55a.75.75 0 01.74.76c-.01.661-.04 1.235-.296 1.738a2.754 2.754 0 01-1.203 1.203c-.503.256-1.077.287-1.737.296a.75.75 0 01-.02-1.5c.688-.01.924-.056 1.076-.134.235-.12.426-.31.546-.546.078-.152.124-.388.134-1.077a.75.75 0 01.76-.74zM21.249 10V8a.75.75 0 011.5 0v2a.75.75 0 01-1.5 0zM10.49 1.253a.75.75 0 01.02 1.5c-.688.01-.925.056-1.077.133a1.25 1.25 0 00-.547.547c-.077.152-.124.389-.133 1.078a.75.75 0 01-1.5-.02c.009-.662.04-1.236.297-1.74a2.75 2.75 0 011.201-1.2c.504-.257 1.078-.29 1.74-.298zm9.02 0c.661.009 1.235.04 1.738.297.517.264.939.684 1.203 1.201.256.504.287 1.078.296 1.74a.75.75 0 01-1.5.02c-.01-.69-.056-.926-.134-1.078a1.251 1.251 0 00-.546-.547c-.152-.077-.389-.124-1.077-.133a.75.75 0 01.02-1.5zM16 1.25a.75.75 0 010 1.5h-2a.75.75 0 010-1.5h2zm.75 17.55c0 .548 0 1.003-.03 1.374-.03.38-.098.737-.27 1.074a2.754 2.754 0 01-1.202 1.203c-.337.171-.694.238-1.074.27-.37.03-.826.029-1.374.029H5.2c-.547 0-1.004 0-1.375-.03-.38-.03-.736-.098-1.074-.27a2.75 2.75 0 01-1.2-1.202c-.172-.337-.24-.694-.272-1.074-.03-.37-.029-.826-.029-1.374v-7.6c0-.547-.001-1.004.03-1.375.03-.38.098-.736.27-1.074a2.75 2.75 0 011.201-1.2c.338-.173.694-.24 1.074-.272.371-.03.828-.029 1.376-.029h7.6c.547 0 1.002-.001 1.373.03.38.03.737.098 1.074.27a2.75 2.75 0 011.203 1.201c.171.338.238.694.27 1.074.03.371.029.828.029 1.376v7.6z",
-      fill: "currentColor"
-    }), React.createElement("path", {
-      d: "M12 14.25v1.5H6v-1.5h6z",
-      fill: "currentColor"
-    }), React.createElement("path", {
-      d: "M9.758 18.008h-1.5v-6h1.5v6z",
-      fill: "currentColor"
+    }, props, {
+      children: [(0, jsx_runtime_1.jsx)("path", {
+        d: "M15.25 11.2c0-.572-.001-.957-.025-1.253-.024-.287-.066-.424-.112-.514a1.251 1.251 0 00-.546-.547c-.09-.046-.228-.088-.514-.111-.296-.024-.68-.025-1.253-.025H5.2c-.572 0-.957 0-1.253.025-.287.023-.424.065-.514.111a1.25 1.25 0 00-.547.547c-.046.09-.088.227-.111.514-.024.296-.025.681-.025 1.254v7.6c0 .572 0 .956.025 1.252.023.286.065.423.111.514.12.235.311.426.547.546.09.046.227.088.514.112.296.024.681.024 1.254.024h7.6c.572 0 .956 0 1.252-.024.286-.024.423-.066.514-.112.235-.12.426-.31.546-.546.046-.09.088-.228.112-.514.024-.296.024-.68.024-1.253v-7.6zm6.757 1.55a.75.75 0 01.74.76c-.01.661-.04 1.235-.296 1.738a2.754 2.754 0 01-1.203 1.203c-.503.256-1.077.287-1.737.296a.75.75 0 01-.02-1.5c.688-.01.924-.056 1.076-.134.235-.12.426-.31.546-.546.078-.152.124-.388.134-1.077a.75.75 0 01.76-.74zM21.249 10V8a.75.75 0 011.5 0v2a.75.75 0 01-1.5 0zM10.49 1.253a.75.75 0 01.02 1.5c-.688.01-.925.056-1.077.133a1.25 1.25 0 00-.547.547c-.077.152-.124.389-.133 1.078a.75.75 0 01-1.5-.02c.009-.662.04-1.236.297-1.74a2.75 2.75 0 011.201-1.2c.504-.257 1.078-.29 1.74-.298zm9.02 0c.661.009 1.235.04 1.738.297.517.264.939.684 1.203 1.201.256.504.287 1.078.296 1.74a.75.75 0 01-1.5.02c-.01-.69-.056-.926-.134-1.078a1.251 1.251 0 00-.546-.547c-.152-.077-.389-.124-1.077-.133a.75.75 0 01.02-1.5zM16 1.25a.75.75 0 010 1.5h-2a.75.75 0 010-1.5h2zm.75 17.55c0 .548 0 1.003-.03 1.374-.03.38-.098.737-.27 1.074a2.754 2.754 0 01-1.202 1.203c-.337.171-.694.238-1.074.27-.37.03-.826.029-1.374.029H5.2c-.547 0-1.004 0-1.375-.03-.38-.03-.736-.098-1.074-.27a2.75 2.75 0 01-1.2-1.202c-.172-.337-.24-.694-.272-1.074-.03-.37-.029-.826-.029-1.374v-7.6c0-.547-.001-1.004.03-1.375.03-.38.098-.736.27-1.074a2.75 2.75 0 011.201-1.2c.338-.173.694-.24 1.074-.272.371-.03.828-.029 1.376-.029h7.6c.547 0 1.002-.001 1.373.03.38.03.737.098 1.074.27a2.75 2.75 0 011.203 1.201c.171.338.238.694.27 1.074.03.371.029.828.029 1.376v7.6z",
+        fill: "currentColor"
+      }), (0, jsx_runtime_1.jsx)("path", {
+        d: "M12 14.25v1.5H6v-1.5h6z",
+        fill: "currentColor"
+      }), (0, jsx_runtime_1.jsx)("path", {
+        d: "M9.758 18.008h-1.5v-6h1.5v6z",
+        fill: "currentColor"
+      })]
     }));
   };
-  return React.createElement(icon_1["default"], __assign({}, componentProps, {
+  return (0, jsx_runtime_1.jsx)(icon_1["default"], _extends({}, componentProps, {
     component: IconNode
   }));
 }
-MappingAddOutlined.displayName = 'MappingAddOutlined';
+MappingAddOutlined.displayName = "MappingAddOutlined";
 exports["default"] = MappingAddOutlined;

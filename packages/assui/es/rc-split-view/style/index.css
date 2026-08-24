@@ -5,9 +5,9 @@
   height: 100%;
   overflow: hidden;
   outline: none;
-  -moz-user-select: text;
   -webkit-user-select: text;
-  user-select: text;
+     -moz-user-select: text;
+          user-select: text;
 }
 .split-view-horizontal {
   top: 0;

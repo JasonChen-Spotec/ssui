@@ -1,14 +1,14 @@
 import React from 'react';
+import CalendarOutlined from 'a-icons/lib/CalendarOutlined';
 import useControllableValue from 'ahooks/lib/useControllableValue';
-import type { RangePickerProps } from 'antd/lib/date-picker';
 import DatePicker from 'antd/lib/date-picker';
 import classNames from 'classnames';
 import omit from 'lodash/omit';
-import CalendarOutlined from 'a-icons/lib/CalendarOutlined';
 
 const { RangePicker } = DatePicker;
 
-export interface LabelRangePickerProps extends Omit<RangePickerProps, 'label'> {
+export interface LabelRangePickerProps
+  extends Omit<React.ComponentProps<typeof RangePicker>, 'label'> {
   label: React.ReactNode;
   showTime?: any;
 }
@@ -61,6 +61,7 @@ const LabelDatePicker: React.FC<LabelRangePickerProps> = (props) => {
         onOpenChange={handleOpenChange}
         suffixIcon={<CalendarOutlined />}
       />
+      {/* biome-ignore lint/a11y/noLabelWithoutControl: 点击触发的展示文本，非表单 label */}
       <label className="label-range-picker-text" onClick={handleLabelClick}>
         {label}
       </label>

@@ -1,9 +1,9 @@
 import * as React from 'react';
-import isArray from 'lodash/isArray';
-import Input from 'antd/lib/input';
-import type { InputProps } from 'antd/lib/input';
-import isFunction from 'lodash/isFunction';
 import useControllableValue from 'ahooks/lib/useControllableValue';
+import type { InputProps } from 'antd/lib/input';
+import Input from 'antd/lib/input';
+import isArray from 'lodash/isArray';
+import isFunction from 'lodash/isFunction';
 import parse2RegexOption from './parse2RegexOption';
 
 export interface ConditionInputProps extends Omit<InputProps, 'onChange'> {

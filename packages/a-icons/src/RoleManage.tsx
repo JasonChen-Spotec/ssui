@@ -1,9 +1,14 @@
-import * as React from 'react';
-import Icon, { IconProps } from 'a-base-icon/lib/icon';
+import * as React from "react";
+import Icon, { IconProps } from "a-base-icon/lib/icon";
 
 function RoleManage(componentProps: IconProps) {
   const IconNode = (props: React.SVGProps<SVGSVGElement>) => (
-    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
       <rect width={24} height={24} rx={4} fill="#4A65BF" />
       <path
         d="M12 4a3.605 3.605 0 00-3.6 3.604c0 1.95 1.523 3.528 3.509 3.596a.61.61 0 01.167 0h.053a3.593 3.593 0 003.47-3.596A3.605 3.605 0 0012 4zM6 16.002c0-.958.597-1.854 1.679-2.516 1.195-.722 2.758-1.085 4.321-1.086v7.2c-1.568 0-3.136-.366-4.33-1.098C6.597 17.848 6 16.96 6 16.002zM18 16.002c0-.958-.597-1.854-1.679-2.516-1.195-.722-2.759-1.085-4.321-1.086v7.2c1.568 0 3.136-.366 4.33-1.098 1.073-.654 1.67-1.542 1.67-2.5z"
@@ -20,5 +25,5 @@ function RoleManage(componentProps: IconProps) {
   return <Icon {...componentProps} component={IconNode} />;
 }
 
-RoleManage.displayName = 'RoleManage';
+RoleManage.displayName = "RoleManage";
 export default RoleManage;

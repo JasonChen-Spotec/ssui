@@ -1,5 +1,5 @@
-import * as React from 'react';
-import Icon, { IconProps } from 'a-base-icon/lib/icon';
+import * as React from "react";
+import Icon, { IconProps } from "a-base-icon/lib/icon";
 
 function DiamondMoneyOutlined(componentProps: IconProps) {
   const IconNode = (props: React.SVGProps<SVGSVGElement>) => (
@@ -24,5 +24,5 @@ function DiamondMoneyOutlined(componentProps: IconProps) {
   return <Icon {...componentProps} component={IconNode} />;
 }
 
-DiamondMoneyOutlined.displayName = 'DiamondMoneyOutlined';
+DiamondMoneyOutlined.displayName = "DiamondMoneyOutlined";
 export default DiamondMoneyOutlined;

@@ -1,34 +1,25 @@
-var __assign = this && this.__assign || function () {
-  __assign = Object.assign || function (t) {
-    for (var s, i = 1, n = arguments.length; i < n; i++) {
-      s = arguments[i];
-      for (var p in s) {
-        if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
-      }
-    }
-    return t;
-  };
-  return __assign.apply(this, arguments);
-};
-import * as React from 'react';
-import Icon from 'a-base-icon/lib/icon';
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
+import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
+import Icon from "a-base-icon/lib/icon";
 function VoidFilled(componentProps) {
   var IconNode = function IconNode(props) {
-    return /*#__PURE__*/React.createElement("svg", __assign({
+    return _jsxs("svg", _extends({
       viewBox: "0 0 24 24",
       fill: "none",
       xmlns: "http://www.w3.org/2000/svg"
-    }, props), /*#__PURE__*/React.createElement("path", {
-      d: "M13 7a2 2 0 002 2h6v8.241c0 .805 0 1.47-.044 2.011-.046.562-.144 1.08-.392 1.564a4.002 4.002 0 01-1.748 1.748c-.485.248-1.002.346-1.564.392-.541.044-1.206.044-2.01.044H8.758c-.805 0-1.47 0-2.011-.044-.562-.046-1.08-.144-1.564-.392a4.001 4.001 0 01-1.748-1.748c-.248-.485-.346-1.002-.392-1.564C3 18.711 3 18.046 3 17.242v-2.148l3.943 2.491a.1.1 0 00.13-.02l2.926-3.408 2.934 3.864a.1.1 0 00.157.002l1.954-2.422 2.966.501a.102.102 0 00.105-.052.1.1 0 00-.017-.116l-2.989-3.05a.103.103 0 00-.116-.02l-.032.028-1.937 2.358-2.934-4.813a.102.102 0 00-.121-.042l-.038.026-3.403 3.696-3.456-3.141A.099.099 0 003 10.952V6.76c0-.805 0-1.47.044-2.011.046-.562.144-1.08.392-1.564a4.001 4.001 0 011.748-1.748c.485-.248 1.002-.346 1.564-.392C7.29 1 7.954 1 8.758 1H13v6z",
-      fill: "currentColor"
-    }), /*#__PURE__*/React.createElement("path", {
-      d: "M20.414 7H15V1.586L20.414 7z",
-      fill: "currentColor"
+    }, props, {
+      children: [_jsx("path", {
+        d: "M13 7a2 2 0 002 2h6v8.241c0 .805 0 1.47-.044 2.011-.046.562-.144 1.08-.392 1.564a4.002 4.002 0 01-1.748 1.748c-.485.248-1.002.346-1.564.392-.541.044-1.206.044-2.01.044H8.758c-.805 0-1.47 0-2.011-.044-.562-.046-1.08-.144-1.564-.392a4.001 4.001 0 01-1.748-1.748c-.248-.485-.346-1.002-.392-1.564C3 18.711 3 18.046 3 17.242v-2.148l3.943 2.491a.1.1 0 00.13-.02l2.926-3.408 2.934 3.864a.1.1 0 00.157.002l1.954-2.422 2.966.501a.102.102 0 00.105-.052.1.1 0 00-.017-.116l-2.989-3.05a.103.103 0 00-.116-.02l-.032.028-1.937 2.358-2.934-4.813a.102.102 0 00-.121-.042l-.038.026-3.403 3.696-3.456-3.141A.099.099 0 003 10.952V6.76c0-.805 0-1.47.044-2.011.046-.562.144-1.08.392-1.564a4.001 4.001 0 011.748-1.748c.485-.248 1.002-.346 1.564-.392C7.29 1 7.954 1 8.758 1H13v6z",
+        fill: "currentColor"
+      }), _jsx("path", {
+        d: "M20.414 7H15V1.586L20.414 7z",
+        fill: "currentColor"
+      })]
     }));
   };
-  return /*#__PURE__*/React.createElement(Icon, __assign({}, componentProps, {
+  return _jsx(Icon, _extends({}, componentProps, {
     component: IconNode
   }));
 }
-VoidFilled.displayName = 'VoidFilled';
+VoidFilled.displayName = "VoidFilled";
 export default VoidFilled;

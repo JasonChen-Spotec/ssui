@@ -4,9 +4,9 @@ import useMount from 'ahooks/lib/useMount';
 import useUnmount from 'ahooks/lib/useUnmount';
 import classNames from 'classnames';
 import isUndefined from 'lodash/isUndefined';
-import View from './View';
 import DraggableHandle from './DraggableHandle';
-import { getSizeUpdate, removeNullChildren, getDefaultSize, unFocus } from './utils';
+import { getDefaultSize, getSizeUpdate, removeNullChildren, unFocus } from './utils';
+import View from './View';
 
 export { View };
 

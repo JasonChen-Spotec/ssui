@@ -1,12 +1,12 @@
 import * as React from 'react';
-import classNames from 'classnames';
-import BigNumber from 'bignumber.js';
-import isUndefined from 'lodash/isUndefined';
 import useControllableValue from 'ahooks/lib/useControllableValue';
 import DisabledContext from 'antd/lib/config-provider/DisabledContext';
-import { INT } from './const/numberType';
-import { PLUS, MINUS } from './const/countType';
+import BigNumber from 'bignumber.js';
+import classNames from 'classnames';
+import isUndefined from 'lodash/isUndefined';
 import NumberInput from '../number-input';
+import { MINUS, PLUS } from './const/countType';
+import { INT } from './const/numberType';
 
 export interface StepNumberInputProps {
   /** 输入框的内容 */
@@ -76,7 +76,7 @@ const StepNumberInput = (props: StepNumberInputProps) => {
   const minusDisabled = isEmpty || minCondition || mergedDisabled;
   const addDisabled = isEmpty || maxCondition || mergedDisabled;
 
-  const onNumberChange = (lastValue: string) => {
+  const onNumberChange = (lastValue: any) => {
     if (value !== lastValue) {
       setValue(lastValue);
     }

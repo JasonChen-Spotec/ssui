@@ -1,35 +1,5 @@
-var __assign = this && this.__assign || function () {
-  __assign = Object.assign || function (t) {
-    for (var s, i = 1, n = arguments.length; i < n; i++) {
-      s = arguments[i];
-      for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
-    }
-    return t;
-  };
-  return __assign.apply(this, arguments);
-};
-var __read = this && this.__read || function (o, n) {
-  var m = typeof Symbol === "function" && o[Symbol.iterator];
-  if (!m) return o;
-  var i = m.call(o),
-    r,
-    ar = [],
-    e;
-  try {
-    while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
-  } catch (error) {
-    e = {
-      error: error
-    };
-  } finally {
-    try {
-      if (r && !r.done && (m = i["return"])) m.call(i);
-    } finally {
-      if (e) throw e.error;
-    }
-  }
-  return ar;
-};
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
+import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import React from 'react';
 import useGetState from "ahooks/es/useGetState";
 import useMount from "ahooks/es/useMount";
@@ -41,9 +11,9 @@ import DraggableHandle from './DraggableHandle';
 import { getSizeUpdate, removeNullChildren, getDefaultSize, unFocus } from './utils';
 export { View };
 var RcSplitView = function RcSplitView(props) {
-  var _a;
-  var _b = props.draggable,
-    draggable = _b === void 0 ? true : _b,
+  var _classNames;
+  var _props$draggable = props.draggable,
+    draggable = _props$draggable === void 0 ? true : _props$draggable,
     children = props.children,
     className = props.className,
     onResizerClick = props.onResizerClick,
@@ -52,16 +22,16 @@ var RcSplitView = function RcSplitView(props) {
     firstViewClassName = props.firstViewClassName,
     secondViewClassName = props.secondViewClassName,
     handleClassName = props.handleClassName,
-    _c = props.split,
-    split = _c === void 0 ? 'vertical' : _c,
+    _props$split = props.split,
+    split = _props$split === void 0 ? 'vertical' : _props$split,
     onDragStarted = props.onDragStarted,
     onDragFinished = props.onDragFinished,
-    _d = props.primary,
-    primary = _d === void 0 ? 'first' : _d,
+    _props$primary = props.primary,
+    primary = _props$primary === void 0 ? 'first' : _props$primary,
     step = props.step,
     maxSize = props.maxSize,
-    _e = props.minSize,
-    minSize = _e === void 0 ? 50 : _e,
+    _props$minSize = props.minSize,
+    minSize = _props$minSize === void 0 ? 50 : _props$minSize,
     onChange = props.onChange,
     size = props.size,
     defaultSize = props.defaultSize,
@@ -81,27 +51,27 @@ var RcSplitView = function RcSplitView(props) {
   var splitViewRef = React.useRef(null);
   var firstViewRef = React.useRef(null);
   var secondViewRef = React.useRef(null);
-  var _f = __read(useGetState(initialValue), 3),
-    states = _f[0],
-    setStates = _f[1],
-    getStates = _f[2];
+  var _useGetState = useGetState(initialValue),
+    states = _useGetState[0],
+    setStates = _useGetState[1],
+    getStates = _useGetState[2];
   var onTouchStart = function onTouchStart(event) {
     var currentValue = getStates();
     if (draggable) {
       unFocus(document, window);
-      var _a = event.touches[0],
-        clientX = _a.clientX,
-        clientY = _a.clientY;
+      var _event$touches$ = event.touches[0],
+        clientX = _event$touches$.clientX,
+        clientY = _event$touches$.clientY;
       var position = split === 'vertical' ? clientX : clientY;
-      onDragStarted === null || onDragStarted === void 0 ? void 0 : onDragStarted();
-      setStates(__assign(__assign({}, currentValue), {
+      onDragStarted == null || onDragStarted();
+      setStates(_extends({}, currentValue, {
         active: true,
         position: position
       }));
     }
   };
   var onMouseDown = function onMouseDown(event) {
-    var eventWithTouches = __assign(__assign({}, event), {
+    var eventWithTouches = _extends({}, event, {
       touches: [{
         clientX: event.clientX,
         clientY: event.clientY
@@ -114,15 +84,13 @@ var RcSplitView = function RcSplitView(props) {
     var active = currentValue.active,
       draggedSize = currentValue.draggedSize;
     if (draggable && active && draggedSize) {
-      onDragFinished === null || onDragFinished === void 0 ? void 0 : onDragFinished(draggedSize);
-      setStates(__assign(__assign({}, currentValue), {
+      onDragFinished == null || onDragFinished(draggedSize);
+      setStates(_extends({}, currentValue, {
         active: false
       }));
     }
   };
   var onTouchMove = function onTouchMove(event) {
-    var _a;
-    var _b;
     var currentValue = getStates();
     var active = currentValue.active,
       position = currentValue.position;
@@ -135,9 +103,10 @@ var RcSplitView = function RcSplitView(props) {
         var firstNode = firstRef;
         var secondNode = secondRef;
         if (firstNode.getBoundingClientRect) {
-          var _c = firstNode.getBoundingClientRect(),
-            width = _c.width,
-            height = _c.height;
+          var _extends2;
+          var _firstNode$getBoundin = firstNode.getBoundingClientRect(),
+            width = _firstNode$getBoundin.width,
+            height = _firstNode$getBoundin.height;
           var current = split === 'vertical' ? event.touches[0].clientX : event.touches[0].clientY;
           var nodeSize = split === 'vertical' ? width : height;
           var positionDelta = position - current;
@@ -156,7 +125,8 @@ var RcSplitView = function RcSplitView(props) {
           var newMaxSize = maxSize || 0;
           if (!isUndefined(maxSize) && maxSize <= 0) {
             if (split === 'vertical') {
-              newMaxSize = ((_b = splitViewRef.current.getBoundingClientRect()) === null || _b === void 0 ? void 0 : _b.width) + maxSize;
+              var _splitViewRef$current;
+              newMaxSize = ((_splitViewRef$current = splitViewRef.current.getBoundingClientRect()) == null ? void 0 : _splitViewRef$current.width) + maxSize;
             } else {
               newMaxSize = splitViewRef.current.getBoundingClientRect().height + maxSize;
             }
@@ -173,16 +143,16 @@ var RcSplitView = function RcSplitView(props) {
               position: newPosition
             };
           }
-          onChange === null || onChange === void 0 ? void 0 : onChange(newSize);
-          setStates(__assign(__assign(__assign({}, currentValue), (_a = {
+          onChange == null || onChange(newSize);
+          setStates(_extends({}, currentValue, (_extends2 = {
             draggedSize: newSize
-          }, _a[isFirstPrimary ? 'firstViewSize' : 'secondViewSize'] = newSize, _a)), restValue));
+          }, _extends2[isFirstPrimary ? 'firstViewSize' : 'secondViewSize'] = newSize, _extends2), restValue));
         }
       }
     }
   };
   var onMouseMove = function onMouseMove(event) {
-    var eventWithTouches = __assign(__assign({}, event), {
+    var eventWithTouches = _extends({}, event, {
       touches: [{
         clientX: event.clientX,
         clientY: event.clientY
@@ -207,34 +177,36 @@ var RcSplitView = function RcSplitView(props) {
     document.removeEventListener('mousemove', onMouseMove);
     document.removeEventListener('touchmove', onTouchMove);
   });
-  var _g = __read(removeNullChildren(children), 2),
-    firstViewNode = _g[0],
-    secondViewNode = _g[1];
-  return /*#__PURE__*/React.createElement("div", {
-    className: classNames('split-view', "split-view-".concat(split), className),
-    ref: splitViewRef
-  }, /*#__PURE__*/React.createElement(View, {
-    className: classNames(viewClassName, firstViewClassName),
-    key: "first-view",
-    ref: firstViewRef,
-    size: states.firstViewSize,
-    split: split
-  }, firstViewNode), /*#__PURE__*/React.createElement(DraggableHandle, {
-    className: classNames('split-view-draggable-handle', (_a = {}, _a["split-view-draggable-handle-".concat(split, "-disabled")] = !draggable, _a), "split-view-draggable-handle-".concat(split), handleClassName),
-    onClick: onResizerClick,
-    onDoubleClick: onResizerDoubleClick,
-    onMouseDown: onMouseDown,
-    onTouchStart: onTouchStart,
-    onTouchEnd: onMouseUp,
-    key: "draggableHandle"
-  }, draggable && /*#__PURE__*/React.createElement("div", {
-    className: classNames("split-view-draggable-handle-".concat(split, "-content"), handleContentClassName)
-  }, handleContent)), /*#__PURE__*/React.createElement(View, {
-    className: classNames(viewClassName, secondViewClassName),
-    key: "second-view",
-    ref: secondViewRef,
-    size: states.secondViewSize,
-    split: split
-  }, secondViewNode));
+  var _removeNullChildren = removeNullChildren(children),
+    firstViewNode = _removeNullChildren[0],
+    secondViewNode = _removeNullChildren[1];
+  return _jsxs("div", {
+    className: classNames('split-view', "split-view-" + split, className),
+    ref: splitViewRef,
+    children: [_jsx(View, {
+      className: classNames(viewClassName, firstViewClassName),
+      ref: firstViewRef,
+      size: states.firstViewSize,
+      split: split,
+      children: firstViewNode
+    }, "first-view"), _jsx(DraggableHandle, {
+      className: classNames('split-view-draggable-handle', (_classNames = {}, _classNames["split-view-draggable-handle-" + split + "-disabled"] = !draggable, _classNames), "split-view-draggable-handle-" + split, handleClassName),
+      onClick: onResizerClick,
+      onDoubleClick: onResizerDoubleClick,
+      onMouseDown: onMouseDown,
+      onTouchStart: onTouchStart,
+      onTouchEnd: onMouseUp,
+      children: draggable && _jsx("div", {
+        className: classNames("split-view-draggable-handle-" + split + "-content", handleContentClassName),
+        children: handleContent
+      })
+    }, "draggableHandle"), _jsx(View, {
+      className: classNames(viewClassName, secondViewClassName),
+      ref: secondViewRef,
+      size: states.secondViewSize,
+      split: split,
+      children: secondViewNode
+    }, "second-view")]
+  });
 };
 export default RcSplitView;
