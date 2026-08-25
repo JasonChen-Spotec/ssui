@@ -35,26 +35,24 @@ var BaseButton = function BaseButton(_ref) {
     children = _ref.children,
     className = _ref.className,
     restProps = _objectWithoutPropertiesLoose(_ref, _excluded);
-  return (0, jsx_runtime_1.jsx)("button", _extends({
+  return (0, jsx_runtime_1.jsxs)("button", _extends({
     type: "button",
     disabled: disabled || loading
   }, restProps, {
     className: (0, classnames_1["default"])(btnNamePrefix, btnNamePrefix + "-" + color, btnNamePrefix + "-" + size, variant && btnNamePrefix + "-variant-" + variant, (_ref2 = {}, _ref2[btnNamePrefix + "-round"] = round, _ref2[btnNamePrefix + "-block"] = block, _ref2[btnNamePrefix + "-disabled"] = disabled, _ref2[btnNamePrefix + "-loading"] = loading, _ref2), className),
-    children: (0, jsx_runtime_1.jsxs)(jsx_runtime_1.Fragment, {
-      children: [prefixIcon && (0, jsx_runtime_1.jsx)("span", {
-        className: btnNamePrefix + "-icon",
-        children: loading ? loadingIcon : prefixIcon
-      }), loading && !prefixIcon && !suffixIcon && loadingIcon, (0, jsx_runtime_1.jsx)("span", {
-        className: btnNamePrefix + "-content",
-        children: children
-      }), loading && !prefixIcon && suffixIcon && (0, jsx_runtime_1.jsx)("span", {
-        className: btnNamePrefix + "-icon",
-        children: loadingIcon
-      }), (!loading || prefixIcon) && suffixIcon && (0, jsx_runtime_1.jsx)("span", {
-        className: btnNamePrefix + "-icon",
-        children: suffixIcon
-      })]
-    })
+    children: [prefixIcon && (0, jsx_runtime_1.jsx)("span", {
+      className: btnNamePrefix + "-icon",
+      children: loading ? loadingIcon : prefixIcon
+    }), loading && !prefixIcon && !suffixIcon && loadingIcon, (0, jsx_runtime_1.jsx)("span", {
+      className: btnNamePrefix + "-content",
+      children: children
+    }), loading && !prefixIcon && suffixIcon && (0, jsx_runtime_1.jsx)("span", {
+      className: btnNamePrefix + "-icon",
+      children: loadingIcon
+    }), (!loading || prefixIcon) && suffixIcon && (0, jsx_runtime_1.jsx)("span", {
+      className: btnNamePrefix + "-icon",
+      children: suffixIcon
+    })]
   }));
 };
 exports["default"] = BaseButton;

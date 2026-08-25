@@ -5,8 +5,8 @@ Object.defineProperty(exports, "__esModule", {
 });
 var tslib_1 = require("tslib");
 var jsx_runtime_1 = require("react/jsx-runtime");
-var getRanges_1 = tslib_1.__importDefault(require("./getRanges"));
 var extractSpansOfClasses_1 = tslib_1.__importDefault(require("./extractSpansOfClasses"));
+var getRanges_1 = tslib_1.__importDefault(require("./getRanges"));
 var HighlighedContents = function HighlighedContents(_ref) {
   var value = _ref.value,
     _ref$highlight = _ref.highlight,

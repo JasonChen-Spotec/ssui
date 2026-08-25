@@ -28,7 +28,7 @@ declare const _default: {
     'Increase indent': string;
     Close: string;
     Formats: string;
-    'Your browser doesn\'t support direct access to the clipboard. Please use the Ctrl+X/C/V keyboard shortcuts instead.': string;
+    "Your browser doesn't support direct access to the clipboard. Please use the Ctrl+X/C/V keyboard shortcuts instead.": string;
     Headings: string;
     'Heading 1': string;
     'Heading 2': string;

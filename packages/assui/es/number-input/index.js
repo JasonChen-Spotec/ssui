@@ -3,12 +3,12 @@ function _extends() { return _extends = Object.assign ? Object.assign.bind() : f
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (-1 !== e.indexOf(n)) continue; t[n] = r[n]; } return t; }
 import { jsx as _jsx } from "react/jsx-runtime";
 import * as React from 'react';
-import Input from "antd/es/input";
 import useControllableValue from "ahooks/es/useControllableValue";
+import Input from "antd/es/input";
 import omit from 'lodash/omit';
 import * as dataTypeEnum from './const/dataTypeEnum';
 import * as numberTypeEnum from './const/numberType';
-import { filterInt, filterFloat } from './utils';
+import { filterFloat, filterInt } from './utils';
 var NumberInput = /*#__PURE__*/React.forwardRef(function (props, ref) {
   var _useControllableValue = useControllableValue(props, {
       defaultValue: ''
@@ -76,5 +76,5 @@ var NumberInput = /*#__PURE__*/React.forwardRef(function (props, ref) {
     maxLength: maxLength
   }, omit(restProps, ['value'])));
 });
-export { numberTypeEnum, dataTypeEnum };
+export { dataTypeEnum, numberTypeEnum };
 export default NumberInput;

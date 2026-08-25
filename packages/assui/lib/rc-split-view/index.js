@@ -13,10 +13,10 @@ var useMount_1 = tslib_1.__importDefault(require("ahooks/lib/useMount"));
 var useUnmount_1 = tslib_1.__importDefault(require("ahooks/lib/useUnmount"));
 var classnames_1 = tslib_1.__importDefault(require("classnames"));
 var isUndefined_1 = tslib_1.__importDefault(require("lodash/isUndefined"));
-var View_1 = tslib_1.__importDefault(require("./View"));
-exports.View = View_1["default"];
 var DraggableHandle_1 = tslib_1.__importDefault(require("./DraggableHandle"));
 var utils_1 = require("./utils");
+var View_1 = tslib_1.__importDefault(require("./View"));
+exports.View = View_1["default"];
 var RcSplitView = function RcSplitView(props) {
   var _ref3;
   var _props$draggable = props.draggable,

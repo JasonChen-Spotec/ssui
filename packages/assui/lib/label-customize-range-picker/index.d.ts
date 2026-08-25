@@ -1,7 +1,7 @@
 import React from 'react';
 import type { Moment } from 'moment';
-import type { dateTypeEnum } from './defaultRadioList';
 import type { LabelRangePickerProps } from '../label-range-picker';
+import type { dateTypeEnum } from './defaultRadioList';
 export type RadioListType = {
     key: string | number | dateTypeEnum;
     text: string;

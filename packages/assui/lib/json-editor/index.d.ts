@@ -1,5 +1,5 @@
-import type { JSONEditorOptions } from 'jsoneditor';
 import React from 'react';
+import type { JSONEditorOptions } from 'jsoneditor';
 export type JSONEditorProps = {
     className?: string;
     options?: JSONEditorOptions;

@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.readDomainMap = exports.fileHostMap = exports.mainDomainMap = exports.socketHostMap = exports.allSiteMap = exports.apiHostMap = void 0;
+exports.socketHostMap = exports.readDomainMap = exports.mainDomainMap = exports.fileHostMap = exports.apiHostMap = exports.allSiteMap = void 0;
 var fileHostMap = {
   dev: 'http://192.168.0.129:9000',
   test1: 'http://192.168.0.126:9000',

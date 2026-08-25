@@ -3,9 +3,9 @@ function _extends() { return _extends = Object.assign ? Object.assign.bind() : f
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (-1 !== e.indexOf(n)) continue; t[n] = r[n]; } return t; }
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import * as React from 'react';
+import useMount from "ahooks/es/useMount";
 import classNames from 'classnames';
 import trimStart from 'lodash/trimStart';
-import useMount from "ahooks/es/useMount";
 import HighlighedContents from './HighlighedContents';
 var HighlightWithinTextarea = /*#__PURE__*/React.forwardRef(function (props, ref) {
   var _props$prefixCls = props.prefixCls,

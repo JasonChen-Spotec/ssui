@@ -9,15 +9,15 @@ Object.defineProperty(exports, "__esModule", {
 var tslib_1 = require("tslib");
 var jsx_runtime_1 = require("react/jsx-runtime");
 var react_1 = require("react");
-var radio_1 = tslib_1.__importDefault(require("antd/lib/radio"));
+var useControllableValue_1 = tslib_1.__importDefault(require("ahooks/lib/useControllableValue"));
 var checkbox_1 = tslib_1.__importDefault(require("antd/lib/checkbox"));
 var date_picker_1 = tslib_1.__importDefault(require("antd/lib/date-picker"));
-var useControllableValue_1 = tslib_1.__importDefault(require("ahooks/lib/useControllableValue"));
+var radio_1 = tslib_1.__importDefault(require("antd/lib/radio"));
 var omit_1 = tslib_1.__importDefault(require("lodash/omit"));
-var defaultRadioList_1 = tslib_1.__importDefault(require("./defaultRadioList"));
-var label_range_picker_1 = tslib_1.__importDefault(require("../label-range-picker"));
 var context_1 = tslib_1.__importDefault(require("../config-provider/context"));
+var label_range_picker_1 = tslib_1.__importDefault(require("../label-range-picker"));
 var messages_1 = tslib_1.__importStar(require("../messages"));
+var defaultRadioList_1 = tslib_1.__importDefault(require("./defaultRadioList"));
 var utils_1 = require("./utils");
 var RangePicker = date_picker_1["default"].RangePicker;
 var LabelCustomizeRangePicker = function LabelCustomizeRangePicker(props) {
@@ -67,7 +67,9 @@ var LabelCustomizeRangePicker = function LabelCustomizeRangePicker(props) {
   var dataSource = radioList != null ? radioList : defaultRadioList;
   (0, react_1.useEffect)(function () {
     var filterItemList = dataSource.filter(function (item) {
-      if (!date) return false;
+      if (!date) {
+        return false;
+      }
       var _item$value = item.value,
         startTime = _item$value[0],
         endTime = _item$value[1];

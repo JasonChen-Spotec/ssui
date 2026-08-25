@@ -5,8 +5,8 @@ Object.defineProperty(exports, "__esModule", {
 });
 var tslib_1 = require("tslib");
 var moment_1 = tslib_1.__importDefault(require("moment"));
-var localStorage_1 = tslib_1.__importDefault(require("../localStorage"));
 var dateUtils_1 = tslib_1.__importDefault(require("../dateUtils"));
+var localStorage_1 = tslib_1.__importDefault(require("../localStorage"));
 var today = dateUtils_1["default"].getToday();
 var setCurrentTime = function setCurrentTime() {
   return localStorage_1["default"].set('executionTime', "" + today.valueOf());

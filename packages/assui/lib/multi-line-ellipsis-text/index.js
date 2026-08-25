@@ -7,10 +7,10 @@ Object.defineProperty(exports, "__esModule", {
 var tslib_1 = require("tslib");
 var jsx_runtime_1 = require("react/jsx-runtime");
 var react_1 = tslib_1.__importDefault(require("react"));
+var useSize_1 = tslib_1.__importDefault(require("ahooks/lib/useSize"));
 var tooltip_1 = tslib_1.__importDefault(require("antd/lib/tooltip"));
 var classnames_1 = tslib_1.__importDefault(require("classnames"));
 var omit_1 = tslib_1.__importDefault(require("lodash/omit"));
-var useSize_1 = tslib_1.__importDefault(require("ahooks/lib/useSize"));
 var button_modal_1 = tslib_1.__importDefault(require("../button-modal"));
 var MultiLineEllipsisText = function MultiLineEllipsisText(_ref) {
   var _ref$text = _ref.text,

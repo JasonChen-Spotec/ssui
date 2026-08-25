@@ -1,11 +1,11 @@
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
-import { SketchPicker } from 'react-color';
 import { useContext } from 'react';
-import RcTrigger from 'rc-trigger';
-import classNames from 'classnames';
-import useControllableValue from "ahooks/es/useControllableValue";
 import ChevronRightOutlined from "a-icons/es/ChevronRightOutlined";
+import useControllableValue from "ahooks/es/useControllableValue";
+import classNames from 'classnames';
+import RcTrigger from 'rc-trigger';
+import { SketchPicker } from 'react-color';
 import LocaleContext from '../config-provider/context';
 import formatMessage, { langTypeEnum } from '../messages';
 var ColorSelect = function ColorSelect(props) {
@@ -27,7 +27,6 @@ var ColorSelect = function ColorSelect(props) {
   };
   var defaultValueNode = _jsxs("div", {
     className: classNames('color-select', className),
-    tabIndex: 0,
     children: [value ? _jsx("div", {
       className: "color-select-value",
       style: value ? {
@@ -58,7 +57,7 @@ var ColorSelect = function ColorSelect(props) {
         onChange: onChange
       }, reactColorProps)),
       children: renderValueNode ? renderValueNode(value) : defaultValueNode
-    })), renderExtra && renderExtra(value)]
+    })), renderExtra == null ? void 0 : renderExtra(value)]
   });
 };
 export default ColorSelect;

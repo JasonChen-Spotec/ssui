@@ -6,13 +6,13 @@ Object.defineProperty(exports, "__esModule", {
 });
 var tslib_1 = require("tslib");
 var jsx_runtime_1 = require("react/jsx-runtime");
-var jsoneditor_1 = tslib_1.__importDefault(require("jsoneditor"));
 var react_1 = tslib_1.__importStar(require("react"));
 var useControllableValue_1 = tslib_1.__importDefault(require("ahooks/lib/useControllableValue"));
 var useMount_1 = tslib_1.__importDefault(require("ahooks/lib/useMount"));
-var isEqual_1 = tslib_1.__importDefault(require("lodash/isEqual"));
 var useUnmount_1 = tslib_1.__importDefault(require("ahooks/lib/useUnmount"));
 var classnames_1 = tslib_1.__importDefault(require("classnames"));
+var jsoneditor_1 = tslib_1.__importDefault(require("jsoneditor"));
+var isEqual_1 = tslib_1.__importDefault(require("lodash/isEqual"));
 var JsonEditor = function JsonEditor(props, ref) {
   var options = props.options,
     className = props.className;

@@ -1,5 +1,5 @@
-import QRCode from 'qrcode';
 import { useEffect, useState } from 'react';
+import QRCode from 'qrcode';
 export var useQRCode = function useQRCode(value, options) {
   if (options === void 0) {
     options = {};

@@ -5,9 +5,9 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 var tslib_1 = require("tslib");
+var isObject_1 = tslib_1.__importDefault(require("lodash/isObject"));
 var isRegExp_1 = tslib_1.__importDefault(require("lodash/isRegExp"));
 var isString_1 = tslib_1.__importDefault(require("lodash/isString"));
-var isObject_1 = tslib_1.__importDefault(require("lodash/isObject"));
 var defaultOptionValues = {
   isValid: true,
   replacement: ''

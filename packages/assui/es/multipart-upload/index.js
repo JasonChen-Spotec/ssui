@@ -2,12 +2,12 @@ var _excluded = ["className", "wrapperClassName", "accept", "method", "fileName"
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (-1 !== e.indexOf(n)) continue; t[n] = r[n]; } return t; }
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
-import { useState, useRef } from 'react';
-import Upload from 'rc-upload';
+import { useRef, useState } from 'react';
+import { CirclePlusFilled, CloseOutlined } from 'a-icons';
 import { useMount, useUpdateEffect } from 'ahooks';
-import classNames from 'classnames';
 import { Progress } from 'antd';
-import { CloseOutlined, CirclePlusFilled } from 'a-icons';
+import classNames from 'classnames';
+import Upload from 'rc-upload';
 import getMultipartUploadHandler from './getMultipartUploadHandler';
 var MultipartUpload = function MultipartUpload(props) {
   var className = props.className,
@@ -64,11 +64,11 @@ var MultipartUpload = function MultipartUpload(props) {
     fileNameRef.current = file.name;
     totalChunks = Math.ceil(fileRef.current.size / resChunkSize);
     setUploadStatus('uploading');
-    onStart && onStart(file);
+    onStart == null || onStart(file);
   };
   var handleError = function handleError(error, ret, file) {
     setUploadStatus('init');
-    onError && onError(error, ret, file);
+    onError == null || onError(error, ret, file);
   };
   var uploadCls = classNames(className, {
     'not-upload-init': uploadStatus !== 'init'
@@ -78,7 +78,7 @@ var MultipartUpload = function MultipartUpload(props) {
       var _uploadRef$current;
       (_uploadRef$current = uploadRef.current) == null || _uploadRef$current.abort(fileRef.current);
       setUploadStatus('init');
-      cancelUpload && cancelUpload();
+      cancelUpload == null || cancelUpload();
     }
   };
   var progress = function progress(progressNumber) {
@@ -112,11 +112,11 @@ var MultipartUpload = function MultipartUpload(props) {
             list: uploadList
           }).then(function (fileUrl) {
             setUploadStatus('done');
-            onSuccess && onSuccess(fileUrl, fileNameRef.current);
+            onSuccess == null || onSuccess(fileUrl, fileNameRef.current);
           });
         }
       })["catch"](function (error) {
-        errorCatch && errorCatch(error);
+        errorCatch == null || errorCatch(error);
       });
     }
   };

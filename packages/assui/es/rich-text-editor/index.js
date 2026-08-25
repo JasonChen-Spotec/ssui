@@ -7,7 +7,6 @@ import tinymce from 'tinymce/tinymce';
 import 'tinymce/themes/silver';
 import 'tinymce/models/dom';
 import 'tinymce/icons/default';
-import 'tinymce/skins/ui/oxide/skin.min.css';
 // importing the plugin js.
 import 'tinymce/plugins/advlist';
 import 'tinymce/plugins/autolink';
@@ -35,8 +34,9 @@ import 'tinymce/plugins/autoresize';
 import 'tinymce/plugins/emoticons';
 import 'tinymce/plugins/importcss';
 import 'tinymce/plugins/pagebreak';
-import initCodePlugin from './plugins/code';
 import zhCN from './lang/zh_CN';
+import initCodePlugin from './plugins/code';
+import 'tinymce/skins/ui/oxide/skin.min.css';
 tinymce.addI18n('zh-Hans', zhCN);
 initCodePlugin();
 var defaultPlugins = ['advlist', 'autolink', 'lists', 'link', 'image', 'charmap', 'anchor', 'searchreplace', 'visualblocks', 'code', 'fullscreen', 'insertdatetime', 'media', 'table', 'preview', 'help'];

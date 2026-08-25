@@ -1,8 +1,8 @@
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import React from 'react';
-import useControllableValue from "ahooks/es/useControllableValue";
 import useClickAway from "ahooks/es/useClickAway";
+import useControllableValue from "ahooks/es/useControllableValue";
 import classNames from 'classnames';
 import NumberInput from '../number-input';
 var defaultValue = {
@@ -76,7 +76,6 @@ var LabelDatePicker = function LabelDatePicker(props) {
     }, className),
     children: [_jsxs("div", {
       className: "a-number a-number-range",
-      "aria-required": "true",
       children: [_jsx("div", {
         className: "a-number-input",
         children: _jsx(NumberInput, _extends({

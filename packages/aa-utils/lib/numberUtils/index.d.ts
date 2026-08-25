@@ -1,5 +1,5 @@
 import BigNumber from 'bignumber.js';
-import { strip, float2Fixed, digitLength } from './numberPrecision';
+import { digitLength, float2Fixed, strip } from './numberPrecision';
 type RoundingModeConfig = 'up' | 'down' | 'ceil' | 'floor' | 'halfUp' | 'halfDown' | 'halfEven' | 'halfCeil' | 'halfFloor';
 export interface OptionsConfig {
     useGrouping?: boolean;

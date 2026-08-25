@@ -6,8 +6,8 @@ Object.defineProperty(exports, "__esModule", {
 exports.unFocus = exports.removeNullChildren = exports.getSizeUpdate = exports.getDefaultSize = void 0;
 var tslib_1 = require("tslib");
 var react_1 = tslib_1.__importDefault(require("react"));
-var isUndefined_1 = tslib_1.__importDefault(require("lodash/isUndefined"));
 var isNumber_1 = tslib_1.__importDefault(require("lodash/isNumber"));
+var isUndefined_1 = tslib_1.__importDefault(require("lodash/isUndefined"));
 /** 获取默认尺寸 */
 var getDefaultSize = function getDefaultSize(defaultSize, minSize, maxSize, draggedSize) {
   if ((0, isNumber_1["default"])(draggedSize)) {

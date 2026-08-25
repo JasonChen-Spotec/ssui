@@ -1,8 +1,8 @@
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 import { jsx as _jsx } from "react/jsx-runtime";
 import * as React from 'react';
-import QRCode from 'qrcode';
 import useMount from "ahooks/es/useMount";
+import QRCode from 'qrcode';
 import useQrcode from './useQrcode';
 var initEmptyObject = {};
 var RcQrcode = function RcQrcode(props) {
@@ -24,7 +24,7 @@ var RcQrcode = function RcQrcode(props) {
       if (err) {
         throw err;
       }
-      getCanvasInstance && getCanvasInstance(result);
+      getCanvasInstance == null || getCanvasInstance(result);
       (_domElRef$current = domElRef.current) == null || _domElRef$current.appendChild(result);
     });
   });

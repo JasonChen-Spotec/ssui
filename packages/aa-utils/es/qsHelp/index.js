@@ -1,5 +1,5 @@
-import queryString from 'qs';
 import { compile } from 'path-to-regexp';
+import queryString from 'qs';
 var isServerSide = function isServerSide() {
   return typeof XMLHttpRequest === 'undefined';
 };

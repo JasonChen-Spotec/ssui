@@ -10,8 +10,12 @@ var lodash_1 = require("lodash");
  */
 var _stableStringify = function stableStringify(val) {
   // 1. 保留 undefined 和 function 的真实样貌
-  if (val === undefined) return 'undefined';
-  if (typeof val === 'function') return val.toString();
+  if (val === undefined) {
+    return 'undefined';
+  }
+  if (typeof val === 'function') {
+    return val.toString();
+  }
   // 2. 数组：保持顺序，递归内部
   if (Array.isArray(val)) {
     return "[" + val.map(function (item) {

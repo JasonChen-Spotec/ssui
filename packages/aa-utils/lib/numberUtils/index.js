@@ -9,8 +9,8 @@ Object.defineProperty(exports, "__esModule", {
 });
 var tslib_1 = require("tslib");
 var bignumber_js_1 = tslib_1.__importDefault(require("bignumber.js"));
-var isNull_1 = tslib_1.__importDefault(require("lodash/isNull"));
 var isNaN_1 = tslib_1.__importDefault(require("lodash/isNaN"));
+var isNull_1 = tslib_1.__importDefault(require("lodash/isNull"));
 var isUndefined_1 = tslib_1.__importDefault(require("lodash/isUndefined"));
 var roundingModeMap_1 = require("./const/roundingModeMap");
 var numberPrecision_1 = require("./numberPrecision");

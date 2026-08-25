@@ -4,7 +4,7 @@ declare const MALE: 1;
 declare const FEMALE: 2;
 /** 空 */
 declare const EMPTY: -1;
-export { MALE, FEMALE, EMPTY };
+export { EMPTY, FEMALE, MALE };
 export type SexType = 1 | 2;
 export declare const useGenderType: () => {
     genderTypeMap: {

@@ -9,7 +9,7 @@ export declare enum EntryTypeEnum {
     FIRST_ENTRY = "firstEntry",
     SECOND_ENTRY = "secondEntry"
 }
-export type ChangedEntryType = typeof EntryTypeEnum[keyof typeof EntryTypeEnum];
+export type ChangedEntryType = (typeof EntryTypeEnum)[keyof typeof EntryTypeEnum];
 type SelectOptionsType = {
     value: ComplexValSelectValueType;
     label: string;

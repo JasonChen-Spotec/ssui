@@ -7,8 +7,8 @@ Object.defineProperty(exports, "__esModule", {
 var tslib_1 = require("tslib");
 var jsx_runtime_1 = require("react/jsx-runtime");
 var react_1 = tslib_1.__importDefault(require("react"));
-var useControllableValue_1 = tslib_1.__importDefault(require("ahooks/lib/useControllableValue"));
 var useClickAway_1 = tslib_1.__importDefault(require("ahooks/lib/useClickAway"));
+var useControllableValue_1 = tslib_1.__importDefault(require("ahooks/lib/useControllableValue"));
 var classnames_1 = tslib_1.__importDefault(require("classnames"));
 var number_input_1 = tslib_1.__importDefault(require("../number-input"));
 var defaultValue = {
@@ -82,7 +82,6 @@ var LabelDatePicker = function LabelDatePicker(props) {
     }, className),
     children: [(0, jsx_runtime_1.jsxs)("div", {
       className: "a-number a-number-range",
-      "aria-required": "true",
       children: [(0, jsx_runtime_1.jsx)("div", {
         className: "a-number-input",
         children: (0, jsx_runtime_1.jsx)(number_input_1["default"], _extends({

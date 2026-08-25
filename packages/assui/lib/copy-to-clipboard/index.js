@@ -7,8 +7,8 @@ Object.defineProperty(exports, "__esModule", {
 var tslib_1 = require("tslib");
 var jsx_runtime_1 = require("react/jsx-runtime");
 var react_1 = tslib_1.__importStar(require("react"));
-var copy_to_clipboard_1 = tslib_1.__importDefault(require("copy-to-clipboard"));
 var tooltip_1 = tslib_1.__importDefault(require("antd/lib/tooltip"));
+var copy_to_clipboard_1 = tslib_1.__importDefault(require("copy-to-clipboard"));
 var CopyToClipboard = function CopyToClipboard(props) {
   var text = props.text,
     onCopy = props.onCopy,
@@ -34,7 +34,7 @@ var CopyToClipboard = function CopyToClipboard(props) {
     if (tooltipTitle) {
       handleCopySuccess();
     }
-    if (elem && elem.props && typeof elem.props.onClick === 'function') {
+    if (elem != null && elem.props && typeof elem.props.onClick === 'function') {
       elem.props.onClick(event);
     }
   };

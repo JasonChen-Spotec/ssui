@@ -50,4 +50,4 @@ declare const socketHostMap: {
     readonly ukPro: "wss://api.ecmarkets.co.uk";
 };
 declare const allSiteMap: Record<any, any>;
-export { apiHostMap, allSiteMap, socketHostMap, mainDomainMap, fileHostMap, readDomainMap, };
+export { allSiteMap, apiHostMap, fileHostMap, mainDomainMap, readDomainMap, socketHostMap, };

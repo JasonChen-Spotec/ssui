@@ -1,4 +1,4 @@
-import CountUp, { useCountUp } from 'react-countup';
 import type { CountUpProps } from 'react-countup';
-export { useCountUp, CountUpProps };
+import CountUp, { useCountUp } from 'react-countup';
+export { type CountUpProps, useCountUp };
 export default CountUp;

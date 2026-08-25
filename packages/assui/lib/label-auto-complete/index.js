@@ -31,7 +31,7 @@ var LabelAutoComplete = function LabelAutoComplete(props) {
   var handleChange = function handleChange(nextValue) {
     var finallyValue = (0, trimStart_1["default"])(nextValue);
     setValue(finallyValue);
-    onChange && onChange(finallyValue, options || []);
+    onChange == null || onChange(finallyValue, options || []);
   };
   var handleLabelClick = function handleLabelClick() {
     if (!open) {
@@ -46,7 +46,7 @@ var LabelAutoComplete = function LabelAutoComplete(props) {
     if (value === '' || !value) {
       setOpen(false);
     }
-    onBlur && onBlur(event);
+    onBlur == null || onBlur(event);
   };
   return (0, jsx_runtime_1.jsxs)("div", {
     className: (0, classnames_1["default"])({

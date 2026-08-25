@@ -7,11 +7,11 @@ Object.defineProperty(exports, "__esModule", {
 exports.EntryTypeEnum = exports.InputTypeEnum = void 0;
 var tslib_1 = require("tslib");
 var jsx_runtime_1 = require("react/jsx-runtime");
-var isNil_1 = tslib_1.__importDefault(require("lodash/isNil"));
-var isEmpty_1 = tslib_1.__importDefault(require("lodash/isEmpty"));
-var classnames_1 = tslib_1.__importDefault(require("classnames"));
 var react_1 = require("react");
 var useControllableValue_1 = tslib_1.__importDefault(require("ahooks/lib/useControllableValue"));
+var classnames_1 = tslib_1.__importDefault(require("classnames"));
+var isEmpty_1 = tslib_1.__importDefault(require("lodash/isEmpty"));
+var isNil_1 = tslib_1.__importDefault(require("lodash/isNil"));
 var complex_val_select_1 = tslib_1.__importDefault(require("../complex-val-select"));
 var condition_input_1 = tslib_1.__importDefault(require("../condition-input"));
 var InputTypeEnum;
@@ -60,7 +60,7 @@ var ConditionSelectInput = function ConditionSelectInput(props) {
           return item.value === value.selectValue;
         }),
         selectValueItem = _optionsList$filter[0];
-      if (selectValueItem && selectValueItem.children) {
+      if (selectValueItem != null && selectValueItem.children) {
         setSubSelectOptions(selectValueItem.children);
       }
     }
