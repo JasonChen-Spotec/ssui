@@ -1,6 +1,6 @@
 {
   "name": "aa-utils",
-  "version": "2.1.37",
+  "version": "2.1.38",
   "author": "jason <usochen@gmail.com>",
   "license": "MIT",
   "main": "./lib/index.js",
@@ -24,7 +24,7 @@
   "dependencies": {
     "bignumber.js": "^9.0.1",
     "dom-to-image": "^2.6.0",
-    "ec-common": "^1.1.41",
+    "ec-common": "^1.1.42",
     "events": "^3.2.0",
     "heic2any": "^0.0.3",
     "html2canvas": "^1.4.1",
