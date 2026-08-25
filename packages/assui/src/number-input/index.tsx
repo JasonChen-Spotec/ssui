@@ -1,11 +1,11 @@
 import * as React from 'react';
+import useControllableValue from 'ahooks/lib/useControllableValue';
 import type { InputProps } from 'antd/lib/input';
 import Input from 'antd/lib/input';
-import useControllableValue from 'ahooks/lib/useControllableValue';
 import omit from 'lodash/omit';
 import * as dataTypeEnum from './const/dataTypeEnum';
 import * as numberTypeEnum from './const/numberType';
-import { filterInt, filterFloat } from './utils';
+import { filterFloat, filterInt } from './utils';
 
 export type NumberInputValueType = string | number;
 
@@ -118,5 +118,5 @@ const NumberInput = React.forwardRef<unknown, NumberInputProps>((props, ref) => 
   );
 });
 
-export { numberTypeEnum, dataTypeEnum };
+export { dataTypeEnum, numberTypeEnum };
 export default NumberInput;

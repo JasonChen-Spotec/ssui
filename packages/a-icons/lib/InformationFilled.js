@@ -1,76 +1,30 @@
 "use strict";
 
-var __assign = this && this.__assign || function () {
-  __assign = Object.assign || function (t) {
-    for (var s, i = 1, n = arguments.length; i < n; i++) {
-      s = arguments[i];
-      for (var p in s) {
-        if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
-      }
-    }
-    return t;
-  };
-  return __assign.apply(this, arguments);
-};
-var __createBinding = this && this.__createBinding || (Object.create ? function (o, m, k, k2) {
-  if (k2 === undefined) k2 = k;
-  var desc = Object.getOwnPropertyDescriptor(m, k);
-  if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
-    desc = {
-      enumerable: true,
-      get: function get() {
-        return m[k];
-      }
-    };
-  }
-  Object.defineProperty(o, k2, desc);
-} : function (o, m, k, k2) {
-  if (k2 === undefined) k2 = k;
-  o[k2] = m[k];
-});
-var __setModuleDefault = this && this.__setModuleDefault || (Object.create ? function (o, v) {
-  Object.defineProperty(o, "default", {
-    enumerable: true,
-    value: v
-  });
-} : function (o, v) {
-  o["default"] = v;
-});
-var __importStar = this && this.__importStar || function (mod) {
-  if (mod && mod.__esModule) return mod;
-  var result = {};
-  if (mod != null) for (var k in mod) {
-    if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-  }
-  __setModuleDefault(result, mod);
-  return result;
-};
-var __importDefault = this && this.__importDefault || function (mod) {
-  return mod && mod.__esModule ? mod : {
-    "default": mod
-  };
-};
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-var React = __importStar(require("react"));
-var icon_1 = __importDefault(require("a-base-icon/lib/icon"));
+var tslib_1 = require("tslib");
+var jsx_runtime_1 = require("react/jsx-runtime");
+var icon_1 = tslib_1.__importDefault(require("a-base-icon/lib/icon"));
 function InformationFilled(componentProps) {
   var IconNode = function IconNode(props) {
-    return React.createElement("svg", __assign({
+    return (0, jsx_runtime_1.jsx)("svg", _extends({
       viewBox: "0 0 24 24",
       fill: "none",
       xmlns: "http://www.w3.org/2000/svg"
-    }, props), React.createElement("path", {
-      fillRule: "evenodd",
-      clipRule: "evenodd",
-      d: "M5.643 3H5.16c-.527 0-.981 0-1.356.03-.395.033-.789.104-1.167.297a3 3 0 00-1.311 1.311c-.193.378-.264.772-.296 1.167C1 6.18 1 6.635 1 7.161v9.678c0 .527 0 .982.03 1.356.033.395.104.789.297 1.167a3 3 0 001.311 1.311c.378.193.772.264 1.167.296.375.031.83.031 1.356.031H18.84c.527 0 .982 0 1.356-.03.395-.033.789-.104 1.167-.297a3 3 0 001.311-1.311c.193-.378.264-.772.296-1.167.031-.375.031-.83.031-1.356V7.16c0-.527 0-.981-.03-1.356-.033-.395-.104-.789-.297-1.167a3 3 0 00-1.311-1.311c-.378-.193-.772-.264-1.167-.296A17.9 17.9 0 0018.839 3h-.482c-1.084 0-1.958 0-2.666.058-.729.06-1.369.185-1.96.487A5 5 0 0012 5a5 5 0 00-1.73-1.455c-.592-.302-1.233-.428-1.961-.487C7.6 3 6.727 3 5.643 3zm5.306 4.854c.05.617.051 1.41.051 2.546V19H5.2c-.577 0-.949 0-1.232-.024-.272-.022-.373-.06-.422-.085a1 1 0 01-.437-.437c-.025-.05-.063-.15-.085-.422C3 17.75 3 17.377 3 16.8V7.2c0-.577 0-.949.024-1.232.022-.272.06-.373.085-.422a1 1 0 01.437-.437c.05-.025.15-.063.422-.085C4.25 5 4.623 5 5.2 5h.4c1.137 0 1.929 0 2.546.051.605.05.953.142 1.216.276a3 3 0 011.311 1.311c.134.263.226.611.276 1.216zm3.76 3.115h4.855v-2h-4.855v2zm0 4.079h4.855v-2h-4.855v2z",
-      fill: "currentCOlor"
+    }, props, {
+      children: (0, jsx_runtime_1.jsx)("path", {
+        fillRule: "evenodd",
+        clipRule: "evenodd",
+        d: "M5.643 3H5.16c-.527 0-.981 0-1.356.03-.395.033-.789.104-1.167.297a3 3 0 00-1.311 1.311c-.193.378-.264.772-.296 1.167C1 6.18 1 6.635 1 7.161v9.678c0 .527 0 .982.03 1.356.033.395.104.789.297 1.167a3 3 0 001.311 1.311c.378.193.772.264 1.167.296.375.031.83.031 1.356.031H18.84c.527 0 .982 0 1.356-.03.395-.033.789-.104 1.167-.297a3 3 0 001.311-1.311c.193-.378.264-.772.296-1.167.031-.375.031-.83.031-1.356V7.16c0-.527 0-.981-.03-1.356-.033-.395-.104-.789-.297-1.167a3 3 0 00-1.311-1.311c-.378-.193-.772-.264-1.167-.296A17.9 17.9 0 0018.839 3h-.482c-1.084 0-1.958 0-2.666.058-.729.06-1.369.185-1.96.487A5 5 0 0012 5a5 5 0 00-1.73-1.455c-.592-.302-1.233-.428-1.961-.487C7.6 3 6.727 3 5.643 3zm5.306 4.854c.05.617.051 1.41.051 2.546V19H5.2c-.577 0-.949 0-1.232-.024-.272-.022-.373-.06-.422-.085a1 1 0 01-.437-.437c-.025-.05-.063-.15-.085-.422C3 17.75 3 17.377 3 16.8V7.2c0-.577 0-.949.024-1.232.022-.272.06-.373.085-.422a1 1 0 01.437-.437c.05-.025.15-.063.422-.085C4.25 5 4.623 5 5.2 5h.4c1.137 0 1.929 0 2.546.051.605.05.953.142 1.216.276a3 3 0 011.311 1.311c.134.263.226.611.276 1.216zm3.76 3.115h4.855v-2h-4.855v2zm0 4.079h4.855v-2h-4.855v2z",
+        fill: "currentCOlor"
+      })
     }));
   };
-  return React.createElement(icon_1["default"], __assign({}, componentProps, {
+  return (0, jsx_runtime_1.jsx)(icon_1["default"], _extends({}, componentProps, {
     component: IconNode
   }));
 }
-InformationFilled.displayName = 'InformationFilled';
+InformationFilled.displayName = "InformationFilled";
 exports["default"] = InformationFilled;

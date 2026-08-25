@@ -24,36 +24,47 @@ var __setModuleDefault = this && this.__setModuleDefault || (Object.create ? fun
 } : function (o, v) {
   o["default"] = v;
 });
-var __importStar = this && this.__importStar || function (mod) {
-  if (mod && mod.__esModule) return mod;
-  var result = {};
-  if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-  __setModuleDefault(result, mod);
-  return result;
-};
+var __importStar = this && this.__importStar || function () {
+  var _ownKeys = function ownKeys(o) {
+    _ownKeys = Object.getOwnPropertyNames || function (o) {
+      var ar = [];
+      for (var k in o) if (Object.prototype.hasOwnProperty.call(o, k)) ar[ar.length] = k;
+      return ar;
+    };
+    return _ownKeys(o);
+  };
+  return function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k = _ownKeys(mod), i = 0; i < k.length; i++) if (k[i] !== "default") __createBinding(result, mod, k[i]);
+    __setModuleDefault(result, mod);
+    return result;
+  };
+}();
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+var jsx_runtime_1 = require("react/jsx-runtime");
 // SignaturePadComponent.tsx
-var react_1 = __importStar(require("react"));
-var SignaturePadComponent = (0, react_1.forwardRef)(function (_a, ref) {
-  var _b = _a.defaultText,
-    defaultText = _b === void 0 ? '请在此处签名' : _b,
-    _c = _a.width,
-    width = _c === void 0 ? 500 : _c,
-    _d = _a.height,
-    height = _d === void 0 ? 300 : _d,
-    className = _a.className,
-    _e = _a.penColor,
-    penColor = _e === void 0 ? 'black' : _e,
-    _f = _a.backgroundColor,
-    backgroundColor = _f === void 0 ? 'white' : _f,
-    _g = _a.backgroundTextColor,
-    backgroundTextColor = _g === void 0 ? '#ccc' : _g,
-    _h = _a.backgroundTextSize,
-    backgroundTextSize = _h === void 0 ? '30px' : _h,
-    onEnd = _a.onEnd,
-    onBegin = _a.onBegin;
+var react_1 = require("react");
+var SignaturePadComponent = (0, react_1.forwardRef)(function (_ref, ref) {
+  var _ref$defaultText = _ref.defaultText,
+    defaultText = _ref$defaultText === void 0 ? '请在此处签名' : _ref$defaultText,
+    _ref$width = _ref.width,
+    width = _ref$width === void 0 ? 500 : _ref$width,
+    _ref$height = _ref.height,
+    height = _ref$height === void 0 ? 300 : _ref$height,
+    className = _ref.className,
+    _ref$penColor = _ref.penColor,
+    penColor = _ref$penColor === void 0 ? 'black' : _ref$penColor,
+    _ref$backgroundColor = _ref.backgroundColor,
+    backgroundColor = _ref$backgroundColor === void 0 ? 'white' : _ref$backgroundColor,
+    _ref$backgroundTextCo = _ref.backgroundTextColor,
+    backgroundTextColor = _ref$backgroundTextCo === void 0 ? '#ccc' : _ref$backgroundTextCo,
+    _ref$backgroundTextSi = _ref.backgroundTextSize,
+    backgroundTextSize = _ref$backgroundTextSi === void 0 ? '30px' : _ref$backgroundTextSi,
+    onEnd = _ref.onEnd,
+    onBegin = _ref.onBegin;
   var canvasRef = (0, react_1.useRef)(null);
   var signaturePadRef = (0, react_1.useRef)(null);
   var historyRef = (0, react_1.useRef)([]);
@@ -72,7 +83,7 @@ var SignaturePadComponent = (0, react_1.forwardRef)(function (_a, ref) {
         ctx.fillStyle = backgroundColor;
         ctx.fillRect(0, 0, canvas.width, canvas.height);
         // 设置文字样式
-        ctx.font = "".concat(backgroundTextSize, " Arial");
+        ctx.font = backgroundTextSize + " Arial";
         ctx.fillStyle = backgroundTextColor;
         ctx.textAlign = 'center';
         ctx.textBaseline = 'middle';
@@ -123,35 +134,35 @@ var SignaturePadComponent = (0, react_1.forwardRef)(function (_a, ref) {
     currentStepRef.current = prevStep;
     if (prevStep >= 0 && historyRef.current[prevStep]) {
       // 从历史记录恢复
-      var previousDataURL_1 = historyRef.current[prevStep];
+      var previousDataURL = historyRef.current[prevStep];
       if (canvasRef.current) {
-        var ctx_1 = canvasRef.current.getContext('2d');
-        if (ctx_1) {
-          var img_1 = new Image();
-          img_1.onload = function () {
+        var ctx = canvasRef.current.getContext('2d');
+        if (ctx) {
+          var img = new Image();
+          img.onload = function () {
             // 清除画布
-            ctx_1.clearRect(0, 0, canvasRef.current.width, canvasRef.current.height);
+            ctx.clearRect(0, 0, canvasRef.current.width, canvasRef.current.height);
             // 绘制背景
-            ctx_1.fillStyle = backgroundColor;
-            ctx_1.fillRect(0, 0, canvasRef.current.width, canvasRef.current.height);
+            ctx.fillStyle = backgroundColor;
+            ctx.fillRect(0, 0, canvasRef.current.width, canvasRef.current.height);
             // 绘制历史图片，确保缩放到正确的尺寸
-            ctx_1.drawImage(img_1, 0, 0, img_1.width, img_1.height,
+            ctx.drawImage(img, 0, 0, img.width, img.height,
             // 源图片的尺寸
             0, 0, canvasRef.current.width, canvasRef.current.height);
             // 更新 signature_pad 内部状态
             if (signaturePadRef.current) {
               // 使用 fromDataURL 更新 signature_pad 的内部数据
-              signaturePadRef.current.fromDataURL(previousDataURL_1, {
+              signaturePadRef.current.fromDataURL(previousDataURL, {
                 width: canvasRef.current.width,
                 height: canvasRef.current.height
               });
             }
           };
-          img_1.onerror = function () {
+          img.onerror = function () {
             // 如果图片加载失败，回退到清除
             clearSignature();
           };
-          img_1.src = previousDataURL_1;
+          img.src = previousDataURL;
           return true;
         }
       }
@@ -178,19 +189,19 @@ var SignaturePadComponent = (0, react_1.forwardRef)(function (_a, ref) {
         drawBackgroundText();
         // 修复：正确添加事件监听
         signaturePadRef.current.onBegin = function () {
-          onBegin === null || onBegin === void 0 ? void 0 : onBegin();
+          onBegin == null || onBegin();
         };
         signaturePadRef.current.onEnd = function () {
           setTimeout(function () {
             if (signaturePadRef.current) {
               saveToHistory();
-              onEnd === null || onEnd === void 0 ? void 0 : onEnd();
+              onEnd == null || onEnd();
             }
           }, 50);
         };
         signaturePadRef.current.addEventListener('beginStroke', function () {
           console.log('签名开始事件触发');
-          onBegin === null || onBegin === void 0 ? void 0 : onBegin();
+          onBegin == null || onBegin();
         });
         signaturePadRef.current.addEventListener('endStroke', function () {
           console.log('签名结束事件触发');
@@ -199,7 +210,7 @@ var SignaturePadComponent = (0, react_1.forwardRef)(function (_a, ref) {
               var isPadEmpty = signaturePadRef.current.isEmpty();
               console.log('签名结束时的isEmpty:', isPadEmpty);
               saveToHistory();
-              onEnd === null || onEnd === void 0 ? void 0 : onEnd();
+              onEnd == null || onEnd();
             }
           }, 50);
         });
@@ -226,17 +237,18 @@ var SignaturePadComponent = (0, react_1.forwardRef)(function (_a, ref) {
       undo: undo
     };
   });
-  return react_1["default"].createElement("div", {
-    className: "signature-pad-container ".concat(className)
-  }, react_1["default"].createElement("canvas", {
-    ref: canvasRef,
-    width: width,
-    height: height,
-    style: {
-      border: '1px dashed #ccc',
-      backgroundColor: backgroundColor,
-      height: 'auto'
-    }
-  }));
+  return (0, jsx_runtime_1.jsx)("div", {
+    className: "signature-pad-container " + className,
+    children: (0, jsx_runtime_1.jsx)("canvas", {
+      ref: canvasRef,
+      width: width,
+      height: height,
+      style: {
+        border: '1px dashed #ccc',
+        backgroundColor: backgroundColor,
+        height: 'auto'
+      }
+    })
+  });
 });
 exports["default"] = SignaturePadComponent;

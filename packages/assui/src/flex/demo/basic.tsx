@@ -1,4 +1,4 @@
-/* eslint-disable react/no-array-index-key */
+
 import React from 'react';
 import { Radio } from 'antd';
 import { Flex } from 'assui';

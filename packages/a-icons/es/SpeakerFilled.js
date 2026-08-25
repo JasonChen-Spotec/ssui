@@ -1,31 +1,22 @@
-var __assign = this && this.__assign || function () {
-  __assign = Object.assign || function (t) {
-    for (var s, i = 1, n = arguments.length; i < n; i++) {
-      s = arguments[i];
-      for (var p in s) {
-        if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
-      }
-    }
-    return t;
-  };
-  return __assign.apply(this, arguments);
-};
-import * as React from 'react';
-import Icon from 'a-base-icon/lib/icon';
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
+import { jsx as _jsx } from "react/jsx-runtime";
+import Icon from "a-base-icon/lib/icon";
 function SpeakerFilled(componentProps) {
   var IconNode = function IconNode(props) {
-    return /*#__PURE__*/React.createElement("svg", __assign({
+    return _jsx("svg", _extends({
       viewBox: "0 0 24 24",
       fill: "none",
       xmlns: "http://www.w3.org/2000/svg"
-    }, props), /*#__PURE__*/React.createElement("path", {
-      d: "M11.64 3.233a1.5 1.5 0 00-1.258-.521c-.428.034-.738.28-.885.403-.164.138-.352.326-.543.517L5.762 6.824a6.182 6.182 0 01-.175.171l-.002.002H5.58A6.164 6.164 0 015.337 7H3.568c-.252 0-.498 0-.706.017a2.022 2.022 0 00-.77.201 2 2 0 00-.874.874 2.022 2.022 0 00-.201.77C1 9.07 1 9.316 1 9.568v4.864c0 .252 0 .498.017.706.019.229.063.499.201.77a2 2 0 00.874.874c.271.138.541.182.77.201.208.017.454.017.706.017h1.77c.13 0 .196 0 .243.003h.004l.002.002c.035.032.082.078.175.17l3.192 3.193c.19.191.379.379.543.517.147.123.457.37.885.403a1.5 1.5 0 001.259-.52c.279-.328.323-.721.34-.912.02-.214.019-.48.019-.75V4.894c0-.27 0-.536-.019-.75-.017-.19-.061-.584-.34-.911zM20.56 4.416l-.584-.812-1.624 1.168.584.812A10.945 10.945 0 0121 12c0 2.396-.765 4.61-2.064 6.416l-.584.812 1.624 1.168.584-.812A12.946 12.946 0 0023 12c0-2.829-.905-5.45-2.44-7.584zM16.566 7.428l-.573-.82-1.64 1.144.572.82A5.968 5.968 0 0116 12a5.968 5.968 0 01-1.075 3.428l-.572.82 1.64 1.144.572-.82A7.968 7.968 0 0018 12c0-1.698-.53-3.276-1.434-4.572z",
-      fill: "currentColor"
+    }, props, {
+      children: _jsx("path", {
+        d: "M11.64 3.233a1.5 1.5 0 00-1.258-.521c-.428.034-.738.28-.885.403-.164.138-.352.326-.543.517L5.762 6.824a6.182 6.182 0 01-.175.171l-.002.002H5.58A6.164 6.164 0 015.337 7H3.568c-.252 0-.498 0-.706.017a2.022 2.022 0 00-.77.201 2 2 0 00-.874.874 2.022 2.022 0 00-.201.77C1 9.07 1 9.316 1 9.568v4.864c0 .252 0 .498.017.706.019.229.063.499.201.77a2 2 0 00.874.874c.271.138.541.182.77.201.208.017.454.017.706.017h1.77c.13 0 .196 0 .243.003h.004l.002.002c.035.032.082.078.175.17l3.192 3.193c.19.191.379.379.543.517.147.123.457.37.885.403a1.5 1.5 0 001.259-.52c.279-.328.323-.721.34-.912.02-.214.019-.48.019-.75V4.894c0-.27 0-.536-.019-.75-.017-.19-.061-.584-.34-.911zM20.56 4.416l-.584-.812-1.624 1.168.584.812A10.945 10.945 0 0121 12c0 2.396-.765 4.61-2.064 6.416l-.584.812 1.624 1.168.584-.812A12.946 12.946 0 0023 12c0-2.829-.905-5.45-2.44-7.584zM16.566 7.428l-.573-.82-1.64 1.144.572.82A5.968 5.968 0 0116 12a5.968 5.968 0 01-1.075 3.428l-.572.82 1.64 1.144.572-.82A7.968 7.968 0 0018 12c0-1.698-.53-3.276-1.434-4.572z",
+        fill: "currentColor"
+      })
     }));
   };
-  return /*#__PURE__*/React.createElement(Icon, __assign({}, componentProps, {
+  return _jsx(Icon, _extends({}, componentProps, {
     component: IconNode
   }));
 }
-SpeakerFilled.displayName = 'SpeakerFilled';
+SpeakerFilled.displayName = "SpeakerFilled";
 export default SpeakerFilled;

@@ -1,6 +1,6 @@
+import dateUtils from 'aa-utils/lib/dateUtils';
 import { isNumber } from 'lodash';
 import type { Moment } from 'moment';
-import dateUtils from 'aa-utils/lib/dateUtils';
 import type { LangType } from '../messages';
 import formatMessage, { langTypeEnum } from '../messages';
 
@@ -179,7 +179,11 @@ const getDefaultRadioList = ({
     },
     {
       key: dateTypeEnum.BEFORE_3_MONTH,
-      text: formatMessage(messages, langTypeEnum.labelCustomizeRangePicker, 'last3months'),
+      text: formatMessage(
+        messages,
+        langTypeEnum.labelCustomizeRangePicker,
+        'last3months',
+      ),
       value: [now.clone().subtract(2, 'month').startOf('month'), now.endOf('day')],
     },
     ...allRadio,

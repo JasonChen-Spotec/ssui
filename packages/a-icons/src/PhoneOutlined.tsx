@@ -1,5 +1,5 @@
-import * as React from 'react';
-import Icon, { IconProps } from 'a-base-icon/lib/icon';
+import * as React from "react";
+import Icon, { IconProps } from "a-base-icon/lib/icon";
 
 function PhoneOutlined(componentProps: IconProps) {
   const IconNode = (props: React.SVGProps<SVGSVGElement>) => (
@@ -16,5 +16,5 @@ function PhoneOutlined(componentProps: IconProps) {
   return <Icon {...componentProps} component={IconNode} />;
 }
 
-PhoneOutlined.displayName = 'PhoneOutlined';
+PhoneOutlined.displayName = "PhoneOutlined";
 export default PhoneOutlined;

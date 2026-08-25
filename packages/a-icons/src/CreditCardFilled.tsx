@@ -1,9 +1,14 @@
-import * as React from 'react';
-import Icon, { IconProps } from 'a-base-icon/lib/icon';
+import * as React from "react";
+import Icon, { IconProps } from "a-base-icon/lib/icon";
 
 function CreditCardFilled(componentProps: IconProps) {
   const IconNode = (props: React.SVGProps<SVGSVGElement>) => (
-    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
       <path d="M1 7a3 3 0 013-3h16a3 3 0 013 3v2H1V7z" fill="currentColor" />
       <path
         fillRule="evenodd"
@@ -17,5 +22,5 @@ function CreditCardFilled(componentProps: IconProps) {
   return <Icon {...componentProps} component={IconNode} />;
 }
 
-CreditCardFilled.displayName = 'CreditCardFilled';
+CreditCardFilled.displayName = "CreditCardFilled";
 export default CreditCardFilled;

@@ -1,4 +1,19 @@
-import { Languages, ZH, ES, JA, FR, PT, TH, KO, MS, VI, EN, TW, AR, ID } from 'ec-common/lib/consts/langType';
+import {
+  AR,
+  EN,
+  ES,
+  FR,
+  ID,
+  JA,
+  KO,
+  type Languages,
+  MS,
+  PT,
+  TH,
+  TW,
+  VI,
+  ZH,
+} from 'ec-common/lib/consts/langType';
 export type HalfWidthSymbol =
   | ','
   | '.'

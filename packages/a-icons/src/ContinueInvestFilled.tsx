@@ -1,5 +1,5 @@
-import * as React from 'react';
-import Icon, { IconProps } from 'a-base-icon/lib/icon';
+import * as React from "react";
+import Icon, { IconProps } from "a-base-icon/lib/icon";
 
 function ContinueInvestFilled(componentProps: IconProps) {
   const IconNode = (props: React.SVGProps<SVGSVGElement>) => (
@@ -20,5 +20,5 @@ function ContinueInvestFilled(componentProps: IconProps) {
   return <Icon {...componentProps} component={IconNode} />;
 }
 
-ContinueInvestFilled.displayName = 'ContinueInvestFilled';
+ContinueInvestFilled.displayName = "ContinueInvestFilled";
 export default ContinueInvestFilled;

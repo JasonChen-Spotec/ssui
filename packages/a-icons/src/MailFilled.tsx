@@ -1,9 +1,14 @@
-import * as React from 'react';
-import Icon, { IconProps } from 'a-base-icon/lib/icon';
+import * as React from "react";
+import Icon, { IconProps } from "a-base-icon/lib/icon";
 
 function MailFilled(componentProps: IconProps) {
   const IconNode = (props: React.SVGProps<SVGSVGElement>) => (
-    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
       <path
         d="M6.759 3H17.24c.805 0 1.47 0 2.01.044.563.046 1.08.145 1.565.392a4 4 0 011.748 1.748c.054.106.1.213.142.323l-9.431 6.38-.013.01c-.73.51-.884.598-1.02.632a1 1 0 01-.484 0c-.136-.034-.29-.122-1.017-.63L1.396 5.264l.04-.081a4 4 0 011.748-1.748c.485-.247 1.002-.346 1.564-.392C5.29 3 5.954 3 6.758 3z"
         fill="currentColor"
@@ -18,5 +23,5 @@ function MailFilled(componentProps: IconProps) {
   return <Icon {...componentProps} component={IconNode} />;
 }
 
-MailFilled.displayName = 'MailFilled';
+MailFilled.displayName = "MailFilled";
 export default MailFilled;

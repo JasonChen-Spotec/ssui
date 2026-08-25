@@ -1,4 +1,4 @@
-var _a, _b;
+var _antI18nMap, _languages;
 import arEG from 'antd/lib/locale/ar_EG';
 import enUS from 'antd/lib/locale/en_US';
 import esES from 'antd/lib/locale/es_ES';
@@ -38,8 +38,8 @@ export var TW = 'zh-TW';
 export var AR = 'ar';
 /** 🇮🇩 印度尼西亚语 */
 export var ID = 'id';
-export var antI18nMap = (_a = {}, _a[ZH] = zhCN, _a[EN] = enUS, _a[TW] = zhTW, _a[ES] = esES, _a[FR] = frFR, _a[ID] = idID, _a[JA] = jaJP, _a[KO] = koKR, _a[PT] = ptPT, _a[AR] = arEG, _a[TH] = thTH, _a[VI] = viVN, _a[MS] = msMY, _a);
-export var languages = (_b = {}, _b[EN] = EN, _b[TW] = TW, _b[ZH] = ZH, _b[ES] = ES, _b[FR] = FR, _b[ID] = ID, _b[JA] = JA, _b[KO] = KO, _b[PT] = PT, _b[AR] = AR, _b[TH] = TH, _b[VI] = VI, _b[MS] = MS, _b);
+export var antI18nMap = (_antI18nMap = {}, _antI18nMap[ZH] = zhCN, _antI18nMap[EN] = enUS, _antI18nMap[TW] = zhTW, _antI18nMap[ES] = esES, _antI18nMap[FR] = frFR, _antI18nMap[ID] = idID, _antI18nMap[JA] = jaJP, _antI18nMap[KO] = koKR, _antI18nMap[PT] = ptPT, _antI18nMap[AR] = arEG, _antI18nMap[TH] = thTH, _antI18nMap[VI] = viVN, _antI18nMap[MS] = msMY, _antI18nMap);
+export var languages = (_languages = {}, _languages[EN] = EN, _languages[TW] = TW, _languages[ZH] = ZH, _languages[ES] = ES, _languages[FR] = FR, _languages[ID] = ID, _languages[JA] = JA, _languages[KO] = KO, _languages[PT] = PT, _languages[AR] = AR, _languages[TH] = TH, _languages[VI] = VI, _languages[MS] = MS, _languages);
 export var I18NList = [{
   code: EN,
   iso: EN,

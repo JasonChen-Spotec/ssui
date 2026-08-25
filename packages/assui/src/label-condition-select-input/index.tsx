@@ -1,13 +1,13 @@
-import isNil from 'lodash/isNil';
-import isEmpty from 'lodash/isEmpty';
-import classNames from 'classnames';
 import React, { useEffect, useRef, useState } from 'react';
-import type { BaseSelectRef } from 'rc-select/lib/BaseSelect';
 import useControllableValue from 'ahooks/lib/useControllableValue';
-import LabelConditionInput from '../label-condition-input';
-import LabelSelect from '../label-select';
+import type { RefSelectProps } from 'antd/lib/select';
+import classNames from 'classnames';
+import isEmpty from 'lodash/isEmpty';
+import isNil from 'lodash/isNil';
 import type { LabelConditionInputProps } from '../label-condition-input';
+import LabelConditionInput from '../label-condition-input';
 import type { LabelSelectProps } from '../label-select';
+import LabelSelect from '../label-select';
 
 export enum InputTypeEnum {
   CONDITION_INPUT = 'conditionInput',
@@ -19,7 +19,7 @@ export enum EntryTypeEnum {
   SECOND_ENTRY = 'secondEntry',
 }
 
-export type ChangedEntryType = typeof EntryTypeEnum[keyof typeof EntryTypeEnum];
+export type ChangedEntryType = (typeof EntryTypeEnum)[keyof typeof EntryTypeEnum];
 
 type SelectOptionsType = {
   value: number;
@@ -86,7 +86,7 @@ const LabelConditionSelectInput = (props: LabelConditionSelectInputProps) => {
   const isInput = inputType === InputTypeEnum.CONDITION_INPUT;
   const [selectInputValue, setSelectInputValue] = useControllableValue<ValueType>(props);
   const [subSelectOptions, setSubSelectOptions] = useState<SelectOptionsType[]>([]);
-  const subSelectRef = useRef<BaseSelectRef>();
+  const subSelectRef = useRef<RefSelectProps>();
   /** 子选择器是否多选 */
   const isSubSelectMultiple = conditionSelectProps?.mode === 'multiple';
 
@@ -95,7 +95,7 @@ const LabelConditionSelectInput = (props: LabelConditionSelectInputProps) => {
       const [selectValueItem] = optionsList.filter(
         (item) => item.value === value.selectValue,
       );
-      if (selectValueItem && selectValueItem.children) {
+      if (selectValueItem?.children) {
         setSubSelectOptions(selectValueItem.children);
       }
     }

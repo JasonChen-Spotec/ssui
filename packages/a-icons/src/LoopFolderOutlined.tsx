@@ -1,5 +1,5 @@
-import * as React from 'react';
-import Icon, { IconProps } from 'a-base-icon/lib/icon';
+import * as React from "react";
+import Icon, { IconProps } from "a-base-icon/lib/icon";
 
 function LoopFolderOutlined(componentProps: IconProps) {
   const IconNode = (props: React.SVGProps<SVGSVGElement>) => (
@@ -17,5 +17,5 @@ function LoopFolderOutlined(componentProps: IconProps) {
   return <Icon {...componentProps} component={IconNode} />;
 }
 
-LoopFolderOutlined.displayName = 'LoopFolderOutlined';
+LoopFolderOutlined.displayName = "LoopFolderOutlined";
 export default LoopFolderOutlined;

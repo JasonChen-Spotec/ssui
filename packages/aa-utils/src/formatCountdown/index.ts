@@ -32,7 +32,7 @@ export function formatTimeStr(duration: number, format: string) {
 
   let index = 0;
   return replacedText.replace(escapeRegex, () => {
-    const match = keepList[index];
+    const match = keepList[index]!;
     index += 1;
     return match;
   });

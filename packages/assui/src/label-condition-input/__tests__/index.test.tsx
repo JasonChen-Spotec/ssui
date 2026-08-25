@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, fireEvent } from '@testing-library/react';
+import { act, fireEvent, render } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import LabelConditionInput from '../index';
 
@@ -21,11 +21,13 @@ describe('LabelConditionInput', () => {
       <LabelConditionInput label="我是标题" baseMinWidth={100} {...baseProps} />,
     );
     const input = getByRole('textbox') as HTMLInputElement;
-    const label = container.querySelector('.label-condition-input-text') as HTMLLabelElement;
+    const label = container.querySelector(
+      '.label-condition-input-text',
+    ) as HTMLLabelElement;
 
     expect(queryByText('我是标题')).toBeTruthy();
 
-    label.click();
+    act(() => label.click());
     expect(container.querySelector('.label-condition-input-focused')).toBeTruthy();
     expect(input).toHaveFocus();
 
@@ -33,12 +35,12 @@ describe('LabelConditionInput', () => {
     expect(input.value).toBe('hello world1234');
     expect(baseProps.onChange).toBeCalledWith('hello world1234');
 
-    input.blur();
+    act(() => input.blur());
     expect(container.querySelector('.label-condition-input-focused')).toBeFalsy();
     expect(input).not.toHaveFocus();
     expect(baseProps.onBlur).toBeCalledWith('hello world1234');
 
-    input.focus();
+    act(() => input.focus());
     expect(container.querySelector('.label-condition-input-focused')).toBeTruthy();
     expect(input).toHaveFocus();
     expect(baseProps.onFocus).toBeCalledWith('hello world1234');

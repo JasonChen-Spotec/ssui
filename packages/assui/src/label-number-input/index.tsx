@@ -1,11 +1,11 @@
 import React from 'react';
 import useControllableValue from 'ahooks/lib/useControllableValue';
-import isUndefined from 'lodash/isUndefined';
 import classNames from 'classnames';
+import isUndefined from 'lodash/isUndefined';
 import omit from 'lodash/omit';
+import MultiLineEllipsisText from '../multi-line-ellipsis-text';
 import type { NumberInputProps } from '../number-input';
 import NumberInput from '../number-input';
-import MultiLineEllipsisText from '../multi-line-ellipsis-text';
 
 interface LabelNumberInputBaseProps extends NumberInputProps {
   /** label 标签的文本 */
@@ -28,10 +28,20 @@ interface LabelNumberInputEllipsisProps extends NumberInputProps {
   /** 组件dom id */
   id?: string;
 }
-export type LabelNumberInputProps = LabelNumberInputBaseProps | LabelNumberInputEllipsisProps;
+export type LabelNumberInputProps =
+  | LabelNumberInputBaseProps
+  | LabelNumberInputEllipsisProps;
 
 const LabelNumberInput = (props: LabelNumberInputProps) => {
-  const { className, label, onBlur, onFocus,labelEllipsis, id, baseMinWidth = 50 } = props;
+  const {
+    className,
+    label,
+    onBlur,
+    onFocus,
+    labelEllipsis,
+    id,
+    baseMinWidth = 50,
+  } = props;
   const numberInputRef = React.useRef<HTMLInputElement>(null);
   const [value, setValue] = useControllableValue(props);
   const [focused, setFocused] = React.useState<boolean>(false);
@@ -82,19 +92,20 @@ const LabelNumberInput = (props: LabelNumberInputProps) => {
           className="label-number-input"
           onChange={(inputValue: string | number) => setValue(inputValue)}
         />
-          { labelEllipsis ? (
-            <MultiLineEllipsisText
-              text={label}
-              lines={1}
-              tipType="tooltip"
-              className="label-number-input-ellipsis"
-              onClick={handleLabelClick}
-            />
-            ) : (
-            <label className="label-number-input-text" onClick={handleLabelClick}>
-              {label}
-            </label>
-          )}
+        {labelEllipsis ? (
+          <MultiLineEllipsisText
+            text={label}
+            lines={1}
+            tipType="tooltip"
+            className="label-number-input-ellipsis"
+            onClick={handleLabelClick}
+          />
+        ) : (
+          // biome-ignore lint/a11y/noLabelWithoutControl: 点击触发的展示文本，非表单 label
+          <label className="label-number-input-text" onClick={handleLabelClick}>
+            {label}
+          </label>
+        )}
       </div>
     </div>
   );

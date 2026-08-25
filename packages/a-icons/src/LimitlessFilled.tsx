@@ -1,9 +1,14 @@
-import * as React from 'react';
-import Icon, { IconProps } from 'a-base-icon/lib/icon';
+import * as React from "react";
+import Icon, { IconProps } from "a-base-icon/lib/icon";
 
 function LimitlessFilled(componentProps: IconProps) {
   const IconNode = (props: React.SVGProps<SVGSVGElement>) => (
-    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
       <path
         d="M7.407 10.05c1.322 0 2.315.8 3.424 1.95-1.109 1.15-2.102 1.95-3.424 1.95-.523 0-.88-.214-1.13-.54-.267-.35-.427-.86-.427-1.41 0-.55.16-1.058.427-1.408.25-.327.607-.542 1.13-.542zM16.324 10.05c.647 0 1.078.244 1.36.575.296.35.466.846.466 1.375s-.17 1.025-.466 1.375c-.282.331-.713.575-1.36.575-.648 0-1.23-.249-1.834-.704-.45-.339-.877-.765-1.33-1.246.453-.481.88-.907 1.33-1.246.604-.455 1.186-.704 1.834-.704z"
         fill="currentColor"
@@ -20,5 +25,5 @@ function LimitlessFilled(componentProps: IconProps) {
   return <Icon {...componentProps} component={IconNode} />;
 }
 
-LimitlessFilled.displayName = 'LimitlessFilled';
+LimitlessFilled.displayName = "LimitlessFilled";
 export default LimitlessFilled;

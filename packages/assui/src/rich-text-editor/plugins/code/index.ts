@@ -3,7 +3,7 @@ import tinymce from 'tinymce/tinymce';
 
 const global = tinymce.util.Tools.resolve('tinymce.PluginManager');
 
-const setContent = function (editor, html) {
+const setContent = (editor, html) => {
   editor.focus();
   editor.undoManager.transact(() => {
     editor.setContent(html);
@@ -11,11 +11,10 @@ const setContent = function (editor, html) {
   editor.selection.setCursorLocation();
   editor.nodeChanged();
 };
-const getContent = function (editor) {
-  return editor.getContent({ source_view: true });
-};
 
-const open = function (editor) {
+const getContent = (editor) => editor.getContent({ source_view: true });
+
+const open = (editor) => {
   const editorContent = getContent(editor);
   editor.windowManager.open({
     title: 'Source Code',
@@ -50,16 +49,15 @@ const open = function (editor) {
   });
 };
 
-const register$1 = function (editor) {
+const register$1 = (editor) => {
   editor.addCommand('mceCodeEditor', () => {
     open(editor);
   });
 };
 
-const register = function (editor) {
-  const onAction = function () {
-    return editor.execCommand('mceCodeEditor');
-  };
+const register = (editor) => {
+  const onAction = () => editor.execCommand('mceCodeEditor');
+
   editor.ui.registry.addButton('code', {
     text: 'Source code',
     tooltip: 'Source code',

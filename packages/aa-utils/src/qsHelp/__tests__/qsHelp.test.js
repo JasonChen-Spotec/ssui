@@ -1,10 +1,10 @@
 import {
-  getQueryString,
+  getPathAndQueryObject,
   getQueryObject,
+  getQueryString,
+  toPath,
   toQueryString,
   urlToList,
-  toPath,
-  getPathAndQueryObject,
 } from '../index';
 
 describe('qsHelp', () => {
@@ -33,11 +33,17 @@ describe('qsHelp', () => {
   });
 
   it('toQueryString should work fine', () => {
-    expect(toQueryString({ name: 'bin', age: 23, id: 2 })).toEqual('?name=bin&age=23&id=2');
+    expect(toQueryString({ name: 'bin', age: 23, id: 2 })).toEqual(
+      '?name=bin&age=23&id=2',
+    );
   });
 
   it('urlToList should work fine', () => {
-    expect(urlToList('/user/list/detail')).toEqual(['/user', '/user/list', '/user/list/detail']);
+    expect(urlToList('/user/list/detail')).toEqual([
+      '/user',
+      '/user/list',
+      '/user/list/detail',
+    ]);
   });
 
   test('toPath should work fine', () => {

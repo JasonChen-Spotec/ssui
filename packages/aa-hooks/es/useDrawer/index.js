@@ -84,7 +84,7 @@ export var useDrawer = function useDrawer(props) {
   }
   return [drawerProps, actionRef.current];
 };
-// eslint-disable-next-line max-len
+
 export var generateUseDrawer = function generateUseDrawer(defaultProps) {
   return function useDrawerFunc(newProps) {
     var props = __assign(__assign(__assign({}, defaultProps), newProps), {

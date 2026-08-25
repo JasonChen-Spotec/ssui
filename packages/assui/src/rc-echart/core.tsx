@@ -1,6 +1,4 @@
-/* eslint-disable no-unused-expressions */
-/* eslint-disable no-restricted-syntax */
-import React, { useRef, useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import useMount from 'ahooks/lib/useMount';
 import useUpdateEffect from 'ahooks/lib/useUpdateEffect';
 import classNames from 'classnames';
@@ -14,6 +12,9 @@ export type Opts = {
   locale?: string;
 };
 
+/** echarts 事件回调：(事件参数, 图表实例) => void */
+export type EchartEventFunc = (param: any, chart: any) => void;
+
 export interface RcEchartPropsType {
   option: EChartsOption;
   notMerge?: boolean;
@@ -21,11 +22,11 @@ export interface RcEchartPropsType {
   echarts: any;
   className?: string;
   theme?: string;
-  onEvents?: Record<string, Function>;
+  onEvents?: Record<string, EchartEventFunc>;
   opts?: Opts;
 }
 
-const initEmptyObject: Record<string, Function> = {};
+const initEmptyObject: Record<string, EchartEventFunc> = {};
 
 const ReactEchartCore = (props: RcEchartPropsType) => {
   const {
@@ -42,7 +43,7 @@ const ReactEchartCore = (props: RcEchartPropsType) => {
   const chartRef = useRef<EChartsInterfaceType>();
 
   const bindEvents = () => {
-    const bindEventFunc = (eventName: string, func: Function) => {
+    const bindEventFunc = (eventName: string, func: EchartEventFunc) => {
       if (typeof eventName === 'string' && typeof func === 'function') {
         if (chartRef.current) {
           chartRef.current.on(eventName, (param) => {
@@ -53,7 +54,7 @@ const ReactEchartCore = (props: RcEchartPropsType) => {
     };
 
     for (const eventName in onEvents) {
-      if (Object.prototype.hasOwnProperty.call(onEvents, eventName)) {
+      if (Object.hasOwn(onEvents, eventName)) {
         bindEventFunc(eventName, onEvents[eventName]);
       }
     }

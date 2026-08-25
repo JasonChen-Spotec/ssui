@@ -1,5 +1,5 @@
 import { defineConfig } from 'dumi';
-import { resolve } from 'path';
+import { resolve } from 'node:path';
 
 export default defineConfig({
   locales: [{ id: 'zh-CN', name: '中文' }],
@@ -35,7 +35,7 @@ export default defineConfig({
     'amssui': resolve(__dirname, 'packages/amssui'),
     'aa-hooks': resolve(__dirname, 'packages/aa-hooks'),
   },
-  chainWebpack(memo, { env, webpack, createCSSRule }) {
+  chainWebpack(memo) {
     memo.module.rules.delete('svg');
     memo.module
       .rule('svg')

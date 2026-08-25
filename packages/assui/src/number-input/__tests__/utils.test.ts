@@ -1,4 +1,4 @@
-import { filterInt, filterFloat } from '../utils';
+import { filterFloat, filterInt } from '../utils';
 
 describe('number utils should work fine', () => {
   it('filterInt should be defined ', () => {
@@ -13,7 +13,9 @@ describe('number utils should work fine', () => {
 
   it('filterFloat should be defined ', () => {
     expect(filterFloat({ value: '23df 323.23333,' })).toEqual('23323.23');
-    expect(filterFloat({ value: '23df 323.233993,', precision: 4 })).toEqual('23323.2339');
+    expect(filterFloat({ value: '23df 323.233993,', precision: 4 })).toEqual(
+      '23323.2339',
+    );
     expect(filterFloat({ value: '23df 323.23.333,' })).toEqual('');
     expect(filterFloat({ value: '23df 323.23.33399,', preValue: '2.3' })).toEqual('2.3');
 

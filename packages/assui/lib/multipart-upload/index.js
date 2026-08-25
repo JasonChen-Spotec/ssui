@@ -1,98 +1,27 @@
 "use strict";
 
-var __assign = this && this.__assign || function () {
-  __assign = Object.assign || function (t) {
-    for (var s, i = 1, n = arguments.length; i < n; i++) {
-      s = arguments[i];
-      for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
-    }
-    return t;
-  };
-  return __assign.apply(this, arguments);
-};
-var __createBinding = this && this.__createBinding || (Object.create ? function (o, m, k, k2) {
-  if (k2 === undefined) k2 = k;
-  var desc = Object.getOwnPropertyDescriptor(m, k);
-  if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
-    desc = {
-      enumerable: true,
-      get: function get() {
-        return m[k];
-      }
-    };
-  }
-  Object.defineProperty(o, k2, desc);
-} : function (o, m, k, k2) {
-  if (k2 === undefined) k2 = k;
-  o[k2] = m[k];
-});
-var __setModuleDefault = this && this.__setModuleDefault || (Object.create ? function (o, v) {
-  Object.defineProperty(o, "default", {
-    enumerable: true,
-    value: v
-  });
-} : function (o, v) {
-  o["default"] = v;
-});
-var __importStar = this && this.__importStar || function (mod) {
-  if (mod && mod.__esModule) return mod;
-  var result = {};
-  if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-  __setModuleDefault(result, mod);
-  return result;
-};
-var __rest = this && this.__rest || function (s, e) {
-  var t = {};
-  for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
-  if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
-    if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i])) t[p[i]] = s[p[i]];
-  }
-  return t;
-};
-var __read = this && this.__read || function (o, n) {
-  var m = typeof Symbol === "function" && o[Symbol.iterator];
-  if (!m) return o;
-  var i = m.call(o),
-    r,
-    ar = [],
-    e;
-  try {
-    while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
-  } catch (error) {
-    e = {
-      error: error
-    };
-  } finally {
-    try {
-      if (r && !r.done && (m = i["return"])) m.call(i);
-    } finally {
-      if (e) throw e.error;
-    }
-  }
-  return ar;
-};
-var __importDefault = this && this.__importDefault || function (mod) {
-  return mod && mod.__esModule ? mod : {
-    "default": mod
-  };
-};
+var _excluded = ["className", "wrapperClassName", "accept", "method", "fileName", "onSuccess", "onError", "onStart", "cancelUpload", "uploadIcon", "disabled", "getInProgressUploadUrl", "getInitUploadIdAPI", "completeRequest", "chunkSize", "uploadText", "customRequest", "value", "errorCatch"];
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
+function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (-1 !== e.indexOf(n)) continue; t[n] = r[n]; } return t; }
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-var react_1 = __importStar(require("react"));
-var rc_upload_1 = __importDefault(require("rc-upload"));
+var tslib_1 = require("tslib");
+var jsx_runtime_1 = require("react/jsx-runtime");
+var react_1 = require("react");
+var rc_upload_1 = tslib_1.__importDefault(require("rc-upload"));
 var ahooks_1 = require("ahooks");
-var classnames_1 = __importDefault(require("classnames"));
+var classnames_1 = tslib_1.__importDefault(require("classnames"));
 var antd_1 = require("antd");
 var a_icons_1 = require("a-icons");
-var getMultipartUploadHandler_1 = __importDefault(require("./getMultipartUploadHandler"));
+var getMultipartUploadHandler_1 = tslib_1.__importDefault(require("./getMultipartUploadHandler"));
 var MultipartUpload = function MultipartUpload(props) {
   var className = props.className,
     wrapperClassName = props.wrapperClassName,
     accept = props.accept,
     method = props.method,
-    _a = props.fileName,
-    fileName = _a === void 0 ? '' : _a,
+    _props$fileName = props.fileName,
+    fileName = _props$fileName === void 0 ? '' : _props$fileName,
     onSuccess = props.onSuccess,
     onError = props.onError,
     onStart = props.onStart,
@@ -107,17 +36,17 @@ var MultipartUpload = function MultipartUpload(props) {
     customRequest = props.customRequest,
     value = props.value,
     errorCatch = props.errorCatch,
-    restProps = __rest(props, ["className", "wrapperClassName", "accept", "method", "fileName", "onSuccess", "onError", "onStart", "cancelUpload", "uploadIcon", "disabled", "getInProgressUploadUrl", "getInitUploadIdAPI", "completeRequest", "chunkSize", "uploadText", "customRequest", "value", "errorCatch"]);
+    restProps = _objectWithoutPropertiesLoose(props, _excluded);
   var fileNameRef = (0, react_1.useRef)('');
   var uploadRef = (0, react_1.useRef)();
   var fileRef = (0, react_1.useRef)();
   var uploadIdRef = (0, react_1.useRef)('');
-  var _b = __read((0, react_1.useState)('init'), 2),
-    uploadStatus = _b[0],
-    setUploadStatus = _b[1];
-  var _c = __read((0, react_1.useState)(0), 2),
-    uploadPercent = _c[0],
-    setUploadPercent = _c[1];
+  var _ref = (0, react_1.useState)('init'),
+    uploadStatus = _ref[0],
+    setUploadStatus = _ref[1];
+  var _ref2 = (0, react_1.useState)(0),
+    uploadPercent = _ref2[0],
+    setUploadPercent = _ref2[1];
   var resChunkSize = chunkSize || 1024 * 1024 * 50; // 50MB
   var currentChunk = 0;
   var totalChunks = 0;
@@ -151,15 +80,15 @@ var MultipartUpload = function MultipartUpload(props) {
     'not-upload-init': uploadStatus !== 'init'
   });
   var handleCancelUpload = function handleCancelUpload() {
-    var _a;
     if (fileRef.current) {
-      (_a = uploadRef.current) === null || _a === void 0 ? void 0 : _a.abort(fileRef.current);
+      var _uploadRef$current;
+      (_uploadRef$current = uploadRef.current) == null || _uploadRef$current.abort(fileRef.current);
       setUploadStatus('init');
       cancelUpload && cancelUpload();
     }
   };
   var progress = function progress(progressNumber) {
-    var currentProgressNumber = parseInt("".concat(progressNumber * (currentChunk + 1) / totalChunks), 10);
+    var currentProgressNumber = parseInt("" + progressNumber * (currentChunk + 1) / totalChunks, 10);
     if (currentProgressNumber >= currentChunk / totalChunks * 100) {
       setUploadPercent(currentProgressNumber);
     }
@@ -209,47 +138,60 @@ var MultipartUpload = function MultipartUpload(props) {
       });
     }
   };
-  return react_1["default"].createElement("div", {
-    className: (0, classnames_1["default"])('multipart-upload-container', wrapperClassName)
-  }, uploadStatus === 'uploading' && react_1["default"].createElement("div", {
-    className: "multipart-uploading-container"
-  }, react_1["default"].createElement("div", {
-    className: "multipart-package-icon-files"
-  }, uploadIcon, react_1["default"].createElement("div", {
-    className: "multipart-upload-file-name",
-    title: fileNameRef.current
-  }, fileNameRef.current)), react_1["default"].createElement(antd_1.Progress, {
-    className: "multipart-upload-progress",
-    percent: uploadPercent,
-    size: "small",
-    status: "active"
-  }), react_1["default"].createElement("div", {
-    className: "multipart-package-upload-close-button",
-    onClick: handleCancelUpload
-  }, react_1["default"].createElement(a_icons_1.CloseOutlined, null))), uploadStatus === 'done' && react_1["default"].createElement("div", {
-    className: "multipart-upload-container"
-  }, react_1["default"].createElement("div", {
-    className: "multipart-upload-icon-files"
-  }, uploadIcon, react_1["default"].createElement("div", {
-    className: "multipart-upload-file-name",
-    title: fileNameRef.current
-  }, fileNameRef.current))), react_1["default"].createElement(rc_upload_1["default"], __assign({
-    ref: function ref(uploader) {
-      uploadRef.current = uploader;
-    },
-    name: "file",
-    accept: accept,
-    disabled: disabled,
-    method: method,
-    className: uploadCls,
-    onStart: handleStart,
-    onError: handleError,
-    customRequest: customMultipartRequest
-  }, restProps), uploadStatus === 'init' && react_1["default"].createElement("div", {
-    className: (0, classnames_1["default"])('multipart-uploading-file-container', {
-      'multipart-uploading-file-container-disabled': disabled
-    })
-  }, react_1["default"].createElement(a_icons_1.CirclePlusFilled, null), react_1["default"].createElement("span", null, uploadText))));
+  return (0, jsx_runtime_1.jsxs)("div", {
+    className: (0, classnames_1["default"])('multipart-upload-container', wrapperClassName),
+    children: [uploadStatus === 'uploading' && (0, jsx_runtime_1.jsxs)("div", {
+      className: "multipart-uploading-container",
+      children: [(0, jsx_runtime_1.jsxs)("div", {
+        className: "multipart-package-icon-files",
+        children: [uploadIcon, (0, jsx_runtime_1.jsx)("div", {
+          className: "multipart-upload-file-name",
+          title: fileNameRef.current,
+          children: fileNameRef.current
+        })]
+      }), (0, jsx_runtime_1.jsx)(antd_1.Progress, {
+        className: "multipart-upload-progress",
+        percent: uploadPercent,
+        size: "small",
+        status: "active"
+      }), (0, jsx_runtime_1.jsx)("div", {
+        className: "multipart-package-upload-close-button",
+        onClick: handleCancelUpload,
+        children: (0, jsx_runtime_1.jsx)(a_icons_1.CloseOutlined, {})
+      })]
+    }), uploadStatus === 'done' && (0, jsx_runtime_1.jsx)("div", {
+      className: "multipart-upload-container",
+      children: (0, jsx_runtime_1.jsxs)("div", {
+        className: "multipart-upload-icon-files",
+        children: [uploadIcon, (0, jsx_runtime_1.jsx)("div", {
+          className: "multipart-upload-file-name",
+          title: fileNameRef.current,
+          children: fileNameRef.current
+        })]
+      })
+    }), (0, jsx_runtime_1.jsx)(rc_upload_1["default"], _extends({
+      ref: function ref(uploader) {
+        uploadRef.current = uploader;
+      },
+      name: "file",
+      accept: accept,
+      disabled: disabled,
+      method: method,
+      className: uploadCls,
+      onStart: handleStart,
+      onError: handleError,
+      customRequest: customMultipartRequest
+    }, restProps, {
+      children: uploadStatus === 'init' && (0, jsx_runtime_1.jsxs)("div", {
+        className: (0, classnames_1["default"])('multipart-uploading-file-container', {
+          'multipart-uploading-file-container-disabled': disabled
+        }),
+        children: [(0, jsx_runtime_1.jsx)(a_icons_1.CirclePlusFilled, {}), (0, jsx_runtime_1.jsx)("span", {
+          children: uploadText
+        })]
+      })
+    }))]
+  });
 };
 MultipartUpload.displayName = 'MultipartUpload';
 exports["default"] = MultipartUpload;

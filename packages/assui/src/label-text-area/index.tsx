@@ -1,6 +1,6 @@
 import React from 'react';
-import classNames from 'classnames';
 import useControllableValue from 'ahooks/lib/useControllableValue';
+import classNames from 'classnames';
 import trimStart from 'lodash/trimStart';
 
 export interface LabelTextAreaProps
@@ -72,6 +72,7 @@ const LabelTextArea: React.FC<LabelTextAreaProps> = (props) => {
           onChange={handleChange}
           onBlur={handleBlur}
         />
+        {/* biome-ignore lint/a11y/noLabelWithoutControl: 点击触发的展示文本，非表单 label */}
         <label className="label-textarea-text">{label}</label>
       </div>
     </div>

@@ -1,5 +1,5 @@
-import * as React from 'react';
-import Icon, { IconProps } from 'a-base-icon/lib/icon';
+import * as React from "react";
+import Icon, { IconProps } from "a-base-icon/lib/icon";
 
 function LogoEc(componentProps: IconProps) {
   const IconNode = (props: React.SVGProps<SVGSVGElement>) => (
@@ -41,5 +41,5 @@ function LogoEc(componentProps: IconProps) {
   return <Icon {...componentProps} component={IconNode} />;
 }
 
-LogoEc.displayName = 'LogoEc';
+LogoEc.displayName = "LogoEc";
 export default LogoEc;

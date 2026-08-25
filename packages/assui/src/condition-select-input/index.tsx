@@ -1,16 +1,16 @@
-import isNil from 'lodash/isNil';
-import isEmpty from 'lodash/isEmpty';
-import classNames from 'classnames';
-import type { SelectProps } from 'antd/lib/select';
 import React, { useEffect, useState } from 'react';
 import useControllableValue from 'ahooks/lib/useControllableValue';
-import ComplexValSelect from '../complex-val-select';
+import type { SelectProps } from 'antd/lib/select';
+import classNames from 'classnames';
+import isEmpty from 'lodash/isEmpty';
+import isNil from 'lodash/isNil';
 import type {
   ComplexValSelectProps,
   ComplexValSelectValueType,
 } from '../complex-val-select';
-import ConditionInput from '../condition-input';
+import ComplexValSelect from '../complex-val-select';
 import type { ConditionInputProps } from '../condition-input';
+import ConditionInput from '../condition-input';
 
 export enum InputTypeEnum {
   CONDITION_INPUT = 'conditionInput',
@@ -22,7 +22,7 @@ export enum EntryTypeEnum {
   SECOND_ENTRY = 'secondEntry',
 }
 
-export type ChangedEntryType = typeof EntryTypeEnum[keyof typeof EntryTypeEnum];
+export type ChangedEntryType = (typeof EntryTypeEnum)[keyof typeof EntryTypeEnum];
 
 type SelectOptionsType = {
   value: ComplexValSelectValueType;
@@ -91,7 +91,7 @@ const ConditionSelectInput = (props: ConditionSelectInputProps) => {
       const [selectValueItem] = optionsList.filter(
         (item) => item.value === value.selectValue,
       );
-      if (selectValueItem && selectValueItem.children) {
+      if (selectValueItem?.children) {
         setSubSelectOptions(selectValueItem.children);
       }
     }

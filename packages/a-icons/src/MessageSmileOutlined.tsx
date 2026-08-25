@@ -1,5 +1,5 @@
-import * as React from 'react';
-import Icon, { IconProps } from 'a-base-icon/lib/icon';
+import * as React from "react";
+import Icon, { IconProps } from "a-base-icon/lib/icon";
 
 function MessageSmileOutlined(componentProps: IconProps) {
   const IconNode = (props: React.SVGProps<SVGSVGElement>) => (
@@ -14,5 +14,5 @@ function MessageSmileOutlined(componentProps: IconProps) {
   return <Icon {...componentProps} component={IconNode} />;
 }
 
-MessageSmileOutlined.displayName = 'MessageSmileOutlined';
+MessageSmileOutlined.displayName = "MessageSmileOutlined";
 export default MessageSmileOutlined;

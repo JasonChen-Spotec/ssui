@@ -1,8 +1,8 @@
 import React from 'react';
-import useControllableValue from 'ahooks/lib/useControllableValue';
-import type { DatePickerProps } from 'antd/lib/date-picker';
-import { DatePicker } from 'antd';
 import CalendarOutlined from 'a-icons/lib/CalendarOutlined';
+import useControllableValue from 'ahooks/lib/useControllableValue';
+import { DatePicker } from 'antd';
+import type { DatePickerProps } from 'antd/lib/date-picker';
 import classNames from 'classnames';
 
 export interface LabelDatePickerProps extends Omit<DatePickerProps, 'label'> {
@@ -60,6 +60,7 @@ const LabelDatePicker: React.FC<LabelDatePickerProps> = (props) => {
         placeholder=""
         suffixIcon={<CalendarOutlined />}
       />
+      {/* biome-ignore lint/a11y/noLabelWithoutControl: 点击触发的展示文本，非表单 label */}
       <label className="label-date-picker-text" onClick={handleLabelClick}>
         {label}
       </label>

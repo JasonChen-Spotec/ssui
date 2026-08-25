@@ -19,7 +19,7 @@ const downloadFile = (url: string, options: Options = defaultOptions) => {
       const a = document.createElement('a');
       a.href = window.URL.createObjectURL(xhr.response);
       let resultFileName = fileName;
-      const [path] = url.split('?');
+      const [path = ''] = url.split('?');
       if (!resultFileName) {
         resultFileName = path.split('/').pop();
       } else {

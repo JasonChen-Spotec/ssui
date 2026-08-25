@@ -1,6 +1,6 @@
 import React from 'react';
-import getRanges from './getRanges';
 import extractSpansOfClasses from './extractSpansOfClasses';
+import getRanges from './getRanges';
 import type { HighlightType } from './types';
 
 export interface HighlighedContentsProps {

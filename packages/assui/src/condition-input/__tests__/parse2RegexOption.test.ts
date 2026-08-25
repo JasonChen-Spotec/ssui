@@ -2,11 +2,19 @@ import parse2RegexOption from '../parse2RegexOption';
 
 describe('parse2RegexOption', () => {
   it('when params is RegExp', () => {
-    expect(parse2RegexOption(/\d/)).toEqual({ isValid: true, pattern: /\d/, replacement: '' });
+    expect(parse2RegexOption(/\d/)).toEqual({
+      isValid: true,
+      pattern: /\d/,
+      replacement: '',
+    });
   });
 
   it('when params is string', () => {
-    expect(parse2RegexOption('\\s')).toEqual({ isValid: true, pattern: /\s/, replacement: '' });
+    expect(parse2RegexOption('\\s')).toEqual({
+      isValid: true,
+      pattern: /\s/,
+      replacement: '',
+    });
   });
 
   it('when params is object', () => {

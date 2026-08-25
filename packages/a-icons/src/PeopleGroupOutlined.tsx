@@ -1,5 +1,5 @@
-import * as React from 'react';
-import Icon, { IconProps } from 'a-base-icon/lib/icon';
+import * as React from "react";
+import Icon, { IconProps } from "a-base-icon/lib/icon";
 
 function PeopleGroupOutlined(componentProps: IconProps) {
   const IconNode = (props: React.SVGProps<SVGSVGElement>) => (
@@ -14,5 +14,5 @@ function PeopleGroupOutlined(componentProps: IconProps) {
   return <Icon {...componentProps} component={IconNode} />;
 }
 
-PeopleGroupOutlined.displayName = 'PeopleGroupOutlined';
+PeopleGroupOutlined.displayName = "PeopleGroupOutlined";
 export default PeopleGroupOutlined;

@@ -1,4 +1,4 @@
-import React from 'react';
+import { jsx as _jsx } from "react/jsx-runtime";
 var DraggableHandle = function DraggableHandle(props) {
   var className = props.className,
     _onClick = props.onClick,
@@ -7,7 +7,7 @@ var DraggableHandle = function DraggableHandle(props) {
     _onTouchEnd = props.onTouchEnd,
     _onTouchStart = props.onTouchStart,
     children = props.children;
-  return /*#__PURE__*/React.createElement("div", {
+  return _jsx("div", {
     className: className,
     onMouseDown: function onMouseDown(event) {
       return _onMouseDown(event);
@@ -31,7 +31,8 @@ var DraggableHandle = function DraggableHandle(props) {
         event.preventDefault();
         _onDoubleClick(event);
       }
-    }
-  }, children);
+    },
+    children: children
+  });
 };
 export default DraggableHandle;

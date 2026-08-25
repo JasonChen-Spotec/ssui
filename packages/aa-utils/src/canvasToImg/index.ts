@@ -1,6 +1,3 @@
-/* eslint-disable no-plusplus */
-/* eslint-disable @typescript-eslint/no-throw-literal */
-/* eslint-disable no-param-reassign */
 type fileType = 'png' | 'jpeg' | 'gif' | 'bmp';
 
 export interface saveAsImageOptionsType {
@@ -10,7 +7,6 @@ export interface saveAsImageOptionsType {
   fileName: string;
 }
 
-/* eslint-disable no-bitwise */
 function CanvasToImg() {
   // check if support sth.
   const downloadMime = 'image/octet-stream';
@@ -18,24 +14,25 @@ function CanvasToImg() {
   function scaleCanvas(canvas: HTMLCanvasElement, width: number, height: number) {
     const w = canvas.width;
     const h = canvas.height;
-    if (width === undefined) {
-      width = w;
-    }
-    if (height === undefined) {
-      height = h;
-    }
+    const retWidth = width === undefined ? w : width;
+    const retHeight = height === undefined ? h : height;
 
     const retCanvas: HTMLCanvasElement = document.createElement('canvas');
     const retCtx = retCanvas.getContext('2d') as CanvasRenderingContext2D;
-    retCanvas.width = width;
-    retCanvas.height = height;
-    retCtx.drawImage(canvas, 0, 0, w, h, 0, 0, width, height);
+    retCanvas.width = retWidth;
+    retCanvas.height = retHeight;
+    retCtx.drawImage(canvas, 0, 0, w, h, 0, 0, retWidth, retHeight);
     return retCanvas;
   }
 
-  function getDataURL(canvas: HTMLCanvasElement, type: string, width: number, height: number) {
-    canvas = scaleCanvas(canvas, width, height);
-    return canvas.toDataURL(type);
+  function getDataURL(
+    canvas: HTMLCanvasElement,
+    type: string,
+    width: number,
+    height: number,
+  ) {
+    const scaledCanvas = scaleCanvas(canvas, width, height);
+    return scaledCanvas.toDataURL(type);
   }
 
   // save file to local with file name and file type
@@ -57,14 +54,13 @@ function CanvasToImg() {
   }
 
   function fixType(type: fileType): string {
-    type = type.toLowerCase().replace(/jpg/i, 'jpeg') as fileType;
-    const r = (type.match(/png|jpeg|bmp|gif/) as fileType[])[0];
+    const fixedType = type.toLowerCase().replace(/jpg/i, 'jpeg') as fileType;
+    const r = (fixedType.match(/png|jpeg|bmp|gif/) as fileType[])[0];
     return `image/${r}`;
   }
 
   function encodeData(data: number[] | string) {
     if (!window.btoa) {
-      // eslint-disable-next-line no-throw-literal
       throw 'btoa undefined';
     }
     let str = '';
@@ -72,7 +68,7 @@ function CanvasToImg() {
       str = data;
     } else {
       for (let i = 0; i < data.length; i++) {
-        str += String.fromCharCode(data[i]);
+        str += String.fromCharCode(data[i]!);
       }
     }
 
@@ -233,7 +229,9 @@ function CanvasToImg() {
       strPixelData += strPixelRow;
     } while (--y);
 
-    return encodeData(BITMAPFILEHEADER.concat(BITMAPINFOHEADER)) + encodeData(strPixelData);
+    return (
+      encodeData(BITMAPFILEHEADER.concat(BITMAPINFOHEADER)) + encodeData(strPixelData)
+    );
   };
 
   /**

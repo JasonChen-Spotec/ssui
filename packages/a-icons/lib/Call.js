@@ -1,74 +1,28 @@
 "use strict";
 
-var __assign = this && this.__assign || function () {
-  __assign = Object.assign || function (t) {
-    for (var s, i = 1, n = arguments.length; i < n; i++) {
-      s = arguments[i];
-      for (var p in s) {
-        if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
-      }
-    }
-    return t;
-  };
-  return __assign.apply(this, arguments);
-};
-var __createBinding = this && this.__createBinding || (Object.create ? function (o, m, k, k2) {
-  if (k2 === undefined) k2 = k;
-  var desc = Object.getOwnPropertyDescriptor(m, k);
-  if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
-    desc = {
-      enumerable: true,
-      get: function get() {
-        return m[k];
-      }
-    };
-  }
-  Object.defineProperty(o, k2, desc);
-} : function (o, m, k, k2) {
-  if (k2 === undefined) k2 = k;
-  o[k2] = m[k];
-});
-var __setModuleDefault = this && this.__setModuleDefault || (Object.create ? function (o, v) {
-  Object.defineProperty(o, "default", {
-    enumerable: true,
-    value: v
-  });
-} : function (o, v) {
-  o["default"] = v;
-});
-var __importStar = this && this.__importStar || function (mod) {
-  if (mod && mod.__esModule) return mod;
-  var result = {};
-  if (mod != null) for (var k in mod) {
-    if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-  }
-  __setModuleDefault(result, mod);
-  return result;
-};
-var __importDefault = this && this.__importDefault || function (mod) {
-  return mod && mod.__esModule ? mod : {
-    "default": mod
-  };
-};
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-var React = __importStar(require("react"));
-var icon_1 = __importDefault(require("a-base-icon/lib/icon"));
+var tslib_1 = require("tslib");
+var jsx_runtime_1 = require("react/jsx-runtime");
+var icon_1 = tslib_1.__importDefault(require("a-base-icon/lib/icon"));
 function Call(componentProps) {
   var IconNode = function IconNode(props) {
-    return React.createElement("svg", __assign({
+    return (0, jsx_runtime_1.jsx)("svg", _extends({
       viewBox: "0 0 24 24",
       fill: "none",
       xmlns: "http://www.w3.org/2000/svg"
-    }, props), React.createElement("path", {
-      d: "M12 1c6.075 0 11 4.925 11 11s-4.925 11-11 11S1 18.075 1 12 5.925 1 12 1zM9.438 5.814a1.834 1.834 0 00-1.655 0c-.264.134-.493.364-.759.63l-.058.059-.097.096-.04.042c-.285.284-.504.502-.67.796a2.667 2.667 0 00-.312 1.205c0 .337.07.583.16.9l.01.034a12.25 12.25 0 003.134 5.328 12.246 12.246 0 005.362 3.144c.317.09.563.16.9.161a2.67 2.67 0 001.205-.314c.295-.165.513-.383.797-.668l.041-.041.097-.096.058-.059c.267-.265.497-.495.63-.76a1.833 1.833 0 000-1.654c-.133-.264-.363-.494-.63-.76l-.177-.177-.04-.038c-.174-.176-.325-.327-.488-.433a1.833 1.833 0 00-1.998 0c-.163.106-.313.257-.488.433l-.04.038a4.092 4.092 0 01-.066.065l-.002.001-.004.001-.019-.009-.047-.022a8.311 8.311 0 01-2.282-1.62 8.315 8.315 0 01-1.621-2.284l-.022-.046-.008-.018v-.004-.004l.066-.066.04-.038c.174-.175.325-.326.43-.489a1.834 1.834 0 000-1.999c-.105-.162-.256-.313-.43-.488l-.04-.038-.178-.178c-.265-.266-.494-.496-.759-.63zm-1.103 1.09a.612.612 0 01.552 0c.065.033.146.104.505.463l.119.12c.235.235.284.287.31.327a.612.612 0 010 .667c-.026.04-.075.093-.31.329l-.014.014a1.663 1.663 0 00-.184.208 1.25 1.25 0 00-.18 1.054c.028.098.067.178.097.241l.007.015a9.538 9.538 0 001.859 2.618 9.534 9.534 0 002.618 1.857l.014.008c.063.03.144.07.242.098a1.25 1.25 0 001.053-.18c.084-.06.153-.13.207-.184l.015-.015c.236-.236.29-.284.33-.31a.61.61 0 01.665 0c.04.027.094.075.33.31l.119.12c.358.357.428.439.461.504a.612.612 0 010 .552c-.033.065-.103.147-.461.506l-.097.095c-.342.342-.441.435-.572.51a1.47 1.47 0 01-.603.155c-.155 0-.249-.023-.604-.124a11.024 11.024 0 01-4.797-2.822 11.025 11.025 0 01-2.824-4.797c-.1-.356-.123-.45-.124-.605 0-.175.071-.45.157-.602.073-.131.166-.23.508-.573l.097-.096c.359-.359.44-.43.505-.463z",
-      fill: "#47A92A"
+    }, props, {
+      children: (0, jsx_runtime_1.jsx)("path", {
+        d: "M12 1c6.075 0 11 4.925 11 11s-4.925 11-11 11S1 18.075 1 12 5.925 1 12 1zM9.438 5.814a1.834 1.834 0 00-1.655 0c-.264.134-.493.364-.759.63l-.058.059-.097.096-.04.042c-.285.284-.504.502-.67.796a2.667 2.667 0 00-.312 1.205c0 .337.07.583.16.9l.01.034a12.25 12.25 0 003.134 5.328 12.246 12.246 0 005.362 3.144c.317.09.563.16.9.161a2.67 2.67 0 001.205-.314c.295-.165.513-.383.797-.668l.041-.041.097-.096.058-.059c.267-.265.497-.495.63-.76a1.833 1.833 0 000-1.654c-.133-.264-.363-.494-.63-.76l-.177-.177-.04-.038c-.174-.176-.325-.327-.488-.433a1.833 1.833 0 00-1.998 0c-.163.106-.313.257-.488.433l-.04.038a4.092 4.092 0 01-.066.065l-.002.001-.004.001-.019-.009-.047-.022a8.311 8.311 0 01-2.282-1.62 8.315 8.315 0 01-1.621-2.284l-.022-.046-.008-.018v-.004-.004l.066-.066.04-.038c.174-.175.325-.326.43-.489a1.834 1.834 0 000-1.999c-.105-.162-.256-.313-.43-.488l-.04-.038-.178-.178c-.265-.266-.494-.496-.759-.63zm-1.103 1.09a.612.612 0 01.552 0c.065.033.146.104.505.463l.119.12c.235.235.284.287.31.327a.612.612 0 010 .667c-.026.04-.075.093-.31.329l-.014.014a1.663 1.663 0 00-.184.208 1.25 1.25 0 00-.18 1.054c.028.098.067.178.097.241l.007.015a9.538 9.538 0 001.859 2.618 9.534 9.534 0 002.618 1.857l.014.008c.063.03.144.07.242.098a1.25 1.25 0 001.053-.18c.084-.06.153-.13.207-.184l.015-.015c.236-.236.29-.284.33-.31a.61.61 0 01.665 0c.04.027.094.075.33.31l.119.12c.358.357.428.439.461.504a.612.612 0 010 .552c-.033.065-.103.147-.461.506l-.097.095c-.342.342-.441.435-.572.51a1.47 1.47 0 01-.603.155c-.155 0-.249-.023-.604-.124a11.024 11.024 0 01-4.797-2.822 11.025 11.025 0 01-2.824-4.797c-.1-.356-.123-.45-.124-.605 0-.175.071-.45.157-.602.073-.131.166-.23.508-.573l.097-.096c.359-.359.44-.43.505-.463z",
+        fill: "#47A92A"
+      })
     }));
   };
-  return React.createElement(icon_1["default"], __assign({}, componentProps, {
+  return (0, jsx_runtime_1.jsx)(icon_1["default"], _extends({}, componentProps, {
     component: IconNode
   }));
 }
-Call.displayName = 'Call';
+Call.displayName = "Call";
 exports["default"] = Call;

@@ -1,5 +1,5 @@
-import * as React from 'react';
-import Icon, { IconProps } from 'a-base-icon/lib/icon';
+import * as React from "react";
+import Icon, { IconProps } from "a-base-icon/lib/icon";
 
 function DisplayerOutlined(componentProps: IconProps) {
   const IconNode = (props: React.SVGProps<SVGSVGElement>) => (
@@ -22,5 +22,5 @@ function DisplayerOutlined(componentProps: IconProps) {
   return <Icon {...componentProps} component={IconNode} />;
 }
 
-DisplayerOutlined.displayName = 'DisplayerOutlined';
+DisplayerOutlined.displayName = "DisplayerOutlined";
 export default DisplayerOutlined;

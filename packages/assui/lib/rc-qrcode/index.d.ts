@@ -10,7 +10,7 @@ export interface RcQrcodeProps {
     getCanvasInstance?: (result: HTMLCanvasElement) => void;
 }
 declare const RcQrcode: {
-    (props: RcQrcodeProps): JSX.Element;
+    (props: RcQrcodeProps): import("react/jsx-runtime").JSX.Element;
     useQrcode: (value: string | QRCodeSegment[], options?: QRCode.QRCodeToDataURLOptions) => string;
 };
 export default RcQrcode;

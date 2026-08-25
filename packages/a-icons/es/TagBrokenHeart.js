@@ -1,31 +1,22 @@
-var __assign = this && this.__assign || function () {
-  __assign = Object.assign || function (t) {
-    for (var s, i = 1, n = arguments.length; i < n; i++) {
-      s = arguments[i];
-      for (var p in s) {
-        if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
-      }
-    }
-    return t;
-  };
-  return __assign.apply(this, arguments);
-};
-import * as React from 'react';
-import Icon from 'a-base-icon/lib/icon';
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
+import { jsx as _jsx } from "react/jsx-runtime";
+import Icon from "a-base-icon/lib/icon";
 function TagBrokenHeart(componentProps) {
   var IconNode = function IconNode(props) {
-    return /*#__PURE__*/React.createElement("svg", __assign({
+    return _jsx("svg", _extends({
       viewBox: "0 0 24 24",
       fill: "none",
       xmlns: "http://www.w3.org/2000/svg"
-    }, props), /*#__PURE__*/React.createElement("path", {
-      d: "M14.172 10.146a1.02 1.02 0 00-1.448 0l-.724.728a2.04 2.04 0 01-2.896 0c-.8-.805-.8-2.108 0-2.912l5.765-5.798a6.627 6.627 0 016.182 1.794 6.719 6.719 0 01.348 9.085l-2.159 2.198-5.068-5.095zM2.95 3.958a6.631 6.631 0 018.201-.965L7.656 6.506a4.134 4.134 0 000 5.823 4.08 4.08 0 005.644.142l.148-.142 4.344 4.368-4.344 4.368a2.04 2.04 0 01-2.896 0l-7.603-7.644a6.717 6.717 0 010-9.463z",
-      fill: "#47A92A"
+    }, props, {
+      children: _jsx("path", {
+        d: "M14.172 10.146a1.02 1.02 0 00-1.448 0l-.724.728a2.04 2.04 0 01-2.896 0c-.8-.805-.8-2.108 0-2.912l5.765-5.798a6.627 6.627 0 016.182 1.794 6.719 6.719 0 01.348 9.085l-2.159 2.198-5.068-5.095zM2.95 3.958a6.631 6.631 0 018.201-.965L7.656 6.506a4.134 4.134 0 000 5.823 4.08 4.08 0 005.644.142l.148-.142 4.344 4.368-4.344 4.368a2.04 2.04 0 01-2.896 0l-7.603-7.644a6.717 6.717 0 010-9.463z",
+        fill: "#47A92A"
+      })
     }));
   };
-  return /*#__PURE__*/React.createElement(Icon, __assign({}, componentProps, {
+  return _jsx(Icon, _extends({}, componentProps, {
     component: IconNode
   }));
 }
-TagBrokenHeart.displayName = 'TagBrokenHeart';
+TagBrokenHeart.displayName = "TagBrokenHeart";
 export default TagBrokenHeart;

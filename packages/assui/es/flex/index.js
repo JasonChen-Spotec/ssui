@@ -1,53 +1,40 @@
-var __assign = this && this.__assign || function () {
-  __assign = Object.assign || function (t) {
-    for (var s, i = 1, n = arguments.length; i < n; i++) {
-      s = arguments[i];
-      for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
-    }
-    return t;
-  };
-  return __assign.apply(this, arguments);
-};
-var __rest = this && this.__rest || function (s, e) {
-  var t = {};
-  for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
-  if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
-    if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i])) t[p[i]] = s[p[i]];
-  }
-  return t;
-};
+var _excluded = ["className", "style", "flex", "gap", "children", "vertical", "component"];
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
+function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (-1 !== e.indexOf(n)) continue; t[n] = r[n]; } return t; }
+import { jsx as _jsx } from "react/jsx-runtime";
 import React from 'react';
 import classNames from 'classnames';
 import omit from "rc-util/es/omit";
 import { isPresetSize } from './utils/gapSize';
 import createFlexClassNames from './utils';
 var Flex = /*#__PURE__*/React.forwardRef(function (props, ref) {
-  var _a;
+  var _classNames;
   var className = props.className,
     style = props.style,
     flex = props.flex,
     gap = props.gap,
     children = props.children,
-    _b = props.vertical,
-    vertical = _b === void 0 ? false : _b,
-    _c = props.component,
-    Component = _c === void 0 ? 'div' : _c,
-    othersProps = __rest(props, ["className", "style", "flex", "gap", "children", "vertical", "component"]);
+    _props$vertical = props.vertical,
+    vertical = _props$vertical === void 0 ? false : _props$vertical,
+    _props$component = props.component,
+    Component = _props$component === void 0 ? 'div' : _props$component,
+    othersProps = _objectWithoutPropertiesLoose(props, _excluded);
   var prefixCls = 'as-flex';
   var flexClassNames = createFlexClassNames(prefixCls, props);
-  var mergedCls = classNames(className, prefixCls, flexClassNames, (_a = {}, _a["".concat(prefixCls, "-gap-").concat(gap)] = isPresetSize(gap), _a["".concat(prefixCls, "-vertical")] = vertical, _a));
-  var mergedStyle = __assign({}, style);
+  var mergedCls = classNames(className, prefixCls, flexClassNames, (_classNames = {}, _classNames[prefixCls + "-gap-" + gap] = isPresetSize(gap), _classNames[prefixCls + "-vertical"] = vertical, _classNames));
+  var mergedStyle = _extends({}, style);
   if (flex) {
     mergedStyle.flex = flex;
   }
   if (gap && !isPresetSize(gap)) {
     mergedStyle.gap = gap;
   }
-  return /*#__PURE__*/React.createElement(Component, __assign({
+  return _jsx(Component, _extends({
     ref: ref,
     className: mergedCls
   }, omit(othersProps, ['justify', 'wrap', 'align']), {
-    style: mergedStyle
-  }), children);
+    style: mergedStyle,
+    children: children
+  }));
 });
 export default Flex;

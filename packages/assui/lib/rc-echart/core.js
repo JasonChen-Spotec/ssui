@@ -1,64 +1,28 @@
 "use strict";
 
-var __createBinding = this && this.__createBinding || (Object.create ? function (o, m, k, k2) {
-  if (k2 === undefined) k2 = k;
-  var desc = Object.getOwnPropertyDescriptor(m, k);
-  if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
-    desc = {
-      enumerable: true,
-      get: function get() {
-        return m[k];
-      }
-    };
-  }
-  Object.defineProperty(o, k2, desc);
-} : function (o, m, k, k2) {
-  if (k2 === undefined) k2 = k;
-  o[k2] = m[k];
-});
-var __setModuleDefault = this && this.__setModuleDefault || (Object.create ? function (o, v) {
-  Object.defineProperty(o, "default", {
-    enumerable: true,
-    value: v
-  });
-} : function (o, v) {
-  o["default"] = v;
-});
-var __importStar = this && this.__importStar || function (mod) {
-  if (mod && mod.__esModule) return mod;
-  var result = {};
-  if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-  __setModuleDefault(result, mod);
-  return result;
-};
-var __importDefault = this && this.__importDefault || function (mod) {
-  return mod && mod.__esModule ? mod : {
-    "default": mod
-  };
-};
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-/* eslint-disable no-unused-expressions */
-/* eslint-disable no-restricted-syntax */
-var react_1 = __importStar(require("react"));
-var useMount_1 = __importDefault(require("ahooks/lib/useMount"));
-var useUpdateEffect_1 = __importDefault(require("ahooks/lib/useUpdateEffect"));
-var classnames_1 = __importDefault(require("classnames"));
+var tslib_1 = require("tslib");
+var jsx_runtime_1 = require("react/jsx-runtime");
+var react_1 = require("react");
+var useMount_1 = tslib_1.__importDefault(require("ahooks/lib/useMount"));
+var useUpdateEffect_1 = tslib_1.__importDefault(require("ahooks/lib/useUpdateEffect"));
+var classnames_1 = tslib_1.__importDefault(require("classnames"));
 var initEmptyObject = {};
 var ReactEchartCore = function ReactEchartCore(props) {
-  var _a = props.className,
-    className = _a === void 0 ? '' : _a,
+  var _props$className = props.className,
+    className = _props$className === void 0 ? '' : _props$className,
     option = props.option,
     echarts = props.echarts,
-    _b = props.notMerge,
-    notMerge = _b === void 0 ? false : _b,
-    _c = props.lazyUpdate,
-    lazyUpdate = _c === void 0 ? false : _c,
-    _d = props.onEvents,
-    onEvents = _d === void 0 ? initEmptyObject : _d,
-    _e = props.opts,
-    opts = _e === void 0 ? initEmptyObject : _e,
+    _props$notMerge = props.notMerge,
+    notMerge = _props$notMerge === void 0 ? false : _props$notMerge,
+    _props$lazyUpdate = props.lazyUpdate,
+    lazyUpdate = _props$lazyUpdate === void 0 ? false : _props$lazyUpdate,
+    _props$onEvents = props.onEvents,
+    onEvents = _props$onEvents === void 0 ? initEmptyObject : _props$onEvents,
+    _props$opts = props.opts,
+    opts = _props$opts === void 0 ? initEmptyObject : _props$opts,
     theme = props.theme;
   var chartDomRef = (0, react_1.useRef)();
   var chartRef = (0, react_1.useRef)();
@@ -73,7 +37,7 @@ var ReactEchartCore = function ReactEchartCore(props) {
       }
     };
     for (var eventName in onEvents) {
-      if (Object.prototype.hasOwnProperty.call(onEvents, eventName)) {
+      if (Object.hasOwn(onEvents, eventName)) {
         bindEventFunc(eventName, onEvents[eventName]);
       }
     }
@@ -129,7 +93,7 @@ var ReactEchartCore = function ReactEchartCore(props) {
     width: '100%',
     height: '100%'
   };
-  return react_1["default"].createElement("div", {
+  return (0, jsx_runtime_1.jsx)("div", {
     ref: function ref(node) {
       chartDomRef.current = node;
     },

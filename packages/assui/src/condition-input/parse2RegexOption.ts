@@ -1,6 +1,6 @@
+import isObject from 'lodash/isObject';
 import isRegExp from 'lodash/isRegExp';
 import isString from 'lodash/isString';
-import isObject from 'lodash/isObject';
 
 export interface RegexOptionType {
   isValid: boolean;

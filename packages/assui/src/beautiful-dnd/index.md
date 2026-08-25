@@ -11,16 +11,16 @@ group:
 ---
 
 # ReactBeautifulDnd
-拖拽组件[source code](https://github.com/atlassian/react-beautiful-dnd)
+拖拽组件（基于 [@hello-pangea/dnd](https://github.com/hello-pangea/dnd)，react-beautiful-dnd 的 React 18 兼容维护版）[source code](https://github.com/hello-pangea/dnd)
 
 ## 1. 代码演示
 ### 1.1. Tables
 <code hideActions='["CSB", "EXTERNAL"]' src="./demo/Tables/index.tsx" ></code>
 
-### 1.2 OnBeforeCapture
+### 1.2. OnBeforeCapture
 
 <code hideActions='["CSB", "EXTERNAL"]' src="./demo/OnBeforeCapture/AddingThings.tsx" ></code>
 
-### 1.2. MultiDrag
+### 1.3. MultiDrag
 <code hideActions='["CSB", "EXTERNAL"]' src="./demo/MultiDrag/index.tsx" ></code>
 

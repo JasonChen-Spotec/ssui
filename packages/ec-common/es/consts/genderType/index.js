@@ -8,10 +8,11 @@ var FEMALE = 2;
 var EMPTY = -1;
 export { MALE, FEMALE, EMPTY };
 export var useGenderType = function useGenderType() {
-  var _a, _b;
-  var formatMessage = useIntl().formatMessage;
-  var appellativeGenderTypeMap = (_a = {}, _a[MALE] = formatMessage(messages.male), _a[FEMALE] = formatMessage(messages.female), _a[EMPTY] = '', _a);
-  var genderTypeMap = (_b = {}, _b[MALE] = formatMessage(messages.male), _b[FEMALE] = formatMessage(messages.female), _b[EMPTY] = '-', _b);
+  var _appellativeGenderTyp, _genderTypeMap;
+  var _useIntl = useIntl(),
+    formatMessage = _useIntl.formatMessage;
+  var appellativeGenderTypeMap = (_appellativeGenderTyp = {}, _appellativeGenderTyp[MALE] = formatMessage(messages.male), _appellativeGenderTyp[FEMALE] = formatMessage(messages.female), _appellativeGenderTyp[EMPTY] = '', _appellativeGenderTyp);
+  var genderTypeMap = (_genderTypeMap = {}, _genderTypeMap[MALE] = formatMessage(messages.male), _genderTypeMap[FEMALE] = formatMessage(messages.female), _genderTypeMap[EMPTY] = '-', _genderTypeMap);
   var genderTypeList = [{
     value: MALE,
     label: formatMessage(messages.male)

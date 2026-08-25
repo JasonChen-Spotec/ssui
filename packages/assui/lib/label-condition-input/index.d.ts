@@ -12,5 +12,5 @@ export interface LabelConditionInputProps extends Omit<ConditionInputProps, 'onB
     /** 组件dom id */
     id?: string;
 }
-declare const LabelConditionInput: (props: LabelConditionInputProps) => JSX.Element;
+declare const LabelConditionInput: (props: LabelConditionInputProps) => import("react/jsx-runtime").JSX.Element;
 export default LabelConditionInput;

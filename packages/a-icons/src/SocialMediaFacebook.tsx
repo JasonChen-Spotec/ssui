@@ -1,9 +1,14 @@
-import * as React from 'react';
-import Icon, { IconProps } from 'a-base-icon/lib/icon';
+import * as React from "react";
+import Icon, { IconProps } from "a-base-icon/lib/icon";
 
 function SocialMediaFacebook(componentProps: IconProps) {
   const IconNode = (props: React.SVGProps<SVGSVGElement>) => (
-    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
       <g clipPath="url(#social-media-facebook_svg__clip0_4109_4252)">
         <circle cx={12} cy={12} r={12} fill="#000" />
         <path
@@ -22,5 +27,5 @@ function SocialMediaFacebook(componentProps: IconProps) {
   return <Icon {...componentProps} component={IconNode} />;
 }
 
-SocialMediaFacebook.displayName = 'SocialMediaFacebook';
+SocialMediaFacebook.displayName = "SocialMediaFacebook";
 export default SocialMediaFacebook;

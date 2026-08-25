@@ -1,9 +1,14 @@
-import * as React from 'react';
-import Icon, { IconProps } from 'a-base-icon/lib/icon';
+import * as React from "react";
+import Icon, { IconProps } from "a-base-icon/lib/icon";
 
 function ShieldFilled(componentProps: IconProps) {
   const IconNode = (props: React.SVGProps<SVGSVGElement>) => (
-    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
       <path
         d="M13.45 1.418c1.56-.745 3.128-.223 4.085.888 1.383-.483 2.982-.142 3.976 1.263 1.18 1.669.783 3.876-.786 5.064-.795.603-2.541 1.53-3.676 2.115l-.027.013a7.961 7.961 0 01-.559.27 1.992 1.992 0 01-.708.166 2.026 2.026 0 01-1.122-.301 1.991 1.991 0 01-.53-.497 7.93 7.93 0 01-.35-.514l-.016-.025c-.69-1.073-1.739-2.75-2.126-3.669-.77-1.827.024-3.907 1.839-4.773z"
         fill="currentCOlor"
@@ -20,5 +25,5 @@ function ShieldFilled(componentProps: IconProps) {
   return <Icon {...componentProps} component={IconNode} />;
 }
 
-ShieldFilled.displayName = 'ShieldFilled';
+ShieldFilled.displayName = "ShieldFilled";
 export default ShieldFilled;

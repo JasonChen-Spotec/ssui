@@ -1,26 +1,13 @@
 "use strict";
 
-var __assign = this && this.__assign || function () {
-  __assign = Object.assign || function (t) {
-    for (var s, i = 1, n = arguments.length; i < n; i++) {
-      s = arguments[i];
-      for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
-    }
-    return t;
-  };
-  return __assign.apply(this, arguments);
-};
-var __importDefault = this && this.__importDefault || function (mod) {
-  return mod && mod.__esModule ? mod : {
-    "default": mod
-  };
-};
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-var react_1 = __importDefault(require("react"));
-var react_split_pane_1 = __importDefault(require("react-split-pane"));
+var tslib_1 = require("tslib");
+var jsx_runtime_1 = require("react/jsx-runtime");
+var react_split_pane_1 = tslib_1.__importDefault(require("react-split-pane"));
 var SplitPane = function SplitPane(props) {
-  return react_1["default"].createElement(react_split_pane_1["default"], __assign({}, props));
+  return (0, jsx_runtime_1.jsx)(react_split_pane_1["default"], _extends({}, props));
 };
 exports["default"] = SplitPane;

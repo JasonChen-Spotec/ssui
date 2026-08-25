@@ -1,5 +1,5 @@
-import { IconProps } from 'a-base-icon/lib/icon';
-declare function MessageSquareOutlined(componentProps: IconProps): JSX.Element;
+import { IconProps } from "a-base-icon/lib/icon";
+declare function MessageSquareOutlined(componentProps: IconProps): import("react/jsx-runtime").JSX.Element;
 declare namespace MessageSquareOutlined {
     var displayName: string;
 }

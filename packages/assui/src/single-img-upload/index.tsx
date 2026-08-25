@@ -1,15 +1,14 @@
-/* eslint-disable @typescript-eslint/no-unused-expressions */
 import * as React from 'react';
-import type { UploadProps } from 'rc-upload';
-import Upload from 'rc-upload';
-import Progress from 'antd/lib/progress';
-import Image from 'antd/lib/image';
-import Spin from 'antd/lib/spin';
-import classNames from 'classnames';
 import CloseOutlined from 'a-icons/lib/CloseOutlined';
 import Pdf from 'a-icons/lib/Pdf';
-import isObject from 'lodash/isObject';
+import Image from 'antd/lib/image';
+import Progress from 'antd/lib/progress';
+import Spin from 'antd/lib/spin';
+import classNames from 'classnames';
 import isFunction from 'lodash/isFunction';
+import isObject from 'lodash/isObject';
+import type { UploadProps } from 'rc-upload';
+import Upload from 'rc-upload';
 
 const getLocalImgURL = (file: File) => {
   const URL = window.URL || window.webkitURL;
@@ -21,14 +20,14 @@ const IMAGE_TYPE = 'image';
 
 const PDF_TYPE = 'pdf';
 
-type FileType = typeof IMAGE_TYPE | typeof PDF_TYPE
+type FileType = typeof IMAGE_TYPE | typeof PDF_TYPE;
 
 export interface RcFile extends File {
   uid: string;
 }
 
-export interface UploadProgressEvent extends ProgressEvent {
-  percent: number;
+export interface UploadProgressEvent extends Partial<ProgressEvent> {
+  percent?: number;
 }
 
 export interface SingleImgUploadProps extends UploadProps {
@@ -39,7 +38,7 @@ export interface SingleImgUploadProps extends UploadProps {
   /** 格式化接口返回数据 */
   onFormatResData?: (res: any) => string;
   /** pdf名称 */
-  pdfName?: string
+  pdfName?: string;
 }
 
 const initBeforeUpload = () => true;
@@ -82,11 +81,10 @@ const SingleImgUpload = (props: SingleImgUploadProps) => {
     const isPdf = /\.pdf($|\?)/i.test(value);
     const isImage = /\.(jpg|jpeg|png|gif|webp|bmp|svg|heic)($|\?)/i.test(value);
 
-
     if (isImage) {
       setFileType(IMAGE_TYPE);
       setImageLoading(true);
-      // eslint-disable-next-line global-require
+
       const heic2Jpeg = require('aa-utils/lib/heic2Jpeg').default;
       if (isFunction(heic2Jpeg)) {
         heic2Jpeg(value)
@@ -99,9 +97,7 @@ const SingleImgUpload = (props: SingleImgUploadProps) => {
         setImageLoading(false);
       }
       return;
-
     }
-
 
     if (isPdf) {
       setFileType(PDF_TYPE);
@@ -135,7 +131,7 @@ const SingleImgUpload = (props: SingleImgUploadProps) => {
       setFileUrl(getLocalImgURL(file));
     }
     setUploadStatus('uploading');
-    onStart && onStart(file);
+    onStart?.(file);
   };
 
   const handleProgress = (e: UploadProgressEvent) => {
@@ -145,12 +141,12 @@ const SingleImgUpload = (props: SingleImgUploadProps) => {
 
   const handleError = (error: Error, ret: Record<string, unknown>, file: RcFile) => {
     setUploadStatus('init');
-    onError && onError(error, ret, file);
+    onError?.(error, ret, file);
   };
 
   const handleSuccess = (res: any, file: RcFile, xhr: XMLHttpRequest) => {
     const result = onFormatResData ? onFormatResData(res) : res;
-    onSuccess && onSuccess(result, file, xhr);
+    onSuccess?.(result, file, xhr);
     setUploadStatus('done');
   };
 
@@ -160,7 +156,7 @@ const SingleImgUpload = (props: SingleImgUploadProps) => {
 
   const handleDeleteUpload = () => {
     setUploadStatus('init');
-    onDeleteUpload && onDeleteUpload();
+    onDeleteUpload?.();
   };
 
   const cancelUpload = () => {
@@ -175,12 +171,7 @@ const SingleImgUpload = (props: SingleImgUploadProps) => {
 
   const getShowNode = () => {
     if (fileType === IMAGE_TYPE) {
-      return (
-        <Image wrapperClassName="as-img-upload-preview"
-          src={fileUrl}
-          preview
-        />
-      )
+      return <Image wrapperClassName="as-img-upload-preview" src={fileUrl} preview />;
     }
 
     return (
@@ -193,9 +184,8 @@ const SingleImgUpload = (props: SingleImgUploadProps) => {
           {pdfName && <div className="as-img-upload-pdf-name">{pdfName}</div>}
         </div>
       </div>
-    )
-
-  }
+    );
+  };
 
   return (
     <div className={cls}>

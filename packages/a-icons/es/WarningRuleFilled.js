@@ -1,33 +1,24 @@
-var __assign = this && this.__assign || function () {
-  __assign = Object.assign || function (t) {
-    for (var s, i = 1, n = arguments.length; i < n; i++) {
-      s = arguments[i];
-      for (var p in s) {
-        if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
-      }
-    }
-    return t;
-  };
-  return __assign.apply(this, arguments);
-};
-import * as React from 'react';
-import Icon from 'a-base-icon/lib/icon';
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
+import { jsx as _jsx } from "react/jsx-runtime";
+import Icon from "a-base-icon/lib/icon";
 function WarningRuleFilled(componentProps) {
   var IconNode = function IconNode(props) {
-    return /*#__PURE__*/React.createElement("svg", __assign({
+    return _jsx("svg", _extends({
       viewBox: "0 0 24 24",
       fill: "none",
       xmlns: "http://www.w3.org/2000/svg"
-    }, props), /*#__PURE__*/React.createElement("path", {
-      fillRule: "evenodd",
-      clipRule: "evenodd",
-      d: "M9.568 1c-.252 0-.498 0-.706.017a2.022 2.022 0 00-.77.201 2 2 0 00-.874.874 2.022 2.022 0 00-.201.77 4.102 4.102 0 00-.01.146c-.394.013-.733.045-1.042.128a4 4 0 00-2.829 2.829C3 6.476 3 7.067 3 7.862v9.38c0 .804 0 1.469.044 2.01.046.562.145 1.079.392 1.564a4 4 0 001.748 1.748c.485.247 1.002.346 1.564.392C7.29 23 7.954 23 8.758 23h6.483c.805 0 1.47 0 2.01-.044.563-.046 1.08-.145 1.565-.392a4 4 0 001.748-1.748c.247-.485.346-1.002.392-1.564.044-.541.044-1.206.044-2.01v-9.38c0-.795 0-1.386-.136-1.897a4 4 0 00-2.829-2.829c-.31-.083-.648-.115-1.043-.128-.002-.05-.005-.1-.009-.146a2.022 2.022 0 00-.2-.77 2 2 0 00-.875-.874 2.022 2.022 0 00-.77-.201C14.93 1 14.684 1 14.432 1H9.568zm5.422 2.025c.01.116.01.278.01.575v.8c0 .297 0 .459-.01.575l-.001.014h-.014C14.86 5 14.697 5 14.4 5H9.6c-.296 0-.459 0-.575-.01l-.013-.001-.002-.014A8.185 8.185 0 019 4.4v-.8c0-.297 0-.459.01-.575l.002-.014h.013C9.14 3 9.304 3 9.6 3h4.8c.297 0 .459 0 .575.01l.014.001v.014zm-.576 6.39l-2.726 2.725 2.76 1.38a1 1 0 01.26 1.601L11 18.828l-1.414-1.414 2.726-2.726-2.76-1.38a1 1 0 01-.26-1.6L13 8l1.414 1.414z",
-      fill: "currentColor"
+    }, props, {
+      children: _jsx("path", {
+        fillRule: "evenodd",
+        clipRule: "evenodd",
+        d: "M9.568 1c-.252 0-.498 0-.706.017a2.022 2.022 0 00-.77.201 2 2 0 00-.874.874 2.022 2.022 0 00-.201.77 4.102 4.102 0 00-.01.146c-.394.013-.733.045-1.042.128a4 4 0 00-2.829 2.829C3 6.476 3 7.067 3 7.862v9.38c0 .804 0 1.469.044 2.01.046.562.145 1.079.392 1.564a4 4 0 001.748 1.748c.485.247 1.002.346 1.564.392C7.29 23 7.954 23 8.758 23h6.483c.805 0 1.47 0 2.01-.044.563-.046 1.08-.145 1.565-.392a4 4 0 001.748-1.748c.247-.485.346-1.002.392-1.564.044-.541.044-1.206.044-2.01v-9.38c0-.795 0-1.386-.136-1.897a4 4 0 00-2.829-2.829c-.31-.083-.648-.115-1.043-.128-.002-.05-.005-.1-.009-.146a2.022 2.022 0 00-.2-.77 2 2 0 00-.875-.874 2.022 2.022 0 00-.77-.201C14.93 1 14.684 1 14.432 1H9.568zm5.422 2.025c.01.116.01.278.01.575v.8c0 .297 0 .459-.01.575l-.001.014h-.014C14.86 5 14.697 5 14.4 5H9.6c-.296 0-.459 0-.575-.01l-.013-.001-.002-.014A8.185 8.185 0 019 4.4v-.8c0-.297 0-.459.01-.575l.002-.014h.013C9.14 3 9.304 3 9.6 3h4.8c.297 0 .459 0 .575.01l.014.001v.014zm-.576 6.39l-2.726 2.725 2.76 1.38a1 1 0 01.26 1.601L11 18.828l-1.414-1.414 2.726-2.726-2.76-1.38a1 1 0 01-.26-1.6L13 8l1.414 1.414z",
+        fill: "currentColor"
+      })
     }));
   };
-  return /*#__PURE__*/React.createElement(Icon, __assign({}, componentProps, {
+  return _jsx(Icon, _extends({}, componentProps, {
     component: IconNode
   }));
 }
-WarningRuleFilled.displayName = 'WarningRuleFilled';
+WarningRuleFilled.displayName = "WarningRuleFilled";
 export default WarningRuleFilled;

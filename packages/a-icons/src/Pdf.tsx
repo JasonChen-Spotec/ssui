@@ -1,9 +1,14 @@
-import * as React from 'react';
-import Icon, { IconProps } from 'a-base-icon/lib/icon';
+import * as React from "react";
+import Icon, { IconProps } from "a-base-icon/lib/icon";
 
 function Pdf(componentProps: IconProps) {
   const IconNode = (props: React.SVGProps<SVGSVGElement>) => (
-    <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+    <svg
+      viewBox="0 0 40 40"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
       <g clipPath="url(#pdf_svg__clip0_23648_109766)">
         <path
           d="M35.22 36.2c0 .5-.2.98-.56 1.34-.36.36-.84.56-1.34.56H6.66c-.5 0-1-.2-1.34-.56-.36-.36-.56-.84-.56-1.34V1.9c0-.5.2-1 .56-1.34C5.66.2 6.16 0 6.66 0h16.36c.5 0 1 .2 1.36.56l10.3 10.3c.36.36.56.84.56 1.36V36.2h-.02z"
@@ -45,5 +50,5 @@ function Pdf(componentProps: IconProps) {
   return <Icon {...componentProps} component={IconNode} />;
 }
 
-Pdf.displayName = 'Pdf';
+Pdf.displayName = "Pdf";
 export default Pdf;

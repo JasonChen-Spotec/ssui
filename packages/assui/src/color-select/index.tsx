@@ -1,11 +1,11 @@
-import type { ColorResult, SketchPickerProps } from 'react-color';
-import { SketchPicker } from 'react-color';
 import React, { useContext } from 'react';
+import ChevronRightOutlined from 'a-icons/lib/ChevronRightOutlined';
+import useControllableValue from 'ahooks/lib/useControllableValue';
+import classNames from 'classnames';
 import type { TriggerProps } from 'rc-trigger';
 import RcTrigger from 'rc-trigger';
-import classNames from 'classnames';
-import useControllableValue from 'ahooks/lib/useControllableValue';
-import ChevronRightOutlined from 'a-icons/lib/ChevronRightOutlined';
+import type { ColorResult, SketchPickerProps } from 'react-color';
+import { SketchPicker } from 'react-color';
 import LocaleContext from '../config-provider/context';
 import formatMessage, { langTypeEnum } from '../messages';
 
@@ -48,7 +48,7 @@ const ColorSelect: React.FC<ColorSelectProps> = (props) => {
   };
 
   const defaultValueNode = (
-    <div className={classNames('color-select', className)} tabIndex={0}>
+    <div className={classNames('color-select', className)}>
       {value ? (
         <div
           className="color-select-value"
@@ -91,7 +91,7 @@ const ColorSelect: React.FC<ColorSelectProps> = (props) => {
       >
         {renderValueNode ? renderValueNode(value) : defaultValueNode}
       </RcTrigger>
-      {renderExtra && renderExtra(value)}
+      {renderExtra?.(value)}
     </div>
   );
 };

@@ -1,5 +1,5 @@
-import * as React from 'react';
-import Icon, { IconProps } from 'a-base-icon/lib/icon';
+import * as React from "react";
+import Icon, { IconProps } from "a-base-icon/lib/icon";
 
 function DragUpAndDownOutlined(componentProps: IconProps) {
   const IconNode = (props: React.SVGProps<SVGSVGElement>) => (
@@ -15,5 +15,5 @@ function DragUpAndDownOutlined(componentProps: IconProps) {
   return <Icon {...componentProps} component={IconNode} />;
 }
 
-DragUpAndDownOutlined.displayName = 'DragUpAndDownOutlined';
+DragUpAndDownOutlined.displayName = "DragUpAndDownOutlined";
 export default DragUpAndDownOutlined;

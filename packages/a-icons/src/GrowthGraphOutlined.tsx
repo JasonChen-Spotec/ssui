@@ -1,5 +1,5 @@
-import * as React from 'react';
-import Icon, { IconProps } from 'a-base-icon/lib/icon';
+import * as React from "react";
+import Icon, { IconProps } from "a-base-icon/lib/icon";
 
 function GrowthGraphOutlined(componentProps: IconProps) {
   const IconNode = (props: React.SVGProps<SVGSVGElement>) => (
@@ -18,5 +18,5 @@ function GrowthGraphOutlined(componentProps: IconProps) {
   return <Icon {...componentProps} component={IconNode} />;
 }
 
-GrowthGraphOutlined.displayName = 'GrowthGraphOutlined';
+GrowthGraphOutlined.displayName = "GrowthGraphOutlined";
 export default GrowthGraphOutlined;

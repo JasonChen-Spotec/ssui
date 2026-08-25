@@ -4,7 +4,7 @@ const buildCalculateFunc =
   (method: 'times' | 'plus' | 'minus' | 'dividedBy') =>
   (...value: BigNumber.Value[]) => {
     const [firstValue, ...restValues] = value;
-    let resultValue = new BigNumber(firstValue);
+    let resultValue = new BigNumber(firstValue!);
 
     if (restValues.length > 0) {
       restValues.forEach((v) => {

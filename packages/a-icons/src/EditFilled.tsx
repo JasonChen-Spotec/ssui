@@ -1,9 +1,14 @@
-import * as React from 'react';
-import Icon, { IconProps } from 'a-base-icon/lib/icon';
+import * as React from "react";
+import Icon, { IconProps } from "a-base-icon/lib/icon";
 
 function EditFilled(componentProps: IconProps) {
   const IconNode = (props: React.SVGProps<SVGSVGElement>) => (
-    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
       <path
         d="M9.292 10.463l.007 4.247 4.238-.008L21 7.24V18a3 3 0 01-3 3H6a3 3 0 01-3-3V6a3 3 0 013-3h10.755l-7.463 7.463z"
         fill="currentCOlor"
@@ -18,5 +23,5 @@ function EditFilled(componentProps: IconProps) {
   return <Icon {...componentProps} component={IconNode} />;
 }
 
-EditFilled.displayName = 'EditFilled';
+EditFilled.displayName = "EditFilled";
 export default EditFilled;

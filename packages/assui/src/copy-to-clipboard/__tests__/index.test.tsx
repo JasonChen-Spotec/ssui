@@ -1,5 +1,5 @@
 import React from 'react';
-import { act, render, fireEvent, screen } from '@testing-library/react';
+import { act, fireEvent, render, screen } from '@testing-library/react';
 import CopyToClipboard from '../index';
 
 jest.mock('copy-to-clipboard', () => {

@@ -1,8 +1,7 @@
 // @ts-nocheck
-/* eslint-disable no-param-reassign */
-/* eslint-disable prefer-destructuring */
+
 import isFunction from 'lodash/isFunction';
-import { tryParseInt, removeClass, addClass } from './utils';
+import { addClass, removeClass, tryParseInt } from './utils';
 
 export type Options = {
   /** 是否实时拖动 */
@@ -76,13 +75,20 @@ export default class ColResizable {
     const domElmThList: HTMLTableCellElement[] = [];
     this.domElmHandleContainer = this.domElmTable.previousSibling as HTMLDivElement;
     const hasHandleContainer =
-      this.domElmHandleContainer && this.domElmHandleContainer.className === 'col-resize-container';
+      this.domElmHandleContainer &&
+      this.domElmHandleContainer.className === 'col-resize-container';
 
     if (!hasHandleContainer) {
-      this.domElmTable.insertAdjacentHTML('beforebegin', '<div class="col-resize-container"/>');
+      this.domElmTable.insertAdjacentHTML(
+        'beforebegin',
+        '<div class="col-resize-container"/>',
+      );
       this.domElmHandleContainer = this.domElmTable.previousSibling as HTMLDivElement;
     } else {
-      Array.prototype.push.apply(this.domElmHandleList, this.domElmHandleContainer.childNodes);
+      Array.prototype.push.apply(
+        this.domElmHandleList,
+        this.domElmHandleContainer.childNodes,
+      );
     }
 
     Array.prototype.push.apply(domElmThList, thList);
@@ -148,7 +154,8 @@ export default class ColResizable {
       if (i === 0) {
         left = domElmTh.offsetWidth + this.cellSpacing / 2;
       } else {
-        const handleColLeft = this.domElmHandleList[i - 1].style.left + this.cellSpacing / 2;
+        const handleColLeft =
+          this.domElmHandleList[i - 1].style.left + this.cellSpacing / 2;
         left = tryParseInt(handleColLeft) + domElmTh.offsetWidth;
       }
 
@@ -161,7 +168,9 @@ export default class ColResizable {
       '.col-resize-container .icon',
     ).offsetHeight;
 
-    const domElemIcons = this.domElmHandleContainer.querySelectorAll('.col-resize-container .icon');
+    const domElemIcons = this.domElmHandleContainer.querySelectorAll(
+      '.col-resize-container .icon',
+    );
     Array.prototype.push.apply(domElmIconList, domElemIcons);
 
     domElmIconList.forEach((el) => {
@@ -203,11 +212,15 @@ export default class ColResizable {
 
     const l = this.cellSpacing * 1.5 + minWidth + this.borderLeftWidth;
     const min = index
-      ? tryParseInt(this.domElmHandleList[index - 1].style.left) + this.cellSpacing + minWidth
+      ? tryParseInt(this.domElmHandleList[index - 1].style.left) +
+        this.cellSpacing +
+        minWidth
       : l;
 
     const max =
-      tryParseInt(this.domElmHandleList[index + 1].style.left) - this.cellSpacing - minWidth;
+      tryParseInt(this.domElmHandleList[index + 1].style.left) -
+      this.cellSpacing -
+      minWidth;
 
     x = Math.max(min, Math.min(max, x));
 

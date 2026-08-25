@@ -1,5 +1,5 @@
-import * as React from 'react';
-import Icon, { IconProps } from 'a-base-icon/lib/icon';
+import * as React from "react";
+import Icon, { IconProps } from "a-base-icon/lib/icon";
 
 function ErrorWarningOutlined(componentProps: IconProps) {
   const IconNode = (props: React.SVGProps<SVGSVGElement>) => (
@@ -17,5 +17,5 @@ function ErrorWarningOutlined(componentProps: IconProps) {
   return <Icon {...componentProps} component={IconNode} />;
 }
 
-ErrorWarningOutlined.displayName = 'ErrorWarningOutlined';
+ErrorWarningOutlined.displayName = "ErrorWarningOutlined";
 export default ErrorWarningOutlined;

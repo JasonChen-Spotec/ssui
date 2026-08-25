@@ -9,7 +9,7 @@ declare class Span {
     setMark(className: string): void;
     carve(beginIndex2: number): Span;
     get className(): string;
-    render(): JSX.Element;
+    render(): import("react/jsx-runtime").JSX.Element;
 }
 export default function extractSpansOfClasses(value: string, ranges: RangesType): Span[];
 export {};

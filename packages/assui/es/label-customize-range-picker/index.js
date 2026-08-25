@@ -1,44 +1,8 @@
-var __assign = this && this.__assign || function () {
-  __assign = Object.assign || function (t) {
-    for (var s, i = 1, n = arguments.length; i < n; i++) {
-      s = arguments[i];
-      for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
-    }
-    return t;
-  };
-  return __assign.apply(this, arguments);
-};
-var __rest = this && this.__rest || function (s, e) {
-  var t = {};
-  for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
-  if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
-    if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i])) t[p[i]] = s[p[i]];
-  }
-  return t;
-};
-var __read = this && this.__read || function (o, n) {
-  var m = typeof Symbol === "function" && o[Symbol.iterator];
-  if (!m) return o;
-  var i = m.call(o),
-    r,
-    ar = [],
-    e;
-  try {
-    while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
-  } catch (error) {
-    e = {
-      error: error
-    };
-  } finally {
-    try {
-      if (r && !r.done && (m = i["return"])) m.call(i);
-    } finally {
-      if (e) throw e.error;
-    }
-  }
-  return ar;
-};
-import React, { useState, useEffect, useContext } from 'react';
+var _excluded = ["customizeTimeList", "radioList", "rangePickerType", "label", "showTime", "allowClear", "maxScope", "onOpenChange", "timeOffset", "fillDefaultDate", "showShortcutPanel", "naturalDate", "displayAllOption", "startTimeOfAllOption"];
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
+function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (-1 !== e.indexOf(n)) continue; t[n] = r[n]; } return t; }
+import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
+import { useState, useEffect, useContext } from 'react';
 import Radio from "antd/es/radio";
 import Checkbox from "antd/es/checkbox";
 import DatePicker from "antd/es/date-picker";
@@ -53,36 +17,36 @@ var RangePicker = DatePicker.RangePicker;
 var LabelCustomizeRangePicker = function LabelCustomizeRangePicker(props) {
   var customizeTimeList = props.customizeTimeList,
     radioList = props.radioList,
-    _a = props.rangePickerType,
-    rangePickerType = _a === void 0 ? 'label' : _a,
+    _props$rangePickerTyp = props.rangePickerType,
+    rangePickerType = _props$rangePickerTyp === void 0 ? 'label' : _props$rangePickerTyp,
     label = props.label,
     showTime = props.showTime,
-    _b = props.allowClear,
-    allowClear = _b === void 0 ? false : _b,
+    _props$allowClear = props.allowClear,
+    allowClear = _props$allowClear === void 0 ? false : _props$allowClear,
     maxScope = props.maxScope,
     onOpenChange = props.onOpenChange,
     timeOffset = props.timeOffset,
-    _c = props.fillDefaultDate,
-    fillDefaultDate = _c === void 0 ? true : _c,
-    _d = props.showShortcutPanel,
-    showShortcutPanel = _d === void 0 ? true : _d,
-    _e = props.naturalDate,
-    naturalDate = _e === void 0 ? false : _e,
+    _props$fillDefaultDat = props.fillDefaultDate,
+    fillDefaultDate = _props$fillDefaultDat === void 0 ? true : _props$fillDefaultDat,
+    _props$showShortcutPa = props.showShortcutPanel,
+    showShortcutPanel = _props$showShortcutPa === void 0 ? true : _props$showShortcutPa,
+    _props$naturalDate = props.naturalDate,
+    naturalDate = _props$naturalDate === void 0 ? false : _props$naturalDate,
     displayAllOption = props.displayAllOption,
     startTimeOfAllOption = props.startTimeOfAllOption,
-    restProps = __rest(props, ["customizeTimeList", "radioList", "rangePickerType", "label", "showTime", "allowClear", "maxScope", "onOpenChange", "timeOffset", "fillDefaultDate", "showShortcutPanel", "naturalDate", "displayAllOption", "startTimeOfAllOption"]);
-  var _f = __read(useControllableValue(props), 2),
-    date = _f[0],
-    setDate = _f[1];
-  var _g = __read(useState(false), 2),
-    isVisiblePanel = _g[0],
-    setIsVisiblePanel = _g[1];
-  var _h = __read(useState(), 2),
-    radioKey = _h[0],
-    setRadioKey = _h[1];
-  var _j = __read(useState(false), 2),
-    open = _j[0],
-    setOpen = _j[1];
+    restProps = _objectWithoutPropertiesLoose(props, _excluded);
+  var _useControllableValue = useControllableValue(props),
+    date = _useControllableValue[0],
+    setDate = _useControllableValue[1];
+  var _useState = useState(false),
+    isVisiblePanel = _useState[0],
+    setIsVisiblePanel = _useState[1];
+  var _useState2 = useState(),
+    radioKey = _useState2[0],
+    setRadioKey = _useState2[1];
+  var _useState3 = useState(false),
+    open = _useState3[0],
+    setOpen = _useState3[1];
   var messages = useContext(LocaleContext);
   var defaultRadioListParams = {
     messages: messages,
@@ -94,16 +58,16 @@ var LabelCustomizeRangePicker = function LabelCustomizeRangePicker(props) {
   var defaultRadioList = customizeTimeList ? getDefaultRadioList(defaultRadioListParams).filter(function (item) {
     return customizeTimeList.includes(item.key);
   }) : getDefaultRadioList(defaultRadioListParams);
-  var dataSource = radioList !== null && radioList !== void 0 ? radioList : defaultRadioList;
+  var dataSource = radioList != null ? radioList : defaultRadioList;
   useEffect(function () {
     var filterItemList = dataSource.filter(function (item) {
       if (!date) return false;
-      var _a = __read(item.value, 2),
-        startTime = _a[0],
-        endTime = _a[1];
-      var _b = __read(date || [], 2),
-        defaultStartTime = _b[0],
-        defaultEndTime = _b[1];
+      var _item$value = item.value,
+        startTime = _item$value[0],
+        endTime = _item$value[1];
+      var _ref = date || [],
+        defaultStartTime = _ref[0],
+        defaultEndTime = _ref[1];
       if (startTime.isSame(defaultStartTime, 'day') && endTime.isSame(defaultEndTime, 'day')) {
         return true;
       }
@@ -118,20 +82,19 @@ var LabelCustomizeRangePicker = function LabelCustomizeRangePicker(props) {
       var resutRadioKey = findItem ? findItem.key : filterItemList[0].key;
       setRadioKey(resutRadioKey);
     } else {
-      var _a = __read(filterItemList, 1),
-        item = _a[0];
+      var item = filterItemList[0];
       setRadioKey(item.key);
     }
   }, [date]);
   useEffect(function () {
-    var _a = __read(date || [], 2),
-      startTime = _a[0],
-      endTime = _a[1];
+    var _ref2 = date || [],
+      startTime = _ref2[0],
+      endTime = _ref2[1];
     if (maxScope && fillDefaultDate) {
-      var _b = __read(formatMaxScope(date, maxScope), 2),
-        newStartDate = _b[0],
-        newEndDate = _b[1];
-      if (!(newStartDate === null || newStartDate === void 0 ? void 0 : newStartDate.isSame(startTime)) || !(newEndDate === null || newEndDate === void 0 ? void 0 : newEndDate.isSame(endTime))) {
+      var _formatMaxScope = formatMaxScope(date, maxScope),
+        newStartDate = _formatMaxScope[0],
+        newEndDate = _formatMaxScope[1];
+      if (!(newStartDate != null && newStartDate.isSame(startTime)) || !(newEndDate != null && newEndDate.isSame(endTime))) {
         setDate(formatMaxScope(date, maxScope));
       }
     }
@@ -141,12 +104,12 @@ var LabelCustomizeRangePicker = function LabelCustomizeRangePicker(props) {
     setIsVisiblePanel(checked);
   };
   var onDateChange = function onDateChange(nextValue) {
-    var _a, _b;
-    var _c = __read(nextValue || [], 2),
-      start = _c[0],
-      end = _c[1];
-    var nextStartDate = (_a = showTime ? start === null || start === void 0 ? void 0 : start.clone().startOf('minute') : start === null || start === void 0 ? void 0 : start.clone().startOf('day')) !== null && _a !== void 0 ? _a : null;
-    var nextEndDate = (_b = showTime ? end === null || end === void 0 ? void 0 : end.clone().endOf('minute') : end === null || end === void 0 ? void 0 : end.clone().endOf('day')) !== null && _b !== void 0 ? _b : null;
+    var _ref4, _ref5;
+    var _ref3 = nextValue || [],
+      start = _ref3[0],
+      end = _ref3[1];
+    var nextStartDate = (_ref4 = showTime ? start == null ? void 0 : start.clone().startOf('minute') : start == null ? void 0 : start.clone().startOf('day')) != null ? _ref4 : null;
+    var nextEndDate = (_ref5 = showTime ? end == null ? void 0 : end.clone().endOf('minute') : end == null ? void 0 : end.clone().endOf('day')) != null ? _ref5 : null;
     if (!nextStartDate && !nextEndDate) {
       return setDate(undefined);
     }
@@ -154,11 +117,11 @@ var LabelCustomizeRangePicker = function LabelCustomizeRangePicker(props) {
       return setDate([nextStartDate, nextEndDate]);
     }
     var timeDiffOfShowTime = getTimeDiffOfShowTime(maxScope);
-    var _d = __read(date || [], 1),
-      startDate = _d[0];
+    var _ref6 = date || [],
+      startDate = _ref6[0];
     // 1. start和end都存在时
     if (nextStartDate && nextEndDate) {
-      var isChangeStartData = !(startDate === null || startDate === void 0 ? void 0 : startDate.clone().isSame(nextStartDate));
+      var isChangeStartData = !(startDate != null && startDate.clone().isSame(nextStartDate));
       var momentDiffDay = nextEndDate.diff(nextStartDate) / ONE_DAY_MILLISECOND;
       // 更改start
       if (isChangeStartData) {
@@ -177,8 +140,8 @@ var LabelCustomizeRangePicker = function LabelCustomizeRangePicker(props) {
       nextStartDate = showTime ? nextEndDate.clone().subtract(getTimeDiffOfShowTime(scope), 'milliseconds').startOf('minute') : nextEndDate.clone().subtract(scope - 1, 'day').startOf('day');
       // 3. 仅start存在时，自动填入end
     } else if (nextStartDate && !nextEndDate) {
-      var scope = getDateDiffScope(date, maxScope);
-      nextEndDate = showTime ? nextStartDate.clone().add(getTimeDiffOfShowTime(scope), 'milliseconds').endOf('minute') : nextStartDate.clone().add(scope - 1, 'day').endOf('day');
+      var _scope = getDateDiffScope(date, maxScope);
+      nextEndDate = showTime ? nextStartDate.clone().add(getTimeDiffOfShowTime(_scope), 'milliseconds').endOf('minute') : nextStartDate.clone().add(_scope - 1, 'day').endOf('day');
     }
     if (nextStartDate && nextEndDate) {
       return setDate([nextStartDate, nextEndDate]);
@@ -191,47 +154,54 @@ var LabelCustomizeRangePicker = function LabelCustomizeRangePicker(props) {
     var selectRadioInfo = dataSource.find(function (item) {
       return item.key === value;
     });
-    setDate(selectRadioInfo === null || selectRadioInfo === void 0 ? void 0 : selectRadioInfo.value);
+    setDate(selectRadioInfo == null ? void 0 : selectRadioInfo.value);
     setOpen(false);
   };
   var resultList = maxScope ? dataSource.filter(function (item) {
-    var _a = __read(item.value, 2),
-      startTime = _a[0],
-      entTime = _a[1];
+    var _item$value2 = item.value,
+      startTime = _item$value2[0],
+      entTime = _item$value2[1];
     var space = entTime.diff(startTime) / ONE_DAY_MILLISECOND;
     return space <= maxScope;
   }) : dataSource;
   var panelRender = function panelRender(panel) {
-    return /*#__PURE__*/React.createElement("div", {
-      className: "label-customize-range-picker-panel"
-    }, /*#__PURE__*/React.createElement("div", {
-      className: "check-wrapper"
-    }, /*#__PURE__*/React.createElement("span", {
-      className: "customize-select"
-    }, /*#__PURE__*/React.createElement(Checkbox, {
-      onChange: onDiyTimeChange
-    }), /*#__PURE__*/React.createElement("span", {
-      className: "customize-select-text"
-    }, formatMessage(messages, langTypeEnum.labelCustomizeRangePicker, 'customTime')))), isVisiblePanel ? /*#__PURE__*/React.createElement("div", {
-      className: "panel"
-    }, panel) : /*#__PURE__*/React.createElement("div", {
-      className: "pick-box"
-    }, /*#__PURE__*/React.createElement(Radio.Group, {
-      onChange: onRadioChange,
-      value: radioKey
-    }, resultList.map(function (_a) {
-      var key = _a.key,
-        text = _a.text;
-      return /*#__PURE__*/React.createElement(Radio, {
-        className: "radio",
-        key: key,
-        value: key
-      }, text);
-    }))));
+    return _jsxs("div", {
+      className: "label-customize-range-picker-panel",
+      children: [_jsx("div", {
+        className: "check-wrapper",
+        children: _jsxs("span", {
+          className: "customize-select",
+          children: [_jsx(Checkbox, {
+            onChange: onDiyTimeChange
+          }), _jsx("span", {
+            className: "customize-select-text",
+            children: formatMessage(messages, langTypeEnum.labelCustomizeRangePicker, 'customTime')
+          })]
+        })
+      }), isVisiblePanel ? _jsx("div", {
+        className: "panel",
+        children: panel
+      }) : _jsx("div", {
+        className: "pick-box",
+        children: _jsx(Radio.Group, {
+          onChange: onRadioChange,
+          value: radioKey,
+          children: resultList.map(function (_ref7) {
+            var key = _ref7.key,
+              text = _ref7.text;
+            return _jsx(Radio, {
+              className: "radio",
+              value: key,
+              children: text
+            }, key);
+          })
+        })
+      })]
+    });
   };
   var handleOpenChange = function handleOpenChange(nextOpen) {
     setOpen(nextOpen);
-    onOpenChange === null || onOpenChange === void 0 ? void 0 : onOpenChange(nextOpen);
+    onOpenChange == null || onOpenChange(nextOpen);
   };
   var baseOptions = {
     value: date,
@@ -241,10 +211,10 @@ var LabelCustomizeRangePicker = function LabelCustomizeRangePicker(props) {
     panelRender: showShortcutPanel ? panelRender : undefined,
     allowClear: allowClear
   };
-  return rangePickerType === 'label' ? /*#__PURE__*/React.createElement(LabelRangePicker, __assign({
+  return rangePickerType === 'label' ? _jsx(LabelRangePicker, _extends({
     showTime: showTime,
     label: label
-  }, omit(restProps, 'onChange', 'value', 'open'), baseOptions)) : /*#__PURE__*/React.createElement(RangePicker, __assign({
+  }, omit(restProps, 'onChange', 'value', 'open'), baseOptions)) : _jsx(RangePicker, _extends({
     showTime: showTime,
     format: showTime ? 'YYYY/MM/DD HH:mm:ss' : 'YYYY/MM/DD'
   }, baseOptions, omit(restProps, 'onChange')));

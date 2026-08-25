@@ -1,71 +1,60 @@
 "use strict";
 
-var __assign = this && this.__assign || function () {
-  __assign = Object.assign || function (t) {
-    for (var s, i = 1, n = arguments.length; i < n; i++) {
-      s = arguments[i];
-      for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
-    }
-    return t;
-  };
-  return __assign.apply(this, arguments);
-};
-var __rest = this && this.__rest || function (s, e) {
-  var t = {};
-  for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
-  if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
-    if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i])) t[p[i]] = s[p[i]];
-  }
-  return t;
-};
-var __importDefault = this && this.__importDefault || function (mod) {
-  return mod && mod.__esModule ? mod : {
-    "default": mod
-  };
-};
+var _excluded = ["color", "variant", "size", "disabled", "round", "block", "loading", "prefixIcon", "suffixIcon", "children", "className"];
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
+function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (-1 !== e.indexOf(n)) continue; t[n] = r[n]; } return t; }
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-var react_1 = __importDefault(require("react"));
-var classnames_1 = __importDefault(require("classnames"));
+var tslib_1 = require("tslib");
+var jsx_runtime_1 = require("react/jsx-runtime");
+var classnames_1 = tslib_1.__importDefault(require("classnames"));
 var btnNamePrefix = 'base-btn';
-var loadingIcon = react_1["default"].createElement("div", {
-  className: "".concat(btnNamePrefix, "-loading-icon")
-}, react_1["default"].createElement("div", {
-  className: "".concat(btnNamePrefix, "-loading-icon-mask")
-}));
-var BaseButton = function BaseButton(_a) {
-  var _b;
-  var _c = _a.color,
-    color = _c === void 0 ? 'default' : _c,
-    variant = _a.variant,
-    _d = _a.size,
-    size = _d === void 0 ? 'medium' : _d,
-    disabled = _a.disabled,
-    _e = _a.round,
-    round = _e === void 0 ? false : _e,
-    _f = _a.block,
-    block = _f === void 0 ? false : _f,
-    _g = _a.loading,
-    loading = _g === void 0 ? false : _g,
-    prefixIcon = _a.prefixIcon,
-    suffixIcon = _a.suffixIcon,
-    children = _a.children,
-    className = _a.className,
-    restProps = __rest(_a, ["color", "variant", "size", "disabled", "round", "block", "loading", "prefixIcon", "suffixIcon", "children", "className"]);
-  return react_1["default"].createElement("button", __assign({
+var loadingIcon = (0, jsx_runtime_1.jsx)("div", {
+  className: btnNamePrefix + "-loading-icon",
+  children: (0, jsx_runtime_1.jsx)("div", {
+    className: btnNamePrefix + "-loading-icon-mask"
+  })
+});
+var BaseButton = function BaseButton(_ref) {
+  var _ref2;
+  var _ref$color = _ref.color,
+    color = _ref$color === void 0 ? 'default' : _ref$color,
+    variant = _ref.variant,
+    _ref$size = _ref.size,
+    size = _ref$size === void 0 ? 'medium' : _ref$size,
+    disabled = _ref.disabled,
+    _ref$round = _ref.round,
+    round = _ref$round === void 0 ? false : _ref$round,
+    _ref$block = _ref.block,
+    block = _ref$block === void 0 ? false : _ref$block,
+    _ref$loading = _ref.loading,
+    loading = _ref$loading === void 0 ? false : _ref$loading,
+    prefixIcon = _ref.prefixIcon,
+    suffixIcon = _ref.suffixIcon,
+    children = _ref.children,
+    className = _ref.className,
+    restProps = _objectWithoutPropertiesLoose(_ref, _excluded);
+  return (0, jsx_runtime_1.jsx)("button", _extends({
     type: "button",
     disabled: disabled || loading
   }, restProps, {
-    className: (0, classnames_1["default"])(btnNamePrefix, "".concat(btnNamePrefix, "-").concat(color), "".concat(btnNamePrefix, "-").concat(size), variant && "".concat(btnNamePrefix, "-variant-").concat(variant), (_b = {}, _b["".concat(btnNamePrefix, "-round")] = round, _b["".concat(btnNamePrefix, "-block")] = block, _b["".concat(btnNamePrefix, "-disabled")] = disabled, _b["".concat(btnNamePrefix, "-loading")] = loading, _b), className)
-  }), react_1["default"].createElement(react_1["default"].Fragment, null, prefixIcon && react_1["default"].createElement("span", {
-    className: "".concat(btnNamePrefix, "-icon")
-  }, loading ? loadingIcon : prefixIcon), loading && !prefixIcon && !suffixIcon && loadingIcon, react_1["default"].createElement("span", {
-    className: "".concat(btnNamePrefix, "-content")
-  }, children), loading && !prefixIcon && suffixIcon && react_1["default"].createElement("span", {
-    className: "".concat(btnNamePrefix, "-icon")
-  }, loadingIcon), (!loading || prefixIcon) && suffixIcon && react_1["default"].createElement("span", {
-    className: "".concat(btnNamePrefix, "-icon")
-  }, suffixIcon)));
+    className: (0, classnames_1["default"])(btnNamePrefix, btnNamePrefix + "-" + color, btnNamePrefix + "-" + size, variant && btnNamePrefix + "-variant-" + variant, (_ref2 = {}, _ref2[btnNamePrefix + "-round"] = round, _ref2[btnNamePrefix + "-block"] = block, _ref2[btnNamePrefix + "-disabled"] = disabled, _ref2[btnNamePrefix + "-loading"] = loading, _ref2), className),
+    children: (0, jsx_runtime_1.jsxs)(jsx_runtime_1.Fragment, {
+      children: [prefixIcon && (0, jsx_runtime_1.jsx)("span", {
+        className: btnNamePrefix + "-icon",
+        children: loading ? loadingIcon : prefixIcon
+      }), loading && !prefixIcon && !suffixIcon && loadingIcon, (0, jsx_runtime_1.jsx)("span", {
+        className: btnNamePrefix + "-content",
+        children: children
+      }), loading && !prefixIcon && suffixIcon && (0, jsx_runtime_1.jsx)("span", {
+        className: btnNamePrefix + "-icon",
+        children: loadingIcon
+      }), (!loading || prefixIcon) && suffixIcon && (0, jsx_runtime_1.jsx)("span", {
+        className: btnNamePrefix + "-icon",
+        children: suffixIcon
+      })]
+    })
+  }));
 };
 exports["default"] = BaseButton;

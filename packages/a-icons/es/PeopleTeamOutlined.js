@@ -1,30 +1,21 @@
-var __assign = this && this.__assign || function () {
-  __assign = Object.assign || function (t) {
-    for (var s, i = 1, n = arguments.length; i < n; i++) {
-      s = arguments[i];
-      for (var p in s) {
-        if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
-      }
-    }
-    return t;
-  };
-  return __assign.apply(this, arguments);
-};
-import * as React from 'react';
-import Icon from 'a-base-icon/lib/icon';
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
+import { jsx as _jsx } from "react/jsx-runtime";
+import Icon from "a-base-icon/lib/icon";
 function PeopleTeamOutlined(componentProps) {
   var IconNode = function IconNode(props) {
-    return /*#__PURE__*/React.createElement("svg", __assign({
+    return _jsx("svg", _extends({
       viewBox: "0 0 24 24",
       xmlns: "http://www.w3.org/2000/svg"
-    }, props), /*#__PURE__*/React.createElement("path", {
-      d: "M12 11a5 5 0 015 5v6h-2v-6a3 3 0 00-2.824-2.995L12 13a3 3 0 00-2.995 2.824L9 16v6H7v-6a5 5 0 015-5zm-6.5 3c.279 0 .55.033.81.094a5.948 5.948 0 00-.301 1.575L6 16v.086a1.493 1.493 0 00-.356-.08L5.5 16a1.5 1.5 0 00-1.493 1.355L4 17.5V22H2v-4.5A3.5 3.5 0 015.5 14zm13 0a3.5 3.5 0 013.5 3.5V22h-2v-4.5a1.5 1.5 0 00-1.355-1.493L18.5 16c-.175 0-.343.03-.5.085V16c0-.666-.108-1.306-.308-1.904.258-.063.53-.096.808-.096zm-13-6a2.5 2.5 0 110 5 2.5 2.5 0 010-5zm13 0a2.5 2.5 0 110 5 2.5 2.5 0 010-5zm-13 2a.5.5 0 100 1 .5.5 0 000-1zm13 0a.5.5 0 100 1 .5.5 0 000-1zM12 2a4 4 0 110 8 4 4 0 010-8zm0 2a2 2 0 100 4 2 2 0 000-4z",
-      fill: "currentColor"
+    }, props, {
+      children: _jsx("path", {
+        d: "M12 11a5 5 0 015 5v6h-2v-6a3 3 0 00-2.824-2.995L12 13a3 3 0 00-2.995 2.824L9 16v6H7v-6a5 5 0 015-5zm-6.5 3c.279 0 .55.033.81.094a5.948 5.948 0 00-.301 1.575L6 16v.086a1.493 1.493 0 00-.356-.08L5.5 16a1.5 1.5 0 00-1.493 1.355L4 17.5V22H2v-4.5A3.5 3.5 0 015.5 14zm13 0a3.5 3.5 0 013.5 3.5V22h-2v-4.5a1.5 1.5 0 00-1.355-1.493L18.5 16c-.175 0-.343.03-.5.085V16c0-.666-.108-1.306-.308-1.904.258-.063.53-.096.808-.096zm-13-6a2.5 2.5 0 110 5 2.5 2.5 0 010-5zm13 0a2.5 2.5 0 110 5 2.5 2.5 0 010-5zm-13 2a.5.5 0 100 1 .5.5 0 000-1zm13 0a.5.5 0 100 1 .5.5 0 000-1zM12 2a4 4 0 110 8 4 4 0 010-8zm0 2a2 2 0 100 4 2 2 0 000-4z",
+        fill: "currentColor"
+      })
     }));
   };
-  return /*#__PURE__*/React.createElement(Icon, __assign({}, componentProps, {
+  return _jsx(Icon, _extends({}, componentProps, {
     component: IconNode
   }));
 }
-PeopleTeamOutlined.displayName = 'PeopleTeamOutlined';
+PeopleTeamOutlined.displayName = "PeopleTeamOutlined";
 export default PeopleTeamOutlined;

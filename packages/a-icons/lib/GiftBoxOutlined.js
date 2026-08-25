@@ -1,75 +1,29 @@
 "use strict";
 
-var __assign = this && this.__assign || function () {
-  __assign = Object.assign || function (t) {
-    for (var s, i = 1, n = arguments.length; i < n; i++) {
-      s = arguments[i];
-      for (var p in s) {
-        if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
-      }
-    }
-    return t;
-  };
-  return __assign.apply(this, arguments);
-};
-var __createBinding = this && this.__createBinding || (Object.create ? function (o, m, k, k2) {
-  if (k2 === undefined) k2 = k;
-  var desc = Object.getOwnPropertyDescriptor(m, k);
-  if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
-    desc = {
-      enumerable: true,
-      get: function get() {
-        return m[k];
-      }
-    };
-  }
-  Object.defineProperty(o, k2, desc);
-} : function (o, m, k, k2) {
-  if (k2 === undefined) k2 = k;
-  o[k2] = m[k];
-});
-var __setModuleDefault = this && this.__setModuleDefault || (Object.create ? function (o, v) {
-  Object.defineProperty(o, "default", {
-    enumerable: true,
-    value: v
-  });
-} : function (o, v) {
-  o["default"] = v;
-});
-var __importStar = this && this.__importStar || function (mod) {
-  if (mod && mod.__esModule) return mod;
-  var result = {};
-  if (mod != null) for (var k in mod) {
-    if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-  }
-  __setModuleDefault(result, mod);
-  return result;
-};
-var __importDefault = this && this.__importDefault || function (mod) {
-  return mod && mod.__esModule ? mod : {
-    "default": mod
-  };
-};
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-var React = __importStar(require("react"));
-var icon_1 = __importDefault(require("a-base-icon/lib/icon"));
+var tslib_1 = require("tslib");
+var jsx_runtime_1 = require("react/jsx-runtime");
+var icon_1 = tslib_1.__importDefault(require("a-base-icon/lib/icon"));
 function GiftBoxOutlined(componentProps) {
   var IconNode = function IconNode(props) {
-    return React.createElement("svg", __assign({
+    return (0, jsx_runtime_1.jsx)("svg", _extends({
       viewBox: "0 0 24 24",
       xmlns: "http://www.w3.org/2000/svg"
-    }, props), React.createElement("path", {
-      fillRule: "evenodd",
-      clipRule: "evenodd",
-      d: "M8.464 3c-.25 0-.493.1-.675.286A1.019 1.019 0 007.5 4c0 .271.106.527.289.714A.947.947 0 008.464 5h2.17a6.117 6.117 0 00-.25-.525C9.898 3.575 9.274 3 8.464 3zM11 7v3H3.6a8.192 8.192 0 01-.589-.011v-.014A8.186 8.186 0 013 9.4V7.6a8.186 8.186 0 01.011-.589h.014C3.14 7 3.303 7 3.6 7H11zM5.67 5a3.033 3.033 0 01.692-3.115A2.947 2.947 0 018.464 1C10.26 1 11.373 2.218 12 3.272 12.627 2.218 13.741 1 15.536 1c.792 0 1.548.32 2.102.885A3.018 3.018 0 0118.33 5h2.102c.252 0 .498 0 .706.017.229.019.499.063.77.201a2 2 0 01.874.874c.138.271.182.541.201.77.017.208.017.454.017.706v1.864c0 .252 0 .498-.017.706a2.022 2.022 0 01-.201.77 2 2 0 01-.874.874 2.022 2.022 0 01-.77.201c-.044.004-.09.006-.138.009v6.847c0 .527 0 .982-.03 1.356-.033.395-.104.789-.297 1.167a3 3 0 01-1.311 1.311c-.378.193-.772.264-1.167.296-.375.031-.83.031-1.356.031H12 12 7.161c-.527 0-.981 0-1.356-.03-.395-.033-.789-.104-1.167-.297a3 3 0 01-1.311-1.311c-.193-.378-.264-.772-.296-1.167C3 19.82 3 19.365 3 18.838v-6.846a4.277 4.277 0 01-.138-.009 2.022 2.022 0 01-.77-.201 2 2 0 01-.874-.874 2.022 2.022 0 01-.201-.77C1 9.93 1 9.684 1 9.432V7.6v-.032c0-.252 0-.498.017-.706.019-.229.063-.499.201-.77a2 2 0 01.874-.874c.271-.138.541-.182.77-.201C3.07 5 3.316 5 3.568 5H5.67zM5 12v6.8c0 .577 0 .949.024 1.232.022.272.06.372.085.422a1 1 0 00.437.437c.05.025.15.063.422.085C6.25 21 6.623 21 7.2 21H11v-9H5zm8 0v9h3.8c.577 0 .949 0 1.232-.024.272-.022.373-.06.422-.085a1 1 0 00.437-.437c.025-.05.063-.15.085-.422C19 19.75 19 19.377 19 18.8V12h-6zm7.4-2a8.194 8.194 0 00.589-.011v-.014C21 9.86 21 9.697 21 9.4V7.6a8.205 8.205 0 00-.012-.589h-.013A8.194 8.194 0 0020.4 7H13v3h7.4zm-4.864-5c.25 0 .493-.1.675-.286.183-.187.289-.443.289-.714 0-.271-.106-.527-.289-.714A.947.947 0 0015.536 3c-.81 0-1.434.576-1.92 1.475a6.057 6.057 0 00-.25.525h2.17z",
-      fill: "currentColor"
+    }, props, {
+      children: (0, jsx_runtime_1.jsx)("path", {
+        fillRule: "evenodd",
+        clipRule: "evenodd",
+        d: "M8.464 3c-.25 0-.493.1-.675.286A1.019 1.019 0 007.5 4c0 .271.106.527.289.714A.947.947 0 008.464 5h2.17a6.117 6.117 0 00-.25-.525C9.898 3.575 9.274 3 8.464 3zM11 7v3H3.6a8.192 8.192 0 01-.589-.011v-.014A8.186 8.186 0 013 9.4V7.6a8.186 8.186 0 01.011-.589h.014C3.14 7 3.303 7 3.6 7H11zM5.67 5a3.033 3.033 0 01.692-3.115A2.947 2.947 0 018.464 1C10.26 1 11.373 2.218 12 3.272 12.627 2.218 13.741 1 15.536 1c.792 0 1.548.32 2.102.885A3.018 3.018 0 0118.33 5h2.102c.252 0 .498 0 .706.017.229.019.499.063.77.201a2 2 0 01.874.874c.138.271.182.541.201.77.017.208.017.454.017.706v1.864c0 .252 0 .498-.017.706a2.022 2.022 0 01-.201.77 2 2 0 01-.874.874 2.022 2.022 0 01-.77.201c-.044.004-.09.006-.138.009v6.847c0 .527 0 .982-.03 1.356-.033.395-.104.789-.297 1.167a3 3 0 01-1.311 1.311c-.378.193-.772.264-1.167.296-.375.031-.83.031-1.356.031H12 12 7.161c-.527 0-.981 0-1.356-.03-.395-.033-.789-.104-1.167-.297a3 3 0 01-1.311-1.311c-.193-.378-.264-.772-.296-1.167C3 19.82 3 19.365 3 18.838v-6.846a4.277 4.277 0 01-.138-.009 2.022 2.022 0 01-.77-.201 2 2 0 01-.874-.874 2.022 2.022 0 01-.201-.77C1 9.93 1 9.684 1 9.432V7.6v-.032c0-.252 0-.498.017-.706.019-.229.063-.499.201-.77a2 2 0 01.874-.874c.271-.138.541-.182.77-.201C3.07 5 3.316 5 3.568 5H5.67zM5 12v6.8c0 .577 0 .949.024 1.232.022.272.06.372.085.422a1 1 0 00.437.437c.05.025.15.063.422.085C6.25 21 6.623 21 7.2 21H11v-9H5zm8 0v9h3.8c.577 0 .949 0 1.232-.024.272-.022.373-.06.422-.085a1 1 0 00.437-.437c.025-.05.063-.15.085-.422C19 19.75 19 19.377 19 18.8V12h-6zm7.4-2a8.194 8.194 0 00.589-.011v-.014C21 9.86 21 9.697 21 9.4V7.6a8.205 8.205 0 00-.012-.589h-.013A8.194 8.194 0 0020.4 7H13v3h7.4zm-4.864-5c.25 0 .493-.1.675-.286.183-.187.289-.443.289-.714 0-.271-.106-.527-.289-.714A.947.947 0 0015.536 3c-.81 0-1.434.576-1.92 1.475a6.057 6.057 0 00-.25.525h2.17z",
+        fill: "currentColor"
+      })
     }));
   };
-  return React.createElement(icon_1["default"], __assign({}, componentProps, {
+  return (0, jsx_runtime_1.jsx)(icon_1["default"], _extends({}, componentProps, {
     component: IconNode
   }));
 }
-GiftBoxOutlined.displayName = 'GiftBoxOutlined';
+GiftBoxOutlined.displayName = "GiftBoxOutlined";
 exports["default"] = GiftBoxOutlined;

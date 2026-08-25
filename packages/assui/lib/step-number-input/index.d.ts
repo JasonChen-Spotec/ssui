@@ -32,5 +32,5 @@ export interface StepNumberInputProps {
     allowClear?: boolean;
     disabled?: boolean;
 }
-declare const StepNumberInput: (props: StepNumberInputProps) => JSX.Element;
+declare const StepNumberInput: (props: StepNumberInputProps) => import("react/jsx-runtime").JSX.Element;
 export default StepNumberInput;

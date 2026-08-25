@@ -1,9 +1,14 @@
-import * as React from 'react';
-import Icon, { IconProps } from 'a-base-icon/lib/icon';
+import * as React from "react";
+import Icon, { IconProps } from "a-base-icon/lib/icon";
 
 function InternalTransfer(componentProps: IconProps) {
   const IconNode = (props: React.SVGProps<SVGSVGElement>) => (
-    <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+    <svg
+      viewBox="0 0 16 16"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
       <g clipPath="url(#internal-transfer_svg__clip0_20026_31801)">
         <rect
           x={0.667}
@@ -29,5 +34,5 @@ function InternalTransfer(componentProps: IconProps) {
   return <Icon {...componentProps} component={IconNode} />;
 }
 
-InternalTransfer.displayName = 'InternalTransfer';
+InternalTransfer.displayName = "InternalTransfer";
 export default InternalTransfer;

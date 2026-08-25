@@ -1,15 +1,16 @@
-/* eslint-disable no-param-reassign */
 export const tryParseInt = (value: string | number, defaultValue: number = 0) => {
   const resultValue = parseInt(`${value}`, 10);
 
-  if (isNaN(resultValue)) {
+  if (Number.isNaN(resultValue)) {
     return defaultValue;
   }
   return resultValue;
 };
 
 export function addClass(elm: HTMLElement, className: string) {
-  if (!className) return;
+  if (!className) {
+    return;
+  }
 
   const els = Array.isArray(elm) ? elm : [elm];
 
@@ -23,7 +24,9 @@ export function addClass(elm: HTMLElement, className: string) {
 }
 
 export function removeClass(elm: HTMLElement, className: string) {
-  if (!className) return;
+  if (!className) {
+    return;
+  }
 
   const els = Array.isArray(elm) ? elm : [elm];
 

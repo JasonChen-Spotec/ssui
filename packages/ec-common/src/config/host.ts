@@ -137,10 +137,10 @@ const allSiteMap: Record<any, any> = {
 };
 
 export {
-  apiHostMap,
   allSiteMap,
-  socketHostMap,
-  mainDomainMap,
+  apiHostMap,
   fileHostMap,
+  mainDomainMap,
   readDomainMap,
+  socketHostMap,
 };

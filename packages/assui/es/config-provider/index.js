@@ -1,4 +1,4 @@
-import React from 'react';
+import { jsx as _jsx } from "react/jsx-runtime";
 import arEG from '../messages/ar_EG';
 import bgBG from '../messages/bg_BG';
 import csCZ from '../messages/cs_CZ';
@@ -53,8 +53,9 @@ var ConfigProvider = function ConfigProvider(props) {
     'ug': ugUG.lang,
     'ms-MY': msMY.lang
   };
-  return /*#__PURE__*/React.createElement(LocaleContext.Provider, {
-    value: messagesMap[locale]
-  }, children);
+  return _jsx(LocaleContext.Provider, {
+    value: messagesMap[locale],
+    children: children
+  });
 };
 export default ConfigProvider;

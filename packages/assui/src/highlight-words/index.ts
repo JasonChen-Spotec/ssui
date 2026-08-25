@@ -1,5 +1,9 @@
-import HighlightWords, { FindChunks, Chunk, HighlighterProps } from 'react-highlight-words';
+import HighlightWords, {
+  Chunk,
+  FindChunks,
+  HighlighterProps,
+} from 'react-highlight-words';
 
-export { FindChunks, Chunk, HighlighterProps };
+export { Chunk, FindChunks, HighlighterProps };
 
 export default HighlightWords;

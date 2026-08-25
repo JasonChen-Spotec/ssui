@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, fireEvent } from '@testing-library/react';
+import { act, fireEvent, render } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import LabelNumberInput from '../index';
 
@@ -25,7 +25,7 @@ describe('LabelNumberInput', () => {
 
     expect(queryByText('我是标题')).toBeTruthy();
 
-    label.click();
+    act(() => label.click());
     expect(container.querySelector('.label-number-input-focused')).toBeTruthy();
     expect(input).toHaveFocus();
 
@@ -33,12 +33,12 @@ describe('LabelNumberInput', () => {
     expect(input.value).toBe('1234');
     expect(baseProps.onChange).toBeCalledWith('1234');
 
-    input.blur();
+    act(() => input.blur());
     expect(container.querySelector('.label-number-input-focused')).toBeFalsy();
     expect(input).not.toHaveFocus();
     expect(baseProps.onBlur).toBeCalledWith('1234');
 
-    input.focus();
+    act(() => input.focus());
     expect(container.querySelector('.label-number-input-focused')).toBeTruthy();
     expect(input).toHaveFocus();
     expect(baseProps.onFocus).toBeCalledWith(1234);

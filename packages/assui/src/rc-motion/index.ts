@@ -1,17 +1,17 @@
 import type {
-  CSSMotionProps,
   CSSMotionList,
   CSSMotionListProps,
-  MotionEventHandler,
+  CSSMotionProps,
   MotionEndEventHandler,
+  MotionEventHandler,
 } from 'rc-motion';
 import RcMotion from 'rc-motion';
 
 export type {
-  CSSMotionProps,
   CSSMotionList,
   CSSMotionListProps,
-  MotionEventHandler,
+  CSSMotionProps,
   MotionEndEventHandler,
+  MotionEventHandler,
 };
 export default RcMotion;

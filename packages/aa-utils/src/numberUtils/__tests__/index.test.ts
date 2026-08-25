@@ -25,16 +25,24 @@ describe('numberUtils', () => {
       '+2,232,323.10',
     );
 
-    expect(formatNumber(-232323.101, { useGrouping: true, usePlus: true })).toEqual('-232,323.10');
+    expect(formatNumber(-232323.101, { useGrouping: true, usePlus: true })).toEqual(
+      '-232,323.10',
+    );
   });
 
   it('formatNumber - if minFractionDigits !== maxFractionDigits should be defined', () => {
-    expect(formatNumber(23.101, { minFractionDigits: 1, maxFractionDigits: 5 })).toEqual('23.101');
-    expect(formatNumber(23.234, { minFractionDigits: 4, maxFractionDigits: 5 })).toEqual('23.2340');
-    expect(formatNumber(23.234597, { minFractionDigits: 4, maxFractionDigits: 5 })).toEqual(
-      '23.23460',
+    expect(formatNumber(23.101, { minFractionDigits: 1, maxFractionDigits: 5 })).toEqual(
+      '23.101',
     );
-    expect(formatNumber(23.2, { minFractionDigits: 2, maxFractionDigits: 5 })).toEqual('23.20');
+    expect(formatNumber(23.234, { minFractionDigits: 4, maxFractionDigits: 5 })).toEqual(
+      '23.2340',
+    );
+    expect(
+      formatNumber(23.234597, { minFractionDigits: 4, maxFractionDigits: 5 }),
+    ).toEqual('23.23460');
+    expect(formatNumber(23.2, { minFractionDigits: 2, maxFractionDigits: 5 })).toEqual(
+      '23.20',
+    );
   });
 
   it('formatNumber - number is to long should be defined', () => {

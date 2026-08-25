@@ -1,10 +1,10 @@
 import BigNumber from 'bignumber.js';
+import lodashIsNaN from 'lodash/isNaN';
 import isNull from 'lodash/isNull';
-import isNaN from 'lodash/isNaN';
 import isUndefined from 'lodash/isUndefined';
-import { roundingModeMap, HALF_UP } from './const/roundingModeMap';
-import { strip, float2Fixed, digitLength } from './numberPrecision';
-import { plus, minus, times, divide } from './numberPrecision/calculateFunc';
+import { HALF_UP, roundingModeMap } from './const/roundingModeMap';
+import { digitLength, float2Fixed, strip } from './numberPrecision';
+import { divide, minus, plus, times } from './numberPrecision/calculateFunc';
 
 type RoundingModeConfig =
   | 'up'
@@ -41,7 +41,7 @@ const defaultOptions: DefaultOptionsConfig = {
 };
 
 const checkValue = (value: any) => {
-  if (isNull(value) || isUndefined(value) || isNaN(value)) {
+  if (isNull(value) || isUndefined(value) || lodashIsNaN(value)) {
     return '0';
   }
 
@@ -74,7 +74,10 @@ const formatNumber = (value: Value, options?: OptionsConfig): string => {
 
   const numberObj = new BigNumber(val);
 
-  const formatValue = numberObj[formatMethod](resultFractionDigits, roundingModeMap[roundingMode]);
+  const formatValue = numberObj[formatMethod](
+    resultFractionDigits,
+    roundingModeMap[roundingMode],
+  );
 
   if (+val > 0 && usePlus) {
     return `+${formatValue}`;

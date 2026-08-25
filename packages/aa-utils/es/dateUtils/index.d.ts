@@ -3,11 +3,11 @@ import 'moment/locale/zh-cn';
 declare class DateUtils {
     currentDateFormat: string;
     currentTimeFormat: string;
-    currentLocale: string;
-    dateTimeFormat: string;
-    dateFormat: string;
-    timeFormat: string;
-    timeZoneOffset: number;
+    currentLocale?: string;
+    dateTimeFormat?: string;
+    dateFormat?: string;
+    timeFormat?: string;
+    timeZoneOffset?: number;
     constructor();
     setLocale: (locale: string) => void;
     createMoment: (value: moment.MomentInput) => moment.Moment | null;

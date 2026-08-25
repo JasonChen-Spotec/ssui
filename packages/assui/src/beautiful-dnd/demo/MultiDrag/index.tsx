@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { DragDropContext } from 'react-beautiful-dnd';
-import type { DragStart, DropResult, DraggableLocation } from 'react-beautiful-dnd';
+import { DragDropContext } from '@hello-pangea/dnd';
+import type { DragStart, DropResult, DraggableLocation } from '@hello-pangea/dnd';
 import initial from './data';
 import { mutliDragAwareReorder, multiSelectTo as multiSelect } from './utils';
 import Column from './column';

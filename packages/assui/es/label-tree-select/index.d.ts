@@ -7,5 +7,5 @@ export interface LabelTreeSelectProps extends Omit<TreeSelectProps<string[]>, 'o
     unit?: React.ReactNode;
     onDropdownVisibleChange?: (value: boolean) => void;
 }
-declare const LabelTreeSelect: (props: LabelTreeSelectProps) => JSX.Element;
+declare const LabelTreeSelect: (props: LabelTreeSelectProps) => import("react/jsx-runtime").JSX.Element;
 export default LabelTreeSelect;

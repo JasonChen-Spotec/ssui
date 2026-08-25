@@ -22,7 +22,7 @@ export interface SelfTabPaneProps extends TabPaneProps {
     count: Pick<BadgeProps, 'count'>;
 }
 declare const KeepTab: {
-    (props: KeepTabProps): JSX.Element;
+    (props: KeepTabProps): import("react/jsx-runtime").JSX.Element;
     displayName: string;
     TabPane: React.FC<TabPaneProps>;
 };

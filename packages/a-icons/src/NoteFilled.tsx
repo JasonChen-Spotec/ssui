@@ -1,9 +1,14 @@
-import * as React from 'react';
-import Icon, { IconProps } from 'a-base-icon/lib/icon';
+import * as React from "react";
+import Icon, { IconProps } from "a-base-icon/lib/icon";
 
 function NoteFilled(componentProps: IconProps) {
   const IconNode = (props: React.SVGProps<SVGSVGElement>) => (
-    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
       <path
         d="M13.934 12.814a.75.75 0 011.06 1.06l-4.417 4.417-1.226.167.166-1.227 4.417-4.417z"
         fill="currentColor"
@@ -21,5 +26,5 @@ function NoteFilled(componentProps: IconProps) {
   return <Icon {...componentProps} component={IconNode} />;
 }
 
-NoteFilled.displayName = 'NoteFilled';
+NoteFilled.displayName = "NoteFilled";
 export default NoteFilled;

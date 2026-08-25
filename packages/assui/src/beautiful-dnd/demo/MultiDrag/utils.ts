@@ -1,5 +1,5 @@
 // @flow
-import { DraggableLocation } from 'react-beautiful-dnd';
+import { DraggableLocation } from '@hello-pangea/dnd';
 
 import reorder from '../reorder';
 

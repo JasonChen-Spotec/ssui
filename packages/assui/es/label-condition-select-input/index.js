@@ -1,40 +1,10 @@
-var __assign = this && this.__assign || function () {
-  __assign = Object.assign || function (t) {
-    for (var s, i = 1, n = arguments.length; i < n; i++) {
-      s = arguments[i];
-      for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
-    }
-    return t;
-  };
-  return __assign.apply(this, arguments);
-};
-var __read = this && this.__read || function (o, n) {
-  var m = typeof Symbol === "function" && o[Symbol.iterator];
-  if (!m) return o;
-  var i = m.call(o),
-    r,
-    ar = [],
-    e;
-  try {
-    while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
-  } catch (error) {
-    e = {
-      error: error
-    };
-  } finally {
-    try {
-      if (r && !r.done && (m = i["return"])) m.call(i);
-    } finally {
-      if (e) throw e.error;
-    }
-  }
-  return ar;
-};
-import isNil from 'lodash/isNil';
-import isEmpty from 'lodash/isEmpty';
-import classNames from 'classnames';
-import React, { useEffect, useRef, useState } from 'react';
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
+import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
+import { useEffect, useRef, useState } from 'react';
 import useControllableValue from "ahooks/es/useControllableValue";
+import classNames from 'classnames';
+import isEmpty from 'lodash/isEmpty';
+import isNil from 'lodash/isNil';
 import LabelConditionInput from '../label-condition-input';
 import LabelSelect from '../label-select';
 export var InputTypeEnum;
@@ -49,44 +19,44 @@ export var EntryTypeEnum;
 })(EntryTypeEnum || (EntryTypeEnum = {}));
 /** 找所有的子代选项 */
 var findAllSubSelectItems = function findAllSubSelectItems(dataSource, key) {
-  var _a, _b;
-  return (_b = (_a = dataSource.find(function (item) {
+  var _dataSource$find;
+  return (_dataSource$find = dataSource.find(function (item) {
     return item.value === key;
-  })) === null || _a === void 0 ? void 0 : _a.children) === null || _b === void 0 ? void 0 : _b.map(function (subItem) {
+  })) == null || (_dataSource$find = _dataSource$find.children) == null ? void 0 : _dataSource$find.map(function (subItem) {
     return subItem.value;
   });
 };
 var LabelConditionSelectInput = function LabelConditionSelectInput(props) {
   var value = props.value,
-    _a = props.hiddenInputKeys,
-    hiddenInputKeys = _a === void 0 ? [] : _a,
+    _props$hiddenInputKey = props.hiddenInputKeys,
+    hiddenInputKeys = _props$hiddenInputKey === void 0 ? [] : _props$hiddenInputKey,
     selectProps = props.selectProps,
     conditionInputProps = props.conditionInputProps,
     conditionSelectProps = props.conditionSelectProps,
-    _b = props.inputType,
-    inputType = _b === void 0 ? InputTypeEnum.CONDITION_INPUT : _b,
-    _c = props.optionsList,
-    optionsList = _c === void 0 ? [] : _c,
+    _props$inputType = props.inputType,
+    inputType = _props$inputType === void 0 ? InputTypeEnum.CONDITION_INPUT : _props$inputType,
+    _props$optionsList = props.optionsList,
+    optionsList = _props$optionsList === void 0 ? [] : _props$optionsList,
     label = props.label,
     className = props.className,
     onBlur = props.onBlur;
   var isInput = inputType === InputTypeEnum.CONDITION_INPUT;
-  var _d = __read(useControllableValue(props), 2),
-    selectInputValue = _d[0],
-    setSelectInputValue = _d[1];
-  var _e = __read(useState([]), 2),
-    subSelectOptions = _e[0],
-    setSubSelectOptions = _e[1];
+  var _useControllableValue = useControllableValue(props),
+    selectInputValue = _useControllableValue[0],
+    setSelectInputValue = _useControllableValue[1];
+  var _useState = useState([]),
+    subSelectOptions = _useState[0],
+    setSubSelectOptions = _useState[1];
   var subSelectRef = useRef();
   /** 子选择器是否多选 */
-  var isSubSelectMultiple = (conditionSelectProps === null || conditionSelectProps === void 0 ? void 0 : conditionSelectProps.mode) === 'multiple';
+  var isSubSelectMultiple = (conditionSelectProps == null ? void 0 : conditionSelectProps.mode) === 'multiple';
   useEffect(function () {
     if (value && !isNil(value.selectValue) && optionsList.length) {
-      var _a = __read(optionsList.filter(function (item) {
+      var _optionsList$filter = optionsList.filter(function (item) {
           return item.value === value.selectValue;
-        }), 1),
-        selectValueItem = _a[0];
-      if (selectValueItem && selectValueItem.children) {
+        }),
+        selectValueItem = _optionsList$filter[0];
+      if (selectValueItem != null && selectValueItem.children) {
         setSubSelectOptions(selectValueItem.children);
       }
     }
@@ -99,7 +69,7 @@ var LabelConditionSelectInput = function LabelConditionSelectInput(props) {
       changedEntryType: EntryTypeEnum.FIRST_ENTRY
     };
     if (isSubSelectMultiple) {
-      finalSelectInputValue = __assign(__assign({}, finalSelectInputValue), {
+      finalSelectInputValue = _extends({}, finalSelectInputValue, {
         finalSelectValue: !isNil(selectValue) ? findAllSubSelectItems(optionsList, selectValue) : undefined
       });
     }
@@ -108,17 +78,17 @@ var LabelConditionSelectInput = function LabelConditionSelectInput(props) {
       setSubSelectOptions([]);
       return;
     }
-    var _a = __read(optionsList.filter(function (item) {
+    var _optionsList$filter2 = optionsList.filter(function (item) {
         return item.value === selectValue;
-      }), 1),
-      selectValueItem = _a[0];
+      }),
+      selectValueItem = _optionsList$filter2[0];
     if (selectValueItem.children) {
       setSubSelectOptions(selectValueItem.children);
     }
   };
   var onInputChange = function onInputChange(inputValue) {
     var finalValue = {
-      selectValue: selectInputValue === null || selectInputValue === void 0 ? void 0 : selectInputValue.selectValue,
+      selectValue: selectInputValue == null ? void 0 : selectInputValue.selectValue,
       inputValue: inputValue,
       changedEntryType: EntryTypeEnum.SECOND_ENTRY
     };
@@ -126,20 +96,20 @@ var LabelConditionSelectInput = function LabelConditionSelectInput(props) {
   };
   var onTypeSelectChange = function onTypeSelectChange(inputValue) {
     var finalSelectInputValue = {
-      selectValue: selectInputValue === null || selectInputValue === void 0 ? void 0 : selectInputValue.selectValue,
+      selectValue: selectInputValue == null ? void 0 : selectInputValue.selectValue,
       inputValue: inputValue,
       changedEntryType: EntryTypeEnum.SECOND_ENTRY
     };
     if (isSubSelectMultiple) {
-      finalSelectInputValue = __assign(__assign({}, finalSelectInputValue), {
-        finalSelectValue: isEmpty(inputValue) ? findAllSubSelectItems(optionsList, selectInputValue === null || selectInputValue === void 0 ? void 0 : selectInputValue.selectValue) : inputValue
+      finalSelectInputValue = _extends({}, finalSelectInputValue, {
+        finalSelectValue: isEmpty(inputValue) ? findAllSubSelectItems(optionsList, selectInputValue == null ? void 0 : selectInputValue.selectValue) : inputValue
       });
     }
     setSelectInputValue(finalSelectInputValue);
   };
   /** 联级选择框失去焦点 */
   var onLabelConditionSelectInputBlur = function onLabelConditionSelectInputBlur(blurEntryType) {
-    onBlur === null || onBlur === void 0 ? void 0 : onBlur(__assign(__assign({}, selectInputValue), {
+    onBlur == null || onBlur(_extends({}, selectInputValue, {
       changedEntryType: blurEntryType
     }));
   };
@@ -162,45 +132,48 @@ var LabelConditionSelectInput = function LabelConditionSelectInput(props) {
   //   onBlur?.(finalSelectInputValue);
   // };
   // 是否展示输入框
-  var isShowInput = !isNil(selectInputValue === null || selectInputValue === void 0 ? void 0 : selectInputValue.selectValue) && !(hiddenInputKeys === null || hiddenInputKeys === void 0 ? void 0 : hiddenInputKeys.includes(selectInputValue.selectValue));
-  var typeInput = isInput ? /*#__PURE__*/React.createElement(LabelConditionInput, __assign({}, conditionInputProps, {
+  var isShowInput = !isNil(selectInputValue == null ? void 0 : selectInputValue.selectValue) && !(hiddenInputKeys != null && hiddenInputKeys.includes(selectInputValue.selectValue));
+  var typeInput = isInput ? _jsx(LabelConditionInput, _extends({}, conditionInputProps, {
     onChange: onInputChange,
     className: "label-condition-select-second-input",
-    value: selectInputValue === null || selectInputValue === void 0 ? void 0 : selectInputValue.inputValue,
+    value: selectInputValue == null ? void 0 : selectInputValue.inputValue,
     onBlur: function onBlur() {
       return onLabelConditionSelectInputBlur(EntryTypeEnum.SECOND_ENTRY);
     }
-  })) : /*#__PURE__*/React.createElement("div", {
-    className: "label-condition-select-second-select"
-  }, /*#__PURE__*/React.createElement(LabelSelect, __assign({}, conditionSelectProps, {
-    ref: subSelectRef,
-    onChange: onTypeSelectChange,
-    value: selectInputValue === null || selectInputValue === void 0 ? void 0 : selectInputValue.inputValue,
-    options: subSelectOptions,
-    onDeselect: function onDeselect() {
-      var _a;
-      (_a = subSelectRef.current) === null || _a === void 0 ? void 0 : _a.focus();
-    },
-    onBlur: function onBlur() {
-      return onLabelConditionSelectInputBlur(EntryTypeEnum.SECOND_ENTRY);
-    }
-  })));
-  return /*#__PURE__*/React.createElement("div", {
-    className: classNames('label-condition-select', className)
-  }, /*#__PURE__*/React.createElement("div", {
-    className: classNames('label-condition-select-selector', {
-      'label-condition-select-two-select-selector': !isInput,
-      'label-condition-select-only-selector': !isShowInput
-    })
-  }, /*#__PURE__*/React.createElement(LabelSelect, __assign({
-    label: label
-  }, selectProps, {
-    onChange: onSelectChange,
-    value: selectInputValue === null || selectInputValue === void 0 ? void 0 : selectInputValue.selectValue,
-    options: optionsList,
-    onBlur: function onBlur() {
-      return onLabelConditionSelectInputBlur(EntryTypeEnum.FIRST_ENTRY);
-    }
-  }))), isShowInput && typeInput);
+  })) : _jsx("div", {
+    className: "label-condition-select-second-select",
+    children: _jsx(LabelSelect, _extends({}, conditionSelectProps, {
+      ref: subSelectRef,
+      onChange: onTypeSelectChange,
+      value: selectInputValue == null ? void 0 : selectInputValue.inputValue,
+      options: subSelectOptions,
+      onDeselect: function onDeselect() {
+        var _subSelectRef$current;
+        (_subSelectRef$current = subSelectRef.current) == null || _subSelectRef$current.focus();
+      },
+      onBlur: function onBlur() {
+        return onLabelConditionSelectInputBlur(EntryTypeEnum.SECOND_ENTRY);
+      }
+    }))
+  });
+  return _jsxs("div", {
+    className: classNames('label-condition-select', className),
+    children: [_jsx("div", {
+      className: classNames('label-condition-select-selector', {
+        'label-condition-select-two-select-selector': !isInput,
+        'label-condition-select-only-selector': !isShowInput
+      }),
+      children: _jsx(LabelSelect, _extends({
+        label: label
+      }, selectProps, {
+        onChange: onSelectChange,
+        value: selectInputValue == null ? void 0 : selectInputValue.selectValue,
+        options: optionsList,
+        onBlur: function onBlur() {
+          return onLabelConditionSelectInputBlur(EntryTypeEnum.FIRST_ENTRY);
+        }
+      }))
+    }), isShowInput && typeInput]
+  });
 };
 export default LabelConditionSelectInput;

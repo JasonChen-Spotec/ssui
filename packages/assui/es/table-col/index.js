@@ -1,14 +1,15 @@
-import React from 'react';
+import { jsx as _jsx } from "react/jsx-runtime";
 import classNames from 'classnames';
-var TableCol = function TableCol(_a) {
-  var children = _a.children,
-    width = _a.width,
-    className = _a.className;
-  return /*#__PURE__*/React.createElement("div", {
+var TableCol = function TableCol(_ref) {
+  var children = _ref.children,
+    width = _ref.width,
+    className = _ref.className;
+  return _jsx("div", {
     style: {
-      width: "".concat(width, "px")
+      width: width + "px"
     },
-    className: classNames('a-table-col', className)
-  }, children);
+    className: classNames('a-table-col', className),
+    children: children
+  });
 };
 export default TableCol;

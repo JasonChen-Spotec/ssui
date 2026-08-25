@@ -1,100 +1,35 @@
 "use strict";
 
-var __assign = this && this.__assign || function () {
-  __assign = Object.assign || function (t) {
-    for (var s, i = 1, n = arguments.length; i < n; i++) {
-      s = arguments[i];
-      for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
-    }
-    return t;
-  };
-  return __assign.apply(this, arguments);
-};
-var __createBinding = this && this.__createBinding || (Object.create ? function (o, m, k, k2) {
-  if (k2 === undefined) k2 = k;
-  var desc = Object.getOwnPropertyDescriptor(m, k);
-  if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
-    desc = {
-      enumerable: true,
-      get: function get() {
-        return m[k];
-      }
-    };
-  }
-  Object.defineProperty(o, k2, desc);
-} : function (o, m, k, k2) {
-  if (k2 === undefined) k2 = k;
-  o[k2] = m[k];
-});
-var __setModuleDefault = this && this.__setModuleDefault || (Object.create ? function (o, v) {
-  Object.defineProperty(o, "default", {
-    enumerable: true,
-    value: v
-  });
-} : function (o, v) {
-  o["default"] = v;
-});
-var __importStar = this && this.__importStar || function (mod) {
-  if (mod && mod.__esModule) return mod;
-  var result = {};
-  if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-  __setModuleDefault(result, mod);
-  return result;
-};
-var __read = this && this.__read || function (o, n) {
-  var m = typeof Symbol === "function" && o[Symbol.iterator];
-  if (!m) return o;
-  var i = m.call(o),
-    r,
-    ar = [],
-    e;
-  try {
-    while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
-  } catch (error) {
-    e = {
-      error: error
-    };
-  } finally {
-    try {
-      if (r && !r.done && (m = i["return"])) m.call(i);
-    } finally {
-      if (e) throw e.error;
-    }
-  }
-  return ar;
-};
-var __importDefault = this && this.__importDefault || function (mod) {
-  return mod && mod.__esModule ? mod : {
-    "default": mod
-  };
-};
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-var jsoneditor_1 = __importDefault(require("jsoneditor"));
-var react_1 = __importStar(require("react"));
-var useControllableValue_1 = __importDefault(require("ahooks/lib/useControllableValue"));
-var useMount_1 = __importDefault(require("ahooks/lib/useMount"));
-var isEqual_1 = __importDefault(require("lodash/isEqual"));
-var useUnmount_1 = __importDefault(require("ahooks/lib/useUnmount"));
-var classnames_1 = __importDefault(require("classnames"));
+var tslib_1 = require("tslib");
+var jsx_runtime_1 = require("react/jsx-runtime");
+var jsoneditor_1 = tslib_1.__importDefault(require("jsoneditor"));
+var react_1 = tslib_1.__importStar(require("react"));
+var useControllableValue_1 = tslib_1.__importDefault(require("ahooks/lib/useControllableValue"));
+var useMount_1 = tslib_1.__importDefault(require("ahooks/lib/useMount"));
+var isEqual_1 = tslib_1.__importDefault(require("lodash/isEqual"));
+var useUnmount_1 = tslib_1.__importDefault(require("ahooks/lib/useUnmount"));
+var classnames_1 = tslib_1.__importDefault(require("classnames"));
 var JsonEditor = function JsonEditor(props, ref) {
   var options = props.options,
     className = props.className;
-  var _a = __read((0, useControllableValue_1["default"])(props), 2),
-    value = _a[0],
-    setValue = _a[1];
+  var _ref = (0, useControllableValue_1["default"])(props),
+    value = _ref[0],
+    setValue = _ref[1];
   var containerRef = react_1["default"].useRef();
   var editorInstanceRef = react_1["default"].useRef();
   (0, useMount_1["default"])(function () {
-    editorInstanceRef.current = new jsoneditor_1["default"](containerRef.current, __assign(__assign({
+    editorInstanceRef.current = new jsoneditor_1["default"](containerRef.current, _extends({
       mode: 'code',
       indentation: 2
-    }, options), {
+    }, options, {
       onChangeText: function onChangeText() {
-        var _a;
         try {
-          var currentJson = (_a = editorInstanceRef.current) === null || _a === void 0 ? void 0 : _a.get();
+          var _editorInstanceRef$cu;
+          var currentJson = (_editorInstanceRef$cu = editorInstanceRef.current) == null ? void 0 : _editorInstanceRef$cu.get();
           setValue(currentJson);
         } catch (error) {
           console.log('error', error);
@@ -106,16 +41,17 @@ var JsonEditor = function JsonEditor(props, ref) {
     return containerRef.current;
   });
   (0, react_1.useEffect)(function () {
-    var _a, _b;
-    if (value && !(0, isEqual_1["default"])(value, (_a = editorInstanceRef.current) === null || _a === void 0 ? void 0 : _a.get())) {
-      (_b = editorInstanceRef.current) === null || _b === void 0 ? void 0 : _b.update(value);
+    var _editorInstanceRef$cu2;
+    if (value && !(0, isEqual_1["default"])(value, (_editorInstanceRef$cu2 = editorInstanceRef.current) == null ? void 0 : _editorInstanceRef$cu2.get())) {
+      var _editorInstanceRef$cu3;
+      (_editorInstanceRef$cu3 = editorInstanceRef.current) == null || _editorInstanceRef$cu3.update(value);
     }
   }, [value]);
   (0, useUnmount_1["default"])(function () {
-    var _a;
-    (_a = editorInstanceRef.current) === null || _a === void 0 ? void 0 : _a.destroy();
+    var _editorInstanceRef$cu4;
+    (_editorInstanceRef$cu4 = editorInstanceRef.current) == null || _editorInstanceRef$cu4.destroy();
   });
-  return react_1["default"].createElement("div", {
+  return (0, jsx_runtime_1.jsx)("div", {
     ref: function ref(el) {
       return containerRef.current = el;
     },

@@ -1,6 +1,6 @@
 import React from 'react';
 import useControllableValue from 'ahooks/lib/useControllableValue';
-import type { BaseSelectRef } from 'rc-select';
+import type { RefSelectProps } from 'antd/lib/select';
 import type { TreeSelectProps } from 'antd/lib/tree-select';
 import TreeSelect from 'antd/lib/tree-select';
 import classNames from 'classnames';
@@ -17,7 +17,7 @@ export interface LabelTreeSelectProps
 
 const LabelTreeSelect = (props: LabelTreeSelectProps) => {
   const { className, label, unit, showSearch = false, onDropdownVisibleChange } = props;
-  const selectRef = React.useRef<BaseSelectRef>(null);
+  const selectRef = React.useRef<RefSelectProps>(null);
   const [open, setOpen] = useControllableValue(props, {
     valuePropName: 'open',
     trigger: 'setOpen',
@@ -25,7 +25,9 @@ const LabelTreeSelect = (props: LabelTreeSelectProps) => {
 
   const [value, setValue] = useControllableValue(props);
 
-  const handleChange: TreeSelectProps<string | React.ReactNode>['onChange'] = (nextValue) => {
+  const handleChange: TreeSelectProps<string | React.ReactNode>['onChange'] = (
+    nextValue,
+  ) => {
     setValue(nextValue);
   };
 
@@ -71,6 +73,7 @@ const LabelTreeSelect = (props: LabelTreeSelectProps) => {
         </div>
       )}
 
+      {/* biome-ignore lint/a11y/noLabelWithoutControl: 点击触发的展示文本，非表单 label */}
       <label className="label-tree-select-text" onClick={handleLabelClick}>
         {label}
       </label>

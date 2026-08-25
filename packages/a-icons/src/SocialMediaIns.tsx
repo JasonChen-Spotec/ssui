@@ -1,9 +1,14 @@
-import * as React from 'react';
-import Icon, { IconProps } from 'a-base-icon/lib/icon';
+import * as React from "react";
+import Icon, { IconProps } from "a-base-icon/lib/icon";
 
 function SocialMediaIns(componentProps: IconProps) {
   const IconNode = (props: React.SVGProps<SVGSVGElement>) => (
-    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
       <circle cx={12} cy={12} r={12} fill="#000" />
       <path
         d="M12.034 8.4c-2.003 0-3.72 1.57-3.72 3.6 0 1.939 1.621 3.6 3.72 3.6 2.003 0 3.72-1.569 3.72-3.6 0-1.938-1.717-3.6-3.72-3.6zm0 5.908c-1.335 0-2.385-1.015-2.385-2.308 0-1.292 1.05-2.307 2.385-2.307 1.335 0 2.385 1.015 2.385 2.307 0 1.293-1.05 2.308-2.385 2.308zm3.815-6.83a.841.841 0 00-.858.83c0 .461.381.83.858.83s.859-.369.859-.83a.841.841 0 00-.859-.83z"
@@ -19,5 +24,5 @@ function SocialMediaIns(componentProps: IconProps) {
   return <Icon {...componentProps} component={IconNode} />;
 }
 
-SocialMediaIns.displayName = 'SocialMediaIns';
+SocialMediaIns.displayName = "SocialMediaIns";
 export default SocialMediaIns;

@@ -1,51 +1,38 @@
 "use strict";
 
-var __assign = this && this.__assign || function () {
-  __assign = Object.assign || function (t) {
-    for (var s, i = 1, n = arguments.length; i < n; i++) {
-      s = arguments[i];
-      for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
-    }
-    return t;
-  };
-  return __assign.apply(this, arguments);
-};
-var __importDefault = this && this.__importDefault || function (mod) {
-  return mod && mod.__esModule ? mod : {
-    "default": mod
-  };
-};
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.alignItemsValues = exports.justifyContentValues = exports.flexWrapValues = void 0;
-var classnames_1 = __importDefault(require("classnames"));
+var tslib_1 = require("tslib");
+var classnames_1 = tslib_1.__importDefault(require("classnames"));
 exports.flexWrapValues = ['wrap', 'nowrap', 'wrap-reverse'];
 exports.justifyContentValues = ['flex-start', 'flex-end', 'start', 'end', 'center', 'space-between', 'space-around', 'space-evenly', 'stretch', 'normal', 'left', 'right'];
 exports.alignItemsValues = ['center', 'start', 'end', 'flex-start', 'flex-end', 'self-start', 'self-end', 'baseline', 'normal', 'stretch'];
 var genClsWrap = function genClsWrap(prefixCls, props) {
   var wrapCls = {};
   exports.flexWrapValues.forEach(function (cssKey) {
-    wrapCls["".concat(prefixCls, "-wrap-").concat(cssKey)] = props.wrap === cssKey;
+    wrapCls[prefixCls + "-wrap-" + cssKey] = props.wrap === cssKey;
   });
   return wrapCls;
 };
 var genClsAlign = function genClsAlign(prefixCls, props) {
   var alignCls = {};
   exports.alignItemsValues.forEach(function (cssKey) {
-    alignCls["".concat(prefixCls, "-align-").concat(cssKey)] = props.align === cssKey;
+    alignCls[prefixCls + "-align-" + cssKey] = props.align === cssKey;
   });
-  alignCls["".concat(prefixCls, "-align-stretch")] = !props.align && !!props.vertical;
+  alignCls[prefixCls + "-align-stretch"] = !props.align && !!props.vertical;
   return alignCls;
 };
 var genClsJustify = function genClsJustify(prefixCls, props) {
   var justifyCls = {};
   exports.justifyContentValues.forEach(function (cssKey) {
-    justifyCls["".concat(prefixCls, "-justify-").concat(cssKey)] = props.justify === cssKey;
+    justifyCls[prefixCls + "-justify-" + cssKey] = props.justify === cssKey;
   });
   return justifyCls;
 };
 function createFlexClassNames(prefixCls, props) {
-  return (0, classnames_1["default"])(__assign(__assign(__assign({}, genClsWrap(prefixCls, props)), genClsAlign(prefixCls, props)), genClsJustify(prefixCls, props)));
+  return (0, classnames_1["default"])(_extends({}, genClsWrap(prefixCls, props), genClsAlign(prefixCls, props), genClsJustify(prefixCls, props)));
 }
 exports["default"] = createFlexClassNames;

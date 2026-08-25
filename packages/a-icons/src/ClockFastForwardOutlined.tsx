@@ -1,5 +1,5 @@
-import * as React from 'react';
-import Icon, { IconProps } from 'a-base-icon/lib/icon';
+import * as React from "react";
+import Icon, { IconProps } from "a-base-icon/lib/icon";
 
 function ClockFastForwardOutlined(componentProps: IconProps) {
   const IconNode = (props: React.SVGProps<SVGSVGElement>) => (
@@ -16,5 +16,5 @@ function ClockFastForwardOutlined(componentProps: IconProps) {
   return <Icon {...componentProps} component={IconNode} />;
 }
 
-ClockFastForwardOutlined.displayName = 'ClockFastForwardOutlined';
+ClockFastForwardOutlined.displayName = "ClockFastForwardOutlined";
 export default ClockFastForwardOutlined;

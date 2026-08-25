@@ -1,5 +1,4 @@
 import classNames from 'classnames';
-
 import type { FlexProps } from '../index';
 
 export const flexWrapValues = ['wrap', 'nowrap', 'wrap-reverse'] as const;

@@ -1,16 +1,7 @@
-var __assign = this && this.__assign || function () {
-  __assign = Object.assign || function (t) {
-    for (var s, i = 1, n = arguments.length; i < n; i++) {
-      s = arguments[i];
-      for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
-    }
-    return t;
-  };
-  return __assign.apply(this, arguments);
-};
-import React from 'react';
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
+import { jsx as _jsx } from "react/jsx-runtime";
 import RcSplitPane from 'react-split-pane';
 var SplitPane = function SplitPane(props) {
-  return /*#__PURE__*/React.createElement(RcSplitPane, __assign({}, props));
+  return _jsx(RcSplitPane, _extends({}, props));
 };
 export default SplitPane;

@@ -1,37 +1,7 @@
-var __assign = this && this.__assign || function () {
-  __assign = Object.assign || function (t) {
-    for (var s, i = 1, n = arguments.length; i < n; i++) {
-      s = arguments[i];
-      for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
-    }
-    return t;
-  };
-  return __assign.apply(this, arguments);
-};
-var __read = this && this.__read || function (o, n) {
-  var m = typeof Symbol === "function" && o[Symbol.iterator];
-  if (!m) return o;
-  var i = m.call(o),
-    r,
-    ar = [],
-    e;
-  try {
-    while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
-  } catch (error) {
-    e = {
-      error: error
-    };
-  } finally {
-    try {
-      if (r && !r.done && (m = i["return"])) m.call(i);
-    } finally {
-      if (e) throw e.error;
-    }
-  }
-  return ar;
-};
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
+import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import { SketchPicker } from 'react-color';
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import RcTrigger from 'rc-trigger';
 import classNames from 'classnames';
 import useControllableValue from "ahooks/es/useControllableValue";
@@ -45,45 +15,50 @@ var ColorSelect = function ColorSelect(props) {
     RcTriggerProps = props.RcTriggerProps,
     renderValueNode = props.renderValueNode,
     renderExtra = props.renderExtra;
-  var _a = __read(useControllableValue(props), 2),
-    value = _a[0],
-    onChangeValue = _a[1];
+  var _useControllableValue = useControllableValue(props),
+    value = _useControllableValue[0],
+    onChangeValue = _useControllableValue[1];
   var messages = useContext(LocaleContext);
   var onChange = function onChange(nextValue) {
     onChangeValue({
       hex: nextValue.hex,
-      rgb: "".concat(nextValue.rgb.r, ",").concat(nextValue.rgb.g, ",").concat(nextValue.rgb.b)
+      rgb: nextValue.rgb.r + "," + nextValue.rgb.g + "," + nextValue.rgb.b
     });
   };
-  var defaultValueNode = /*#__PURE__*/React.createElement("div", {
+  var defaultValueNode = _jsxs("div", {
     className: classNames('color-select', className),
-    tabIndex: 0
-  }, value ? /*#__PURE__*/React.createElement("div", {
-    className: "color-select-value",
-    style: value ? {
-      backgroundColor: value.hex
-    } : undefined
-  }) : /*#__PURE__*/React.createElement("span", {
-    className: "color-select-placeholder"
-  }, formatMessage(messages, langTypeEnum.global, 'placeholder')), /*#__PURE__*/React.createElement("div", {
-    className: "color-select-arrow"
-  }, /*#__PURE__*/React.createElement(ChevronRightOutlined, {
-    rotate: 90
-  })));
-  return /*#__PURE__*/React.createElement("div", {
-    className: classNames('color-select-wrap', classNameWrap)
-  }, /*#__PURE__*/React.createElement(RcTrigger, __assign({
-    popupAlign: {
-      points: ['tl', 'bl'],
-      offset: [0, 3]
-    },
-    action: ['click']
-  }, RcTriggerProps, {
-    popup: /*#__PURE__*/React.createElement(SketchPicker, __assign({
-      width: "320px",
-      color: value ? value.hex : undefined,
-      onChange: onChange
-    }, reactColorProps))
-  }), renderValueNode ? renderValueNode(value) : defaultValueNode), renderExtra && renderExtra(value));
+    tabIndex: 0,
+    children: [value ? _jsx("div", {
+      className: "color-select-value",
+      style: value ? {
+        backgroundColor: value.hex
+      } : undefined
+    }) : _jsx("span", {
+      className: "color-select-placeholder",
+      children: formatMessage(messages, langTypeEnum.global, 'placeholder')
+    }), _jsx("div", {
+      className: "color-select-arrow",
+      children: _jsx(ChevronRightOutlined, {
+        rotate: 90
+      })
+    })]
+  });
+  return _jsxs("div", {
+    className: classNames('color-select-wrap', classNameWrap),
+    children: [_jsx(RcTrigger, _extends({
+      popupAlign: {
+        points: ['tl', 'bl'],
+        offset: [0, 3]
+      },
+      action: ['click']
+    }, RcTriggerProps, {
+      popup: _jsx(SketchPicker, _extends({
+        width: "320px",
+        color: value ? value.hex : undefined,
+        onChange: onChange
+      }, reactColorProps)),
+      children: renderValueNode ? renderValueNode(value) : defaultValueNode
+    })), renderExtra && renderExtra(value)]
+  });
 };
 export default ColorSelect;

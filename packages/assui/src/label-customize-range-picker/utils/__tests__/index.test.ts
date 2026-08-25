@@ -1,11 +1,9 @@
-import moment from 'moment';
 import dateUtils from 'aa-utils/lib/dateUtils';
+import moment from 'moment';
 import type { RangeValue } from 'rc-picker/lib/interface';
 import { formatMaxScope } from '../index';
 
 type MomentTuple = RangeValue<moment.Moment>;
-
-const { formatDateTime } = dateUtils;
 
 const dateTimeFormat = 'YYYY-MM-DD HH:mm:ss';
 const now = dateUtils.getToday().endOf('day');
@@ -18,7 +16,10 @@ const notProvided: MomentTuple = [null, null];
 
 const getStamp = (tuple: MomentTuple) => {
   const [start, end] = formatMaxScope(tuple, 10);
-  return [formatDateTime(start, dateTimeFormat), formatDateTime(end, dateTimeFormat)];
+  return [
+    dateUtils.formatDateTime(start, dateTimeFormat),
+    dateUtils.formatDateTime(end, dateTimeFormat),
+  ];
 };
 
 describe('formatMaxScope', () => {
@@ -35,7 +36,13 @@ describe('formatMaxScope', () => {
   });
 
   it('formatMaxScope should be work fine when data difference greater or less than maxScope', () => {
-    expect(getStamp(greaterThanScope)).toEqual(['1995-05-06 00:00:00', '1995-05-15 23:59:59']);
-    expect(getStamp(lessThanScope)).toEqual(['1995-05-13 00:00:00', '1995-05-15 23:59:59']);
+    expect(getStamp(greaterThanScope)).toEqual([
+      '1995-05-06 00:00:00',
+      '1995-05-15 23:59:59',
+    ]);
+    expect(getStamp(lessThanScope)).toEqual([
+      '1995-05-13 00:00:00',
+      '1995-05-15 23:59:59',
+    ]);
   });
 });

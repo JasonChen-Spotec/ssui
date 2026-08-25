@@ -1,5 +1,5 @@
-import * as React from 'react';
-import Icon, { IconProps } from 'a-base-icon/lib/icon';
+import * as React from "react";
+import Icon, { IconProps } from "a-base-icon/lib/icon";
 
 function SettingSquareOutlined(componentProps: IconProps) {
   const IconNode = (props: React.SVGProps<SVGSVGElement>) => (
@@ -28,5 +28,5 @@ function SettingSquareOutlined(componentProps: IconProps) {
   return <Icon {...componentProps} component={IconNode} />;
 }
 
-SettingSquareOutlined.displayName = 'SettingSquareOutlined';
+SettingSquareOutlined.displayName = "SettingSquareOutlined";
 export default SettingSquareOutlined;

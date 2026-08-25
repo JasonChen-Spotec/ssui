@@ -1,59 +1,29 @@
-var __assign = this && this.__assign || function () {
-  __assign = Object.assign || function (t) {
-    for (var s, i = 1, n = arguments.length; i < n; i++) {
-      s = arguments[i];
-      for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
-    }
-    return t;
-  };
-  return __assign.apply(this, arguments);
-};
-var __read = this && this.__read || function (o, n) {
-  var m = typeof Symbol === "function" && o[Symbol.iterator];
-  if (!m) return o;
-  var i = m.call(o),
-    r,
-    ar = [],
-    e;
-  try {
-    while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
-  } catch (error) {
-    e = {
-      error: error
-    };
-  } finally {
-    try {
-      if (r && !r.done && (m = i["return"])) m.call(i);
-    } finally {
-      if (e) throw e.error;
-    }
-  }
-  return ar;
-};
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
+import { jsx as _jsx } from "react/jsx-runtime";
 import React from 'react';
 import Tooltip from "antd/es/tooltip";
 import classNames from 'classnames';
 import omit from 'lodash/omit';
 import useSize from "ahooks/es/useSize";
 import ButtonModal from '../button-modal';
-var MultiLineEllipsisText = function MultiLineEllipsisText(_a) {
-  var _b = _a.text,
-    text = _b === void 0 ? '' : _b,
-    _c = _a.lines,
-    lines = _c === void 0 ? 3 : _c,
-    _d = _a.className,
-    className = _d === void 0 ? '' : _d,
-    tipType = _a.tipType,
-    buttonModalProps = _a.buttonModalProps,
-    tooltipProps = _a.tooltipProps,
-    onEllipsisChange = _a.onEllipsisChange,
-    onClick = _a.onClick;
+var MultiLineEllipsisText = function MultiLineEllipsisText(_ref) {
+  var _ref$text = _ref.text,
+    text = _ref$text === void 0 ? '' : _ref$text,
+    _ref$lines = _ref.lines,
+    lines = _ref$lines === void 0 ? 3 : _ref$lines,
+    _ref$className = _ref.className,
+    className = _ref$className === void 0 ? '' : _ref$className,
+    tipType = _ref.tipType,
+    buttonModalProps = _ref.buttonModalProps,
+    tooltipProps = _ref.tooltipProps,
+    onEllipsisChange = _ref.onEllipsisChange,
+    onClick = _ref.onClick;
   var ref = React.useRef(null);
   // 监听容器宽度变化，重新计算是否需要省略
   var containerSize = useSize(ref);
-  var _e = __read(React.useState(false), 2),
-    isEllipsis = _e[0],
-    setIsEllipsis = _e[1];
+  var _React$useState = React.useState(false),
+    isEllipsis = _React$useState[0],
+    setIsEllipsis = _React$useState[1];
   React.useEffect(function () {
     var el = ref.current;
     if (!el) {
@@ -66,10 +36,10 @@ var MultiLineEllipsisText = function MultiLineEllipsisText(_a) {
       var maxHeight = lineHeight * lines;
       var overflow = el.scrollHeight > maxHeight + 1; // +1 容差
       setIsEllipsis(overflow);
-      onEllipsisChange === null || onEllipsisChange === void 0 ? void 0 : onEllipsisChange(overflow);
+      onEllipsisChange == null || onEllipsisChange(overflow);
     });
-  }, [text, lines, onEllipsisChange, containerSize === null || containerSize === void 0 ? void 0 : containerSize.width]);
-  var ellipsisNode = /*#__PURE__*/React.createElement("div", {
+  }, [text, lines, onEllipsisChange, containerSize == null ? void 0 : containerSize.width]);
+  var ellipsisNode = _jsx("div", {
     ref: ref,
     className: classNames('ellipsis', className, {
       cursor: isEllipsis && tipType
@@ -83,27 +53,32 @@ var MultiLineEllipsisText = function MultiLineEllipsisText(_a) {
       whiteSpace: 'pre-wrap',
       wordBreak: 'break-word'
     },
-    onClick: onClick
-  }, text);
+    onClick: onClick,
+    children: text
+  });
   if (isEllipsis && tipType === 'modal') {
-    return /*#__PURE__*/React.createElement(ButtonModal, __assign({
+    return _jsx(ButtonModal, _extends({
       destroyOnClose: true,
       width: 325,
       footer: null
     }, omit(buttonModalProps, 'children'), {
-      className: classNames('ellipsis-modal', buttonModalProps === null || buttonModalProps === void 0 ? void 0 : buttonModalProps.className),
-      trigger: ellipsisNode
-    }), (buttonModalProps === null || buttonModalProps === void 0 ? void 0 : buttonModalProps.children) || /*#__PURE__*/React.createElement("div", {
-      className: "ellipsis-modal-content"
-    }, text));
+      className: classNames('ellipsis-modal', buttonModalProps == null ? void 0 : buttonModalProps.className),
+      trigger: ellipsisNode,
+      children: (buttonModalProps == null ? void 0 : buttonModalProps.children) || _jsx("div", {
+        className: "ellipsis-modal-content",
+        children: text
+      })
+    }));
   }
   if (isEllipsis && tipType === 'tooltip') {
-    return /*#__PURE__*/React.createElement(Tooltip, __assign({}, tooltipProps, {
-      overlayClassName: classNames('ellipsis-tooltip', tooltipProps === null || tooltipProps === void 0 ? void 0 : tooltipProps.overlayClassName),
-      title: /*#__PURE__*/React.createElement("div", {
-        className: "ellipsis-tooltip-content"
-      }, text)
-    }), ellipsisNode);
+    return _jsx(Tooltip, _extends({}, tooltipProps, {
+      overlayClassName: classNames('ellipsis-tooltip', tooltipProps == null ? void 0 : tooltipProps.overlayClassName),
+      title: _jsx("div", {
+        className: "ellipsis-tooltip-content",
+        children: text
+      }),
+      children: ellipsisNode
+    }));
   }
   return ellipsisNode;
 };

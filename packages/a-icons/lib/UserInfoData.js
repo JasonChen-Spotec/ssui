@@ -1,95 +1,49 @@
 "use strict";
 
-var __assign = this && this.__assign || function () {
-  __assign = Object.assign || function (t) {
-    for (var s, i = 1, n = arguments.length; i < n; i++) {
-      s = arguments[i];
-      for (var p in s) {
-        if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
-      }
-    }
-    return t;
-  };
-  return __assign.apply(this, arguments);
-};
-var __createBinding = this && this.__createBinding || (Object.create ? function (o, m, k, k2) {
-  if (k2 === undefined) k2 = k;
-  var desc = Object.getOwnPropertyDescriptor(m, k);
-  if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
-    desc = {
-      enumerable: true,
-      get: function get() {
-        return m[k];
-      }
-    };
-  }
-  Object.defineProperty(o, k2, desc);
-} : function (o, m, k, k2) {
-  if (k2 === undefined) k2 = k;
-  o[k2] = m[k];
-});
-var __setModuleDefault = this && this.__setModuleDefault || (Object.create ? function (o, v) {
-  Object.defineProperty(o, "default", {
-    enumerable: true,
-    value: v
-  });
-} : function (o, v) {
-  o["default"] = v;
-});
-var __importStar = this && this.__importStar || function (mod) {
-  if (mod && mod.__esModule) return mod;
-  var result = {};
-  if (mod != null) for (var k in mod) {
-    if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-  }
-  __setModuleDefault(result, mod);
-  return result;
-};
-var __importDefault = this && this.__importDefault || function (mod) {
-  return mod && mod.__esModule ? mod : {
-    "default": mod
-  };
-};
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-var React = __importStar(require("react"));
-var icon_1 = __importDefault(require("a-base-icon/lib/icon"));
+var tslib_1 = require("tslib");
+var jsx_runtime_1 = require("react/jsx-runtime");
+var icon_1 = tslib_1.__importDefault(require("a-base-icon/lib/icon"));
 function UserInfoData(componentProps) {
   var IconNode = function IconNode(props) {
-    return React.createElement("svg", __assign({
+    return (0, jsx_runtime_1.jsxs)("svg", _extends({
       viewBox: "0 0 24 24",
       fill: "none",
       xmlns: "http://www.w3.org/2000/svg"
-    }, props), React.createElement("path", {
-      d: "M2.967 14.42c-.913 1.276.145 2.834 1.705 2.998l10.33 1.085c1.56.164 2.918-1.14 2.29-2.578a8.272 8.272 0 00-6.724-4.928 8.272 8.272 0 00-7.601 3.423z",
-      fill: "currentColor"
-    }), React.createElement("circle", {
-      cx: 11.561,
-      cy: 6.001,
-      transform: "rotate(6 11.56 6)",
-      fill: "currentColor",
-      r: 3.969
-    }), React.createElement("path", {
-      d: "M13.795 19.578l-1.31-4.89a.938.938 0 01.662-1.148l1.664-.446c.222-.06.332-.09.443-.092a.937.937 0 01.291.038c.106.032.206.09.404.204l.61.352 2.627-.704c.507-.135.76-.203.98-.157.194.042.37.143.502.29.15.167.219.42.355.928l.922 3.441c.136.507.203.76.157.98a.939.939 0 01-.29.503c-.167.15-.42.218-.927.354l-5.255 1.408c-.506.136-.76.204-.98.157a.937.937 0 01-.501-.29c-.15-.168-.218-.42-.354-.928z",
-      fill: "#DC4946"
-    }), React.createElement("path", {
-      d: "M12.484 14.688l1.31 4.89c.136.507.204.76.355.928a.937.937 0 00.502.29c.22.047.473-.021.98-.157l5.254-1.408c.506-.136.76-.204.927-.354a.939.939 0 00.29-.502c.046-.22-.021-.474-.157-.981l-.922-3.441c-.136-.507-.204-.76-.355-.928a.937.937 0 00-.502-.29c-.22-.046-.473.022-.98.157l-2.627.704m-4.075 1.092l4.075-1.092m-4.075 1.092a.938.938 0 01.663-1.148l1.664-.446c.222-.06.332-.09.443-.092a.937.937 0 01.291.038c.106.032.206.09.404.204l.61.352",
-      stroke: "#DC4946",
-      strokeWidth: 0.938,
-      strokeLinecap: "round",
-      strokeLinejoin: "round"
-    }), React.createElement("path", {
-      d: "M18.116 15.541l1.225.707-.707 1.225m-1.932.518l-1.225-.707.707-1.225",
-      stroke: "#fff",
-      strokeWidth: 0.75,
-      strokeLinecap: "square",
-      strokeLinejoin: "round"
+    }, props, {
+      children: [(0, jsx_runtime_1.jsx)("path", {
+        d: "M2.967 14.42c-.913 1.276.145 2.834 1.705 2.998l10.33 1.085c1.56.164 2.918-1.14 2.29-2.578a8.272 8.272 0 00-6.724-4.928 8.272 8.272 0 00-7.601 3.423z",
+        fill: "currentColor"
+      }), (0, jsx_runtime_1.jsx)("circle", {
+        cx: 11.561,
+        cy: 6.001,
+        transform: "rotate(6 11.56 6)",
+        fill: "currentColor",
+        r: 3.969
+      }), (0, jsx_runtime_1.jsx)("path", {
+        d: "M13.795 19.578l-1.31-4.89a.938.938 0 01.662-1.148l1.664-.446c.222-.06.332-.09.443-.092a.937.937 0 01.291.038c.106.032.206.09.404.204l.61.352 2.627-.704c.507-.135.76-.203.98-.157.194.042.37.143.502.29.15.167.219.42.355.928l.922 3.441c.136.507.203.76.157.98a.939.939 0 01-.29.503c-.167.15-.42.218-.927.354l-5.255 1.408c-.506.136-.76.204-.98.157a.937.937 0 01-.501-.29c-.15-.168-.218-.42-.354-.928z",
+        fill: "#DC4946"
+      }), (0, jsx_runtime_1.jsx)("path", {
+        d: "M12.484 14.688l1.31 4.89c.136.507.204.76.355.928a.937.937 0 00.502.29c.22.047.473-.021.98-.157l5.254-1.408c.506-.136.76-.204.927-.354a.939.939 0 00.29-.502c.046-.22-.021-.474-.157-.981l-.922-3.441c-.136-.507-.204-.76-.355-.928a.937.937 0 00-.502-.29c-.22-.046-.473.022-.98.157l-2.627.704m-4.075 1.092l4.075-1.092m-4.075 1.092a.938.938 0 01.663-1.148l1.664-.446c.222-.06.332-.09.443-.092a.937.937 0 01.291.038c.106.032.206.09.404.204l.61.352",
+        stroke: "#DC4946",
+        strokeWidth: 0.938,
+        strokeLinecap: "round",
+        strokeLinejoin: "round"
+      }), (0, jsx_runtime_1.jsx)("path", {
+        d: "M18.116 15.541l1.225.707-.707 1.225m-1.932.518l-1.225-.707.707-1.225",
+        stroke: "#fff",
+        strokeWidth: 0.75,
+        strokeLinecap: "square",
+        strokeLinejoin: "round"
+      })]
     }));
   };
-  return React.createElement(icon_1["default"], __assign({}, componentProps, {
+  return (0, jsx_runtime_1.jsx)(icon_1["default"], _extends({}, componentProps, {
     component: IconNode
   }));
 }
-UserInfoData.displayName = 'UserInfoData';
+UserInfoData.displayName = "UserInfoData";
 exports["default"] = UserInfoData;

@@ -34,8 +34,8 @@
     "insert-css": "^2.0.0"
   },
   "peerDependencies": {
-    "antd": "^4.16.11",
-    "react": "^16.8.6 || ^17.0"
+    "antd": "^4.24.16",
+    "react": "^16.8.6 || ^17.0 || ^18.0"
   },
   "devDependencies": {
     "@types/insert-css": "^2.0.1"

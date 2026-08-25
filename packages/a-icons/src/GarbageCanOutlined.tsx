@@ -1,9 +1,14 @@
-import * as React from 'react';
-import Icon, { IconProps } from 'a-base-icon/lib/icon';
+import * as React from "react";
+import Icon, { IconProps } from "a-base-icon/lib/icon";
 
 function GarbageCanOutlined(componentProps: IconProps) {
   const IconNode = (props: React.SVGProps<SVGSVGElement>) => (
-    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
       <path d="M11 17.5H9v-7h2v7zM15 17.5h-2v-7h2v7z" fill="currentColor" />
       <path
         fillRule="evenodd"
@@ -18,5 +23,5 @@ function GarbageCanOutlined(componentProps: IconProps) {
   return <Icon {...componentProps} component={IconNode} />;
 }
 
-GarbageCanOutlined.displayName = 'GarbageCanOutlined';
+GarbageCanOutlined.displayName = "GarbageCanOutlined";
 export default GarbageCanOutlined;

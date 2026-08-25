@@ -1,28 +1,24 @@
 "use strict";
 
-var __importDefault = this && this.__importDefault || function (mod) {
-  return mod && mod.__esModule ? mod : {
-    "default": mod
-  };
-};
-var _a, _b;
+var _exports$antI18nMap, _exports$languages;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.I18NList = exports.languages = exports.antI18nMap = exports.ID = exports.AR = exports.TW = exports.EN = exports.VI = exports.MS = exports.KO = exports.TH = exports.PT = exports.FR = exports.JA = exports.ES = exports.ZH = void 0;
-var ar_EG_1 = __importDefault(require("antd/lib/locale/ar_EG"));
-var en_US_1 = __importDefault(require("antd/lib/locale/en_US"));
-var es_ES_1 = __importDefault(require("antd/lib/locale/es_ES"));
-var fr_FR_1 = __importDefault(require("antd/lib/locale/fr_FR"));
-var id_ID_1 = __importDefault(require("antd/lib/locale/id_ID"));
-var ja_JP_1 = __importDefault(require("antd/lib/locale/ja_JP"));
-var ko_KR_1 = __importDefault(require("antd/lib/locale/ko_KR"));
-var ms_MY_1 = __importDefault(require("antd/lib/locale/ms_MY"));
-var pt_PT_1 = __importDefault(require("antd/lib/locale/pt_PT"));
-var th_TH_1 = __importDefault(require("antd/lib/locale/th_TH"));
-var vi_VN_1 = __importDefault(require("antd/lib/locale/vi_VN"));
-var zh_CN_1 = __importDefault(require("antd/lib/locale/zh_CN"));
-var zh_TW_1 = __importDefault(require("antd/lib/locale/zh_TW"));
+var tslib_1 = require("tslib");
+var ar_EG_1 = tslib_1.__importDefault(require("antd/lib/locale/ar_EG"));
+var en_US_1 = tslib_1.__importDefault(require("antd/lib/locale/en_US"));
+var es_ES_1 = tslib_1.__importDefault(require("antd/lib/locale/es_ES"));
+var fr_FR_1 = tslib_1.__importDefault(require("antd/lib/locale/fr_FR"));
+var id_ID_1 = tslib_1.__importDefault(require("antd/lib/locale/id_ID"));
+var ja_JP_1 = tslib_1.__importDefault(require("antd/lib/locale/ja_JP"));
+var ko_KR_1 = tslib_1.__importDefault(require("antd/lib/locale/ko_KR"));
+var ms_MY_1 = tslib_1.__importDefault(require("antd/lib/locale/ms_MY"));
+var pt_PT_1 = tslib_1.__importDefault(require("antd/lib/locale/pt_PT"));
+var th_TH_1 = tslib_1.__importDefault(require("antd/lib/locale/th_TH"));
+var vi_VN_1 = tslib_1.__importDefault(require("antd/lib/locale/vi_VN"));
+var zh_CN_1 = tslib_1.__importDefault(require("antd/lib/locale/zh_CN"));
+var zh_TW_1 = tslib_1.__importDefault(require("antd/lib/locale/zh_TW"));
 /** 🇨🇳 中文简体 */
 exports.ZH = 'zh-CN';
 /** 🇪🇸 西班牙语 */
@@ -49,8 +45,8 @@ exports.TW = 'zh-TW';
 exports.AR = 'ar';
 /** 🇮🇩 印度尼西亚语 */
 exports.ID = 'id';
-exports.antI18nMap = (_a = {}, _a[exports.ZH] = zh_CN_1["default"], _a[exports.EN] = en_US_1["default"], _a[exports.TW] = zh_TW_1["default"], _a[exports.ES] = es_ES_1["default"], _a[exports.FR] = fr_FR_1["default"], _a[exports.ID] = id_ID_1["default"], _a[exports.JA] = ja_JP_1["default"], _a[exports.KO] = ko_KR_1["default"], _a[exports.PT] = pt_PT_1["default"], _a[exports.AR] = ar_EG_1["default"], _a[exports.TH] = th_TH_1["default"], _a[exports.VI] = vi_VN_1["default"], _a[exports.MS] = ms_MY_1["default"], _a);
-exports.languages = (_b = {}, _b[exports.EN] = exports.EN, _b[exports.TW] = exports.TW, _b[exports.ZH] = exports.ZH, _b[exports.ES] = exports.ES, _b[exports.FR] = exports.FR, _b[exports.ID] = exports.ID, _b[exports.JA] = exports.JA, _b[exports.KO] = exports.KO, _b[exports.PT] = exports.PT, _b[exports.AR] = exports.AR, _b[exports.TH] = exports.TH, _b[exports.VI] = exports.VI, _b[exports.MS] = exports.MS, _b);
+exports.antI18nMap = (_exports$antI18nMap = {}, _exports$antI18nMap[exports.ZH] = zh_CN_1["default"], _exports$antI18nMap[exports.EN] = en_US_1["default"], _exports$antI18nMap[exports.TW] = zh_TW_1["default"], _exports$antI18nMap[exports.ES] = es_ES_1["default"], _exports$antI18nMap[exports.FR] = fr_FR_1["default"], _exports$antI18nMap[exports.ID] = id_ID_1["default"], _exports$antI18nMap[exports.JA] = ja_JP_1["default"], _exports$antI18nMap[exports.KO] = ko_KR_1["default"], _exports$antI18nMap[exports.PT] = pt_PT_1["default"], _exports$antI18nMap[exports.AR] = ar_EG_1["default"], _exports$antI18nMap[exports.TH] = th_TH_1["default"], _exports$antI18nMap[exports.VI] = vi_VN_1["default"], _exports$antI18nMap[exports.MS] = ms_MY_1["default"], _exports$antI18nMap);
+exports.languages = (_exports$languages = {}, _exports$languages[exports.EN] = exports.EN, _exports$languages[exports.TW] = exports.TW, _exports$languages[exports.ZH] = exports.ZH, _exports$languages[exports.ES] = exports.ES, _exports$languages[exports.FR] = exports.FR, _exports$languages[exports.ID] = exports.ID, _exports$languages[exports.JA] = exports.JA, _exports$languages[exports.KO] = exports.KO, _exports$languages[exports.PT] = exports.PT, _exports$languages[exports.AR] = exports.AR, _exports$languages[exports.TH] = exports.TH, _exports$languages[exports.VI] = exports.VI, _exports$languages[exports.MS] = exports.MS, _exports$languages);
 exports.I18NList = [{
   code: exports.EN,
   iso: exports.EN,

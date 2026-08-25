@@ -1,9 +1,14 @@
-import * as React from 'react';
-import Icon, { IconProps } from 'a-base-icon/lib/icon';
+import * as React from "react";
+import Icon, { IconProps } from "a-base-icon/lib/icon";
 
 function LegalDocument(componentProps: IconProps) {
   const IconNode = (props: React.SVGProps<SVGSVGElement>) => (
-    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
       <g clipPath="url(#legal-document_svg__clip0_4046_27238)">
         <path
           d="M13.457 6.854a1 1 0 001 1h5.441v9.836c0 2.81-1 3.81-3.77 3.81h-8.47c-2.76 0-3.76-1-3.76-3.81V5.31c0-2.81 1-3.81 3.76-3.81h5.799v5.354zm-7.402 6.294v1.3h7.943v-1.3H6.055zm0-2h9.943v-1.3H6.055v1.3zm0-3.3h4.564v-1.3H6.055v1.3z"
@@ -27,5 +32,5 @@ function LegalDocument(componentProps: IconProps) {
   return <Icon {...componentProps} component={IconNode} />;
 }
 
-LegalDocument.displayName = 'LegalDocument';
+LegalDocument.displayName = "LegalDocument";
 export default LegalDocument;

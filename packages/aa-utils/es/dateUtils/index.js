@@ -1,11 +1,18 @@
+import isDate from 'lodash/isDate';
+import isNumber from 'lodash/isNumber';
 import moment from 'moment';
 import momentTimezone from 'moment-timezone'; // fix ie tz.guess bug;
-import isNumber from 'lodash/isNumber';
-import isDate from 'lodash/isDate';
 import 'moment/locale/zh-cn';
-var DateUtils = /** @class */function () {
+var DateUtils = /*#__PURE__*/function () {
   function DateUtils() {
     var _this = this;
+    this.currentDateFormat = void 0;
+    this.currentTimeFormat = void 0;
+    this.currentLocale = void 0;
+    this.dateTimeFormat = void 0;
+    this.dateFormat = void 0;
+    this.timeFormat = void 0;
+    this.timeZoneOffset = void 0;
     this.setLocale = function (locale) {
       moment.locale(locale);
     };
@@ -17,9 +24,9 @@ var DateUtils = /** @class */function () {
             return val;
           }
         } else {
-          var val = moment(value).local();
-          if (val.isValid()) {
-            return val;
+          var _val = moment(value).local();
+          if (_val.isValid()) {
+            return _val;
           }
         }
       }
@@ -36,8 +43,9 @@ var DateUtils = /** @class */function () {
       if (options === void 0) {
         options = {};
       }
-      var format = options.format,
-        utcOffset = options.utcOffset;
+      var _options = options,
+        format = _options.format,
+        utcOffset = _options.utcOffset;
       var m = utcOffset ? moment.utc(date).utcOffset(utcOffset) : moment.utc(date);
       return m.format(format || _this.dateTimeFormat);
     };
@@ -50,7 +58,7 @@ var DateUtils = /** @class */function () {
     };
     /** https://momentjs.cn/timezone/docs/#/using-timezones/guessing-user-timezone/ */
     this.getTimeZone = function (ignoreCache) {
-      return momentTimezone.tz.guess(ignoreCache !== null && ignoreCache !== void 0 ? ignoreCache : true);
+      return momentTimezone.tz.guess(ignoreCache != null ? ignoreCache : true);
     };
     this.currentDateFormat = 'YYYY-MM-DD';
     this.currentTimeFormat = 'HH:mm';
@@ -98,32 +106,33 @@ var DateUtils = /** @class */function () {
     Object.defineProperties(this, {
       dateTimeFormat: {
         get: function get() {
-          return "".concat(this.currentDateFormat, " ").concat(this.currentTimeFormat);
+          return this.currentDateFormat + " " + this.currentTimeFormat;
         }
       }
     });
   }
-  DateUtils.prototype.parseDate = function (date, format) {
+  var _proto = DateUtils.prototype;
+  _proto.parseDate = function parseDate(date, format) {
     return moment(date, format || this.dateFormat);
   };
-  DateUtils.prototype.parseTime = function (time, format) {
+  _proto.parseTime = function parseTime(time, format) {
     return moment(time, format || this.timeFormat);
   };
-  DateUtils.prototype.parseDateTime = function (dateTime, format) {
+  _proto.parseDateTime = function parseDateTime(dateTime, format) {
     if (isNumber(dateTime) || isDate(dateTime)) {
       return moment(dateTime);
     }
     return moment(dateTime, format || this.dateTimeFormat);
   };
-  DateUtils.prototype.formatDate = function (date, format) {
+  _proto.formatDate = function formatDate(date, format) {
     var m = this.createMoment(date);
     return m ? m.format(format || this.dateFormat) : '';
   };
-  DateUtils.prototype.formatTime = function (date, format) {
+  _proto.formatTime = function formatTime(date, format) {
     var m = this.createMoment(date);
     return m ? m.format(format || this.timeFormat) : '';
   };
-  DateUtils.prototype.formatDateTime = function (dateTime, format) {
+  _proto.formatDateTime = function formatDateTime(dateTime, format) {
     var m = this.createMoment(dateTime);
     return m ? m.format(format || this.dateTimeFormat) : '';
   };

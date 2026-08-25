@@ -1,7 +1,7 @@
-import html2canvas from 'html2canvas';
 import type { Options as Html2canvasOptions } from 'html2canvas';
-import JsPDF from 'jspdf';
+import html2canvas from 'html2canvas';
 import type { jsPDFOptions as JsPDFOptions } from 'jspdf';
+import JsPDF from 'jspdf';
 
 type GeneratePDFOptions = {
   /** 文件名称 */
@@ -34,11 +34,13 @@ const htmlToPdf = async (element: HTMLElement | null, options: GeneratePDFOption
     onBeforeCapture,
   } = options;
 
-  if (!element) return;
+  if (!element) {
+    return;
+  }
 
   const CANVAS_CHROME_FF_LIMIT = 32_767;
   const CANVAS_SAFARI_LIMIT = 4096;
-  // eslint-disable-next-line no-param-reassign
+
   element.style.gap = '0px';
 
   const MAX_CANVAS_HEIGHT =

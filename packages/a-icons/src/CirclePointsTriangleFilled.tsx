@@ -1,9 +1,14 @@
-import * as React from 'react';
-import Icon, { IconProps } from 'a-base-icon/lib/icon';
+import * as React from "react";
+import Icon, { IconProps } from "a-base-icon/lib/icon";
 
 function CirclePointsTriangleFilled(componentProps: IconProps) {
   const IconNode = (props: React.SVGProps<SVGSVGElement>) => (
-    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
       <path
         d="M11.925 7.22a2.23 2.23 0 100-4.46 2.23 2.23 0 000 4.46zM4.925 21.09a2.1 2.1 0 100-4.2 2.1 2.1 0 000 4.2zM8.325 11.27c-.25.519-.4 1.098-.4 1.716v-.006.01-.004c.002 2.496.951 3.935 2.48 5.454.3.31.64.57 1 .82-.67.26-1.26.37-1.76.34-.66-.04-1.23-.3-1.73-.7a2.981 2.981 0 00-2.77-2.89c.06-1.96.98-3.29 2.19-4.16.31-.22.65-.41.99-.58z"
         fill="currentColor"
@@ -30,5 +35,5 @@ function CirclePointsTriangleFilled(componentProps: IconProps) {
   return <Icon {...componentProps} component={IconNode} />;
 }
 
-CirclePointsTriangleFilled.displayName = 'CirclePointsTriangleFilled';
+CirclePointsTriangleFilled.displayName = "CirclePointsTriangleFilled";
 export default CirclePointsTriangleFilled;

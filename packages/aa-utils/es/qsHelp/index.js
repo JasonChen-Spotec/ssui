@@ -1,27 +1,3 @@
-var __read = this && this.__read || function (o, n) {
-  var m = typeof Symbol === "function" && o[Symbol.iterator];
-  if (!m) return o;
-  var i = m.call(o),
-    r,
-    ar = [],
-    e;
-  try {
-    while ((n === void 0 || n-- > 0) && !(r = i.next()).done) {
-      ar.push(r.value);
-    }
-  } catch (error) {
-    e = {
-      error: error
-    };
-  } finally {
-    try {
-      if (r && !r.done && (m = i["return"])) m.call(i);
-    } finally {
-      if (e) throw e.error;
-    }
-  }
-  return ar;
-};
 import queryString from 'qs';
 import { compile } from 'path-to-regexp';
 var isServerSide = function isServerSide() {
@@ -46,9 +22,9 @@ export var getQueryObject = function getQueryObject(qs) {
 export var getPathAndQueryObject = function getPathAndQueryObject(search) {
   var searchQueryObject = {};
   if (search) {
-    var _a = __read(search.split('?'), 2),
-      path = _a[0],
-      query = _a[1];
+    var _search$split = search.split('?'),
+      path = _search$split[0],
+      query = _search$split[1];
     searchQueryObject.path = path;
     searchQueryObject.query = getQueryObject(query);
     return searchQueryObject;
@@ -56,16 +32,16 @@ export var getPathAndQueryObject = function getPathAndQueryObject(search) {
   return searchQueryObject;
 };
 export var toQueryString = function toQueryString(object) {
-  return "?".concat(queryString.stringify(object, {
+  return "?" + queryString.stringify(object, {
     encode: true
-  }));
+  });
 };
 export var urlToList = function urlToList(url) {
   var urlList = url.split('/').filter(function (i) {
     return i;
   });
   return urlList.map(function (_, index) {
-    return "/".concat(urlList.slice(0, index + 1).join('/'));
+    return "/" + urlList.slice(0, index + 1).join('/');
   });
 };
 export var toPath = function toPath(url, params) {

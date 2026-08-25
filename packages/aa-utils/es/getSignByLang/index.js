@@ -1,15 +1,4 @@
-var __assign = this && this.__assign || function () {
-  __assign = Object.assign || function (t) {
-    for (var s, i = 1, n = arguments.length; i < n; i++) {
-      s = arguments[i];
-      for (var p in s) {
-        if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
-      }
-    }
-    return t;
-  };
-  return __assign.apply(this, arguments);
-};
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 import { ZH, ES, JA, FR, PT, TH, KO, MS, VI, EN, TW, AR, ID } from "ec-common/es/consts/langType";
 // 基础半角映射（EN风格）
 var DEFAULT_MAPPING = {
@@ -82,11 +71,11 @@ var ZH_MAPPING = {
   '/': '／'
 };
 // 日语映射（基于中文，但逗号改为顿号）
-var JA_MAPPING = __assign(__assign({}, ZH_MAPPING), {
-  ',': '、'
+var JA_MAPPING = _extends({}, ZH_MAPPING, {
+  ',': '、' // 日文逗号使用“読点”
 });
 // 法语映射（某些符号（如冒号、分号、感叹号和问号）前需加不换行空格 &nbsp;）
-var FR_MAPPING = __assign(__assign({}, DEFAULT_MAPPING), {
+var FR_MAPPING = _extends({}, DEFAULT_MAPPING, {
   '?': ' ? ',
   '!': ' ! ',
   ';': ' ; ',

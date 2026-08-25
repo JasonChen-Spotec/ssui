@@ -26,5 +26,5 @@ export interface LabelCustomizeRangePickerProps extends Omit<LabelRangePickerPro
     /** 选项全部的开始值 */
     startTimeOfAllOption?: Moment;
 }
-declare const LabelCustomizeRangePicker: (props: LabelCustomizeRangePickerProps) => JSX.Element;
+declare const LabelCustomizeRangePicker: (props: LabelCustomizeRangePickerProps) => import("react/jsx-runtime").JSX.Element;
 export default LabelCustomizeRangePicker;

@@ -16,7 +16,7 @@ async function heic2Jpeg(src?: string) {
 
         return URL.createObjectURL(transfered as Blob);
       }
-    } catch (error) {
+    } catch (_error) {
       return src;
     }
   }

@@ -1,8 +1,8 @@
-/* eslint-disable global-require */
-const fs = require('fs');
+/// <reference types="node" />
+const fs = require('node:fs');
 const colors = require('colors');
 const glob = require('glob');
-const path = require('path');
+const path = require('node:path');
 const forEach = require('lodash/forEach');
 const endsWith = require('lodash/endsWith');
 const find = require('lodash/find');
@@ -15,17 +15,20 @@ function resolveCwd(...args: any[]) {
 
 const getMessagesFilePaths: () => Promise<string[]> = () =>
   new Promise((resolve, reject) => {
-    glob('./src/shared/intl/messages/**/*.ts', { dot: true }, (error: any, filePath: string[]) =>
-      error ? reject(error) : resolve(filePath),
+    glob(
+      './src/shared/intl/messages/**/*.ts',
+      { dot: true },
+      (error: any, filePath: string[]) => (error ? reject(error) : resolve(filePath)),
     );
   });
 
 const checkI18n = () => {
   getMessagesFilePaths().then((filePaths) => {
     const allMessagesMap: Record<string, string> = {};
-    const messagefilePaths = filePaths.filter((filePath) => !endsWith(filePath, 'index.ts'));
+    const messagefilePaths = filePaths.filter(
+      (filePath) => !endsWith(filePath, 'index.ts'),
+    );
     messagefilePaths.forEach((filePath) => {
-      // eslint-disable-next-line import/no-dynamic-require
       const mesageMap = require(resolveCwd(filePath)).default;
       forEach(mesageMap, (value: any, key: string) => {
         if (allMessagesMap[key]) {

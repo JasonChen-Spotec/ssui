@@ -1,11 +1,11 @@
 .base-btn {
   display: inline-flex;
-  font-size: 14px;
   gap: 8px;
   align-items: center;
   height: 32px;
   padding: 0 16px;
   font-weight: 400;
+  font-size: 14px;
   line-height: 22px;
   background-color: #fff;
   border: none;
@@ -16,11 +16,11 @@
   --btn-icon-size: 16px;
 }
 .base-btn-small {
+  gap: 4px;
   height: 24px;
   padding: 0 8px;
   font-size: 12px;
   line-height: 20px;
-  gap: 4px;
 }
 .base-btn-large {
   gap: 12px;

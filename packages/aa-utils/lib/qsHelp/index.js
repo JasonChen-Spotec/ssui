@@ -1,39 +1,11 @@
 "use strict";
 
-var __read = this && this.__read || function (o, n) {
-  var m = typeof Symbol === "function" && o[Symbol.iterator];
-  if (!m) return o;
-  var i = m.call(o),
-    r,
-    ar = [],
-    e;
-  try {
-    while ((n === void 0 || n-- > 0) && !(r = i.next()).done) {
-      ar.push(r.value);
-    }
-  } catch (error) {
-    e = {
-      error: error
-    };
-  } finally {
-    try {
-      if (r && !r.done && (m = i["return"])) m.call(i);
-    } finally {
-      if (e) throw e.error;
-    }
-  }
-  return ar;
-};
-var __importDefault = this && this.__importDefault || function (mod) {
-  return mod && mod.__esModule ? mod : {
-    "default": mod
-  };
-};
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.toPath = exports.urlToList = exports.toQueryString = exports.getPathAndQueryObject = exports.getQueryObject = exports.getQueryString = void 0;
-var qs_1 = __importDefault(require("qs"));
+var tslib_1 = require("tslib");
+var qs_1 = tslib_1.__importDefault(require("qs"));
 var path_to_regexp_1 = require("path-to-regexp");
 var isServerSide = function isServerSide() {
   return typeof XMLHttpRequest === 'undefined';
@@ -59,9 +31,9 @@ exports.getQueryObject = getQueryObject;
 var getPathAndQueryObject = function getPathAndQueryObject(search) {
   var searchQueryObject = {};
   if (search) {
-    var _a = __read(search.split('?'), 2),
-      path = _a[0],
-      query = _a[1];
+    var _search$split = search.split('?'),
+      path = _search$split[0],
+      query = _search$split[1];
     searchQueryObject.path = path;
     searchQueryObject.query = (0, exports.getQueryObject)(query);
     return searchQueryObject;
@@ -70,9 +42,9 @@ var getPathAndQueryObject = function getPathAndQueryObject(search) {
 };
 exports.getPathAndQueryObject = getPathAndQueryObject;
 var toQueryString = function toQueryString(object) {
-  return "?".concat(qs_1["default"].stringify(object, {
+  return "?" + qs_1["default"].stringify(object, {
     encode: true
-  }));
+  });
 };
 exports.toQueryString = toQueryString;
 var urlToList = function urlToList(url) {
@@ -80,7 +52,7 @@ var urlToList = function urlToList(url) {
     return i;
   });
   return urlList.map(function (_, index) {
-    return "/".concat(urlList.slice(0, index + 1).join('/'));
+    return "/" + urlList.slice(0, index + 1).join('/');
   });
 };
 exports.urlToList = urlToList;

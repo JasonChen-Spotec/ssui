@@ -1,4 +1,3 @@
-/* eslint-disable prefer-promise-reject-errors */
 import { localStorage } from 'aa-utils';
 
 const getMultipartUploadHandler = (resultUrl: string) => {
@@ -8,11 +7,11 @@ const getMultipartUploadHandler = (resultUrl: string) => {
       xhr.open('POST', resultUrl);
       xhr.setRequestHeader('token', localStorage.get('token') || '');
 
-      xhr.upload.onprogress = function (e) {
-        progress && progress((e.loaded / e.total) * 100);
+      xhr.upload.onprogress = (e) => {
+        progress?.((e.loaded / e.total) * 100);
       };
 
-      xhr.onload = function () {
+      xhr.onload = () => {
         if (xhr.status === 403) {
           reject(`HTTP Error: ${xhr.status}`);
           return;
@@ -25,7 +24,7 @@ const getMultipartUploadHandler = (resultUrl: string) => {
 
         const json = JSON.parse(xhr.responseText);
 
-        if (!json || json.header.code !== 200) {
+        if (json?.header.code !== 200) {
           reject(`Invalid JSON: ${xhr.responseText}`);
           return;
         }
@@ -33,7 +32,7 @@ const getMultipartUploadHandler = (resultUrl: string) => {
         resolve(json.body);
       };
 
-      xhr.onerror = function () {
+      xhr.onerror = () => {
         reject(`Image upload failed due to a XHR Transport error. Code: ${xhr.status}`);
       };
 

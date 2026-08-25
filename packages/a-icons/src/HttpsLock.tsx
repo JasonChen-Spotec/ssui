@@ -1,9 +1,14 @@
-import * as React from 'react';
-import Icon, { IconProps } from 'a-base-icon/lib/icon';
+import * as React from "react";
+import Icon, { IconProps } from "a-base-icon/lib/icon";
 
 function HttpsLock(componentProps: IconProps) {
   const IconNode = (props: React.SVGProps<SVGSVGElement>) => (
-    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
       <rect x={0.5} y={0.5} width={23} height={23} rx={11.5} fill="#FAE8E8" />
       <rect x={0.5} y={0.5} width={23} height={23} rx={11.5} stroke="#fff" />
       <path
@@ -16,5 +21,5 @@ function HttpsLock(componentProps: IconProps) {
   return <Icon {...componentProps} component={IconNode} />;
 }
 
-HttpsLock.displayName = 'HttpsLock';
+HttpsLock.displayName = "HttpsLock";
 export default HttpsLock;

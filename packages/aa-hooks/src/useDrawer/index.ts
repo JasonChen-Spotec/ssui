@@ -1,7 +1,7 @@
-import type { DrawerProps } from 'antd/lib/drawer';
-import classNames from 'classnames';
 import type React from 'react';
 import { useRef, useState } from 'react';
+import type { DrawerProps } from 'antd/lib/drawer';
+import classNames from 'classnames';
 
 export type DrawerAction = {
   close: () => void;
@@ -56,9 +56,8 @@ export const useDrawer: UseDrawerType = (props) => {
 
 export type generateUseDrawerType = (props: UseDrawerProps) => UseDrawerType;
 
-// eslint-disable-next-line max-len
 export const generateUseDrawer: generateUseDrawerType = (defaultProps) =>
-  function useDrawerFunc(newProps: UseDrawerProps) {
+  function useDrawerFunc(newProps?: UseDrawerProps) {
     const props = {
       ...defaultProps,
       ...newProps,

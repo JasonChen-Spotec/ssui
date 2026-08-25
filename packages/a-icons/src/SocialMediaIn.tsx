@@ -1,9 +1,14 @@
-import * as React from 'react';
-import Icon, { IconProps } from 'a-base-icon/lib/icon';
+import * as React from "react";
+import Icon, { IconProps } from "a-base-icon/lib/icon";
 
 function SocialMediaIn(componentProps: IconProps) {
   const IconNode = (props: React.SVGProps<SVGSVGElement>) => (
-    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
       <g clipPath="url(#social-media-in_svg__clip0_4158_2943)">
         <circle cx={12} cy={12} r={12} fill="#000" />
         <path
@@ -22,5 +27,5 @@ function SocialMediaIn(componentProps: IconProps) {
   return <Icon {...componentProps} component={IconNode} />;
 }
 
-SocialMediaIn.displayName = 'SocialMediaIn';
+SocialMediaIn.displayName = "SocialMediaIn";
 export default SocialMediaIn;

@@ -1,10 +1,18 @@
-import * as React from 'react';
-import Icon, { IconProps } from 'a-base-icon/lib/icon';
+import * as React from "react";
+import Icon, { IconProps } from "a-base-icon/lib/icon";
 
 function PersonWarningFilled(componentProps: IconProps) {
   const IconNode = (props: React.SVGProps<SVGSVGElement>) => (
-    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
-      <path d="M17.5 6.5a5.5 5.5 0 11-11 0 5.5 5.5 0 0111 0z" fill="currentColor" />
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      <path
+        d="M17.5 6.5a5.5 5.5 0 11-11 0 5.5 5.5 0 0111 0z"
+        fill="currentColor"
+      />
       <path
         fillRule="evenodd"
         clipRule="evenodd"
@@ -21,5 +29,5 @@ function PersonWarningFilled(componentProps: IconProps) {
   return <Icon {...componentProps} component={IconNode} />;
 }
 
-PersonWarningFilled.displayName = 'PersonWarningFilled';
+PersonWarningFilled.displayName = "PersonWarningFilled";
 export default PersonWarningFilled;

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import copy from 'copy-to-clipboard';
 import type { TooltipProps } from 'antd/lib/tooltip';
 import Tooltip from 'antd/lib/tooltip';
+import copy from 'copy-to-clipboard';
 
 export interface CopyToClipboardProps {
   /** 需要复制的字符串 */
@@ -45,7 +45,7 @@ const CopyToClipboard = (props: CopyToClipboardProps) => {
       handleCopySuccess();
     }
 
-    if (elem && elem.props && typeof elem.props.onClick === 'function') {
+    if (elem?.props && typeof elem.props.onClick === 'function') {
       elem.props.onClick(event);
     }
   };

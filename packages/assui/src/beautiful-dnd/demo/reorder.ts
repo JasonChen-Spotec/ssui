@@ -1,6 +1,6 @@
 // @flow
 import type { Quote, QuoteMap } from './types';
-import type { DraggableLocation } from 'react-beautiful-dnd';
+import type { DraggableLocation } from '@hello-pangea/dnd';
 
 // a little function to help us with reordering the result
 const reorder = (list: any[], startIndex: number, endIndex: number): any[] => {

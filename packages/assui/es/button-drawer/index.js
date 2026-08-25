@@ -1,70 +1,34 @@
-var __assign = this && this.__assign || function () {
-  __assign = Object.assign || function (t) {
-    for (var s, i = 1, n = arguments.length; i < n; i++) {
-      s = arguments[i];
-      for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
-    }
-    return t;
-  };
-  return __assign.apply(this, arguments);
-};
-var __rest = this && this.__rest || function (s, e) {
-  var t = {};
-  for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
-  if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
-    if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i])) t[p[i]] = s[p[i]];
-  }
-  return t;
-};
-var __read = this && this.__read || function (o, n) {
-  var m = typeof Symbol === "function" && o[Symbol.iterator];
-  if (!m) return o;
-  var i = m.call(o),
-    r,
-    ar = [],
-    e;
-  try {
-    while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
-  } catch (error) {
-    e = {
-      error: error
-    };
-  } finally {
-    try {
-      if (r && !r.done && (m = i["return"])) m.call(i);
-    } finally {
-      if (e) throw e.error;
-    }
-  }
-  return ar;
-};
-import React, { useRef, useImperativeHandle } from 'react';
-import Drawer from "antd/es/drawer";
-import isFunction from 'lodash/isFunction';
-import classNames from 'classnames';
+var _excluded = ["children", "onOpen", "onClose", "trigger", "title", "className"];
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
+function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (-1 !== e.indexOf(n)) continue; t[n] = r[n]; } return t; }
+import { jsx as _jsx, Fragment as _Fragment, jsxs as _jsxs } from "react/jsx-runtime";
+import React, { useImperativeHandle, useRef } from 'react';
 import CloseOutlined from "a-icons/es/CloseOutlined";
 import useControllableValue from "ahooks/es/useControllableValue";
+import Drawer from "antd/es/drawer";
+import classNames from 'classnames';
+import isFunction from 'lodash/isFunction';
 var ButtonDrawer = function ButtonDrawer(props, ref) {
-  var _a = __read(useControllableValue(props, {
+  var _useControllableValue = useControllableValue(props, {
       valuePropName: 'open',
       defaultValue: false
-    }), 2),
-    drawerVisible = _a[0],
-    setDrawerVisible = _a[1];
+    }),
+    drawerVisible = _useControllableValue[0],
+    setDrawerVisible = _useControllableValue[1];
   var children = props.children,
     onOpen = props.onOpen,
     onClose = props.onClose,
     trigger = props.trigger,
     title = props.title,
     className = props.className,
-    restProps = __rest(props, ["children", "onOpen", "onClose", "trigger", "title", "className"]);
+    restProps = _objectWithoutPropertiesLoose(props, _excluded);
   var closeDrawer = function closeDrawer() {
     setDrawerVisible(false);
-    onClose === null || onClose === void 0 ? void 0 : onClose();
+    onClose == null || onClose();
   };
   var openDrawer = function openDrawer() {
     setDrawerVisible(true);
-    onOpen === null || onOpen === void 0 ? void 0 : onOpen();
+    onOpen == null || onOpen();
   };
   var actionRef = useRef({
     open: openDrawer,
@@ -81,16 +45,20 @@ var ButtonDrawer = function ButtonDrawer(props, ref) {
       onClick: openDrawer
     });
   }
-  return /*#__PURE__*/React.createElement(React.Fragment, null, triggerNode, /*#__PURE__*/React.createElement(Drawer, __assign({
-    maskClosable: false,
-    className: classNames('button-drawer', className),
-    title: title,
-    onClose: closeDrawer,
-    open: drawerVisible,
-    closeIcon: /*#__PURE__*/React.createElement(CloseOutlined, null)
-  }, restProps), isFunction(children) ? children(actionRef.current) : /*#__PURE__*/React.cloneElement(children, {
-    drawerAction: actionRef.current
-  })));
+  return _jsxs(_Fragment, {
+    children: [triggerNode, _jsx(Drawer, _extends({
+      maskClosable: false,
+      className: classNames('button-drawer', className),
+      title: title,
+      onClose: closeDrawer,
+      open: drawerVisible,
+      closeIcon: _jsx(CloseOutlined, {})
+    }, restProps, {
+      children: isFunction(children) ? children(actionRef.current) : /*#__PURE__*/React.cloneElement(children, {
+        drawerAction: actionRef.current
+      })
+    }))]
+  });
 };
 var ForwardRefButtonDrawer = /*#__PURE__*/React.forwardRef(ButtonDrawer);
 export default ForwardRefButtonDrawer;

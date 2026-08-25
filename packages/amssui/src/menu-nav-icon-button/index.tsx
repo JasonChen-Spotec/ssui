@@ -1,6 +1,6 @@
+import React from 'react';
 import useControllableValue from 'ahooks/lib/useControllableValue';
 import classNames from 'classnames';
-import React from 'react';
 
 export type MenuNavIconProps = {
   onChange?: (status: boolean) => void;
@@ -9,7 +9,7 @@ export type MenuNavIconProps = {
   className?: string;
 };
 
-const MenuNavIconButton: React.FC<MenuNavIconProps> = (props) => {
+const MenuNavIconButton = (props: MenuNavIconProps) => {
   const { onClick, className } = props;
   const [status, setStatus] = useControllableValue(props, { valuePropName: 'status' });
 
@@ -23,9 +23,9 @@ const MenuNavIconButton: React.FC<MenuNavIconProps> = (props) => {
       }}
     >
       <div className="menu-nav-icon-wrap">
-        <span className="menu-nav-icon-bar"></span>
-        <span className="menu-nav-icon-bar"></span>
-        <span className="menu-nav-icon-bar"></span>
+        <span className="menu-nav-icon-bar" />
+        <span className="menu-nav-icon-bar" />
+        <span className="menu-nav-icon-bar" />
       </div>
     </div>
   );
