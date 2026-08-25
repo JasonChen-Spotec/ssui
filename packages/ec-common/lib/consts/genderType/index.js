@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.useGenderType = exports.EMPTY = exports.FEMALE = exports.MALE = void 0;
+exports.useGenderType = exports.MALE = exports.FEMALE = exports.EMPTY = void 0;
 var tslib_1 = require("tslib");
 var react_intl_1 = require("react-intl");
 var messages_1 = tslib_1.__importDefault(require("../../intl/messages"));

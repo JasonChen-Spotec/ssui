@@ -1,6 +1,6 @@
-import type { SketchPickerProps } from 'react-color';
 import React from 'react';
 import type { TriggerProps } from 'rc-trigger';
+import type { SketchPickerProps } from 'react-color';
 export type ColorSelectProps = {
     value?: {
         hex?: string;

@@ -2,17 +2,17 @@ var _excluded = ["customizeTimeList", "radioList", "rangePickerType", "label", "
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (-1 !== e.indexOf(n)) continue; t[n] = r[n]; } return t; }
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
-import { useState, useEffect, useContext } from 'react';
-import Radio from "antd/es/radio";
+import { useContext, useEffect, useState } from 'react';
+import useControllableValue from "ahooks/es/useControllableValue";
 import Checkbox from "antd/es/checkbox";
 import DatePicker from "antd/es/date-picker";
-import useControllableValue from "ahooks/es/useControllableValue";
+import Radio from "antd/es/radio";
 import omit from 'lodash/omit';
-import getDefaultRadioList from './defaultRadioList';
-import LabelRangePicker from '../label-range-picker';
 import LocaleContext from '../config-provider/context';
+import LabelRangePicker from '../label-range-picker';
 import formatMessage, { langTypeEnum } from '../messages';
-import { formatMaxScope, getDateDiffScope, ONE_DAY_MILLISECOND, getTimeDiffOfShowTime } from './utils';
+import getDefaultRadioList from './defaultRadioList';
+import { formatMaxScope, getDateDiffScope, getTimeDiffOfShowTime, ONE_DAY_MILLISECOND } from './utils';
 var RangePicker = DatePicker.RangePicker;
 var LabelCustomizeRangePicker = function LabelCustomizeRangePicker(props) {
   var customizeTimeList = props.customizeTimeList,
@@ -61,7 +61,9 @@ var LabelCustomizeRangePicker = function LabelCustomizeRangePicker(props) {
   var dataSource = radioList != null ? radioList : defaultRadioList;
   useEffect(function () {
     var filterItemList = dataSource.filter(function (item) {
-      if (!date) return false;
+      if (!date) {
+        return false;
+      }
       var _item$value = item.value,
         startTime = _item$value[0],
         endTime = _item$value[1];

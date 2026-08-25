@@ -6,12 +6,12 @@ function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t =
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.dataTypeEnum = exports.numberTypeEnum = void 0;
+exports.numberTypeEnum = exports.dataTypeEnum = void 0;
 var tslib_1 = require("tslib");
 var jsx_runtime_1 = require("react/jsx-runtime");
 var React = tslib_1.__importStar(require("react"));
-var input_1 = tslib_1.__importDefault(require("antd/lib/input"));
 var useControllableValue_1 = tslib_1.__importDefault(require("ahooks/lib/useControllableValue"));
+var input_1 = tslib_1.__importDefault(require("antd/lib/input"));
 var omit_1 = tslib_1.__importDefault(require("lodash/omit"));
 var dataTypeEnum = tslib_1.__importStar(require("./const/dataTypeEnum"));
 exports.dataTypeEnum = dataTypeEnum;

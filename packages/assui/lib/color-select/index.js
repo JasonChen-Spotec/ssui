@@ -6,12 +6,12 @@ Object.defineProperty(exports, "__esModule", {
 });
 var tslib_1 = require("tslib");
 var jsx_runtime_1 = require("react/jsx-runtime");
-var react_color_1 = require("react-color");
 var react_1 = require("react");
-var rc_trigger_1 = tslib_1.__importDefault(require("rc-trigger"));
-var classnames_1 = tslib_1.__importDefault(require("classnames"));
-var useControllableValue_1 = tslib_1.__importDefault(require("ahooks/lib/useControllableValue"));
 var ChevronRightOutlined_1 = tslib_1.__importDefault(require("a-icons/lib/ChevronRightOutlined"));
+var useControllableValue_1 = tslib_1.__importDefault(require("ahooks/lib/useControllableValue"));
+var classnames_1 = tslib_1.__importDefault(require("classnames"));
+var rc_trigger_1 = tslib_1.__importDefault(require("rc-trigger"));
+var react_color_1 = require("react-color");
 var context_1 = tslib_1.__importDefault(require("../config-provider/context"));
 var messages_1 = tslib_1.__importStar(require("../messages"));
 var ColorSelect = function ColorSelect(props) {
@@ -33,7 +33,6 @@ var ColorSelect = function ColorSelect(props) {
   };
   var defaultValueNode = (0, jsx_runtime_1.jsxs)("div", {
     className: (0, classnames_1["default"])('color-select', className),
-    tabIndex: 0,
     children: [value ? (0, jsx_runtime_1.jsx)("div", {
       className: "color-select-value",
       style: value ? {
@@ -64,7 +63,7 @@ var ColorSelect = function ColorSelect(props) {
         onChange: onChange
       }, reactColorProps)),
       children: renderValueNode ? renderValueNode(value) : defaultValueNode
-    })), renderExtra && renderExtra(value)]
+    })), renderExtra == null ? void 0 : renderExtra(value)]
   });
 };
 exports["default"] = ColorSelect;

@@ -5,8 +5,8 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.toPath = exports.urlToList = exports.toQueryString = exports.getPathAndQueryObject = exports.getQueryObject = exports.getQueryString = void 0;
 var tslib_1 = require("tslib");
-var qs_1 = tslib_1.__importDefault(require("qs"));
 var path_to_regexp_1 = require("path-to-regexp");
+var qs_1 = tslib_1.__importDefault(require("qs"));
 var isServerSide = function isServerSide() {
   return typeof XMLHttpRequest === 'undefined';
 };

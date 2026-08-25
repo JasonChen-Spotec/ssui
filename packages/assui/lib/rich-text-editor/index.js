@@ -14,7 +14,6 @@ var tinymce_1 = tslib_1.__importDefault(require("tinymce/tinymce"));
 require("tinymce/themes/silver");
 require("tinymce/models/dom");
 require("tinymce/icons/default");
-require("tinymce/skins/ui/oxide/skin.min.css");
 // importing the plugin js.
 require("tinymce/plugins/advlist");
 require("tinymce/plugins/autolink");
@@ -42,8 +41,9 @@ require("tinymce/plugins/autoresize");
 require("tinymce/plugins/emoticons");
 require("tinymce/plugins/importcss");
 require("tinymce/plugins/pagebreak");
-var code_1 = tslib_1.__importDefault(require("./plugins/code"));
 var zh_CN_1 = tslib_1.__importDefault(require("./lang/zh_CN"));
+var code_1 = tslib_1.__importDefault(require("./plugins/code"));
+require("tinymce/skins/ui/oxide/skin.min.css");
 tinymce_1["default"].addI18n('zh-Hans', zh_CN_1["default"]);
 (0, code_1["default"])();
 var defaultPlugins = ['advlist', 'autolink', 'lists', 'link', 'image', 'charmap', 'anchor', 'searchreplace', 'visualblocks', 'code', 'fullscreen', 'insertdatetime', 'media', 'table', 'preview', 'help'];

@@ -5,8 +5,8 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.dateTypeEnum = void 0;
 var tslib_1 = require("tslib");
-var lodash_1 = require("lodash");
 var dateUtils_1 = tslib_1.__importDefault(require("aa-utils/lib/dateUtils"));
+var lodash_1 = require("lodash");
 var messages_1 = tslib_1.__importStar(require("../messages"));
 var dateTypeEnum;
 (function (dateTypeEnum) {

@@ -3,12 +3,12 @@ var _excluded = ["fractionDigits"],
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (-1 !== e.indexOf(n)) continue; t[n] = r[n]; } return t; }
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 import BigNumber from 'bignumber.js';
+import lodashIsNaN from 'lodash/isNaN';
 import isNull from 'lodash/isNull';
-import isNaN from 'lodash/isNaN';
 import isUndefined from 'lodash/isUndefined';
-import { roundingModeMap, HALF_UP } from './const/roundingModeMap';
-import { strip, float2Fixed, digitLength } from './numberPrecision';
-import { plus, minus, times, divide } from './numberPrecision/calculateFunc';
+import { HALF_UP, roundingModeMap } from './const/roundingModeMap';
+import { digitLength, float2Fixed, strip } from './numberPrecision';
+import { divide, minus, plus, times } from './numberPrecision/calculateFunc';
 var defaultOptions = {
   useGrouping: false,
   usePlus: false,
@@ -17,7 +17,7 @@ var defaultOptions = {
   maxFractionDigits: 2
 };
 var checkValue = function checkValue(value) {
-  if (isNull(value) || isUndefined(value) || isNaN(value)) {
+  if (isNull(value) || isUndefined(value) || lodashIsNaN(value)) {
     return '0';
   }
   return value;

@@ -5,8 +5,8 @@ import { jsx as _jsx } from "react/jsx-runtime";
 import React from 'react';
 import classNames from 'classnames';
 import omit from "rc-util/es/omit";
-import { isPresetSize } from './utils/gapSize';
 import createFlexClassNames from './utils';
+import { isPresetSize } from './utils/gapSize';
 var Flex = /*#__PURE__*/React.forwardRef(function (props, ref) {
   var _classNames;
   var className = props.className,

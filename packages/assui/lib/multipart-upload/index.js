@@ -9,11 +9,11 @@ Object.defineProperty(exports, "__esModule", {
 var tslib_1 = require("tslib");
 var jsx_runtime_1 = require("react/jsx-runtime");
 var react_1 = require("react");
-var rc_upload_1 = tslib_1.__importDefault(require("rc-upload"));
-var ahooks_1 = require("ahooks");
-var classnames_1 = tslib_1.__importDefault(require("classnames"));
-var antd_1 = require("antd");
 var a_icons_1 = require("a-icons");
+var ahooks_1 = require("ahooks");
+var antd_1 = require("antd");
+var classnames_1 = tslib_1.__importDefault(require("classnames"));
+var rc_upload_1 = tslib_1.__importDefault(require("rc-upload"));
 var getMultipartUploadHandler_1 = tslib_1.__importDefault(require("./getMultipartUploadHandler"));
 var MultipartUpload = function MultipartUpload(props) {
   var className = props.className,
@@ -70,11 +70,11 @@ var MultipartUpload = function MultipartUpload(props) {
     fileNameRef.current = file.name;
     totalChunks = Math.ceil(fileRef.current.size / resChunkSize);
     setUploadStatus('uploading');
-    onStart && onStart(file);
+    onStart == null || onStart(file);
   };
   var handleError = function handleError(error, ret, file) {
     setUploadStatus('init');
-    onError && onError(error, ret, file);
+    onError == null || onError(error, ret, file);
   };
   var uploadCls = (0, classnames_1["default"])(className, {
     'not-upload-init': uploadStatus !== 'init'
@@ -84,7 +84,7 @@ var MultipartUpload = function MultipartUpload(props) {
       var _uploadRef$current;
       (_uploadRef$current = uploadRef.current) == null || _uploadRef$current.abort(fileRef.current);
       setUploadStatus('init');
-      cancelUpload && cancelUpload();
+      cancelUpload == null || cancelUpload();
     }
   };
   var progress = function progress(progressNumber) {
@@ -118,11 +118,11 @@ var MultipartUpload = function MultipartUpload(props) {
             list: uploadList
           }).then(function (fileUrl) {
             setUploadStatus('done');
-            onSuccess && onSuccess(fileUrl, fileNameRef.current);
+            onSuccess == null || onSuccess(fileUrl, fileNameRef.current);
           });
         }
       })["catch"](function (error) {
-        errorCatch && errorCatch(error);
+        errorCatch == null || errorCatch(error);
       });
     }
   };

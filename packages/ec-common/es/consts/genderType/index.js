@@ -6,7 +6,7 @@ var MALE = 1;
 var FEMALE = 2;
 /** 空 */
 var EMPTY = -1;
-export { MALE, FEMALE, EMPTY };
+export { EMPTY, FEMALE, MALE };
 export var useGenderType = function useGenderType() {
   var _appellativeGenderTyp, _genderTypeMap;
   var _useIntl = useIntl(),

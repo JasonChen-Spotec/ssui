@@ -1,5 +1,5 @@
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
-import { ZH, ES, JA, FR, PT, TH, KO, MS, VI, EN, TW, AR, ID } from "ec-common/es/consts/langType";
+import { AR, EN, ES, FR, ID, JA, KO, MS, PT, TH, TW, VI, ZH } from "ec-common/es/consts/langType";
 // 基础半角映射（EN风格）
 var DEFAULT_MAPPING = {
   ',': ', ',

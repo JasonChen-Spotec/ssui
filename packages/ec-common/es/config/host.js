@@ -129,4 +129,4 @@ var allSiteMap = {
     readClient: 'https://crm.ecmarkets.asia'
   }
 };
-export { apiHostMap, allSiteMap, socketHostMap, mainDomainMap, fileHostMap, readDomainMap };
+export { allSiteMap, apiHostMap, fileHostMap, mainDomainMap, readDomainMap, socketHostMap };

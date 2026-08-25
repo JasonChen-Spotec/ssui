@@ -38,5 +38,5 @@ export interface NumberInputProps extends Omit<InputProps, 'onChange' | 'onBlur'
     allowClear?: boolean;
 }
 declare const NumberInput: React.ForwardRefExoticComponent<NumberInputProps & React.RefAttributes<unknown>>;
-export { numberTypeEnum, dataTypeEnum };
+export { dataTypeEnum, numberTypeEnum };
 export default NumberInput;

@@ -1,8 +1,8 @@
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 import { jsx as _jsx } from "react/jsx-runtime";
 import React, { useState } from 'react';
-import copy from 'copy-to-clipboard';
 import Tooltip from "antd/es/tooltip";
+import copy from 'copy-to-clipboard';
 var CopyToClipboard = function CopyToClipboard(props) {
   var text = props.text,
     onCopy = props.onCopy,
@@ -28,7 +28,7 @@ var CopyToClipboard = function CopyToClipboard(props) {
     if (tooltipTitle) {
       handleCopySuccess();
     }
-    if (elem && elem.props && typeof elem.props.onClick === 'function') {
+    if (elem != null && elem.props && typeof elem.props.onClick === 'function') {
       elem.props.onClick(event);
     }
   };

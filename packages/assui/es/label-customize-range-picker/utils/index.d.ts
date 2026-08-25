@@ -1,5 +1,5 @@
-import type { RangeValue } from 'rc-picker/lib/interface';
 import type { Moment } from 'moment';
+import type { RangeValue } from 'rc-picker/lib/interface';
 /** 1整天的毫秒数 */
 export declare const ONE_DAY_MILLISECOND: number;
 /** 1分钟的毫秒数 */

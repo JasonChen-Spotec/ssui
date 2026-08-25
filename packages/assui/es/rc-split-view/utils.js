@@ -1,6 +1,6 @@
 import React from 'react';
-import isUndefined from 'lodash/isUndefined';
 import isNumber from 'lodash/isNumber';
+import isUndefined from 'lodash/isUndefined';
 /** 获取默认尺寸 */
 export var getDefaultSize = function getDefaultSize(defaultSize, minSize, maxSize, draggedSize) {
   if (isNumber(draggedSize)) {

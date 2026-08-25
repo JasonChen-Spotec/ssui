@@ -5,8 +5,8 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.useQRCode = void 0;
 var tslib_1 = require("tslib");
-var qrcode_1 = tslib_1.__importDefault(require("qrcode"));
 var react_1 = require("react");
+var qrcode_1 = tslib_1.__importDefault(require("qrcode"));
 var useQRCode = function useQRCode(value, options) {
   if (options === void 0) {
     options = {};

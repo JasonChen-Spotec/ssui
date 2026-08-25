@@ -11,8 +11,8 @@ var jsx_runtime_1 = require("react/jsx-runtime");
 var react_1 = tslib_1.__importDefault(require("react"));
 var classnames_1 = tslib_1.__importDefault(require("classnames"));
 var omit_1 = tslib_1.__importDefault(require("rc-util/lib/omit"));
-var gapSize_1 = require("./utils/gapSize");
 var utils_1 = tslib_1.__importDefault(require("./utils"));
+var gapSize_1 = require("./utils/gapSize");
 var Flex = react_1["default"].forwardRef(function (props, ref) {
   var _ref;
   var className = props.className,

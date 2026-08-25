@@ -1,10 +1,10 @@
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
-import isNil from 'lodash/isNil';
-import isEmpty from 'lodash/isEmpty';
-import classNames from 'classnames';
 import { useEffect, useState } from 'react';
 import useControllableValue from "ahooks/es/useControllableValue";
+import classNames from 'classnames';
+import isEmpty from 'lodash/isEmpty';
+import isNil from 'lodash/isNil';
 import ComplexValSelect from '../complex-val-select';
 import ConditionInput from '../condition-input';
 export var InputTypeEnum;
@@ -53,7 +53,7 @@ var ConditionSelectInput = function ConditionSelectInput(props) {
           return item.value === value.selectValue;
         }),
         selectValueItem = _optionsList$filter[0];
-      if (selectValueItem && selectValueItem.children) {
+      if (selectValueItem != null && selectValueItem.children) {
         setSubSelectOptions(selectValueItem.children);
       }
     }

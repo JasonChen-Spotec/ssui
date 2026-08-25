@@ -8,8 +8,8 @@ exports.useQrcode = void 0;
 var tslib_1 = require("tslib");
 var jsx_runtime_1 = require("react/jsx-runtime");
 var React = tslib_1.__importStar(require("react"));
-var qrcode_1 = tslib_1.__importDefault(require("qrcode"));
 var useMount_1 = tslib_1.__importDefault(require("ahooks/lib/useMount"));
+var qrcode_1 = tslib_1.__importDefault(require("qrcode"));
 var useQrcode_1 = tslib_1.__importDefault(require("./useQrcode"));
 exports.useQrcode = useQrcode_1["default"];
 var initEmptyObject = {};
@@ -32,7 +32,7 @@ var RcQrcode = function RcQrcode(props) {
       if (err) {
         throw err;
       }
-      getCanvasInstance && getCanvasInstance(result);
+      getCanvasInstance == null || getCanvasInstance(result);
       (_domElRef$current = domElRef.current) == null || _domElRef$current.appendChild(result);
     });
   });

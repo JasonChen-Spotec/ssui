@@ -9,9 +9,9 @@ Object.defineProperty(exports, "__esModule", {
 var tslib_1 = require("tslib");
 var jsx_runtime_1 = require("react/jsx-runtime");
 var React = tslib_1.__importStar(require("react"));
+var useMount_1 = tslib_1.__importDefault(require("ahooks/lib/useMount"));
 var classnames_1 = tslib_1.__importDefault(require("classnames"));
 var trimStart_1 = tslib_1.__importDefault(require("lodash/trimStart"));
-var useMount_1 = tslib_1.__importDefault(require("ahooks/lib/useMount"));
 var HighlighedContents_1 = tslib_1.__importDefault(require("./HighlighedContents"));
 var HighlightWithinTextarea = React.forwardRef(function (props, ref) {
   var _props$prefixCls = props.prefixCls,

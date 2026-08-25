@@ -1,6 +1,6 @@
 import { Fragment as _Fragment, jsx as _jsx } from "react/jsx-runtime";
-import getRanges from './getRanges';
 import extractSpansOfClasses from './extractSpansOfClasses';
+import getRanges from './getRanges';
 var HighlighedContents = function HighlighedContents(_ref) {
   var value = _ref.value,
     _ref$highlight = _ref.highlight,
