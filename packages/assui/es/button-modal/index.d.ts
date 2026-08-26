@@ -11,5 +11,5 @@ export interface ButtonModalProps extends Omit<ModalProps, 'children' | 'onOk'> 
     trigger?: ((fun: () => void) => React.ReactElement) | React.ReactElement;
     children: ((v: ModalAction) => React.ReactElement) | React.ReactElement;
 }
-declare const ForwardRefButtonModal: React.ForwardRefExoticComponent<ButtonModalProps & React.RefAttributes<ModalAction>>;
+declare const ForwardRefButtonModal: React.ForwardRefExoticComponent<ButtonModalProps & React.RefAttributes<unknown>>;
 export default ForwardRefButtonModal;

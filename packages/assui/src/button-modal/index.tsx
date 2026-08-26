@@ -19,7 +19,7 @@ export interface ButtonModalProps extends Omit<ModalProps, 'children' | 'onOk'> 
   children: ((v: ModalAction) => React.ReactElement) | React.ReactElement;
 }
 
-const ButtonModal: React.ForwardRefRenderFunction<ModalAction, ButtonModalProps> = (
+const ButtonModal: React.ForwardRefRenderFunction<unknown, ButtonModalProps> = (
   props,
   ref,
 ) => {
@@ -91,8 +91,6 @@ const ButtonModal: React.ForwardRefRenderFunction<ModalAction, ButtonModalProps>
   );
 };
 
-const ForwardRefButtonModal = React.forwardRef<ModalAction, ButtonModalProps>(
-  ButtonModal,
-);
+const ForwardRefButtonModal = React.forwardRef<unknown, ButtonModalProps>(ButtonModal);
 
 export default ForwardRefButtonModal;

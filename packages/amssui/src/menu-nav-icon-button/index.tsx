@@ -9,7 +9,7 @@ export type MenuNavIconProps = {
   className?: string;
 };
 
-const MenuNavIconButton = (props: MenuNavIconProps) => {
+const MenuNavIconButton: React.FC<MenuNavIconProps> = (props) => {
   const { onClick, className } = props;
   const [status, setStatus] = useControllableValue(props, { valuePropName: 'status' });
 

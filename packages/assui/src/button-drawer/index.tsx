@@ -17,7 +17,7 @@ export interface ButtonDrawerProps extends Omit<DrawerProps, 'children'> {
   children: ((v: DrawerAction) => React.ReactElement) | React.ReactElement;
 }
 
-const ButtonDrawer: React.ForwardRefRenderFunction<DrawerAction, ButtonDrawerProps> = (
+const ButtonDrawer: React.ForwardRefRenderFunction<unknown, ButtonDrawerProps> = (
   props,
   ref,
 ) => {
@@ -75,8 +75,6 @@ const ButtonDrawer: React.ForwardRefRenderFunction<DrawerAction, ButtonDrawerPro
   );
 };
 
-const ForwardRefButtonDrawer = React.forwardRef<DrawerAction, ButtonDrawerProps>(
-  ButtonDrawer,
-);
+const ForwardRefButtonDrawer = React.forwardRef<unknown, ButtonDrawerProps>(ButtonDrawer);
 
 export default ForwardRefButtonDrawer;
