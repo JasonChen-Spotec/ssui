@@ -58,10 +58,7 @@
   background-color: #e6e6e6;
 }
 .base-btn-default .base-btn-loading-icon {
-  background: conic-gradient(from 180deg, rgba(213, 73, 65, 0), #121212);
-}
-.base-btn-default .base-btn-loading-icon .base-btn-loading-icon-mask {
-  background-color: #fff;
+  background: conic-gradient(from 180deg, rgba(213, 73, 65, 0), var(--theme-color, var(--font-color)));
 }
 .base-btn-primary {
   --theme-color: #dc4946;
@@ -126,6 +123,9 @@
 .base-btn-gray:active {
   background-color: var(--active-color);
 }
+.base-btn-gray .base-btn-loading-icon {
+  background: conic-gradient(from 180deg, rgba(213, 73, 65, 0), var(--theme-color, var(--font-color)));
+}
 .base-btn-variant-outlined {
   color: var(--theme-color, var(--font-color));
   background-color: #fff;
@@ -142,7 +142,7 @@
   border-color: var(--active-color, var(--border-color));
 }
 .base-btn-variant-outlined .base-btn-loading-icon {
-  background: conic-gradient(from 180deg, rgba(213, 73, 65, 0), var(--theme-color));
+  background: conic-gradient(from 180deg, rgba(213, 73, 65, 0), var(--theme-color, var(--font-color)));
 }
 .base-btn-variant-outlined .base-btn-loading-icon .base-btn-loading-icon-mask {
   background-color: #fff;

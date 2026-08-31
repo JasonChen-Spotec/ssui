@@ -175,7 +175,10 @@ const Demo = () => {
       <div className="btn-demo__row">
         <span className="btn-demo__label">静态</span>
         <div className="btn-demo__group">
-          <BaseButton  loading  >
+          <BaseButton  loading outlined >
+            加载中default-outlined
+          </BaseButton>
+          <BaseButton  loading >
             加载中default
           </BaseButton>
           <BaseButton color="primary" loading  >
@@ -183,6 +186,9 @@ const Demo = () => {
           </BaseButton>
           <BaseButton color="success" loading>
             加载中
+          </BaseButton>
+          <BaseButton color="dark" loading >
+            加载中22
           </BaseButton>
           <BaseButton color="dark" variant="outlined" loading>
             加载中
