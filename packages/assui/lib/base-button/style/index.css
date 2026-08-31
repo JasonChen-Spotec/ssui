@@ -57,6 +57,12 @@
 .base-btn-default:active {
   background-color: #e6e6e6;
 }
+.base-btn-default .base-btn-loading-icon {
+  background: conic-gradient(from 180deg, rgba(213, 73, 65, 0), #121212);
+}
+.base-btn-default .base-btn-loading-icon .base-btn-loading-icon-mask {
+  background-color: #fff;
+}
 .base-btn-primary {
   --theme-color: #dc4946;
   --hover-color: #e7807e;

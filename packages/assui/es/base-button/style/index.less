@@ -69,6 +69,13 @@
     &:active {
       background-color: @color_e6e6e6;
     }
+
+    .@{base-button-name}-loading-icon {
+      background: conic-gradient(from 180deg, rgba(213, 73, 65, 0),@color_121212);
+      .@{base-button-name}-loading-icon-mask {
+        background-color: @white;
+      }
+    }
   }
 
   &-primary {
