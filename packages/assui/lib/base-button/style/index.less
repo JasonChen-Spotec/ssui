@@ -71,10 +71,7 @@
     }
 
     .@{base-button-name}-loading-icon {
-      background: conic-gradient(from 180deg, rgba(213, 73, 65, 0),@color_121212);
-      .@{base-button-name}-loading-icon-mask {
-        background-color: @white;
-      }
+      background: conic-gradient(from 180deg, rgba(213, 73, 65, 0), var(--theme-color, var(--font-color)));
     }
   }
 
@@ -155,6 +152,10 @@
     &:active {
       background-color: var(--active-color);
     }
+
+    .@{base-button-name}-loading-icon {
+      background: conic-gradient(from 180deg, rgba(213, 73, 65, 0), var(--theme-color, var(--font-color)));
+    }
   }
 
   &-variant-outlined {
@@ -174,7 +175,7 @@
       border-color: var(--active-color, var(--border-color));
     }
     .@{base-button-name}-loading-icon {
-      background: conic-gradient(from 180deg, rgba(213, 73, 65, 0), var(--theme-color));
+      background: conic-gradient(from 180deg, rgba(213, 73, 65, 0), var(--theme-color, var(--font-color)));
       .@{base-button-name}-loading-icon-mask {
         background-color: @white;
       }
