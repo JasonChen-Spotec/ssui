@@ -175,6 +175,9 @@ const Demo = () => {
       <div className="btn-demo__row">
         <span className="btn-demo__label">静态</span>
         <div className="btn-demo__group">
+          <BaseButton  loading  >
+            加载中default
+          </BaseButton>
           <BaseButton color="primary" loading  >
             加载中22
           </BaseButton>
