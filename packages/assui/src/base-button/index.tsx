@@ -17,12 +17,6 @@ export interface BaseButtonProps extends React.ButtonHTMLAttributes<HTMLButtonEl
 
 const btnNamePrefix = 'base-btn';
 
-const loadingIcon = (
-  <div className={`${btnNamePrefix}-loading-icon`}>
-    <div className={`${btnNamePrefix}-loading-icon-mask`} />
-  </div>
-);
-
 const BaseButton: React.FC<BaseButtonProps> = ({
   color = 'default',
   variant,
@@ -36,39 +30,59 @@ const BaseButton: React.FC<BaseButtonProps> = ({
   children,
   className,
   ...restProps
-}) => (
-  <button
-    type="button"
-    disabled={disabled || loading}
-    {...restProps}
-    className={classNames(
-      btnNamePrefix,
-      `${btnNamePrefix}-${color}`,
-      `${btnNamePrefix}-${size}`,
-      variant && `${btnNamePrefix}-variant-${variant}`,
-      {
-        [`${btnNamePrefix}-round`]: round,
-        [`${btnNamePrefix}-block`]: block,
-        [`${btnNamePrefix}-disabled`]: disabled,
-        [`${btnNamePrefix}-loading`]: loading,
-      },
-      className,
-    )}
-  >
-    {prefixIcon && (
-      <span className={`${btnNamePrefix}-icon`}>
-        {loading ? loadingIcon : prefixIcon}
+}) => {
+  const showDefaultLoading = loading && !prefixIcon && !suffixIcon;
+  const loadingIcon = (
+    <div
+      className={classNames(`${btnNamePrefix}-loading-icon`, {
+        [`${btnNamePrefix}-loading-icon-default`]: showDefaultLoading,
+      })}
+    >
+      <div className={`${btnNamePrefix}-loading-icon-mask`} />
+    </div>
+  );
+
+  return (
+    <button
+      type="button"
+      disabled={disabled || loading}
+      {...restProps}
+      className={classNames(
+        btnNamePrefix,
+        `${btnNamePrefix}-${color}`,
+        `${btnNamePrefix}-${size}`,
+        variant && `${btnNamePrefix}-variant-${variant}`,
+        {
+          [`${btnNamePrefix}-round`]: round,
+          [`${btnNamePrefix}-block`]: block,
+          [`${btnNamePrefix}-disabled`]: disabled,
+          [`${btnNamePrefix}-loading`]: loading,
+          [`${btnNamePrefix}-default-loadingBox`]: showDefaultLoading,
+        },
+        className,
+      )}
+    >
+      {prefixIcon && (
+        <span className={`${btnNamePrefix}-icon`}>
+          {loading ? loadingIcon : prefixIcon}
+        </span>
+      )}
+      {showDefaultLoading && loadingIcon}
+      <span
+        className={classNames(`${btnNamePrefix}-content`, {
+          [`${btnNamePrefix}-content-hidden`]: showDefaultLoading,
+        })}
+      >
+        {children}
       </span>
-    )}
-    {loading && !prefixIcon && !suffixIcon && loadingIcon}
-    <span className={`${btnNamePrefix}-content`}>{children}</span>
-    {loading && !prefixIcon && suffixIcon && (
-      <span className={`${btnNamePrefix}-icon`}>{loadingIcon}</span>
-    )}
-    {(!loading || prefixIcon) && suffixIcon && (
-      <span className={`${btnNamePrefix}-icon`}>{suffixIcon}</span>
-    )}
-  </button>
-);
+      {loading && !prefixIcon && suffixIcon && (
+        <span className={`${btnNamePrefix}-icon`}>{loadingIcon}</span>
+      )}
+      {(!loading || prefixIcon) && suffixIcon && (
+        <span className={`${btnNamePrefix}-icon`}>{suffixIcon}</span>
+      )}
+    </button>
+  );
+};
 
 export default BaseButton;
