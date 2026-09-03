@@ -198,6 +198,14 @@
     transform: rotate(360deg);
   }
 }
+@keyframes loading-default {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
 .base-btn-icon {
   display: inline-flex;
   align-items: center;
@@ -222,4 +230,16 @@
   height: 12px;
   background-color: transparent;
   border-radius: 50%;
+}
+.base-btn-default-loadingBox {
+  position: relative;
+}
+.base-btn .base-btn-content-hidden {
+  visibility: hidden;
+}
+.base-btn .base-btn-loading-icon-default {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  animation: loading-default 1.2s linear infinite;
 }

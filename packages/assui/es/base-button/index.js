@@ -4,14 +4,8 @@ function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t =
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import classNames from 'classnames';
 var btnNamePrefix = 'base-btn';
-var loadingIcon = _jsx("div", {
-  className: btnNamePrefix + "-loading-icon",
-  children: _jsx("div", {
-    className: btnNamePrefix + "-loading-icon-mask"
-  })
-});
 var BaseButton = function BaseButton(_ref) {
-  var _classNames;
+  var _classNames, _classNames2, _classNames3;
   var _ref$color = _ref.color,
     color = _ref$color === void 0 ? 'default' : _ref$color,
     variant = _ref.variant,
@@ -29,16 +23,23 @@ var BaseButton = function BaseButton(_ref) {
     children = _ref.children,
     className = _ref.className,
     restProps = _objectWithoutPropertiesLoose(_ref, _excluded);
+  var showDefaultLoading = loading && !prefixIcon && !suffixIcon;
+  var loadingIcon = _jsx("div", {
+    className: classNames(btnNamePrefix + "-loading-icon", (_classNames = {}, _classNames[btnNamePrefix + "-loading-icon-default"] = showDefaultLoading, _classNames)),
+    children: _jsx("div", {
+      className: btnNamePrefix + "-loading-icon-mask"
+    })
+  });
   return _jsxs("button", _extends({
     type: "button",
     disabled: disabled || loading
   }, restProps, {
-    className: classNames(btnNamePrefix, btnNamePrefix + "-" + color, btnNamePrefix + "-" + size, variant && btnNamePrefix + "-variant-" + variant, (_classNames = {}, _classNames[btnNamePrefix + "-round"] = round, _classNames[btnNamePrefix + "-block"] = block, _classNames[btnNamePrefix + "-disabled"] = disabled, _classNames[btnNamePrefix + "-loading"] = loading, _classNames), className),
+    className: classNames(btnNamePrefix, btnNamePrefix + "-" + color, btnNamePrefix + "-" + size, variant && btnNamePrefix + "-variant-" + variant, (_classNames2 = {}, _classNames2[btnNamePrefix + "-round"] = round, _classNames2[btnNamePrefix + "-block"] = block, _classNames2[btnNamePrefix + "-disabled"] = disabled, _classNames2[btnNamePrefix + "-loading"] = loading, _classNames2[btnNamePrefix + "-default-loadingBox"] = showDefaultLoading, _classNames2), className),
     children: [prefixIcon && _jsx("span", {
       className: btnNamePrefix + "-icon",
       children: loading ? loadingIcon : prefixIcon
-    }), loading && !prefixIcon && !suffixIcon && loadingIcon, _jsx("span", {
-      className: btnNamePrefix + "-content",
+    }), showDefaultLoading && loadingIcon, _jsx("span", {
+      className: classNames(btnNamePrefix + "-content", (_classNames3 = {}, _classNames3[btnNamePrefix + "-content-hidden"] = showDefaultLoading, _classNames3)),
       children: children
     }), loading && !prefixIcon && suffixIcon && _jsx("span", {
       className: btnNamePrefix + "-icon",
