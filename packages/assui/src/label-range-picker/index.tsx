@@ -11,6 +11,10 @@ const { RangePicker } = DatePicker;
 export interface LabelRangePickerProps extends Omit<RangePickerProps, 'label'> {
   label: React.ReactNode;
   showTime?: any;
+
+  popupClassName?: string;
+  /** @deprecated `dropdownClassName` 已废弃，请使用 `popupClassName` 代替。 */
+  dropdownClassName?: string;
 }
 
 const LabelDatePicker: React.FC<LabelRangePickerProps> = (props) => {
