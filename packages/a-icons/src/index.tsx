@@ -1,4 +1,6 @@
 export { default as ImpassabilityFilled } from './ImpassabilityFilled'
+export { default as AccountDeposit } from './AccountDeposit'
+export { default as AccountWithdrawal } from './AccountWithdrawal'
 export { default as AdFilled } from './AdFilled'
 export { default as AddChildOutlined } from './AddChildOutlined'
 export { default as AddFilled } from './AddFilled'
