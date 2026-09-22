@@ -239,7 +239,7 @@
 }
 .base-btn .base-btn-loading-icon-default {
   position: absolute;
-  left: 50%;
   top: 50%;
+  left: 50%;
   animation: loading-default 1.2s linear infinite;
 }
