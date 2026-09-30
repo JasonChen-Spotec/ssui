@@ -9,6 +9,8 @@ import '../packages/assui/src/a-select/style/index.less';
 import '../packages/assui/src/area-text/style/index.less';
 import '../packages/assui/src/color-select/style/index.less';
 
+export { modifyCodeSandboxData, modifyStackBlitzData } from './react19-demo';
+
 export function rootContainer(container: any) {
   console.log('-----');
   return (

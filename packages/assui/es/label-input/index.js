@@ -87,9 +87,7 @@ var LabelInput = function LabelInput(props) {
       }), _jsxs("div", {
         className: "label-input-warper",
         children: [_jsx("input", {
-          ref: function ref(el) {
-            return InputDomRef.current = el;
-          },
+          ref: InputDomRef,
           "data-value": value ? value.length : 0,
           className: "label-input",
           type: inputType,

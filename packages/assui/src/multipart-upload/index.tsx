@@ -77,8 +77,8 @@ const MultipartUpload = (props: MultipartUploadProps) => {
   } = props;
 
   const fileNameRef = useRef<string>('');
-  const uploadRef = useRef<Upload | null>();
-  const fileRef = useRef<RcFile | null>();
+  const uploadRef = useRef<Upload | null>(null);
+  const fileRef = useRef<RcFile | null>(null);
   const uploadIdRef = useRef<string>('');
   const [uploadStatus, setUploadStatus] = useState('init');
   const [uploadPercent, setUploadPercent] = useState(0);

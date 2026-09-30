@@ -1,3 +1,19 @@
+.color-select-popup {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+}
+.color-select-popup-hidden {
+  display: none;
+}
+.color-select-popup-mask {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(55, 55, 55, 0.6);
+}
+.color-select-popup-mask-hidden {
+  display: none;
+}
 .color-select-wrap {
   display: flex;
 }

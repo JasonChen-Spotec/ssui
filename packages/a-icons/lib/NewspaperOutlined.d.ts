@@ -1,5 +1,6 @@
+import * as React from "react";
 import { IconProps } from "a-base-icon/lib/icon";
-declare function NewspaperOutlined(componentProps: IconProps): import("react/jsx-runtime").JSX.Element;
+declare function NewspaperOutlined(componentProps: IconProps): React.JSX.Element;
 declare namespace NewspaperOutlined {
     var displayName: string;
 }

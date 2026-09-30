@@ -46,5 +46,5 @@ export interface LabelConditionSelectInputProps {
     /** 样式 */
     className?: string;
 }
-declare const LabelConditionSelectInput: (props: LabelConditionSelectInputProps) => import("react/jsx-runtime").JSX.Element;
+declare const LabelConditionSelectInput: (props: LabelConditionSelectInputProps) => React.JSX.Element;
 export default LabelConditionSelectInput;

@@ -64,7 +64,7 @@ const LabelTextArea: React.FC<LabelTextAreaProps> = (props) => {
       >
         <textarea
           {...restProps}
-          ref={(el) => (TextAreaDomRef.current = el)}
+          ref={TextAreaDomRef}
           data-value={value ? value.length : 0}
           className="label-textarea"
           value={value}

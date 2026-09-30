@@ -1,3 +1,4 @@
+import * as React from 'react';
 import type { QRCodeRenderersOptions, QRCodeSegment } from 'qrcode';
 import QRCode from 'qrcode';
 import useQrcode from './useQrcode';
@@ -10,7 +11,7 @@ export interface RcQrcodeProps {
     getCanvasInstance?: (result: HTMLCanvasElement) => void;
 }
 declare const RcQrcode: {
-    (props: RcQrcodeProps): import("react/jsx-runtime").JSX.Element;
+    (props: RcQrcodeProps): React.JSX.Element;
     useQrcode: (value: string | QRCodeSegment[], options?: QRCode.QRCodeToDataURLOptions) => string;
 };
 export default RcQrcode;

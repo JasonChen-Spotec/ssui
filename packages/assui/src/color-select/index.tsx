@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
+import type { TriggerProps } from '@rc-component/trigger';
+import RcTrigger from '@rc-component/trigger';
 import ChevronRightOutlined from 'a-icons/lib/ChevronRightOutlined';
 import useControllableValue from 'ahooks/lib/useControllableValue';
 import classNames from 'classnames';
-import type { TriggerProps } from 'rc-trigger';
-import RcTrigger from 'rc-trigger';
 import type { ColorResult, SketchPickerProps } from 'react-color';
 import { SketchPicker } from 'react-color';
 import LocaleContext from '../config-provider/context';
@@ -14,6 +14,7 @@ export type ColorSelectProps = {
     hex?: string;
     rgb?: string;
   };
+  onChange?: (value: NonNullable<ColorSelectProps['value']>) => void;
   /** 自定义总容器 class */
   classNameWrap?: string;
   /** 自定义其余描述展示 */
@@ -22,8 +23,8 @@ export type ColorSelectProps = {
   className?: string;
   /** 组件react-color的props */
   reactColorProps?: Omit<SketchPickerProps, 'onChange'>;
-  /** 组件rc-trigger */
-  RcTriggerProps?: Omit<TriggerProps, 'popup'>;
+  /** 组件 @rc-component/trigger 的弹层配置 */
+  RcTriggerProps?: Omit<TriggerProps, 'popup' | 'children'>;
   /** 自定义value的展示 */
   renderValueNode?: (value: ColorSelectProps['value']) => React.ReactElement;
 };
@@ -74,6 +75,8 @@ const ColorSelect: React.FC<ColorSelectProps> = (props) => {
   return (
     <div className={classNames('color-select-wrap', classNameWrap)}>
       <RcTrigger
+        prefixCls="color-select-popup"
+        zIndex={1050}
         popupAlign={{
           points: ['tl', 'bl'],
           offset: [0, 3],

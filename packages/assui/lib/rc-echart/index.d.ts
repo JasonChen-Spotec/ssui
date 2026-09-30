@@ -1,3 +1,4 @@
+import React from 'react';
 import * as echarts from 'echarts';
 import type { EchartEventFunc } from './core';
 export type Opts = {
@@ -16,5 +17,5 @@ export interface RcEchartPropsType {
     onEvents?: Record<string, EchartEventFunc>;
     opts?: Opts;
 }
-declare const RcEcharts: (props: RcEchartPropsType) => import("react/jsx-runtime").JSX.Element;
+declare const RcEcharts: (props: RcEchartPropsType) => React.JSX.Element;
 export default RcEcharts;

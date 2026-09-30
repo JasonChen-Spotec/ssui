@@ -5,10 +5,11 @@ import style from './index.modules.less';
 
 const { sortableElement, sortableContainer, arrayMove } = sortableHoc;
 
-const SortableElement = sortableElement((props) => {
+const SortableElement = sortableElement(React.forwardRef((props, ref) => {
   const { value, itemIndex, isSorting } = props;
   return (
     <div
+      ref={ref}
       className={classNames(style.item, style['stylized-item'], isSorting && style.sorting)}
       style={{ height: itemIndex === 4 ? 120 : 60 }}
       data-index={itemIndex}
@@ -18,10 +19,10 @@ const SortableElement = sortableElement((props) => {
       </div>
     </div>
   );
-});
+}));
 
-const SortableContainer = sortableContainer(({ items, isSorting }) => (
-  <div className={classNames(style.list, style['stylized-list'])}>
+const SortableContainer = sortableContainer(React.forwardRef(({ items, isSorting }, ref) => (
+  <div ref={ref} className={classNames(style.list, style['stylized-list'])}>
     {items.map((value, index) => (
       <SortableElement
         key={`item-${value}`}
@@ -32,7 +33,7 @@ const SortableContainer = sortableContainer(({ items, isSorting }) => (
       />
     ))}
   </div>
-));
+)));
 
 class ListWrapper extends React.Component {
   state = {

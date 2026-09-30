@@ -50,10 +50,10 @@ describe('LabelConditionInput', () => {
     const { getByRole } = render(<LabelConditionInput />);
     const input = getByRole('textbox');
 
-    input.focus();
+    act(() => input.focus());
     expect(baseProps.onFocus).not.toBeCalled();
 
-    input.blur();
+    act(() => input.blur());
     expect(baseProps.onBlur).not.toBeCalled();
   });
 });

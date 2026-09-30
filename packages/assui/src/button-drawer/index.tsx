@@ -73,7 +73,7 @@ const ButtonDrawer: React.ForwardRefRenderFunction<unknown, ButtonDrawerProps> =
   } else {
     triggerNode =
       trigger &&
-      React.cloneElement(trigger, {
+      React.cloneElement(trigger as React.ReactElement<{ onClick: () => void }>, {
         onClick: openDrawer,
       });
   }
@@ -94,7 +94,10 @@ const ButtonDrawer: React.ForwardRefRenderFunction<unknown, ButtonDrawerProps> =
       >
         {isFunction(children)
           ? children(actionRef.current)
-          : React.cloneElement(children, { drawerAction: actionRef.current })}
+          : React.cloneElement(
+              children as React.ReactElement<{ drawerAction: DrawerAction }>,
+              { drawerAction: actionRef.current },
+            )}
       </Drawer>
     </>
   );

@@ -6,8 +6,198 @@ Object.defineProperty(exports, "__esModule", {
 });
 var tslib_1 = require("tslib");
 var jsx_runtime_1 = require("react/jsx-runtime");
-var react_split_pane_1 = tslib_1.__importDefault(require("react-split-pane"));
-var SplitPane = function SplitPane(props) {
-  return (0, jsx_runtime_1.jsx)(react_split_pane_1["default"], _extends({}, props));
+var react_1 = tslib_1.__importStar(require("react"));
+var react_split_pane_1 = require("react-split-pane");
+var ResizerContext = (0, react_1.createContext)({});
+// Keep the existing stylesheet and its divider orientation names. The upstream
+// v3 direction describes the pane arrangement, which is the opposite convention.
+var Resizer = function Resizer(_ref) {
+  var disabled = _ref.disabled,
+    onPointerDown = _ref.onPointerDown,
+    onKeyDown = _ref.onKeyDown,
+    className = _ref.className,
+    style = _ref.style,
+    currentSize = _ref.currentSize,
+    minSize = _ref.minSize,
+    maxSize = _ref.maxSize;
+  var _ref2 = (0, react_1.useContext)(ResizerContext),
+    split = _ref2.split,
+    onResizerClick = _ref2.onResizerClick,
+    onResizerDoubleClick = _ref2.onResizerDoubleClick;
+  return (
+    // biome-ignore lint/a11y/useSemanticElements: This focusable splitter handles keyboard and pointer resizing, rather than a thematic break.
+    (0, jsx_runtime_1.jsx)("span", {
+      role: "separator",
+      "aria-orientation": split,
+      "aria-valuenow": currentSize,
+      "aria-valuemin": minSize,
+      "aria-valuemax": maxSize,
+      tabIndex: disabled ? -1 : 0,
+      className: ['Resizer', split, disabled && 'disabled', className].filter(Boolean).join(' '),
+      style: _extends({
+        flex: 'none',
+        position: 'relative',
+        userSelect: 'none',
+        touchAction: 'none'
+      }, style),
+      onPointerDown: disabled ? undefined : onPointerDown,
+      onKeyDown: disabled ? undefined : onKeyDown,
+      onClick: function onClick(event) {
+        return onResizerClick == null ? void 0 : onResizerClick(event.nativeEvent);
+      },
+      onDoubleClick: function onDoubleClick(event) {
+        return onResizerDoubleClick == null ? void 0 : onResizerDoubleClick(event.nativeEvent);
+      }
+    })
+  );
+};
+var pixels = function pixels(value, total) {
+  if (typeof value === 'number') {
+    return value;
+  }
+  return value.endsWith('%') ? parseFloat(value) / 100 * total : parseFloat(value);
+};
+var SplitPane = function SplitPane(_ref3) {
+  var _ref5;
+  var _ref3$allowResize = _ref3.allowResize,
+    allowResize = _ref3$allowResize === void 0 ? true : _ref3$allowResize,
+    className = _ref3.className,
+    _ref3$primary = _ref3.primary,
+    primary = _ref3$primary === void 0 ? 'first' : _ref3$primary,
+    _ref3$minSize = _ref3.minSize,
+    minSize = _ref3$minSize === void 0 ? 50 : _ref3$minSize,
+    maxSize = _ref3.maxSize,
+    defaultSize = _ref3.defaultSize,
+    size = _ref3.size,
+    _ref3$split = _ref3.split,
+    split = _ref3$split === void 0 ? 'vertical' : _ref3$split,
+    onDragStarted = _ref3.onDragStarted,
+    onDragFinished = _ref3.onDragFinished,
+    onChange = _ref3.onChange,
+    onResizerClick = _ref3.onResizerClick,
+    onResizerDoubleClick = _ref3.onResizerDoubleClick,
+    style = _ref3.style,
+    resizerStyle = _ref3.resizerStyle,
+    paneStyle = _ref3.paneStyle,
+    pane1Style = _ref3.pane1Style,
+    pane2Style = _ref3.pane2Style,
+    resizerClassName = _ref3.resizerClassName,
+    step = _ref3.step,
+    children = _ref3.children;
+  var _ref4 = (0, react_1.useState)((_ref5 = size != null ? size : defaultSize) != null ? _ref5 : minSize),
+    currentSize = _ref4[0],
+    setCurrentSize = _ref4[1];
+  var previousSize = (0, react_1.useRef)(size);
+  var hasResized = (0, react_1.useRef)(false);
+  var lastDragSize = (0, react_1.useRef)(undefined);
+  (0, react_1.useEffect)(function () {
+    // v1 applies size when the prop changes, but still allows dragging while
+    // that prop is unchanged. Keep the rendered and drag-origin sizes in sync.
+    if (previousSize.current !== size) {
+      previousSize.current = size;
+      if (size !== undefined) {
+        hasResized.current = true;
+        setCurrentSize(size);
+      }
+    }
+    if (size === undefined) {
+      setCurrentSize(function (current) {
+        if (!hasResized.current) {
+          return defaultSize != null ? defaultSize : minSize;
+        }
+        if (typeof current !== 'number') {
+          return current;
+        }
+        return Math.max(typeof minSize === 'number' ? minSize : 0, Math.min(typeof maxSize === 'number' && maxSize > 0 ? maxSize : Infinity, current));
+      });
+    }
+  }, [size, defaultSize, minSize, maxSize]);
+  var primaryIndex = primary === 'first' ? 0 : 1;
+  var panes = react_1["default"].Children.toArray(children);
+  var vertical = split === 'vertical';
+  // A non-positive legacy maxSize reserves space for the other pane,
+  // measured against the full container size.
+  var reserveSize = typeof maxSize === 'number' && maxSize <= 0;
+  var otherMinSize = reserveSize ? -maxSize : 0;
+  return (0, jsx_runtime_1.jsx)("div", {
+    className: ['SplitPane', className, split, !allowResize && 'disabled'].filter(Boolean).join(' '),
+    style: _extends({
+      display: 'flex',
+      flex: 1,
+      height: '100%',
+      position: 'absolute',
+      outline: 'none',
+      overflow: 'hidden'
+    }, style, vertical ? {
+      flexDirection: 'row',
+      left: 0,
+      right: 0
+    } : {
+      flexDirection: 'column',
+      bottom: 0,
+      top: 0,
+      minHeight: '100%',
+      width: '100%'
+    }),
+    children: (0, jsx_runtime_1.jsx)(ResizerContext.Provider, {
+      value: {
+        split: split,
+        onResizerClick: onResizerClick,
+        onResizerDoubleClick: onResizerDoubleClick
+      },
+      children: (0, jsx_runtime_1.jsx)(react_split_pane_1.SplitPane, {
+        direction: vertical ? 'horizontal' : 'vertical',
+        resizable: allowResize,
+        divider: Resizer,
+        // Legacy percentages refer to the entire container. The flexible
+        // secondary pane absorbs the divider's actual CSS width.
+        dividerSize: 0,
+        dividerClassName: resizerClassName,
+        dividerStyle: resizerStyle,
+        step: step,
+        onResizeStart: function onResizeStart(event) {
+          lastDragSize.current = event.sizes[primaryIndex];
+          onDragStarted == null || onDragStarted();
+        },
+        onResize: function onResize(sizes) {
+          var total = sizes.reduce(function (sum, paneSize) {
+            return sum + paneSize;
+          }, 0);
+          var maximum = maxSize === undefined ? Infinity : reserveSize ? total + Number(maxSize) : pixels(maxSize, total);
+          // v3 distributes deltas between both panes before clamping. Apply
+          // the legacy boundary even when the initial size is out of bounds.
+          var nextSize = Math.max(pixels(minSize, total), Math.min(maximum, sizes[primaryIndex]));
+          lastDragSize.current = nextSize;
+          hasResized.current = true;
+          setCurrentSize(nextSize);
+          onChange == null || onChange(nextSize);
+        },
+        onResizeEnd: function onResizeEnd(sizes) {
+          var _lastDragSize$current;
+          return onDragFinished == null ? void 0 : onDragFinished((_lastDragSize$current = lastDragSize.current) != null ? _lastDragSize$current : sizes[primaryIndex]);
+        },
+        children: [0, 1].map(function (index) {
+          var _ref6;
+          var isPrimary = index === primaryIndex;
+          return (0, jsx_runtime_1.jsx)(react_split_pane_1.Pane, {
+            className: "Pane Pane" + (index + 1) + " " + split,
+            // Keep the primary pane fixed when its container resizes, just
+            // as v1 did, instead of v3's default proportional resizing.
+            size: isPrimary ? currentSize : undefined,
+            minSize: isPrimary ? minSize : otherMinSize,
+            maxSize: isPrimary && !reserveSize ? maxSize : undefined,
+            style: _extends({
+              overflow: 'visible'
+            }, isPrimary ? typeof currentSize === 'number' ? (_ref6 = {}, _ref6[vertical ? 'width' : 'height'] = currentSize, _ref6) : {} : {
+              flex: 1,
+              minWidth: 0,
+              minHeight: 0
+            }, paneStyle, index === 0 ? pane1Style : pane2Style),
+            children: panes[index]
+          }, index);
+        })
+      })
+    })
+  });
 };
 exports["default"] = SplitPane;

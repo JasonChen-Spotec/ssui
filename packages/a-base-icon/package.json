@@ -34,7 +34,7 @@
     "insert-css": "^2.0.0"
   },
   "peerDependencies": {
-    "react": "^16.8.6 || ^17.0 || ^18.0"
+    "react": "^19.0.0"
   },
   "devDependencies": {
     "@types/insert-css": "^2.0.1"

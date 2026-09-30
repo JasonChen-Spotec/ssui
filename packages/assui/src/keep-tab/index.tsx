@@ -1,10 +1,10 @@
 import * as React from 'react';
-import useUrlState from '@ahooksjs/use-url-state';
 import qsHelp from 'aa-utils/lib/qsHelp';
 import useControllableValue from 'ahooks/lib/useControllableValue';
 import type { BadgeProps, TabPaneProps, TabsProps } from 'antd';
 import { Badge, Tabs } from 'antd';
 import find from 'lodash/find';
+import useUrlState from './use-url-state';
 
 const { TabPane } = Tabs;
 
@@ -58,7 +58,10 @@ const KeepTab = (props: KeepTabProps) => {
 
   React.useEffect(() => {
     if (!('activeKey' in props) && items) {
-      const resultActiveTab = find(items, { key: urlParams[saveActiveKeyName] });
+      const resultActiveTab = find(
+        items,
+        (item) => item.key === urlParams[saveActiveKeyName],
+      );
       if (!resultActiveTab || resultActiveTab.disabled) {
         setUrlParams({ [saveActiveKeyName]: items[0].key });
         setTabActiveKey(items[0].key as string);

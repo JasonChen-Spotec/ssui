@@ -19,8 +19,8 @@ var JsonEditor = function JsonEditor(props, ref) {
   var _ref = (0, useControllableValue_1["default"])(props),
     value = _ref[0],
     setValue = _ref[1];
-  var containerRef = react_1["default"].useRef();
-  var editorInstanceRef = react_1["default"].useRef();
+  var containerRef = react_1["default"].useRef(null);
+  var editorInstanceRef = react_1["default"].useRef(null);
   (0, useMount_1["default"])(function () {
     editorInstanceRef.current = new jsoneditor_1["default"](containerRef.current, _extends({
       mode: 'code',
@@ -52,9 +52,7 @@ var JsonEditor = function JsonEditor(props, ref) {
     (_editorInstanceRef$cu4 = editorInstanceRef.current) == null || _editorInstanceRef$cu4.destroy();
   });
   return (0, jsx_runtime_1.jsx)("div", {
-    ref: function ref(el) {
-      return containerRef.current = el;
-    },
+    ref: containerRef,
     className: (0, classnames_1["default"])('a-jason-editor', className)
   });
 };

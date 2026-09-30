@@ -5,8 +5,8 @@ import SortItem from './SortItem';
 const { sortableContainer } = sortableHoc;
 
 const SortableList = sortableContainer(
-  ({ className, items, disabledItems = [], itemClass, isSorting, shouldUseDragHandle, type }) => (
-    <div className={className}>
+  React.forwardRef(({ className, items, disabledItems = [], itemClass, isSorting, shouldUseDragHandle, type }, ref) => (
+    <div ref={ref} className={className}>
       {items.map(({ value, height }, index) => {
         const disabled = disabledItems.includes(value);
 
@@ -28,7 +28,7 @@ const SortableList = sortableContainer(
         );
       })}
     </div>
-  ),
+  )),
 );
 
 export default SortableList;

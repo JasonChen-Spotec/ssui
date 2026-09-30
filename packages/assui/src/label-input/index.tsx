@@ -129,7 +129,7 @@ const LabelInput: React.FC<LabelInputProps> = (props) => {
         {prefix && <div className="label-input-prefix">{prefix}</div>}
         <div className="label-input-warper">
           <input
-            ref={(el) => (InputDomRef.current = el)}
+            ref={InputDomRef}
             data-value={value ? value.length : 0}
             className="label-input"
             type={inputType}

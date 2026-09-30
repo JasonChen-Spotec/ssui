@@ -7,7 +7,7 @@ import React from 'react';
 import { NumberInput } from 'assui';
 
 const Demo = () => {
-  const TRef = React.useRef();
+  const TRef = React.useRef(null);
   const onChange = (value) => {
     console.log('22', TRef);
     console.log(typeof value);

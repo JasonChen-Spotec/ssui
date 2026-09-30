@@ -1,5 +1,6 @@
+import * as React from "react";
 import { IconProps } from "a-base-icon/lib/icon";
-declare function RectTwoBarOutlined(componentProps: IconProps): import("react/jsx-runtime").JSX.Element;
+declare function RectTwoBarOutlined(componentProps: IconProps): React.JSX.Element;
 declare namespace RectTwoBarOutlined {
     var displayName: string;
 }

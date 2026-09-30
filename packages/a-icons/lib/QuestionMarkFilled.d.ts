@@ -1,5 +1,6 @@
+import * as React from "react";
 import { IconProps } from "a-base-icon/lib/icon";
-declare function QuestionMarkFilled(componentProps: IconProps): import("react/jsx-runtime").JSX.Element;
+declare function QuestionMarkFilled(componentProps: IconProps): React.JSX.Element;
 declare namespace QuestionMarkFilled {
     var displayName: string;
 }

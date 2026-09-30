@@ -1,5 +1,6 @@
+import * as React from "react";
 import { IconProps } from "a-base-icon/lib/icon";
-declare function CreditCardOutlined(componentProps: IconProps): import("react/jsx-runtime").JSX.Element;
+declare function CreditCardOutlined(componentProps: IconProps): React.JSX.Element;
 declare namespace CreditCardOutlined {
     var displayName: string;
 }

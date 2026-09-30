@@ -1,5 +1,6 @@
+import * as React from "react";
 import { IconProps } from "a-base-icon/lib/icon";
-declare function CreditCardFilled(componentProps: IconProps): import("react/jsx-runtime").JSX.Element;
+declare function CreditCardFilled(componentProps: IconProps): React.JSX.Element;
 declare namespace CreditCardFilled {
     var displayName: string;
 }

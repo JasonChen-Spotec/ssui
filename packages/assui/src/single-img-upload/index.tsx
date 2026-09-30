@@ -58,8 +58,8 @@ const SingleImgUpload = (props: SingleImgUploadProps) => {
     pdfName,
     ...restProps
   } = props;
-  const uploadInstanceRef = React.useRef<Upload | null>();
-  const fileRef = React.useRef<RcFile | null>();
+  const uploadInstanceRef = React.useRef<Upload | null>(null);
+  const fileRef = React.useRef<RcFile | null>(null);
   const [uploadStatus, setUploadStatus] = React.useState(value ? 'done' : 'init');
   const [fileUrl, setFileUrl] = React.useState(value);
   const [uploadPercent, setUploadPercent] = React.useState(0);

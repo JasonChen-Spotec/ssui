@@ -21,7 +21,7 @@ export interface IconProps extends IconBaseProps {
     children?: React.ReactNode;
 }
 declare const Icon: {
-    (props: IconProps): import("react/jsx-runtime").JSX.Element;
+    (props: IconProps): React.JSX.Element;
     displayName: string;
 };
 export default Icon;

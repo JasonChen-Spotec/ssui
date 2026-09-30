@@ -30,11 +30,9 @@
     "README.md"
   ],
   "dependencies": {
-    "@ahooksjs/use-url-state": "^3.5.1",
     "@hello-pangea/dnd": "^18.0.1",
     "@rc-component/picker": "~1.12.2",
-    "@tinymce/tinymce-react": "^4.0.0",
-    "@types/react-color": "^3.0.6",
+    "@tinymce/tinymce-react": "^6.3.0",
     "@types/react-resizable": "^3.0.0",
     "a-icons": "^1.2.83",
     "aa-utils": "^2.1.38",
@@ -44,53 +42,56 @@
     "copy-to-clipboard": "^3.3.1",
     "echarts": "^5.1.2",
     "jsoneditor": "^9.9.0",
-    "jsoneditor-react": "^3.1.2",
     "moment": "^2.29.4",
     "qrcode": "^1.4.4",
     "rc-motion": "^2.4.4",
-    "rc-trigger": "^5.3.1",
     "rc-upload": "^4.3.6",
     "rc-util": "^5.13.2",
-    "react-color": "^2.19.3",
     "react-countup": "^6.5.3",
     "react-easy-crop": "^3.5.2",
-    "react-highlight-words": "^0.17.0",
+    "react-highlight-words": "^0.21.0",
     "react-number-format": "^5.4.0",
     "react-resizable": "^3.0.4",
-    "react-sortable-hoc": "^2.0.0",
-    "react-split-pane": "^0.1.92",
+    "react-split-pane": "^3.2.0",
     "react-transition-group": "^4.4.2",
     "resize-observer-polyfill": "^1.5.1",
     "signature_pad": "^5.1.1",
-    "tinymce": "^6.0.2"
+    "tinymce": "^6.0.2",
+    "@lumel/react-sortable-hoc": "2.0.6",
+    "react-color": "^2.19.3",
+    "@types/react-color": "^3.0.6",
+    "@rc-component/trigger": "^3.10.1",
+    "query-string": "^6.14.1"
   },
   "peerDependencies": {
     "antd": "^6.6.5",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0"
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-router": "^5.0.0 || ^6.0.0"
   },
   "resolutions": {
     "ahooks": "3.9.5",
-    "@types/react": "18.3.1",
-    "@types/react-dom": "18.3.1"
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0"
   },
   "devDependencies": {
     "@svgr/webpack": "^8.1.0",
     "@types/insert-css": "^2.0.1",
     "@types/jsoneditor": "^9.5.1",
     "@types/qrcode": "^1.4.1",
-    "@types/react": "18.3.1",
-    "@types/react-color": "^3.0.6",
-    "@types/react-dom": "18.3.1",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
     "@types/react-highlight-words": "^0.16.3",
     "@types/react-transition-group": "^4.4.2",
     "antd": "^6.6.5",
     "array-move": "^4.0.0",
     "jest-websocket-mock": "^2.1.0",
-    "mock-socket": "^9.0.3"
+    "mock-socket": "^9.0.3",
+    "@types/react-color": "^3.0.6",
+    "react-router": "^6.30.1"
   },
   "engines": {
-    "node": ">=10.0.0"
+    "node": ">=20.0.0"
   },
   "license": "MIT"
 }

@@ -7,10 +7,10 @@ Object.defineProperty(exports, "__esModule", {
 var tslib_1 = require("tslib");
 var jsx_runtime_1 = require("react/jsx-runtime");
 var react_1 = require("react");
+var trigger_1 = tslib_1.__importDefault(require("@rc-component/trigger"));
 var ChevronRightOutlined_1 = tslib_1.__importDefault(require("a-icons/lib/ChevronRightOutlined"));
 var useControllableValue_1 = tslib_1.__importDefault(require("ahooks/lib/useControllableValue"));
 var classnames_1 = tslib_1.__importDefault(require("classnames"));
-var rc_trigger_1 = tslib_1.__importDefault(require("rc-trigger"));
 var react_color_1 = require("react-color");
 var context_1 = tslib_1.__importDefault(require("../config-provider/context"));
 var messages_1 = tslib_1.__importStar(require("../messages"));
@@ -50,7 +50,9 @@ var ColorSelect = function ColorSelect(props) {
   });
   return (0, jsx_runtime_1.jsxs)("div", {
     className: (0, classnames_1["default"])('color-select-wrap', classNameWrap),
-    children: [(0, jsx_runtime_1.jsx)(rc_trigger_1["default"], _extends({
+    children: [(0, jsx_runtime_1.jsx)(trigger_1["default"], _extends({
+      prefixCls: "color-select-popup",
+      zIndex: 1050,
       popupAlign: {
         points: ['tl', 'bl'],
         offset: [0, 3]

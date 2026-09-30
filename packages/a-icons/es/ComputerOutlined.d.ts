@@ -1,5 +1,6 @@
+import * as React from "react";
 import { IconProps } from "a-base-icon/lib/icon";
-declare function ComputerOutlined(componentProps: IconProps): import("react/jsx-runtime").JSX.Element;
+declare function ComputerOutlined(componentProps: IconProps): React.JSX.Element;
 declare namespace ComputerOutlined {
     var displayName: string;
 }

@@ -11,6 +11,32 @@ group:
 
 # SortableHoc 拖拽
 
+## React 19 适配
+
+`sortableHoc` 使用兼容 React 19 的 `@lumel/react-sortable-hoc`，保留 `sortableContainer`、`sortableElement`、`sortableHandle` 和 `arrayMove` 接口。
+
+React 19 移除了 `findDOMNode`。容器、条目和拖拽手柄都需要把 HOC 提供的 `ref` 传给对应的真实 DOM 元素；旧的函数组件需要按下面方式适配。不要给 DOM 再增加包裹层，以免改变列表或网格布局。
+
+```tsx | pure
+const SortableItem = sortableHoc.sortableElement(
+  React.forwardRef<HTMLDivElement, { value: string }>(({ value }, ref) => (
+    <div ref={ref}>{value}</div>
+  )),
+);
+
+const SortableList = sortableHoc.sortableContainer(
+  React.forwardRef<HTMLDivElement, { items: string[] }>(({ items }, ref) => (
+    <div ref={ref}>
+      {items.map((value, index) => (
+        <SortableItem key={value} index={index} value={value} />
+      ))}
+    </div>
+  )),
+);
+```
+
+使用自定义拖拽手柄时，同样用 `React.forwardRef` 把 `ref` 交给手柄 DOM。旧类组件也应改为以上转发 DOM ref 的形式；HOC 获取的是 DOM 节点，不能传入类组件实例。
+
 ## 1. 代码演示
 
 ### 1.1. 基本应用
@@ -51,4 +77,4 @@ group:
 | disableAutoscroll                 | 禁止拖动时候窗口滚动| boolean            | false                           |
 
 
-> 详情api [react-sortable-hoc](https://github.com/clauderic/react-sortable-hoc)
+> 兼容版本与迁移说明：[@lumel/react-sortable-hoc](https://www.npmjs.com/package/@lumel/react-sortable-hoc)

@@ -6,6 +6,8 @@ import style from './index.modules.less';
 const { arrayMove } = sortableHoc;
 
 export default class ListWrapper extends React.Component {
+  componentRef = React.createRef();
+
   state = {
     items: this.props.items,
     isSorting: false,
@@ -25,7 +27,7 @@ export default class ListWrapper extends React.Component {
     document.body.style.cursor = 'grabbing';
 
     if (onSortStart) {
-      onSortStart(sortEvent, nativeEvent, this.refs.component);
+      onSortStart(sortEvent, nativeEvent, this.componentRef.current);
     }
   };
 
@@ -42,7 +44,7 @@ export default class ListWrapper extends React.Component {
     document.body.style.cursor = '';
 
     if (onSortEnd) {
-      onSortEnd(sortEvent, nativeEvent, this.refs.component);
+      onSortEnd(sortEvent, nativeEvent, this.componentRef.current);
     }
   };
 
@@ -54,7 +56,7 @@ export default class ListWrapper extends React.Component {
       items,
       onSortEnd: this.onSortEnd,
       onSortStart: this.onSortStart,
-      ref: 'component',
+      ref: this.componentRef,
       useDragHandle: this.props.shouldUseDragHandle,
     };
 

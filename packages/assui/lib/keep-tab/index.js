@@ -9,11 +9,11 @@ Object.defineProperty(exports, "__esModule", {
 var tslib_1 = require("tslib");
 var jsx_runtime_1 = require("react/jsx-runtime");
 var React = tslib_1.__importStar(require("react"));
-var use_url_state_1 = tslib_1.__importDefault(require("@ahooksjs/use-url-state"));
 var qsHelp_1 = tslib_1.__importDefault(require("aa-utils/lib/qsHelp"));
 var useControllableValue_1 = tslib_1.__importDefault(require("ahooks/lib/useControllableValue"));
 var antd_1 = require("antd");
 var find_1 = tslib_1.__importDefault(require("lodash/find"));
+var use_url_state_1 = tslib_1.__importDefault(require("./use-url-state"));
 var TabPane = antd_1.Tabs.TabPane;
 var defaultBadgeProps = {};
 var KeepTab = function KeepTab(props) {
@@ -42,8 +42,8 @@ var KeepTab = function KeepTab(props) {
     setTabActiveKey = _ref3[1];
   React.useEffect(function () {
     if (!('activeKey' in props) && items) {
-      var resultActiveTab = (0, find_1["default"])(items, {
-        key: urlParams[saveActiveKeyName]
+      var resultActiveTab = (0, find_1["default"])(items, function (item) {
+        return item.key === urlParams[saveActiveKeyName];
       });
       if (!resultActiveTab || resultActiveTab.disabled) {
         var _setUrlParams;

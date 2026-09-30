@@ -69,7 +69,7 @@ const defaultToolbar =
   'alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | ' +
   'removeformat | help';
 
-const defaultInit = {
+const defaultInit: NonNullable<IAllProps['init']> = {
   height: 300,
   language: 'zh-Hans',
   menubar: false,

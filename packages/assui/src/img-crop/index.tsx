@@ -88,12 +88,14 @@ const ImgCrop = (props: ImgCropProps) => {
   const [zoomVal, setZoomVal] = React.useState(1);
   const [rotateVal, setRotateVal] = React.useState(0);
 
-  const beforeUploadRef = React.useRef<beforeUploadFunc | Promise<beforeUploadFunc>>();
-  const fileRef = React.useRef<RcFile>();
+  const beforeUploadRef = React.useRef<
+    beforeUploadFunc | Promise<beforeUploadFunc> | undefined
+  >(undefined);
+  const fileRef = React.useRef<RcFile | undefined>(undefined);
   const resolveRef = React.useRef<(file: any) => void>(noop);
   const rejectRef = React.useRef<(value: any) => void>(noop);
 
-  const cropPixelsRef = React.useRef<Area>();
+  const cropPixelsRef = React.useRef<Area | undefined>(undefined);
 
   /**
    * Upload

@@ -1,5 +1,6 @@
+import * as React from "react";
 import { IconProps } from "a-base-icon/lib/icon";
-declare function DataPanelOutlined(componentProps: IconProps): import("react/jsx-runtime").JSX.Element;
+declare function DataPanelOutlined(componentProps: IconProps): React.JSX.Element;
 declare namespace DataPanelOutlined {
     var displayName: string;
 }

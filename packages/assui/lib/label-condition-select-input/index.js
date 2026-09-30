@@ -54,7 +54,7 @@ var LabelConditionSelectInput = function LabelConditionSelectInput(props) {
   var _ref2 = (0, react_1.useState)([]),
     subSelectOptions = _ref2[0],
     setSubSelectOptions = _ref2[1];
-  var subSelectRef = (0, react_1.useRef)();
+  var subSelectRef = (0, react_1.useRef)(null);
   /** 子选择器是否多选 */
   var isSubSelectMultiple = (conditionSelectProps == null ? void 0 : conditionSelectProps.mode) === 'multiple';
   (0, react_1.useEffect)(function () {

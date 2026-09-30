@@ -20,6 +20,7 @@
     "a-base-icon": "^1.1.4"
   },
   "peerDependencies": {
-    "assui": "^3.2.49"
+    "assui": "^3.2.49",
+    "react": "^19.0.0"
   }
 }

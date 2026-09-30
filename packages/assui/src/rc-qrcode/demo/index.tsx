@@ -4,9 +4,11 @@ import RcQRcode from 'assui/lib/rc-qrcode';
 import { canvasToImg } from 'aa-utils';
 
 export default () => {
-  const QRRef = useRef<HTMLCanvasElement>();
+  const QRRef = useRef<HTMLCanvasElement | null>(null);
   const onDownloadFilled = () => {
-    canvasToImg.saveAsImage(QRRef.current, { fileName: '文件名' });
+    if (QRRef.current) {
+      canvasToImg.saveAsImage(QRRef.current, { fileName: '文件名' });
+    }
   };
 
   return (

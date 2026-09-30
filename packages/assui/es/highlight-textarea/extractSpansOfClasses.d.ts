@@ -1,3 +1,4 @@
+import React from 'react';
 import type { RangesType } from './types';
 declare class Span {
     beginIndex: number;
@@ -9,7 +10,7 @@ declare class Span {
     setMark(className: string): void;
     carve(beginIndex2: number): Span;
     get className(): string;
-    render(): import("react/jsx-runtime").JSX.Element;
+    render(): React.JSX.Element;
 }
 export default function extractSpansOfClasses(value: string, ranges: RangesType): Span[];
 export {};

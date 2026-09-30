@@ -4,7 +4,7 @@ import type * as Type from 'tinymce/tinymce';
 import { Button } from 'antd';
 
 export default function App() {
-  const editRef = React.useRef<Type.Editor>();
+  const editRef = React.useRef<Type.Editor | null>(null);
 
   const onChange = (value) => {
     console.log('value', value);

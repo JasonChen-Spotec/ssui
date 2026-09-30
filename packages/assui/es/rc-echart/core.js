@@ -18,8 +18,8 @@ var ReactEchartCore = function ReactEchartCore(props) {
     _props$opts = props.opts,
     opts = _props$opts === void 0 ? initEmptyObject : _props$opts,
     theme = props.theme;
-  var chartDomRef = useRef();
-  var chartRef = useRef();
+  var chartDomRef = useRef(null);
+  var chartRef = useRef(null);
   var bindEvents = function bindEvents() {
     var bindEventFunc = function bindEventFunc(eventName, func) {
       if (typeof eventName === 'string' && typeof func === 'function') {
@@ -88,9 +88,7 @@ var ReactEchartCore = function ReactEchartCore(props) {
     height: '100%'
   };
   return _jsx("div", {
-    ref: function ref(node) {
-      chartDomRef.current = node;
-    },
+    ref: chartDomRef,
     style: defaultStyle,
     className: classNames('react-echart', className)
   });

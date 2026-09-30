@@ -36,7 +36,7 @@ export declare type Area = {
     y: number;
 };
 declare const ImgCrop: {
-    (props: ImgCropProps): import("react/jsx-runtime").JSX.Element;
+    (props: ImgCropProps): React.JSX.Element;
     getCroppedImg: typeof getCroppedImg;
 };
 export default ImgCrop;

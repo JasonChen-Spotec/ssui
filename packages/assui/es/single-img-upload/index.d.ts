@@ -1,3 +1,4 @@
+import * as React from 'react';
 import type { UploadProps } from 'rc-upload';
 export interface RcFile extends File {
     uid: string;
@@ -15,5 +16,5 @@ export interface SingleImgUploadProps extends UploadProps {
     /** pdf名称 */
     pdfName?: string;
 }
-declare const SingleImgUpload: (props: SingleImgUploadProps) => import("react/jsx-runtime").JSX.Element;
+declare const SingleImgUpload: (props: SingleImgUploadProps) => React.JSX.Element;
 export default SingleImgUpload;

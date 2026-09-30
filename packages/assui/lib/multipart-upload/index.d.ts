@@ -37,7 +37,7 @@ export interface MultipartUploadProps extends Omit<UploadProps, 'onSuccess'> {
     errorCatch?: (error: any) => void;
 }
 declare const MultipartUpload: {
-    (props: MultipartUploadProps): import("react/jsx-runtime").JSX.Element;
+    (props: MultipartUploadProps): React.JSX.Element;
     displayName: string;
 };
 export default MultipartUpload;

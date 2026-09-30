@@ -1,5 +1,4 @@
 import React from 'react';
-/** 只做描述 */
 export type SplitPaneProps = {
     /**
      * 是否允许拖动

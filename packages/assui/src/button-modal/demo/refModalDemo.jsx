@@ -14,7 +14,7 @@ const Content = ({ modalAction }) => {
 };
 
 const Demo = () => {
-  const modalRef = useRef();
+  const modalRef = useRef(null);
 
   return (
     <div>

@@ -1,3 +1,4 @@
+import React from 'react';
 import type { SelectProps } from 'antd';
 import type { ComplexValSelectProps, ComplexValSelectValueType } from '../complex-val-select';
 import type { ConditionInputProps } from '../condition-input';
@@ -42,5 +43,5 @@ export interface ConditionSelectInputProps {
     /** select options */
     optionsList: MainSelectOptionsType[];
 }
-declare const ConditionSelectInput: (props: ConditionSelectInputProps) => import("react/jsx-runtime").JSX.Element;
+declare const ConditionSelectInput: (props: ConditionSelectInputProps) => React.JSX.Element;
 export default ConditionSelectInput;

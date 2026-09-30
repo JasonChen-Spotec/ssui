@@ -1,5 +1,25 @@
 @import '../../style/variables.less';
 
+.color-select-popup {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+
+  &-hidden {
+    display: none;
+  }
+
+  &-mask {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(55, 55, 55, 0.6);
+  }
+
+  &-mask-hidden {
+    display: none;
+  }
+}
+
 .color-select-wrap {
   display: flex;
 }

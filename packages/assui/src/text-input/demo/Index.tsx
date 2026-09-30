@@ -6,7 +6,7 @@ const onChange = (value) => {
 };
 
 export default () => {
-  const textInputRef = React.useRef();
+  const textInputRef = React.useRef(null);
 
   React.useEffect(() => {
     console.log(textInputRef, 'textInputRef');

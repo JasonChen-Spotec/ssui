@@ -1,5 +1,6 @@
+import * as React from "react";
 import { IconProps } from "a-base-icon/lib/icon";
-declare function HandCoinsFilled(componentProps: IconProps): import("react/jsx-runtime").JSX.Element;
+declare function HandCoinsFilled(componentProps: IconProps): React.JSX.Element;
 declare namespace HandCoinsFilled {
     var displayName: string;
 }

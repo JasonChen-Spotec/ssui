@@ -27,8 +27,8 @@ var HighlightWithinTextarea = React.forwardRef(function (props, ref) {
     textAreaValue = _React$useState[0],
     setTextAreaValue = _React$useState[1];
   var resultValue = value || textAreaValue;
-  var containerRef = React.useRef();
-  var backdropRef = React.useRef();
+  var containerRef = React.useRef(null);
+  var backdropRef = React.useRef(null);
   var handleScroll = function handleScroll() {
     var _containerRef$current;
     var textareaDom = (_containerRef$current = containerRef.current) == null ? void 0 : _containerRef$current.querySelector('textarea');
@@ -52,14 +52,10 @@ var HighlightWithinTextarea = React.forwardRef(function (props, ref) {
   var textareaCls = (0, classnames_1["default"])(prefixCls + "-input", 'highlight-textarea-input', 'highlight-content', textAreaClassName);
   return (0, jsx_runtime_1.jsxs)("div", {
     className: (0, classnames_1["default"])('highlight-textarea', className),
-    ref: function ref(node) {
-      containerRef.current = node;
-    },
+    ref: containerRef,
     children: [(0, jsx_runtime_1.jsx)("div", {
       className: "highlight-textarea-backdrop highlight-content",
-      ref: function ref(node) {
-        backdropRef.current = node;
-      },
+      ref: backdropRef,
       children: (0, jsx_runtime_1.jsx)(HighlighedContents_1["default"], {
         value: resultValue,
         highlight: highlight

@@ -34,7 +34,9 @@ const CopyToClipboard = (props: CopyToClipboardProps) => {
   };
 
   const onClick = (event: React.SyntheticEvent) => {
-    const elem = React.Children.only(children);
+    const elem = React.Children.only(children) as React.ReactElement<{
+      onClick?: React.EventHandler<React.SyntheticEvent>;
+    }>;
     const result = copy(text, options);
 
     if (onCopy) {
@@ -60,7 +62,9 @@ const CopyToClipboard = (props: CopyToClipboardProps) => {
       <span onClick={onClick}>{children}</span>
     </Tooltip>
   ) : (
-    React.cloneElement(children, { onClick })
+    React.cloneElement(children as React.ReactElement<{ onClick: typeof onClick }>, {
+      onClick,
+    })
   );
 };
 

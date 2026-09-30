@@ -113,11 +113,11 @@ var ImgCrop = function ImgCrop(props) {
   var _React$useState3 = React.useState(0),
     rotateVal = _React$useState3[0],
     setRotateVal = _React$useState3[1];
-  var beforeUploadRef = React.useRef();
-  var fileRef = React.useRef();
+  var beforeUploadRef = React.useRef(undefined);
+  var fileRef = React.useRef(undefined);
   var resolveRef = React.useRef(noop);
   var rejectRef = React.useRef(noop);
-  var cropPixelsRef = React.useRef();
+  var cropPixelsRef = React.useRef(undefined);
   /**
    * Upload
    */

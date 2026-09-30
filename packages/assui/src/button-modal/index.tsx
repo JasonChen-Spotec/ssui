@@ -86,7 +86,7 @@ const ButtonModal: React.ForwardRefRenderFunction<unknown, ButtonModalProps> = (
   } else {
     triggerNode =
       trigger &&
-      React.cloneElement(trigger, {
+      React.cloneElement(trigger as React.ReactElement<{ onClick: () => void }>, {
         onClick: openModal,
       });
   }
@@ -106,7 +106,10 @@ const ButtonModal: React.ForwardRefRenderFunction<unknown, ButtonModalProps> = (
       >
         {isFunction(children)
           ? children(modalActionRef.current)
-          : React.cloneElement(children, { modalAction: modalActionRef.current })}
+          : React.cloneElement(
+              children as React.ReactElement<{ modalAction: ModalAction }>,
+              { modalAction: modalActionRef.current },
+            )}
       </Modal>
     </>
   );

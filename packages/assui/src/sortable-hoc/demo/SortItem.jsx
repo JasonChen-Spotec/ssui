@@ -7,7 +7,7 @@ import style from './index.modules.less';
 const { sortableElement } = sortableHoc;
 
 const SortItem = sortableElement(
-  ({
+  React.forwardRef(({
     tabbable,
     className,
     isDisabled,
@@ -17,12 +17,13 @@ const SortItem = sortableElement(
     value,
     itemIndex,
     isSorting,
-  }) => {
+  }, ref) => {
     const bodyTabIndex = tabbable && !shouldUseDragHandle ? 0 : -1;
     const handleTabIndex = tabbable && shouldUseDragHandle ? 0 : -1;
 
     return (
       <div
+        ref={ref}
         className={classNames(
           className,
           isDisabled && style.disabled,
@@ -42,7 +43,7 @@ const SortItem = sortableElement(
         </div>
       </div>
     );
-  },
+  }),
 );
 
 export default SortItem;

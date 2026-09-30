@@ -11,8 +11,10 @@ export interface ModalAction {
 export interface ButtonModalProps extends Omit<DialogProps, 'children'> {
   onClose?: () => void;
   onOpen?: () => void;
-  trigger?: React.ReactElement;
-  children: ((v: ModalAction) => React.ReactElement) | React.ReactElement;
+  trigger?: React.ReactElement<{ onClick?: React.MouseEventHandler }>;
+  children:
+    | ((v: ModalAction) => React.ReactElement)
+    | React.ReactElement<{ modalAction?: ModalAction }>;
 }
 
 const ForwardRefButtonModal = React.forwardRef<unknown, ButtonModalProps>(

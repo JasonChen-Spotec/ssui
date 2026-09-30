@@ -1,11 +1,12 @@
 import React from 'react';
-import type { TriggerProps } from 'rc-trigger';
+import type { TriggerProps } from '@rc-component/trigger';
 import type { SketchPickerProps } from 'react-color';
 export type ColorSelectProps = {
     value?: {
         hex?: string;
         rgb?: string;
     };
+    onChange?: (value: NonNullable<ColorSelectProps['value']>) => void;
     /** 自定义总容器 class */
     classNameWrap?: string;
     /** 自定义其余描述展示 */
@@ -14,8 +15,8 @@ export type ColorSelectProps = {
     className?: string;
     /** 组件react-color的props */
     reactColorProps?: Omit<SketchPickerProps, 'onChange'>;
-    /** 组件rc-trigger */
-    RcTriggerProps?: Omit<TriggerProps, 'popup'>;
+    /** 组件 @rc-component/trigger 的弹层配置 */
+    RcTriggerProps?: Omit<TriggerProps, 'popup' | 'children'>;
     /** 自定义value的展示 */
     renderValueNode?: (value: ColorSelectProps['value']) => React.ReactElement;
 };

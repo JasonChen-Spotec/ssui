@@ -1,3 +1,4 @@
+import React from 'react';
 import type { EChartsOption } from 'echarts';
 export type Opts = {
     devicePixelRatio?: number;
@@ -18,5 +19,5 @@ export interface RcEchartPropsType {
     onEvents?: Record<string, EchartEventFunc>;
     opts?: Opts;
 }
-declare const ReactEchartCore: (props: RcEchartPropsType) => import("react/jsx-runtime").JSX.Element;
+declare const ReactEchartCore: (props: RcEchartPropsType) => React.JSX.Element;
 export default ReactEchartCore;

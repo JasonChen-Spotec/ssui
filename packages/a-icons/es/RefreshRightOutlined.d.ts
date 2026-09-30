@@ -1,5 +1,6 @@
+import * as React from "react";
 import { IconProps } from "a-base-icon/lib/icon";
-declare function RefreshRightOutlined(componentProps: IconProps): import("react/jsx-runtime").JSX.Element;
+declare function RefreshRightOutlined(componentProps: IconProps): React.JSX.Element;
 declare namespace RefreshRightOutlined {
     var displayName: string;
 }

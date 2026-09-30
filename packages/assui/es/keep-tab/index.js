@@ -3,11 +3,11 @@ function _extends() { return _extends = Object.assign ? Object.assign.bind() : f
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (-1 !== e.indexOf(n)) continue; t[n] = r[n]; } return t; }
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import * as React from 'react';
-import useUrlState from '@ahooksjs/use-url-state';
 import qsHelp from "aa-utils/es/qsHelp";
 import useControllableValue from "ahooks/es/useControllableValue";
 import { Badge, Tabs } from 'antd';
 import find from 'lodash/find';
+import useUrlState from './use-url-state';
 var TabPane = Tabs.TabPane;
 var defaultBadgeProps = {};
 var KeepTab = function KeepTab(props) {
@@ -36,8 +36,8 @@ var KeepTab = function KeepTab(props) {
     setTabActiveKey = _useControllableValue[1];
   React.useEffect(function () {
     if (!('activeKey' in props) && items) {
-      var resultActiveTab = find(items, {
-        key: urlParams[saveActiveKeyName]
+      var resultActiveTab = find(items, function (item) {
+        return item.key === urlParams[saveActiveKeyName];
       });
       if (!resultActiveTab || resultActiveTab.disabled) {
         var _setUrlParams;

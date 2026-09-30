@@ -86,7 +86,7 @@ const LabelConditionSelectInput = (props: LabelConditionSelectInputProps) => {
   const isInput = inputType === InputTypeEnum.CONDITION_INPUT;
   const [selectInputValue, setSelectInputValue] = useControllableValue<ValueType>(props);
   const [subSelectOptions, setSubSelectOptions] = useState<SelectOptionsType[]>([]);
-  const subSelectRef = useRef<RefSelectProps>();
+  const subSelectRef = useRef<RefSelectProps | null>(null);
   /** 子选择器是否多选 */
   const isSubSelectMultiple = conditionSelectProps?.mode === 'multiple';
 

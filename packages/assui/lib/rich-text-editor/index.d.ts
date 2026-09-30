@@ -1,3 +1,4 @@
+import React from 'react';
 import type { IAllProps } from '@tinymce/tinymce-react';
 import 'tinymce/themes/silver';
 import 'tinymce/models/dom';
@@ -31,6 +32,6 @@ import 'tinymce/skins/ui/oxide/skin.min.css';
 export type RichTextEditorProps = IAllProps;
 declare const defaultPlugins: string[];
 declare const defaultToolbar: string;
-declare const RichTextEditor: (props: IAllProps) => import("react/jsx-runtime").JSX.Element;
+declare const RichTextEditor: (props: IAllProps) => React.JSX.Element;
 export { defaultPlugins, defaultToolbar };
 export default RichTextEditor;

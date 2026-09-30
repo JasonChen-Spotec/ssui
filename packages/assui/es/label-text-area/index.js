@@ -48,9 +48,7 @@ var LabelTextArea = function LabelTextArea(props) {
       }),
       onClick: handleLabelClick,
       children: [_jsx("textarea", _extends({}, restProps, {
-        ref: function ref(el) {
-          return TextAreaDomRef.current = el;
-        },
+        ref: TextAreaDomRef,
         "data-value": value ? value.length : 0,
         className: "label-textarea",
         value: value,

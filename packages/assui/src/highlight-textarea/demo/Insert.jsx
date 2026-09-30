@@ -3,7 +3,7 @@ import { Tag } from 'antd';
 import { HighlightTextarea } from 'assui';
 
 const Demo = () => {
-  const textareaRef = useRef();
+  const textareaRef = useRef(null);
   const [value, setValue] = useState('这个炫酷的例子，请点击好字');
 
   const handleClick = (tagValue) => {

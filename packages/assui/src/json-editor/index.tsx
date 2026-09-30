@@ -20,9 +20,9 @@ const JsonEditor: React.ForwardRefRenderFunction<unknown, JSONEditorProps> = (
 ) => {
   const { options, className } = props;
   const [value, setValue] = useControllableValue(props);
-  const containerRef = React.useRef<HTMLDivElement | null>();
+  const containerRef = React.useRef<HTMLDivElement | null>(null);
 
-  const editorInstanceRef = React.useRef<JSONEditor>();
+  const editorInstanceRef = React.useRef<JSONEditor | null>(null);
 
   useMount(() => {
     editorInstanceRef.current = new JSONEditor(containerRef.current as HTMLDivElement, {
@@ -52,12 +52,7 @@ const JsonEditor: React.ForwardRefRenderFunction<unknown, JSONEditorProps> = (
     editorInstanceRef.current?.destroy();
   });
 
-  return (
-    <div
-      ref={(el) => (containerRef.current = el)}
-      className={classNames('a-jason-editor', className)}
-    />
-  );
+  return <div ref={containerRef} className={classNames('a-jason-editor', className)} />;
 };
 
 const ForwardRefJsonEditor = React.forwardRef<unknown, JSONEditorProps>(JsonEditor);

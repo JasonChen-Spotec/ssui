@@ -14,7 +14,7 @@ const Content = ({ drawerAction }) => {
 };
 
 const Demo = () => {
-  const drawerRef = useRef();
+  const drawerRef = useRef(null);
 
   return (
     <div>

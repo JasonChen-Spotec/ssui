@@ -13,8 +13,8 @@ var JsonEditor = function JsonEditor(props, ref) {
   var _useControllableValue = useControllableValue(props),
     value = _useControllableValue[0],
     setValue = _useControllableValue[1];
-  var containerRef = React.useRef();
-  var editorInstanceRef = React.useRef();
+  var containerRef = React.useRef(null);
+  var editorInstanceRef = React.useRef(null);
   useMount(function () {
     editorInstanceRef.current = new JSONEditor(containerRef.current, _extends({
       mode: 'code',
@@ -46,9 +46,7 @@ var JsonEditor = function JsonEditor(props, ref) {
     (_editorInstanceRef$cu4 = editorInstanceRef.current) == null || _editorInstanceRef$cu4.destroy();
   });
   return _jsx("div", {
-    ref: function ref(el) {
-      return containerRef.current = el;
-    },
+    ref: containerRef,
     className: classNames('a-jason-editor', className)
   });
 };

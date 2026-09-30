@@ -42,10 +42,10 @@ describe('LabelTextArea', () => {
     const { getByRole } = render(<LabelTextArea />);
     const textarea = getByRole('textbox');
 
-    textarea.focus();
+    act(() => textarea.focus());
     expect(baseProps.onFocus).not.toBeCalled();
 
-    textarea.blur();
+    act(() => textarea.blur());
     expect(baseProps.onBlur).not.toBeCalled();
   });
 });

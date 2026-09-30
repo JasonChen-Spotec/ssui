@@ -39,8 +39,8 @@ const ReactEchartCore = (props: RcEchartPropsType) => {
     opts = initEmptyObject,
     theme,
   } = props;
-  const chartDomRef = useRef<HTMLDivElement>();
-  const chartRef = useRef<EChartsInterfaceType>();
+  const chartDomRef = useRef<HTMLDivElement | null>(null);
+  const chartRef = useRef<EChartsInterfaceType | null>(null);
 
   const bindEvents = () => {
     const bindEventFunc = (eventName: string, func: EchartEventFunc) => {
@@ -123,9 +123,7 @@ const ReactEchartCore = (props: RcEchartPropsType) => {
 
   return (
     <div
-      ref={(node: HTMLDivElement) => {
-        chartDomRef.current = node;
-      }}
+      ref={chartDomRef}
       style={defaultStyle}
       className={classNames('react-echart', className)}
     />

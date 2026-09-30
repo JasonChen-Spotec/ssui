@@ -48,10 +48,10 @@ describe('LabelNumberInput', () => {
     const { getByRole } = render(<LabelNumberInput />);
     const input = getByRole('textbox');
 
-    input.focus();
+    act(() => input.focus());
     expect(baseProps.onFocus).not.toBeCalled();
 
-    input.blur();
+    act(() => input.blur());
     expect(baseProps.onBlur).not.toBeCalled();
   });
 });

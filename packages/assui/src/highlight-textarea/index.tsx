@@ -36,8 +36,8 @@ const HighlightWithinTextarea = React.forwardRef<
   const [textAreaValue, setTextAreaValue] = React.useState('');
   const resultValue = value || textAreaValue;
 
-  const containerRef = React.useRef<HTMLDivElement>();
-  const backdropRef = React.useRef<HTMLDivElement>();
+  const containerRef = React.useRef<HTMLDivElement | null>(null);
+  const backdropRef = React.useRef<HTMLDivElement | null>(null);
 
   const handleScroll = () => {
     const textareaDom = containerRef.current?.querySelector('textarea');
@@ -73,18 +73,8 @@ const HighlightWithinTextarea = React.forwardRef<
   );
 
   return (
-    <div
-      className={classNames('highlight-textarea', className)}
-      ref={(node: HTMLDivElement) => {
-        containerRef.current = node;
-      }}
-    >
-      <div
-        className="highlight-textarea-backdrop highlight-content"
-        ref={(node: HTMLDivElement) => {
-          backdropRef.current = node;
-        }}
-      >
+    <div className={classNames('highlight-textarea', className)} ref={containerRef}>
+      <div className="highlight-textarea-backdrop highlight-content" ref={backdropRef}>
         <HighlighedContents value={resultValue} highlight={highlight} />
       </div>
       <textarea
@@ -93,7 +83,7 @@ const HighlightWithinTextarea = React.forwardRef<
         className={textareaCls}
         {...textareaProps}
         onScroll={handleScroll}
-        ref={ref as any}
+        ref={ref}
       />
     </div>
   );
