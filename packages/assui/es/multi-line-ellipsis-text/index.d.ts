@@ -1,5 +1,5 @@
 import React from 'react';
-import type { TooltipProps } from 'antd/lib/tooltip';
+import type { TooltipProps } from 'antd';
 import type { ButtonModalProps } from '../button-modal';
 export interface MultiLineEllipsisTextProps {
     /** 需要处理的文案 */

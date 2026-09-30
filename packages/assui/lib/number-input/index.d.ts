@@ -1,5 +1,5 @@
 import * as React from 'react';
-import type { InputProps } from 'antd/lib/input';
+import type { InputProps } from 'antd';
 import * as dataTypeEnum from './const/dataTypeEnum';
 import * as numberTypeEnum from './const/numberType';
 export type NumberInputValueType = string | number;

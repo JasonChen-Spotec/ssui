@@ -17,7 +17,7 @@
   },
   "devDependencies": {
     "@types/qs": "^6.9.7",
-    "antd": "^4.24.16",
+    "antd": "^6.6.5",
     "popmotion": "^9.4.0",
     "stylefire": "^7.0.3"
   },

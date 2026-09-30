@@ -1,5 +1,4 @@
 /* stylelint-disable indentation */
-@import '~antd/lib/style/index.less';
 @import '../../style/themes/default.less';
 @import '../../style/variables.less';
 
@@ -8,22 +7,24 @@
   width: 100%;
   height: 100%;
 
-  .@{ant-prefix}-select:not(.@{ant-prefix}-select-customize-input)
-    .@{ant-prefix}-select-selector {
+  .@{ant-prefix}-select:not(.@{ant-prefix}-select-customize) {
+    width: 100%;
     height: 45px;
     border: 1px solid @color_e5e5e5;
     border-radius: @border-radius-base;
     outline: none;
+
+    &.@{ant-prefix}-select-open:not(.@{ant-prefix}-select-disabled) {
+      border-color: @labelFocusBorderColor;
+      box-shadow: none;
+    }
   }
 
-  .@{ant-prefix}-select-selection-overflow {
-    display: none;
-  }
-
-  .@{ant-prefix}-select-open:not(.@{ant-prefix}-select-disabled).@{ant-prefix}-select:not(.@{ant-prefix}-select-customize-input)
-    .@{ant-prefix}-select-selector {
-    border-color: @labelFocusBorderColor;
-    box-shadow: none;
+  // Keep the count summary in place of the selection chips without removing
+  // the input from the focus order used for keyboard navigation.
+  .@{ant-prefix}-select-multiple .@{ant-prefix}-select-content {
+    opacity: 0;
+    pointer-events: none;
   }
 
   &-text {

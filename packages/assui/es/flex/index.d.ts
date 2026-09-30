@@ -1,5 +1,6 @@
 import React from 'react';
-import type { SizeType } from 'antd/lib/config-provider/SizeContext';
+import type { ConfigProviderProps } from 'antd';
+type SizeType = ConfigProviderProps['componentSize'];
 export interface FlexProps<P = Record<PropertyKey, any>> extends React.HTMLAttributes<HTMLElement> {
     /** flex 主轴的方向是否垂直 */
     vertical?: boolean;

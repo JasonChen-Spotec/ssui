@@ -43,26 +43,7 @@ export default defineConfig({
       .use('svg')
       .loader('@svgr/webpack');
   },
-  links: [
-    { rel: 'stylesheet', href: '/ssui/antd.min.css' }, // fix product demo no antd styles
-    { rel: 'stylesheet', href: '/ssui/single-img-upload.css' },
-    { rel: 'stylesheet', href: '/ssui/split-pane.css' },
-    { rel: 'stylesheet', href: '/ssui/highlight-textarea.css' },
-    { rel: 'stylesheet', href: '/ssui/a-select.css' },
-    { rel: 'stylesheet', href: '/ssui/area-text.css' },
-    { rel: 'stylesheet', href: '/ssui/color-select.css' },
-  ],
   extraBabelPlugins: [
-    [
-      'babel-plugin-import',
-      {
-        libraryName: 'antd',
-        libraryDirectory: 'es',
-        style: true,
-      },
-      'antd',
-    ],
-
     [
       'babel-plugin-import',
       {

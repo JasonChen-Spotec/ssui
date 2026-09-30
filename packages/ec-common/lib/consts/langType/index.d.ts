@@ -25,19 +25,19 @@ export declare const AR: "ar";
 /** 🇮🇩 印度尼西亚语 */
 export declare const ID: "id";
 export declare const antI18nMap: {
-    "zh-CN": import("antd/lib/locale-provider").Locale;
-    "en-US": import("antd/lib/locale-provider").Locale;
-    "zh-TW": import("antd/lib/locale-provider").Locale;
-    es: import("antd/lib/locale-provider").Locale;
-    fr: import("antd/lib/locale-provider").Locale;
-    id: import("antd/lib/locale-provider").Locale;
-    ja: import("antd/lib/locale-provider").Locale;
-    ko: import("antd/lib/locale-provider").Locale;
-    pt: import("antd/lib/locale-provider").Locale;
-    ar: import("antd/lib/locale-provider").Locale;
-    th: import("antd/lib/locale-provider").Locale;
-    vi: import("antd/lib/locale-provider").Locale;
-    "ms-MY": import("antd/lib/locale-provider").Locale;
+    "zh-CN": import("antd/lib/locale").Locale;
+    "en-US": import("antd/lib/locale").Locale;
+    "zh-TW": import("antd/lib/locale").Locale;
+    es: import("antd/lib/locale").Locale;
+    fr: import("antd/lib/locale").Locale;
+    id: import("antd/lib/locale").Locale;
+    ja: import("antd/lib/locale").Locale;
+    ko: import("antd/lib/locale").Locale;
+    pt: import("antd/lib/locale").Locale;
+    ar: import("antd/lib/locale").Locale;
+    th: import("antd/lib/locale").Locale;
+    vi: import("antd/lib/locale").Locale;
+    "ms-MY": import("antd/lib/locale").Locale;
 };
 export declare const languages: {
     "en-US": "en-US";

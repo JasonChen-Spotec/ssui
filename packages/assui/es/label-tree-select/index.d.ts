@@ -1,5 +1,5 @@
 import React from 'react';
-import type { TreeSelectProps } from 'antd/lib/tree-select';
+import type { TreeSelectProps } from 'antd';
 export interface LabelTreeSelectProps extends Omit<TreeSelectProps<string[]>, 'onDropdownVisibleChange'> {
     /** 输入框的label */
     label?: React.ReactNode;

@@ -8,7 +8,7 @@ var tslib_1 = require("tslib");
 var jsx_runtime_1 = require("react/jsx-runtime");
 var react_1 = tslib_1.__importDefault(require("react"));
 var useControllableValue_1 = tslib_1.__importDefault(require("ahooks/lib/useControllableValue"));
-var auto_complete_1 = tslib_1.__importDefault(require("antd/lib/auto-complete"));
+var antd_1 = require("antd");
 var classnames_1 = tslib_1.__importDefault(require("classnames"));
 var omit_1 = tslib_1.__importDefault(require("lodash/omit"));
 var trimStart_1 = tslib_1.__importDefault(require("lodash/trimStart"));
@@ -39,8 +39,10 @@ var LabelAutoComplete = function LabelAutoComplete(props) {
     }
     autoComplete.current.focus();
   };
-  var onDropdownVisibleChange = function onDropdownVisibleChange(nextOpen) {
+  var handleOpenChange = function handleOpenChange(nextOpen) {
+    var _ref3, _props$onOpenChange;
     setOpen(nextOpen);
+    (_ref3 = (_props$onOpenChange = props.onOpenChange) != null ? _props$onOpenChange : props.onDropdownVisibleChange) == null || _ref3(nextOpen);
   };
   var handleBlur = function handleBlur(event) {
     if (value === '' || !value) {
@@ -53,7 +55,7 @@ var LabelAutoComplete = function LabelAutoComplete(props) {
       'label-auto-complete': true,
       'label-auto-complete-label-scale': open || value
     }, className),
-    children: [(0, jsx_runtime_1.jsx)(auto_complete_1["default"], _extends({}, (0, omit_1["default"])(props, ['open', 'onChange', 'className', 'label']), {
+    children: [(0, jsx_runtime_1.jsx)(antd_1.AutoComplete, _extends({}, (0, omit_1["default"])(props, ['open', 'onChange', 'className', 'label', 'onOpenChange', 'onDropdownVisibleChange']), {
       open: open,
       ref: autoComplete,
       value: value,
@@ -61,7 +63,7 @@ var LabelAutoComplete = function LabelAutoComplete(props) {
       size: "large",
       className: "label-auto-complete-selector",
       onChange: handleChange,
-      onDropdownVisibleChange: onDropdownVisibleChange
+      onOpenChange: handleOpenChange
     })), (0, jsx_runtime_1.jsx)("label", {
       className: "label-auto-complete-text",
       onClick: handleLabelClick,

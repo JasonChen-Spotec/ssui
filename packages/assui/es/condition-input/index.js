@@ -4,7 +4,7 @@ function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t =
 import { jsx as _jsx } from "react/jsx-runtime";
 import * as React from 'react';
 import useControllableValue from "ahooks/es/useControllableValue";
-import Input from "antd/es/input";
+import { Input } from 'antd';
 import isArray from 'lodash/isArray';
 import isFunction from 'lodash/isFunction';
 import parse2RegexOption from './parse2RegexOption';

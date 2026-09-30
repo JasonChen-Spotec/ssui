@@ -60,8 +60,7 @@ Object.defineProperty(exports, "__esModule", {
 var tslib_1 = require("tslib");
 var jsx_runtime_1 = require("react/jsx-runtime");
 var React = tslib_1.__importStar(require("react"));
-var modal_1 = tslib_1.__importDefault(require("antd/lib/modal"));
-var slider_1 = tslib_1.__importDefault(require("antd/lib/slider"));
+var antd_1 = require("antd");
 var EasyCrop_1 = tslib_1.__importDefault(require("./EasyCrop"));
 var getCroppedImg_1 = tslib_1.__importDefault(require("./getCroppedImg"));
 require("./style/index.less");
@@ -302,14 +301,18 @@ var ImgCrop = function ImgCrop(props) {
   }), [hasRotate, onClose, quality, rotateVal]);
   var renderComponent = function renderComponent(titleOfModal) {
     return (0, jsx_runtime_1.jsxs)(jsx_runtime_1.Fragment, {
-      children: [renderUpload(), src && (0, jsx_runtime_1.jsxs)(modal_1["default"], _extends({
+      children: [renderUpload(), src && (0, jsx_runtime_1.jsxs)(antd_1.Modal, _extends({
         open: true,
-        wrapClassName: pkg + "-modal",
+        classNames: {
+          wrapper: pkg + "-modal"
+        },
         title: titleOfModal,
         onOk: onOk,
         onCancel: onClose,
-        maskClosable: false,
-        destroyOnClose: true,
+        mask: {
+          closable: false
+        },
+        destroyOnHidden: true,
         centered: true
       }, modalProps, {
         children: [(0, jsx_runtime_1.jsx)(EasyCrop_1["default"], _extends({
@@ -336,7 +339,7 @@ var ImgCrop = function ImgCrop(props) {
             onClick: subZoomVal,
             disabled: isMinZoom,
             children: "\uFF0D"
-          }), (0, jsx_runtime_1.jsx)(slider_1["default"], {
+          }), (0, jsx_runtime_1.jsx)(antd_1.Slider, {
             min: minZoom,
             max: maxZoom,
             step: ZOOM_STEP,
@@ -355,7 +358,7 @@ var ImgCrop = function ImgCrop(props) {
             onClick: subRotateVal,
             disabled: isMinRotate,
             children: "\u21BA"
-          }), (0, jsx_runtime_1.jsx)(slider_1["default"], {
+          }), (0, jsx_runtime_1.jsx)(antd_1.Slider, {
             min: MIN_ROTATE,
             max: MAX_ROTATE,
             step: ROTATE_STEP,

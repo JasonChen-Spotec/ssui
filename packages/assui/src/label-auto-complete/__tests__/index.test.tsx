@@ -6,9 +6,28 @@ import LabelAutoComplete from '../index';
 const baseProps = {
   onChange: jest.fn(),
   onBlur: jest.fn(),
+  onDropdownVisibleChange: jest.fn(),
 };
 
 describe('LabelAutoComplete', () => {
+  it('prefers onOpenChange when both new and legacy callbacks are supplied', async () => {
+    const onOpenChange = jest.fn();
+    const onDropdownVisibleChange = jest.fn();
+    const { container, getByTitle } = render(
+      <LabelAutoComplete
+        label="choose"
+        options={[{ value: 'first', label: 'first' }]}
+        onOpenChange={onOpenChange}
+        onDropdownVisibleChange={onDropdownVisibleChange}
+      />,
+    );
+    fireEvent.click(container.querySelector('label')!);
+    fireEvent.click(getByTitle('first'));
+    await waitFor(() => expect(onOpenChange).toHaveBeenCalledWith(false));
+    expect(onOpenChange).toHaveBeenCalledTimes(1);
+    expect(onDropdownVisibleChange).not.toHaveBeenCalled();
+  });
+
   it('LabelAutoComplete base test', async () => {
     const TestComponet = (props: any) => {
       const [options, _setOptions] = React.useState<any[]>([
@@ -32,14 +51,17 @@ describe('LabelAutoComplete', () => {
       fireEvent.click(labelNode);
     });
 
-    expect(container.querySelector('.ant-select-open')).toBeTruthy();
+    expect(input).toHaveAttribute('aria-expanded', 'true');
 
     await waitFor(() => {
       fireEvent.click(getByTitle('Downing Street'));
     });
 
-    expect(container.querySelector('.ant-select-open')).toBeFalsy();
+    await waitFor(() => {
+      expect(input).toHaveAttribute('aria-expanded', 'false');
+    });
     expect(input.value).toBe('Downing Street');
+    expect(baseProps.onDropdownVisibleChange).toHaveBeenLastCalledWith(false);
     expect(baseProps.onChange).toBeCalledWith('Downing Street', [
       { value: 'Burns Bay Road', disabled: true },
       { value: 'Downing Street' },
@@ -58,7 +80,9 @@ describe('LabelAutoComplete', () => {
     fireEvent.change(input, { target: { value: '' } });
     fireEvent.blur(input);
 
-    expect(container.querySelector('.ant-select-open')).toBeFalsy();
+    await waitFor(() => {
+      expect(input).toHaveAttribute('aria-expanded', 'false');
+    });
   });
 
   it('when no option enter', () => {

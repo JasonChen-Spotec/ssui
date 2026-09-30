@@ -2,8 +2,8 @@ import * as React from 'react';
 import CloseOutlined from 'a-icons/lib/CloseOutlined';
 import isPromise from 'aa-utils/lib/isPromise';
 import useControllableValue from 'ahooks/lib/useControllableValue';
-import type { ModalProps } from 'antd/lib/modal';
-import Modal from 'antd/lib/modal';
+import type { ModalProps } from 'antd';
+import { Modal } from 'antd';
 import isFunction from 'lodash/isFunction';
 
 export interface ModalAction {
@@ -28,7 +28,27 @@ const ButtonModal: React.ForwardRefRenderFunction<unknown, ButtonModalProps> = (
     defaultValue: false,
   });
 
-  const { children, trigger, onOpen, onClose, onOk, onCancel, ...restModalProps } = props;
+  const {
+    children,
+    trigger,
+    onOpen,
+    onClose,
+    onOk,
+    onCancel,
+    mask,
+    maskClosable = false,
+    destroyOnClose,
+    destroyOnHidden = destroyOnClose,
+    ...restModalProps
+  } = props;
+  const mergedMask =
+    mask === false
+      ? false
+      : {
+          ...(mask === true ? { enabled: true } : mask),
+          closable:
+            typeof mask === 'object' ? (mask.closable ?? maskClosable) : maskClosable,
+        };
 
   const openModal = () => {
     setModalVisible(true);
@@ -55,7 +75,7 @@ const ButtonModal: React.ForwardRefRenderFunction<unknown, ButtonModalProps> = (
     closeModal();
   };
 
-  const handleModalCancel = (e: React.MouseEvent<HTMLElement>) => {
+  const handleModalCancel: NonNullable<ModalProps['onCancel']> = (e) => {
     onCancel?.(e);
     closeModal();
   };
@@ -79,7 +99,8 @@ const ButtonModal: React.ForwardRefRenderFunction<unknown, ButtonModalProps> = (
         onOk={handleModalOk}
         onCancel={handleModalCancel}
         centered
-        maskClosable={false}
+        mask={mergedMask}
+        destroyOnHidden={destroyOnHidden}
         closeIcon={<CloseOutlined />}
         {...restModalProps}
       >

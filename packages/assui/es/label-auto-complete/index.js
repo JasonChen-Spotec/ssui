@@ -2,7 +2,7 @@ function _extends() { return _extends = Object.assign ? Object.assign.bind() : f
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import React from 'react';
 import useControllableValue from "ahooks/es/useControllableValue";
-import AutoComplete from "antd/es/auto-complete";
+import { AutoComplete } from 'antd';
 import classNames from 'classnames';
 import omit from 'lodash/omit';
 import trimStart from 'lodash/trimStart';
@@ -33,8 +33,10 @@ var LabelAutoComplete = function LabelAutoComplete(props) {
     }
     autoComplete.current.focus();
   };
-  var onDropdownVisibleChange = function onDropdownVisibleChange(nextOpen) {
+  var handleOpenChange = function handleOpenChange(nextOpen) {
+    var _ref, _props$onOpenChange;
     setOpen(nextOpen);
+    (_ref = (_props$onOpenChange = props.onOpenChange) != null ? _props$onOpenChange : props.onDropdownVisibleChange) == null || _ref(nextOpen);
   };
   var handleBlur = function handleBlur(event) {
     if (value === '' || !value) {
@@ -47,7 +49,7 @@ var LabelAutoComplete = function LabelAutoComplete(props) {
       'label-auto-complete': true,
       'label-auto-complete-label-scale': open || value
     }, className),
-    children: [_jsx(AutoComplete, _extends({}, omit(props, ['open', 'onChange', 'className', 'label']), {
+    children: [_jsx(AutoComplete, _extends({}, omit(props, ['open', 'onChange', 'className', 'label', 'onOpenChange', 'onDropdownVisibleChange']), {
       open: open,
       ref: autoComplete,
       value: value,
@@ -55,7 +57,7 @@ var LabelAutoComplete = function LabelAutoComplete(props) {
       size: "large",
       className: "label-auto-complete-selector",
       onChange: handleChange,
-      onDropdownVisibleChange: onDropdownVisibleChange
+      onOpenChange: handleOpenChange
     })), _jsx("label", {
       className: "label-auto-complete-text",
       onClick: handleLabelClick,

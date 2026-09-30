@@ -1,5 +1,5 @@
 import React from 'react';
-import type { TooltipProps } from 'antd/lib/tooltip';
+import type { TooltipProps } from 'antd';
 export interface CopyToClipboardProps {
     /** 需要复制的字符串 */
     text: string;

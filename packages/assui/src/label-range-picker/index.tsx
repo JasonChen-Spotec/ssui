@@ -1,14 +1,14 @@
 import React from 'react';
 import CalendarOutlined from 'a-icons/lib/CalendarOutlined';
 import useControllableValue from 'ahooks/lib/useControllableValue';
-import type { RangePickerProps } from 'antd/lib/date-picker';
-import DatePicker from 'antd/lib/date-picker';
 import classNames from 'classnames';
 import omit from 'lodash/omit';
+import type { MomentRangePickerProps } from '../moment-date-picker';
+import DatePicker from '../moment-date-picker';
 
 const { RangePicker } = DatePicker;
 
-export interface LabelRangePickerProps extends Omit<RangePickerProps, 'label'> {
+export interface LabelRangePickerProps extends Omit<MomentRangePickerProps, 'label'> {
   label: React.ReactNode;
   showTime?: any;
 }
@@ -18,13 +18,17 @@ const LabelDatePicker: React.FC<LabelRangePickerProps> = (props) => {
   const datePickerRef = React.useRef<any>(null);
   const [open, onOpenChange] = useControllableValue(props, {
     valuePropName: 'open',
+    defaultValuePropName: 'defaultOpen',
     trigger: 'onOpenChange',
   });
 
   const [value, setValue] = useControllableValue(props);
 
-  const handleChange = (nextValue: any) => {
-    setValue(nextValue);
+  const handleChange: NonNullable<MomentRangePickerProps['onChange']> = (
+    nextValue,
+    dateStrings,
+  ) => {
+    setValue(nextValue, dateStrings);
   };
 
   const handleLabelClick = () => {

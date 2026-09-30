@@ -33,9 +33,7 @@ import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import * as React from 'react';
 import CloseOutlined from "a-icons/es/CloseOutlined";
 import Pdf from "a-icons/es/Pdf";
-import Image from "antd/es/image";
-import Progress from "antd/es/progress";
-import Spin from "antd/es/spin";
+import { Image, Progress, Spin } from 'antd';
 import classNames from 'classnames';
 import isFunction from 'lodash/isFunction';
 import isObject from 'lodash/isObject';
@@ -177,7 +175,9 @@ var SingleImgUpload = function SingleImgUpload(props) {
   var getShowNode = function getShowNode() {
     if (fileType === IMAGE_TYPE) {
       return _jsx(Image, {
-        wrapperClassName: "as-img-upload-preview",
+        classNames: {
+          root: 'as-img-upload-preview'
+        },
         src: fileUrl,
         preview: true
       });

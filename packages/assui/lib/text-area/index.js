@@ -9,7 +9,7 @@ Object.defineProperty(exports, "__esModule", {
 var tslib_1 = require("tslib");
 var jsx_runtime_1 = require("react/jsx-runtime");
 var React = tslib_1.__importStar(require("react"));
-var input_1 = tslib_1.__importDefault(require("antd/lib/input"));
+var antd_1 = require("antd");
 var trimStart_1 = tslib_1.__importDefault(require("lodash/trimStart"));
 var TextArea = function TextArea(_ref) {
   var value = _ref.value,
@@ -33,7 +33,7 @@ var TextArea = function TextArea(_ref) {
       onChange(finallyValue, e);
     }
   };
-  return (0, jsx_runtime_1.jsx)(input_1["default"].TextArea, _extends({
+  return (0, jsx_runtime_1.jsx)(antd_1.Input.TextArea, _extends({
     value: resultValue,
     onChange: handleChange
   }, restProps));

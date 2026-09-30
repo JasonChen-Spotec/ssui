@@ -6,6 +6,7 @@ import LabelSelect from '../index';
 const baseProps = {
   setOpen: jest.fn(),
   onChange: jest.fn(),
+  onDropdownVisibleChange: jest.fn(),
 };
 
 const options = [
@@ -20,8 +21,26 @@ const options = [
 ];
 
 describe('label-select', () => {
+  it('prefers onOpenChange when both new and legacy callbacks are supplied', async () => {
+    const onOpenChange = jest.fn();
+    const onDropdownVisibleChange = jest.fn();
+    const { container, getByTitle } = render(
+      <LabelSelect
+        label="choose"
+        options={[{ value: 'first', label: 'first' }]}
+        onOpenChange={onOpenChange}
+        onDropdownVisibleChange={onDropdownVisibleChange}
+      />,
+    );
+    fireEvent.click(container.querySelector('label')!);
+    fireEvent.click(getByTitle('first'));
+    await waitFor(() => expect(onOpenChange).toHaveBeenCalledWith(false));
+    expect(onOpenChange).toHaveBeenCalledTimes(1);
+    expect(onDropdownVisibleChange).not.toHaveBeenCalled();
+  });
+
   it('label-select should work fine ', async () => {
-    const { getByTitle, container } = render(
+    const { getByTitle, getByRole, container } = render(
       <LabelSelect {...baseProps} label="我是标题" options={options} />,
     );
 
@@ -33,17 +52,18 @@ describe('label-select', () => {
       fireEvent.click(labelNode);
     });
 
-    expect(container.querySelector('.ant-select-open')).toBeTruthy();
+    expect(getByRole('combobox')).toHaveAttribute('aria-expanded', 'true');
     expect(baseProps.setOpen).toBeCalledWith(true);
 
     await waitFor(() => {
       fireEvent.click(getByTitle('lucy'));
     });
 
-    expect(container.querySelector('.ant-select-open')).toBeFalsy();
-    expect(container.querySelector('.ant-select-selection-item')).toHaveTextContent(
-      'lucy',
-    );
+    await waitFor(() => {
+      expect(getByRole('combobox')).toHaveAttribute('aria-expanded', 'false');
+    });
+    expect(container).toHaveTextContent('lucy');
+    expect(baseProps.onDropdownVisibleChange).toHaveBeenLastCalledWith(false);
     expect(baseProps.onChange).toBeCalledWith('lucy');
   });
 });

@@ -10,7 +10,7 @@ var tslib_1 = require("tslib");
 var jsx_runtime_1 = require("react/jsx-runtime");
 var React = tslib_1.__importStar(require("react"));
 var useControllableValue_1 = tslib_1.__importDefault(require("ahooks/lib/useControllableValue"));
-var input_1 = tslib_1.__importDefault(require("antd/lib/input"));
+var antd_1 = require("antd");
 var isArray_1 = tslib_1.__importDefault(require("lodash/isArray"));
 var isFunction_1 = tslib_1.__importDefault(require("lodash/isFunction"));
 var parse2RegexOption_1 = tslib_1.__importDefault(require("./parse2RegexOption"));
@@ -42,7 +42,7 @@ var ConditionInput = React.forwardRef(function (props, ref) {
       setValue(nextValue);
     }
   };
-  return (0, jsx_runtime_1.jsx)(input_1["default"], _extends({
+  return (0, jsx_runtime_1.jsx)(antd_1.Input, _extends({
     ref: ref,
     value: value,
     onChange: handleChange

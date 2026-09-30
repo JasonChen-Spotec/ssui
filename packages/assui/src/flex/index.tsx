@@ -1,9 +1,11 @@
 import React from 'react';
-import type { SizeType } from 'antd/lib/config-provider/SizeContext';
+import type { ConfigProviderProps } from 'antd';
 import classNames from 'classnames';
-import omit from 'rc-util/lib/omit';
+import omit from 'lodash/omit';
 import createFlexClassNames from './utils';
 import { isPresetSize } from './utils/gapSize';
+
+type SizeType = ConfigProviderProps['componentSize'];
 
 export interface FlexProps<P = Record<PropertyKey, any>>
   extends React.HTMLAttributes<HTMLElement> {

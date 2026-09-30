@@ -2,14 +2,13 @@ import * as React from 'react';
 import useUrlState from '@ahooksjs/use-url-state';
 import qsHelp from 'aa-utils/lib/qsHelp';
 import useControllableValue from 'ahooks/lib/useControllableValue';
-import type { BadgeProps } from 'antd/lib/badge';
-import Badge from 'antd/lib/badge';
-import type { TabPaneProps, TabsProps } from 'antd/lib/tabs';
-import Tabs from 'antd/lib/tabs';
+import type { BadgeProps, TabPaneProps, TabsProps } from 'antd';
+import { Badge, Tabs } from 'antd';
 import find from 'lodash/find';
-import type { Tab } from 'rc-tabs/lib/interface';
 
 const { TabPane } = Tabs;
+
+type Tab = NonNullable<TabsProps['items']>[number];
 
 interface NewTab extends Tab {
   count?: React.ReactNode;
@@ -43,6 +42,8 @@ const KeepTab = (props: KeepTabProps) => {
     saveActiveKeyName = 'active',
     onChange,
     badgeProps = defaultBadgeProps,
+    destroyInactiveTabPane,
+    destroyOnHidden = destroyInactiveTabPane ?? true,
     ...restProps
   } = props;
   const defaultUrlParams = qsHelp.getQueryObject() as DefaultUrlParamsType;
@@ -91,7 +92,7 @@ const KeepTab = (props: KeepTabProps) => {
     <Tabs
       animated={false}
       onChange={handleTabChange}
-      destroyInactiveTabPane
+      destroyOnHidden={destroyOnHidden}
       activeKey={tabActiveKey}
       {...restProps}
       items={resultItems}

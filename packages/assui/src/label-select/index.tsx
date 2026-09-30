@@ -1,7 +1,7 @@
 import React from 'react';
 import useControllableValue from 'ahooks/lib/useControllableValue';
-import type { OptionProps, RefSelectProps, SelectProps } from 'antd/lib/select';
-import Select from 'antd/lib/select';
+import type { RefSelectProps, SelectProps } from 'antd';
+import { Select } from 'antd';
 import classNames from 'classnames';
 import isArray from 'lodash/isArray';
 import isNull from 'lodash/isNull';
@@ -10,7 +10,7 @@ import omit from 'lodash/omit';
 import type { ComplexValSelectProps } from '../complex-val-select';
 import ComplexValSelect from '../complex-val-select';
 
-export const Option: React.FC<OptionProps> = Select.Option;
+export const Option = Select.Option;
 
 export interface LabelSelectProps extends ComplexValSelectProps<any> {
   label?: React.ReactNode;
@@ -43,8 +43,9 @@ const LabelSelect: React.ForwardRefRenderFunction<unknown, LabelSelectProps> = (
     (selectRef.current as RefSelectProps).focus();
   };
 
-  const onDropdownVisibleChange = (nextOpen: boolean) => {
+  const handleOpenChange = (nextOpen: boolean) => {
     setOpen(nextOpen);
+    (props.onOpenChange ?? props.onDropdownVisibleChange)?.(nextOpen);
   };
 
   const handleBlur = () => {
@@ -67,7 +68,16 @@ const LabelSelect: React.ForwardRefRenderFunction<unknown, LabelSelectProps> = (
       <ComplexValSelect
         maxTagCount={3}
         showSearch={false}
-        {...omit(props, ['open', 'onChange', 'className', 'label', 'setOpen', 'isFocus'])}
+        {...omit(props, [
+          'open',
+          'onChange',
+          'className',
+          'label',
+          'setOpen',
+          'isFocus',
+          'onOpenChange',
+          'onDropdownVisibleChange',
+        ])}
         open={open}
         ref={selectRef}
         size="large"
@@ -77,7 +87,7 @@ const LabelSelect: React.ForwardRefRenderFunction<unknown, LabelSelectProps> = (
         onDeselect={() => {
           selectRef.current?.focus();
         }}
-        onDropdownVisibleChange={onDropdownVisibleChange}
+        onOpenChange={handleOpenChange}
       />
       {/* biome-ignore lint/a11y/noLabelWithoutControl: 点击触发的展示文本，非表单 label */}
       <label className="label-select-text" onClick={handleLabelClick}>

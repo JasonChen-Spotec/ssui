@@ -1,9 +1,7 @@
 import React from 'react';
 import ArrowDownOutlined from 'a-icons/lib/ArrowDownOutlined';
 import useControllableValue from 'ahooks/lib/useControllableValue';
-import Col from 'antd/lib/grid/col';
-import Row from 'antd/lib/grid/row';
-import Select from 'antd/lib/select';
+import { Col, Row, Select } from 'antd';
 import classNames from 'classnames';
 import isNil from 'lodash/isNil';
 import omit from 'lodash/omit';

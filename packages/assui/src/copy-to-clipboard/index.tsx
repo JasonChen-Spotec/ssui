@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import type { TooltipProps } from 'antd/lib/tooltip';
-import Tooltip from 'antd/lib/tooltip';
+import type { TooltipProps } from 'antd';
+import { Tooltip } from 'antd';
 import copy from 'copy-to-clipboard';
 
 export interface CopyToClipboardProps {

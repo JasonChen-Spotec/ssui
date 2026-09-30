@@ -2,9 +2,8 @@ var _excluded = ["onChange", "onBlur", "numberType", "precision", "step", "max",
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (-1 !== e.indexOf(n)) continue; t[n] = r[n]; } return t; }
 import { jsx as _jsx } from "react/jsx-runtime";
-import * as React from 'react';
 import useControllableValue from "ahooks/es/useControllableValue";
-import DisabledContext from "antd/es/config-provider/DisabledContext";
+import { ConfigProvider } from 'antd';
 import BigNumber from 'bignumber.js';
 import classNames from 'classnames';
 import isUndefined from 'lodash/isUndefined';
@@ -37,7 +36,8 @@ var StepNumberInput = function StepNumberInput(props) {
   var maxCondition = isUndefined(max) ? false : max === Number(value) || Number(max) < Number(plusNumber);
   var minCondition = isUndefined(min) ? false : min === Number(value) || Number(min) > Number(minusNumber);
   // ===================== Disabled =====================
-  var disabled = React.useContext(DisabledContext);
+  var _ConfigProvider$useCo = ConfigProvider.useConfig(),
+    disabled = _ConfigProvider$useCo.componentDisabled;
   var mergedDisabled = customDisabled != null ? customDisabled : disabled;
   var minusDisabled = isEmpty || minCondition || mergedDisabled;
   var addDisabled = isEmpty || maxCondition || mergedDisabled;

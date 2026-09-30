@@ -1,5 +1,5 @@
 import React from 'react';
-import type { AutoCompleteProps } from 'antd/lib/auto-complete';
+import type { AutoCompleteProps } from 'antd';
 export interface LabelAutoCompleteProps extends AutoCompleteProps {
     label?: React.ReactNode;
     className?: string;

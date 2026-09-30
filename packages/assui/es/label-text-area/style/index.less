@@ -1,9 +1,9 @@
-@import '~antd/lib/style/index.less';
 @import '../../style/themes/default.less';
 @import '../../style/variables.less';
 
 .label-textarea {
   z-index: 1;
+  box-sizing: border-box;
   width: 100%;
   height: 100%;
   min-height: 28px;
@@ -11,6 +11,7 @@
   padding: 0 15px 0 15px;
   color: @color_263241;
   font-size: @font-size-lg;
+  font-family: inherit;
   border: 0;
   outline: 0;
 
@@ -20,6 +21,8 @@
   }
 
   &-warper {
+    .assui-box-sizing();
+
     position: relative;
     width: 100%;
     height: 100%;

@@ -11,10 +11,10 @@ var jsx_runtime_1 = require("react/jsx-runtime");
 var react_1 = tslib_1.__importDefault(require("react"));
 var CalendarOutlined_1 = tslib_1.__importDefault(require("a-icons/lib/CalendarOutlined"));
 var useControllableValue_1 = tslib_1.__importDefault(require("ahooks/lib/useControllableValue"));
-var date_picker_1 = tslib_1.__importDefault(require("antd/lib/date-picker"));
 var classnames_1 = tslib_1.__importDefault(require("classnames"));
 var omit_1 = tslib_1.__importDefault(require("lodash/omit"));
-var RangePicker = date_picker_1["default"].RangePicker;
+var moment_date_picker_1 = tslib_1.__importDefault(require("../moment-date-picker"));
+var RangePicker = moment_date_picker_1["default"].RangePicker;
 var LabelDatePicker = function LabelDatePicker(props) {
   var className = props.className,
     label = props.label,
@@ -23,6 +23,7 @@ var LabelDatePicker = function LabelDatePicker(props) {
   var datePickerRef = react_1["default"].useRef(null);
   var _ref = (0, useControllableValue_1["default"])(props, {
       valuePropName: 'open',
+      defaultValuePropName: 'defaultOpen',
       trigger: 'onOpenChange'
     }),
     open = _ref[0],
@@ -30,8 +31,8 @@ var LabelDatePicker = function LabelDatePicker(props) {
   var _ref2 = (0, useControllableValue_1["default"])(props),
     value = _ref2[0],
     setValue = _ref2[1];
-  var handleChange = function handleChange(nextValue) {
-    setValue(nextValue);
+  var handleChange = function handleChange(nextValue, dateStrings) {
+    setValue(nextValue, dateStrings);
   };
   var handleLabelClick = function handleLabelClick() {
     var _datePickerRef$curren;

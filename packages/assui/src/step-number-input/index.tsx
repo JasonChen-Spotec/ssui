@@ -1,6 +1,6 @@
 import * as React from 'react';
 import useControllableValue from 'ahooks/lib/useControllableValue';
-import DisabledContext from 'antd/lib/config-provider/DisabledContext';
+import { ConfigProvider } from 'antd';
 import BigNumber from 'bignumber.js';
 import classNames from 'classnames';
 import isUndefined from 'lodash/isUndefined';
@@ -70,7 +70,7 @@ const StepNumberInput = (props: StepNumberInputProps) => {
     : min === Number(value) || Number(min) > Number(minusNumber);
 
   // ===================== Disabled =====================
-  const disabled = React.useContext(DisabledContext);
+  const { componentDisabled: disabled } = ConfigProvider.useConfig();
   const mergedDisabled = customDisabled ?? disabled;
 
   const minusDisabled = isEmpty || minCondition || mergedDisabled;

@@ -1,1 +1,2 @@
-import 'antd/lib/modal/style';
+// Ant Design components inject their own styles in v6.
+export {};

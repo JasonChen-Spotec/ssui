@@ -39,9 +39,7 @@ var jsx_runtime_1 = require("react/jsx-runtime");
 var React = tslib_1.__importStar(require("react"));
 var CloseOutlined_1 = tslib_1.__importDefault(require("a-icons/lib/CloseOutlined"));
 var Pdf_1 = tslib_1.__importDefault(require("a-icons/lib/Pdf"));
-var image_1 = tslib_1.__importDefault(require("antd/lib/image"));
-var progress_1 = tslib_1.__importDefault(require("antd/lib/progress"));
-var spin_1 = tslib_1.__importDefault(require("antd/lib/spin"));
+var antd_1 = require("antd");
 var classnames_1 = tslib_1.__importDefault(require("classnames"));
 var isFunction_1 = tslib_1.__importDefault(require("lodash/isFunction"));
 var isObject_1 = tslib_1.__importDefault(require("lodash/isObject"));
@@ -182,8 +180,10 @@ var SingleImgUpload = function SingleImgUpload(props) {
   var cls = (0, classnames_1["default"])('as-img-upload', wrapperClassName);
   var getShowNode = function getShowNode() {
     if (fileType === IMAGE_TYPE) {
-      return (0, jsx_runtime_1.jsx)(image_1["default"], {
-        wrapperClassName: "as-img-upload-preview",
+      return (0, jsx_runtime_1.jsx)(antd_1.Image, {
+        classNames: {
+          root: 'as-img-upload-preview'
+        },
         src: fileUrl,
         preview: true
       });
@@ -208,7 +208,7 @@ var SingleImgUpload = function SingleImgUpload(props) {
       className: "as-img-upload-content",
       children: [getShowNode(), (0, jsx_runtime_1.jsx)("div", {
         className: "dark"
-      }), (0, jsx_runtime_1.jsx)(progress_1["default"], {
+      }), (0, jsx_runtime_1.jsx)(antd_1.Progress, {
         className: "as-img-upload-upload-progress",
         percent: uploadPercent,
         size: "small",
@@ -218,7 +218,7 @@ var SingleImgUpload = function SingleImgUpload(props) {
         onClick: cancelUpload,
         children: (0, jsx_runtime_1.jsx)(CloseOutlined_1["default"], {})
       })]
-    }), uploadStatus === 'done' && (0, jsx_runtime_1.jsx)(spin_1["default"], {
+    }), uploadStatus === 'done' && (0, jsx_runtime_1.jsx)(antd_1.Spin, {
       spinning: imageLoading,
       children: (0, jsx_runtime_1.jsxs)("div", {
         className: "as-img-upload-content",

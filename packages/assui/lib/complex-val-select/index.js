@@ -11,7 +11,7 @@ var React = tslib_1.__importStar(require("react"));
 var ArrowDownOutlined_1 = tslib_1.__importDefault(require("a-icons/lib/ArrowDownOutlined"));
 var stableStringify_1 = tslib_1.__importDefault(require("aa-utils/lib/stableStringify"));
 var useControllableValue_1 = tslib_1.__importDefault(require("ahooks/lib/useControllableValue"));
-var select_1 = tslib_1.__importDefault(require("antd/lib/select"));
+var antd_1 = require("antd");
 var classnames_1 = tslib_1.__importDefault(require("classnames"));
 var lodash_1 = require("lodash");
 var isArray_1 = tslib_1.__importDefault(require("lodash/isArray"));
@@ -19,7 +19,7 @@ var isObject_1 = tslib_1.__importDefault(require("lodash/isObject"));
 var isUndefined_1 = tslib_1.__importDefault(require("lodash/isUndefined"));
 var omit_1 = tslib_1.__importDefault(require("lodash/omit"));
 var some_1 = tslib_1.__importDefault(require("lodash/some"));
-exports.Option = select_1["default"].Option;
+exports.Option = antd_1.Select.Option;
 // 核心防御：防止非标准 JSON 字符串（如 tags 模式下手敲的纯文本或 undefined）导致页面崩溃
 var safeParse = function safeParse(str) {
   if (typeof str !== 'string') {
@@ -104,7 +104,7 @@ var ComplexValSelect = React.forwardRef(function (props, ref) {
     }
     return value;
   }, [value, isReferenceTypeVal, isMultiple, mode]);
-  return (0, jsx_runtime_1.jsx)(select_1["default"], _extends({
+  return (0, jsx_runtime_1.jsx)(antd_1.Select, _extends({
     ref: selectRef,
     className: (0, classnames_1["default"])('complex-val-select', props == null ? void 0 : props.className),
     suffixIcon: (0, jsx_runtime_1.jsx)(ArrowDownOutlined_1["default"], {}),

@@ -4,6 +4,7 @@ module.exports = {
   coverageDirectory: 'test/coverage',
   collectCoverage: true,
   testEnvironment: 'jsdom',
+  setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
   testPathIgnorePatterns: ['/node_modules/', '/lib/', '/es/', '/dist/'],
   coveragePathIgnorePatterns: ['/node_modules/', '/lib/', '/es/', '/dist/'],
 

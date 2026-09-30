@@ -2,13 +2,8 @@ import * as React from 'react';
 import ArrowDownOutlined from 'a-icons/lib/ArrowDownOutlined';
 import stableStringify from 'aa-utils/lib/stableStringify';
 import useControllableValue from 'ahooks/lib/useControllableValue';
-import type {
-  DefaultOptionType,
-  OptionProps,
-  RefSelectProps,
-  SelectProps,
-} from 'antd/lib/select';
-import Select from 'antd/lib/select';
+import type { RefSelectProps, SelectProps } from 'antd';
+import { Select } from 'antd';
 import classNames from 'classnames';
 import { isNil } from 'lodash';
 import isArray from 'lodash/isArray';
@@ -17,7 +12,9 @@ import isUndefined from 'lodash/isUndefined';
 import omit from 'lodash/omit';
 import some from 'lodash/some';
 
-export const Option: React.FC<OptionProps> = Select.Option;
+type DefaultOptionType = NonNullable<SelectProps['options']>[number];
+
+export const Option = Select.Option;
 
 // 核心防御：防止非标准 JSON 字符串（如 tags 模式下手敲的纯文本或 undefined）导致页面崩溃
 const safeParse = (str: string) => {

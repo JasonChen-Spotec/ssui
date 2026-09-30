@@ -1,60 +1,27 @@
-var __assign = this && this.__assign || function () {
-  __assign = Object.assign || function (t) {
-    for (var s, i = 1, n = arguments.length; i < n; i++) {
-      s = arguments[i];
-      for (var p in s) {
-        if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
-      }
-    }
-    return t;
-  };
-  return __assign.apply(this, arguments);
-};
-var __rest = this && this.__rest || function (s, e) {
-  var t = {};
-  for (var p in s) {
-    if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
-  }
-  if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
-    if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i])) t[p[i]] = s[p[i]];
-  }
-  return t;
-};
-var __read = this && this.__read || function (o, n) {
-  var m = typeof Symbol === "function" && o[Symbol.iterator];
-  if (!m) return o;
-  var i = m.call(o),
-    r,
-    ar = [],
-    e;
-  try {
-    while ((n === void 0 || n-- > 0) && !(r = i.next()).done) {
-      ar.push(r.value);
-    }
-  } catch (error) {
-    e = {
-      error: error
-    };
-  } finally {
-    try {
-      if (r && !r.done && (m = i["return"])) m.call(i);
-    } finally {
-      if (e) throw e.error;
-    }
-  }
-  return ar;
-};
-import classNames from 'classnames';
+var _excluded = ["onBeforeOpen", "onBeforeClose", "renderChildren", "className", "rootClassName", "style", "rootStyle", "mask", "maskClosable", "destroyOnClose", "destroyOnHidden"];
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
+function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (-1 !== e.indexOf(n)) continue; t[n] = r[n]; } return t; }
 import { useRef, useState } from 'react';
+import classNames from 'classnames';
 export var useDrawer = function useDrawer(props) {
-  var _a = __read(useState(false), 2),
-    open = _a[0],
-    setOpen = _a[1];
-  var _b = props !== null && props !== void 0 ? props : {},
-    onBeforeOpen = _b.onBeforeOpen,
-    onBeforeClose = _b.onBeforeClose,
-    renderChildren = _b.renderChildren,
-    restProps = __rest(_b, ["onBeforeOpen", "onBeforeClose", "renderChildren"]);
+  var _mask$closable;
+  var _useState = useState(false),
+    open = _useState[0],
+    setOpen = _useState[1];
+  var _ref = props != null ? props : {},
+    onBeforeOpen = _ref.onBeforeOpen,
+    onBeforeClose = _ref.onBeforeClose,
+    renderChildren = _ref.renderChildren,
+    className = _ref.className,
+    rootClassName = _ref.rootClassName,
+    style = _ref.style,
+    rootStyle = _ref.rootStyle,
+    mask = _ref.mask,
+    maskClosable = _ref.maskClosable,
+    destroyOnClose = _ref.destroyOnClose,
+    _ref$destroyOnHidden = _ref.destroyOnHidden,
+    destroyOnHidden = _ref$destroyOnHidden === void 0 ? destroyOnClose : _ref$destroyOnHidden,
+    restProps = _objectWithoutPropertiesLoose(_ref, _excluded);
   var closeDrawer = function closeDrawer() {
     if (onBeforeClose) {
       onBeforeClose();
@@ -75,20 +42,28 @@ export var useDrawer = function useDrawer(props) {
       openDrawer();
     }
   });
-  var drawerProps = __assign({
+  var drawerProps = _extends({
     open: open,
-    onClose: closeDrawer
+    onClose: closeDrawer,
+    rootClassName: classNames(className, rootClassName),
+    rootStyle: _extends({}, style, rootStyle),
+    destroyOnHidden: destroyOnHidden,
+    mask: mask === false ? false : maskClosable === undefined ? mask : _extends({}, mask === true ? {
+      enabled: true
+    } : mask, {
+      closable: typeof mask === 'object' ? (_mask$closable = mask.closable) != null ? _mask$closable : maskClosable : maskClosable
+    })
   }, restProps);
   if (renderChildren) {
     drawerProps.children = renderChildren(actionRef.current);
   }
   return [drawerProps, actionRef.current];
 };
-
 export var generateUseDrawer = function generateUseDrawer(defaultProps) {
   return function useDrawerFunc(newProps) {
-    var props = __assign(__assign(__assign({}, defaultProps), newProps), {
-      className: classNames(defaultProps.className, newProps === null || newProps === void 0 ? void 0 : newProps.className)
+    var props = _extends({}, defaultProps, newProps, {
+      className: classNames(defaultProps.className, newProps == null ? void 0 : newProps.className),
+      rootClassName: classNames(defaultProps.rootClassName, newProps == null ? void 0 : newProps.rootClassName)
     });
     return useDrawer(props);
   };

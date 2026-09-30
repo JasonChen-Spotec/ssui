@@ -1,17 +1,17 @@
 import dateUtils from 'aa-utils/lib/dateUtils';
 import moment from 'moment';
-import type { RangeValue } from 'rc-picker/lib/interface';
+import type { MomentRangeValue } from '../../../moment-date-picker';
 import { formatMaxScope } from '../index';
 
-type MomentTuple = RangeValue<moment.Moment>;
+type MomentTuple = MomentRangeValue;
 
 const dateTimeFormat = 'YYYY-MM-DD HH:mm:ss';
 const now = dateUtils.getToday().endOf('day');
 
-const onlyStart: MomentTuple = [moment('1995-5-15'), null];
-const onlyEnd: MomentTuple = [null, moment('1995-5-15')];
-const greaterThanScope: MomentTuple = [moment('1995-5-1'), moment('1995-5-15')];
-const lessThanScope: MomentTuple = [moment('1995-5-13'), moment('1995-5-15')];
+const onlyStart: MomentTuple = [moment('1995-05-15'), null];
+const onlyEnd: MomentTuple = [null, moment('1995-05-15')];
+const greaterThanScope: MomentTuple = [moment('1995-05-01'), moment('1995-05-15')];
+const lessThanScope: MomentTuple = [moment('1995-05-13'), moment('1995-05-15')];
 const notProvided: MomentTuple = [null, null];
 
 const getStamp = (tuple: MomentTuple) => {

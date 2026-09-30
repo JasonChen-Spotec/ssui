@@ -2,16 +2,16 @@ import React, { useContext, useEffect, useState } from 'react';
 import useControllableValue from 'ahooks/lib/useControllableValue';
 import type { CheckboxChangeEvent } from 'antd/lib/checkbox';
 import Checkbox from 'antd/lib/checkbox';
-import DatePicker from 'antd/lib/date-picker';
 import type { RadioChangeEvent } from 'antd/lib/radio';
 import Radio from 'antd/lib/radio';
 import omit from 'lodash/omit';
 import type { Moment } from 'moment';
-import type { RangeValue } from 'rc-picker/lib/interface';
 import LocaleContext from '../config-provider/context';
 import type { LabelRangePickerProps } from '../label-range-picker';
 import LabelRangePicker from '../label-range-picker';
 import formatMessage, { langTypeEnum } from '../messages';
+import type { MomentRangeValue } from '../moment-date-picker';
+import DatePicker from '../moment-date-picker';
 import type { dateTypeEnum } from './defaultRadioList';
 import getDefaultRadioList from './defaultRadioList';
 import {
@@ -133,7 +133,7 @@ const LabelCustomizeRangePicker = (props: LabelCustomizeRangePickerProps) => {
     setIsVisiblePanel(checked);
   };
 
-  const onDateChange = (nextValue: RangeValue<Moment>) => {
+  const onDateChange = (nextValue: MomentRangeValue) => {
     const [start, end] = nextValue || [];
     let nextStartDate =
       (showTime ? start?.clone().startOf('minute') : start?.clone().startOf('day')) ??

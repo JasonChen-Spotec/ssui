@@ -1,8 +1,7 @@
 import React from 'react';
 import useControllableValue from 'ahooks/lib/useControllableValue';
-import type { RefSelectProps } from 'antd/lib/select';
-import type { TreeSelectProps } from 'antd/lib/tree-select';
-import TreeSelect from 'antd/lib/tree-select';
+import type { RefSelectProps, TreeSelectProps } from 'antd';
+import { TreeSelect } from 'antd';
 import classNames from 'classnames';
 import omit from 'lodash/omit';
 
@@ -16,7 +15,14 @@ export interface LabelTreeSelectProps
 }
 
 const LabelTreeSelect = (props: LabelTreeSelectProps) => {
-  const { className, label, unit, showSearch = false, onDropdownVisibleChange } = props;
+  const {
+    className,
+    label,
+    unit,
+    showSearch = false,
+    onDropdownVisibleChange,
+    onOpenChange,
+  } = props;
   const selectRef = React.useRef<RefSelectProps>(null);
   const [open, setOpen] = useControllableValue(props, {
     valuePropName: 'open',
@@ -41,7 +47,7 @@ const LabelTreeSelect = (props: LabelTreeSelectProps) => {
 
   const handleDropdownVisibleChange = (nextOpen: boolean) => {
     setOpen(nextOpen);
-    onDropdownVisibleChange?.(nextOpen);
+    (onOpenChange ?? onDropdownVisibleChange)?.(nextOpen);
   };
 
   const isValueNotEmpty = !!value?.length;
@@ -58,13 +64,21 @@ const LabelTreeSelect = (props: LabelTreeSelectProps) => {
     >
       <TreeSelect
         showSearch={showSearch}
-        {...omit(props, ['open', 'onChange', 'className', 'label'])}
+        {...omit(props, [
+          'open',
+          'onChange',
+          'className',
+          'label',
+          'unit',
+          'onOpenChange',
+          'onDropdownVisibleChange',
+        ])}
         open={open}
         ref={selectRef}
         size="large"
         className="label-select-selector"
         onChange={handleChange}
-        onDropdownVisibleChange={handleDropdownVisibleChange}
+        onOpenChange={handleDropdownVisibleChange}
       />
       {isValueNotEmpty && (
         <div className="label-tree-select-value-length">

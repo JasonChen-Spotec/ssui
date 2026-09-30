@@ -1,7 +1,7 @@
 import React from 'react';
 import useSize from 'ahooks/lib/useSize';
-import type { TooltipProps } from 'antd/lib/tooltip';
-import Tooltip from 'antd/lib/tooltip';
+import type { TooltipProps } from 'antd';
+import { Tooltip } from 'antd';
 import classNames from 'classnames';
 import omit from 'lodash/omit';
 import type { ButtonModalProps } from '../button-modal';
@@ -85,10 +85,12 @@ const MultiLineEllipsisText: React.FC<MultiLineEllipsisTextProps> = ({
   if (isEllipsis && tipType === 'modal') {
     return (
       <ButtonModal
-        destroyOnClose
         width={325}
         footer={null}
         {...omit(buttonModalProps, 'children')}
+        destroyOnHidden={
+          buttonModalProps?.destroyOnHidden ?? buttonModalProps?.destroyOnClose ?? true
+        }
         className={classNames('ellipsis-modal', buttonModalProps?.className)}
         trigger={ellipsisNode}
       >
@@ -102,8 +104,21 @@ const MultiLineEllipsisText: React.FC<MultiLineEllipsisTextProps> = ({
   if (isEllipsis && tipType === 'tooltip') {
     return (
       <Tooltip
-        {...tooltipProps}
-        overlayClassName={classNames('ellipsis-tooltip', tooltipProps?.overlayClassName)}
+        {...omit(tooltipProps, ['overlayClassName', 'classNames'])}
+        classNames={(info) => {
+          const customClassNames =
+            typeof tooltipProps?.classNames === 'function'
+              ? tooltipProps.classNames(info)
+              : tooltipProps?.classNames;
+          return {
+            ...customClassNames,
+            root: classNames(
+              'ellipsis-tooltip',
+              tooltipProps?.overlayClassName,
+              customClassNames?.root,
+            ),
+          };
+        }}
         title={<div className="ellipsis-tooltip-content">{text}</div>}
       >
         {ellipsisNode}

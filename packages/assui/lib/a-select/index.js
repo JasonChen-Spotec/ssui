@@ -9,7 +9,7 @@ Object.defineProperty(exports, "__esModule", {
 var tslib_1 = require("tslib");
 var jsx_runtime_1 = require("react/jsx-runtime");
 var useControllableValue_1 = tslib_1.__importDefault(require("ahooks/lib/useControllableValue"));
-var select_1 = tslib_1.__importDefault(require("antd/lib/select"));
+var antd_1 = require("antd");
 var classnames_1 = tslib_1.__importDefault(require("classnames"));
 var ASelect = Object.assign(function (props) {
   var valueRender = props.valueRender,
@@ -19,7 +19,7 @@ var ASelect = Object.assign(function (props) {
     value = _ref[0],
     onChange = _ref[1];
   if (!valueRender) {
-    return (0, jsx_runtime_1.jsx)(select_1["default"], _extends({
+    return (0, jsx_runtime_1.jsx)(antd_1.Select, _extends({
       className: className
     }, restProps, {
       value: value,
@@ -31,12 +31,12 @@ var ASelect = Object.assign(function (props) {
     children: [(0, jsx_runtime_1.jsx)("div", {
       className: "a-select-value-wrap",
       children: valueRender(value)
-    }), (0, jsx_runtime_1.jsx)(select_1["default"], _extends({}, restProps, {
+    }), (0, jsx_runtime_1.jsx)(antd_1.Select, _extends({}, restProps, {
       value: value,
       onChange: onChange
     }))]
   });
 }, {
-  Option: select_1["default"].Option
+  Option: antd_1.Select.Option
 });
 exports["default"] = ASelect;

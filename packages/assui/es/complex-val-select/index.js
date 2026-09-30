@@ -4,7 +4,7 @@ import * as React from 'react';
 import ArrowDownOutlined from "a-icons/es/ArrowDownOutlined";
 import stableStringify from "aa-utils/es/stableStringify";
 import useControllableValue from "ahooks/es/useControllableValue";
-import Select from "antd/es/select";
+import { Select } from 'antd';
 import classNames from 'classnames';
 import { isNil } from 'lodash';
 import isArray from 'lodash/isArray';

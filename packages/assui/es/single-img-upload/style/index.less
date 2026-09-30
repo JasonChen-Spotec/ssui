@@ -1,4 +1,3 @@
-@import '~antd/lib/style/index.less';
 @import '../../style/variables.less';
 
 @progress-prefix-cls: ~'@{ant-prefix}';
@@ -102,11 +101,13 @@
     z-index: 2;
     transform: translateY(-34%);
 
-    .@{ant-prefix}-progress-outer {
+    .@{ant-prefix}-progress-body {
+      flex-direction: column;
+      gap: 4px;
       padding: 0 20px;
     }
 
-    .@{ant-prefix}-progress-text {
+    .@{ant-prefix}-progress-indicator {
       display: block;
       width: 100%;
       color: @white;

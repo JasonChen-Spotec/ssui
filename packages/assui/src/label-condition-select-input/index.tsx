@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import useControllableValue from 'ahooks/lib/useControllableValue';
-import type { RefSelectProps } from 'antd/lib/select';
+import type { RefSelectProps } from 'antd';
 import classNames from 'classnames';
 import isEmpty from 'lodash/isEmpty';
 import isNil from 'lodash/isNil';

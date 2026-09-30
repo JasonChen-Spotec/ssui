@@ -8,9 +8,8 @@ Object.defineProperty(exports, "__esModule", {
 });
 var tslib_1 = require("tslib");
 var jsx_runtime_1 = require("react/jsx-runtime");
-var React = tslib_1.__importStar(require("react"));
 var useControllableValue_1 = tslib_1.__importDefault(require("ahooks/lib/useControllableValue"));
-var DisabledContext_1 = tslib_1.__importDefault(require("antd/lib/config-provider/DisabledContext"));
+var antd_1 = require("antd");
 var bignumber_js_1 = tslib_1.__importDefault(require("bignumber.js"));
 var classnames_1 = tslib_1.__importDefault(require("classnames"));
 var isUndefined_1 = tslib_1.__importDefault(require("lodash/isUndefined"));
@@ -43,7 +42,8 @@ var StepNumberInput = function StepNumberInput(props) {
   var maxCondition = (0, isUndefined_1["default"])(max) ? false : max === Number(value) || Number(max) < Number(plusNumber);
   var minCondition = (0, isUndefined_1["default"])(min) ? false : min === Number(value) || Number(min) > Number(minusNumber);
   // ===================== Disabled =====================
-  var disabled = React.useContext(DisabledContext_1["default"]);
+  var _antd_1$ConfigProvide = antd_1.ConfigProvider.useConfig(),
+    disabled = _antd_1$ConfigProvide.componentDisabled;
   var mergedDisabled = customDisabled != null ? customDisabled : disabled;
   var minusDisabled = isEmpty || minCondition || mergedDisabled;
   var addDisabled = isEmpty || maxCondition || mergedDisabled;

@@ -2,7 +2,7 @@ function _extends() { return _extends = Object.assign ? Object.assign.bind() : f
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import React from 'react';
 import useControllableValue from "ahooks/es/useControllableValue";
-import Select from "antd/es/select";
+import { Select } from 'antd';
 import classNames from 'classnames';
 import isArray from 'lodash/isArray';
 import isNull from 'lodash/isNull';
@@ -36,8 +36,10 @@ var LabelSelect = function LabelSelect(props, ref) {
     }
     selectRef.current.focus();
   };
-  var onDropdownVisibleChange = function onDropdownVisibleChange(nextOpen) {
+  var handleOpenChange = function handleOpenChange(nextOpen) {
+    var _ref, _props$onOpenChange;
     setOpen(nextOpen);
+    (_ref = (_props$onOpenChange = props.onOpenChange) != null ? _props$onOpenChange : props.onDropdownVisibleChange) == null || _ref(nextOpen);
   };
   var handleBlur = function handleBlur() {
     onBlur == null || onBlur(value);
@@ -50,7 +52,7 @@ var LabelSelect = function LabelSelect(props, ref) {
     children: [_jsx(ComplexValSelect, _extends({
       maxTagCount: 3,
       showSearch: false
-    }, omit(props, ['open', 'onChange', 'className', 'label', 'setOpen', 'isFocus']), {
+    }, omit(props, ['open', 'onChange', 'className', 'label', 'setOpen', 'isFocus', 'onOpenChange', 'onDropdownVisibleChange']), {
       open: open,
       ref: selectRef,
       size: "large",
@@ -61,7 +63,7 @@ var LabelSelect = function LabelSelect(props, ref) {
         var _selectRef$current;
         (_selectRef$current = selectRef.current) == null || _selectRef$current.focus();
       },
-      onDropdownVisibleChange: onDropdownVisibleChange
+      onOpenChange: handleOpenChange
     })), _jsx("label", {
       className: "label-select-text",
       onClick: handleLabelClick,

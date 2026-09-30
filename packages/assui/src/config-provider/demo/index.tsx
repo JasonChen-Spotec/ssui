@@ -1,20 +1,22 @@
 import React, { useState } from 'react';
 import { Select } from 'antd';
-import type { RangeValue } from 'rc-picker/lib/interface';
+import type { LabelRangePickerProps } from 'assui';
 import { LabelCustomizeRangePicker, ConfigProvider, LocaleType } from 'assui';
 import moment from 'moment';
 
 const { Option } = Select;
 
+type RangeValue = Parameters<NonNullable<LabelRangePickerProps['onChange']>>[0];
+
 const Demo = () => {
   const now = moment();
-  const [date, setDate] = useState<RangeValue<moment.Moment>>([
+  const [date, setDate] = useState<RangeValue>([
     now.clone().subtract(6, 'day').startOf('day'),
     now,
   ]);
   const [locale, setLocale] = useState<LocaleType>('en-US');
 
-  const onDateChange = (value: RangeValue<moment.Moment>) => {
+  const onDateChange = (value: RangeValue) => {
     setDate(value);
   };
   function handleChange(value) {

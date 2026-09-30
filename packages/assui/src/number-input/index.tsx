@@ -1,7 +1,7 @@
 import * as React from 'react';
 import useControllableValue from 'ahooks/lib/useControllableValue';
-import type { InputProps } from 'antd/lib/input';
-import Input from 'antd/lib/input';
+import type { InputProps } from 'antd';
+import { Input } from 'antd';
 import omit from 'lodash/omit';
 import * as dataTypeEnum from './const/dataTypeEnum';
 import * as numberTypeEnum from './const/numberType';

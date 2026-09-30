@@ -1,9 +1,7 @@
 import * as React from 'react';
 import CloseOutlined from 'a-icons/lib/CloseOutlined';
 import Pdf from 'a-icons/lib/Pdf';
-import Image from 'antd/lib/image';
-import Progress from 'antd/lib/progress';
-import Spin from 'antd/lib/spin';
+import { Image, Progress, Spin } from 'antd';
 import classNames from 'classnames';
 import isFunction from 'lodash/isFunction';
 import isObject from 'lodash/isObject';
@@ -171,7 +169,9 @@ const SingleImgUpload = (props: SingleImgUploadProps) => {
 
   const getShowNode = () => {
     if (fileType === IMAGE_TYPE) {
-      return <Image wrapperClassName="as-img-upload-preview" src={fileUrl} preview />;
+      return (
+        <Image classNames={{ root: 'as-img-upload-preview' }} src={fileUrl} preview />
+      );
     }
 
     return (

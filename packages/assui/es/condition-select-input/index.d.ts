@@ -1,4 +1,4 @@
-import type { SelectProps } from 'antd/lib/select';
+import type { SelectProps } from 'antd';
 import type { ComplexValSelectProps, ComplexValSelectValueType } from '../complex-val-select';
 import type { ConditionInputProps } from '../condition-input';
 export declare enum InputTypeEnum {

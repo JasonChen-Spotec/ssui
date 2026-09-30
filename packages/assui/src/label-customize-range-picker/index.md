@@ -13,6 +13,8 @@ group:
 
 输入 LabelCustomizeRangePicker 组件
 
+antd 6 升级后，`label` 和 `origin` 两种模式都保留 Moment 日期值，快捷日期、时区偏移和最大范围处理保持原有行为。
+
 ## 1. 代码演示
 
 ### 1.1. 基础使用
@@ -27,5 +29,3 @@ group:
 
 ### 1.4. 最大选择范围
 <code hideActions='["CSB", "EXTERNAL"]' src="./demo/MaxScope.tsx" ></code>
-
- 

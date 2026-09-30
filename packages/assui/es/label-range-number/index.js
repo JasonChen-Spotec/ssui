@@ -79,7 +79,7 @@ var LabelDatePicker = function LabelDatePicker(props) {
       children: [_jsx("div", {
         className: "a-number-input",
         children: _jsx(NumberInput, _extends({
-          bordered: false,
+          variant: endNumberInputProps != null && endNumberInputProps.bordered ? 'outlined' : 'borderless',
           enableMinus: enableMinus,
           numberType: numberType,
           precision: precision,
@@ -96,7 +96,7 @@ var LabelDatePicker = function LabelDatePicker(props) {
       }), _jsx("div", {
         className: "a-number-input",
         children: _jsx(NumberInput, _extends({
-          bordered: false,
+          variant: startNumberInputProps != null && startNumberInputProps.bordered ? 'outlined' : 'borderless',
           enableMinus: enableMinus,
           onFocus: onFocus,
           numberType: numberType,

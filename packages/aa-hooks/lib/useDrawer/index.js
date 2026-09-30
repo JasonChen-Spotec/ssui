@@ -1,71 +1,34 @@
 "use strict";
 
-var __assign = this && this.__assign || function () {
-  __assign = Object.assign || function (t) {
-    for (var s, i = 1, n = arguments.length; i < n; i++) {
-      s = arguments[i];
-      for (var p in s) {
-        if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
-      }
-    }
-    return t;
-  };
-  return __assign.apply(this, arguments);
-};
-var __rest = this && this.__rest || function (s, e) {
-  var t = {};
-  for (var p in s) {
-    if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
-  }
-  if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
-    if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i])) t[p[i]] = s[p[i]];
-  }
-  return t;
-};
-var __read = this && this.__read || function (o, n) {
-  var m = typeof Symbol === "function" && o[Symbol.iterator];
-  if (!m) return o;
-  var i = m.call(o),
-    r,
-    ar = [],
-    e;
-  try {
-    while ((n === void 0 || n-- > 0) && !(r = i.next()).done) {
-      ar.push(r.value);
-    }
-  } catch (error) {
-    e = {
-      error: error
-    };
-  } finally {
-    try {
-      if (r && !r.done && (m = i["return"])) m.call(i);
-    } finally {
-      if (e) throw e.error;
-    }
-  }
-  return ar;
-};
-var __importDefault = this && this.__importDefault || function (mod) {
-  return mod && mod.__esModule ? mod : {
-    "default": mod
-  };
-};
+var _excluded = ["onBeforeOpen", "onBeforeClose", "renderChildren", "className", "rootClassName", "style", "rootStyle", "mask", "maskClosable", "destroyOnClose", "destroyOnHidden"];
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
+function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (-1 !== e.indexOf(n)) continue; t[n] = r[n]; } return t; }
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.generateUseDrawer = exports.useDrawer = void 0;
-var classnames_1 = __importDefault(require("classnames"));
+var tslib_1 = require("tslib");
 var react_1 = require("react");
+var classnames_1 = tslib_1.__importDefault(require("classnames"));
 var useDrawer = function useDrawer(props) {
-  var _a = __read((0, react_1.useState)(false), 2),
-    open = _a[0],
-    setOpen = _a[1];
-  var _b = props !== null && props !== void 0 ? props : {},
-    onBeforeOpen = _b.onBeforeOpen,
-    onBeforeClose = _b.onBeforeClose,
-    renderChildren = _b.renderChildren,
-    restProps = __rest(_b, ["onBeforeOpen", "onBeforeClose", "renderChildren"]);
+  var _mask$closable;
+  var _ref = (0, react_1.useState)(false),
+    open = _ref[0],
+    setOpen = _ref[1];
+  var _ref2 = props != null ? props : {},
+    onBeforeOpen = _ref2.onBeforeOpen,
+    onBeforeClose = _ref2.onBeforeClose,
+    renderChildren = _ref2.renderChildren,
+    className = _ref2.className,
+    rootClassName = _ref2.rootClassName,
+    style = _ref2.style,
+    rootStyle = _ref2.rootStyle,
+    mask = _ref2.mask,
+    maskClosable = _ref2.maskClosable,
+    destroyOnClose = _ref2.destroyOnClose,
+    _ref2$destroyOnHidden = _ref2.destroyOnHidden,
+    destroyOnHidden = _ref2$destroyOnHidden === void 0 ? destroyOnClose : _ref2$destroyOnHidden,
+    restProps = _objectWithoutPropertiesLoose(_ref2, _excluded);
   var closeDrawer = function closeDrawer() {
     if (onBeforeClose) {
       onBeforeClose();
@@ -86,9 +49,17 @@ var useDrawer = function useDrawer(props) {
       openDrawer();
     }
   });
-  var drawerProps = __assign({
+  var drawerProps = _extends({
     open: open,
-    onClose: closeDrawer
+    onClose: closeDrawer,
+    rootClassName: (0, classnames_1["default"])(className, rootClassName),
+    rootStyle: _extends({}, style, rootStyle),
+    destroyOnHidden: destroyOnHidden,
+    mask: mask === false ? false : maskClosable === undefined ? mask : _extends({}, mask === true ? {
+      enabled: true
+    } : mask, {
+      closable: typeof mask === 'object' ? (_mask$closable = mask.closable) != null ? _mask$closable : maskClosable : maskClosable
+    })
   }, restProps);
   if (renderChildren) {
     drawerProps.children = renderChildren(actionRef.current);
@@ -96,11 +67,11 @@ var useDrawer = function useDrawer(props) {
   return [drawerProps, actionRef.current];
 };
 exports.useDrawer = useDrawer;
-
 var generateUseDrawer = function generateUseDrawer(defaultProps) {
   return function useDrawerFunc(newProps) {
-    var props = __assign(__assign(__assign({}, defaultProps), newProps), {
-      className: (0, classnames_1["default"])(defaultProps.className, newProps === null || newProps === void 0 ? void 0 : newProps.className)
+    var props = _extends({}, defaultProps, newProps, {
+      className: (0, classnames_1["default"])(defaultProps.className, newProps == null ? void 0 : newProps.className),
+      rootClassName: (0, classnames_1["default"])(defaultProps.rootClassName, newProps == null ? void 0 : newProps.rootClassName)
     });
     return (0, exports.useDrawer)(props);
   };

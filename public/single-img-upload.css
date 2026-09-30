@@ -1,7 +1,3 @@
-/* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
-/* stylelint-disable no-duplicate-selectors */
-/* stylelint-disable */
-/* stylelint-disable declaration-bang-space-before,no-duplicate-selectors,string-no-newline */
 .as-img-upload {
   width: 335px;
   height: 140px;
@@ -30,17 +26,37 @@
 }
 .as-img-upload-content {
   position: relative;
-  z-index: 1010;
   width: 100%;
   height: 100%;
   overflow: hidden;
   background-color: #fff;
 }
+.as-img-upload .as-img-upload-pdf-preview {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  cursor: pointer;
+}
+.as-img-upload .as-img-upload-pdf-preview .spotecicon {
+  width: 40px;
+  height: 40px;
+}
+.as-img-upload .as-img-upload-pdf-preview .as-img-upload-pdf-preview-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.as-img-upload .as-img-upload-pdf-preview .as-img-upload-pdf-name {
+  margin-top: 10px;
+}
 .as-img-upload-close-button {
   position: absolute;
   top: 0;
   right: 0;
-  z-index: 10;
   width: 20px;
   height: 20px;
   text-align: center;
@@ -53,22 +69,38 @@
   height: 15px;
   color: #fff;
 }
+.as-img-upload .preview-img {
+  max-width: 100%;
+}
 .as-img-upload-preview {
+  display: flex;
+  align-items: center;
   height: 100%;
 }
-.as-img-upload-upload-progress {
+.as-img-upload .as-img-upload-upload-progress {
   position: absolute;
   top: 50%;
   left: 0;
   z-index: 2;
   transform: translateY(-34%);
 }
-.as-img-upload-upload-progress .ant-progress-outer {
+.as-img-upload .as-img-upload-upload-progress .ant-progress-body {
+  flex-direction: column;
+  gap: 4px;
   padding: 0 20px;
 }
-.as-img-upload-upload-progress .ant-progress-text {
+.as-img-upload .as-img-upload-upload-progress .ant-progress-indicator {
   display: block;
   width: 100%;
   color: #fff;
   text-align: center;
+}
+.as-img-upload .ant-spin-container,
+.as-img-upload .ant-spin-nested-loading {
+  height: 100%;
+}
+.init-disable {
+  color: rgba(0, 0, 0, 0.25);
+  background-color: #f5f5f5;
+  cursor: not-allowed;
 }

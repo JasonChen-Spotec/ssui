@@ -1,5 +1,6 @@
 import React from 'react';
 import { fireEvent, render } from '@testing-library/react';
+import { ConfigProvider } from 'antd';
 import StepNumberInput from '../index';
 
 const baseProps = {
@@ -50,6 +51,27 @@ describe('StepNumberInput', () => {
     expect(input.value).toBe('10');
     expect(baseProps.onBlur).toBeCalledWith('10');
     expect(button).toBeTruthy();
+  });
+
+  it('inherits ConfigProvider disabled state and allows an explicit override', () => {
+    const onChange = jest.fn();
+    const { getByRole, getByText, rerender } = render(
+      <ConfigProvider componentDisabled>
+        <StepNumberInput value="2" onChange={onChange} />
+      </ConfigProvider>,
+    );
+    expect((getByRole('textbox') as HTMLInputElement).disabled).toBe(true);
+    fireEvent.click(getByText('+'));
+    expect(onChange).not.toHaveBeenCalled();
+
+    rerender(
+      <ConfigProvider componentDisabled>
+        <StepNumberInput value="2" disabled={false} onChange={onChange} />
+      </ConfigProvider>,
+    );
+    expect((getByRole('textbox') as HTMLInputElement).disabled).toBe(false);
+    fireEvent.click(getByText('+'));
+    expect(onChange).toHaveBeenCalledWith('3');
   });
 
   it('parser and formatter should work fine', () => {

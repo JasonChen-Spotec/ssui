@@ -1,6 +1,6 @@
 import dateUtils from 'aa-utils/lib/dateUtils';
 import type { Moment } from 'moment';
-import type { RangeValue } from 'rc-picker/lib/interface';
+import type { MomentRangeValue } from '../../moment-date-picker';
 
 /** 1整天的毫秒数 */
 export const ONE_DAY_MILLISECOND = 1000 * 60 * 60 * 24;
@@ -8,7 +8,7 @@ export const ONE_DAY_MILLISECOND = 1000 * 60 * 60 * 24;
 /** 1分钟的毫秒数 */
 export const ONE_MINUTE_MILLISECOND = 1000 * 60;
 
-export const formatMaxScope = (dateStampTuple: RangeValue<Moment>, maxScope: number) => {
+export const formatMaxScope = (dateStampTuple: MomentRangeValue, maxScope: number) => {
   const now = dateUtils.getToday().endOf('day');
   const [start, end] = dateStampTuple || [];
   let startStamp = start?.clone().startOf('day') ?? null;

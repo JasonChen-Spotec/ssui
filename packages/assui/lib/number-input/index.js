@@ -11,7 +11,7 @@ var tslib_1 = require("tslib");
 var jsx_runtime_1 = require("react/jsx-runtime");
 var React = tslib_1.__importStar(require("react"));
 var useControllableValue_1 = tslib_1.__importDefault(require("ahooks/lib/useControllableValue"));
-var input_1 = tslib_1.__importDefault(require("antd/lib/input"));
+var antd_1 = require("antd");
 var omit_1 = tslib_1.__importDefault(require("lodash/omit"));
 var dataTypeEnum = tslib_1.__importStar(require("./const/dataTypeEnum"));
 exports.dataTypeEnum = dataTypeEnum;
@@ -76,7 +76,7 @@ var NumberInput = React.forwardRef(function (props, ref) {
     onBlur == null || onBlur(resultValue);
   };
   var finallyValue = formatter ? formatter("" + value) : value;
-  return (0, jsx_runtime_1.jsx)(input_1["default"], _extends({
+  return (0, jsx_runtime_1.jsx)(antd_1.Input, _extends({
     type: "text",
     ref: ref,
     value: finallyValue,

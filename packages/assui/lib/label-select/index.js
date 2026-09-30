@@ -9,14 +9,14 @@ var tslib_1 = require("tslib");
 var jsx_runtime_1 = require("react/jsx-runtime");
 var react_1 = tslib_1.__importDefault(require("react"));
 var useControllableValue_1 = tslib_1.__importDefault(require("ahooks/lib/useControllableValue"));
-var select_1 = tslib_1.__importDefault(require("antd/lib/select"));
+var antd_1 = require("antd");
 var classnames_1 = tslib_1.__importDefault(require("classnames"));
 var isArray_1 = tslib_1.__importDefault(require("lodash/isArray"));
 var isNull_1 = tslib_1.__importDefault(require("lodash/isNull"));
 var isUndefined_1 = tslib_1.__importDefault(require("lodash/isUndefined"));
 var omit_1 = tslib_1.__importDefault(require("lodash/omit"));
 var complex_val_select_1 = tslib_1.__importDefault(require("../complex-val-select"));
-exports.Option = select_1["default"].Option;
+exports.Option = antd_1.Select.Option;
 var LabelSelect = function LabelSelect(props, ref) {
   var className = props.className,
     label = props.label,
@@ -43,8 +43,10 @@ var LabelSelect = function LabelSelect(props, ref) {
     }
     selectRef.current.focus();
   };
-  var onDropdownVisibleChange = function onDropdownVisibleChange(nextOpen) {
+  var handleOpenChange = function handleOpenChange(nextOpen) {
+    var _ref3, _props$onOpenChange;
     setOpen(nextOpen);
+    (_ref3 = (_props$onOpenChange = props.onOpenChange) != null ? _props$onOpenChange : props.onDropdownVisibleChange) == null || _ref3(nextOpen);
   };
   var handleBlur = function handleBlur() {
     onBlur == null || onBlur(value);
@@ -57,7 +59,7 @@ var LabelSelect = function LabelSelect(props, ref) {
     children: [(0, jsx_runtime_1.jsx)(complex_val_select_1["default"], _extends({
       maxTagCount: 3,
       showSearch: false
-    }, (0, omit_1["default"])(props, ['open', 'onChange', 'className', 'label', 'setOpen', 'isFocus']), {
+    }, (0, omit_1["default"])(props, ['open', 'onChange', 'className', 'label', 'setOpen', 'isFocus', 'onOpenChange', 'onDropdownVisibleChange']), {
       open: open,
       ref: selectRef,
       size: "large",
@@ -68,7 +70,7 @@ var LabelSelect = function LabelSelect(props, ref) {
         var _selectRef$current;
         (_selectRef$current = selectRef.current) == null || _selectRef$current.focus();
       },
-      onDropdownVisibleChange: onDropdownVisibleChange
+      onOpenChange: handleOpenChange
     })), (0, jsx_runtime_1.jsx)("label", {
       className: "label-select-text",
       onClick: handleLabelClick,

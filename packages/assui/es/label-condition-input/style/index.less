@@ -1,9 +1,9 @@
-@import '~antd/lib/style/index.less';
 @import '../../style/themes/default.less';
 @import '../../style/variables.less';
 
 .label-condition-input {
   z-index: 1;
+  box-sizing: border-box;
   width: 100%;
   height: 100%;
   padding: 19px 15px 2px 15px;
@@ -31,6 +31,8 @@
   }
 
   &-warper {
+    .assui-box-sizing();
+
     position: relative;
     width: 100%;
     height: 100%;

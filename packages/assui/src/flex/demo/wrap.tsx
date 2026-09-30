@@ -1,7 +1,9 @@
 import React from 'react';
-import type { SizeType } from 'antd/lib/config-provider/SizeContext';
+import type { ConfigProviderProps } from 'antd';
 import { Button, Radio, Slider } from 'antd';
 import { Flex } from 'assui';
+
+type SizeType = ConfigProviderProps['componentSize'];
 
 const Demo: React.FC = () => {
   const [gapSize, setGapSize] = React.useState<SizeType | 'customize'>('small');

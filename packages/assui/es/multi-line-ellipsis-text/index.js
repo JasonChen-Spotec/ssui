@@ -2,8 +2,8 @@ function _extends() { return _extends = Object.assign ? Object.assign.bind() : f
 import { jsx as _jsx } from "react/jsx-runtime";
 import React from 'react';
 import useSize from "ahooks/es/useSize";
-import Tooltip from "antd/es/tooltip";
-import classNames from 'classnames';
+import { Tooltip } from 'antd';
+import _classNames from 'classnames';
 import omit from 'lodash/omit';
 import ButtonModal from '../button-modal';
 var MultiLineEllipsisText = function MultiLineEllipsisText(_ref) {
@@ -41,7 +41,7 @@ var MultiLineEllipsisText = function MultiLineEllipsisText(_ref) {
   }, [text, lines, onEllipsisChange, containerSize == null ? void 0 : containerSize.width]);
   var ellipsisNode = _jsx("div", {
     ref: ref,
-    className: classNames('ellipsis', className, {
+    className: _classNames('ellipsis', className, {
       cursor: isEllipsis && tipType
     }),
     style: {
@@ -57,12 +57,13 @@ var MultiLineEllipsisText = function MultiLineEllipsisText(_ref) {
     children: text
   });
   if (isEllipsis && tipType === 'modal') {
+    var _ref2, _buttonModalProps$des;
     return _jsx(ButtonModal, _extends({
-      destroyOnClose: true,
       width: 325,
       footer: null
     }, omit(buttonModalProps, 'children'), {
-      className: classNames('ellipsis-modal', buttonModalProps == null ? void 0 : buttonModalProps.className),
+      destroyOnHidden: (_ref2 = (_buttonModalProps$des = buttonModalProps == null ? void 0 : buttonModalProps.destroyOnHidden) != null ? _buttonModalProps$des : buttonModalProps == null ? void 0 : buttonModalProps.destroyOnClose) != null ? _ref2 : true,
+      className: _classNames('ellipsis-modal', buttonModalProps == null ? void 0 : buttonModalProps.className),
       trigger: ellipsisNode,
       children: (buttonModalProps == null ? void 0 : buttonModalProps.children) || _jsx("div", {
         className: "ellipsis-modal-content",
@@ -71,8 +72,13 @@ var MultiLineEllipsisText = function MultiLineEllipsisText(_ref) {
     }));
   }
   if (isEllipsis && tipType === 'tooltip') {
-    return _jsx(Tooltip, _extends({}, tooltipProps, {
-      overlayClassName: classNames('ellipsis-tooltip', tooltipProps == null ? void 0 : tooltipProps.overlayClassName),
+    return _jsx(Tooltip, _extends({}, omit(tooltipProps, ['overlayClassName', 'classNames']), {
+      classNames: function classNames(info) {
+        var customClassNames = typeof (tooltipProps == null ? void 0 : tooltipProps.classNames) === 'function' ? tooltipProps.classNames(info) : tooltipProps == null ? void 0 : tooltipProps.classNames;
+        return _extends({}, customClassNames, {
+          root: _classNames('ellipsis-tooltip', tooltipProps == null ? void 0 : tooltipProps.overlayClassName, customClassNames == null ? void 0 : customClassNames.root)
+        });
+      },
       title: _jsx("div", {
         className: "ellipsis-tooltip-content",
         children: text

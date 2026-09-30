@@ -1,4 +1,3 @@
-@import '~antd/lib/style/index.less';
 @import '../../style/variables.less';
 
 .multipart-upload-container {
@@ -66,12 +65,12 @@
   z-index: @zindex-table-fixed;
   transform: translateY(-34%);
 
-  .@{ant-prefix}-progress-outer {
-    margin-right: 0;
-    padding-right: 0;
+  .@{ant-prefix}-progress-body {
+    flex-direction: column;
+    gap: 4px;
   }
 
-  .@{ant-prefix}-progress-text {
+  .@{ant-prefix}-progress-indicator {
     display: inline-block;
     width: 100%;
     text-align: center;

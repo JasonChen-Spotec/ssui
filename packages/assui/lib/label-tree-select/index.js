@@ -8,7 +8,7 @@ var tslib_1 = require("tslib");
 var jsx_runtime_1 = require("react/jsx-runtime");
 var react_1 = tslib_1.__importDefault(require("react"));
 var useControllableValue_1 = tslib_1.__importDefault(require("ahooks/lib/useControllableValue"));
-var tree_select_1 = tslib_1.__importDefault(require("antd/lib/tree-select"));
+var antd_1 = require("antd");
 var classnames_1 = tslib_1.__importDefault(require("classnames"));
 var omit_1 = tslib_1.__importDefault(require("lodash/omit"));
 var LabelTreeSelect = function LabelTreeSelect(props) {
@@ -17,7 +17,8 @@ var LabelTreeSelect = function LabelTreeSelect(props) {
     unit = props.unit,
     _props$showSearch = props.showSearch,
     showSearch = _props$showSearch === void 0 ? false : _props$showSearch,
-    onDropdownVisibleChange = props.onDropdownVisibleChange;
+    onDropdownVisibleChange = props.onDropdownVisibleChange,
+    onOpenChange = props.onOpenChange;
   var selectRef = react_1["default"].useRef(null);
   var _ref = (0, useControllableValue_1["default"])(props, {
       valuePropName: 'open',
@@ -39,8 +40,9 @@ var LabelTreeSelect = function LabelTreeSelect(props) {
     (_selectRef$current = selectRef.current) == null || _selectRef$current.focus();
   };
   var handleDropdownVisibleChange = function handleDropdownVisibleChange(nextOpen) {
+    var _ref3;
     setOpen(nextOpen);
-    onDropdownVisibleChange == null || onDropdownVisibleChange(nextOpen);
+    (_ref3 = onOpenChange != null ? onOpenChange : onDropdownVisibleChange) == null || _ref3(nextOpen);
   };
   var isValueNotEmpty = !!(value != null && value.length);
   return (0, jsx_runtime_1.jsxs)("div", {
@@ -48,15 +50,15 @@ var LabelTreeSelect = function LabelTreeSelect(props) {
       'label-tree-select': true,
       'label-tree-select-label-scale': open || isValueNotEmpty
     }, className),
-    children: [(0, jsx_runtime_1.jsx)(tree_select_1["default"], _extends({
+    children: [(0, jsx_runtime_1.jsx)(antd_1.TreeSelect, _extends({
       showSearch: showSearch
-    }, (0, omit_1["default"])(props, ['open', 'onChange', 'className', 'label']), {
+    }, (0, omit_1["default"])(props, ['open', 'onChange', 'className', 'label', 'unit', 'onOpenChange', 'onDropdownVisibleChange']), {
       open: open,
       ref: selectRef,
       size: "large",
       className: "label-select-selector",
       onChange: handleChange,
-      onDropdownVisibleChange: handleDropdownVisibleChange
+      onOpenChange: handleDropdownVisibleChange
     })), isValueNotEmpty && (0, jsx_runtime_1.jsxs)("div", {
       className: "label-tree-select-value-length",
       children: [(0, jsx_runtime_1.jsx)("span", {

@@ -3,6 +3,5 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-require("antd/lib/select/style");
 require("./index.less");
 require("../../complex-val-select/style/index.less");

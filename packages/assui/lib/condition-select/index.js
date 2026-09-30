@@ -9,9 +9,7 @@ var jsx_runtime_1 = require("react/jsx-runtime");
 var react_1 = tslib_1.__importDefault(require("react"));
 var ArrowDownOutlined_1 = tslib_1.__importDefault(require("a-icons/lib/ArrowDownOutlined"));
 var useControllableValue_1 = tslib_1.__importDefault(require("ahooks/lib/useControllableValue"));
-var col_1 = tslib_1.__importDefault(require("antd/lib/grid/col"));
-var row_1 = tslib_1.__importDefault(require("antd/lib/grid/row"));
-var select_1 = tslib_1.__importDefault(require("antd/lib/select"));
+var antd_1 = require("antd");
 var classnames_1 = tslib_1.__importDefault(require("classnames"));
 var isNil_1 = tslib_1.__importDefault(require("lodash/isNil"));
 var omit_1 = tslib_1.__importDefault(require("lodash/omit"));
@@ -51,11 +49,11 @@ var ConditionSelect = function ConditionSelect(_ref) {
     setComponentValue(_extends({}, componentValue, (_extends2 = {}, _extends2[componentProps.name] = v, _extends2)));
   };
   var firstSpan = DynamicComponent ? 10 : 24;
-  return (0, jsx_runtime_1.jsxs)(row_1["default"], {
+  return (0, jsx_runtime_1.jsxs)(antd_1.Row, {
     gutter: 10,
-    children: [(0, jsx_runtime_1.jsx)(col_1["default"], {
+    children: [(0, jsx_runtime_1.jsx)(antd_1.Col, {
       span: firstSpan,
-      children: (0, jsx_runtime_1.jsx)(select_1["default"], _extends({
+      children: (0, jsx_runtime_1.jsx)(antd_1.Select, _extends({
         onChange: handleTypeChange,
         value: componentValue == null ? void 0 : componentValue[selectName],
         allowClear: true,
@@ -63,13 +61,13 @@ var ConditionSelect = function ConditionSelect(_ref) {
         suffixIcon: (0, jsx_runtime_1.jsx)(ArrowDownOutlined_1["default"], {})
       }, selectProps, {
         children: option.map(function (item) {
-          return (0, jsx_runtime_1.jsx)(select_1["default"].Option, {
+          return (0, jsx_runtime_1.jsx)(antd_1.Select.Option, {
             value: item.value,
             children: item.label
           }, item.value);
         })
       }))
-    }), DynamicComponent && (0, jsx_runtime_1.jsx)(col_1["default"], {
+    }), DynamicComponent && (0, jsx_runtime_1.jsx)(antd_1.Col, {
       span: 14,
       children: react_1["default"].createElement(DynamicComponent, _extends({}, componentProps, {
         value: componentValue[componentProps.name],

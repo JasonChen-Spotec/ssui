@@ -1,8 +1,10 @@
 import React from 'react';
 import useControllableValue from 'ahooks/lib/useControllableValue';
-import type { OptionProps, SelectProps } from 'antd/lib/select';
-import Select from 'antd/lib/select';
+import type { SelectProps } from 'antd';
+import { Select } from 'antd';
 import classNames from 'classnames';
+
+type OptionProps = React.ComponentProps<typeof Select.Option>;
 
 export interface ASelectProps extends SelectProps {
   className?: string;

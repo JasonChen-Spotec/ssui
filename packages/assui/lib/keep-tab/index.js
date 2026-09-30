@@ -1,6 +1,6 @@
 "use strict";
 
-var _excluded = ["items", "defaultActiveKey", "saveActiveKeyName", "onChange", "badgeProps"];
+var _excluded = ["items", "defaultActiveKey", "saveActiveKeyName", "onChange", "badgeProps", "destroyInactiveTabPane", "destroyOnHidden"];
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (-1 !== e.indexOf(n)) continue; t[n] = r[n]; } return t; }
 Object.defineProperty(exports, "__esModule", {
@@ -12,10 +12,9 @@ var React = tslib_1.__importStar(require("react"));
 var use_url_state_1 = tslib_1.__importDefault(require("@ahooksjs/use-url-state"));
 var qsHelp_1 = tslib_1.__importDefault(require("aa-utils/lib/qsHelp"));
 var useControllableValue_1 = tslib_1.__importDefault(require("ahooks/lib/useControllableValue"));
-var badge_1 = tslib_1.__importDefault(require("antd/lib/badge"));
-var tabs_1 = tslib_1.__importDefault(require("antd/lib/tabs"));
+var antd_1 = require("antd");
 var find_1 = tslib_1.__importDefault(require("lodash/find"));
-var TabPane = tabs_1["default"].TabPane;
+var TabPane = antd_1.Tabs.TabPane;
 var defaultBadgeProps = {};
 var KeepTab = function KeepTab(props) {
   var _ref2;
@@ -27,6 +26,9 @@ var KeepTab = function KeepTab(props) {
     onChange = props.onChange,
     _props$badgeProps = props.badgeProps,
     badgeProps = _props$badgeProps === void 0 ? defaultBadgeProps : _props$badgeProps,
+    destroyInactiveTabPane = props.destroyInactiveTabPane,
+    _props$destroyOnHidde = props.destroyOnHidden,
+    destroyOnHidden = _props$destroyOnHidde === void 0 ? destroyInactiveTabPane != null ? destroyInactiveTabPane : true : _props$destroyOnHidde,
     restProps = _objectWithoutPropertiesLoose(props, _excluded);
   var defaultUrlParams = qsHelp_1["default"].getQueryObject();
   var _ref = (0, use_url_state_1["default"])((_ref2 = {}, _ref2[saveActiveKeyName] = defaultUrlParams[saveActiveKeyName] || defaultActiveKey, _ref2)),
@@ -63,7 +65,7 @@ var KeepTab = function KeepTab(props) {
           className: "tab-badge",
           children: [(0, jsx_runtime_1.jsx)("div", {
             children: item.label
-          }), (0, jsx_runtime_1.jsx)(badge_1["default"], _extends({
+          }), (0, jsx_runtime_1.jsx)(antd_1.Badge, _extends({
             count: count
           }, badgeProps))]
         })
@@ -71,10 +73,10 @@ var KeepTab = function KeepTab(props) {
     }
     return item;
   });
-  return (0, jsx_runtime_1.jsx)(tabs_1["default"], _extends({
+  return (0, jsx_runtime_1.jsx)(antd_1.Tabs, _extends({
     animated: false,
     onChange: handleTabChange,
-    destroyInactiveTabPane: true,
+    destroyOnHidden: destroyOnHidden,
     activeKey: tabActiveKey
   }, restProps, {
     items: resultItems

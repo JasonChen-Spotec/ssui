@@ -1,4 +1,3 @@
-@import '~antd/lib/style/index.less';
 @import '../../style/themes/default.less';
 @import '../../style/variables.less';
 
@@ -7,47 +6,61 @@
   width: 100%;
   height: 100%;
 
-  .@{ant-prefix}-select {
+  // In antd v6 the Select root owns the border and the content owns the value.
+  .@{ant-prefix}-select:not(.@{ant-prefix}-select-customize) {
     width: 100%;
+    min-height: 45px;
+    border: 1px solid @color_e5e5e5;
+    border-radius: @border-radius-base;
+    outline: none;
+
+    &:not(.@{ant-prefix}-select-disabled):hover {
+      border-color: @color_a0a0a0;
+    }
+
+    &.@{ant-prefix}-select-focused:not(.@{ant-prefix}-select-disabled) {
+      border-color: @labelFocusBorderColor;
+      box-shadow: none;
+    }
   }
 
-  .@{ant-prefix}-select:not(.@{ant-prefix}-select-disabled),
-  .@{ant-prefix}-select-single.@{ant-prefix}-select-lg:not(.@{ant-prefix}-select-customize-input):not(.@{ant-prefix}-select-disabled) {
-    .@{ant-prefix}-select-selector:hover {
-      border-color: @color_a0a0a0;
+  .@{ant-prefix}-select-single:not(.@{ant-prefix}-select-customize) {
+    height: 45px;
+    padding-block: 0;
+
+    .@{ant-prefix}-select-content {
+      margin-inline-start: 4px;
+      font-size: @font-size-base;
+      line-height: 22px;
+      transform: translateY(6px);
     }
   }
 
   .@{ant-prefix}-select-multiple {
-    .@{ant-prefix}-select-selector {
-      height: 45px;
-      padding: 6px 11px 7px;
-      border: 1px solid @color_e5e5e5;
-      border-radius: @border-radius-base;
-      outline: none;
+    padding: 17px 11px 3px;
+
+    .@{ant-prefix}-select-content {
+      flex-wrap: nowrap;
+      min-height: 23px;
     }
 
-    .@{ant-prefix}-select-selection-overflow {
-      display: flex;
-      width: 100%;
-      height: 36px;
-      transform: translateY(8px);
-    }
-
-    .@{ant-prefix}-select-selection-overflow-item {
+    .@{ant-prefix}-select-content-item {
       max-width: 25%;
     }
 
-    .@{ant-prefix}-select-selection-overflow-item .@{ant-prefix}-select-selection-search {
-      padding: 0;
+    .@{ant-prefix}-select-content-item-suffix {
+      max-width: none;
     }
-  }
 
-  .@{ant-prefix}-select-multiple.@{ant-prefix}-select-lg {
+    .@{ant-prefix}-select-input {
+      font-size: @font-size-base;
+      line-height: 21px;
+    }
+
     .@{ant-prefix}-select-selection-item {
       width: auto;
       height: auto;
-      margin: 0 4px 4px 0;
+      margin: 0 4px 0 0;
       padding: 1px 4px;
       color: @color_333;
       font-size: @font-size-sm;
@@ -56,41 +69,15 @@
       border: 1px solid @color_ccc;
       border-radius: 4px;
     }
-  }
 
-  .@{ant-prefix}-select-allow-clear {
-    .@{ant-prefix}-select-clear {
-      right: 16px;
+    .@{ant-prefix}-select-suffix {
+      align-self: flex-start;
+      margin-block-start: -4px;
     }
   }
 
-  .@{ant-prefix}-select-single.@{ant-prefix}-select-lg:not(.@{ant-prefix}-select-customize-input) {
-    .@{ant-prefix}-select-selector {
-      height: 45px;
-      border: 1px solid @color_e5e5e5;
-      border-radius: @border-radius-base;
-      outline: none;
-    }
-  }
-
-  .@{ant-prefix}-select-focused:not(.@{ant-prefix}-select-disabled).@{ant-prefix}-select:not(.@{ant-prefix}-select-customize-input) {
-    .@{ant-prefix}-select-selector {
-      border-color: @labelFocusBorderColor;
-      box-shadow: none;
-    }
-  }
-
-  .@{ant-prefix}-select-single.@{ant-prefix}-select-show-arrow {
-    .@{ant-prefix}-select-selection-item {
-      padding-top: 11px;
-      padding-left: 4px;
-      font-size: @font-size-base;
-    }
-  }
-
-  .@{ant-prefix}-select-selection-search {
-    padding-top: 11px;
-    padding-left: 2px;
+  .@{ant-prefix}-select-clear {
+    inset-inline-end: 16px;
   }
 
   &-text {
@@ -115,7 +102,7 @@
     }
   }
 
-  .complex-val-select .@{ant-prefix}-select-arrow {
-    right: 14px;
+  .complex-val-select .@{ant-prefix}-select-suffix {
+    margin-inline-end: 2px;
   }
 }

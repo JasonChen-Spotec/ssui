@@ -3,7 +3,7 @@ function _extends() { return _extends = Object.assign ? Object.assign.bind() : f
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (-1 !== e.indexOf(n)) continue; t[n] = r[n]; } return t; }
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import useControllableValue from "ahooks/es/useControllableValue";
-import Select from "antd/es/select";
+import { Select } from 'antd';
 import classNames from 'classnames';
 var ASelect = Object.assign(function (props) {
   var valueRender = props.valueRender,

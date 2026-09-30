@@ -1,6 +1,5 @@
 import * as React from 'react';
-import Modal from 'antd/lib/modal';
-import Slider from 'antd/lib/slider';
+import { Modal, Slider } from 'antd';
 import type { CropperProps } from 'react-easy-crop';
 import EasyCrop from './EasyCrop';
 import getCroppedImg from './getCroppedImg';
@@ -285,12 +284,12 @@ const ImgCrop = (props: ImgCropProps) => {
       {src && (
         <Modal
           open
-          wrapClassName={`${pkg}-modal`}
+          classNames={{ wrapper: `${pkg}-modal` }}
           title={titleOfModal}
           onOk={onOk}
           onCancel={onClose}
-          maskClosable={false}
-          destroyOnClose
+          mask={{ closable: false }}
+          destroyOnHidden
           centered
           {...modalProps}
         >

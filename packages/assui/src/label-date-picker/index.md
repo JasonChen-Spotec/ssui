@@ -13,10 +13,10 @@ group:
 
 输入 DatePicker 组件
 
+antd 6 升级后仍使用 Moment 日期值，`value`、`defaultValue` 和 `onChange` 的日期参数保持 Moment 类型；请勿传入 antd 默认 DatePicker 使用的 Day.js 对象。
+
 ## 1. 代码演示
 
 ### 1.1. 基础使用
 
 <code hideActions='["CSB", "EXTERNAL"]' src="./demo/index.tsx" ></code>
-
- 

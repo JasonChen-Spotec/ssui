@@ -1,5 +1,5 @@
-import type { DrawerProps } from 'antd/lib/drawer';
 import type React from 'react';
+import type { DrawerProps } from 'antd';
 export type DrawerAction = {
     close: () => void;
     open: () => void;

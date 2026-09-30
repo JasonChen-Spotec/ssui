@@ -54,8 +54,7 @@ function _extends() { return _extends = Object.assign ? Object.assign.bind() : f
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (-1 !== e.indexOf(n)) continue; t[n] = r[n]; } return t; }
 import { jsx as _jsx, jsxs as _jsxs, Fragment as _Fragment } from "react/jsx-runtime";
 import * as React from 'react';
-import Modal from "antd/es/modal";
-import Slider from "antd/es/slider";
+import { Modal, Slider } from 'antd';
 import EasyCrop from './EasyCrop';
 import getCroppedImg from './getCroppedImg';
 import './style/index.less';
@@ -298,12 +297,16 @@ var ImgCrop = function ImgCrop(props) {
     return _jsxs(_Fragment, {
       children: [renderUpload(), src && _jsxs(Modal, _extends({
         open: true,
-        wrapClassName: pkg + "-modal",
+        classNames: {
+          wrapper: pkg + "-modal"
+        },
         title: titleOfModal,
         onOk: onOk,
         onCancel: onClose,
-        maskClosable: false,
-        destroyOnClose: true,
+        mask: {
+          closable: false
+        },
+        destroyOnHidden: true,
         centered: true
       }, modalProps, {
         children: [_jsx(EasyCrop, _extends({

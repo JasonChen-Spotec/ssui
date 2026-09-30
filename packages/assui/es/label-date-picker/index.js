@@ -3,8 +3,8 @@ import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import React from 'react';
 import CalendarOutlined from "a-icons/es/CalendarOutlined";
 import useControllableValue from "ahooks/es/useControllableValue";
-import { DatePicker } from 'antd';
 import classNames from 'classnames';
+import DatePicker from '../moment-date-picker';
 var LabelDatePicker = function LabelDatePicker(props) {
   var className = props.className,
     label = props.label,
@@ -12,6 +12,7 @@ var LabelDatePicker = function LabelDatePicker(props) {
   var datePickerRef = React.useRef(null);
   var _useControllableValue = useControllableValue(props, {
       valuePropName: 'open',
+      defaultValuePropName: 'defaultOpen',
       trigger: 'setOpen'
     }),
     open = _useControllableValue[0],
@@ -19,8 +20,8 @@ var LabelDatePicker = function LabelDatePicker(props) {
   var _useControllableValue2 = useControllableValue(props),
     value = _useControllableValue2[0],
     setValue = _useControllableValue2[1];
-  var handleChange = function handleChange(nextValue) {
-    setValue(nextValue);
+  var handleChange = function handleChange(nextValue, dateString) {
+    setValue(nextValue, dateString != null ? dateString : '');
   };
   var handleLabelClick = function handleLabelClick() {
     if (!open) {

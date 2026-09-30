@@ -1,10 +1,22 @@
-@import '~antd/lib/style/index.less';
+@import '../../style/variables.less';
 
 .a-select-wrap {
   position: relative;
 
-  .@{ant-prefix}-select-selection-item {
+  .@{ant-prefix}-select-selection-item,
+  .@{ant-prefix}-select-content-value {
     display: none;
+  }
+
+  // Single Select values are text nodes inside content in antd v6.
+  .@{ant-prefix}-select-single .@{ant-prefix}-select-content {
+    color: transparent;
+  }
+
+  .@{ant-prefix}-select-single .@{ant-prefix}-select-content-has-value {
+    > :not(.@{ant-prefix}-select-input) {
+      display: none;
+    }
   }
 
   .a-select-value-wrap {
@@ -14,7 +26,7 @@
     z-index: 2;
   }
 
-  .@{ant-prefix}-select:not(.@{ant-prefix}-select-customize-input) .@{ant-prefix}-select-selector {
+  .@{ant-prefix}-select:not(.@{ant-prefix}-select-customize) {
     z-index: 3;
     background-color: transparent;
   }

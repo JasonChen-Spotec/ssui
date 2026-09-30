@@ -1,6 +1,6 @@
 "use strict";
 
-var _excluded = ["children", "trigger", "onOpen", "onClose", "onOk", "onCancel"];
+var _excluded = ["children", "trigger", "onOpen", "onClose", "onOk", "onCancel", "mask", "maskClosable", "destroyOnClose", "destroyOnHidden"];
 function _empty() {}
 function _awaitIgnored(value, direct) {
   if (!direct) {
@@ -37,9 +37,10 @@ var React = tslib_1.__importStar(require("react"));
 var CloseOutlined_1 = tslib_1.__importDefault(require("a-icons/lib/CloseOutlined"));
 var isPromise_1 = tslib_1.__importDefault(require("aa-utils/lib/isPromise"));
 var useControllableValue_1 = tslib_1.__importDefault(require("ahooks/lib/useControllableValue"));
-var modal_1 = tslib_1.__importDefault(require("antd/lib/modal"));
+var antd_1 = require("antd");
 var isFunction_1 = tslib_1.__importDefault(require("lodash/isFunction"));
 var ButtonModal = function ButtonModal(props, ref) {
+  var _mask$closable;
   var _ref = (0, useControllableValue_1["default"])(props, {
       valuePropName: 'open',
       defaultValue: false
@@ -52,7 +53,18 @@ var ButtonModal = function ButtonModal(props, ref) {
     onClose = props.onClose,
     onOk = props.onOk,
     onCancel = props.onCancel,
+    mask = props.mask,
+    _props$maskClosable = props.maskClosable,
+    maskClosable = _props$maskClosable === void 0 ? false : _props$maskClosable,
+    destroyOnClose = props.destroyOnClose,
+    _props$destroyOnHidde = props.destroyOnHidden,
+    destroyOnHidden = _props$destroyOnHidde === void 0 ? destroyOnClose : _props$destroyOnHidde,
     restModalProps = _objectWithoutPropertiesLoose(props, _excluded);
+  var mergedMask = mask === false ? false : _extends({}, mask === true ? {
+    enabled: true
+  } : mask, {
+    closable: typeof mask === 'object' ? (_mask$closable = mask.closable) != null ? _mask$closable : maskClosable : maskClosable
+  });
   var openModal = function openModal() {
     setModalVisible(true);
     onOpen == null || onOpen();
@@ -91,12 +103,13 @@ var ButtonModal = function ButtonModal(props, ref) {
     });
   }
   return (0, jsx_runtime_1.jsxs)(jsx_runtime_1.Fragment, {
-    children: [triggerNode, (0, jsx_runtime_1.jsx)(modal_1["default"], _extends({
+    children: [triggerNode, (0, jsx_runtime_1.jsx)(antd_1.Modal, _extends({
       open: visible,
       onOk: handleModalOk,
       onCancel: handleModalCancel,
       centered: true,
-      maskClosable: false,
+      mask: mergedMask,
+      destroyOnHidden: destroyOnHidden,
       closeIcon: (0, jsx_runtime_1.jsx)(CloseOutlined_1["default"], {})
     }, restModalProps, {
       children: (0, isFunction_1["default"])(children) ? children(modalActionRef.current) : React.cloneElement(children, {

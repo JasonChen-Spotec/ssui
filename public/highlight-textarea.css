@@ -5,8 +5,16 @@
   height: 100px;
   overflow: hidden;
   -webkit-text-size-adjust: none;
-  -moz-text-size-adjust: none;
-  text-size-adjust: none;
+     -moz-text-size-adjust: none;
+          text-size-adjust: none;
+  font-size: 14px;
+  line-height: 1.57142857;
+}
+.highlight-textarea,
+.highlight-textarea *,
+.highlight-textarea *:before,
+.highlight-textarea *:after {
+  box-sizing: border-box;
 }
 .highlight-textarea-backdrop {
   overflow-x: hidden;
@@ -19,10 +27,38 @@
 }
 .highlight-textarea-input.highlight-content {
   z-index: 100;
+  width: 100%;
+  min-width: 0;
+  height: 100%;
+  margin: 0;
   overflow-x: hidden;
   overflow-y: scroll;
+  color: var(--ant-color-text, rgba(0, 0, 0, 0.85));
   font: inherit;
+  border: 1px solid var(--ant-color-border, #d9d9d9);
+  border-radius: var(--ant-border-radius, 2px);
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
   resize: none;
+}
+.highlight-textarea-input.highlight-content:hover {
+  border-color: var(--ant-color-primary-hover, #40a9ff);
+}
+.highlight-textarea-input.highlight-content:focus {
+  border-color: var(--ant-color-primary, #1890ff);
+  box-shadow: 0 0 0 var(--ant-control-outline-width, 2px) var(--ant-control-outline, rgba(24, 144, 255, 0.2));
+}
+.highlight-textarea-input.highlight-content:disabled {
+  color: var(--ant-color-text-disabled, rgba(0, 0, 0, 0.25));
+  border-color: var(--ant-color-border, #d9d9d9);
+  box-shadow: none;
+  cursor: not-allowed;
+}
+.highlight-textarea-input.highlight-content::-moz-placeholder {
+  color: var(--ant-color-text-placeholder, #bfbfbf);
+}
+.highlight-textarea-input.highlight-content::placeholder {
+  color: var(--ant-color-text-placeholder, #bfbfbf);
 }
 .highlight-textarea .highlight-content {
   position: absolute;

@@ -109,7 +109,7 @@ const LabelDatePicker: React.FC<LabelRangeNumberProps> = (props) => {
       <div className="a-number a-number-range">
         <div className="a-number-input">
           <NumberInput
-            bordered={false}
+            variant={endNumberInputProps?.bordered ? 'outlined' : 'borderless'}
             enableMinus={enableMinus}
             numberType={numberType}
             precision={precision}
@@ -124,7 +124,7 @@ const LabelDatePicker: React.FC<LabelRangeNumberProps> = (props) => {
         <div className="a-number-range-separator">{connector || '–'}</div>
         <div className="a-number-input">
           <NumberInput
-            bordered={false}
+            variant={startNumberInputProps?.bordered ? 'outlined' : 'borderless'}
             enableMinus={enableMinus}
             onFocus={onFocus}
             numberType={numberType}

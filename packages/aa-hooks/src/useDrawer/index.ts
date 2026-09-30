@@ -1,6 +1,6 @@
 import type React from 'react';
 import { useRef, useState } from 'react';
-import type { DrawerProps } from 'antd/lib/drawer';
+import type { DrawerProps } from 'antd';
 import classNames from 'classnames';
 
 export type DrawerAction = {
@@ -18,7 +18,20 @@ export type UseDrawerType = (props?: UseDrawerProps) => [DrawerProps, DrawerActi
 
 export const useDrawer: UseDrawerType = (props) => {
   const [open, setOpen] = useState(false);
-  const { onBeforeOpen, onBeforeClose, renderChildren, ...restProps } = props ?? {};
+  const {
+    onBeforeOpen,
+    onBeforeClose,
+    renderChildren,
+    className,
+    rootClassName,
+    style,
+    rootStyle,
+    mask,
+    maskClosable,
+    destroyOnClose,
+    destroyOnHidden = destroyOnClose,
+    ...restProps
+  } = props ?? {};
 
   const closeDrawer = () => {
     if (onBeforeClose) {
@@ -46,6 +59,19 @@ export const useDrawer: UseDrawerType = (props) => {
   const drawerProps: DrawerProps = {
     open,
     onClose: closeDrawer,
+    rootClassName: classNames(className, rootClassName),
+    rootStyle: { ...style, ...rootStyle },
+    destroyOnHidden,
+    mask:
+      mask === false
+        ? false
+        : maskClosable === undefined
+          ? mask
+          : {
+              ...(mask === true ? { enabled: true } : mask),
+              closable:
+                typeof mask === 'object' ? (mask.closable ?? maskClosable) : maskClosable,
+            },
     ...restProps,
   };
   if (renderChildren) {
@@ -62,6 +88,7 @@ export const generateUseDrawer: generateUseDrawerType = (defaultProps) =>
       ...defaultProps,
       ...newProps,
       className: classNames(defaultProps.className, newProps?.className),
+      rootClassName: classNames(defaultProps.rootClassName, newProps?.rootClassName),
     };
     return useDrawer(props);
   };

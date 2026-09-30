@@ -8,7 +8,7 @@ var tslib_1 = require("tslib");
 var jsx_runtime_1 = require("react/jsx-runtime");
 var react_1 = tslib_1.__importDefault(require("react"));
 var useSize_1 = tslib_1.__importDefault(require("ahooks/lib/useSize"));
-var tooltip_1 = tslib_1.__importDefault(require("antd/lib/tooltip"));
+var antd_1 = require("antd");
 var classnames_1 = tslib_1.__importDefault(require("classnames"));
 var omit_1 = tslib_1.__importDefault(require("lodash/omit"));
 var button_modal_1 = tslib_1.__importDefault(require("../button-modal"));
@@ -63,11 +63,12 @@ var MultiLineEllipsisText = function MultiLineEllipsisText(_ref) {
     children: text
   });
   if (isEllipsis && tipType === 'modal') {
+    var _ref2, _buttonModalProps$des;
     return (0, jsx_runtime_1.jsx)(button_modal_1["default"], _extends({
-      destroyOnClose: true,
       width: 325,
       footer: null
     }, (0, omit_1["default"])(buttonModalProps, 'children'), {
+      destroyOnHidden: (_ref2 = (_buttonModalProps$des = buttonModalProps == null ? void 0 : buttonModalProps.destroyOnHidden) != null ? _buttonModalProps$des : buttonModalProps == null ? void 0 : buttonModalProps.destroyOnClose) != null ? _ref2 : true,
       className: (0, classnames_1["default"])('ellipsis-modal', buttonModalProps == null ? void 0 : buttonModalProps.className),
       trigger: ellipsisNode,
       children: (buttonModalProps == null ? void 0 : buttonModalProps.children) || (0, jsx_runtime_1.jsx)("div", {
@@ -77,8 +78,13 @@ var MultiLineEllipsisText = function MultiLineEllipsisText(_ref) {
     }));
   }
   if (isEllipsis && tipType === 'tooltip') {
-    return (0, jsx_runtime_1.jsx)(tooltip_1["default"], _extends({}, tooltipProps, {
-      overlayClassName: (0, classnames_1["default"])('ellipsis-tooltip', tooltipProps == null ? void 0 : tooltipProps.overlayClassName),
+    return (0, jsx_runtime_1.jsx)(antd_1.Tooltip, _extends({}, (0, omit_1["default"])(tooltipProps, ['overlayClassName', 'classNames']), {
+      classNames: function classNames(info) {
+        var customClassNames = typeof (tooltipProps == null ? void 0 : tooltipProps.classNames) === 'function' ? tooltipProps.classNames(info) : tooltipProps == null ? void 0 : tooltipProps.classNames;
+        return _extends({}, customClassNames, {
+          root: (0, classnames_1["default"])('ellipsis-tooltip', tooltipProps == null ? void 0 : tooltipProps.overlayClassName, customClassNames == null ? void 0 : customClassNames.root)
+        });
+      },
       title: (0, jsx_runtime_1.jsx)("div", {
         className: "ellipsis-tooltip-content",
         children: text

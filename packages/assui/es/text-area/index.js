@@ -3,7 +3,7 @@ function _extends() { return _extends = Object.assign ? Object.assign.bind() : f
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (-1 !== e.indexOf(n)) continue; t[n] = r[n]; } return t; }
 import { jsx as _jsx } from "react/jsx-runtime";
 import * as React from 'react';
-import Input from "antd/es/input";
+import { Input } from 'antd';
 import trimStart from 'lodash/trimStart';
 var TextArea = function TextArea(_ref) {
   var value = _ref.value,

@@ -1,1 +1,1 @@
-import 'antd/lib/modal/style';
+export {};

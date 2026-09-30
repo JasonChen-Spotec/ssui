@@ -1,7 +1,6 @@
 import * as React from 'react';
-import type { BadgeProps } from 'antd/lib/badge';
-import type { TabPaneProps, TabsProps } from 'antd/lib/tabs';
-import type { Tab } from 'rc-tabs/lib/interface';
+import type { BadgeProps, TabPaneProps, TabsProps } from 'antd';
+type Tab = NonNullable<TabsProps['items']>[number];
 interface NewTab extends Tab {
     count?: React.ReactNode;
 }

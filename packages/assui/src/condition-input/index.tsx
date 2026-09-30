@@ -1,7 +1,7 @@
 import * as React from 'react';
 import useControllableValue from 'ahooks/lib/useControllableValue';
-import type { InputProps } from 'antd/lib/input';
-import Input from 'antd/lib/input';
+import type { InputProps } from 'antd';
+import { Input } from 'antd';
 import isArray from 'lodash/isArray';
 import isFunction from 'lodash/isFunction';
 import parse2RegexOption from './parse2RegexOption';

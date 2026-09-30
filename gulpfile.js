@@ -88,7 +88,7 @@ function compileLess(modules) {
               next();
             })
             .catch((e) => {
-              console.error(e);
+              next(e);
             });
         } else {
           next();
@@ -104,10 +104,9 @@ function compileLess(modules) {
   return merge2([lessS, assets]);
 }
 
-gulp.task('compile:less', (done) => {
+gulp.task('compile:less', () => {
   console.log('Compile less...');
-  compileLess(false).on('finish', done);
-  compileLess(true).on('finish', done);
+  return merge2(compileLess(false), compileLess(true));
 });
 
 gulp.task('cjs', () => {

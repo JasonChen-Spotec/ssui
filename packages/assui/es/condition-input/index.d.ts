@@ -1,5 +1,5 @@
 import * as React from 'react';
-import type { InputProps } from 'antd/lib/input';
+import type { InputProps } from 'antd';
 export interface ConditionInputProps extends Omit<InputProps, 'onChange'> {
     /** 过滤的正则条件 */
     regexp?: RegExp | (RegExp | string | {

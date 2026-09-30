@@ -1,6 +1,7 @@
 import * as React from 'react';
-import type { DefaultOptionType, OptionProps, SelectProps } from 'antd/lib/select';
-export declare const Option: React.FC<OptionProps>;
+import type { SelectProps } from 'antd';
+type DefaultOptionType = NonNullable<SelectProps['options']>[number];
+export declare const Option: import("@rc-component/select/es/Option").OptionFC;
 export type ComplexValSelectValueType = string | number | any[] | Record<string, any> | null | undefined;
 export interface ComplexValSelectOptionType extends Omit<DefaultOptionType, 'value' | 'children' | 'options'> {
     value?: ComplexValSelectValueType;

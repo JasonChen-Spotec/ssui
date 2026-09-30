@@ -1,4 +1,4 @@
-var _excluded = ["children", "trigger", "onOpen", "onClose", "onOk", "onCancel"];
+var _excluded = ["children", "trigger", "onOpen", "onClose", "onOk", "onCancel", "mask", "maskClosable", "destroyOnClose", "destroyOnHidden"];
 function _empty() {}
 function _awaitIgnored(value, direct) {
   if (!direct) {
@@ -31,9 +31,10 @@ import * as React from 'react';
 import CloseOutlined from "a-icons/es/CloseOutlined";
 import isPromise from "aa-utils/es/isPromise";
 import useControllableValue from "ahooks/es/useControllableValue";
-import Modal from "antd/es/modal";
+import { Modal } from 'antd';
 import isFunction from 'lodash/isFunction';
 var ButtonModal = function ButtonModal(props, ref) {
+  var _mask$closable;
   var _useControllableValue = useControllableValue(props, {
       valuePropName: 'open',
       defaultValue: false
@@ -46,7 +47,18 @@ var ButtonModal = function ButtonModal(props, ref) {
     onClose = props.onClose,
     onOk = props.onOk,
     onCancel = props.onCancel,
+    mask = props.mask,
+    _props$maskClosable = props.maskClosable,
+    maskClosable = _props$maskClosable === void 0 ? false : _props$maskClosable,
+    destroyOnClose = props.destroyOnClose,
+    _props$destroyOnHidde = props.destroyOnHidden,
+    destroyOnHidden = _props$destroyOnHidde === void 0 ? destroyOnClose : _props$destroyOnHidde,
     restModalProps = _objectWithoutPropertiesLoose(props, _excluded);
+  var mergedMask = mask === false ? false : _extends({}, mask === true ? {
+    enabled: true
+  } : mask, {
+    closable: typeof mask === 'object' ? (_mask$closable = mask.closable) != null ? _mask$closable : maskClosable : maskClosable
+  });
   var openModal = function openModal() {
     setModalVisible(true);
     onOpen == null || onOpen();
@@ -90,7 +102,8 @@ var ButtonModal = function ButtonModal(props, ref) {
       onOk: handleModalOk,
       onCancel: handleModalCancel,
       centered: true,
-      maskClosable: false,
+      mask: mergedMask,
+      destroyOnHidden: destroyOnHidden,
       closeIcon: _jsx(CloseOutlined, {})
     }, restModalProps, {
       children: isFunction(children) ? children(modalActionRef.current) : /*#__PURE__*/React.cloneElement(children, {

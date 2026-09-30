@@ -74,7 +74,7 @@ const LabelNumberInput = (props: LabelNumberInputProps) => {
         })}
       >
         <NumberInput
-          {...omit(props, [
+          {...omit<NumberInputProps>(props, [
             'onChange',
             'onBlur',
             'onFocus',

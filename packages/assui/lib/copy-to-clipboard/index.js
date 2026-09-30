@@ -7,7 +7,7 @@ Object.defineProperty(exports, "__esModule", {
 var tslib_1 = require("tslib");
 var jsx_runtime_1 = require("react/jsx-runtime");
 var react_1 = tslib_1.__importStar(require("react"));
-var tooltip_1 = tslib_1.__importDefault(require("antd/lib/tooltip"));
+var antd_1 = require("antd");
 var copy_to_clipboard_1 = tslib_1.__importDefault(require("copy-to-clipboard"));
 var CopyToClipboard = function CopyToClipboard(props) {
   var text = props.text,
@@ -38,7 +38,7 @@ var CopyToClipboard = function CopyToClipboard(props) {
       elem.props.onClick(event);
     }
   };
-  return tooltipTitle ? (0, jsx_runtime_1.jsx)(tooltip_1["default"], _extends({
+  return tooltipTitle ? (0, jsx_runtime_1.jsx)(antd_1.Tooltip, _extends({
     placement: "topLeft",
     open: tooltipVisible,
     title: tooltipTitle

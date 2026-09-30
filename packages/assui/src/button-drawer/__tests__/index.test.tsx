@@ -1,6 +1,6 @@
 import React from 'react';
-import { act, fireEvent, render, screen } from '@testing-library/react';
-import { Button } from 'antd';
+import { act, fireEvent, render, screen, waitFor } from '@testing-library/react';
+import { Button, ConfigProvider, type DrawerProps } from 'antd';
 import '@testing-library/jest-dom';
 import ButtonDrawer, { type DrawerAction } from '../index';
 
@@ -19,6 +19,59 @@ const baseProps = {
 };
 
 describe('ButtonDrawer', () => {
+  it.each<[DrawerProps['mask'], boolean, boolean]>([
+    [undefined, false, false],
+    [true, false, true],
+    [false, true, false],
+    [{ blur: true }, false, false],
+    [{ enabled: true }, false, true],
+    [{ enabled: false }, true, false],
+  ])('merges local mask %p with provider enabled=%p', (mask, providerEnabled, expected) => {
+    render(
+      <ConfigProvider drawer={{ mask: { enabled: providerEnabled } }}>
+        <ButtonDrawer open mask={mask} maskClosable={false}>
+          <Content />
+        </ButtonDrawer>
+      </ConfigProvider>,
+    );
+    expect(Boolean(document.querySelector('.ant-drawer-mask'))).toBe(expected);
+  });
+
+  it('preserves mask, unmount, and root styling options after the antd upgrade', async () => {
+    const onClose = jest.fn();
+    const { getByText, rerender } = render(
+      <ButtonDrawer
+        trigger={<span>open drawer</span>}
+        className="legacy-drawer"
+        style={{ zIndex: 1234 }}
+        destroyOnClose
+        onClose={onClose}
+      >
+        <Content />
+      </ButtonDrawer>,
+    );
+    fireEvent.click(getByText('open drawer'));
+    const drawer = document.querySelector('.ant-drawer');
+    expect(drawer).toHaveClass('legacy-drawer');
+    expect(drawer).toHaveStyle({ zIndex: 1234 });
+    fireEvent.click(document.querySelector('.ant-drawer-mask')!);
+    expect(onClose).not.toHaveBeenCalled();
+
+    rerender(
+      <ButtonDrawer
+        trigger={<span>open drawer</span>}
+        maskClosable
+        destroyOnClose
+        onClose={onClose}
+      >
+        <Content />
+      </ButtonDrawer>,
+    );
+    fireEvent.click(document.querySelector('.ant-drawer-mask')!);
+    expect(onClose).toHaveBeenCalledTimes(1);
+    await waitFor(() => expect(screen.queryByText('这是弹框内容')).toBeNull());
+  });
+
   it('ButtonDrawer base props should work fine ', async () => {
     const { getByText, debug } = render(
       <ButtonDrawer

@@ -1,5 +1,7 @@
 import React from 'react';
-import type { OptionProps, SelectProps } from 'antd/lib/select';
+import type { SelectProps } from 'antd';
+import { Select } from 'antd';
+type OptionProps = React.ComponentProps<typeof Select.Option>;
 export interface ASelectProps extends SelectProps {
     className?: string;
     valueRender?: (value: any) => React.ReactNode;
