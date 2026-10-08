@@ -1254,8 +1254,7 @@ html {
 }
 .label-date-picker .ant-picker {
   height: 45px;
-  padding-right: 15px;
-  padding-left: 15px;
+  padding-inline: 15px;
   border: 1px solid #e5e5e5;
   border-radius: 2px;
   outline: none;
@@ -1275,7 +1274,7 @@ html {
 .label-date-picker-text {
   position: absolute;
   top: 12px;
-  left: 16px;
+  inset-inline-start: 16px;
   z-index: 2;
   height: 20px;
   color: #9e9e9e;
@@ -1284,6 +1283,10 @@ html {
   transform-origin: top left;
   cursor: pointer;
   transition: all 0.2s ease-out;
+}
+.label-date-picker .ant-picker-rtl + .label-date-picker-text {
+  direction: rtl;
+  transform-origin: top right;
 }
 .label-date-picker-label-scale .label-date-picker-text {
   transform: translateY(-8px) scale(0.8);

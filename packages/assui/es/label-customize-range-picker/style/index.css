@@ -1244,7 +1244,7 @@ html {
   transition: height 0.2s cubic-bezier(0.645, 0.045, 0.355, 1), opacity 0.2s cubic-bezier(0.645, 0.045, 0.355, 1) !important;
 }
 .label-customize-range-picker-panel .customize-select-text {
-  margin-left: 8px;
+  margin-inline-start: 8px;
 }
 .label-customize-range-picker-panel .check-wrapper {
   padding: 8px 11px 6px;
@@ -1265,7 +1265,7 @@ html {
 .label-customize-range-picker-panel .pick-box .radio {
   display: inline-block;
   width: 50%;
-  margin-right: 0;
+  margin-inline-end: 0;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -1275,6 +1275,9 @@ html {
 }
 .label-customize-range-picker-panel .customize-select {
   vertical-align: middle;
+}
+.ant-picker-dropdown-rtl .label-customize-range-picker-panel {
+  direction: rtl;
 }
 @media screen and (max-width: 576px) {
   .label-customize-range-picker-panel .panel {
