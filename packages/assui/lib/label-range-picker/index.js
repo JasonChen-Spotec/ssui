@@ -47,7 +47,7 @@ var LabelDatePicker = function LabelDatePicker(props) {
     className: (0, classnames_1["default"])({
       'label-range-picker': true,
       'label-range-picker-disabled': props.disabled,
-      'label-range-picker-label-scale': open || value
+      'label-range-picker-label-scale': open || (value == null ? void 0 : value.some(Boolean))
     }, className),
     children: [(0, jsx_runtime_1.jsx)(RangePicker, _extends({
       format: showTime ? 'YYYY/MM/DD HH:mm:ss' : 'YYYY/MM/DD',

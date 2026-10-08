@@ -19,4 +19,6 @@ group:
 
 <code hideActions='["CSB", "EXTERNAL"]' src="./demo/index.tsx" ></code>
 
- 
+### 1.2. RTL 布局
+
+<code hideActions='["CSB", "EXTERNAL"]' src="./demo/RTL.tsx" ></code>
