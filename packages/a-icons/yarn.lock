@@ -1600,8 +1600,8 @@
   resolved "https://registry.npmmirror.com/@types/q/-/q-1.5.5.tgz"
   integrity sha512-L28j2FcJfSZOnL1WBjDYp2vUHCeIFlyYI/53EwD/rKUBQ7MtUUfbQWiyKJGpcnv4/WgrhWsFKrcPstcAt/J0tQ==
 
-a-base-icon@^1.1.4:
-  version "1.1.4"
+a-base-icon@^4.0.0:
+  version "4.0.0"
   resolved "file:../a-base-icon"
   dependencies:
     classnames "^2.3.1"
