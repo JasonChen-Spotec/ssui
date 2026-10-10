@@ -1,0 +1,14 @@
+# Owners of release automation and its configuration.
+# This file takes effect with "Require review from Code Owners" enabled.
+# Keep these rules in both dev and dev-atnd-6.x.
+# Routine package versions, dependencies and lockfiles do not require owner review.
+# CI builds and tests without publishing credentials, then hands off tarballs.
+# Publishing must validate those artifacts and disable lifecycle scripts.
+
+/.github/CODEOWNERS @EllaLee-spotec @TinnerLee-Spotec @IanTang-Spotec
+/.github/workflows/ @EllaLee-spotec @TinnerLee-Spotec @IanTang-Spotec
+/.github/actions/ @EllaLee-spotec @TinnerLee-Spotec @IanTang-Spotec
+/scripts/release/ @EllaLee-spotec @TinnerLee-Spotec @IanTang-Spotec
+/lerna.json @EllaLee-spotec @TinnerLee-Spotec @IanTang-Spotec
+/.npmrc @EllaLee-spotec @TinnerLee-Spotec @IanTang-Spotec
+/packages/*/.npmrc @EllaLee-spotec @TinnerLee-Spotec @IanTang-Spotec

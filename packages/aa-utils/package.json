@@ -6,7 +6,11 @@
   "main": "./lib/index.js",
   "module": "./es/index.js",
   "types": "./lib/index.d.ts",
-  "repository": "https://github.com/SPOTEC-LTD/ssui",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/spo-fee/ssui.git",
+    "directory": "packages/aa-utils"
+  },
   "homepage": "https://github.com/SPOTEC-LTD/ssui",
   "authors": {
     "name": "chenjianbin",
@@ -36,5 +40,12 @@
     "qs": "^6.10.3",
     "scroll-into-view-if-needed": "^2.2.28",
     "universal-cookie": "^4.0.4"
-  }
+  },
+  "files": [
+    "dist",
+    "lib",
+    "es",
+    "package.json",
+    "README.md"
+  ]
 }

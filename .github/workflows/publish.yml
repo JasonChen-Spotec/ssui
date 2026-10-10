@@ -1,0 +1,104 @@
+name: Publish npm packages
+run-name: npm-release-${{ inputs.request_id }}
+
+on:
+  workflow_dispatch:
+    inputs:
+      release_sha:
+        description: Exact release commit created by y pub
+        required: true
+        type: string
+      request_id:
+        description: Unique request ID created by y pub
+        required: true
+        type: string
+
+permissions: {}
+
+concurrency:
+  group: ssui-npm-publish
+  cancel-in-progress: false
+
+env:
+  RELEASE_SHA: ${{ inputs.release_sha }}
+  HUSKY: '0'
+
+jobs:
+  build:
+    if: >-
+      github.repository == 'spo-fee/ssui' &&
+      (github.ref == 'refs/heads/dev' || github.ref == 'refs/heads/dev-atnd-6.x')
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    permissions:
+      contents: read
+    outputs:
+      artifact-id: ${{ steps.artifact.outputs.artifact-id }}
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 2
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: '24.18.1'
+      - name: Validate release commit
+        run: node scripts/release/ci.cjs check
+      - name: Install fixed release tools
+        run: npm install --global npm@11.16.0 yarn@1.22.22 --ignore-scripts
+      - name: Install frozen dependencies and link packages
+        run: node scripts/release/ci.cjs install
+        env:
+          YARN_CACHE_FOLDER: ${{ runner.temp }}/ssui-yarn-cache
+      - name: Check release scripts
+        run: yarn test:release
+      - name: Build packages
+        run: yarn build
+      - name: Test packages
+        run: yarn test --ci --runInBand
+      - name: Pack release artifacts
+        run: node scripts/release/ci.cjs pack
+        env:
+          RELEASE_ARTIFACT_DIR: ${{ runner.temp }}/npm-release
+      - name: Save immutable release artifacts
+        id: artifact
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: npm-release-${{ github.sha }}-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/npm-release/
+          if-no-files-found: error
+          retention-days: 30
+          compression-level: 0
+
+  publish:
+    needs: build
+    runs-on: ubuntu-latest
+    # Six packages may each need up to five minutes for registry confirmation.
+    timeout-minutes: 40
+    environment: npm-release
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 2
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: '24.18.1'
+      - name: Install fixed npm CLI
+        run: npm install --global npm@11.16.0 --ignore-scripts
+      - name: Download original build artifacts
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
+        with:
+          artifact-ids: ${{ needs.build.outputs.artifact-id }}
+          path: ${{ runner.temp }}/npm-release
+          merge-multiple: true
+      - name: Verify publisher and publish remaining packages
+        run: node scripts/release/ci.cjs publish
+        env:
+          NPM_PUBLISHERS: ${{ vars.NPM_PUBLISHERS }}
+          RELEASE_ARTIFACT_DIR: ${{ runner.temp }}/npm-release
