@@ -22,7 +22,7 @@
     "url": "git+https://github.com/spo-fee/ssui.git",
     "directory": "packages/assui"
   },
-  "homepage": "https://github.com/spo-fee/ssui",
+  "homepage": "https://github.com/SPOTEC-LTD/ssui",
   "scripts": {
     "build": "gulp"
   },

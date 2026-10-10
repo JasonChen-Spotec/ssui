@@ -6,7 +6,7 @@ hero:
     - text: 快速上手
       link: /assuis/button-drawer
     - text: github
-      link: https://github.com/spo-fee/ssui
+      link: https://github.com/JasonChen-Spotec/ssui
 ---
 ## 简述
 1. assui 是一个react library, 作为antd基础组件的补充，里面有部分二次封装antd组件，有自定义组件，也有集成第三方精选组件

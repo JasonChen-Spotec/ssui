@@ -22,7 +22,7 @@
     "url": "git+https://github.com/spo-fee/ssui.git",
     "directory": "packages/ec-common"
   },
-  "homepage": "https://github.com/spo-fee/ssui",
+  "homepage": "https://github.com/SPOTEC-LTD/ssui",
   "scripts": {
     "buildSvg": "svgr --typescript --out-dir src/iconsComponent/ src/svgs",
     "build": "gulp"
