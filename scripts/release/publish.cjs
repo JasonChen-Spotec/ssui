@@ -1,9 +1,12 @@
 const fs = require('node:fs');
 const path = require('node:path');
+const { setTimeout: delay } = require('node:timers/promises');
 const { validateManifest, check, REGISTRY, TAG } = require('./policy.cjs');
 const { integrity, inspectArchive } = require('./archive.cjs');
 const { getPublished } = require('./registry.cjs');
 const { run, npmEnvironment } = require('./runtime.cjs');
+const CONFIRM_TIMEOUT_MS = 5 * 60 * 1000;
+const CONFIRM_INTERVAL_MS = 20 * 1000;
 function verifiedArtifacts(artifactDir, manifest, context) {
   validateManifest(manifest);
   const file = path.join(artifactDir, 'artifact.json');
@@ -33,7 +36,35 @@ function npmUpload(file) {
   try { run('npm', ['publish', file, '--ignore-scripts', `--registry=${REGISTRY}`, `--tag=${TAG}`, '--access=public', '--provenance'], { cwd: config.dir, env: config.env, inherit: true }); }
   finally { config.cleanup(); }
 }
-async function publishRelease({ artifactDir, manifest, context, lookup = getPublished, upload = npmUpload, dryRun = false }) {
+async function confirmPublished(entry, { lookup, sleep, now, log }, uploadError) {
+  const label = `${entry.name}@${entry.version}`;
+  const started = now(), deadline = started + CONFIRM_TIMEOUT_MS;
+  while (true) {
+    const requestBudget = deadline - now();
+    if (requestBudget <= 0) break;
+    let remote;
+    try {
+      // Include request time in the deadline, including the final request.
+      remote = await lookup(entry.name, entry.version, { timeoutMs: Math.min(30000, Math.ceil(requestBudget)) });
+    } catch (error) {
+      if (error.name === 'TimeoutError' && now() >= deadline) break;
+      throw error;
+    }
+    if (remote) {
+      check(remote.integrity === entry.integrity, `${label}: 已发布版本内容冲突或缺少摘要`);
+      log(`${label}: npm 版本及摘要确认通过（等待 ${Math.ceil((now() - started) / 1000)} 秒）`);
+      return;
+    }
+    const remaining = deadline - now();
+    if (remaining <= 0) break;
+    const interval = Math.min(CONFIRM_INTERVAL_MS, remaining);
+    log(`${label}: npm 暂未可见，${Math.ceil(interval / 1000)} 秒后再次确认（剩余 ${Math.ceil(remaining / 1000)} 秒）；不会重复上传`);
+    await sleep(interval);
+  }
+  const detail = uploadError ? `；上传命令返回：${uploadError.message}` : '';
+  throw new Error(`${label}: 上传后等待确认超时（最多 5 分钟）${detail}。已停止；确认 npm 状态后可手动重跑原任务，无需重新升版`, { cause: uploadError });
+}
+async function publishRelease({ artifactDir, manifest, context, lookup = getPublished, upload = npmUpload, dryRun = false, sleep = delay, now = () => performance.now(), log = console.log }) {
   const packages = verifiedArtifacts(artifactDir, manifest, context);
   const results = [];
   try {
@@ -49,8 +80,7 @@ async function publishRelease({ artifactDir, manifest, context, lookup = getPubl
       if (dryRun) { results.push({ name: e.name, version: e.version, status: 'would-publish' }); continue; }
       let error;
       try { await upload(path.join(artifactDir, e.filename), e); } catch (e) { error = e; }
-      const remote = await lookup(e.name, e.version);
-      if (!remote || remote.integrity !== e.integrity) throw error || new Error(`${e.name}: 上传后未确认正确版本，停止；可手动重跑原任务`);
+      await confirmPublished(e, { lookup, sleep, now, log }, error);
       results.push({ name: e.name, version: e.version, status: 'published' });
     }
     return results;

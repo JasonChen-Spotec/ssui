@@ -1,7 +1,7 @@
 const { REGISTRY, check } = require('./policy.cjs');
 async function getPublished(name, version, options = {}) {
   const fetcher = options.fetch || globalThis.fetch;
-  const response = await fetcher(`${REGISTRY}${encodeURIComponent(name)}/${encodeURIComponent(version)}`, { signal: AbortSignal.timeout(30000), headers: { Accept: 'application/json' } });
+  const response = await fetcher(`${REGISTRY}${encodeURIComponent(name)}/${encodeURIComponent(version)}`, { signal: AbortSignal.timeout(Math.min(30000, options.timeoutMs ?? 30000)), headers: { Accept: 'application/json' } });
   if (response.status === 404) return null;
   check(response.ok, `npm registry 请求失败 ${response.status}: ${name}@${version}`);
   const pkg = await response.json();

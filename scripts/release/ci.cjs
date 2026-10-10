@@ -30,8 +30,8 @@ function report(results = []) {
 function installDependencies(root, execute = run) {
   const locks = ['yarn.lock', ...PACKAGES.map(name => `packages/${name}/yarn.lock`)];
   for (const file of locks) check(fs.existsSync(path.join(root, file)), `缺少锁文件: ${file}，不允许非冻结安装`);
-  execute('yarn', ['install', '--frozen-lockfile', '--ignore-scripts', '--non-interactive'], { cwd: root, inherit: true });
-  execute(process.execPath, [path.join(root, 'node_modules/lerna/cli.js'), 'bootstrap', '--ignore-scripts', '--force-local', '--', '--frozen-lockfile', '--non-interactive'], { cwd: root, inherit: true });
+  execute('yarn', ['install', '--frozen-lockfile', '--ignore-scripts', '--non-interactive', '--prefer-offline'], { cwd: root, inherit: true });
+  execute(process.execPath, [path.join(root, 'node_modules/lerna/cli.js'), 'bootstrap', '--ignore-scripts', '--force-local', '--', '--frozen-lockfile', '--non-interactive', '--prefer-offline'], { cwd: root, inherit: true });
   check(!execute('git', ['diff', '--name-only', '--', ...locks], { cwd: root }), '安装修改了锁文件，请先修复并提交锁文件');
 }
 async function main(mode) {
