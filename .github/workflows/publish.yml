@@ -30,8 +30,6 @@ jobs:
       (github.ref == 'refs/heads/dev' || github.ref == 'refs/heads/dev-atnd-6.x')
     runs-on: ubuntu-latest
     timeout-minutes: 45
-    env:
-      YARN_CACHE_FOLDER: ${{ runner.temp }}/ssui-yarn-cache
     permissions:
       contents: read
     outputs:
@@ -52,12 +50,14 @@ jobs:
       - name: Restore Yarn download cache
         uses: actions/cache@caa296126883cff596d87d8935842f9db880ef25 # v5
         with:
-          path: ${{ env.YARN_CACHE_FOLDER }}
+          path: ${{ runner.temp }}/ssui-yarn-cache
           key: ssui-yarn-v1-${{ runner.os }}-${{ runner.arch }}-node24-yarn1.22.22-${{ hashFiles('yarn.lock', 'packages/*/yarn.lock') }}
           restore-keys: |
             ssui-yarn-v1-${{ runner.os }}-${{ runner.arch }}-node24-yarn1.22.22-
       - name: Install frozen dependencies and link packages
         run: node scripts/release/ci.cjs install
+        env:
+          YARN_CACHE_FOLDER: ${{ runner.temp }}/ssui-yarn-cache
       - name: Check release scripts
         run: yarn test:release
       - name: Build packages

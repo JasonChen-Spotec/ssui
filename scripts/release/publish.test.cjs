@@ -3,16 +3,15 @@ const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const os = require('node:os');
 const path = require('node:path');
-const { execFileSync } = require('node:child_process');
 const { getPublished } = require('./registry.cjs');
 const { packRelease } = require('./pack.cjs');
 const { publishRelease } = require('./publish.cjs');
 const sha = 'a'.repeat(40);
 const context = { sha, runId: '42', runAttempt: '1' };
-function fixture(t) {
+function fixture(t, names = ['a-base-icon', 'a-icons']) {
   const root = fs.mkdtempSync(path.join(os.tmpdir(), 'ssui-release-')); t.after(() => fs.rmSync(root, { recursive: true, force: true }));
   const manifest = { schemaVersion: 1, branch: 'dev', baseSha: 'b'.repeat(40), tag: 'latest', packages: [] };
-  for (const name of ['a-base-icon', 'a-icons']) {
+  for (const name of names) {
     const dir = path.join(root, 'packages', name); fs.mkdirSync(path.join(dir, 'lib'), { recursive: true }); fs.mkdirSync(path.join(dir, 'es'));
     for (const p of ['lib/index.js', 'lib/index.d.ts', 'es/index.js']) fs.writeFileSync(path.join(dir, p), '// fixture\n');
     fs.writeFileSync(path.join(dir, 'package.json'), JSON.stringify({ name, version: '4.0.1', repository: 'git+https://github.com/spo-fee/ssui.git', main: './lib/index.js', module: './es/index.js', types: './lib/index.d.ts', files: ['lib', 'es'], scripts: { prepack: 'node -e "require(\'fs\').writeFileSync(\'EXECUTED\',\'bad\')"' } }));
@@ -78,40 +77,50 @@ test('产物来源、摘要、同版本冲突及缺入口均阻止上传', async
   fs.rmSync(path.join(f.root, 'packages/a-icons/es/index.js'));
   await assert.rejects(packRelease({ ...f, outDir: path.join(f.root, 'other'), context }), /入口/);
 });
-test('上传响应丢失但 registry 摘要正确视为成功，不重复上传', async t => {
-  const f=fixture(t);await packRelease({...f,context});const registry=new Map();let count=0;
-  const result=await publishRelease({artifactDir:f.outDir,manifest:f.manifest,context,lookup:async name=>registry.get(name)||null,upload:async(file,e)=>{count++;registry.set(e.name,{integrity:e.integrity});throw new Error('lost response');}});
-  assert.equal(count,2);assert.deepEqual(result.map(r=>r.status),['published','published']);
-});
 test('冻结产物丢失和危险 publishConfig 均拒绝', async t => {
   const f=fixture(t);
   await assert.rejects(publishRelease({artifactDir:f.outDir,manifest:f.manifest,context}),/不存在或已过期/);
   const filename=path.join(f.root,'packages/a-icons/package.json');const p=JSON.parse(fs.readFileSync(filename));p.publishConfig={registry:'https://other.example/'};fs.writeFileSync(filename,JSON.stringify(p));
   await assert.rejects(packRelease({...f,context}),/publishConfig/);
 });
-for (const lostResponse of [false, true]) test(`上传后延迟可见会继续发布下一包，且每包只上传一次（响应丢失=${lostResponse}）`, async t => {
-  const f = fixture(t); await packRelease({ ...f, context });
+test('六个包分别延迟可见时一轮全部完成，接近五分钟和上传响应丢失也不重复上传', async t => {
+  const cases = [
+    { name: 'a-base-icon', delay: 0, lostResponse: true },
+    { name: 'a-icons', delay: 20000 },
+    { name: 'ec-common', delay: 40000 },
+    { name: 'aa-utils', delay: 120000 },
+    { name: 'amssui', delay: 200000 },
+    { name: 'assui', delay: 280000, lostResponse: true },
+  ];
+  const names = cases.map(c => c.name);
+  const f = fixture(t, names); await packRelease({ ...f, context });
   const time = clock(), uploaded = new Map(), uploads = [];
-  const results = await publishRelease({
-    artifactDir: f.outDir, manifest: f.manifest, context, ...time,
-    upload: async (file, entry) => {
-      uploads.push({ name: entry.name, time: time.now() });
-      uploaded.set(entry.name, { integrity: entry.integrity, visibleAt: time.now() + 40000 });
-      if (lostResponse) throw new Error('lost response');
+  const lookup = (name, version, options) => getPublished(name, version, {
+    ...options,
+    fetch: async () => {
+      const entry = uploaded.get(name);
+      if (!entry || time.now() < entry.visibleAt) return { status: 404, ok: false };
+      return { status: 200, ok: true, json: async () => ({ name, version, dist: { integrity: entry.integrity } }) };
     },
-    lookup: (name, version, options) => getPublished(name, version, {
-      ...options,
-      fetch: async () => {
-        const entry = uploaded.get(name);
-        if (!entry || time.now() < entry.visibleAt) return { status: 404, ok: false };
-        return { status: 200, ok: true, json: async () => ({ name, version, dist: { integrity: entry.integrity } }) };
-      },
-    }),
   });
-  assert.deepEqual(results.map(r => r.status), ['published', 'published']);
-  assert.deepEqual(uploads, [{ name: 'a-base-icon', time: 0 }, { name: 'a-icons', time: 40000 }]);
-  assert.deepEqual(time.sleeps, [20000, 20000, 20000, 20000]);
-  assert.ok(time.messages.some(message => message.includes('a-base-icon@4.0.1')));
+  const upload = async (file, entry) => {
+    assert.equal(uploaded.has(entry.name), false, `${entry.name} 不应重复上传`);
+    uploads.push({ name: entry.name, time: time.now() });
+    const scenario = cases.find(c => c.name === entry.name);
+    uploaded.set(entry.name, { integrity: entry.integrity, visibleAt: time.now() + scenario.delay });
+    if (scenario.lostResponse) throw new Error('上传已接受，但响应丢失');
+  };
+  const options = { artifactDir: f.outDir, manifest: f.manifest, context, lookup, upload, ...time };
+  const results = await publishRelease(options);
+  assert.deepEqual(results.map(r => [r.name, r.status]), names.map(name => [name, 'published']));
+  assert.deepEqual(uploads.map(u => u.time), [0, 0, 20000, 60000, 180000, 380000]);
+  assert.equal(uploads.length, 6);
+  assert.equal(time.now(), 660000);
+  assert.ok(time.sleeps.every(ms => ms === 20000));
+  for (const name of names) assert.ok(time.messages.some(message => message.includes(`${name}@4.0.1`)));
+  const resumed = await publishRelease({ ...options, context: { ...context, runAttempt: '2' } });
+  assert.deepEqual(resumed.map(r => r.status), Array(6).fill('skipped'));
+  assert.equal(uploads.length, 6);
 });
 test('一直不可见时最多等待五分钟，不重复上传、不继续后续包，且可用原产物恢复', async t => {
   const f = fixture(t); await packRelease({ ...f, context });
