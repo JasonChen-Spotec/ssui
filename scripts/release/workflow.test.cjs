@@ -27,23 +27,16 @@ test('构建没有发布权限；上传只取原 artifact，且每轮重新验�
   assert.ok(!publish.steps.some(s => /yarn|lerna|npm (?:ci|install(?! --global))|ci\.cjs (?:install|pack)/.test(s.run || '')));
 });
 
-test('Yarn 下载缓存覆盖所有锁文件，命中缓存也必须安装校验，发布任务不恢复缓存', () => {
+test('发布构建仅使用本次运行的临时 Yarn 缓存，不跨运行恢复或保存依赖', () => {
   const { build, publish } = workflow.jobs;
-  const cacheIndex = build.steps.findIndex(s => s.uses?.startsWith('actions/cache@'));
-  assert.ok(cacheIndex >= 0, '构建任务需要恢复 Yarn 下载缓存');
-  const cache = build.steps[cacheIndex];
-  assert.match(cache.with.path, /^\$\{\{ runner\.temp \}\}\//);
-  assert.ok(!/node_modules|\/lib\/|\/es\//.test(cache.with.path));
-  assert.match(cache.with.key, /runner\.os/);
-  assert.match(cache.with.key, /runner\.arch/);
-  assert.match(cache.with.key, /hashFiles\('yarn\.lock', 'packages\/\*\/yarn\.lock'\)/);
-  assert.equal(cache.with['restore-keys'].trim(), cache.with.key.slice(0, cache.with.key.indexOf('${{ hashFiles')));
-  const installIndex = build.steps.findIndex(s => s.run === 'node scripts/release/ci.cjs install');
-  assert.ok(cacheIndex < installIndex);
-  assert.equal(build.steps[installIndex].env?.YARN_CACHE_FOLDER, cache.with.path, '安装与恢复缓存必须使用同一目录');
-  assert.equal(build.steps[installIndex].if, undefined, '缓存命中不能跳过冻结安装');
-  assert.ok(!publish.steps.some(s => s.uses?.startsWith('actions/cache') || s.with?.cache));
+  for (const job of Object.values(workflow.jobs)) {
+    assert.ok(!job.steps.some(s => s.uses?.startsWith('actions/cache') || s.with?.cache), '发布工作流不得恢复或保存跨运行依赖缓存');
+  }
+  const install = build.steps.find(s => s.run === 'node scripts/release/ci.cjs install');
+  assert.match(install.env?.YARN_CACHE_FOLDER, /^\$\{\{ runner\.temp \}\}\/[^/]+$/);
+  assert.equal(install.if, undefined, '每次构建都必须执行冻结安装');
   assert.equal(publish.env?.YARN_CACHE_FOLDER, undefined);
+  assert.ok(!publish.steps.some(s => s.env?.YARN_CACHE_FOLDER));
 });
 
 test('工作流和任务级 env 不引用该位置不可用的 runner 上下文', () => {
