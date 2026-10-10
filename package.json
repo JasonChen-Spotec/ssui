@@ -3,7 +3,7 @@
   "private": true,
   "repository": {
     "type": "git",
-    "url": "git+https://github.com:SPOTEC-LTD/assui.git"
+    "url": "git+https://github.com/spo-fee/ssui.git"
   },
   "scripts": {
     "dumi:prepare": "dumi setup",
@@ -26,9 +26,10 @@
     "pub:doc": "dumi build && gh-pages -d dist",
     "gh-pages": "gh-pages -d dist",
     "pub:doc-gitee": "npm run build:doc && cd ./dist && rm -rf .git && touch .spa && touch .nojekyll && git init && git remote add origin git@gitee.com:uso/sui.git && git add -A && git commit -m \"publish docs\" && git push origin master -f",
-    "pub": "lerna publish",
+    "pub": "node scripts/release/cli.cjs",
     "dbuild": "dumi build",
-    "preview": "dumi build && dumi preview"
+    "preview": "dumi build && dumi preview",
+    "test:release": "node --test scripts/release/*.test.cjs"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,json}": [
