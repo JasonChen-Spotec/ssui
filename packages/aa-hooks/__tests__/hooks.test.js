@@ -1,4 +1,4 @@
-const hooks = require('..');
+const hooks = require('../src');
 
 describe('hooks', () => {
   it('exposes an api', () => {

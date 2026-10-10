@@ -11,7 +11,10 @@
   "userWorkspaces": true,
   "command": {
     "version": {
-      "allowBranch": "dev",
+      "allowBranch": [
+        "dev",
+        "dev-atnd-6.x"
+      ],
       "includeMergedTags": true
     },
     "publish": {

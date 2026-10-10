@@ -1,7 +1,11 @@
 {
   "name": "a-icons",
   "version": "4.0.0",
-  "repository": "git@github.com:SPOTEC-LTD/assui.git",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/spo-fee/ssui.git",
+    "directory": "packages/a-icons"
+  },
   "author": "jason <usochen@gmail.com>",
   "main": "./lib/index.js",
   "module": "./es/index.js",
@@ -22,5 +26,12 @@
   "peerDependencies": {
     "assui": "^4.0.0",
     "react": "^19.0.0"
-  }
+  },
+  "files": [
+    "dist",
+    "lib",
+    "es",
+    "package.json",
+    "README.md"
+  ]
 }
