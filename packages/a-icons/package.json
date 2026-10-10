@@ -1,11 +1,22 @@
 {
   "name": "a-icons",
   "version": "1.2.85",
-  "repository": "git@github.com:SPOTEC-LTD/assui.git",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/spo-fee/ssui.git",
+    "directory": "packages/a-icons"
+  },
   "author": "jason <usochen@gmail.com>",
   "main": "./lib/index.js",
   "module": "./es/index.js",
   "types": "./lib/index.d.ts",
+  "files": [
+    "dist",
+    "lib",
+    "es",
+    "package.json",
+    "README.md"
+  ],
   "license": "MIT",
   "scripts": {
     "buildSvg": "rm -rf src/* && rm -rf tmpAllSvgs/* && cp svgs/**/* tmpAllSvgs && svgr --template buildIconTemplate.js --typescript --out-dir src tmpAllSvgs",

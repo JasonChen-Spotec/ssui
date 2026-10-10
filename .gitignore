@@ -18,3 +18,7 @@ test
 .dumi/tmp
 .dumi/tmp-test
 .dumi/tmp-production
+
+# Generated package outputs; CI builds these for npm releases.
+/packages/*/lib/
+/packages/*/es/

@@ -14,7 +14,7 @@ export default defineConfig({
       ],
     },
     socialLinks: {
-      github: 'https://github.com/JasonChen-Spotec/ssui',
+      github: 'https://github.com/spo-fee/ssui',
     },
   },
   resolve: {

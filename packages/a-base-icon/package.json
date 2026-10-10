@@ -17,8 +17,12 @@
     "name": "chenjianbin",
     "email": "usochen@gmail.com"
   },
-  "repository": "https://github.com/SPOTEC-LTD/ssui",
-  "homepage": "https://github.com/SPOTEC-LTD/ssui",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/spo-fee/ssui.git",
+    "directory": "packages/a-base-icon"
+  },
+  "homepage": "https://github.com/spo-fee/ssui",
   "scripts": {
     "build": "gulp"
   },
