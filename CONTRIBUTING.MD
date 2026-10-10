@@ -20,3 +20,7 @@
 2. `npm run test` 运行测试。
 
 3. `npm run build` 构建编译。
+
+各包的 `lib/` 和 `es/` 是生成目录，不再提交到 Git。本地开发需要这些文件时，先安装依赖并运行构建；不要使用 `git add -f` 提交产物。
+
+使用 `yarn pub` 选择版本并触发 CI 构建、测试和发布。首次配置、日常操作及失败恢复见 [npm 发布流程](docs/npm-release.md)。
