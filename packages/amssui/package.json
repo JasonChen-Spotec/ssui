@@ -1,6 +1,6 @@
 {
   "name": "amssui",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "react ui library",
   "author": "jason <usochen@gmail.com>",
   "main": "./lib/index.js",
@@ -34,14 +34,14 @@
     "README.md"
   ],
   "dependencies": {
-    "a-icons": "^4.0.0",
+    "a-icons": "^4.0.1",
     "ahooks": "^3.9.5",
     "react-vant": "^3.3.5"
   },
   "peerDependencies": {
     "react": "^19.0.0",
-    "react-vant": "^3.3.5",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "react-vant": "^3.3.5"
   },
   "devDependencies": {
     "@types/react": "19.3.0",
